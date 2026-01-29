@@ -234,13 +234,6 @@ public interface ICFIntSecDeviceObj
 	String getRequiredDevName();
 
 	/**
-	 *	Get the optional String attribute PubKey.
-	 *
-	 *	@return	The optional String attribute PubKey.
-	 */
-	String getOptionalPubKey();
-
-	/**
 	 *	Internal use only.
 	 */
 	void copyPKeyToRec();
