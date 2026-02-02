@@ -262,11 +262,11 @@ public interface ICFIntClusterObj
 	List<ICFSecSysClusterObj> getOptionalComponentsSysCluster( boolean forceRead );
 
 	/**
-	 *	Get the required long attribute Id.
+	 *	Get the required CFLibDbKeyHash256 attribute Id.
 	 *
-	 *	@return	The required long attribute Id.
+	 *	@return	The required CFLibDbKeyHash256 attribute Id.
 	 */
-	long getRequiredId();
+	CFLibDbKeyHash256 getRequiredId();
 
 	/**
 	 *	Get the required String attribute FullDomName.

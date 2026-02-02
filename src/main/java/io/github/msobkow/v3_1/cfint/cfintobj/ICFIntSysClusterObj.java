@@ -200,11 +200,11 @@ public interface ICFIntSysClusterObj
 	int getRequiredSingletonId();
 
 	/**
-	 *	Get the required long attribute ClusterId.
+	 *	Get the required CFLibDbKeyHash256 attribute ClusterId.
 	 *
-	 *	@return	The required long attribute ClusterId.
+	 *	@return	The required CFLibDbKeyHash256 attribute ClusterId.
 	 */
-	long getRequiredClusterId();
+	CFLibDbKeyHash256 getRequiredClusterId();
 
 	/**
 	 *	Internal use only.

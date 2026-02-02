@@ -492,14 +492,14 @@ public class CFIntSysClusterTableObj
 	}
 
 	@Override
-	public List<ICFSecSysClusterObj> readSysClusterByClusterIdx( long ClusterId )
+	public List<ICFSecSysClusterObj> readSysClusterByClusterIdx( CFLibDbKeyHash256 ClusterId )
 	{
 		return( readSysClusterByClusterIdx( ClusterId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFSecSysClusterObj> readSysClusterByClusterIdx( long ClusterId,
+	public List<ICFSecSysClusterObj> readSysClusterByClusterIdx( CFLibDbKeyHash256 ClusterId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readSysClusterByClusterIdx";
@@ -593,7 +593,7 @@ public class CFIntSysClusterTableObj
 	}
 
 	@Override
-	public List<ICFSecSysClusterObj> readCachedSysClusterByClusterIdx( long ClusterId )
+	public List<ICFSecSysClusterObj> readCachedSysClusterByClusterIdx( CFLibDbKeyHash256 ClusterId )
 	{
 		final String S_ProcName = "readCachedSysClusterByClusterIdx";
 		ICFSecSysClusterByClusterIdxKey key = schema.getCFSecBackingStore().getFactorySysCluster().newByClusterIdxKey();
@@ -679,7 +679,7 @@ public class CFIntSysClusterTableObj
 	}
 
 	@Override
-	public void deepDisposeSysClusterByClusterIdx( long ClusterId )
+	public void deepDisposeSysClusterByClusterIdx( CFLibDbKeyHash256 ClusterId )
 	{
 		final String S_ProcName = "deepDisposeSysClusterByClusterIdx";
 		ICFSecSysClusterObj obj;
@@ -744,7 +744,7 @@ public class CFIntSysClusterTableObj
 	}
 
 	@Override
-	public void deleteSysClusterByClusterIdx( long ClusterId )
+	public void deleteSysClusterByClusterIdx( CFLibDbKeyHash256 ClusterId )
 	{
 		ICFSecSysClusterByClusterIdxKey key = schema.getCFSecBackingStore().getFactorySysCluster().newByClusterIdxKey();
 		key.setRequiredClusterId( ClusterId );

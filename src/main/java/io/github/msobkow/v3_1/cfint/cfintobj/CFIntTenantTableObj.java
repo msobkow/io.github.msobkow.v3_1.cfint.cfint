@@ -586,14 +586,14 @@ public class CFIntTenantTableObj
 	}
 
 	@Override
-	public List<ICFSecTenantObj> readTenantByClusterIdx( long ClusterId )
+	public List<ICFSecTenantObj> readTenantByClusterIdx( CFLibDbKeyHash256 ClusterId )
 	{
 		return( readTenantByClusterIdx( ClusterId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFSecTenantObj> readTenantByClusterIdx( long ClusterId,
+	public List<ICFSecTenantObj> readTenantByClusterIdx( CFLibDbKeyHash256 ClusterId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readTenantByClusterIdx";
@@ -679,7 +679,7 @@ public class CFIntTenantTableObj
 	}
 
 	@Override
-	public ICFSecTenantObj readTenantByUNameIdx( long ClusterId,
+	public ICFSecTenantObj readTenantByUNameIdx( CFLibDbKeyHash256 ClusterId,
 		String TenantName )
 	{
 		return( readTenantByUNameIdx( ClusterId,
@@ -688,7 +688,7 @@ public class CFIntTenantTableObj
 	}
 
 	@Override
-	public ICFSecTenantObj readTenantByUNameIdx( long ClusterId,
+	public ICFSecTenantObj readTenantByUNameIdx( CFLibDbKeyHash256 ClusterId,
 		String TenantName, boolean forceRead )
 	{
 		if( indexByUNameIdx == null ) {
@@ -725,7 +725,7 @@ public class CFIntTenantTableObj
 	}
 
 	@Override
-	public List<ICFSecTenantObj> readCachedTenantByClusterIdx( long ClusterId )
+	public List<ICFSecTenantObj> readCachedTenantByClusterIdx( CFLibDbKeyHash256 ClusterId )
 	{
 		final String S_ProcName = "readCachedTenantByClusterIdx";
 		ICFSecTenantByClusterIdxKey key = schema.getCFSecBackingStore().getFactoryTenant().newByClusterIdxKey();
@@ -802,7 +802,7 @@ public class CFIntTenantTableObj
 	}
 
 	@Override
-	public ICFSecTenantObj readCachedTenantByUNameIdx( long ClusterId,
+	public ICFSecTenantObj readCachedTenantByUNameIdx( CFLibDbKeyHash256 ClusterId,
 		String TenantName )
 	{
 		ICFSecTenantObj obj = null;
@@ -849,7 +849,7 @@ public class CFIntTenantTableObj
 	}
 
 	@Override
-	public void deepDisposeTenantByClusterIdx( long ClusterId )
+	public void deepDisposeTenantByClusterIdx( CFLibDbKeyHash256 ClusterId )
 	{
 		final String S_ProcName = "deepDisposeTenantByClusterIdx";
 		ICFSecTenantObj obj;
@@ -866,7 +866,7 @@ public class CFIntTenantTableObj
 	}
 
 	@Override
-	public void deepDisposeTenantByUNameIdx( long ClusterId,
+	public void deepDisposeTenantByUNameIdx( CFLibDbKeyHash256 ClusterId,
 		String TenantName )
 	{
 		ICFSecTenantObj obj = readCachedTenantByUNameIdx( ClusterId,
@@ -886,7 +886,7 @@ public class CFIntTenantTableObj
 	 *		as identified by the key attributes, which may be an empty set.
 	 */
 	@Override
-	public List<ICFSecTenantObj> pageTenantByClusterIdx( long ClusterId,
+	public List<ICFSecTenantObj> pageTenantByClusterIdx( CFLibDbKeyHash256 ClusterId,
 		CFLibDbKeyHash256 priorId )
 	{
 		final String S_ProcName = "pageTenantByClusterIdx";
@@ -958,7 +958,7 @@ public class CFIntTenantTableObj
 	}
 
 	@Override
-	public void deleteTenantByClusterIdx( long ClusterId )
+	public void deleteTenantByClusterIdx( CFLibDbKeyHash256 ClusterId )
 	{
 		ICFSecTenantByClusterIdxKey key = schema.getCFSecBackingStore().getFactoryTenant().newByClusterIdxKey();
 		key.setRequiredClusterId( ClusterId );
@@ -992,7 +992,7 @@ public class CFIntTenantTableObj
 	}
 
 	@Override
-	public void deleteTenantByUNameIdx( long ClusterId,
+	public void deleteTenantByUNameIdx( CFLibDbKeyHash256 ClusterId,
 		String TenantName )
 	{
 		if( indexByUNameIdx == null ) {

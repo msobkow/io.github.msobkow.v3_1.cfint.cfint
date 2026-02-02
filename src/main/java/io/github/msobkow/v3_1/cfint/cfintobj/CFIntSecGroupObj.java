@@ -435,7 +435,7 @@ public class CFIntSecGroupObj
 	}
 
 	@Override
-	public long getRequiredClusterId() {
+	public CFLibDbKeyHash256 getRequiredClusterId() {
 		return( getSecGroupRec().getRequiredClusterId() );
 	}
 

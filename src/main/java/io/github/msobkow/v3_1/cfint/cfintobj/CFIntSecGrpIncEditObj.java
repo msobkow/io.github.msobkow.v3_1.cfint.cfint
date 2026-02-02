@@ -421,7 +421,7 @@ public class CFIntSecGrpIncEditObj
 	}
 
 	@Override
-	public long getRequiredClusterId() {
+	public CFLibDbKeyHash256 getRequiredClusterId() {
 		return( getSecGrpIncRec().getRequiredClusterId() );
 	}
 

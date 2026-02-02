@@ -200,7 +200,7 @@ extends ICFSecSchema
 	 *
 	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
 	 */
-	public long nextClusterIdGen();
+	public CFLibDbKeyHash256 nextClusterIdGen();
 
 	/**
 	 *	Get the next SecSessionIdGen identifier.

@@ -51,8 +51,8 @@ public class CFIntClusterTableObj
 	implements ICFIntClusterTableObj
 {
 	protected ICFIntSchemaObj schema;
-	private Map<Long, ICFSecClusterObj> members;
-	private Map<Long, ICFSecClusterObj> allCluster;
+	private Map<CFLibDbKeyHash256, ICFSecClusterObj> members;
+	private Map<CFLibDbKeyHash256, ICFSecClusterObj> allCluster;
 	private Map< ICFSecClusterByUDomNameIdxKey,
 		ICFSecClusterObj > indexByUDomNameIdx;
 	private Map< ICFSecClusterByUDescrIdxKey,
@@ -62,7 +62,7 @@ public class CFIntClusterTableObj
 
 	public CFIntClusterTableObj() {
 		schema = null;
-		members = new HashMap<Long, ICFSecClusterObj>();
+		members = new HashMap<CFLibDbKeyHash256, ICFSecClusterObj>();
 		allCluster = null;
 		indexByUDomNameIdx = null;
 		indexByUDescrIdx = null;
@@ -70,7 +70,7 @@ public class CFIntClusterTableObj
 
 	public CFIntClusterTableObj( ICFSecSchemaObj argSchema ) {
 		schema = (ICFIntSchemaObj)argSchema;
-		members = new HashMap<Long, ICFSecClusterObj>();
+		members = new HashMap<CFLibDbKeyHash256, ICFSecClusterObj>();
 		allCluster = null;
 		indexByUDomNameIdx = null;
 		indexByUDescrIdx = null;
@@ -181,7 +181,7 @@ public class CFIntClusterTableObj
 	@Override
 	public ICFSecClusterObj realiseCluster( ICFSecClusterObj Obj ) {
 		ICFSecClusterObj obj = Obj;
-		Long pkey = obj.getPKey();
+		CFLibDbKeyHash256 pkey = obj.getPKey();
 		ICFSecClusterObj keepObj = null;
 		if( members.containsKey( pkey ) && ( null != members.get( pkey ) ) ) {
 			ICFSecClusterObj existingObj = members.get( pkey );
@@ -271,12 +271,12 @@ public class CFIntClusterTableObj
 	}
 
 	@Override
-	public ICFSecClusterObj readCluster( Long pkey ) {
+	public ICFSecClusterObj readCluster( CFLibDbKeyHash256 pkey ) {
 		return( readCluster( pkey, false ) );
 	}
 
 	@Override
-	public ICFSecClusterObj readCluster( Long pkey, boolean forceRead ) {
+	public ICFSecClusterObj readCluster( CFLibDbKeyHash256 pkey, boolean forceRead ) {
 		ICFSecClusterObj obj = null;
 		if( ( ! forceRead ) && members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -295,7 +295,7 @@ public class CFIntClusterTableObj
 	}
 
 	@Override
-	public ICFSecClusterObj readCachedCluster( Long pkey ) {
+	public ICFSecClusterObj readCachedCluster( CFLibDbKeyHash256 pkey ) {
 		ICFSecClusterObj obj = null;
 		if( members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -311,7 +311,7 @@ public class CFIntClusterTableObj
 		if( obj == null ) {
 			return;
 		}
-		Long pkey = obj.getPKey();
+		CFLibDbKeyHash256 pkey = obj.getPKey();
 		ICFSecClusterObj existing = readCachedCluster( pkey );
 		if( existing == null ) {
 			return;
@@ -366,7 +366,7 @@ public class CFIntClusterTableObj
 
 	}
 	@Override
-	public void deepDisposeCluster( Long pkey ) {
+	public void deepDisposeCluster( CFLibDbKeyHash256 pkey ) {
 		ICFSecClusterObj obj = readCachedCluster( pkey );
 		if( obj != null ) {
 			obj.forget();
@@ -374,7 +374,7 @@ public class CFIntClusterTableObj
 	}
 
 	@Override
-	public ICFSecClusterObj lockCluster( Long pkey ) {
+	public ICFSecClusterObj lockCluster( CFLibDbKeyHash256 pkey ) {
 		ICFSecClusterObj locked = null;
 		ICFSecCluster lockRec = schema.getCFSecBackingStore().getTableCluster().lockDerived( null, pkey );
 		if( lockRec != null ) {
@@ -398,7 +398,7 @@ public class CFIntClusterTableObj
 	public List<ICFSecClusterObj> readAllCluster( boolean forceRead ) {
 		final String S_ProcName = "readAllCluster";
 		if( ( allCluster == null ) || forceRead ) {
-			Map<Long, ICFSecClusterObj> map = new HashMap<Long,ICFSecClusterObj>();
+			Map<CFLibDbKeyHash256, ICFSecClusterObj> map = new HashMap<CFLibDbKeyHash256,ICFSecClusterObj>();
 			allCluster = map;
 			ICFSecCluster[] recList = schema.getCFSecBackingStore().getTableCluster().readAllDerived( null );
 			ICFSecCluster rec;
@@ -454,8 +454,8 @@ public class CFIntClusterTableObj
 					return( 1 );
 				}
 				else {
-					Long lhsPKey = lhs.getPKey();
-					Long rhsPKey = rhs.getPKey();
+					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
+					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -512,8 +512,8 @@ public class CFIntClusterTableObj
 					return( 1 );
 				}
 				else {
-					Long lhsPKey = lhs.getPKey();
-					Long rhsPKey = rhs.getPKey();
+					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
+					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -530,10 +530,10 @@ public class CFIntClusterTableObj
 	 *		may include an empty set.
 	 */
 	@Override
-	public List<ICFSecClusterObj> pageAllCluster(Long priorId )
+	public List<ICFSecClusterObj> pageAllCluster(CFLibDbKeyHash256 priorId )
 	{
 		final String S_ProcName = "pageAllCluster";
-		Map<Long, ICFSecClusterObj> map = new HashMap<Long,ICFSecClusterObj>();
+		Map<CFLibDbKeyHash256, ICFSecClusterObj> map = new HashMap<CFLibDbKeyHash256,ICFSecClusterObj>();
 		ICFSecCluster[] recList = schema.getCFSecBackingStore().getTableCluster().pageAllRec( null,
 			priorId );
 		ICFSecCluster rec;
@@ -552,14 +552,14 @@ public class CFIntClusterTableObj
 	}
 
 	@Override
-	public ICFSecClusterObj readClusterByIdIdx( long Id )
+	public ICFSecClusterObj readClusterByIdIdx( CFLibDbKeyHash256 Id )
 	{
 		return( readClusterByIdIdx( Id,
 			false ) );
 	}
 
 	@Override
-	public ICFSecClusterObj readClusterByIdIdx( long Id, boolean forceRead )
+	public ICFSecClusterObj readClusterByIdIdx( CFLibDbKeyHash256 Id, boolean forceRead )
 	{
 		ICFSecClusterObj obj = readCluster( Id, forceRead );
 		return( obj );
@@ -632,7 +632,7 @@ public class CFIntClusterTableObj
 	}
 
 	@Override
-	public ICFSecClusterObj readCachedClusterByIdIdx( long Id )
+	public ICFSecClusterObj readCachedClusterByIdIdx( CFLibDbKeyHash256 Id )
 	{
 		ICFSecClusterObj obj = null;
 		obj = readCachedCluster( Id );
@@ -712,7 +712,7 @@ public class CFIntClusterTableObj
 	}
 
 	@Override
-	public void deepDisposeClusterByIdIdx( long Id )
+	public void deepDisposeClusterByIdIdx( CFLibDbKeyHash256 Id )
 	{
 		ICFSecClusterObj obj = readCachedClusterByIdIdx( Id );
 		if( obj != null ) {
@@ -757,7 +757,7 @@ public class CFIntClusterTableObj
 	}
 
 	@Override
-	public void deleteClusterByIdIdx( long Id )
+	public void deleteClusterByIdIdx( CFLibDbKeyHash256 Id )
 	{
 		ICFSecClusterObj obj = readCluster(Id);
 		if( obj != null ) {

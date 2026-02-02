@@ -586,14 +586,14 @@ public class CFIntSecGroupTableObj
 	}
 
 	@Override
-	public List<ICFSecSecGroupObj> readSecGroupByClusterIdx( long ClusterId )
+	public List<ICFSecSecGroupObj> readSecGroupByClusterIdx( CFLibDbKeyHash256 ClusterId )
 	{
 		return( readSecGroupByClusterIdx( ClusterId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFSecSecGroupObj> readSecGroupByClusterIdx( long ClusterId,
+	public List<ICFSecSecGroupObj> readSecGroupByClusterIdx( CFLibDbKeyHash256 ClusterId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readSecGroupByClusterIdx";
@@ -679,7 +679,7 @@ public class CFIntSecGroupTableObj
 	}
 
 	@Override
-	public List<ICFSecSecGroupObj> readSecGroupByClusterVisIdx( long ClusterId,
+	public List<ICFSecSecGroupObj> readSecGroupByClusterVisIdx( CFLibDbKeyHash256 ClusterId,
 		boolean IsVisible )
 	{
 		return( readSecGroupByClusterVisIdx( ClusterId,
@@ -688,7 +688,7 @@ public class CFIntSecGroupTableObj
 	}
 
 	@Override
-	public List<ICFSecSecGroupObj> readSecGroupByClusterVisIdx( long ClusterId,
+	public List<ICFSecSecGroupObj> readSecGroupByClusterVisIdx( CFLibDbKeyHash256 ClusterId,
 		boolean IsVisible,
 		boolean forceRead )
 	{
@@ -777,7 +777,7 @@ public class CFIntSecGroupTableObj
 	}
 
 	@Override
-	public ICFSecSecGroupObj readSecGroupByUNameIdx( long ClusterId,
+	public ICFSecSecGroupObj readSecGroupByUNameIdx( CFLibDbKeyHash256 ClusterId,
 		String Name )
 	{
 		return( readSecGroupByUNameIdx( ClusterId,
@@ -786,7 +786,7 @@ public class CFIntSecGroupTableObj
 	}
 
 	@Override
-	public ICFSecSecGroupObj readSecGroupByUNameIdx( long ClusterId,
+	public ICFSecSecGroupObj readSecGroupByUNameIdx( CFLibDbKeyHash256 ClusterId,
 		String Name, boolean forceRead )
 	{
 		if( indexByUNameIdx == null ) {
@@ -823,7 +823,7 @@ public class CFIntSecGroupTableObj
 	}
 
 	@Override
-	public List<ICFSecSecGroupObj> readCachedSecGroupByClusterIdx( long ClusterId )
+	public List<ICFSecSecGroupObj> readCachedSecGroupByClusterIdx( CFLibDbKeyHash256 ClusterId )
 	{
 		final String S_ProcName = "readCachedSecGroupByClusterIdx";
 		ICFSecSecGroupByClusterIdxKey key = schema.getCFSecBackingStore().getFactorySecGroup().newByClusterIdxKey();
@@ -900,7 +900,7 @@ public class CFIntSecGroupTableObj
 	}
 
 	@Override
-	public List<ICFSecSecGroupObj> readCachedSecGroupByClusterVisIdx( long ClusterId,
+	public List<ICFSecSecGroupObj> readCachedSecGroupByClusterVisIdx( CFLibDbKeyHash256 ClusterId,
 		boolean IsVisible )
 	{
 		final String S_ProcName = "readCachedSecGroupByClusterVisIdx";
@@ -979,7 +979,7 @@ public class CFIntSecGroupTableObj
 	}
 
 	@Override
-	public ICFSecSecGroupObj readCachedSecGroupByUNameIdx( long ClusterId,
+	public ICFSecSecGroupObj readCachedSecGroupByUNameIdx( CFLibDbKeyHash256 ClusterId,
 		String Name )
 	{
 		ICFSecSecGroupObj obj = null;
@@ -1026,7 +1026,7 @@ public class CFIntSecGroupTableObj
 	}
 
 	@Override
-	public void deepDisposeSecGroupByClusterIdx( long ClusterId )
+	public void deepDisposeSecGroupByClusterIdx( CFLibDbKeyHash256 ClusterId )
 	{
 		final String S_ProcName = "deepDisposeSecGroupByClusterIdx";
 		ICFSecSecGroupObj obj;
@@ -1043,7 +1043,7 @@ public class CFIntSecGroupTableObj
 	}
 
 	@Override
-	public void deepDisposeSecGroupByClusterVisIdx( long ClusterId,
+	public void deepDisposeSecGroupByClusterVisIdx( CFLibDbKeyHash256 ClusterId,
 		boolean IsVisible )
 	{
 		final String S_ProcName = "deepDisposeSecGroupByClusterVisIdx";
@@ -1062,7 +1062,7 @@ public class CFIntSecGroupTableObj
 	}
 
 	@Override
-	public void deepDisposeSecGroupByUNameIdx( long ClusterId,
+	public void deepDisposeSecGroupByUNameIdx( CFLibDbKeyHash256 ClusterId,
 		String Name )
 	{
 		ICFSecSecGroupObj obj = readCachedSecGroupByUNameIdx( ClusterId,
@@ -1121,7 +1121,7 @@ public class CFIntSecGroupTableObj
 	}
 
 	@Override
-	public void deleteSecGroupByClusterIdx( long ClusterId )
+	public void deleteSecGroupByClusterIdx( CFLibDbKeyHash256 ClusterId )
 	{
 		ICFSecSecGroupByClusterIdxKey key = schema.getCFSecBackingStore().getFactorySecGroup().newByClusterIdxKey();
 		key.setRequiredClusterId( ClusterId );
@@ -1155,7 +1155,7 @@ public class CFIntSecGroupTableObj
 	}
 
 	@Override
-	public void deleteSecGroupByClusterVisIdx( long ClusterId,
+	public void deleteSecGroupByClusterVisIdx( CFLibDbKeyHash256 ClusterId,
 		boolean IsVisible )
 	{
 		ICFSecSecGroupByClusterVisIdxKey key = schema.getCFSecBackingStore().getFactorySecGroup().newByClusterVisIdxKey();
@@ -1194,7 +1194,7 @@ public class CFIntSecGroupTableObj
 	}
 
 	@Override
-	public void deleteSecGroupByUNameIdx( long ClusterId,
+	public void deleteSecGroupByUNameIdx( CFLibDbKeyHash256 ClusterId,
 		String Name )
 	{
 		if( indexByUNameIdx == null ) {

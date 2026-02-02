@@ -595,14 +595,14 @@ public class CFIntHostNodeTableObj
 	}
 
 	@Override
-	public List<ICFSecHostNodeObj> readHostNodeByClusterIdx( long ClusterId )
+	public List<ICFSecHostNodeObj> readHostNodeByClusterIdx( CFLibDbKeyHash256 ClusterId )
 	{
 		return( readHostNodeByClusterIdx( ClusterId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFSecHostNodeObj> readHostNodeByClusterIdx( long ClusterId,
+	public List<ICFSecHostNodeObj> readHostNodeByClusterIdx( CFLibDbKeyHash256 ClusterId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readHostNodeByClusterIdx";
@@ -688,7 +688,7 @@ public class CFIntHostNodeTableObj
 	}
 
 	@Override
-	public ICFSecHostNodeObj readHostNodeByUDescrIdx( long ClusterId,
+	public ICFSecHostNodeObj readHostNodeByUDescrIdx( CFLibDbKeyHash256 ClusterId,
 		String Description )
 	{
 		return( readHostNodeByUDescrIdx( ClusterId,
@@ -697,7 +697,7 @@ public class CFIntHostNodeTableObj
 	}
 
 	@Override
-	public ICFSecHostNodeObj readHostNodeByUDescrIdx( long ClusterId,
+	public ICFSecHostNodeObj readHostNodeByUDescrIdx( CFLibDbKeyHash256 ClusterId,
 		String Description, boolean forceRead )
 	{
 		if( indexByUDescrIdx == null ) {
@@ -726,7 +726,7 @@ public class CFIntHostNodeTableObj
 	}
 
 	@Override
-	public ICFSecHostNodeObj readHostNodeByHostNameIdx( long ClusterId,
+	public ICFSecHostNodeObj readHostNodeByHostNameIdx( CFLibDbKeyHash256 ClusterId,
 		String HostName )
 	{
 		return( readHostNodeByHostNameIdx( ClusterId,
@@ -735,7 +735,7 @@ public class CFIntHostNodeTableObj
 	}
 
 	@Override
-	public ICFSecHostNodeObj readHostNodeByHostNameIdx( long ClusterId,
+	public ICFSecHostNodeObj readHostNodeByHostNameIdx( CFLibDbKeyHash256 ClusterId,
 		String HostName, boolean forceRead )
 	{
 		if( indexByHostNameIdx == null ) {
@@ -772,7 +772,7 @@ public class CFIntHostNodeTableObj
 	}
 
 	@Override
-	public List<ICFSecHostNodeObj> readCachedHostNodeByClusterIdx( long ClusterId )
+	public List<ICFSecHostNodeObj> readCachedHostNodeByClusterIdx( CFLibDbKeyHash256 ClusterId )
 	{
 		final String S_ProcName = "readCachedHostNodeByClusterIdx";
 		ICFSecHostNodeByClusterIdxKey key = schema.getCFSecBackingStore().getFactoryHostNode().newByClusterIdxKey();
@@ -849,7 +849,7 @@ public class CFIntHostNodeTableObj
 	}
 
 	@Override
-	public ICFSecHostNodeObj readCachedHostNodeByUDescrIdx( long ClusterId,
+	public ICFSecHostNodeObj readCachedHostNodeByUDescrIdx( CFLibDbKeyHash256 ClusterId,
 		String Description )
 	{
 		ICFSecHostNodeObj obj = null;
@@ -887,7 +887,7 @@ public class CFIntHostNodeTableObj
 	}
 
 	@Override
-	public ICFSecHostNodeObj readCachedHostNodeByHostNameIdx( long ClusterId,
+	public ICFSecHostNodeObj readCachedHostNodeByHostNameIdx( CFLibDbKeyHash256 ClusterId,
 		String HostName )
 	{
 		ICFSecHostNodeObj obj = null;
@@ -934,7 +934,7 @@ public class CFIntHostNodeTableObj
 	}
 
 	@Override
-	public void deepDisposeHostNodeByClusterIdx( long ClusterId )
+	public void deepDisposeHostNodeByClusterIdx( CFLibDbKeyHash256 ClusterId )
 	{
 		final String S_ProcName = "deepDisposeHostNodeByClusterIdx";
 		ICFSecHostNodeObj obj;
@@ -951,7 +951,7 @@ public class CFIntHostNodeTableObj
 	}
 
 	@Override
-	public void deepDisposeHostNodeByUDescrIdx( long ClusterId,
+	public void deepDisposeHostNodeByUDescrIdx( CFLibDbKeyHash256 ClusterId,
 		String Description )
 	{
 		ICFSecHostNodeObj obj = readCachedHostNodeByUDescrIdx( ClusterId,
@@ -962,7 +962,7 @@ public class CFIntHostNodeTableObj
 	}
 
 	@Override
-	public void deepDisposeHostNodeByHostNameIdx( long ClusterId,
+	public void deepDisposeHostNodeByHostNameIdx( CFLibDbKeyHash256 ClusterId,
 		String HostName )
 	{
 		ICFSecHostNodeObj obj = readCachedHostNodeByHostNameIdx( ClusterId,
@@ -982,7 +982,7 @@ public class CFIntHostNodeTableObj
 	 *		as identified by the key attributes, which may be an empty set.
 	 */
 	@Override
-	public List<ICFSecHostNodeObj> pageHostNodeByClusterIdx( long ClusterId,
+	public List<ICFSecHostNodeObj> pageHostNodeByClusterIdx( CFLibDbKeyHash256 ClusterId,
 		CFLibDbKeyHash256 priorHostNodeId )
 	{
 		final String S_ProcName = "pageHostNodeByClusterIdx";
@@ -1054,7 +1054,7 @@ public class CFIntHostNodeTableObj
 	}
 
 	@Override
-	public void deleteHostNodeByClusterIdx( long ClusterId )
+	public void deleteHostNodeByClusterIdx( CFLibDbKeyHash256 ClusterId )
 	{
 		ICFSecHostNodeByClusterIdxKey key = schema.getCFSecBackingStore().getFactoryHostNode().newByClusterIdxKey();
 		key.setRequiredClusterId( ClusterId );
@@ -1088,7 +1088,7 @@ public class CFIntHostNodeTableObj
 	}
 
 	@Override
-	public void deleteHostNodeByUDescrIdx( long ClusterId,
+	public void deleteHostNodeByUDescrIdx( CFLibDbKeyHash256 ClusterId,
 		String Description )
 	{
 		if( indexByUDescrIdx == null ) {
@@ -1116,7 +1116,7 @@ public class CFIntHostNodeTableObj
 	}
 
 	@Override
-	public void deleteHostNodeByHostNameIdx( long ClusterId,
+	public void deleteHostNodeByHostNameIdx( CFLibDbKeyHash256 ClusterId,
 		String HostName )
 	{
 		if( indexByHostNameIdx == null ) {

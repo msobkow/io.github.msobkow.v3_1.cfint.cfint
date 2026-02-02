@@ -661,14 +661,14 @@ public class CFIntSecGrpIncTableObj
 	}
 
 	@Override
-	public List<ICFSecSecGrpIncObj> readSecGrpIncByClusterIdx( long ClusterId )
+	public List<ICFSecSecGrpIncObj> readSecGrpIncByClusterIdx( CFLibDbKeyHash256 ClusterId )
 	{
 		return( readSecGrpIncByClusterIdx( ClusterId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFSecSecGrpIncObj> readSecGrpIncByClusterIdx( long ClusterId,
+	public List<ICFSecSecGrpIncObj> readSecGrpIncByClusterIdx( CFLibDbKeyHash256 ClusterId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readSecGrpIncByClusterIdx";
@@ -940,7 +940,7 @@ public class CFIntSecGrpIncTableObj
 	}
 
 	@Override
-	public ICFSecSecGrpIncObj readSecGrpIncByUIncludeIdx( long ClusterId,
+	public ICFSecSecGrpIncObj readSecGrpIncByUIncludeIdx( CFLibDbKeyHash256 ClusterId,
 		CFLibDbKeyHash256 SecGroupId,
 		CFLibDbKeyHash256 IncludeGroupId )
 	{
@@ -951,7 +951,7 @@ public class CFIntSecGrpIncTableObj
 	}
 
 	@Override
-	public ICFSecSecGrpIncObj readSecGrpIncByUIncludeIdx( long ClusterId,
+	public ICFSecSecGrpIncObj readSecGrpIncByUIncludeIdx( CFLibDbKeyHash256 ClusterId,
 		CFLibDbKeyHash256 SecGroupId,
 		CFLibDbKeyHash256 IncludeGroupId, boolean forceRead )
 	{
@@ -991,7 +991,7 @@ public class CFIntSecGrpIncTableObj
 	}
 
 	@Override
-	public List<ICFSecSecGrpIncObj> readCachedSecGrpIncByClusterIdx( long ClusterId )
+	public List<ICFSecSecGrpIncObj> readCachedSecGrpIncByClusterIdx( CFLibDbKeyHash256 ClusterId )
 	{
 		final String S_ProcName = "readCachedSecGrpIncByClusterIdx";
 		ICFSecSecGrpIncByClusterIdxKey key = schema.getCFSecBackingStore().getFactorySecGrpInc().newByClusterIdxKey();
@@ -1222,7 +1222,7 @@ public class CFIntSecGrpIncTableObj
 	}
 
 	@Override
-	public ICFSecSecGrpIncObj readCachedSecGrpIncByUIncludeIdx( long ClusterId,
+	public ICFSecSecGrpIncObj readCachedSecGrpIncByUIncludeIdx( CFLibDbKeyHash256 ClusterId,
 		CFLibDbKeyHash256 SecGroupId,
 		CFLibDbKeyHash256 IncludeGroupId )
 	{
@@ -1271,7 +1271,7 @@ public class CFIntSecGrpIncTableObj
 	}
 
 	@Override
-	public void deepDisposeSecGrpIncByClusterIdx( long ClusterId )
+	public void deepDisposeSecGrpIncByClusterIdx( CFLibDbKeyHash256 ClusterId )
 	{
 		final String S_ProcName = "deepDisposeSecGrpIncByClusterIdx";
 		ICFSecSecGrpIncObj obj;
@@ -1322,7 +1322,7 @@ public class CFIntSecGrpIncTableObj
 	}
 
 	@Override
-	public void deepDisposeSecGrpIncByUIncludeIdx( long ClusterId,
+	public void deepDisposeSecGrpIncByUIncludeIdx( CFLibDbKeyHash256 ClusterId,
 		CFLibDbKeyHash256 SecGroupId,
 		CFLibDbKeyHash256 IncludeGroupId )
 	{
@@ -1344,7 +1344,7 @@ public class CFIntSecGrpIncTableObj
 	 *		as identified by the key attributes, which may be an empty set.
 	 */
 	@Override
-	public List<ICFSecSecGrpIncObj> pageSecGrpIncByClusterIdx( long ClusterId,
+	public List<ICFSecSecGrpIncObj> pageSecGrpIncByClusterIdx( CFLibDbKeyHash256 ClusterId,
 		CFLibDbKeyHash256 priorSecGrpIncId )
 	{
 		final String S_ProcName = "pageSecGrpIncByClusterIdx";
@@ -1482,7 +1482,7 @@ public class CFIntSecGrpIncTableObj
 	}
 
 	@Override
-	public void deleteSecGrpIncByClusterIdx( long ClusterId )
+	public void deleteSecGrpIncByClusterIdx( CFLibDbKeyHash256 ClusterId )
 	{
 		ICFSecSecGrpIncByClusterIdxKey key = schema.getCFSecBackingStore().getFactorySecGrpInc().newByClusterIdxKey();
 		key.setRequiredClusterId( ClusterId );
@@ -1584,7 +1584,7 @@ public class CFIntSecGrpIncTableObj
 	}
 
 	@Override
-	public void deleteSecGrpIncByUIncludeIdx( long ClusterId,
+	public void deleteSecGrpIncByUIncludeIdx( CFLibDbKeyHash256 ClusterId,
 		CFLibDbKeyHash256 SecGroupId,
 		CFLibDbKeyHash256 IncludeGroupId )
 	{

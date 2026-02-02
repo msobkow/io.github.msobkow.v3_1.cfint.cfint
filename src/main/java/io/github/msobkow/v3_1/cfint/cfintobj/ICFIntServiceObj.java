@@ -255,11 +255,11 @@ public interface ICFIntServiceObj
 	CFLibDbKeyHash256 getRequiredServiceId();
 
 	/**
-	 *	Get the required long attribute ClusterId.
+	 *	Get the required CFLibDbKeyHash256 attribute ClusterId.
 	 *
-	 *	@return	The required long attribute ClusterId.
+	 *	@return	The required CFLibDbKeyHash256 attribute ClusterId.
 	 */
-	long getRequiredClusterId();
+	CFLibDbKeyHash256 getRequiredClusterId();
 
 	/**
 	 *	Get the required CFLibDbKeyHash256 attribute HostNodeId.
