@@ -35,7 +35,10 @@
 package io.github.msobkow.v3_1.cfint.cfint;
 
 import java.io.Serializable;
+import java.nio.charset.StandardCharsets;
 import java.math.*;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.time.*;
 import java.util.*;
 import java.util.concurrent.atomic.*;
@@ -939,4 +942,6 @@ extends ICFSecSchema
 	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	//public static void setTablePerms( ICFSecTablePerms value );
+
+	public void bootstrapSchema();
 }
