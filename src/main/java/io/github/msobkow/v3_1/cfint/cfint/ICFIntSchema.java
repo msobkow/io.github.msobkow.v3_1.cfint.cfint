@@ -41,12 +41,15 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.time.*;
 import java.util.*;
-import java.util.concurrent.atomic.*;
 import io.github.msobkow.v3_1.cflib.*;
 import io.github.msobkow.v3_1.cflib.dbutil.*;
 import io.github.msobkow.v3_1.cflib.xml.CFLibXmlUtil;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
+import java.util.concurrent.atomic.*;
+import org.springframework.beans.BeansException;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 import io.github.msobkow.v3_1.cfsec.cfsec.*;
 
 public interface ICFIntSchema
@@ -54,6 +57,15 @@ extends ICFSecSchema
 {
 	public static final String SCHEMA_NAME = "CFInt";
 	public static final String DBSCHEMA_NAME = "CFInt31";
+	static final AtomicReference<ApplicationContext> arApplicationContext = new AtomicReference<>();
+
+	public default void setApplicationContext(final ApplicationContext applicationContext) throws BeansException {
+		arApplicationContext.compareAndSet(arApplicationContext.get(), applicationContext);
+	}
+
+	public static ApplicationContext getApplicationContext() {
+		return( arApplicationContext.get() );
+	}
 
 		final static ArrayList<ICFSecSchema.ClassMapEntry> entries = new ArrayList<>();
 		final static HashMap<Integer,ICFSecSchema.ClassMapEntry> mapBackingClassCodeToEntry = new HashMap<>();
