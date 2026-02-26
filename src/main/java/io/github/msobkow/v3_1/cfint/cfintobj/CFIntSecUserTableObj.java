@@ -424,8 +424,6 @@ public class CFIntSecUserTableObj
 
 					schema.getTSecGrpMembTableObj().deepDisposeTSecGrpMembByUserIdx( existing.getRequiredSecUserId() );
 					schema.getSecGrpMembTableObj().deepDisposeSecGrpMembByUserIdx( existing.getRequiredSecUserId() );
-					schema.getSecSessionTableObj().deepDisposeSecSessionBySecUserIdx( existing.getRequiredSecUserId() );
-					schema.getSecSessionTableObj().deepDisposeSecSessionBySecProxyIdx( existing.getRequiredSecUserId() );
 					schema.getSecDeviceTableObj().deepDisposeSecDeviceByUserIdx( existing.getRequiredSecUserId() );
 
 		if( indexByULoginIdx != null ) {

@@ -59,8 +59,6 @@ public class CFIntSecUserObj
 	protected ICFSecSecUser rec;
 	protected List<ICFSecSecDeviceObj> optionalComponentsSecDev;
 	protected ICFSecSecDeviceObj optionalLookupDefDev;
-	protected List<ICFSecSecSessionObj> optionalComponentsSecSess;
-	protected List<ICFSecSecSessionObj> optionalChildrenSecProxy;
 	protected List<ICFSecSecGrpMembObj> optionalChildrenSecGrpMemb;
 	protected List<ICFSecTSecGrpMembObj> optionalChildrenTSecGrpMemb;
 
@@ -412,38 +410,6 @@ public class CFIntSecUserObj
 			}
 		}
 		return( optionalLookupDefDev );
-	}
-
-	@Override
-	public List<ICFSecSecSessionObj> getOptionalComponentsSecSess() {
-		List<ICFSecSecSessionObj> retval;
-		retval = ((ICFIntSchemaObj)getSchema()).getSecSessionTableObj().readSecSessionBySecUserIdx( getPKey(),
-			false );
-		return( retval );
-	}
-
-	@Override
-	public List<ICFSecSecSessionObj> getOptionalComponentsSecSess( boolean forceRead ) {
-		List<ICFSecSecSessionObj> retval;
-		retval = ((ICFIntSchemaObj)getSchema()).getSecSessionTableObj().readSecSessionBySecUserIdx( getPKey(),
-			forceRead );
-		return( retval );
-	}
-
-	@Override
-	public List<ICFSecSecSessionObj> getOptionalChildrenSecProxy() {
-		List<ICFSecSecSessionObj> retval;
-		retval = ((ICFIntSchemaObj)getSchema()).getSecSessionTableObj().readSecSessionBySecProxyIdx( getPKey(),
-			false );
-		return( retval );
-	}
-
-	@Override
-	public List<ICFSecSecSessionObj> getOptionalChildrenSecProxy( boolean forceRead ) {
-		List<ICFSecSecSessionObj> retval;
-		retval = ((ICFIntSchemaObj)getSchema()).getSecSessionTableObj().readSecSessionBySecProxyIdx( getPKey(),
-			forceRead );
-		return( retval );
 	}
 
 	@Override
