@@ -52,7 +52,7 @@ public class CFIntSchemaObj
 	implements ICFIntSchemaObj
 {
 	public static String SCHEMA_NAME = "CFInt";
-	public static String SCHEMA_DBNAME = "cfint31";
+	public static String SCHEMA_DBNAME = "CFInt31";
 	protected ICFSecAuthorization authorization = null;
 	protected String secClusterName = "system";
 	protected String secTenantName = "system";
