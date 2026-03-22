@@ -211,18 +211,18 @@ public interface ICFIntTenantObj
 	ICFSecClusterObj getRequiredContainerCluster( boolean forceRead );
 
 	/**
-	 *	Get the array of optional ICFSecTSecGroupObj array of instances referenced by the TSecGroup key.
+	 *	Get the array of optional ICFSecSecTentGrpObj array of instances referenced by the SecGroup key.
 	 *
-	 *	@return	The optional ICFSecTSecGroupObj[] array of instances referenced by the TSecGroup key.
+	 *	@return	The optional ICFSecSecTentGrpObj[] array of instances referenced by the SecGroup key.
 	 */
-	List<ICFSecTSecGroupObj> getOptionalComponentsTSecGroup();
+	List<ICFSecSecTentGrpObj> getOptionalComponentsSecGroup();
 
 	/**
-	 *	Get the array of optional ICFSecTSecGroupObj array of instances referenced by the TSecGroup key.
+	 *	Get the array of optional ICFSecSecTentGrpObj array of instances referenced by the SecGroup key.
 	 *
-	 *	@return	The optional ICFSecTSecGroupObj[] array of instances referenced by the TSecGroup key.
+	 *	@return	The optional ICFSecSecTentGrpObj[] array of instances referenced by the SecGroup key.
 	 */
-	List<ICFSecTSecGroupObj> getOptionalComponentsTSecGroup( boolean forceRead );
+	List<ICFSecSecTentGrpObj> getOptionalComponentsSecGroup( boolean forceRead );
 
 	/**
 	 *	Get the array of optional ICFIntTldObj array of instances referenced by the Tld key.

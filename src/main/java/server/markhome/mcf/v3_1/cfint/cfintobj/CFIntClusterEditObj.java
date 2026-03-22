@@ -45,9 +45,8 @@ public class CFIntClusterEditObj
 	protected ICFSecCluster rec;
 	protected ICFSecSecUserObj createdBy = null;
 	protected ICFSecSecUserObj updatedBy = null;
-	protected List<ICFSecHostNodeObj> optionalComponentsHostNode;
 	protected List<ICFSecTenantObj> optionalComponentsTenant;
-	protected List<ICFSecSecGroupObj> optionalComponentsSecGroup;
+	protected List<ICFSecSecClusGrpObj> optionalComponentsSecGroup;
 	protected List<ICFSecSysClusterObj> optionalComponentsSysCluster;
 
 	public CFIntClusterEditObj( ICFSecClusterObj argOrig ) {
@@ -190,15 +189,11 @@ public class CFIntClusterEditObj
 			remainingName = null;
 		}
 		if( subObj == null ) {
-			subObj = ((ICFIntSchemaObj)getSchema()).getHostNodeTableObj().readHostNodeByHostNameIdx( getRequiredId(),
-				nextName, false );
-		}
-		if( subObj == null ) {
 			subObj = ((ICFIntSchemaObj)getSchema()).getTenantTableObj().readTenantByUNameIdx( getRequiredId(),
 				nextName, false );
 		}
 		if( subObj == null ) {
-			subObj = ((ICFIntSchemaObj)getSchema()).getSecGroupTableObj().readSecGroupByUNameIdx( getRequiredId(),
+			subObj = ((ICFIntSchemaObj)getSchema()).getSecClusGrpTableObj().readSecClusGrpByUNameIdx( getRequiredId(),
 				nextName, false );
 		}
 		if( remainingName == null ) {
@@ -408,7 +403,6 @@ public class CFIntClusterEditObj
 	public void setRequiredId(CFLibDbKeyHash256 id) {
 		if (getPKey() != id) {
 			setPKey(id);
-			optionalComponentsHostNode = null;
 			optionalComponentsTenant = null;
 			optionalComponentsSecGroup = null;
 			optionalComponentsSysCluster = null;
@@ -440,22 +434,6 @@ public class CFIntClusterEditObj
 	}
 
 	@Override
-	public List<ICFSecHostNodeObj> getOptionalComponentsHostNode() {
-		List<ICFSecHostNodeObj> retval;
-		retval = ((ICFIntSchemaObj)getSchema()).getHostNodeTableObj().readHostNodeByClusterIdx( getPKey(),
-			false );
-		return( retval );
-	}
-
-	@Override
-	public List<ICFSecHostNodeObj> getOptionalComponentsHostNode( boolean forceRead ) {
-		List<ICFSecHostNodeObj> retval;
-		retval = ((ICFIntSchemaObj)getSchema()).getHostNodeTableObj().readHostNodeByClusterIdx( getPKey(),
-			forceRead );
-		return( retval );
-	}
-
-	@Override
 	public List<ICFSecTenantObj> getOptionalComponentsTenant() {
 		List<ICFSecTenantObj> retval;
 		retval = ((ICFIntSchemaObj)getSchema()).getTenantTableObj().readTenantByClusterIdx( getPKey(),
@@ -472,17 +450,17 @@ public class CFIntClusterEditObj
 	}
 
 	@Override
-	public List<ICFSecSecGroupObj> getOptionalComponentsSecGroup() {
-		List<ICFSecSecGroupObj> retval;
-		retval = ((ICFIntSchemaObj)getSchema()).getSecGroupTableObj().readSecGroupByClusterIdx( getPKey(),
+	public List<ICFSecSecClusGrpObj> getOptionalComponentsSecGroup() {
+		List<ICFSecSecClusGrpObj> retval;
+		retval = ((ICFIntSchemaObj)getSchema()).getSecClusGrpTableObj().readSecClusGrpByClusterIdx( getPKey(),
 			false );
 		return( retval );
 	}
 
 	@Override
-	public List<ICFSecSecGroupObj> getOptionalComponentsSecGroup( boolean forceRead ) {
-		List<ICFSecSecGroupObj> retval;
-		retval = ((ICFIntSchemaObj)getSchema()).getSecGroupTableObj().readSecGroupByClusterIdx( getPKey(),
+	public List<ICFSecSecClusGrpObj> getOptionalComponentsSecGroup( boolean forceRead ) {
+		List<ICFSecSecClusGrpObj> retval;
+		retval = ((ICFIntSchemaObj)getSchema()).getSecClusGrpTableObj().readSecClusGrpByClusterIdx( getPKey(),
 			forceRead );
 		return( retval );
 	}

@@ -46,8 +46,6 @@ public class CFIntSecSessionTableObj
 	private Map<CFLibDbKeyHash256, ICFSecSecSessionObj> allSecSession;
 	private Map< ICFSecSecSessionBySecUserIdxKey,
 		Map<CFLibDbKeyHash256, ICFSecSecSessionObj > > indexBySecUserIdx;
-	private Map< ICFSecSecSessionBySecDevIdxKey,
-		Map<CFLibDbKeyHash256, ICFSecSecSessionObj > > indexBySecDevIdx;
 	private Map< ICFSecSecSessionByStartIdxKey,
 		ICFSecSecSessionObj > indexByStartIdx;
 	private Map< ICFSecSecSessionByFinishIdxKey,
@@ -62,7 +60,6 @@ public class CFIntSecSessionTableObj
 		members = new HashMap<CFLibDbKeyHash256, ICFSecSecSessionObj>();
 		allSecSession = null;
 		indexBySecUserIdx = null;
-		indexBySecDevIdx = null;
 		indexByStartIdx = null;
 		indexByFinishIdx = null;
 		indexBySecProxyIdx = null;
@@ -73,7 +70,6 @@ public class CFIntSecSessionTableObj
 		members = new HashMap<CFLibDbKeyHash256, ICFSecSecSessionObj>();
 		allSecSession = null;
 		indexBySecUserIdx = null;
-		indexBySecDevIdx = null;
 		indexByStartIdx = null;
 		indexByFinishIdx = null;
 		indexBySecProxyIdx = null;
@@ -137,7 +133,6 @@ public class CFIntSecSessionTableObj
 	public void minimizeMemory() {
 		allSecSession = null;
 		indexBySecUserIdx = null;
-		indexBySecDevIdx = null;
 		indexByStartIdx = null;
 		indexByFinishIdx = null;
 		indexBySecProxyIdx = null;
@@ -213,20 +208,6 @@ public class CFIntSecSessionTableObj
 				}
 			}
 
-			if( indexBySecDevIdx != null ) {
-				ICFSecSecSessionBySecDevIdxKey keySecDevIdx =
-					schema.getCFSecBackingStore().getFactorySecSession().newBySecDevIdxKey();
-				keySecDevIdx.setRequiredSecUserId( keepObj.getRequiredSecUserId() );
-				keySecDevIdx.setOptionalSecDevName( keepObj.getOptionalSecDevName() );
-				Map<CFLibDbKeyHash256, ICFSecSecSessionObj > mapSecDevIdx = indexBySecDevIdx.get( keySecDevIdx );
-				if( mapSecDevIdx != null ) {
-					mapSecDevIdx.remove( keepObj.getPKey() );
-					if( mapSecDevIdx.size() <= 0 ) {
-						indexBySecDevIdx.remove( keySecDevIdx );
-					}
-				}
-			}
-
 			if( indexByStartIdx != null ) {
 				ICFSecSecSessionByStartIdxKey keyStartIdx =
 					schema.getCFSecBackingStore().getFactorySecSession().newByStartIdxKey();
@@ -272,17 +253,6 @@ public class CFIntSecSessionTableObj
 				Map<CFLibDbKeyHash256, ICFSecSecSessionObj > mapSecUserIdx = indexBySecUserIdx.get( keySecUserIdx );
 				if( mapSecUserIdx != null ) {
 					mapSecUserIdx.put( keepObj.getPKey(), keepObj );
-				}
-			}
-
-			if( indexBySecDevIdx != null ) {
-				ICFSecSecSessionBySecDevIdxKey keySecDevIdx =
-					schema.getCFSecBackingStore().getFactorySecSession().newBySecDevIdxKey();
-				keySecDevIdx.setRequiredSecUserId( keepObj.getRequiredSecUserId() );
-				keySecDevIdx.setOptionalSecDevName( keepObj.getOptionalSecDevName() );
-				Map<CFLibDbKeyHash256, ICFSecSecSessionObj > mapSecDevIdx = indexBySecDevIdx.get( keySecDevIdx );
-				if( mapSecDevIdx != null ) {
-					mapSecDevIdx.put( keepObj.getPKey(), keepObj );
 				}
 			}
 
@@ -336,17 +306,6 @@ public class CFIntSecSessionTableObj
 				Map<CFLibDbKeyHash256, ICFSecSecSessionObj > mapSecUserIdx = indexBySecUserIdx.get( keySecUserIdx );
 				if( mapSecUserIdx != null ) {
 					mapSecUserIdx.put( keepObj.getPKey(), keepObj );
-				}
-			}
-
-			if( indexBySecDevIdx != null ) {
-				ICFSecSecSessionBySecDevIdxKey keySecDevIdx =
-					schema.getCFSecBackingStore().getFactorySecSession().newBySecDevIdxKey();
-				keySecDevIdx.setRequiredSecUserId( keepObj.getRequiredSecUserId() );
-				keySecDevIdx.setOptionalSecDevName( keepObj.getOptionalSecDevName() );
-				Map<CFLibDbKeyHash256, ICFSecSecSessionObj > mapSecDevIdx = indexBySecDevIdx.get( keySecDevIdx );
-				if( mapSecDevIdx != null ) {
-					mapSecDevIdx.put( keepObj.getPKey(), keepObj );
 				}
 			}
 
@@ -446,10 +405,6 @@ public class CFIntSecSessionTableObj
 		ICFSecSecSessionBySecUserIdxKey keySecUserIdx = schema.getCFSecBackingStore().getFactorySecSession().newBySecUserIdxKey();
 		keySecUserIdx.setRequiredSecUserId( existing.getRequiredSecUserId() );
 
-		ICFSecSecSessionBySecDevIdxKey keySecDevIdx = schema.getCFSecBackingStore().getFactorySecSession().newBySecDevIdxKey();
-		keySecDevIdx.setRequiredSecUserId( existing.getRequiredSecUserId() );
-		keySecDevIdx.setOptionalSecDevName( existing.getOptionalSecDevName() );
-
 		ICFSecSecSessionByStartIdxKey keyStartIdx = schema.getCFSecBackingStore().getFactorySecSession().newByStartIdxKey();
 		keyStartIdx.setRequiredSecUserId( existing.getRequiredSecUserId() );
 		keyStartIdx.setRequiredStart( existing.getRequiredStart() );
@@ -468,15 +423,6 @@ public class CFIntSecSessionTableObj
 				indexBySecUserIdx.get( keySecUserIdx ).remove( pkey );
 				if( indexBySecUserIdx.get( keySecUserIdx ).size() <= 0 ) {
 					indexBySecUserIdx.remove( keySecUserIdx );
-				}
-			}
-		}
-
-		if( indexBySecDevIdx != null ) {
-			if( indexBySecDevIdx.containsKey( keySecDevIdx ) ) {
-				indexBySecDevIdx.get( keySecDevIdx ).remove( pkey );
-				if( indexBySecDevIdx.get( keySecDevIdx ).size() <= 0 ) {
-					indexBySecDevIdx.remove( keySecDevIdx );
 				}
 			}
 		}
@@ -742,104 +688,6 @@ public class CFIntSecSessionTableObj
 				dict.put( realised.getPKey(), realised );
 			}
 			indexBySecUserIdx.put( key, dict );
-		}
-		int len = dict.size();
-		ICFSecSecSessionObj arr[] = new ICFSecSecSessionObj[len];
-		Iterator<ICFSecSecSessionObj> valIter = dict.values().iterator();
-		int idx = 0;
-		while( ( idx < len ) && valIter.hasNext() ) {
-			arr[idx++] = valIter.next();
-		}
-		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
-				S_ProcName,
-				0,
-				"idx",
-				idx,
-				len );
-		}
-		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
-					S_ProcName,
-					0,
-					"idx",
-					idx,
-					len );
-		}
-		ArrayList<ICFSecSecSessionObj> arrayList = new ArrayList<ICFSecSecSessionObj>(len);
-		for( idx = 0; idx < len; idx ++ ) {
-			arrayList.add( arr[idx] );
-		}
-
-		Comparator<ICFSecSecSessionObj> cmp = new Comparator<ICFSecSecSessionObj>() {
-			@Override
-			public int compare( ICFSecSecSessionObj lhs, ICFSecSecSessionObj rhs ) {
-				if( lhs == null ) {
-					if( rhs == null ) {
-						return( 0 );
-					}
-					else {
-						return( -1 );
-					}
-				}
-				else if( rhs == null ) {
-					return( 1 );
-				}
-				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
-					int ret = lhsPKey.compareTo( rhsPKey );
-					return( ret );
-				}
-			}
-		};
-		Collections.sort( arrayList, cmp );
-		List<ICFSecSecSessionObj> sortedList = arrayList;
-		return( sortedList );
-	}
-
-	@Override
-	public List<ICFSecSecSessionObj> readSecSessionBySecDevIdx( CFLibDbKeyHash256 SecUserId,
-		String SecDevName )
-	{
-		return( readSecSessionBySecDevIdx( SecUserId,
-			SecDevName,
-			false ) );
-	}
-
-	@Override
-	public List<ICFSecSecSessionObj> readSecSessionBySecDevIdx( CFLibDbKeyHash256 SecUserId,
-		String SecDevName,
-		boolean forceRead )
-	{
-		final String S_ProcName = "readSecSessionBySecDevIdx";
-		ICFSecSecSessionBySecDevIdxKey key = schema.getCFSecBackingStore().getFactorySecSession().newBySecDevIdxKey();
-		key.setRequiredSecUserId( SecUserId );
-		key.setOptionalSecDevName( SecDevName );
-		Map<CFLibDbKeyHash256, ICFSecSecSessionObj> dict;
-		if( indexBySecDevIdx == null ) {
-			indexBySecDevIdx = new HashMap< ICFSecSecSessionBySecDevIdxKey,
-				Map< CFLibDbKeyHash256, ICFSecSecSessionObj > >();
-		}
-		if( ( ! forceRead ) && indexBySecDevIdx.containsKey( key ) ) {
-			dict = indexBySecDevIdx.get( key );
-		}
-		else {
-			dict = new HashMap<CFLibDbKeyHash256, ICFSecSecSessionObj>();
-			ICFSecSecSessionObj obj;
-			ICFSecSecSession[] recList = schema.getCFSecBackingStore().getTableSecSession().readDerivedBySecDevIdx( null,
-				SecUserId,
-				SecDevName );
-			ICFSecSecSession rec;
-			for( int idx = 0; idx < recList.length; idx ++ ) {
-				rec = recList[ idx ];
-				obj = schema.getSecSessionTableObj().newInstance();
-				obj.setPKey( rec.getPKey() );
-				obj.setRec( rec );
-				ICFSecSecSessionObj realised = (ICFSecSecSessionObj)obj.realise();
-				dict.put( realised.getPKey(), realised );
-			}
-			indexBySecDevIdx.put( key, dict );
 		}
 		int len = dict.size();
 		ICFSecSecSessionObj arr[] = new ICFSecSecSessionObj[len];
@@ -1211,85 +1059,6 @@ public class CFIntSecSessionTableObj
 	}
 
 	@Override
-	public List<ICFSecSecSessionObj> readCachedSecSessionBySecDevIdx( CFLibDbKeyHash256 SecUserId,
-		String SecDevName )
-	{
-		final String S_ProcName = "readCachedSecSessionBySecDevIdx";
-		ICFSecSecSessionBySecDevIdxKey key = schema.getCFSecBackingStore().getFactorySecSession().newBySecDevIdxKey();
-		key.setRequiredSecUserId( SecUserId );
-		key.setOptionalSecDevName( SecDevName );
-		ArrayList<ICFSecSecSessionObj> arrayList = new ArrayList<ICFSecSecSessionObj>();
-		if( indexBySecDevIdx != null ) {
-			Map<CFLibDbKeyHash256, ICFSecSecSessionObj> dict;
-			if( indexBySecDevIdx.containsKey( key ) ) {
-				dict = indexBySecDevIdx.get( key );
-				int len = dict.size();
-				ICFSecSecSessionObj arr[] = new ICFSecSecSessionObj[len];
-				Iterator<ICFSecSecSessionObj> valIter = dict.values().iterator();
-				int idx = 0;
-				while( ( idx < len ) && valIter.hasNext() ) {
-					arr[idx++] = valIter.next();
-				}
-				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
-						S_ProcName,
-						0,
-						"idx",
-						idx,
-						len );
-				}
-				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
-							S_ProcName,
-							0,
-							"idx",
-							idx,
-							len );
-				}
-				for( idx = 0; idx < len; idx ++ ) {
-					arrayList.add( arr[idx] );
-				}
-			}
-		}
-		else {
-			ICFSecSecSessionObj obj;
-			Iterator<ICFSecSecSessionObj> valIter = members.values().iterator();
-			while( valIter.hasNext() ) {
-				obj = valIter.next();
-				if( obj != null ) {
-					if( obj.getRec().compareTo( key ) == 0 ) {
-						arrayList.add( obj );
-					}
-				}
-			}
-		}
-		Comparator<ICFSecSecSessionObj> cmp = new Comparator<ICFSecSecSessionObj>() {
-			@Override
-			public int compare( ICFSecSecSessionObj lhs, ICFSecSecSessionObj rhs ) {
-				if( lhs == null ) {
-					if( rhs == null ) {
-						return( 0 );
-					}
-					else {
-						return( -1 );
-					}
-				}
-				else if( rhs == null ) {
-					return( 1 );
-				}
-				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
-					int ret = lhsPKey.compareTo( rhsPKey );
-					return( ret );
-				}
-			}
-		};
-		Collections.sort( arrayList, cmp );
-		return( arrayList );
-	}
-
-	@Override
 	public ICFSecSecSessionObj readCachedSecSessionByStartIdx( CFLibDbKeyHash256 SecUserId,
 		LocalDateTime Start )
 	{
@@ -1510,25 +1279,6 @@ public class CFIntSecSessionTableObj
 	}
 
 	@Override
-	public void deepDisposeSecSessionBySecDevIdx( CFLibDbKeyHash256 SecUserId,
-		String SecDevName )
-	{
-		final String S_ProcName = "deepDisposeSecSessionBySecDevIdx";
-		ICFSecSecSessionObj obj;
-		List<ICFSecSecSessionObj> arrayList = readCachedSecSessionBySecDevIdx( SecUserId,
-				SecDevName );
-		if( arrayList != null )  {
-			Iterator<ICFSecSecSessionObj> arrayIter = arrayList.iterator();
-			while( arrayIter.hasNext() ) {
-				obj = arrayIter.next();
-				if( obj != null ) {
-					obj.forget();
-				}
-			}
-		}
-	}
-
-	@Override
 	public void deepDisposeSecSessionByStartIdx( CFLibDbKeyHash256 SecUserId,
 		LocalDateTime Start )
 	{
@@ -1595,44 +1345,6 @@ public class CFIntSecSessionTableObj
 		ICFSecSecSessionObj obj;
 		ICFSecSecSession[] recList = schema.getCFSecBackingStore().getTableSecSession().pageRecBySecUserIdx( null,
 				SecUserId,
-			priorSecSessionId );
-		ICFSecSecSession rec;
-		for( int idx = 0; idx < recList.length; idx ++ ) {
-			rec = recList[ idx ];
-				obj = schema.getSecSessionTableObj().newInstance();
-			obj.setPKey( rec.getPKey() );
-			obj.setRec( rec );
-			ICFSecSecSessionObj realised = (ICFSecSecSessionObj)obj.realise();
-			retList.add( realised );
-		}
-		return( retList );
-	}
-
-	/**
-	 *	Read a page of data as a List of SecSession-derived instances sorted by their primary keys,
-	 *	as identified by the duplicate SecDevIdx key attributes.
-	 *
-	 *	@param	SecUserId	The SecSession key attribute of the instance generating the id.
-	 *
-	 *	@param	SecDevName	The SecSession key attribute of the instance generating the id.
-	 *
-	 *	@return	A List of SecSession-derived instances sorted by their primary keys,
-	 *		as identified by the key attributes, which may be an empty set.
-	 */
-	@Override
-	public List<ICFSecSecSessionObj> pageSecSessionBySecDevIdx( CFLibDbKeyHash256 SecUserId,
-		String SecDevName,
-		CFLibDbKeyHash256 priorSecSessionId )
-	{
-		final String S_ProcName = "pageSecSessionBySecDevIdx";
-		ICFSecSecSessionBySecDevIdxKey key = schema.getCFSecBackingStore().getFactorySecSession().newBySecDevIdxKey();
-		key.setRequiredSecUserId( SecUserId );
-		key.setOptionalSecDevName( SecDevName );
-		List<ICFSecSecSessionObj> retList = new LinkedList<ICFSecSecSessionObj>();
-		ICFSecSecSessionObj obj;
-		ICFSecSecSession[] recList = schema.getCFSecBackingStore().getTableSecSession().pageRecBySecDevIdx( null,
-				SecUserId,
-				SecDevName,
 			priorSecSessionId );
 		ICFSecSecSession rec;
 		for( int idx = 0; idx < recList.length; idx ++ ) {
@@ -1800,45 +1512,6 @@ public class CFIntSecSessionTableObj
 	}
 
 	@Override
-	public void deleteSecSessionBySecDevIdx( CFLibDbKeyHash256 SecUserId,
-		String SecDevName )
-	{
-		ICFSecSecSessionBySecDevIdxKey key = schema.getCFSecBackingStore().getFactorySecSession().newBySecDevIdxKey();
-		key.setRequiredSecUserId( SecUserId );
-		key.setOptionalSecDevName( SecDevName );
-		if( indexBySecDevIdx == null ) {
-			indexBySecDevIdx = new HashMap< ICFSecSecSessionBySecDevIdxKey,
-				Map< CFLibDbKeyHash256, ICFSecSecSessionObj > >();
-		}
-		if( indexBySecDevIdx.containsKey( key ) ) {
-			Map<CFLibDbKeyHash256, ICFSecSecSessionObj> dict = indexBySecDevIdx.get( key );
-			schema.getCFSecBackingStore().getTableSecSession().deleteSecSessionBySecDevIdx( null,
-				SecUserId,
-				SecDevName );
-			Iterator<ICFSecSecSessionObj> iter = dict.values().iterator();
-			ICFSecSecSessionObj obj;
-			List<ICFSecSecSessionObj> toForget = new LinkedList<ICFSecSecSessionObj>();
-			while( iter.hasNext() ) {
-				obj = iter.next();
-				toForget.add( obj );
-			}
-			iter = toForget.iterator();
-			while( iter.hasNext() ) {
-				obj = iter.next();
-				obj.forget();
-			}
-			indexBySecDevIdx.remove( key );
-		}
-		else {
-			schema.getCFSecBackingStore().getTableSecSession().deleteSecSessionBySecDevIdx( null,
-				SecUserId,
-				SecDevName );
-		}
-		deepDisposeSecSessionBySecDevIdx( SecUserId,
-				SecDevName );
-	}
-
-	@Override
 	public void deleteSecSessionByStartIdx( CFLibDbKeyHash256 SecUserId,
 		LocalDateTime Start )
 	{
@@ -1937,23 +1610,5 @@ public class CFIntSecSessionTableObj
 				SecProxyId );
 		}
 		deepDisposeSecSessionBySecProxyIdx( SecProxyId );
-	}
-
-	public ICFSecSecSessionObj getSystemSession() {
-		ICFSecSecUserObj userObj;
-		ICFSecSecSessionObj sessionObj;
-		userObj = schema.getSecUserTableObj().getSystemUser();
-		sessionObj = readSecSessionByStartIdx( userObj.getRequiredSecUserId(),
-			LocalDateTime.now() );
-		if( sessionObj == null ) {
-			sessionObj = newInstance();
-			ICFSecSecSessionEditObj sessionEdit = sessionObj.beginEdit();
-			sessionEdit.setRequiredSecUserId( userObj.getPKey() );
-			sessionEdit.setRequiredStart( LocalDateTime.now() );
-			sessionEdit.setOptionalFinish( null );
-			sessionObj = sessionEdit.create();
-			sessionEdit = null;
-		}
-		return( sessionObj );
 	}
 }
