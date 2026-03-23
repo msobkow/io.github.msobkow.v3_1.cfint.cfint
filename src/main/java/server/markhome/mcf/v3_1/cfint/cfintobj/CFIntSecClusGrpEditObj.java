@@ -34,6 +34,7 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
@@ -394,9 +395,9 @@ public class CFIntSecClusGrpEditObj
 	}
 
 	@Override
-	public void setRequiredSecClusGrpId(CFLibDbKeyHash256 secClusGrpId) {
-		if (getPKey() != secClusGrpId) {
-			setPKey(secClusGrpId);
+	public void setRequiredSecClusGrpId(CFLibDbKeyHash256 value) {
+		if (getPKey() != value) {
+			setPKey(value);
 			requiredOwnerCluster = null;
 			optionalChildrenIncByGrp = null;
 			optionalChildrenMembByGrp = null;
