@@ -201,7 +201,7 @@ public class CFIntSecClusGrpIncTableObj
 			if( indexByNameIdx != null ) {
 				ICFSecSecClusGrpIncByNameIdxKey keyNameIdx =
 					schema.getCFSecBackingStore().getFactorySecClusGrpInc().newByNameIdxKey();
-				keyNameIdx.setRequiredIncName( keepObj.getRequiredIncName() );
+				keyNameIdx.setRequiredInclName( keepObj.getRequiredInclName() );
 				Map<ICFSecSecClusGrpIncPKey, ICFSecSecClusGrpIncObj > mapNameIdx = indexByNameIdx.get( keyNameIdx );
 				if( mapNameIdx != null ) {
 					mapNameIdx.remove( keepObj.getPKey() );
@@ -227,7 +227,7 @@ public class CFIntSecClusGrpIncTableObj
 			if( indexByNameIdx != null ) {
 				ICFSecSecClusGrpIncByNameIdxKey keyNameIdx =
 					schema.getCFSecBackingStore().getFactorySecClusGrpInc().newByNameIdxKey();
-				keyNameIdx.setRequiredIncName( keepObj.getRequiredIncName() );
+				keyNameIdx.setRequiredInclName( keepObj.getRequiredInclName() );
 				Map<ICFSecSecClusGrpIncPKey, ICFSecSecClusGrpIncObj > mapNameIdx = indexByNameIdx.get( keyNameIdx );
 				if( mapNameIdx != null ) {
 					mapNameIdx.put( keepObj.getPKey(), keepObj );
@@ -261,7 +261,7 @@ public class CFIntSecClusGrpIncTableObj
 			if( indexByNameIdx != null ) {
 				ICFSecSecClusGrpIncByNameIdxKey keyNameIdx =
 					schema.getCFSecBackingStore().getFactorySecClusGrpInc().newByNameIdxKey();
-				keyNameIdx.setRequiredIncName( keepObj.getRequiredIncName() );
+				keyNameIdx.setRequiredInclName( keepObj.getRequiredInclName() );
 				Map<ICFSecSecClusGrpIncPKey, ICFSecSecClusGrpIncObj > mapNameIdx = indexByNameIdx.get( keyNameIdx );
 				if( mapNameIdx != null ) {
 					mapNameIdx.put( keepObj.getPKey(), keepObj );
@@ -299,7 +299,7 @@ public class CFIntSecClusGrpIncTableObj
 		else {
 			ICFSecSecClusGrpInc readRec = schema.getCFSecBackingStore().getTableSecClusGrpInc().readDerivedByIdIdx( null,
 						pkey.getRequiredSecClusGrpId(),
-						pkey.getRequiredIncName() );
+						pkey.getRequiredInclName() );
 			if( readRec != null ) {
 				obj = schema.getSecClusGrpIncTableObj().newInstance();
 				obj.setPKey( readRec.getPKey() );
@@ -312,18 +312,18 @@ public class CFIntSecClusGrpIncTableObj
 
 	@Override
 	public ICFSecSecClusGrpIncObj readSecClusGrpInc( CFLibDbKeyHash256 SecClusGrpId,
-		String IncName ) {
+		String InclName ) {
 		return( readSecClusGrpInc( SecClusGrpId,
-			IncName, false ) );
+			InclName, false ) );
 	}
 
 	@Override
 	public ICFSecSecClusGrpIncObj readSecClusGrpInc( CFLibDbKeyHash256 SecClusGrpId,
-		String IncName, boolean forceRead ) {
+		String InclName, boolean forceRead ) {
 		ICFSecSecClusGrpIncObj obj = null;
 		ICFSecSecClusGrpInc readRec = schema.getCFSecBackingStore().getTableSecClusGrpInc().readDerivedByIdIdx( null,
 			SecClusGrpId,
-			IncName );
+			InclName );
 		if( readRec != null ) {
 				obj = schema.getSecClusGrpIncTableObj().newInstance();
 			obj.setPKey( readRec.getPKey() );
@@ -360,7 +360,7 @@ public class CFIntSecClusGrpIncTableObj
 		keyClusGrpIdx.setRequiredSecClusGrpId( existing.getRequiredSecClusGrpId() );
 
 		ICFSecSecClusGrpIncByNameIdxKey keyNameIdx = schema.getCFSecBackingStore().getFactorySecClusGrpInc().newByNameIdxKey();
-		keyNameIdx.setRequiredIncName( existing.getRequiredIncName() );
+		keyNameIdx.setRequiredInclName( existing.getRequiredInclName() );
 
 
 
@@ -550,13 +550,13 @@ public class CFIntSecClusGrpIncTableObj
 	 */
 	@Override
 	public List<ICFSecSecClusGrpIncObj> pageAllSecClusGrpInc(CFLibDbKeyHash256 priorSecClusGrpId,
-		String priorIncName )
+		String priorInclName )
 	{
 		final String S_ProcName = "pageAllSecClusGrpInc";
 		Map<ICFSecSecClusGrpIncPKey, ICFSecSecClusGrpIncObj> map = new HashMap<ICFSecSecClusGrpIncPKey,ICFSecSecClusGrpIncObj>();
 		ICFSecSecClusGrpInc[] recList = schema.getCFSecBackingStore().getTableSecClusGrpInc().pageAllRec( null,
 			priorSecClusGrpId,
-			priorIncName );
+			priorInclName );
 		ICFSecSecClusGrpInc rec;
 		ICFSecSecClusGrpIncObj obj;
 		ICFSecSecClusGrpIncObj realised;
@@ -574,20 +574,20 @@ public class CFIntSecClusGrpIncTableObj
 
 	@Override
 	public ICFSecSecClusGrpIncObj readSecClusGrpIncByIdIdx( CFLibDbKeyHash256 SecClusGrpId,
-		String IncName )
+		String InclName )
 	{
 		return( readSecClusGrpIncByIdIdx( SecClusGrpId,
-			IncName,
+			InclName,
 			false ) );
 	}
 
 	@Override
 	public ICFSecSecClusGrpIncObj readSecClusGrpIncByIdIdx( CFLibDbKeyHash256 SecClusGrpId,
-		String IncName, boolean forceRead )
+		String InclName, boolean forceRead )
 	{
 		ICFSecSecClusGrpIncPKey pkey = schema.getCFSecBackingStore().getFactorySecClusGrpInc().newPKey();
 		pkey.setRequiredSecClusGrpId( SecClusGrpId );
-		pkey.setRequiredIncName( IncName );
+		pkey.setRequiredInclName( InclName );
 		ICFSecSecClusGrpIncObj obj = readSecClusGrpInc( pkey, forceRead );
 		return( obj );
 	}
@@ -686,19 +686,19 @@ public class CFIntSecClusGrpIncTableObj
 	}
 
 	@Override
-	public List<ICFSecSecClusGrpIncObj> readSecClusGrpIncByNameIdx( String IncName )
+	public List<ICFSecSecClusGrpIncObj> readSecClusGrpIncByNameIdx( String InclName )
 	{
-		return( readSecClusGrpIncByNameIdx( IncName,
+		return( readSecClusGrpIncByNameIdx( InclName,
 			false ) );
 	}
 
 	@Override
-	public List<ICFSecSecClusGrpIncObj> readSecClusGrpIncByNameIdx( String IncName,
+	public List<ICFSecSecClusGrpIncObj> readSecClusGrpIncByNameIdx( String InclName,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readSecClusGrpIncByNameIdx";
 		ICFSecSecClusGrpIncByNameIdxKey key = schema.getCFSecBackingStore().getFactorySecClusGrpInc().newByNameIdxKey();
-		key.setRequiredIncName( IncName );
+		key.setRequiredInclName( InclName );
 		Map<ICFSecSecClusGrpIncPKey, ICFSecSecClusGrpIncObj> dict;
 		if( indexByNameIdx == null ) {
 			indexByNameIdx = new HashMap< ICFSecSecClusGrpIncByNameIdxKey,
@@ -711,7 +711,7 @@ public class CFIntSecClusGrpIncTableObj
 			dict = new HashMap<ICFSecSecClusGrpIncPKey, ICFSecSecClusGrpIncObj>();
 			ICFSecSecClusGrpIncObj obj;
 			ICFSecSecClusGrpInc[] recList = schema.getCFSecBackingStore().getTableSecClusGrpInc().readDerivedByNameIdx( null,
-				IncName );
+				InclName );
 			ICFSecSecClusGrpInc rec;
 			for( int idx = 0; idx < recList.length; idx ++ ) {
 				rec = recList[ idx ];
@@ -780,14 +780,14 @@ public class CFIntSecClusGrpIncTableObj
 
 	@Override
 	public ICFSecSecClusGrpIncObj readCachedSecClusGrpIncByIdIdx( CFLibDbKeyHash256 SecClusGrpId,
-		String IncName )
+		String InclName )
 	{
 		ICFSecSecClusGrpIncObj obj = null;
 		ICFSecSecClusGrpIncPKey pkey = schema.getCFSecBackingStore().getFactorySecClusGrpInc().newPKey();
 		pkey.setRequiredSecClusGrpId( SecClusGrpId );
-		pkey.setRequiredIncName( IncName );
+		pkey.setRequiredInclName( InclName );
 		pkey.setRequiredSecClusGrpId( SecClusGrpId );
-		pkey.setRequiredIncName( IncName );
+		pkey.setRequiredInclName( InclName );
 		obj = readCachedSecClusGrpInc( pkey );
 		return( obj );
 	}
@@ -870,11 +870,11 @@ public class CFIntSecClusGrpIncTableObj
 	}
 
 	@Override
-	public List<ICFSecSecClusGrpIncObj> readCachedSecClusGrpIncByNameIdx( String IncName )
+	public List<ICFSecSecClusGrpIncObj> readCachedSecClusGrpIncByNameIdx( String InclName )
 	{
 		final String S_ProcName = "readCachedSecClusGrpIncByNameIdx";
 		ICFSecSecClusGrpIncByNameIdxKey key = schema.getCFSecBackingStore().getFactorySecClusGrpInc().newByNameIdxKey();
-		key.setRequiredIncName( IncName );
+		key.setRequiredInclName( InclName );
 		ArrayList<ICFSecSecClusGrpIncObj> arrayList = new ArrayList<ICFSecSecClusGrpIncObj>();
 		if( indexByNameIdx != null ) {
 			Map<ICFSecSecClusGrpIncPKey, ICFSecSecClusGrpIncObj> dict;
@@ -948,10 +948,10 @@ public class CFIntSecClusGrpIncTableObj
 
 	@Override
 	public void deepDisposeSecClusGrpIncByIdIdx( CFLibDbKeyHash256 SecClusGrpId,
-		String IncName )
+		String InclName )
 	{
 		ICFSecSecClusGrpIncObj obj = readCachedSecClusGrpIncByIdIdx( SecClusGrpId,
-				IncName );
+				InclName );
 		if( obj != null ) {
 			obj.forget();
 		}
@@ -975,11 +975,11 @@ public class CFIntSecClusGrpIncTableObj
 	}
 
 	@Override
-	public void deepDisposeSecClusGrpIncByNameIdx( String IncName )
+	public void deepDisposeSecClusGrpIncByNameIdx( String InclName )
 	{
 		final String S_ProcName = "deepDisposeSecClusGrpIncByNameIdx";
 		ICFSecSecClusGrpIncObj obj;
-		List<ICFSecSecClusGrpIncObj> arrayList = readCachedSecClusGrpIncByNameIdx( IncName );
+		List<ICFSecSecClusGrpIncObj> arrayList = readCachedSecClusGrpIncByNameIdx( InclName );
 		if( arrayList != null )  {
 			Iterator<ICFSecSecClusGrpIncObj> arrayIter = arrayList.iterator();
 			while( arrayIter.hasNext() ) {
@@ -1003,7 +1003,7 @@ public class CFIntSecClusGrpIncTableObj
 	@Override
 	public List<ICFSecSecClusGrpIncObj> pageSecClusGrpIncByClusGrpIdx( CFLibDbKeyHash256 SecClusGrpId,
 		CFLibDbKeyHash256 priorSecClusGrpId,
-		String priorIncName )
+		String priorInclName )
 	{
 		final String S_ProcName = "pageSecClusGrpIncByClusGrpIdx";
 		ICFSecSecClusGrpIncByClusGrpIdxKey key = schema.getCFSecBackingStore().getFactorySecClusGrpInc().newByClusGrpIdxKey();
@@ -1013,7 +1013,7 @@ public class CFIntSecClusGrpIncTableObj
 		ICFSecSecClusGrpInc[] recList = schema.getCFSecBackingStore().getTableSecClusGrpInc().pageRecByClusGrpIdx( null,
 				SecClusGrpId,
 			priorSecClusGrpId,
-			priorIncName );
+			priorInclName );
 		ICFSecSecClusGrpInc rec;
 		for( int idx = 0; idx < recList.length; idx ++ ) {
 			rec = recList[ idx ];
@@ -1030,25 +1030,25 @@ public class CFIntSecClusGrpIncTableObj
 	 *	Read a page of data as a List of SecClusGrpInc-derived instances sorted by their primary keys,
 	 *	as identified by the duplicate NameIdx key attributes.
 	 *
-	 *	@param	IncName	The SecClusGrpInc key attribute of the instance generating the id.
+	 *	@param	InclName	The SecClusGrpInc key attribute of the instance generating the id.
 	 *
 	 *	@return	A List of SecClusGrpInc-derived instances sorted by their primary keys,
 	 *		as identified by the key attributes, which may be an empty set.
 	 */
 	@Override
-	public List<ICFSecSecClusGrpIncObj> pageSecClusGrpIncByNameIdx( String IncName,
+	public List<ICFSecSecClusGrpIncObj> pageSecClusGrpIncByNameIdx( String InclName,
 		CFLibDbKeyHash256 priorSecClusGrpId,
-		String priorIncName )
+		String priorInclName )
 	{
 		final String S_ProcName = "pageSecClusGrpIncByNameIdx";
 		ICFSecSecClusGrpIncByNameIdxKey key = schema.getCFSecBackingStore().getFactorySecClusGrpInc().newByNameIdxKey();
-		key.setRequiredIncName( IncName );
+		key.setRequiredInclName( InclName );
 		List<ICFSecSecClusGrpIncObj> retList = new LinkedList<ICFSecSecClusGrpIncObj>();
 		ICFSecSecClusGrpIncObj obj;
 		ICFSecSecClusGrpInc[] recList = schema.getCFSecBackingStore().getTableSecClusGrpInc().pageRecByNameIdx( null,
-				IncName,
+				InclName,
 			priorSecClusGrpId,
-			priorIncName );
+			priorInclName );
 		ICFSecSecClusGrpInc rec;
 		for( int idx = 0; idx < recList.length; idx ++ ) {
 			rec = recList[ idx ];
@@ -1081,10 +1081,10 @@ public class CFIntSecClusGrpIncTableObj
 
 	@Override
 	public void deleteSecClusGrpIncByIdIdx( CFLibDbKeyHash256 SecClusGrpId,
-		String IncName )
+		String InclName )
 	{
 		ICFSecSecClusGrpIncObj obj = readSecClusGrpInc(SecClusGrpId,
-				IncName);
+				InclName);
 		if( obj != null ) {
 			ICFSecSecClusGrpIncEditObj editObj = (ICFSecSecClusGrpIncEditObj)obj.getEdit();
 			boolean editStarted;
@@ -1109,7 +1109,7 @@ public class CFIntSecClusGrpIncTableObj
 			obj.forget();
 		}
 		deepDisposeSecClusGrpIncByIdIdx( SecClusGrpId,
-				IncName );
+				InclName );
 	}
 
 	@Override
@@ -1147,10 +1147,10 @@ public class CFIntSecClusGrpIncTableObj
 	}
 
 	@Override
-	public void deleteSecClusGrpIncByNameIdx( String IncName )
+	public void deleteSecClusGrpIncByNameIdx( String InclName )
 	{
 		ICFSecSecClusGrpIncByNameIdxKey key = schema.getCFSecBackingStore().getFactorySecClusGrpInc().newByNameIdxKey();
-		key.setRequiredIncName( IncName );
+		key.setRequiredInclName( InclName );
 		if( indexByNameIdx == null ) {
 			indexByNameIdx = new HashMap< ICFSecSecClusGrpIncByNameIdxKey,
 				Map< ICFSecSecClusGrpIncPKey, ICFSecSecClusGrpIncObj > >();
@@ -1158,7 +1158,7 @@ public class CFIntSecClusGrpIncTableObj
 		if( indexByNameIdx.containsKey( key ) ) {
 			Map<ICFSecSecClusGrpIncPKey, ICFSecSecClusGrpIncObj> dict = indexByNameIdx.get( key );
 			schema.getCFSecBackingStore().getTableSecClusGrpInc().deleteSecClusGrpIncByNameIdx( null,
-				IncName );
+				InclName );
 			Iterator<ICFSecSecClusGrpIncObj> iter = dict.values().iterator();
 			ICFSecSecClusGrpIncObj obj;
 			List<ICFSecSecClusGrpIncObj> toForget = new LinkedList<ICFSecSecClusGrpIncObj>();
@@ -1175,8 +1175,8 @@ public class CFIntSecClusGrpIncTableObj
 		}
 		else {
 			schema.getCFSecBackingStore().getTableSecClusGrpInc().deleteSecClusGrpIncByNameIdx( null,
-				IncName );
+				InclName );
 		}
-		deepDisposeSecClusGrpIncByNameIdx( IncName );
+		deepDisposeSecClusGrpIncByNameIdx( InclName );
 	}
 }

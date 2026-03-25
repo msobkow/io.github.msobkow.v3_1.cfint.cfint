@@ -232,11 +232,11 @@ public interface ICFIntSecSysGrpIncObj
 	CFLibDbKeyHash256 getRequiredSecSysGrpId();
 
 	/**
-	 *	Get the required String attribute IncName.
+	 *	Get the required String attribute InclName.
 	 *
-	 *	@return	The required String attribute IncName.
+	 *	@return	The required String attribute InclName.
 	 */
-	String getRequiredIncName();
+	String getRequiredInclName();
 
 	/**
 	 *	Internal use only.

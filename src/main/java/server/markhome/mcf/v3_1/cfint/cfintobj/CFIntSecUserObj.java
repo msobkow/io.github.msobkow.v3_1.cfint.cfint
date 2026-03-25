@@ -358,7 +358,7 @@ public class CFIntSecUserObj
 	@Override
 	public List<ICFSecSecSysGrpMembObj> getOptionalChildrenSysSecGrpMemb() {
 		List<ICFSecSecSysGrpMembObj> retval;
-		retval = ((ICFIntSchemaObj)getSchema()).getSecSysGrpMembTableObj().readSecSysGrpMembByUserIdx( getPKey(),
+		retval = ((ICFIntSchemaObj)getSchema()).getSecSysGrpMembTableObj().readSecSysGrpMembByLoginIdx( getSecUserRec().getRequiredLoginId(),
 			false );
 		return( retval );
 	}
@@ -366,7 +366,7 @@ public class CFIntSecUserObj
 	@Override
 	public List<ICFSecSecSysGrpMembObj> getOptionalChildrenSysSecGrpMemb( boolean forceRead ) {
 		List<ICFSecSecSysGrpMembObj> retval;
-		retval = ((ICFIntSchemaObj)getSchema()).getSecSysGrpMembTableObj().readSecSysGrpMembByUserIdx( getPKey(),
+		retval = ((ICFIntSchemaObj)getSchema()).getSecSysGrpMembTableObj().readSecSysGrpMembByLoginIdx( getSecUserRec().getRequiredLoginId(),
 			forceRead );
 		return( retval );
 	}

@@ -78,13 +78,7 @@ public class CFIntSecClusGrpMembObj
 	@Override
 	public String getObjName() {
 		String objName;
-		CFLibDbKeyHash256 val = rec.getRequiredSecUserId();
-		if (val != null) {
-			objName = val.toString();
-		}
-		else {
-			objName = "";
-		}
+		objName = getRequiredLoginId();
 		return( objName );
 	}
 
@@ -213,14 +207,14 @@ public class CFIntSecClusGrpMembObj
 	@Override
 	public ICFSecSecClusGrpMembObj read() {
 		ICFSecSecClusGrpMembObj retobj = ((ICFIntSchemaObj)getSchema()).getSecClusGrpMembTableObj().readSecClusGrpMembByIdIdx( getPKey().getRequiredSecClusGrpId(),
-			getPKey().getRequiredSecUserId(), false );
+			getPKey().getRequiredLoginId(), false );
 		return( (ICFSecSecClusGrpMembObj)retobj );
 	}
 
 	@Override
 	public ICFSecSecClusGrpMembObj read( boolean forceRead ) {
 		ICFSecSecClusGrpMembObj retobj = ((ICFIntSchemaObj)getSchema()).getSecClusGrpMembTableObj().readSecClusGrpMembByIdIdx( getPKey().getRequiredSecClusGrpId(),
-			getPKey().getRequiredSecUserId(), forceRead );
+			getPKey().getRequiredLoginId(), forceRead );
 		return( (ICFSecSecClusGrpMembObj)retobj );
 	}
 
@@ -249,7 +243,7 @@ public class CFIntSecClusGrpMembObj
 				// Read the data rec via the backing store
 				rec = getSchema().getCFSecBackingStore().getTableSecClusGrpMemb().readDerivedByIdIdx( ((ICFIntSchemaObj)getSchema()).getAuthorization(),
 						getPKey().getRequiredSecClusGrpId(),
-						getPKey().getRequiredSecUserId() );
+						getPKey().getRequiredLoginId() );
 				if( rec != null ) {
 					copyRecToPKey();
 				}
@@ -367,15 +361,15 @@ public class CFIntSecClusGrpMembObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredSecUserId() {
-		return( getPKey().getRequiredSecUserId() );
+	public String getRequiredLoginId() {
+		return( getPKey().getRequiredLoginId() );
 	}
 
 	@Override
 	public void copyPKeyToRec() {
 		if( rec != null ) {
 			rec.getPKey().setRequiredSecClusGrpId(getPKey().getRequiredSecClusGrpId());
-			rec.getPKey().setRequiredSecUserId(getPKey().getRequiredSecUserId());
+			rec.getPKey().setRequiredLoginId(getPKey().getRequiredLoginId());
 		}
 		if( edit != null ) {
 			edit.copyPKeyToRec();
@@ -386,7 +380,7 @@ public class CFIntSecClusGrpMembObj
 	public void copyRecToPKey() {
 		if( rec != null ) {
 			getPKey().setRequiredSecClusGrpId(rec.getPKey().getRequiredSecClusGrpId());
-			getPKey().setRequiredSecUserId(rec.getPKey().getRequiredSecUserId());
+			getPKey().setRequiredLoginId(rec.getPKey().getRequiredLoginId());
 		}
 	}
 }

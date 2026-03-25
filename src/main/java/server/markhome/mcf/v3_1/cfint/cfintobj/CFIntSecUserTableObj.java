@@ -368,7 +368,7 @@ public class CFIntSecUserTableObj
 		keyPwdResetIdx.setOptionalPasswordResetUuid6( existing.getOptionalPasswordResetUuid6() );
 
 
-		schema.getSecSysGrpMembTableObj().deepDisposeSecSysGrpMembByUserIdx( existing.getRequiredSecUserId() );
+		schema.getSecSysGrpMembTableObj().deepDisposeSecSysGrpMembByLoginIdx( existing.getRequiredLoginId() );
 
 		if( indexByULoginIdx != null ) {
 			indexByULoginIdx.remove( keyULoginIdx );

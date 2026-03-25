@@ -78,7 +78,7 @@ public class CFIntSecTentGrpIncObj
 	@Override
 	public String getObjName() {
 		String objName;
-		objName = getRequiredIncName();
+		objName = getRequiredInclName();
 		return( objName );
 	}
 
@@ -207,14 +207,14 @@ public class CFIntSecTentGrpIncObj
 	@Override
 	public ICFSecSecTentGrpIncObj read() {
 		ICFSecSecTentGrpIncObj retobj = ((ICFIntSchemaObj)getSchema()).getSecTentGrpIncTableObj().readSecTentGrpIncByIdIdx( getPKey().getRequiredSecTentGrpId(),
-			getPKey().getRequiredIncName(), false );
+			getPKey().getRequiredInclName(), false );
 		return( (ICFSecSecTentGrpIncObj)retobj );
 	}
 
 	@Override
 	public ICFSecSecTentGrpIncObj read( boolean forceRead ) {
 		ICFSecSecTentGrpIncObj retobj = ((ICFIntSchemaObj)getSchema()).getSecTentGrpIncTableObj().readSecTentGrpIncByIdIdx( getPKey().getRequiredSecTentGrpId(),
-			getPKey().getRequiredIncName(), forceRead );
+			getPKey().getRequiredInclName(), forceRead );
 		return( (ICFSecSecTentGrpIncObj)retobj );
 	}
 
@@ -243,7 +243,7 @@ public class CFIntSecTentGrpIncObj
 				// Read the data rec via the backing store
 				rec = getSchema().getCFSecBackingStore().getTableSecTentGrpInc().readDerivedByIdIdx( ((ICFIntSchemaObj)getSchema()).getAuthorization(),
 						getPKey().getRequiredSecTentGrpId(),
-						getPKey().getRequiredIncName() );
+						getPKey().getRequiredInclName() );
 				if( rec != null ) {
 					copyRecToPKey();
 				}
@@ -361,15 +361,15 @@ public class CFIntSecTentGrpIncObj
 	}
 
 	@Override
-	public String getRequiredIncName() {
-		return( getPKey().getRequiredIncName() );
+	public String getRequiredInclName() {
+		return( getPKey().getRequiredInclName() );
 	}
 
 	@Override
 	public void copyPKeyToRec() {
 		if( rec != null ) {
 			rec.getPKey().setRequiredSecTentGrpId(getPKey().getRequiredSecTentGrpId());
-			rec.getPKey().setRequiredIncName(getPKey().getRequiredIncName());
+			rec.getPKey().setRequiredInclName(getPKey().getRequiredInclName());
 		}
 		if( edit != null ) {
 			edit.copyPKeyToRec();
@@ -380,7 +380,7 @@ public class CFIntSecTentGrpIncObj
 	public void copyRecToPKey() {
 		if( rec != null ) {
 			getPKey().setRequiredSecTentGrpId(rec.getPKey().getRequiredSecTentGrpId());
-			getPKey().setRequiredIncName(rec.getPKey().getRequiredIncName());
+			getPKey().setRequiredInclName(rec.getPKey().getRequiredInclName());
 		}
 	}
 }
