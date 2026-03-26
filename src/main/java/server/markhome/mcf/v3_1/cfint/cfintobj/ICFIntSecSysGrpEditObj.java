@@ -99,6 +99,13 @@ public interface ICFIntSecSysGrpEditObj
 	 */
 	List<ICFSecSecSysGrpMembObj> getOptionalChildrenMembByGrp();
 
+	/**
+	 *	Get a list ICFSecSecSysGrpIncObj instances referenced by the SysGrpByName key.
+	 *
+	 *	@return	The (potentially empty) list of ICFSecSecSysGrpIncObj instances referenced by the SysGrpByName key.
+	 */
+	List<ICFSecSecSysGrpIncObj> getOptionalChildrenSysGrpByName();
+
 	public void copyRecToOrig();
 	public void copyOrigToRec();
 
