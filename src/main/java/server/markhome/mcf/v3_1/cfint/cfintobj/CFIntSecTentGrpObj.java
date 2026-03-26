@@ -49,15 +49,20 @@ public class CFIntSecTentGrpObj
 	protected ICFSecSchemaObj schema;
 	protected CFLibDbKeyHash256 pKey;
 	protected ICFSecSecTentGrp rec;
+	protected ICFSecTenantObj requiredOwnerTenant;
+	protected List<ICFSecSecTentGrpIncObj> optionalChildrenIncByGrp;
+	protected List<ICFSecSecTentGrpMembObj> optionalChildrenMembByGrp;
 
 	public CFIntSecTentGrpObj() {
 		isNew = true;
+		requiredOwnerTenant = null;
 	}
 
 	public CFIntSecTentGrpObj( ICFSecSchemaObj argSchema ) {
 		schema = argSchema;
 		isNew = true;
 		edit = null;
+		requiredOwnerTenant = null;
 	}
 
 	@Override
@@ -260,6 +265,7 @@ public class CFIntSecTentGrpObj
 		}
 		rec = value;
 		copyRecToPKey();
+		requiredOwnerTenant = null;
 	}
 
 	@Override
@@ -352,6 +358,54 @@ public class CFIntSecTentGrpObj
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecTentGrpId() {
 		return( getPKey() );
+	}
+
+	@Override
+	public ICFSecTenantObj getRequiredOwnerTenant() {
+		return( getRequiredOwnerTenant( false ) );
+	}
+
+	@Override
+	public ICFSecTenantObj getRequiredOwnerTenant( boolean forceRead ) {
+		if( ( requiredOwnerTenant == null ) || forceRead ) {
+			boolean anyMissing = false;
+			if( ! anyMissing ) {
+				requiredOwnerTenant = ((ICFIntSchemaObj)getSchema()).getTenantTableObj().readTenantByIdIdx( getSecTentGrpRec().getRequiredTenantId(), forceRead );
+			}
+		}
+		return( requiredOwnerTenant );
+	}
+
+	@Override
+	public List<ICFSecSecTentGrpIncObj> getOptionalChildrenIncByGrp() {
+		List<ICFSecSecTentGrpIncObj> retval;
+		retval = ((ICFIntSchemaObj)getSchema()).getSecTentGrpIncTableObj().readSecTentGrpIncByTentGrpIdx( getPKey(),
+			false );
+		return( retval );
+	}
+
+	@Override
+	public List<ICFSecSecTentGrpIncObj> getOptionalChildrenIncByGrp( boolean forceRead ) {
+		List<ICFSecSecTentGrpIncObj> retval;
+		retval = ((ICFIntSchemaObj)getSchema()).getSecTentGrpIncTableObj().readSecTentGrpIncByTentGrpIdx( getPKey(),
+			forceRead );
+		return( retval );
+	}
+
+	@Override
+	public List<ICFSecSecTentGrpMembObj> getOptionalChildrenMembByGrp() {
+		List<ICFSecSecTentGrpMembObj> retval;
+		retval = ((ICFIntSchemaObj)getSchema()).getSecTentGrpMembTableObj().readSecTentGrpMembByTentGrpIdx( getPKey(),
+			false );
+		return( retval );
+	}
+
+	@Override
+	public List<ICFSecSecTentGrpMembObj> getOptionalChildrenMembByGrp( boolean forceRead ) {
+		List<ICFSecSecTentGrpMembObj> retval;
+		retval = ((ICFIntSchemaObj)getSchema()).getSecTentGrpMembTableObj().readSecTentGrpMembByTentGrpIdx( getPKey(),
+			forceRead );
+		return( retval );
 	}
 
 	@Override

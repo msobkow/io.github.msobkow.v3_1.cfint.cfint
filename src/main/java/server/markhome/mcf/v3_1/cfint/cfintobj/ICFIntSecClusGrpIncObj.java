@@ -197,6 +197,34 @@ public interface ICFIntSecClusGrpIncObj
 	void setIsNew( boolean value );
 
 	/**
+	 *	Get the required ICFIntSecClusGrpObj instance referenced by the Group key.
+	 *
+	 *	@return	The required ICFIntSecClusGrpObj instance referenced by the Group key.
+	 */
+	ICFSecSecClusGrpObj getRequiredContainerGroup();
+
+	/**
+	 *	Get the required ICFSecSecClusGrpObj instance referenced by the Group key.
+	 *
+	 *	@return	The required ICFSecSecClusGrpObj instance referenced by the Group key.
+	 */
+	ICFSecSecClusGrpObj getRequiredContainerGroup( boolean forceRead );
+
+	/**
+	 *	Get the required ICFIntSecSysGrpObj instance referenced by the SubGroup key.
+	 *
+	 *	@return	The required ICFIntSecSysGrpObj instance referenced by the SubGroup key.
+	 */
+	ICFSecSecSysGrpObj getRequiredParentSubGroup();
+
+	/**
+	 *	Get the required ICFSecSecSysGrpObj instance referenced by the SubGroup key.
+	 *
+	 *	@return	The required ICFSecSecSysGrpObj instance referenced by the SubGroup key.
+	 */
+	ICFSecSecSysGrpObj getRequiredParentSubGroup( boolean forceRead );
+
+	/**
 	 *	Get the required CFLibDbKeyHash256 attribute SecClusGrpId.
 	 *
 	 *	@return	The required CFLibDbKeyHash256 attribute SecClusGrpId.

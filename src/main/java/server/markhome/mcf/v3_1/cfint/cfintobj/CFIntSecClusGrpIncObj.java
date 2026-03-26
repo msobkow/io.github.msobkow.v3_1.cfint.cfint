@@ -49,15 +49,21 @@ public class CFIntSecClusGrpIncObj
 	protected ICFSecSchemaObj schema;
 	protected ICFSecSecClusGrpIncPKey pKey;
 	protected ICFSecSecClusGrpInc rec;
+	protected ICFSecSecClusGrpObj requiredContainerGroup;
+	protected ICFSecSecSysGrpObj requiredParentSubGroup;
 
 	public CFIntSecClusGrpIncObj() {
 		isNew = true;
+		requiredContainerGroup = null;
+		requiredParentSubGroup = null;
 	}
 
 	public CFIntSecClusGrpIncObj( ICFSecSchemaObj argSchema ) {
 		schema = argSchema;
 		isNew = true;
 		edit = null;
+		requiredContainerGroup = null;
+		requiredParentSubGroup = null;
 	}
 
 	@Override
@@ -72,7 +78,8 @@ public class CFIntSecClusGrpIncObj
 
 	@Override
 	public ICFLibAnyObj getObjScope() {
-		return( null );
+		ICFSecSecClusGrpObj scope = getRequiredContainerGroup();
+		return( scope );
 	}
 
 	@Override
@@ -263,6 +270,8 @@ public class CFIntSecClusGrpIncObj
 		}
 		rec = value;
 		copyRecToPKey();
+		requiredContainerGroup = null;
+		requiredParentSubGroup = null;
 	}
 
 	@Override
@@ -366,10 +375,42 @@ public class CFIntSecClusGrpIncObj
 	}
 
 	@Override
+	public ICFSecSecClusGrpObj getRequiredContainerGroup() {
+		return( getRequiredContainerGroup( false ) );
+	}
+
+	@Override
+	public ICFSecSecClusGrpObj getRequiredContainerGroup( boolean forceRead ) {
+		if( ( requiredContainerGroup == null ) || forceRead ) {
+			boolean anyMissing = false;
+			if( ! anyMissing ) {
+				requiredContainerGroup = ((ICFIntSchemaObj)getSchema()).getSecClusGrpTableObj().readSecClusGrpByIdIdx( getPKey().getRequiredSecClusGrpId(), forceRead );
+			}
+		}
+		return( requiredContainerGroup );
+	}
+
+	@Override
+	public ICFSecSecSysGrpObj getRequiredParentSubGroup() {
+		return( getRequiredParentSubGroup( false ) );
+	}
+
+	@Override
+	public ICFSecSecSysGrpObj getRequiredParentSubGroup( boolean forceRead ) {
+		if( ( requiredParentSubGroup == null ) || forceRead ) {
+			boolean anyMissing = false;
+			if( ! anyMissing ) {
+				requiredParentSubGroup = ((ICFIntSchemaObj)getSchema()).getSecSysGrpTableObj().readSecSysGrpByUNameIdx( getPKey().getRequiredInclName(), forceRead );
+			}
+		}
+		return( requiredParentSubGroup );
+	}
+
+	@Override
 	public void copyPKeyToRec() {
 		if( rec != null ) {
-			rec.getPKey().setRequiredSecClusGrpId(getPKey().getRequiredSecClusGrpId());
-			rec.getPKey().setRequiredInclName(getPKey().getRequiredInclName());
+			rec.getPKey().setRequiredContainerGroup(getPKey().getRequiredContainerGroup());
+			rec.getPKey().setRequiredParentSubGroup(getPKey().getRequiredParentSubGroup());
 		}
 		if( edit != null ) {
 			edit.copyPKeyToRec();
@@ -379,8 +420,8 @@ public class CFIntSecClusGrpIncObj
 	@Override
 	public void copyRecToPKey() {
 		if( rec != null ) {
-			getPKey().setRequiredSecClusGrpId(rec.getPKey().getRequiredSecClusGrpId());
-			getPKey().setRequiredInclName(rec.getPKey().getRequiredInclName());
+			getPKey().setRequiredContainerGroup(rec.getPKey().getRequiredContainerGroup());
+			getPKey().setRequiredParentSubGroup(rec.getPKey().getRequiredParentSubGroup());
 		}
 	}
 }

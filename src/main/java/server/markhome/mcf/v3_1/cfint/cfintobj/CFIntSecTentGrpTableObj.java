@@ -372,6 +372,8 @@ public class CFIntSecTentGrpTableObj
 		keyUNameIdx.setRequiredName( existing.getRequiredName() );
 
 
+		schema.getSecTentGrpIncTableObj().deepDisposeSecTentGrpIncByTentGrpIdx( existing.getRequiredSecTentGrpId() );
+		schema.getSecTentGrpMembTableObj().deepDisposeSecTentGrpMembByTentGrpIdx( existing.getRequiredSecTentGrpId() );
 
 		if( indexByTenantIdx != null ) {
 			if( indexByTenantIdx.containsKey( keyTenantIdx ) ) {

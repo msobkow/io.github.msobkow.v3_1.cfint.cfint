@@ -586,8 +586,8 @@ public class CFIntSecClusGrpMembTableObj
 		String LoginId, boolean forceRead )
 	{
 		ICFSecSecClusGrpMembPKey pkey = schema.getCFSecBackingStore().getFactorySecClusGrpMemb().newPKey();
-		pkey.setRequiredSecClusGrpId( SecClusGrpId );
-		pkey.setRequiredLoginId( LoginId );
+		pkey.setRequiredContainerGroup(SecClusGrpId);
+		pkey.setRequiredParentUser(LoginId);
 		ICFSecSecClusGrpMembObj obj = readSecClusGrpMemb( pkey, forceRead );
 		return( obj );
 	}
@@ -784,10 +784,10 @@ public class CFIntSecClusGrpMembTableObj
 	{
 		ICFSecSecClusGrpMembObj obj = null;
 		ICFSecSecClusGrpMembPKey pkey = schema.getCFSecBackingStore().getFactorySecClusGrpMemb().newPKey();
-		pkey.setRequiredSecClusGrpId( SecClusGrpId );
-		pkey.setRequiredLoginId( LoginId );
-		pkey.setRequiredSecClusGrpId( SecClusGrpId );
-		pkey.setRequiredLoginId( LoginId );
+		pkey.setRequiredContainerGroup(SecClusGrpId);
+		pkey.setRequiredParentUser(LoginId);
+		pkey.setRequiredContainerGroup(SecClusGrpId);
+		pkey.setRequiredParentUser(LoginId);
 		obj = readCachedSecClusGrpMemb( pkey );
 		return( obj );
 	}
