@@ -354,8 +354,8 @@ public class CFIntSecUserPWHistoryEditObj
 
 	@Override
 	public void setRequiredPWSetStamp(LocalDateTime value) {
-		getPKey().setRequiredPWSetStamp(value);
-		if( getSecUserPWHistoryRec().getRequiredPWSetStamp() != value ) {
+		if ((getPKey().getRequiredPWSetStamp() != value ) || ( getSecUserPWHistoryRec().getRequiredPWSetStamp() != value )) {
+			getPKey().setRequiredPWSetStamp(value);
 			getSecUserPWHistoryRec().setRequiredPWSetStamp( value );
 		}
 	}

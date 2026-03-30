@@ -1,4 +1,4 @@
-// Description: Java 25 base object instance implementation for SecUserPassword
+// Description: Java 25 base object instance implementation for SecUserEMConf
 
 /*
  *	server.markhome.mcf.CFInt
@@ -39,22 +39,24 @@ import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 
-public class CFIntSecUserPasswordObj
-	implements ICFIntSecUserPasswordObj
+public class CFIntSecUserEMConfObj
+	implements ICFIntSecUserEMConfObj
 {
+	protected ICFSecSecUserObj createdBy = null;
+	protected ICFSecSecUserObj updatedBy = null;
 	protected boolean isNew;
-	protected ICFSecSecUserPasswordEditObj edit;
+	protected ICFSecSecUserEMConfEditObj edit;
 	protected ICFSecSchemaObj schema;
 	protected CFLibDbKeyHash256 pKey;
-	protected ICFSecSecUserPassword rec;
+	protected ICFSecSecUserEMConf rec;
 	protected ICFSecSecUserObj requiredContainerUser;
 
-	public CFIntSecUserPasswordObj() {
+	public CFIntSecUserEMConfObj() {
 		isNew = true;
 		requiredContainerUser = null;
 	}
 
-	public CFIntSecUserPasswordObj( ICFSecSchemaObj argSchema ) {
+	public CFIntSecUserEMConfObj( ICFSecSchemaObj argSchema ) {
 		schema = argSchema;
 		isNew = true;
 		edit = null;
@@ -63,12 +65,12 @@ public class CFIntSecUserPasswordObj
 
 	@Override
 	public int getClassCode() {
-		return( ((ICFSecSchemaObj)schema).getSecUserPasswordTableObj().getClassCode() );
+		return( ((ICFSecSchemaObj)schema).getSecUserEMConfTableObj().getClassCode() );
 	}
 
 	@Override
 	public String getGenDefName() {
-		return( "SecUserPassword" );
+		return( "SecUserEMConf" );
 	}
 
 	@Override
@@ -80,7 +82,7 @@ public class CFIntSecUserPasswordObj
 	@Override
 	public String getObjName() {
 		String objName;
-		CFLibDbKeyHash256 val = rec.getRequiredSecUserId();
+		CFLibUuid6 val = rec.getRequiredEMConfirmationUuid6();
 		if (val != null) {
 			objName = val.toString();
 		}
@@ -201,32 +203,32 @@ public class CFIntSecUserPasswordObj
 	}
 
 	@Override
-	public ICFSecSecUserPasswordObj realise() {
-		ICFSecSecUserPasswordObj retobj = ((ICFIntSchemaObj)getSchema()).getSecUserPasswordTableObj().realiseSecUserPassword(
-			(ICFSecSecUserPasswordObj)this );
-		return( (ICFSecSecUserPasswordObj)retobj );
+	public ICFSecSecUserEMConfObj realise() {
+		ICFSecSecUserEMConfObj retobj = ((ICFIntSchemaObj)getSchema()).getSecUserEMConfTableObj().realiseSecUserEMConf(
+			(ICFSecSecUserEMConfObj)this );
+		return( (ICFSecSecUserEMConfObj)retobj );
 	}
 
 	@Override
 	public void forget() {
-		((ICFIntSchemaObj)getSchema()).getSecUserPasswordTableObj().reallyDeepDisposeSecUserPassword( (ICFSecSecUserPasswordObj)this );
+		((ICFIntSchemaObj)getSchema()).getSecUserEMConfTableObj().reallyDeepDisposeSecUserEMConf( (ICFSecSecUserEMConfObj)this );
 	}
 
 	@Override
-	public ICFSecSecUserPasswordObj read() {
-		ICFSecSecUserPasswordObj retobj = ((ICFIntSchemaObj)getSchema()).getSecUserPasswordTableObj().readSecUserPasswordByIdIdx( getPKey(), false );
-		return( (ICFSecSecUserPasswordObj)retobj );
+	public ICFSecSecUserEMConfObj read() {
+		ICFSecSecUserEMConfObj retobj = ((ICFIntSchemaObj)getSchema()).getSecUserEMConfTableObj().readSecUserEMConfByIdIdx( getPKey(), false );
+		return( (ICFSecSecUserEMConfObj)retobj );
 	}
 
 	@Override
-	public ICFSecSecUserPasswordObj read( boolean forceRead ) {
-		ICFSecSecUserPasswordObj retobj = ((ICFIntSchemaObj)getSchema()).getSecUserPasswordTableObj().readSecUserPasswordByIdIdx( getPKey(), forceRead );
-		return( (ICFSecSecUserPasswordObj)retobj );
+	public ICFSecSecUserEMConfObj read( boolean forceRead ) {
+		ICFSecSecUserEMConfObj retobj = ((ICFIntSchemaObj)getSchema()).getSecUserEMConfTableObj().readSecUserEMConfByIdIdx( getPKey(), forceRead );
+		return( (ICFSecSecUserEMConfObj)retobj );
 	}
 
 	@Override
-	public ICFSecSecUserPasswordTableObj getSecUserPasswordTable() {
-		return( ((ICFIntSchemaObj)getSchema()).getSecUserPasswordTableObj() );
+	public ICFSecSecUserEMConfTableObj getSecUserEMConfTable() {
+		return( ((ICFIntSchemaObj)getSchema()).getSecUserEMConfTableObj() );
 	}
 
 	@Override
@@ -240,14 +242,14 @@ public class CFIntSecUserPasswordObj
 	}
 
 	@Override
-	public ICFSecSecUserPassword getRec() {
+	public ICFSecSecUserEMConf getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFSecBackingStore().getFactorySecUserPassword().newRec();
+				rec = getSchema().getCFSecBackingStore().getFactorySecUserEMConf().newRec();
 			}
 			else {
 				// Read the data rec via the backing store
-				rec = getSchema().getCFSecBackingStore().getTableSecUserPassword().readDerivedByIdIdx( ((ICFIntSchemaObj)getSchema()).getAuthorization(),
+				rec = getSchema().getCFSecBackingStore().getTableSecUserEMConf().readDerivedByIdIdx( ((ICFIntSchemaObj)getSchema()).getAuthorization(),
 						getPKey() );
 				if( rec != null ) {
 					copyRecToPKey();
@@ -258,13 +260,13 @@ public class CFIntSecUserPasswordObj
 	}
 
 	@Override
-	public void setRec( ICFSecSecUserPassword value ) {
-		if( ! ( ( value == null ) || ! ( value instanceof ICFSecSecUserPassword ) ) ) {
+	public void setRec( ICFSecSecUserEMConf value ) {
+		if( ! ( ( value == null ) || ! ( value instanceof ICFSecSecUserEMConf ) ) ) {
 			throw new CFLibUnsupportedClassException( getClass(),
 				"setRec",
 				"value",
 				value,
-				"CFSecSecUserPasswordRec" );
+				"CFSecSecUserEMConfRec" );
 		}
 		rec = value;
 		copyRecToPKey();
@@ -272,8 +274,8 @@ public class CFIntSecUserPasswordObj
 	}
 
 	@Override
-	public ICFSecSecUserPassword getSecUserPasswordRec() {
-		return( (ICFSecSecUserPassword)getRec() );
+	public ICFSecSecUserEMConf getSecUserEMConfRec() {
+		return( (ICFSecSecUserEMConf)getRec() );
 	}
 
 	@Override
@@ -300,19 +302,19 @@ public class CFIntSecUserPasswordObj
 	}
 
 	@Override
-	public ICFSecSecUserPasswordEditObj beginEdit() {
+	public ICFSecSecUserEMConfEditObj beginEdit() {
 		if( edit != null ) {
 			throw new CFLibEditAlreadyOpenException( getClass(), "beginEdit" );
 		}
-		ICFSecSecUserPasswordObj lockobj;
+		ICFSecSecUserEMConfObj lockobj;
 		if( getIsNew() ) {
-			lockobj = (ICFSecSecUserPasswordObj)this;
+			lockobj = (ICFSecSecUserEMConfObj)this;
 		}
 		else {
-			lockobj = ((ICFIntSchemaObj)getSchema()).getSecUserPasswordTableObj().lockSecUserPassword( getPKey() );
+			lockobj = ((ICFIntSchemaObj)getSchema()).getSecUserEMConfTableObj().lockSecUserEMConf( getPKey() );
 		}
-		edit = ((ICFIntSchemaObj)getSchema()).getSecUserPasswordTableObj().newEditInstance( lockobj );
-		return( (ICFSecSecUserPasswordEditObj)edit );
+		edit = ((ICFIntSchemaObj)getSchema()).getSecUserEMConfTableObj().newEditInstance( lockobj );
+		return( (ICFSecSecUserEMConfEditObj)edit );
 	}
 
 	@Override
@@ -321,13 +323,41 @@ public class CFIntSecUserPasswordObj
 	}
 
 	@Override
-	public ICFSecSecUserPasswordEditObj getEdit() {
+	public ICFSecSecUserEMConfEditObj getEdit() {
 		return( edit );
 	}
 
 	@Override
-	public ICFSecSecUserPasswordEditObj getEditAsSecUserPassword() {
-		return( (ICFSecSecUserPasswordEditObj)edit );
+	public ICFSecSecUserEMConfEditObj getEditAsSecUserEMConf() {
+		return( (ICFSecSecUserEMConfEditObj)edit );
+	}
+
+	@Override
+	public ICFSecSecUserObj getCreatedBy() {
+		if( createdBy == null ) {
+			ICFSecSecUserEMConf rec = getRec();
+			createdBy = ((ICFIntSchemaObj)getSchema()).getSecUserTableObj().readSecUserByIdIdx( rec.getCreatedByUserId() );
+		}
+		return( createdBy );
+	}
+
+	@Override
+	public LocalDateTime getCreatedAt() {
+		return( getRec().getCreatedAt() );
+	}
+
+	@Override
+	public ICFSecSecUserObj getUpdatedBy() {
+		if( updatedBy == null ) {
+			ICFSecSecUserEMConf rec = getRec();
+			updatedBy = ((ICFIntSchemaObj)getSchema()).getSecUserTableObj().readSecUserByIdIdx( rec.getUpdatedByUserId() );
+		}
+		return( updatedBy );
+	}
+
+	@Override
+	public LocalDateTime getUpdatedAt() {
+		return( getRec().getUpdatedAt() );
 	}
 
 	@Override
@@ -352,13 +382,23 @@ public class CFIntSecUserPasswordObj
 	}
 
 	@Override
-	public LocalDateTime getRequiredPWSetStamp() {
-		return( getSecUserPasswordRec().getRequiredPWSetStamp() );
+	public String getRequiredConfirmEMailAddr() {
+		return( getSecUserEMConfRec().getRequiredConfirmEMailAddr() );
 	}
 
 	@Override
-	public String getRequiredPasswordHash() {
-		return( getSecUserPasswordRec().getRequiredPasswordHash() );
+	public LocalDateTime getRequiredEMailSentStamp() {
+		return( getSecUserEMConfRec().getRequiredEMailSentStamp() );
+	}
+
+	@Override
+	public CFLibUuid6 getRequiredEMConfirmationUuid6() {
+		return( getSecUserEMConfRec().getRequiredEMConfirmationUuid6() );
+	}
+
+	@Override
+	public boolean getRequiredNewAccount() {
+		return( getSecUserEMConfRec().getRequiredNewAccount() );
 	}
 
 	@Override

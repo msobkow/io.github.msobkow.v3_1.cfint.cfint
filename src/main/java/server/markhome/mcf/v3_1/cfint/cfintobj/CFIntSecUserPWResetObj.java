@@ -1,4 +1,4 @@
-// Description: Java 25 base object instance implementation for SecUserPassword
+// Description: Java 25 base object instance implementation for SecUserPWReset
 
 /*
  *	server.markhome.mcf.CFInt
@@ -39,22 +39,24 @@ import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 
-public class CFIntSecUserPasswordObj
-	implements ICFIntSecUserPasswordObj
+public class CFIntSecUserPWResetObj
+	implements ICFIntSecUserPWResetObj
 {
+	protected ICFSecSecUserObj createdBy = null;
+	protected ICFSecSecUserObj updatedBy = null;
 	protected boolean isNew;
-	protected ICFSecSecUserPasswordEditObj edit;
+	protected ICFSecSecUserPWResetEditObj edit;
 	protected ICFSecSchemaObj schema;
 	protected CFLibDbKeyHash256 pKey;
-	protected ICFSecSecUserPassword rec;
+	protected ICFSecSecUserPWReset rec;
 	protected ICFSecSecUserObj requiredContainerUser;
 
-	public CFIntSecUserPasswordObj() {
+	public CFIntSecUserPWResetObj() {
 		isNew = true;
 		requiredContainerUser = null;
 	}
 
-	public CFIntSecUserPasswordObj( ICFSecSchemaObj argSchema ) {
+	public CFIntSecUserPWResetObj( ICFSecSchemaObj argSchema ) {
 		schema = argSchema;
 		isNew = true;
 		edit = null;
@@ -63,12 +65,12 @@ public class CFIntSecUserPasswordObj
 
 	@Override
 	public int getClassCode() {
-		return( ((ICFSecSchemaObj)schema).getSecUserPasswordTableObj().getClassCode() );
+		return( ((ICFSecSchemaObj)schema).getSecUserPWResetTableObj().getClassCode() );
 	}
 
 	@Override
 	public String getGenDefName() {
-		return( "SecUserPassword" );
+		return( "SecUserPWReset" );
 	}
 
 	@Override
@@ -80,7 +82,7 @@ public class CFIntSecUserPasswordObj
 	@Override
 	public String getObjName() {
 		String objName;
-		CFLibDbKeyHash256 val = rec.getRequiredSecUserId();
+		CFLibUuid6 val = rec.getRequiredPasswordResetUuid6();
 		if (val != null) {
 			objName = val.toString();
 		}
@@ -201,32 +203,32 @@ public class CFIntSecUserPasswordObj
 	}
 
 	@Override
-	public ICFSecSecUserPasswordObj realise() {
-		ICFSecSecUserPasswordObj retobj = ((ICFIntSchemaObj)getSchema()).getSecUserPasswordTableObj().realiseSecUserPassword(
-			(ICFSecSecUserPasswordObj)this );
-		return( (ICFSecSecUserPasswordObj)retobj );
+	public ICFSecSecUserPWResetObj realise() {
+		ICFSecSecUserPWResetObj retobj = ((ICFIntSchemaObj)getSchema()).getSecUserPWResetTableObj().realiseSecUserPWReset(
+			(ICFSecSecUserPWResetObj)this );
+		return( (ICFSecSecUserPWResetObj)retobj );
 	}
 
 	@Override
 	public void forget() {
-		((ICFIntSchemaObj)getSchema()).getSecUserPasswordTableObj().reallyDeepDisposeSecUserPassword( (ICFSecSecUserPasswordObj)this );
+		((ICFIntSchemaObj)getSchema()).getSecUserPWResetTableObj().reallyDeepDisposeSecUserPWReset( (ICFSecSecUserPWResetObj)this );
 	}
 
 	@Override
-	public ICFSecSecUserPasswordObj read() {
-		ICFSecSecUserPasswordObj retobj = ((ICFIntSchemaObj)getSchema()).getSecUserPasswordTableObj().readSecUserPasswordByIdIdx( getPKey(), false );
-		return( (ICFSecSecUserPasswordObj)retobj );
+	public ICFSecSecUserPWResetObj read() {
+		ICFSecSecUserPWResetObj retobj = ((ICFIntSchemaObj)getSchema()).getSecUserPWResetTableObj().readSecUserPWResetByIdIdx( getPKey(), false );
+		return( (ICFSecSecUserPWResetObj)retobj );
 	}
 
 	@Override
-	public ICFSecSecUserPasswordObj read( boolean forceRead ) {
-		ICFSecSecUserPasswordObj retobj = ((ICFIntSchemaObj)getSchema()).getSecUserPasswordTableObj().readSecUserPasswordByIdIdx( getPKey(), forceRead );
-		return( (ICFSecSecUserPasswordObj)retobj );
+	public ICFSecSecUserPWResetObj read( boolean forceRead ) {
+		ICFSecSecUserPWResetObj retobj = ((ICFIntSchemaObj)getSchema()).getSecUserPWResetTableObj().readSecUserPWResetByIdIdx( getPKey(), forceRead );
+		return( (ICFSecSecUserPWResetObj)retobj );
 	}
 
 	@Override
-	public ICFSecSecUserPasswordTableObj getSecUserPasswordTable() {
-		return( ((ICFIntSchemaObj)getSchema()).getSecUserPasswordTableObj() );
+	public ICFSecSecUserPWResetTableObj getSecUserPWResetTable() {
+		return( ((ICFIntSchemaObj)getSchema()).getSecUserPWResetTableObj() );
 	}
 
 	@Override
@@ -240,14 +242,14 @@ public class CFIntSecUserPasswordObj
 	}
 
 	@Override
-	public ICFSecSecUserPassword getRec() {
+	public ICFSecSecUserPWReset getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFSecBackingStore().getFactorySecUserPassword().newRec();
+				rec = getSchema().getCFSecBackingStore().getFactorySecUserPWReset().newRec();
 			}
 			else {
 				// Read the data rec via the backing store
-				rec = getSchema().getCFSecBackingStore().getTableSecUserPassword().readDerivedByIdIdx( ((ICFIntSchemaObj)getSchema()).getAuthorization(),
+				rec = getSchema().getCFSecBackingStore().getTableSecUserPWReset().readDerivedByIdIdx( ((ICFIntSchemaObj)getSchema()).getAuthorization(),
 						getPKey() );
 				if( rec != null ) {
 					copyRecToPKey();
@@ -258,13 +260,13 @@ public class CFIntSecUserPasswordObj
 	}
 
 	@Override
-	public void setRec( ICFSecSecUserPassword value ) {
-		if( ! ( ( value == null ) || ! ( value instanceof ICFSecSecUserPassword ) ) ) {
+	public void setRec( ICFSecSecUserPWReset value ) {
+		if( ! ( ( value == null ) || ! ( value instanceof ICFSecSecUserPWReset ) ) ) {
 			throw new CFLibUnsupportedClassException( getClass(),
 				"setRec",
 				"value",
 				value,
-				"CFSecSecUserPasswordRec" );
+				"CFSecSecUserPWResetRec" );
 		}
 		rec = value;
 		copyRecToPKey();
@@ -272,8 +274,8 @@ public class CFIntSecUserPasswordObj
 	}
 
 	@Override
-	public ICFSecSecUserPassword getSecUserPasswordRec() {
-		return( (ICFSecSecUserPassword)getRec() );
+	public ICFSecSecUserPWReset getSecUserPWResetRec() {
+		return( (ICFSecSecUserPWReset)getRec() );
 	}
 
 	@Override
@@ -300,19 +302,19 @@ public class CFIntSecUserPasswordObj
 	}
 
 	@Override
-	public ICFSecSecUserPasswordEditObj beginEdit() {
+	public ICFSecSecUserPWResetEditObj beginEdit() {
 		if( edit != null ) {
 			throw new CFLibEditAlreadyOpenException( getClass(), "beginEdit" );
 		}
-		ICFSecSecUserPasswordObj lockobj;
+		ICFSecSecUserPWResetObj lockobj;
 		if( getIsNew() ) {
-			lockobj = (ICFSecSecUserPasswordObj)this;
+			lockobj = (ICFSecSecUserPWResetObj)this;
 		}
 		else {
-			lockobj = ((ICFIntSchemaObj)getSchema()).getSecUserPasswordTableObj().lockSecUserPassword( getPKey() );
+			lockobj = ((ICFIntSchemaObj)getSchema()).getSecUserPWResetTableObj().lockSecUserPWReset( getPKey() );
 		}
-		edit = ((ICFIntSchemaObj)getSchema()).getSecUserPasswordTableObj().newEditInstance( lockobj );
-		return( (ICFSecSecUserPasswordEditObj)edit );
+		edit = ((ICFIntSchemaObj)getSchema()).getSecUserPWResetTableObj().newEditInstance( lockobj );
+		return( (ICFSecSecUserPWResetEditObj)edit );
 	}
 
 	@Override
@@ -321,13 +323,41 @@ public class CFIntSecUserPasswordObj
 	}
 
 	@Override
-	public ICFSecSecUserPasswordEditObj getEdit() {
+	public ICFSecSecUserPWResetEditObj getEdit() {
 		return( edit );
 	}
 
 	@Override
-	public ICFSecSecUserPasswordEditObj getEditAsSecUserPassword() {
-		return( (ICFSecSecUserPasswordEditObj)edit );
+	public ICFSecSecUserPWResetEditObj getEditAsSecUserPWReset() {
+		return( (ICFSecSecUserPWResetEditObj)edit );
+	}
+
+	@Override
+	public ICFSecSecUserObj getCreatedBy() {
+		if( createdBy == null ) {
+			ICFSecSecUserPWReset rec = getRec();
+			createdBy = ((ICFIntSchemaObj)getSchema()).getSecUserTableObj().readSecUserByIdIdx( rec.getCreatedByUserId() );
+		}
+		return( createdBy );
+	}
+
+	@Override
+	public LocalDateTime getCreatedAt() {
+		return( getRec().getCreatedAt() );
+	}
+
+	@Override
+	public ICFSecSecUserObj getUpdatedBy() {
+		if( updatedBy == null ) {
+			ICFSecSecUserPWReset rec = getRec();
+			updatedBy = ((ICFIntSchemaObj)getSchema()).getSecUserTableObj().readSecUserByIdIdx( rec.getUpdatedByUserId() );
+		}
+		return( updatedBy );
+	}
+
+	@Override
+	public LocalDateTime getUpdatedAt() {
+		return( getRec().getUpdatedAt() );
 	}
 
 	@Override
@@ -352,13 +382,18 @@ public class CFIntSecUserPasswordObj
 	}
 
 	@Override
-	public LocalDateTime getRequiredPWSetStamp() {
-		return( getSecUserPasswordRec().getRequiredPWSetStamp() );
+	public String getRequiredSentToEMailAddr() {
+		return( getSecUserPWResetRec().getRequiredSentToEMailAddr() );
 	}
 
 	@Override
-	public String getRequiredPasswordHash() {
-		return( getSecUserPasswordRec().getRequiredPasswordHash() );
+	public CFLibUuid6 getRequiredPasswordResetUuid6() {
+		return( getSecUserPWResetRec().getRequiredPasswordResetUuid6() );
+	}
+
+	@Override
+	public boolean getRequiredNewAccount() {
+		return( getSecUserPWResetRec().getRequiredNewAccount() );
 	}
 
 	@Override

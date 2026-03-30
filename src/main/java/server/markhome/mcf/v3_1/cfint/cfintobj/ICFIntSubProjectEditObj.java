@@ -112,6 +112,13 @@ public interface ICFIntSubProjectEditObj
 	ICFSecTenantObj getRequiredOwnerTenant();
 
 	/**
+	 *	Get the required ICFSecTenantObj instance referenced by the Tenant key.
+	 *
+	 *	@return	The required ICFSecTenantObj instance referenced by the Tenant key.
+	 */
+	ICFSecTenantObj getRequiredOwnerTenant( boolean forceRead );
+
+	/**
 	 *	Set the ICFSecTenantObj instance referenced by the Tenant key.
 	 *
 	 *	@param	value	the ICFSecTenantObj instance to be referenced by the Tenant key.
@@ -124,6 +131,13 @@ public interface ICFIntSubProjectEditObj
 	 *	@return	The ICFIntTopProjectObj instance referenced by the ParentTPrj key.
 	 */
 	ICFIntTopProjectObj getRequiredContainerParentTPrj();
+
+	/**
+	 *	Get the required ICFIntTopProjectObj instance referenced by the ParentTPrj key.
+	 *
+	 *	@return	The required ICFIntTopProjectObj instance referenced by the ParentTPrj key.
+	 */
+	ICFIntTopProjectObj getRequiredContainerParentTPrj( boolean forceRead );
 
 	/**
 	 *	Set the ICFIntTopProjectObj instance referenced by the ParentTPrj key.

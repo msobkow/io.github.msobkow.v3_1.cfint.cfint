@@ -1,4 +1,4 @@
-// Description: Java 25 Instance Edit Object interface for CFInt SecClusGrpInc.
+// Description: Java 25 Instance Edit Object interface for CFInt SecUserEMConf.
 
 /*
  *	server.markhome.mcf.CFInt
@@ -38,8 +38,8 @@ import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 
-public interface ICFIntSecClusGrpIncEditObj
-	extends ICFIntSecClusGrpIncObj, ICFSecSecClusGrpIncEditObj
+public interface ICFIntSecUserEMConfEditObj
+	extends ICFIntSecUserEMConfObj, ICFSecSecUserEMConfEditObj
 {
 	/*
 	 *	create() may return a different instance than the
@@ -50,12 +50,12 @@ public interface ICFIntSecClusGrpIncEditObj
 	 *
 	 *	@return The created instance.
 	 */
-	ICFSecSecClusGrpIncObj create();
+	ICFSecSecUserEMConfObj create();
 
 	/*
 	 *	Update the instance.
 	 */
-	CFSecSecClusGrpIncEditObj update();
+	CFSecSecUserEMConfEditObj update();
 
 	/**
 	 *	Set the user who created this instance.
@@ -86,46 +86,25 @@ public interface ICFIntSecClusGrpIncEditObj
 	void setUpdatedAt( LocalDateTime value );
 
 	/**
-	 *	Get the ICFSecSecClusGrpObj instance referenced by the Group key.
+	 *	Get the ICFSecSecUserObj instance referenced by the User key.
 	 *
-	 *	@return	The ICFSecSecClusGrpObj instance referenced by the Group key.
+	 *	@return	The ICFSecSecUserObj instance referenced by the User key.
 	 */
-	ICFSecSecClusGrpObj getRequiredContainerGroup();
+	ICFSecSecUserObj getRequiredContainerUser();
 
 	/**
-	 *	Get the required ICFSecSecClusGrpObj instance referenced by the Group key.
+	 *	Get the required ICFSecSecUserObj instance referenced by the User key.
 	 *
-	 *	@return	The required ICFSecSecClusGrpObj instance referenced by the Group key.
+	 *	@return	The required ICFSecSecUserObj instance referenced by the User key.
 	 */
-	ICFSecSecClusGrpObj getRequiredContainerGroup( boolean forceRead );
+	ICFSecSecUserObj getRequiredContainerUser( boolean forceRead );
 
 	/**
-	 *	Set the ICFSecSecClusGrpObj instance referenced by the Group key.
+	 *	Set the ICFSecSecUserObj instance referenced by the User key.
 	 *
-	 *	@param	value	the ICFSecSecClusGrpObj instance to be referenced by the Group key.
+	 *	@param	value	the ICFSecSecUserObj instance to be referenced by the User key.
 	 */
-	void setRequiredContainerGroup( ICFSecSecClusGrpObj value );
-
-	/**
-	 *	Get the ICFSecSecSysGrpObj instance referenced by the SubGroup key.
-	 *
-	 *	@return	The ICFSecSecSysGrpObj instance referenced by the SubGroup key.
-	 */
-	ICFSecSecSysGrpObj getRequiredParentSubGroup();
-
-	/**
-	 *	Get the required ICFSecSecSysGrpObj instance referenced by the SubGroup key.
-	 *
-	 *	@return	The required ICFSecSecSysGrpObj instance referenced by the SubGroup key.
-	 */
-	ICFSecSecSysGrpObj getRequiredParentSubGroup( boolean forceRead );
-
-	/**
-	 *	Set the ICFSecSecSysGrpObj instance referenced by the SubGroup key.
-	 *
-	 *	@param	value	the ICFSecSecSysGrpObj instance to be referenced by the SubGroup key.
-	 */
-	void setRequiredParentSubGroup( ICFSecSecSysGrpObj value );
+	void setRequiredContainerUser( ICFSecSecUserObj value );
 
 	public void copyRecToOrig();
 	public void copyOrigToRec();

@@ -93,6 +93,13 @@ public interface ICFIntISOCtryCcyEditObj
 	ICFSecISOCtryObj getRequiredContainerCtry();
 
 	/**
+	 *	Get the required ICFSecISOCtryObj instance referenced by the Ctry key.
+	 *
+	 *	@return	The required ICFSecISOCtryObj instance referenced by the Ctry key.
+	 */
+	ICFSecISOCtryObj getRequiredContainerCtry( boolean forceRead );
+
+	/**
 	 *	Set the ICFSecISOCtryObj instance referenced by the Ctry key.
 	 *
 	 *	@param	value	the ICFSecISOCtryObj instance to be referenced by the Ctry key.
@@ -105,6 +112,13 @@ public interface ICFIntISOCtryCcyEditObj
 	 *	@return	The ICFSecISOCcyObj instance referenced by the Ccy key.
 	 */
 	ICFSecISOCcyObj getRequiredParentCcy();
+
+	/**
+	 *	Get the required ICFSecISOCcyObj instance referenced by the Ccy key.
+	 *
+	 *	@return	The required ICFSecISOCcyObj instance referenced by the Ccy key.
+	 */
+	ICFSecISOCcyObj getRequiredParentCcy( boolean forceRead );
 
 	/**
 	 *	Set the ICFSecISOCcyObj instance referenced by the Ccy key.

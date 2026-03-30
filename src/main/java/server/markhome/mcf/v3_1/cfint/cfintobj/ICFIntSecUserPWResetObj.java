@@ -1,4 +1,4 @@
-// Description: Java 25 Object interface for CFInt SecUserPassword.
+// Description: Java 25 Object interface for CFInt SecUserPWReset.
 
 /*
  *	server.markhome.mcf.CFInt
@@ -38,22 +38,49 @@ import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 
-public interface ICFIntSecUserPasswordObj
-	extends ICFSecSecUserPasswordObj
+public interface ICFIntSecUserPWResetObj
+	extends ICFSecSecUserPWResetObj
 {
 	/**
-	 *	Initially, the class code for an object is ICFSecSecUserPassword.CLASS_CODE, but the Obj layer relies on class code translation to map those
+	 *	Initially, the class code for an object is ICFSecSecUserPWReset.CLASS_CODE, but the Obj layer relies on class code translation to map those
 	 *	backing store entities to a runtime set of front-facing classcodes that the clients download and use when talking to the server implementing this code base.
 	 *
 	 *	@return The runtime class code used by this object. Only after the system is fully booted are these values stable and reliable.
 	 */
 	int getClassCode();
 	/**
-	 *	Realise this instance of a SecUserPassword.
+	 *	Get the user who created this instance.
 	 *
-	 *	@return	CFSecSecUserPasswordObj instance which should be subsequently referenced.
+	 *	@return	The ICFSecSecUserObj instance who created this instance.
 	 */
-	ICFSecSecUserPasswordObj realise();
+	ICFSecSecUserObj getCreatedBy();
+
+	/**
+	 *	Get the LocalDateTime this instance was created.
+	 *
+	 *	@return	The LocalDateTime value for the creation time of the instance.
+	 */
+	LocalDateTime getCreatedAt();
+
+	/**
+	 *	Get the user who updated this instance.
+	 *
+	 *	@return	The ICFSecSecUserObj instance who updated this instance.
+	 */
+	ICFSecSecUserObj getUpdatedBy();
+
+	/**
+	 *	Get the LocalDateTime date-time this instance was updated.
+	 *
+	 *	@return	The LocalDateTime value for the create time of the instance.
+	 */
+	LocalDateTime getUpdatedAt();
+	/**
+	 *	Realise this instance of a SecUserPWReset.
+	 *
+	 *	@return	CFSecSecUserPWResetObj instance which should be subsequently referenced.
+	 */
+	ICFSecSecUserPWResetObj realise();
 
 	/**
 	 *	Forget this instance from the cache.
@@ -65,51 +92,51 @@ public interface ICFIntSecUserPasswordObj
 	/**
 	 *	Re-read this instance by it's primary key.
 	 *
-	 *	@return	ICFSecSecUserPasswordObj the reference to the cached or read (realised) instance.
+	 *	@return	ICFSecSecUserPWResetObj the reference to the cached or read (realised) instance.
 	 */
-	ICFSecSecUserPasswordObj read();
+	ICFSecSecUserPWResetObj read();
 
 	/**
 	 *	Re-read this instance by it's primary key.
 	 *
-	 *	@return	ICFSecSecUserPasswordObj the reference to the cached or read (realised) instance.
+	 *	@return	ICFSecSecUserPWResetObj the reference to the cached or read (realised) instance.
 	 */
-	ICFSecSecUserPasswordObj read( boolean forceRead );
+	ICFSecSecUserPWResetObj read( boolean forceRead );
 
 	/**
-	 *	Initialize and return a locked edition of this SecUserPassword instance.
+	 *	Initialize and return a locked edition of this SecUserPWReset instance.
 	 *
-	 *	@return	The newly locked ICFSecSecUserPasswordEditObj edition of this instance.
+	 *	@return	The newly locked ICFSecSecUserPWResetEditObj edition of this instance.
 	 */
-	ICFSecSecUserPasswordEditObj beginEdit();
+	ICFSecSecUserPWResetEditObj beginEdit();
 
 	/**
-	 *	End this edition of this SecUserPassword instance.
+	 *	End this edition of this SecUserPWReset instance.
 	 *
 	 *	@throws	CFLibNotSupportedException if you try to end a read-only view.
 	 */
 	void endEdit();
 
 	/**
-	 *	Get the current edition of this SecUserPassword instance.
+	 *	Get the current edition of this SecUserPWReset instance.
 	 *
-	 *	@return	The ICFSecSecUserPasswordEditObj edition of this instance.
+	 *	@return	The ICFSecSecUserPWResetEditObj edition of this instance.
 	 */
-	ICFSecSecUserPasswordEditObj getEdit();
+	ICFSecSecUserPWResetEditObj getEdit();
 
 	/**
-	 *	Get the current edition of this SecUserPassword instance as a ICFSecSecUserPasswordEditObj.
+	 *	Get the current edition of this SecUserPWReset instance as a ICFSecSecUserPWResetEditObj.
 	 *
-	 *	@return	The ICFSecSecUserPasswordEditObj edition of this instance.
+	 *	@return	The ICFSecSecUserPWResetEditObj edition of this instance.
 	 */
-	ICFSecSecUserPasswordEditObj getEditAsSecUserPassword();
+	ICFSecSecUserPWResetEditObj getEditAsSecUserPWReset();
 
 	/**
-	 *	Get the ICFSecSecUserPasswordTableObj table cache which manages this instance.
+	 *	Get the ICFSecSecUserPWResetTableObj table cache which manages this instance.
 	 *
-	 *	@return	ICFSecSecUserPasswordTableObj table cache which manages this instance.
+	 *	@return	ICFSecSecUserPWResetTableObj table cache which manages this instance.
 	 */
-	ICFSecSecUserPasswordTableObj getSecUserPasswordTable();
+	ICFSecSecUserPWResetTableObj getSecUserPWResetTable();
 
 	/**
 	 *	Get the ICFSecSchemaObj schema cache which manages this instance.
@@ -128,29 +155,29 @@ public interface ICFIntSecUserPasswordObj
 	void setSchema(ICFSecSchemaObj schema);
 
 	/**
-	 *	Get the ICFSecSecUserPassword instance which currently backs this instance.
+	 *	Get the ICFSecSecUserPWReset instance which currently backs this instance.
 	 *	<p>
 	 *	This value <i>will</i> change for read-only instances, so you should
 	 *	not hold on to the value as a reference anywhere outside the current call stack.
 	 *
-	 *	@return	ICFSecSecUserPassword instance which currently backs this object.
+	 *	@return	ICFSecSecUserPWReset instance which currently backs this object.
 	 */
-	ICFSecSecUserPassword getRec();
+	ICFSecSecUserPWReset getRec();
 
 	/**
 	 *	Internal use only.
 	 */
-	void setRec( ICFSecSecUserPassword value );
+	void setRec( ICFSecSecUserPWReset value );
 
 	/**
-	 *	Get the ICFSecSecUserPassword instance which currently backs this instance.
+	 *	Get the ICFSecSecUserPWReset instance which currently backs this instance.
 	 *	<p>
 	 *	This value <i>will</i> change for read-only instances, so you should
 	 *	not hold on to the value as a reference anywhere outside the current call stack.
 	 *
-	 *	@return	ICFSecSecUserPassword instance which currently backs this object.
+	 *	@return	ICFSecSecUserPWReset instance which currently backs this object.
 	 */
-	ICFSecSecUserPassword getSecUserPasswordRec();
+	ICFSecSecUserPWReset getSecUserPWResetRec();
 
 	/**
 	 *	Is this a new instance?
@@ -191,18 +218,25 @@ public interface ICFIntSecUserPasswordObj
 	CFLibDbKeyHash256 getRequiredSecUserId();
 
 	/**
-	 *	Get the required LocalDateTime attribute PWSetStamp.
+	 *	Get the required String attribute SentToEMailAddr.
 	 *
-	 *	@return	The required LocalDateTime attribute PWSetStamp.
+	 *	@return	The required String attribute SentToEMailAddr.
 	 */
-	LocalDateTime getRequiredPWSetStamp();
+	String getRequiredSentToEMailAddr();
 
 	/**
-	 *	Get the required String attribute PasswordHash.
+	 *	Get the required CFLibUuid6 attribute PasswordResetUuid6.
 	 *
-	 *	@return	The required String attribute PasswordHash.
+	 *	@return	The required CFLibUuid6 attribute PasswordResetUuid6.
 	 */
-	String getRequiredPasswordHash();
+	CFLibUuid6 getRequiredPasswordResetUuid6();
+
+	/**
+	 *	Get the required boolean attribute NewAccount.
+	 *
+	 *	@return	The required boolean attribute NewAccount.
+	 */
+	boolean getRequiredNewAccount();
 
 	/**
 	 *	Internal use only.

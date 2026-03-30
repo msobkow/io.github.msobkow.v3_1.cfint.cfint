@@ -112,6 +112,13 @@ public interface ICFIntTopDomainEditObj
 	ICFSecTenantObj getRequiredOwnerTenant();
 
 	/**
+	 *	Get the required ICFSecTenantObj instance referenced by the Tenant key.
+	 *
+	 *	@return	The required ICFSecTenantObj instance referenced by the Tenant key.
+	 */
+	ICFSecTenantObj getRequiredOwnerTenant( boolean forceRead );
+
+	/**
 	 *	Set the ICFSecTenantObj instance referenced by the Tenant key.
 	 *
 	 *	@param	value	the ICFSecTenantObj instance to be referenced by the Tenant key.
@@ -124,6 +131,13 @@ public interface ICFIntTopDomainEditObj
 	 *	@return	The ICFIntTldObj instance referenced by the ParentTld key.
 	 */
 	ICFIntTldObj getRequiredContainerParentTld();
+
+	/**
+	 *	Get the required ICFIntTldObj instance referenced by the ParentTld key.
+	 *
+	 *	@return	The required ICFIntTldObj instance referenced by the ParentTld key.
+	 */
+	ICFIntTldObj getRequiredContainerParentTld( boolean forceRead );
 
 	/**
 	 *	Set the ICFIntTldObj instance referenced by the ParentTld key.

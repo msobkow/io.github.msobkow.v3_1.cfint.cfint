@@ -83,7 +83,9 @@ public class CFIntSchemaObj
 	protected ICFIntSecTentGrpIncTableObj secTentGrpIncTableObj;
 	protected ICFIntSecTentGrpMembTableObj secTentGrpMembTableObj;
 	protected ICFIntSecUserTableObj secUserTableObj;
+	protected ICFIntSecUserEMConfTableObj secUserEMConfTableObj;
 	protected ICFIntSecUserPWHistoryTableObj secUserPWHistoryTableObj;
+	protected ICFIntSecUserPWResetTableObj secUserPWResetTableObj;
 	protected ICFIntSecUserPasswordTableObj secUserPasswordTableObj;
 	protected ICFIntSubProjectTableObj subProjectTableObj;
 	protected ICFIntSysClusterTableObj sysClusterTableObj;
@@ -119,7 +121,9 @@ public class CFIntSchemaObj
 		secTentGrpIncTableObj = new CFIntSecTentGrpIncTableObj( this );
 		secTentGrpMembTableObj = new CFIntSecTentGrpMembTableObj( this );
 		secUserTableObj = new CFIntSecUserTableObj( this );
+		secUserEMConfTableObj = new CFIntSecUserEMConfTableObj( this );
 		secUserPWHistoryTableObj = new CFIntSecUserPWHistoryTableObj( this );
+		secUserPWResetTableObj = new CFIntSecUserPWResetTableObj( this );
 		secUserPasswordTableObj = new CFIntSecUserPasswordTableObj( this );
 		subProjectTableObj = new CFIntSubProjectTableObj( this );
 		sysClusterTableObj = new CFIntSysClusterTableObj( this );
@@ -422,8 +426,14 @@ public class CFIntSchemaObj
 		if( secUserTableObj != null ) {
 			secUserTableObj.minimizeMemory();
 		}
+		if( secUserEMConfTableObj != null ) {
+			secUserEMConfTableObj.minimizeMemory();
+		}
 		if( secUserPWHistoryTableObj != null ) {
 			secUserPWHistoryTableObj.minimizeMemory();
+		}
+		if( secUserPWResetTableObj != null ) {
+			secUserPWResetTableObj.minimizeMemory();
 		}
 		if( secUserPasswordTableObj != null ) {
 			secUserPasswordTableObj.minimizeMemory();
@@ -558,8 +568,16 @@ public class CFIntSchemaObj
 		return( secUserTableObj );
 	}
 
+	public ICFIntSecUserEMConfTableObj getSecUserEMConfTableObj() {
+		return( secUserEMConfTableObj );
+	}
+
 	public ICFIntSecUserPWHistoryTableObj getSecUserPWHistoryTableObj() {
 		return( secUserPWHistoryTableObj );
+	}
+
+	public ICFIntSecUserPWResetTableObj getSecUserPWResetTableObj() {
+		return( secUserPWResetTableObj );
 	}
 
 	public ICFIntSecUserPasswordTableObj getSecUserPasswordTableObj() {

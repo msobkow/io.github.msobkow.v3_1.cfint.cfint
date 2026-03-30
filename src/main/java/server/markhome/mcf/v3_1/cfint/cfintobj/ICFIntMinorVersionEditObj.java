@@ -112,6 +112,13 @@ public interface ICFIntMinorVersionEditObj
 	ICFSecTenantObj getRequiredOwnerTenant();
 
 	/**
+	 *	Get the required ICFSecTenantObj instance referenced by the Tenant key.
+	 *
+	 *	@return	The required ICFSecTenantObj instance referenced by the Tenant key.
+	 */
+	ICFSecTenantObj getRequiredOwnerTenant( boolean forceRead );
+
+	/**
 	 *	Set the ICFSecTenantObj instance referenced by the Tenant key.
 	 *
 	 *	@param	value	the ICFSecTenantObj instance to be referenced by the Tenant key.
@@ -124,6 +131,13 @@ public interface ICFIntMinorVersionEditObj
 	 *	@return	The ICFIntMajorVersionObj instance referenced by the ParentMajVer key.
 	 */
 	ICFIntMajorVersionObj getRequiredContainerParentMajVer();
+
+	/**
+	 *	Get the required ICFIntMajorVersionObj instance referenced by the ParentMajVer key.
+	 *
+	 *	@return	The required ICFIntMajorVersionObj instance referenced by the ParentMajVer key.
+	 */
+	ICFIntMajorVersionObj getRequiredContainerParentMajVer( boolean forceRead );
 
 	/**
 	 *	Set the ICFIntMajorVersionObj instance referenced by the ParentMajVer key.
