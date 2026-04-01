@@ -144,6 +144,12 @@ public class CFIntSecUserObj
 			nextName = objName;
 			remainingName = null;
 		}
+		if( subObj == null ) {
+			subObj = ((ICFIntSchemaObj)getSchema()).getSecUserEMConfTableObj().readSecUserEMConfByUUuid6Idx( nextName, false );
+		}
+		if( subObj == null ) {
+			subObj = ((ICFIntSchemaObj)getSchema()).getSecUserPWResetTableObj().readSecUserPWResetByUUuid6Idx( nextName, false );
+		}
 		if( remainingName == null ) {
 			retObj = subObj;
 		}
