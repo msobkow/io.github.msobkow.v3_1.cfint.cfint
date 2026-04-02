@@ -145,18 +145,28 @@ public class CFIntSecUserObj
 			remainingName = null;
 		}
 		if( subObj == null ) {
-			if (nextName == null || (nextName != null && nextName.isEmpty())) {
+			try {
+				if (nextName == null || (nextName != null && nextName.isEmpty())) {
 				throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredEMConfirmationUuid6");
 			}
 			CFLibUuid6 natNextName = CFLibUuid6.fromString(nextName);
-			subObj = ((ICFIntSchemaObj)getSchema()).getSecUserEMConfTableObj().readSecUserEMConfByUUuid6Idx( natNextName, false );
+				subObj = ((ICFIntSchemaObj)getSchema()).getSecUserEMConfTableObj().readSecUserEMConfByUUuid6Idx( natNextName, false );
+			}
+			catch (Throwable th) {
+				subObj = null;
+			}
 		}
 		if( subObj == null ) {
-			if (nextName == null || (nextName != null && nextName.isEmpty())) {
+			try {
+				if (nextName == null || (nextName != null && nextName.isEmpty())) {
 				throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredPasswordResetUuid6");
 			}
 			CFLibUuid6 natNextName = CFLibUuid6.fromString(nextName);
-			subObj = ((ICFIntSchemaObj)getSchema()).getSecUserPWResetTableObj().readSecUserPWResetByUUuid6Idx( natNextName, false );
+				subObj = ((ICFIntSchemaObj)getSchema()).getSecUserPWResetTableObj().readSecUserPWResetByUUuid6Idx( natNextName, false );
+			}
+			catch (Throwable th) {
+				subObj = null;
+			}
 		}
 		if( remainingName == null ) {
 			retObj = subObj;
