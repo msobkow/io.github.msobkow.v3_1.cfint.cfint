@@ -145,11 +145,19 @@ public class CFIntTenantObj
 			remainingName = null;
 		}
 		if( subObj == null ) {
+			if (nextName == null) {
+				throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
+			}
+			String natNextName = nextName;
 			subObj = ((ICFIntSchemaObj)getSchema()).getSecTentGrpTableObj().readSecTentGrpByUNameIdx( getRequiredId(),
-				nextName, false );
+				natNextName, false );
 		}
 		if( subObj == null ) {
-			subObj = ((ICFIntSchemaObj)getSchema()).getTldTableObj().readTldByNameIdx( nextName, false );
+			if (nextName == null) {
+				throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
+			}
+			String natNextName = nextName;
+			subObj = ((ICFIntSchemaObj)getSchema()).getTldTableObj().readTldByNameIdx( natNextName, false );
 		}
 		if( remainingName == null ) {
 			retObj = subObj;
