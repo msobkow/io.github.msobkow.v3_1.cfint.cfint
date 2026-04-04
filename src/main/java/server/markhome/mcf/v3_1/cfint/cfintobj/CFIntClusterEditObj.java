@@ -192,9 +192,9 @@ public class CFIntClusterEditObj
 		if( subObj == null ) {
 			try {
 				if (nextName == null) {
-				throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredTenantName");
-			}
-			String natNextName = nextName;
+					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredTenantName");
+				}
+				String natNextName = nextName;
 				subObj = ((ICFIntSchemaObj)getSchema()).getTenantTableObj().readTenantByUNameIdx( getRequiredId(),
 				natNextName, false );
 			}
@@ -205,9 +205,9 @@ public class CFIntClusterEditObj
 		if( subObj == null ) {
 			try {
 				if (nextName == null) {
-				throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
-			}
-			String natNextName = nextName;
+					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
+				}
+				String natNextName = nextName;
 				subObj = ((ICFIntSchemaObj)getSchema()).getSecClusGrpTableObj().readSecClusGrpByUNameIdx( getRequiredId(),
 				natNextName, false );
 			}

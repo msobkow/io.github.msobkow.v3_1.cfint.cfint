@@ -150,9 +150,9 @@ public class CFIntTopDomainObj
 		if( subObj == null ) {
 			try {
 				if (nextName == null) {
-				throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
-			}
-			String natNextName = nextName;
+					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
+				}
+				String natNextName = nextName;
 				subObj = ((ICFIntSchemaObj)getSchema()).getTopProjectTableObj().readTopProjectByNameIdx( getRequiredId(),
 				natNextName, false );
 			}
@@ -163,9 +163,9 @@ public class CFIntTopDomainObj
 		if( subObj == null ) {
 			try {
 				if (nextName == null) {
-				throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
-			}
-			String natNextName = nextName;
+					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
+				}
+				String natNextName = nextName;
 				subObj = ((ICFIntSchemaObj)getSchema()).getLicenseTableObj().readLicenseByUNameIdx( getRequiredId(),
 				natNextName, false );
 			}

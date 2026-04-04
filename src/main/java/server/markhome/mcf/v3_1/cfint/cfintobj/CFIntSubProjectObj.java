@@ -149,9 +149,9 @@ public class CFIntSubProjectObj
 		if( subObj == null ) {
 			try {
 				if (nextName == null) {
-				throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
-			}
-			String natNextName = nextName;
+					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
+				}
+				String natNextName = nextName;
 				subObj = ((ICFIntSchemaObj)getSchema()).getMajorVersionTableObj().readMajorVersionByNameIdx( getRequiredId(),
 				natNextName, false );
 			}
