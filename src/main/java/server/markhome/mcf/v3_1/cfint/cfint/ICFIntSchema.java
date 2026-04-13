@@ -49,6 +49,42 @@ extends ICFSecSchema
 	public static final String SCHEMA_NAME = "CFInt";
 	public static final String DBSCHEMA_NAME = "CFInt31";
 	static final AtomicReference<ApplicationContext> arApplicationContext = new AtomicReference<>();
+	public static final CFSecTableInfo TABLE_INFO[] = {new CFSecTableInfo("License", false, false, "Tenant"),
+		new CFSecTableInfo("MajorVersion", true, false, "Tenant"),
+		new CFSecTableInfo("MimeType", true, false, "System"),
+		new CFSecTableInfo("MinorVersion", true, false, "Tenant"),
+		new CFSecTableInfo("SubProject", true, false, "Tenant"),
+		new CFSecTableInfo("Tld", true, false, "Tenant"),
+		new CFSecTableInfo("TopDomain", true, false, "Tenant"),
+		new CFSecTableInfo("TopProject", true, false, "Tenant"),
+		new CFSecTableInfo("URLProtocol", true, false, "System")};
+	public static final AtomicReference<CFSecTableInfo[]> consolidatedTableInfo = new AtomicReference<>();
+	
+	public static CFSecTableInfo[] getTableInfo() {
+		return TABLE_INFO;
+	}
+	
+	public static CFSecTableInfo[] getConsolidatedTableInfo() {
+		if (consolidatedTableInfo.get() == null) {
+			ArrayList<CFSecTableInfo> lst = new ArrayList<>();
+			for( CFSecTableInfo info: ICFSecSchema.getTableInfo()) {
+				lst.add(info);
+			}
+			for( CFSecTableInfo info: TABLE_INFO) {
+				lst.add(info);
+			}
+			lst.sort((o1, o2) -> {
+				return o1.getTableName().compareTo(o2.getTableName());
+			});
+			CFSecTableInfo arr[] = new CFSecTableInfo[lst.size()];
+			int idx = 0;
+			for(CFSecTableInfo info: lst) {
+				arr[idx++] = info;
+			}
+			consolidatedTableInfo.compareAndSet(arr, null);
+		}
+		return(consolidatedTableInfo.get());
+	}
 
 	public default void setApplicationContext(final ApplicationContext applicationContext) throws BeansException {
 		arApplicationContext.compareAndSet(arApplicationContext.get(), applicationContext);
@@ -946,5 +982,6 @@ extends ICFSecSchema
 	 */
 	//public static void setTablePerms( ICFSecTablePerms value );
 
-	public void bootstrapSchema();
+	public void bootstrapSchema(CFSecTableInfo tableInfo[]);
+	public void bootstrapAllTablesSecurity(CFLibDbKeyHash256 clusterId, CFLibDbKeyHash256 tenantId, CFSecTableInfo tableInfo[]);
 }
