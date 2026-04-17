@@ -48,7 +48,7 @@ extends ICFSecSchema
 {
 	public static final String SCHEMA_NAME = "CFInt";
 	public static final String DBSCHEMA_NAME = "CFInt31";
-	static final AtomicReference<ApplicationContext> arApplicationContext = new AtomicReference<>();
+	static final AtomicReference<ApplicationContext> arApplicationContext = new AtomicReference<>(null);
 	public static final CFSecTableInfo TABLE_INFO[] = {new CFSecTableInfo("License", false, false, "Tenant"),
 		new CFSecTableInfo("MajorVersion", true, false, "Tenant"),
 		new CFSecTableInfo("MimeType", true, false, "System"),
@@ -58,7 +58,7 @@ extends ICFSecSchema
 		new CFSecTableInfo("TopDomain", true, false, "Tenant"),
 		new CFSecTableInfo("TopProject", true, false, "Tenant"),
 		new CFSecTableInfo("URLProtocol", true, false, "System")};
-	public static final AtomicReference<CFSecTableInfo[]> consolidatedTableInfo = new AtomicReference<>();
+	public static final AtomicReference<CFSecTableInfo[]> consolidatedTableInfo = new AtomicReference<>(null);
 	
 	public static CFSecTableInfo[] getTableInfo() {
 		return TABLE_INFO;
@@ -81,7 +81,7 @@ extends ICFSecSchema
 			for(CFSecTableInfo info: lst) {
 				arr[idx++] = info;
 			}
-			consolidatedTableInfo.compareAndSet(arr, null);
+			consolidatedTableInfo.compareAndSet(null, arr);
 		}
 		return(consolidatedTableInfo.get());
 	}
