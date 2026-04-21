@@ -46,6 +46,7 @@ import server.markhome.mcf.v3_1.cfint.cfintobj.*;
  */
 public interface ICFIntMinorVersionTable
 {
+	public static final String TABLE_NAME = "MinorVersion";
 
 	/**
 	 *	Create the instance in the database, and update the specified record
