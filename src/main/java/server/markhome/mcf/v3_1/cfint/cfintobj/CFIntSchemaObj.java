@@ -42,8 +42,8 @@ import server.markhome.mcf.v3_1.cfint.cfint.*;
 public class CFIntSchemaObj
 	implements ICFIntSchemaObj
 {
-	public static String SCHEMA_NAME = "CFInt";
-	public static String SCHEMA_DBNAME = "CFInt31";
+	public static final String SCHEMA_NAME = ICFIntSchema.SCHEMA_NAME;
+	public static final String SCHEMA_DBNAME = ICFIntSchema.DBSCHEMA_NAME;
 	protected ICFSecAuthorization authorization = null;
 	protected String secClusterName = "system";
 	protected String secTenantName = "system";
