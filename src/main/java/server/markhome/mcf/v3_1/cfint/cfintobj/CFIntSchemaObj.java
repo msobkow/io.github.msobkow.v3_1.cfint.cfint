@@ -75,6 +75,11 @@ public class CFIntSchemaObj
 	protected ICFIntSecClusGrpTableObj secClusGrpTableObj;
 	protected ICFIntSecClusGrpIncTableObj secClusGrpIncTableObj;
 	protected ICFIntSecClusGrpMembTableObj secClusGrpMembTableObj;
+	protected ICFIntSecClusRoleTableObj secClusRoleTableObj;
+	protected ICFIntSecClusRoleMembTableObj secClusRoleMembTableObj;
+	protected ICFIntSecRoleTableObj secRoleTableObj;
+	protected ICFIntSecRoleEnablesTableObj secRoleEnablesTableObj;
+	protected ICFIntSecRoleMembTableObj secRoleMembTableObj;
 	protected ICFIntSecSessionTableObj secSessionTableObj;
 	protected ICFIntSecSysGrpTableObj secSysGrpTableObj;
 	protected ICFIntSecSysGrpIncTableObj secSysGrpIncTableObj;
@@ -82,6 +87,8 @@ public class CFIntSchemaObj
 	protected ICFIntSecTentGrpTableObj secTentGrpTableObj;
 	protected ICFIntSecTentGrpIncTableObj secTentGrpIncTableObj;
 	protected ICFIntSecTentGrpMembTableObj secTentGrpMembTableObj;
+	protected ICFIntSecTentRoleTableObj secTentRoleTableObj;
+	protected ICFIntSecTentRoleMembTableObj secTentRoleMembTableObj;
 	protected ICFIntSecUserTableObj secUserTableObj;
 	protected ICFIntSecUserEMConfTableObj secUserEMConfTableObj;
 	protected ICFIntSecUserPWHistoryTableObj secUserPWHistoryTableObj;
@@ -113,6 +120,11 @@ public class CFIntSchemaObj
 		secClusGrpTableObj = new CFIntSecClusGrpTableObj( this );
 		secClusGrpIncTableObj = new CFIntSecClusGrpIncTableObj( this );
 		secClusGrpMembTableObj = new CFIntSecClusGrpMembTableObj( this );
+		secClusRoleTableObj = new CFIntSecClusRoleTableObj( this );
+		secClusRoleMembTableObj = new CFIntSecClusRoleMembTableObj( this );
+		secRoleTableObj = new CFIntSecRoleTableObj( this );
+		secRoleEnablesTableObj = new CFIntSecRoleEnablesTableObj( this );
+		secRoleMembTableObj = new CFIntSecRoleMembTableObj( this );
 		secSessionTableObj = new CFIntSecSessionTableObj( this );
 		secSysGrpTableObj = new CFIntSecSysGrpTableObj( this );
 		secSysGrpIncTableObj = new CFIntSecSysGrpIncTableObj( this );
@@ -120,6 +132,8 @@ public class CFIntSchemaObj
 		secTentGrpTableObj = new CFIntSecTentGrpTableObj( this );
 		secTentGrpIncTableObj = new CFIntSecTentGrpIncTableObj( this );
 		secTentGrpMembTableObj = new CFIntSecTentGrpMembTableObj( this );
+		secTentRoleTableObj = new CFIntSecTentRoleTableObj( this );
+		secTentRoleMembTableObj = new CFIntSecTentRoleMembTableObj( this );
 		secUserTableObj = new CFIntSecUserTableObj( this );
 		secUserEMConfTableObj = new CFIntSecUserEMConfTableObj( this );
 		secUserPWHistoryTableObj = new CFIntSecUserPWHistoryTableObj( this );
@@ -402,6 +416,21 @@ public class CFIntSchemaObj
 		if( secClusGrpMembTableObj != null ) {
 			secClusGrpMembTableObj.minimizeMemory();
 		}
+		if( secClusRoleTableObj != null ) {
+			secClusRoleTableObj.minimizeMemory();
+		}
+		if( secClusRoleMembTableObj != null ) {
+			secClusRoleMembTableObj.minimizeMemory();
+		}
+		if( secRoleTableObj != null ) {
+			secRoleTableObj.minimizeMemory();
+		}
+		if( secRoleEnablesTableObj != null ) {
+			secRoleEnablesTableObj.minimizeMemory();
+		}
+		if( secRoleMembTableObj != null ) {
+			secRoleMembTableObj.minimizeMemory();
+		}
 		if( secSessionTableObj != null ) {
 			secSessionTableObj.minimizeMemory();
 		}
@@ -422,6 +451,12 @@ public class CFIntSchemaObj
 		}
 		if( secTentGrpMembTableObj != null ) {
 			secTentGrpMembTableObj.minimizeMemory();
+		}
+		if( secTentRoleTableObj != null ) {
+			secTentRoleTableObj.minimizeMemory();
+		}
+		if( secTentRoleMembTableObj != null ) {
+			secTentRoleMembTableObj.minimizeMemory();
 		}
 		if( secUserTableObj != null ) {
 			secUserTableObj.minimizeMemory();
@@ -536,6 +571,26 @@ public class CFIntSchemaObj
 		return( secClusGrpMembTableObj );
 	}
 
+	public ICFIntSecClusRoleTableObj getSecClusRoleTableObj() {
+		return( secClusRoleTableObj );
+	}
+
+	public ICFIntSecClusRoleMembTableObj getSecClusRoleMembTableObj() {
+		return( secClusRoleMembTableObj );
+	}
+
+	public ICFIntSecRoleTableObj getSecRoleTableObj() {
+		return( secRoleTableObj );
+	}
+
+	public ICFIntSecRoleEnablesTableObj getSecRoleEnablesTableObj() {
+		return( secRoleEnablesTableObj );
+	}
+
+	public ICFIntSecRoleMembTableObj getSecRoleMembTableObj() {
+		return( secRoleMembTableObj );
+	}
+
 	public ICFIntSecSessionTableObj getSecSessionTableObj() {
 		return( secSessionTableObj );
 	}
@@ -562,6 +617,14 @@ public class CFIntSchemaObj
 
 	public ICFIntSecTentGrpMembTableObj getSecTentGrpMembTableObj() {
 		return( secTentGrpMembTableObj );
+	}
+
+	public ICFIntSecTentRoleTableObj getSecTentRoleTableObj() {
+		return( secTentRoleTableObj );
+	}
+
+	public ICFIntSecTentRoleMembTableObj getSecTentRoleMembTableObj() {
+		return( secTentRoleMembTableObj );
 	}
 
 	public ICFIntSecUserTableObj getSecUserTableObj() {

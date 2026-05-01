@@ -1,4 +1,4 @@
-// Description: Java 25 Instance Edit Object interface for CFInt Cluster.
+// Description: Java 25 Instance Edit Object interface for CFInt SecRole.
 
 /*
  *	server.markhome.mcf.CFInt
@@ -38,8 +38,8 @@ import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 
-public interface ICFIntClusterEditObj
-	extends ICFIntClusterObj, ICFSecClusterEditObj
+public interface ICFIntSecRoleEditObj
+	extends ICFIntSecRoleObj, ICFSecSecRoleEditObj
 {
 	/*
 	 *	create() may return a different instance than the
@@ -50,12 +50,12 @@ public interface ICFIntClusterEditObj
 	 *
 	 *	@return The created instance.
 	 */
-	ICFSecClusterObj create();
+	ICFSecSecRoleObj create();
 
 	/*
 	 *	Update the instance.
 	 */
-	CFSecClusterEditObj update();
+	CFSecSecRoleEditObj update();
 
 	/**
 	 *	Set the user who created this instance.
@@ -86,32 +86,18 @@ public interface ICFIntClusterEditObj
 	void setUpdatedAt( LocalDateTime value );
 
 	/**
-	 *	Get a list ICFSecTenantObj instances referenced by the Tenant key.
+	 *	Get a list ICFSecSecRoleEnablesObj instances referenced by the EnabledByRole key.
 	 *
-	 *	@return	The (potentially empty) list of ICFSecTenantObj instances referenced by the Tenant key.
+	 *	@return	The (potentially empty) list of ICFSecSecRoleEnablesObj instances referenced by the EnabledByRole key.
 	 */
-	List<ICFSecTenantObj> getOptionalComponentsTenant();
+	List<ICFSecSecRoleEnablesObj> getOptionalChildrenEnabledByRole();
 
 	/**
-	 *	Get a list ICFSecSecClusGrpObj instances referenced by the SecGroup key.
+	 *	Get a list ICFSecSecRoleMembObj instances referenced by the MembByRole key.
 	 *
-	 *	@return	The (potentially empty) list of ICFSecSecClusGrpObj instances referenced by the SecGroup key.
+	 *	@return	The (potentially empty) list of ICFSecSecRoleMembObj instances referenced by the MembByRole key.
 	 */
-	List<ICFSecSecClusGrpObj> getOptionalComponentsSecGroup();
-
-	/**
-	 *	Get a list ICFSecSecClusRoleObj instances referenced by the SecRole key.
-	 *
-	 *	@return	The (potentially empty) list of ICFSecSecClusRoleObj instances referenced by the SecRole key.
-	 */
-	List<ICFSecSecClusRoleObj> getOptionalComponentsSecRole();
-
-	/**
-	 *	Get a list ICFSecSysClusterObj instances referenced by the SysCluster key.
-	 *
-	 *	@return	The (potentially empty) list of ICFSecSysClusterObj instances referenced by the SysCluster key.
-	 */
-	List<ICFSecSysClusterObj> getOptionalComponentsSysCluster();
+	List<ICFSecSecRoleMembObj> getOptionalChildrenMembByRole();
 
 	public void copyRecToOrig();
 	public void copyOrigToRec();

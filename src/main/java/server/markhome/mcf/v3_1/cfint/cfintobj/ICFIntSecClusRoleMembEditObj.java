@@ -1,4 +1,4 @@
-// Description: Java 25 Instance Edit Object interface for CFInt Cluster.
+// Description: Java 25 Instance Edit Object interface for CFInt SecClusRoleMemb.
 
 /*
  *	server.markhome.mcf.CFInt
@@ -38,8 +38,8 @@ import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 
-public interface ICFIntClusterEditObj
-	extends ICFIntClusterObj, ICFSecClusterEditObj
+public interface ICFIntSecClusRoleMembEditObj
+	extends ICFIntSecClusRoleMembObj, ICFSecSecClusRoleMembEditObj
 {
 	/*
 	 *	create() may return a different instance than the
@@ -50,12 +50,12 @@ public interface ICFIntClusterEditObj
 	 *
 	 *	@return The created instance.
 	 */
-	ICFSecClusterObj create();
+	ICFSecSecClusRoleMembObj create();
 
 	/*
 	 *	Update the instance.
 	 */
-	CFSecClusterEditObj update();
+	CFSecSecClusRoleMembEditObj update();
 
 	/**
 	 *	Set the user who created this instance.
@@ -84,34 +84,6 @@ public interface ICFIntClusterEditObj
 	 *	@param	value	The Calendar value for the create time of the instance.
 	 */
 	void setUpdatedAt( LocalDateTime value );
-
-	/**
-	 *	Get a list ICFSecTenantObj instances referenced by the Tenant key.
-	 *
-	 *	@return	The (potentially empty) list of ICFSecTenantObj instances referenced by the Tenant key.
-	 */
-	List<ICFSecTenantObj> getOptionalComponentsTenant();
-
-	/**
-	 *	Get a list ICFSecSecClusGrpObj instances referenced by the SecGroup key.
-	 *
-	 *	@return	The (potentially empty) list of ICFSecSecClusGrpObj instances referenced by the SecGroup key.
-	 */
-	List<ICFSecSecClusGrpObj> getOptionalComponentsSecGroup();
-
-	/**
-	 *	Get a list ICFSecSecClusRoleObj instances referenced by the SecRole key.
-	 *
-	 *	@return	The (potentially empty) list of ICFSecSecClusRoleObj instances referenced by the SecRole key.
-	 */
-	List<ICFSecSecClusRoleObj> getOptionalComponentsSecRole();
-
-	/**
-	 *	Get a list ICFSecSysClusterObj instances referenced by the SysCluster key.
-	 *
-	 *	@return	The (potentially empty) list of ICFSecSysClusterObj instances referenced by the SysCluster key.
-	 */
-	List<ICFSecSysClusterObj> getOptionalComponentsSysCluster();
 
 	public void copyRecToOrig();
 	public void copyOrigToRec();
