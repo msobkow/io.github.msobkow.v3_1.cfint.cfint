@@ -372,6 +372,7 @@ public class CFIntSecClusRoleTableObj
 		keyUNameIdx.setRequiredName( existing.getRequiredName() );
 
 
+		schema.getSecClusRoleMembTableObj().deepDisposeSecClusRoleMembByClusRoleIdx( existing.getRequiredSecClusRoleId() );
 
 		if( indexByClusterIdx != null ) {
 			if( indexByClusterIdx.containsKey( keyClusterIdx ) ) {
