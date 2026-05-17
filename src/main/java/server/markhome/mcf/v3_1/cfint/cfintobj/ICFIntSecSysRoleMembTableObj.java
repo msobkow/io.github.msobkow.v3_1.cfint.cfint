@@ -38,6 +38,6 @@ import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 
-public interface ICFIntSecRoleTableObj
-	extends ICFSecSecRoleTableObj
+public interface ICFIntSecSysRoleMembTableObj
+	extends ICFSecSecSysRoleMembTableObj
 {}

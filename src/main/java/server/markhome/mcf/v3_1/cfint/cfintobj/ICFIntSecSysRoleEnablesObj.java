@@ -1,4 +1,4 @@
-// Description: Java 25 Object interface for CFInt SecTentGrpInc.
+// Description: Java 25 Object interface for CFInt SecSysRoleEnables.
 
 /*
  *	server.markhome.mcf.CFInt
@@ -38,11 +38,11 @@ import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 
-public interface ICFIntSecTentGrpIncObj
-	extends ICFSecSecTentGrpIncObj
+public interface ICFIntSecSysRoleEnablesObj
+	extends ICFSecSecSysRoleEnablesObj
 {
 	/**
-	 *	Initially, the class code for an object is ICFSecSecTentGrpInc.CLASS_CODE, but the Obj layer relies on class code translation to map those
+	 *	Initially, the class code for an object is ICFSecSecSysRoleEnables.CLASS_CODE, but the Obj layer relies on class code translation to map those
 	 *	backing store entities to a runtime set of front-facing classcodes that the clients download and use when talking to the server implementing this code base.
 	 *
 	 *	@return The runtime class code used by this object. Only after the system is fully booted are these values stable and reliable.
@@ -76,11 +76,11 @@ public interface ICFIntSecTentGrpIncObj
 	 */
 	LocalDateTime getUpdatedAt();
 	/**
-	 *	Realise this instance of a SecTentGrpInc.
+	 *	Realise this instance of a SecSysRoleEnables.
 	 *
-	 *	@return	CFSecSecTentGrpIncObj instance which should be subsequently referenced.
+	 *	@return	CFSecSecSysRoleEnablesObj instance which should be subsequently referenced.
 	 */
-	ICFSecSecTentGrpIncObj realise();
+	ICFSecSecSysRoleEnablesObj realise();
 
 	/**
 	 *	Forget this instance from the cache.
@@ -92,51 +92,51 @@ public interface ICFIntSecTentGrpIncObj
 	/**
 	 *	Re-read this instance by it's primary key.
 	 *
-	 *	@return	ICFSecSecTentGrpIncObj the reference to the cached or read (realised) instance.
+	 *	@return	ICFSecSecSysRoleEnablesObj the reference to the cached or read (realised) instance.
 	 */
-	ICFSecSecTentGrpIncObj read();
+	ICFSecSecSysRoleEnablesObj read();
 
 	/**
 	 *	Re-read this instance by it's primary key.
 	 *
-	 *	@return	ICFSecSecTentGrpIncObj the reference to the cached or read (realised) instance.
+	 *	@return	ICFSecSecSysRoleEnablesObj the reference to the cached or read (realised) instance.
 	 */
-	ICFSecSecTentGrpIncObj read( boolean forceRead );
+	ICFSecSecSysRoleEnablesObj read( boolean forceRead );
 
 	/**
-	 *	Initialize and return a locked edition of this SecTentGrpInc instance.
+	 *	Initialize and return a locked edition of this SecSysRoleEnables instance.
 	 *
-	 *	@return	The newly locked ICFSecSecTentGrpIncEditObj edition of this instance.
+	 *	@return	The newly locked ICFSecSecSysRoleEnablesEditObj edition of this instance.
 	 */
-	ICFSecSecTentGrpIncEditObj beginEdit();
+	ICFSecSecSysRoleEnablesEditObj beginEdit();
 
 	/**
-	 *	End this edition of this SecTentGrpInc instance.
+	 *	End this edition of this SecSysRoleEnables instance.
 	 *
 	 *	@throws	CFLibNotSupportedException if you try to end a read-only view.
 	 */
 	void endEdit();
 
 	/**
-	 *	Get the current edition of this SecTentGrpInc instance.
+	 *	Get the current edition of this SecSysRoleEnables instance.
 	 *
-	 *	@return	The ICFSecSecTentGrpIncEditObj edition of this instance.
+	 *	@return	The ICFSecSecSysRoleEnablesEditObj edition of this instance.
 	 */
-	ICFSecSecTentGrpIncEditObj getEdit();
+	ICFSecSecSysRoleEnablesEditObj getEdit();
 
 	/**
-	 *	Get the current edition of this SecTentGrpInc instance as a ICFSecSecTentGrpIncEditObj.
+	 *	Get the current edition of this SecSysRoleEnables instance as a ICFSecSecSysRoleEnablesEditObj.
 	 *
-	 *	@return	The ICFSecSecTentGrpIncEditObj edition of this instance.
+	 *	@return	The ICFSecSecSysRoleEnablesEditObj edition of this instance.
 	 */
-	ICFSecSecTentGrpIncEditObj getEditAsSecTentGrpInc();
+	ICFSecSecSysRoleEnablesEditObj getEditAsSecSysRoleEnables();
 
 	/**
-	 *	Get the ICFSecSecTentGrpIncTableObj table cache which manages this instance.
+	 *	Get the ICFSecSecSysRoleEnablesTableObj table cache which manages this instance.
 	 *
-	 *	@return	ICFSecSecTentGrpIncTableObj table cache which manages this instance.
+	 *	@return	ICFSecSecSysRoleEnablesTableObj table cache which manages this instance.
 	 */
-	ICFSecSecTentGrpIncTableObj getSecTentGrpIncTable();
+	ICFSecSecSysRoleEnablesTableObj getSecSysRoleEnablesTable();
 
 	/**
 	 *	Get the ICFSecSchemaObj schema cache which manages this instance.
@@ -155,29 +155,29 @@ public interface ICFIntSecTentGrpIncObj
 	void setSchema(ICFSecSchemaObj schema);
 
 	/**
-	 *	Get the ICFSecSecTentGrpInc instance which currently backs this instance.
+	 *	Get the ICFSecSecSysRoleEnables instance which currently backs this instance.
 	 *	<p>
 	 *	This value <i>will</i> change for read-only instances, so you should
 	 *	not hold on to the value as a reference anywhere outside the current call stack.
 	 *
-	 *	@return	ICFSecSecTentGrpInc instance which currently backs this object.
+	 *	@return	ICFSecSecSysRoleEnables instance which currently backs this object.
 	 */
-	ICFSecSecTentGrpInc getRec();
+	ICFSecSecSysRoleEnables getRec();
 
 	/**
 	 *	Internal use only.
 	 */
-	void setRec( ICFSecSecTentGrpInc value );
+	void setRec( ICFSecSecSysRoleEnables value );
 
 	/**
-	 *	Get the ICFSecSecTentGrpInc instance which currently backs this instance.
+	 *	Get the ICFSecSecSysRoleEnables instance which currently backs this instance.
 	 *	<p>
 	 *	This value <i>will</i> change for read-only instances, so you should
 	 *	not hold on to the value as a reference anywhere outside the current call stack.
 	 *
-	 *	@return	ICFSecSecTentGrpInc instance which currently backs this object.
+	 *	@return	ICFSecSecSysRoleEnables instance which currently backs this object.
 	 */
-	ICFSecSecTentGrpInc getSecTentGrpIncRec();
+	ICFSecSecSysRoleEnables getSecSysRoleEnablesRec();
 
 	/**
 	 *	Is this a new instance?
@@ -197,46 +197,46 @@ public interface ICFIntSecTentGrpIncObj
 	void setIsNew( boolean value );
 
 	/**
-	 *	Get the required ICFIntSecTentGrpObj instance referenced by the Group key.
+	 *	Get the required ICFIntSecSysRoleObj instance referenced by the SysRole key.
 	 *
-	 *	@return	The required ICFIntSecTentGrpObj instance referenced by the Group key.
+	 *	@return	The required ICFIntSecSysRoleObj instance referenced by the SysRole key.
 	 */
-	ICFSecSecTentGrpObj getRequiredContainerGroup();
+	ICFSecSecSysRoleObj getRequiredContainerSysRole();
 
 	/**
-	 *	Get the required ICFSecSecTentGrpObj instance referenced by the Group key.
+	 *	Get the required ICFSecSecSysRoleObj instance referenced by the SysRole key.
 	 *
-	 *	@return	The required ICFSecSecTentGrpObj instance referenced by the Group key.
+	 *	@return	The required ICFSecSecSysRoleObj instance referenced by the SysRole key.
 	 */
-	ICFSecSecTentGrpObj getRequiredContainerGroup( boolean forceRead );
+	ICFSecSecSysRoleObj getRequiredContainerSysRole( boolean forceRead );
 
 	/**
-	 *	Get the required ICFIntSecSysGrpObj instance referenced by the SubGroup key.
+	 *	Get the required ICFIntSecSysGrpObj instance referenced by the EnableGroup key.
 	 *
-	 *	@return	The required ICFIntSecSysGrpObj instance referenced by the SubGroup key.
+	 *	@return	The required ICFIntSecSysGrpObj instance referenced by the EnableGroup key.
 	 */
-	ICFSecSecSysGrpObj getRequiredParentSubGroup();
+	ICFSecSecSysGrpObj getRequiredParentEnableGroup();
 
 	/**
-	 *	Get the required ICFSecSecSysGrpObj instance referenced by the SubGroup key.
+	 *	Get the required ICFSecSecSysGrpObj instance referenced by the EnableGroup key.
 	 *
-	 *	@return	The required ICFSecSecSysGrpObj instance referenced by the SubGroup key.
+	 *	@return	The required ICFSecSecSysGrpObj instance referenced by the EnableGroup key.
 	 */
-	ICFSecSecSysGrpObj getRequiredParentSubGroup( boolean forceRead );
+	ICFSecSecSysGrpObj getRequiredParentEnableGroup( boolean forceRead );
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute SecTentGrpId.
+	 *	Get the required CFLibDbKeyHash256 attribute SecSysRoleId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute SecTentGrpId.
+	 *	@return	The required CFLibDbKeyHash256 attribute SecSysRoleId.
 	 */
-	CFLibDbKeyHash256 getRequiredSecTentGrpId();
+	CFLibDbKeyHash256 getRequiredSecSysRoleId();
 
 	/**
-	 *	Get the required String attribute InclName.
+	 *	Get the required String attribute EnableName.
 	 *
-	 *	@return	The required String attribute InclName.
+	 *	@return	The required String attribute EnableName.
 	 */
-	String getRequiredInclName();
+	String getRequiredEnableName();
 
 	/**
 	 *	Internal use only.

@@ -49,22 +49,22 @@ public class CFIntSecTentRoleObj
 	protected ICFSecSchemaObj schema;
 	protected CFLibDbKeyHash256 pKey;
 	protected ICFSecSecTentRole rec;
-	protected ICFSecSecSysGrpObj requiredContainerRole;
 	protected ICFSecTenantObj requiredOwnerTenant;
+	protected ICFSecSecSysGrpObj requiredContainerSysRole;
 	protected List<ICFSecSecTentRoleMembObj> optionalChildrenMembByRole;
 
 	public CFIntSecTentRoleObj() {
 		isNew = true;
-		requiredContainerRole = null;
 		requiredOwnerTenant = null;
+		requiredContainerSysRole = null;
 	}
 
 	public CFIntSecTentRoleObj( ICFSecSchemaObj argSchema ) {
 		schema = argSchema;
 		isNew = true;
 		edit = null;
-		requiredContainerRole = null;
 		requiredOwnerTenant = null;
+		requiredContainerSysRole = null;
 	}
 
 	@Override
@@ -79,7 +79,7 @@ public class CFIntSecTentRoleObj
 
 	@Override
 	public ICFLibAnyObj getObjScope() {
-		ICFSecSecSysGrpObj scope = getRequiredContainerRole();
+		ICFSecSecSysGrpObj scope = getRequiredContainerSysRole();
 		return( scope );
 	}
 
@@ -268,8 +268,8 @@ public class CFIntSecTentRoleObj
 		}
 		rec = value;
 		copyRecToPKey();
-		requiredContainerRole = null;
 		requiredOwnerTenant = null;
+		requiredContainerSysRole = null;
 	}
 
 	@Override
@@ -365,22 +365,6 @@ public class CFIntSecTentRoleObj
 	}
 
 	@Override
-	public ICFSecSecSysGrpObj getRequiredContainerRole() {
-		return( getRequiredContainerRole( false ) );
-	}
-
-	@Override
-	public ICFSecSecSysGrpObj getRequiredContainerRole( boolean forceRead ) {
-		if( ( requiredContainerRole == null ) || forceRead ) {
-			boolean anyMissing = false;
-			if( ! anyMissing ) {
-				requiredContainerRole = ((ICFIntSchemaObj)getSchema()).getSecSysGrpTableObj().readSecSysGrpByUNameIdx( getSecTentRoleRec().getRequiredName(), forceRead );
-			}
-		}
-		return( requiredContainerRole );
-	}
-
-	@Override
 	public ICFSecTenantObj getRequiredOwnerTenant() {
 		return( getRequiredOwnerTenant( false ) );
 	}
@@ -394,6 +378,22 @@ public class CFIntSecTentRoleObj
 			}
 		}
 		return( requiredOwnerTenant );
+	}
+
+	@Override
+	public ICFSecSecSysGrpObj getRequiredContainerSysRole() {
+		return( getRequiredContainerSysRole( false ) );
+	}
+
+	@Override
+	public ICFSecSecSysGrpObj getRequiredContainerSysRole( boolean forceRead ) {
+		if( ( requiredContainerSysRole == null ) || forceRead ) {
+			boolean anyMissing = false;
+			if( ! anyMissing ) {
+				requiredContainerSysRole = ((ICFIntSchemaObj)getSchema()).getSecSysGrpTableObj().readSecSysGrpByUNameIdx( getSecTentRoleRec().getRequiredName(), forceRead );
+			}
+		}
+		return( requiredContainerSysRole );
 	}
 
 	@Override

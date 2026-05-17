@@ -1,4 +1,4 @@
-// Description: Java 25 Table Object implementation for SecRole.
+// Description: Java 25 Table Object implementation for SecSysRole.
 
 /*
  *	server.markhome.mcf.CFInt
@@ -38,28 +38,28 @@ import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 
-public class CFIntSecRoleTableObj
-	implements ICFIntSecRoleTableObj
+public class CFIntSecSysRoleTableObj
+	implements ICFIntSecSysRoleTableObj
 {
 	protected ICFIntSchemaObj schema;
-	private Map<CFLibDbKeyHash256, ICFSecSecRoleObj> members;
-	private Map<CFLibDbKeyHash256, ICFSecSecRoleObj> allSecRole;
-	private Map< ICFSecSecRoleByUNameIdxKey,
-		ICFSecSecRoleObj > indexByUNameIdx;
-	public static String TABLE_NAME = "SecRole";
-	public static String TABLE_DBNAME = "secrole";
+	private Map<CFLibDbKeyHash256, ICFSecSecSysRoleObj> members;
+	private Map<CFLibDbKeyHash256, ICFSecSecSysRoleObj> allSecSysRole;
+	private Map< ICFSecSecSysRoleByUNameIdxKey,
+		ICFSecSecSysRoleObj > indexByUNameIdx;
+	public static String TABLE_NAME = "SecSysRole";
+	public static String TABLE_DBNAME = "secsysrole";
 
-	public CFIntSecRoleTableObj() {
+	public CFIntSecSysRoleTableObj() {
 		schema = null;
-		members = new HashMap<CFLibDbKeyHash256, ICFSecSecRoleObj>();
-		allSecRole = null;
+		members = new HashMap<CFLibDbKeyHash256, ICFSecSecSysRoleObj>();
+		allSecSysRole = null;
 		indexByUNameIdx = null;
 	}
 
-	public CFIntSecRoleTableObj( ICFSecSchemaObj argSchema ) {
+	public CFIntSecSysRoleTableObj( ICFSecSchemaObj argSchema ) {
 		schema = (ICFIntSchemaObj)argSchema;
-		members = new HashMap<CFLibDbKeyHash256, ICFSecSecRoleObj>();
-		allSecRole = null;
+		members = new HashMap<CFLibDbKeyHash256, ICFSecSecSysRoleObj>();
+		allSecSysRole = null;
 		indexByUNameIdx = null;
 	}
 	
@@ -70,7 +70,7 @@ public class CFIntSecRoleTableObj
 	 */ 
 	@Override
 	public int getClassCode() {
-		return CFSecSecRoleTableObj.getRuntimeClassCode();
+		return CFSecSecSysRoleTableObj.getRuntimeClassCode();
 	}	
 
 	/**
@@ -79,7 +79,7 @@ public class CFIntSecRoleTableObj
 	 *	@return The hardcoded backing store class code for this object, which is only valid in that schema.
 	 */
 	public static int getBackingClassCode() {
-		return( CFSecSecRoleTableObj.getBackingClassCode() );
+		return( CFSecSecSysRoleTableObj.getBackingClassCode() );
 	}
 
 	/**
@@ -88,7 +88,7 @@ public class CFIntSecRoleTableObj
 	 *	@return runtimeClassCode
 	 */
 	public static int getRuntimeClassCode() {
-		return( CFSecSecRoleTableObj.getRuntimeClassCode() );
+		return( CFSecSecSysRoleTableObj.getRuntimeClassCode() );
 	}
 
 	@Override
@@ -119,11 +119,11 @@ public class CFIntSecRoleTableObj
 
 	@Override
 	public void minimizeMemory() {
-		allSecRole = null;
+		allSecSysRole = null;
 		indexByUNameIdx = null;
-		List<ICFSecSecRoleObj> toForget = new LinkedList<ICFSecSecRoleObj>();
-		ICFSecSecRoleObj cur = null;
-		Iterator<ICFSecSecRoleObj> iter = members.values().iterator();
+		List<ICFSecSecSysRoleObj> toForget = new LinkedList<ICFSecSecSysRoleObj>();
+		ICFSecSecSysRoleObj cur = null;
+		Iterator<ICFSecSecSysRoleObj> iter = members.values().iterator();
 		while( iter.hasNext() ) {
 			cur = iter.next();
 			toForget.add( cur );
@@ -141,11 +141,11 @@ public class CFIntSecRoleTableObj
 	 *	instances instead of the base implementation.
 	 *
 	 *	This is the sole factory for instances derived from
-	 *	CFIntSecRoleObj.
+	 *	CFIntSecSysRoleObj.
 	 */
 	@Override
-	public ICFSecSecRoleObj newInstance() {
-		ICFSecSecRoleObj inst = new CFIntSecRoleObj( schema );
+	public ICFSecSecSysRoleObj newInstance() {
+		ICFSecSecSysRoleObj inst = new CFIntSecSysRoleObj( schema );
 		return( inst );
 	}
 
@@ -156,21 +156,21 @@ public class CFIntSecRoleTableObj
 	 *	instances instead of the base implementation.
 	 *
 	 *	This is the sole factory for instances derived from
-	 *	CFIntSecRoleObj.
+	 *	CFIntSecSysRoleObj.
 	 */
 	@Override
-	public ICFSecSecRoleEditObj newEditInstance( ICFSecSecRoleObj orig ) {
-		ICFSecSecRoleEditObj edit = new CFIntSecRoleEditObj( orig );
+	public ICFSecSecSysRoleEditObj newEditInstance( ICFSecSecSysRoleObj orig ) {
+		ICFSecSecSysRoleEditObj edit = new CFIntSecSysRoleEditObj( orig );
 		return( edit );
 	}
 
 	@Override
-	public ICFSecSecRoleObj realiseSecRole( ICFSecSecRoleObj Obj ) {
-		ICFSecSecRoleObj obj = Obj;
+	public ICFSecSecSysRoleObj realiseSecSysRole( ICFSecSecSysRoleObj Obj ) {
+		ICFSecSecSysRoleObj obj = Obj;
 		CFLibDbKeyHash256 pkey = obj.getPKey();
-		ICFSecSecRoleObj keepObj = null;
+		ICFSecSecSysRoleObj keepObj = null;
 		if( members.containsKey( pkey ) && ( null != members.get( pkey ) ) ) {
-			ICFSecSecRoleObj existingObj = members.get( pkey );
+			ICFSecSecSysRoleObj existingObj = members.get( pkey );
 			keepObj = existingObj;
 
 			/*
@@ -181,8 +181,8 @@ public class CFIntSecRoleTableObj
 			// Detach object from alternate and duplicate indexes, leave PKey alone
 
 			if( indexByUNameIdx != null ) {
-				ICFSecSecRoleByUNameIdxKey keyUNameIdx =
-					schema.getCFSecBackingStore().getFactorySecRole().newByUNameIdxKey();
+				ICFSecSecSysRoleByUNameIdxKey keyUNameIdx =
+					schema.getCFSecBackingStore().getFactorySecSysRole().newByUNameIdxKey();
 				keyUNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByUNameIdx.remove( keyUNameIdx );
 			}
@@ -191,14 +191,14 @@ public class CFIntSecRoleTableObj
 			// Attach new object to alternate and duplicate indexes -- PKey stay stable
 
 			if( indexByUNameIdx != null ) {
-				ICFSecSecRoleByUNameIdxKey keyUNameIdx =
-					schema.getCFSecBackingStore().getFactorySecRole().newByUNameIdxKey();
+				ICFSecSecSysRoleByUNameIdxKey keyUNameIdx =
+					schema.getCFSecBackingStore().getFactorySecSysRole().newByUNameIdxKey();
 				keyUNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByUNameIdx.put( keyUNameIdx, keepObj );
 			}
 
-			if( allSecRole != null ) {
-				allSecRole.put( keepObj.getPKey(), keepObj );
+			if( allSecSysRole != null ) {
+				allSecSysRole.put( keepObj.getPKey(), keepObj );
 			}
 		}
 		else {
@@ -207,13 +207,13 @@ public class CFIntSecRoleTableObj
 
 			// Attach new object to PKey, all, alternate, and duplicate indexes
 			members.put( keepObj.getPKey(), keepObj );
-			if( allSecRole != null ) {
-				allSecRole.put( keepObj.getPKey(), keepObj );
+			if( allSecSysRole != null ) {
+				allSecSysRole.put( keepObj.getPKey(), keepObj );
 			}
 
 			if( indexByUNameIdx != null ) {
-				ICFSecSecRoleByUNameIdxKey keyUNameIdx =
-					schema.getCFSecBackingStore().getFactorySecRole().newByUNameIdxKey();
+				ICFSecSecSysRoleByUNameIdxKey keyUNameIdx =
+					schema.getCFSecBackingStore().getFactorySecSysRole().newByUNameIdxKey();
 				keyUNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByUNameIdx.put( keyUNameIdx, keepObj );
 			}
@@ -223,10 +223,10 @@ public class CFIntSecRoleTableObj
 	}
 
 	@Override
-	public ICFSecSecRoleObj createSecRole( ICFSecSecRoleObj Obj ) {
-		ICFSecSecRoleObj obj = Obj;
-		ICFSecSecRole rec = obj.getSecRoleRec();
-		schema.getCFSecBackingStore().getTableSecRole().createSecRole(
+	public ICFSecSecSysRoleObj createSecSysRole( ICFSecSecSysRoleObj Obj ) {
+		ICFSecSecSysRoleObj obj = Obj;
+		ICFSecSecSysRole rec = obj.getSecSysRoleRec();
+		schema.getCFSecBackingStore().getTableSecSysRole().createSecSysRole(
 			null,
 			rec );
 		obj.copyRecToPKey();
@@ -236,32 +236,32 @@ public class CFIntSecRoleTableObj
 	}
 
 	@Override
-	public ICFSecSecRoleObj readSecRole( CFLibDbKeyHash256 pkey ) {
-		return( readSecRole( pkey, false ) );
+	public ICFSecSecSysRoleObj readSecSysRole( CFLibDbKeyHash256 pkey ) {
+		return( readSecSysRole( pkey, false ) );
 	}
 
 	@Override
-	public ICFSecSecRoleObj readSecRole( CFLibDbKeyHash256 pkey, boolean forceRead ) {
-		ICFSecSecRoleObj obj = null;
+	public ICFSecSecSysRoleObj readSecSysRole( CFLibDbKeyHash256 pkey, boolean forceRead ) {
+		ICFSecSecSysRoleObj obj = null;
 		if( ( ! forceRead ) && members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
 		}
 		else {
-			ICFSecSecRole readRec = schema.getCFSecBackingStore().getTableSecRole().readDerivedByIdIdx( null,
+			ICFSecSecSysRole readRec = schema.getCFSecBackingStore().getTableSecSysRole().readDerivedByIdIdx( null,
 						pkey );
 			if( readRec != null ) {
-				obj = schema.getSecRoleTableObj().newInstance();
+				obj = schema.getSecSysRoleTableObj().newInstance();
 				obj.setPKey( readRec.getPKey() );
 				obj.setRec( readRec );
-				obj = (ICFSecSecRoleObj)obj.realise();
+				obj = (ICFSecSecSysRoleObj)obj.realise();
 			}
 		}
 		return( obj );
 	}
 
 	@Override
-	public ICFSecSecRoleObj readCachedSecRole( CFLibDbKeyHash256 pkey ) {
-		ICFSecSecRoleObj obj = null;
+	public ICFSecSecSysRoleObj readCachedSecSysRole( CFLibDbKeyHash256 pkey ) {
+		ICFSecSecSysRoleObj obj = null;
 		if( members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
 		}
@@ -269,25 +269,25 @@ public class CFIntSecRoleTableObj
 	}
 
 	@Override
-	public void reallyDeepDisposeSecRole( ICFSecSecRoleObj obj )
+	public void reallyDeepDisposeSecSysRole( ICFSecSecSysRoleObj obj )
 	{
-		final String S_ProcName = "CFIntSecRoleTableObj.reallyDeepDisposeSecRole() ";
+		final String S_ProcName = "CFIntSecSysRoleTableObj.reallyDeepDisposeSecSysRole() ";
 		String classCode;
 		if( obj == null ) {
 			return;
 		}
 		CFLibDbKeyHash256 pkey = obj.getPKey();
-		ICFSecSecRoleObj existing = readCachedSecRole( pkey );
+		ICFSecSecSysRoleObj existing = readCachedSecSysRole( pkey );
 		if( existing == null ) {
 			return;
 		}
 		members.remove( pkey );
-		ICFSecSecRoleByUNameIdxKey keyUNameIdx = schema.getCFSecBackingStore().getFactorySecRole().newByUNameIdxKey();
+		ICFSecSecSysRoleByUNameIdxKey keyUNameIdx = schema.getCFSecBackingStore().getFactorySecSysRole().newByUNameIdxKey();
 		keyUNameIdx.setRequiredName( existing.getRequiredName() );
 
 
-					schema.getSecRoleMembTableObj().deepDisposeSecRoleMembByRoleIdx( existing.getRequiredSecRoleId() );
-					schema.getSecRoleEnablesTableObj().deepDisposeSecRoleEnablesByRoleIdx( existing.getRequiredSecRoleId() );
+					schema.getSecSysRoleMembTableObj().deepDisposeSecSysRoleMembBySysRoleIdx( existing.getRequiredSecSysRoleId() );
+					schema.getSecSysRoleEnablesTableObj().deepDisposeSecSysRoleEnablesBySysRoleIdx( existing.getRequiredSecSysRoleId() );
 
 		if( indexByUNameIdx != null ) {
 			indexByUNameIdx.remove( keyUNameIdx );
@@ -296,54 +296,54 @@ public class CFIntSecRoleTableObj
 
 	}
 	@Override
-	public void deepDisposeSecRole( CFLibDbKeyHash256 pkey ) {
-		ICFSecSecRoleObj obj = readCachedSecRole( pkey );
+	public void deepDisposeSecSysRole( CFLibDbKeyHash256 pkey ) {
+		ICFSecSecSysRoleObj obj = readCachedSecSysRole( pkey );
 		if( obj != null ) {
 			obj.forget();
 		}
 	}
 
 	@Override
-	public ICFSecSecRoleObj lockSecRole( CFLibDbKeyHash256 pkey ) {
-		ICFSecSecRoleObj locked = null;
-		ICFSecSecRole lockRec = schema.getCFSecBackingStore().getTableSecRole().lockDerived( null, pkey );
+	public ICFSecSecSysRoleObj lockSecSysRole( CFLibDbKeyHash256 pkey ) {
+		ICFSecSecSysRoleObj locked = null;
+		ICFSecSecSysRole lockRec = schema.getCFSecBackingStore().getTableSecSysRole().lockDerived( null, pkey );
 		if( lockRec != null ) {
-				locked = schema.getSecRoleTableObj().newInstance();
+				locked = schema.getSecSysRoleTableObj().newInstance();
 			locked.setRec( lockRec );
 			locked.setPKey( lockRec.getPKey() );
-			locked = (ICFSecSecRoleObj)locked.realise();
+			locked = (ICFSecSecSysRoleObj)locked.realise();
 		}
 		else {
-			throw new CFLibCollisionDetectedException( getClass(), "lockSecRole", pkey );
+			throw new CFLibCollisionDetectedException( getClass(), "lockSecSysRole", pkey );
 		}
 		return( locked );
 	}
 
 	@Override
-	public List<ICFSecSecRoleObj> readAllSecRole() {
-		return( readAllSecRole( false ) );
+	public List<ICFSecSecSysRoleObj> readAllSecSysRole() {
+		return( readAllSecSysRole( false ) );
 	}
 
 	@Override
-	public List<ICFSecSecRoleObj> readAllSecRole( boolean forceRead ) {
-		final String S_ProcName = "readAllSecRole";
-		if( ( allSecRole == null ) || forceRead ) {
-			Map<CFLibDbKeyHash256, ICFSecSecRoleObj> map = new HashMap<CFLibDbKeyHash256,ICFSecSecRoleObj>();
-			allSecRole = map;
-			ICFSecSecRole[] recList = schema.getCFSecBackingStore().getTableSecRole().readAllDerived( null );
-			ICFSecSecRole rec;
-			ICFSecSecRoleObj obj;
+	public List<ICFSecSecSysRoleObj> readAllSecSysRole( boolean forceRead ) {
+		final String S_ProcName = "readAllSecSysRole";
+		if( ( allSecSysRole == null ) || forceRead ) {
+			Map<CFLibDbKeyHash256, ICFSecSecSysRoleObj> map = new HashMap<CFLibDbKeyHash256,ICFSecSecSysRoleObj>();
+			allSecSysRole = map;
+			ICFSecSecSysRole[] recList = schema.getCFSecBackingStore().getTableSecSysRole().readAllDerived( null );
+			ICFSecSecSysRole rec;
+			ICFSecSecSysRoleObj obj;
 			for( int idx = 0; idx < recList.length; idx ++ ) {
 				rec = recList[ idx ];
 				obj = newInstance();
 				obj.setPKey( rec.getPKey() );
 				obj.setRec( rec );
-				ICFSecSecRoleObj realised = (ICFSecSecRoleObj)obj.realise();
+				ICFSecSecSysRoleObj realised = (ICFSecSecSysRoleObj)obj.realise();
 			}
 		}
-		int len = allSecRole.size();
-		ICFSecSecRoleObj arr[] = new ICFSecSecRoleObj[len];
-		Iterator<ICFSecSecRoleObj> valIter = allSecRole.values().iterator();
+		int len = allSecSysRole.size();
+		ICFSecSecSysRoleObj arr[] = new ICFSecSecSysRoleObj[len];
+		Iterator<ICFSecSecSysRoleObj> valIter = allSecSysRole.values().iterator();
 		int idx = 0;
 		while( ( idx < len ) && valIter.hasNext() ) {
 			arr[idx++] = valIter.next();
@@ -364,14 +364,14 @@ public class CFIntSecRoleTableObj
 					idx,
 					len );
 		}
-		ArrayList<ICFSecSecRoleObj> arrayList = new ArrayList<ICFSecSecRoleObj>(len);
+		ArrayList<ICFSecSecSysRoleObj> arrayList = new ArrayList<ICFSecSecSysRoleObj>(len);
 		for( idx = 0; idx < len; idx ++ ) {
 			arrayList.add( arr[idx] );
 		}
 
-		Comparator<ICFSecSecRoleObj> cmp = new Comparator<ICFSecSecRoleObj>() {
+		Comparator<ICFSecSecSysRoleObj> cmp = new Comparator<ICFSecSecSysRoleObj>() {
 			@Override
-			public int compare( ICFSecSecRoleObj lhs, ICFSecSecRoleObj rhs ) {
+			public int compare( ICFSecSecSysRoleObj lhs, ICFSecSecSysRoleObj rhs ) {
 				if( lhs == null ) {
 					if( rhs == null ) {
 						return( 0 );
@@ -392,18 +392,18 @@ public class CFIntSecRoleTableObj
 			}
 		};
 		Collections.sort( arrayList, cmp );
-		List<ICFSecSecRoleObj> sortedList = arrayList;
+		List<ICFSecSecSysRoleObj> sortedList = arrayList;
 		return( sortedList );
 	}
 
 	@Override
-	public List<ICFSecSecRoleObj> readCachedAllSecRole() {
-		final String S_ProcName = "readCachedAllSecRole";
-		ArrayList<ICFSecSecRoleObj> arrayList = new ArrayList<ICFSecSecRoleObj>();
-		if( allSecRole != null ) {
-			int len = allSecRole.size();
-			ICFSecSecRoleObj arr[] = new ICFSecSecRoleObj[len];
-			Iterator<ICFSecSecRoleObj> valIter = allSecRole.values().iterator();
+	public List<ICFSecSecSysRoleObj> readCachedAllSecSysRole() {
+		final String S_ProcName = "readCachedAllSecSysRole";
+		ArrayList<ICFSecSecSysRoleObj> arrayList = new ArrayList<ICFSecSecSysRoleObj>();
+		if( allSecSysRole != null ) {
+			int len = allSecSysRole.size();
+			ICFSecSecSysRoleObj arr[] = new ICFSecSecSysRoleObj[len];
+			Iterator<ICFSecSecSysRoleObj> valIter = allSecSysRole.values().iterator();
 			int idx = 0;
 			while( ( idx < len ) && valIter.hasNext() ) {
 				arr[idx++] = valIter.next();
@@ -428,8 +428,8 @@ public class CFIntSecRoleTableObj
 				arrayList.add( arr[idx] );
 			}
 		}
-		Comparator<ICFSecSecRoleObj> cmp = new Comparator<ICFSecSecRoleObj>() {
-			public int compare( ICFSecSecRoleObj lhs, ICFSecSecRoleObj rhs ) {
+		Comparator<ICFSecSecSysRoleObj> cmp = new Comparator<ICFSecSecSysRoleObj>() {
+			public int compare( ICFSecSecSysRoleObj lhs, ICFSecSecSysRoleObj rhs ) {
 				if( lhs == null ) {
 					if( rhs == null ) {
 						return( 0 );
@@ -454,72 +454,72 @@ public class CFIntSecRoleTableObj
 	}
 
 	@Override
-	public ICFSecSecRoleObj readSecRoleByIdIdx( CFLibDbKeyHash256 SecRoleId )
+	public ICFSecSecSysRoleObj readSecSysRoleByIdIdx( CFLibDbKeyHash256 SecSysRoleId )
 	{
-		return( readSecRoleByIdIdx( SecRoleId,
+		return( readSecSysRoleByIdIdx( SecSysRoleId,
 			false ) );
 	}
 
 	@Override
-	public ICFSecSecRoleObj readSecRoleByIdIdx( CFLibDbKeyHash256 SecRoleId, boolean forceRead )
+	public ICFSecSecSysRoleObj readSecSysRoleByIdIdx( CFLibDbKeyHash256 SecSysRoleId, boolean forceRead )
 	{
-		ICFSecSecRoleObj obj = readSecRole( SecRoleId, forceRead );
+		ICFSecSecSysRoleObj obj = readSecSysRole( SecSysRoleId, forceRead );
 		return( obj );
 	}
 
 	@Override
-	public ICFSecSecRoleObj readSecRoleByUNameIdx( String Name )
+	public ICFSecSecSysRoleObj readSecSysRoleByUNameIdx( String Name )
 	{
-		return( readSecRoleByUNameIdx( Name,
+		return( readSecSysRoleByUNameIdx( Name,
 			false ) );
 	}
 
 	@Override
-	public ICFSecSecRoleObj readSecRoleByUNameIdx( String Name, boolean forceRead )
+	public ICFSecSecSysRoleObj readSecSysRoleByUNameIdx( String Name, boolean forceRead )
 	{
 		if( indexByUNameIdx == null ) {
-			indexByUNameIdx = new HashMap< ICFSecSecRoleByUNameIdxKey,
-				ICFSecSecRoleObj >();
+			indexByUNameIdx = new HashMap< ICFSecSecSysRoleByUNameIdxKey,
+				ICFSecSecSysRoleObj >();
 		}
-		ICFSecSecRoleByUNameIdxKey key = schema.getCFSecBackingStore().getFactorySecRole().newByUNameIdxKey();
+		ICFSecSecSysRoleByUNameIdxKey key = schema.getCFSecBackingStore().getFactorySecSysRole().newByUNameIdxKey();
 		key.setRequiredName( Name );
-		ICFSecSecRoleObj obj = null;
+		ICFSecSecSysRoleObj obj = null;
 		if( ( ! forceRead ) && indexByUNameIdx.containsKey( key ) ) {
 			obj = indexByUNameIdx.get( key );
 		}
 		else {
-			ICFSecSecRole rec = schema.getCFSecBackingStore().getTableSecRole().readDerivedByUNameIdx( null,
+			ICFSecSecSysRole rec = schema.getCFSecBackingStore().getTableSecSysRole().readDerivedByUNameIdx( null,
 				Name );
 			if( rec != null ) {
-				obj = schema.getSecRoleTableObj().newInstance();
+				obj = schema.getSecSysRoleTableObj().newInstance();
 				obj.setRec( rec );
 				obj.setPKey( rec.getPKey() );
-				obj = (ICFSecSecRoleObj)obj.realise();
+				obj = (ICFSecSecSysRoleObj)obj.realise();
 			}
 		}
 		return( obj );
 	}
 
 	@Override
-	public ICFSecSecRoleObj readCachedSecRoleByIdIdx( CFLibDbKeyHash256 SecRoleId )
+	public ICFSecSecSysRoleObj readCachedSecSysRoleByIdIdx( CFLibDbKeyHash256 SecSysRoleId )
 	{
-		ICFSecSecRoleObj obj = null;
-		obj = readCachedSecRole( SecRoleId );
+		ICFSecSecSysRoleObj obj = null;
+		obj = readCachedSecSysRole( SecSysRoleId );
 		return( obj );
 	}
 
 	@Override
-	public ICFSecSecRoleObj readCachedSecRoleByUNameIdx( String Name )
+	public ICFSecSecSysRoleObj readCachedSecSysRoleByUNameIdx( String Name )
 	{
-		ICFSecSecRoleObj obj = null;
-		ICFSecSecRoleByUNameIdxKey key = schema.getCFSecBackingStore().getFactorySecRole().newByUNameIdxKey();
+		ICFSecSecSysRoleObj obj = null;
+		ICFSecSecSysRoleByUNameIdxKey key = schema.getCFSecBackingStore().getFactorySecSysRole().newByUNameIdxKey();
 		key.setRequiredName( Name );
 		if( indexByUNameIdx != null ) {
 			if( indexByUNameIdx.containsKey( key ) ) {
 				obj = indexByUNameIdx.get( key );
 			}
 			else {
-				Iterator<ICFSecSecRoleObj> valIter = members.values().iterator();
+				Iterator<ICFSecSecSysRoleObj> valIter = members.values().iterator();
 				while( ( obj == null ) && valIter.hasNext() ) {
 					obj = valIter.next();
 					if( obj != null ) {
@@ -531,7 +531,7 @@ public class CFIntSecRoleTableObj
 			}
 		}
 		else {
-			Iterator<ICFSecSecRoleObj> valIter = members.values().iterator();
+			Iterator<ICFSecSecSysRoleObj> valIter = members.values().iterator();
 			while( valIter.hasNext() ) {
 				obj = valIter.next();
 				if( obj != null ) {
@@ -545,50 +545,50 @@ public class CFIntSecRoleTableObj
 	}
 
 	@Override
-	public void deepDisposeSecRoleByIdIdx( CFLibDbKeyHash256 SecRoleId )
+	public void deepDisposeSecSysRoleByIdIdx( CFLibDbKeyHash256 SecSysRoleId )
 	{
-		ICFSecSecRoleObj obj = readCachedSecRoleByIdIdx( SecRoleId );
+		ICFSecSecSysRoleObj obj = readCachedSecSysRoleByIdIdx( SecSysRoleId );
 		if( obj != null ) {
 			obj.forget();
 		}
 	}
 
 	@Override
-	public void deepDisposeSecRoleByUNameIdx( String Name )
+	public void deepDisposeSecSysRoleByUNameIdx( String Name )
 	{
-		ICFSecSecRoleObj obj = readCachedSecRoleByUNameIdx( Name );
+		ICFSecSecSysRoleObj obj = readCachedSecSysRoleByUNameIdx( Name );
 		if( obj != null ) {
 			obj.forget();
 		}
 	}
 
 	@Override
-	public ICFSecSecRoleObj updateSecRole( ICFSecSecRoleObj Obj ) {
-		ICFSecSecRoleObj obj = Obj;
-		schema.getCFSecBackingStore().getTableSecRole().updateSecRole( null,
-			Obj.getSecRoleRec() );
-		obj = (ICFSecSecRoleObj)Obj.realise();
+	public ICFSecSecSysRoleObj updateSecSysRole( ICFSecSecSysRoleObj Obj ) {
+		ICFSecSecSysRoleObj obj = Obj;
+		schema.getCFSecBackingStore().getTableSecSysRole().updateSecSysRole( null,
+			Obj.getSecSysRoleRec() );
+		obj = (ICFSecSecSysRoleObj)Obj.realise();
 		obj.endEdit();
 		return( obj );
 	}
 
 	@Override
-	public void deleteSecRole( ICFSecSecRoleObj Obj ) {
-		ICFSecSecRoleObj obj = Obj;
-		schema.getCFSecBackingStore().getTableSecRole().deleteSecRole( null,
-			obj.getSecRoleRec() );
+	public void deleteSecSysRole( ICFSecSecSysRoleObj Obj ) {
+		ICFSecSecSysRoleObj obj = Obj;
+		schema.getCFSecBackingStore().getTableSecSysRole().deleteSecSysRole( null,
+			obj.getSecSysRoleRec() );
 		Obj.forget();
 	}
 
 	@Override
-	public void deleteSecRoleByIdIdx( CFLibDbKeyHash256 SecRoleId )
+	public void deleteSecSysRoleByIdIdx( CFLibDbKeyHash256 SecSysRoleId )
 	{
-		ICFSecSecRoleObj obj = readSecRole(SecRoleId);
+		ICFSecSecSysRoleObj obj = readSecSysRole(SecSysRoleId);
 		if( obj != null ) {
-			ICFSecSecRoleEditObj editObj = (ICFSecSecRoleEditObj)obj.getEdit();
+			ICFSecSecSysRoleEditObj editObj = (ICFSecSecSysRoleEditObj)obj.getEdit();
 			boolean editStarted;
 			if( editObj == null ) {
-				editObj = (ICFSecSecRoleEditObj)obj.beginEdit();
+				editObj = (ICFSecSecSysRoleEditObj)obj.beginEdit();
 				if( editObj != null ) {
 					editStarted = true;
 				}
@@ -607,29 +607,29 @@ public class CFIntSecRoleTableObj
 			}
 			obj.forget();
 		}
-		deepDisposeSecRoleByIdIdx( SecRoleId );
+		deepDisposeSecSysRoleByIdIdx( SecSysRoleId );
 	}
 
 	@Override
-	public void deleteSecRoleByUNameIdx( String Name )
+	public void deleteSecSysRoleByUNameIdx( String Name )
 	{
 		if( indexByUNameIdx == null ) {
-			indexByUNameIdx = new HashMap< ICFSecSecRoleByUNameIdxKey,
-				ICFSecSecRoleObj >();
+			indexByUNameIdx = new HashMap< ICFSecSecSysRoleByUNameIdxKey,
+				ICFSecSecSysRoleObj >();
 		}
-		ICFSecSecRoleByUNameIdxKey key = schema.getCFSecBackingStore().getFactorySecRole().newByUNameIdxKey();
+		ICFSecSecSysRoleByUNameIdxKey key = schema.getCFSecBackingStore().getFactorySecSysRole().newByUNameIdxKey();
 		key.setRequiredName( Name );
-		ICFSecSecRoleObj obj = null;
+		ICFSecSecSysRoleObj obj = null;
 		if( indexByUNameIdx.containsKey( key ) ) {
 			obj = indexByUNameIdx.get( key );
-			schema.getCFSecBackingStore().getTableSecRole().deleteSecRoleByUNameIdx( null,
+			schema.getCFSecBackingStore().getTableSecSysRole().deleteSecSysRoleByUNameIdx( null,
 				Name );
 			obj.forget();
 		}
 		else {
-			schema.getCFSecBackingStore().getTableSecRole().deleteSecRoleByUNameIdx( null,
+			schema.getCFSecBackingStore().getTableSecSysRole().deleteSecSysRoleByUNameIdx( null,
 				Name );
 		}
-		deepDisposeSecRoleByUNameIdx( Name );
+		deepDisposeSecSysRoleByUNameIdx( Name );
 	}
 }

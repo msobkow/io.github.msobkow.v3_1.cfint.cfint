@@ -197,20 +197,6 @@ public interface ICFIntSecTentRoleObj
 	void setIsNew( boolean value );
 
 	/**
-	 *	Get the required ICFIntSecSysGrpObj instance referenced by the Role key.
-	 *
-	 *	@return	The required ICFIntSecSysGrpObj instance referenced by the Role key.
-	 */
-	ICFSecSecSysGrpObj getRequiredContainerRole();
-
-	/**
-	 *	Get the required ICFSecSecSysGrpObj instance referenced by the Role key.
-	 *
-	 *	@return	The required ICFSecSecSysGrpObj instance referenced by the Role key.
-	 */
-	ICFSecSecSysGrpObj getRequiredContainerRole( boolean forceRead );
-
-	/**
 	 *	Get the required ICFIntTenantObj instance referenced by the Tenant key.
 	 *
 	 *	@return	The required ICFIntTenantObj instance referenced by the Tenant key.
@@ -223,6 +209,20 @@ public interface ICFIntSecTentRoleObj
 	 *	@return	The required ICFSecTenantObj instance referenced by the Tenant key.
 	 */
 	ICFSecTenantObj getRequiredOwnerTenant( boolean forceRead );
+
+	/**
+	 *	Get the required ICFIntSecSysGrpObj instance referenced by the SysRole key.
+	 *
+	 *	@return	The required ICFIntSecSysGrpObj instance referenced by the SysRole key.
+	 */
+	ICFSecSecSysGrpObj getRequiredContainerSysRole();
+
+	/**
+	 *	Get the required ICFSecSecSysGrpObj instance referenced by the SysRole key.
+	 *
+	 *	@return	The required ICFSecSecSysGrpObj instance referenced by the SysRole key.
+	 */
+	ICFSecSecSysGrpObj getRequiredContainerSysRole( boolean forceRead );
 
 	/**
 	 *	Get the array of optional ICFSecSecTentRoleMembObj array of instances referenced by the MembByRole key.

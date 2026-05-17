@@ -1,4 +1,4 @@
-// Description: Java 25 Instance Edit Object interface for CFInt SecRole.
+// Description: Java 25 Instance Edit Object interface for CFInt SecSysRoleMemb.
 
 /*
  *	server.markhome.mcf.CFInt
@@ -38,8 +38,8 @@ import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 
-public interface ICFIntSecRoleEditObj
-	extends ICFIntSecRoleObj, ICFSecSecRoleEditObj
+public interface ICFIntSecSysRoleMembEditObj
+	extends ICFIntSecSysRoleMembObj, ICFSecSecSysRoleMembEditObj
 {
 	/*
 	 *	create() may return a different instance than the
@@ -50,12 +50,12 @@ public interface ICFIntSecRoleEditObj
 	 *
 	 *	@return The created instance.
 	 */
-	ICFSecSecRoleObj create();
+	ICFSecSecSysRoleMembObj create();
 
 	/*
 	 *	Update the instance.
 	 */
-	CFSecSecRoleEditObj update();
+	CFSecSecSysRoleMembEditObj update();
 
 	/**
 	 *	Set the user who created this instance.
@@ -86,18 +86,46 @@ public interface ICFIntSecRoleEditObj
 	void setUpdatedAt( LocalDateTime value );
 
 	/**
-	 *	Get a list ICFSecSecRoleEnablesObj instances referenced by the EnabledByRole key.
+	 *	Get the ICFSecSecSysRoleObj instance referenced by the SysRole key.
 	 *
-	 *	@return	The (potentially empty) list of ICFSecSecRoleEnablesObj instances referenced by the EnabledByRole key.
+	 *	@return	The ICFSecSecSysRoleObj instance referenced by the SysRole key.
 	 */
-	List<ICFSecSecRoleEnablesObj> getOptionalChildrenEnabledByRole();
+	ICFSecSecSysRoleObj getRequiredContainerSysRole();
 
 	/**
-	 *	Get a list ICFSecSecRoleMembObj instances referenced by the MembByRole key.
+	 *	Get the required ICFSecSecSysRoleObj instance referenced by the SysRole key.
 	 *
-	 *	@return	The (potentially empty) list of ICFSecSecRoleMembObj instances referenced by the MembByRole key.
+	 *	@return	The required ICFSecSecSysRoleObj instance referenced by the SysRole key.
 	 */
-	List<ICFSecSecRoleMembObj> getOptionalChildrenMembByRole();
+	ICFSecSecSysRoleObj getRequiredContainerSysRole( boolean forceRead );
+
+	/**
+	 *	Set the ICFSecSecSysRoleObj instance referenced by the SysRole key.
+	 *
+	 *	@param	value	the ICFSecSecSysRoleObj instance to be referenced by the SysRole key.
+	 */
+	void setRequiredContainerSysRole( ICFSecSecSysRoleObj value );
+
+	/**
+	 *	Get the ICFSecSecUserObj instance referenced by the User key.
+	 *
+	 *	@return	The ICFSecSecUserObj instance referenced by the User key.
+	 */
+	ICFSecSecUserObj getRequiredParentUser();
+
+	/**
+	 *	Get the required ICFSecSecUserObj instance referenced by the User key.
+	 *
+	 *	@return	The required ICFSecSecUserObj instance referenced by the User key.
+	 */
+	ICFSecSecUserObj getRequiredParentUser( boolean forceRead );
+
+	/**
+	 *	Set the ICFSecSecUserObj instance referenced by the User key.
+	 *
+	 *	@param	value	the ICFSecSecUserObj instance to be referenced by the User key.
+	 */
+	void setRequiredParentUser( ICFSecSecUserObj value );
 
 	public void copyRecToOrig();
 	public void copyOrigToRec();

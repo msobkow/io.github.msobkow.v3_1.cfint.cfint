@@ -623,24 +623,6 @@ extends ICFSecSchema
 	public ICFSecSecClusGrpFactory getFactorySecClusGrp();
 
 	/**
-	 *	Get the SecClusGrpInc Table interface for the schema.
-	 *
-	 *	@return	The SecClusGrpInc Table interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFSecSecClusGrpIncTable getTableSecClusGrpInc();
-
-	/**
-	 *	Get the SecClusGrpInc Factory interface for the schema.
-	 *
-	 *	@return	The SecClusGrpInc Factory interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFSecSecClusGrpIncFactory getFactorySecClusGrpInc();
-
-	/**
 	 *	Get the SecClusGrpMemb Table interface for the schema.
 	 *
 	 *	@return	The SecClusGrpMemb Table interface for the schema.
@@ -693,60 +675,6 @@ extends ICFSecSchema
 	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFSecSecClusRoleMembFactory getFactorySecClusRoleMemb();
-
-	/**
-	 *	Get the SecRole Table interface for the schema.
-	 *
-	 *	@return	The SecRole Table interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFSecSecRoleTable getTableSecRole();
-
-	/**
-	 *	Get the SecRole Factory interface for the schema.
-	 *
-	 *	@return	The SecRole Factory interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFSecSecRoleFactory getFactorySecRole();
-
-	/**
-	 *	Get the SecRoleEnables Table interface for the schema.
-	 *
-	 *	@return	The SecRoleEnables Table interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFSecSecRoleEnablesTable getTableSecRoleEnables();
-
-	/**
-	 *	Get the SecRoleEnables Factory interface for the schema.
-	 *
-	 *	@return	The SecRoleEnables Factory interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFSecSecRoleEnablesFactory getFactorySecRoleEnables();
-
-	/**
-	 *	Get the SecRoleMemb Table interface for the schema.
-	 *
-	 *	@return	The SecRoleMemb Table interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFSecSecRoleMembTable getTableSecRoleMemb();
-
-	/**
-	 *	Get the SecRoleMemb Factory interface for the schema.
-	 *
-	 *	@return	The SecRoleMemb Factory interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFSecSecRoleMembFactory getFactorySecRoleMemb();
 
 	/**
 	 *	Get the SecSession Table interface for the schema.
@@ -821,6 +749,60 @@ extends ICFSecSchema
 	public ICFSecSecSysGrpMembFactory getFactorySecSysGrpMemb();
 
 	/**
+	 *	Get the SecSysRole Table interface for the schema.
+	 *
+	 *	@return	The SecSysRole Table interface for the schema.
+	 *
+	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	public ICFSecSecSysRoleTable getTableSecSysRole();
+
+	/**
+	 *	Get the SecSysRole Factory interface for the schema.
+	 *
+	 *	@return	The SecSysRole Factory interface for the schema.
+	 *
+	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	public ICFSecSecSysRoleFactory getFactorySecSysRole();
+
+	/**
+	 *	Get the SecSysRoleEnables Table interface for the schema.
+	 *
+	 *	@return	The SecSysRoleEnables Table interface for the schema.
+	 *
+	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	public ICFSecSecSysRoleEnablesTable getTableSecSysRoleEnables();
+
+	/**
+	 *	Get the SecSysRoleEnables Factory interface for the schema.
+	 *
+	 *	@return	The SecSysRoleEnables Factory interface for the schema.
+	 *
+	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	public ICFSecSecSysRoleEnablesFactory getFactorySecSysRoleEnables();
+
+	/**
+	 *	Get the SecSysRoleMemb Table interface for the schema.
+	 *
+	 *	@return	The SecSysRoleMemb Table interface for the schema.
+	 *
+	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	public ICFSecSecSysRoleMembTable getTableSecSysRoleMemb();
+
+	/**
+	 *	Get the SecSysRoleMemb Factory interface for the schema.
+	 *
+	 *	@return	The SecSysRoleMemb Factory interface for the schema.
+	 *
+	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	public ICFSecSecSysRoleMembFactory getFactorySecSysRoleMemb();
+
+	/**
 	 *	Get the SecTentGrp Table interface for the schema.
 	 *
 	 *	@return	The SecTentGrp Table interface for the schema.
@@ -837,24 +819,6 @@ extends ICFSecSchema
 	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFSecSecTentGrpFactory getFactorySecTentGrp();
-
-	/**
-	 *	Get the SecTentGrpInc Table interface for the schema.
-	 *
-	 *	@return	The SecTentGrpInc Table interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFSecSecTentGrpIncTable getTableSecTentGrpInc();
-
-	/**
-	 *	Get the SecTentGrpInc Factory interface for the schema.
-	 *
-	 *	@return	The SecTentGrpInc Factory interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFSecSecTentGrpIncFactory getFactorySecTentGrpInc();
 
 	/**
 	 *	Get the SecTentGrpMemb Table interface for the schema.

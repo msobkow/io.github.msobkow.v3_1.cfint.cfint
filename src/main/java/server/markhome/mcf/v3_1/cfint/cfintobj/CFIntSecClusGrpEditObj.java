@@ -48,7 +48,6 @@ public class CFIntSecClusGrpEditObj
 	protected ICFSecSecUserObj updatedBy = null;
 	protected ICFSecClusterObj requiredOwnerCluster;
 	protected ICFSecSecSysGrpObj requiredParentSysGrp;
-	protected List<ICFSecSecClusGrpIncObj> optionalChildrenIncByGrp;
 	protected List<ICFSecSecClusGrpMembObj> optionalChildrenMembByGrp;
 
 	public CFIntSecClusGrpEditObj( ICFSecSecClusGrpObj argOrig ) {
@@ -403,7 +402,6 @@ public class CFIntSecClusGrpEditObj
 			setPKey(value);
 			requiredOwnerCluster = null;
 			requiredParentSysGrp = null;
-			optionalChildrenIncByGrp = null;
 			optionalChildrenMembByGrp = null;
 		}
 	}
@@ -478,22 +476,6 @@ public class CFIntSecClusGrpEditObj
 			getSecClusGrpRec().setRequiredParentSysGrp((ICFSecSecSysGrp)null);
 		}
 		requiredParentSysGrp = value;
-	}
-
-	@Override
-	public List<ICFSecSecClusGrpIncObj> getOptionalChildrenIncByGrp() {
-		List<ICFSecSecClusGrpIncObj> retval;
-		retval = ((ICFIntSchemaObj)getSchema()).getSecClusGrpIncTableObj().readSecClusGrpIncByClusGrpIdx( getPKey(),
-			false );
-		return( retval );
-	}
-
-	@Override
-	public List<ICFSecSecClusGrpIncObj> getOptionalChildrenIncByGrp( boolean forceRead ) {
-		List<ICFSecSecClusGrpIncObj> retval;
-		retval = ((ICFIntSchemaObj)getSchema()).getSecClusGrpIncTableObj().readSecClusGrpIncByClusGrpIdx( getPKey(),
-			forceRead );
-		return( retval );
 	}
 
 	@Override

@@ -1,4 +1,4 @@
-// Description: Java 25 base object instance implementation for SecTentGrpInc
+// Description: Java 25 base object instance implementation for SecSysRoleEnables
 
 /*
  *	server.markhome.mcf.CFInt
@@ -39,53 +39,53 @@ import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 
-public class CFIntSecTentGrpIncObj
-	implements ICFIntSecTentGrpIncObj
+public class CFIntSecSysRoleEnablesObj
+	implements ICFIntSecSysRoleEnablesObj
 {
 	protected ICFSecSecUserObj createdBy = null;
 	protected ICFSecSecUserObj updatedBy = null;
 	protected boolean isNew;
-	protected ICFSecSecTentGrpIncEditObj edit;
+	protected ICFSecSecSysRoleEnablesEditObj edit;
 	protected ICFSecSchemaObj schema;
-	protected ICFSecSecTentGrpIncPKey pKey;
-	protected ICFSecSecTentGrpInc rec;
-	protected ICFSecSecTentGrpObj requiredContainerGroup;
-	protected ICFSecSecSysGrpObj requiredParentSubGroup;
+	protected ICFSecSecSysRoleEnablesPKey pKey;
+	protected ICFSecSecSysRoleEnables rec;
+	protected ICFSecSecSysRoleObj requiredContainerSysRole;
+	protected ICFSecSecSysGrpObj requiredParentEnableGroup;
 
-	public CFIntSecTentGrpIncObj() {
+	public CFIntSecSysRoleEnablesObj() {
 		isNew = true;
-		requiredContainerGroup = null;
-		requiredParentSubGroup = null;
+		requiredContainerSysRole = null;
+		requiredParentEnableGroup = null;
 	}
 
-	public CFIntSecTentGrpIncObj( ICFSecSchemaObj argSchema ) {
+	public CFIntSecSysRoleEnablesObj( ICFSecSchemaObj argSchema ) {
 		schema = argSchema;
 		isNew = true;
 		edit = null;
-		requiredContainerGroup = null;
-		requiredParentSubGroup = null;
+		requiredContainerSysRole = null;
+		requiredParentEnableGroup = null;
 	}
 
 	@Override
 	public int getClassCode() {
-		return( ((ICFSecSchemaObj)schema).getSecTentGrpIncTableObj().getClassCode() );
+		return( ((ICFSecSchemaObj)schema).getSecSysRoleEnablesTableObj().getClassCode() );
 	}
 
 	@Override
 	public String getGenDefName() {
-		return( "SecTentGrpInc" );
+		return( "SecSysRoleEnables" );
 	}
 
 	@Override
 	public ICFLibAnyObj getObjScope() {
-		ICFSecSecTentGrpObj scope = getRequiredContainerGroup();
+		ICFSecSecSysRoleObj scope = getRequiredContainerSysRole();
 		return( scope );
 	}
 
 	@Override
 	public String getObjName() {
 		String objName;
-		objName = getRequiredInclName();
+		objName = getRequiredEnableName();
 		return( objName );
 	}
 
@@ -200,34 +200,34 @@ public class CFIntSecTentGrpIncObj
 	}
 
 	@Override
-	public ICFSecSecTentGrpIncObj realise() {
-		ICFSecSecTentGrpIncObj retobj = ((ICFIntSchemaObj)getSchema()).getSecTentGrpIncTableObj().realiseSecTentGrpInc(
-			(ICFSecSecTentGrpIncObj)this );
-		return( (ICFSecSecTentGrpIncObj)retobj );
+	public ICFSecSecSysRoleEnablesObj realise() {
+		ICFSecSecSysRoleEnablesObj retobj = ((ICFIntSchemaObj)getSchema()).getSecSysRoleEnablesTableObj().realiseSecSysRoleEnables(
+			(ICFSecSecSysRoleEnablesObj)this );
+		return( (ICFSecSecSysRoleEnablesObj)retobj );
 	}
 
 	@Override
 	public void forget() {
-		((ICFIntSchemaObj)getSchema()).getSecTentGrpIncTableObj().reallyDeepDisposeSecTentGrpInc( (ICFSecSecTentGrpIncObj)this );
+		((ICFIntSchemaObj)getSchema()).getSecSysRoleEnablesTableObj().reallyDeepDisposeSecSysRoleEnables( (ICFSecSecSysRoleEnablesObj)this );
 	}
 
 	@Override
-	public ICFSecSecTentGrpIncObj read() {
-		ICFSecSecTentGrpIncObj retobj = ((ICFIntSchemaObj)getSchema()).getSecTentGrpIncTableObj().readSecTentGrpIncByIdIdx( getPKey().getRequiredSecTentGrpId(),
-			getPKey().getRequiredInclName(), false );
-		return( (ICFSecSecTentGrpIncObj)retobj );
+	public ICFSecSecSysRoleEnablesObj read() {
+		ICFSecSecSysRoleEnablesObj retobj = ((ICFIntSchemaObj)getSchema()).getSecSysRoleEnablesTableObj().readSecSysRoleEnablesByIdIdx( getPKey().getRequiredSecSysRoleId(),
+			getPKey().getRequiredEnableName(), false );
+		return( (ICFSecSecSysRoleEnablesObj)retobj );
 	}
 
 	@Override
-	public ICFSecSecTentGrpIncObj read( boolean forceRead ) {
-		ICFSecSecTentGrpIncObj retobj = ((ICFIntSchemaObj)getSchema()).getSecTentGrpIncTableObj().readSecTentGrpIncByIdIdx( getPKey().getRequiredSecTentGrpId(),
-			getPKey().getRequiredInclName(), forceRead );
-		return( (ICFSecSecTentGrpIncObj)retobj );
+	public ICFSecSecSysRoleEnablesObj read( boolean forceRead ) {
+		ICFSecSecSysRoleEnablesObj retobj = ((ICFIntSchemaObj)getSchema()).getSecSysRoleEnablesTableObj().readSecSysRoleEnablesByIdIdx( getPKey().getRequiredSecSysRoleId(),
+			getPKey().getRequiredEnableName(), forceRead );
+		return( (ICFSecSecSysRoleEnablesObj)retobj );
 	}
 
 	@Override
-	public ICFSecSecTentGrpIncTableObj getSecTentGrpIncTable() {
-		return( ((ICFIntSchemaObj)getSchema()).getSecTentGrpIncTableObj() );
+	public ICFSecSecSysRoleEnablesTableObj getSecSysRoleEnablesTable() {
+		return( ((ICFIntSchemaObj)getSchema()).getSecSysRoleEnablesTableObj() );
 	}
 
 	@Override
@@ -241,16 +241,16 @@ public class CFIntSecTentGrpIncObj
 	}
 
 	@Override
-	public ICFSecSecTentGrpInc getRec() {
+	public ICFSecSecSysRoleEnables getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFSecBackingStore().getFactorySecTentGrpInc().newRec();
+				rec = getSchema().getCFSecBackingStore().getFactorySecSysRoleEnables().newRec();
 			}
 			else {
 				// Read the data rec via the backing store
-				rec = getSchema().getCFSecBackingStore().getTableSecTentGrpInc().readDerivedByIdIdx( ((ICFIntSchemaObj)getSchema()).getAuthorization(),
-						getPKey().getRequiredSecTentGrpId(),
-						getPKey().getRequiredInclName() );
+				rec = getSchema().getCFSecBackingStore().getTableSecSysRoleEnables().readDerivedByIdIdx( ((ICFIntSchemaObj)getSchema()).getAuthorization(),
+						getPKey().getRequiredSecSysRoleId(),
+						getPKey().getRequiredEnableName() );
 				if( rec != null ) {
 					copyRecToPKey();
 				}
@@ -260,35 +260,35 @@ public class CFIntSecTentGrpIncObj
 	}
 
 	@Override
-	public void setRec( ICFSecSecTentGrpInc value ) {
-		if( ! ( ( value == null ) || ! ( value instanceof ICFSecSecTentGrpInc ) ) ) {
+	public void setRec( ICFSecSecSysRoleEnables value ) {
+		if( ! ( ( value == null ) || ! ( value instanceof ICFSecSecSysRoleEnables ) ) ) {
 			throw new CFLibUnsupportedClassException( getClass(),
 				"setRec",
 				"value",
 				value,
-				"CFSecSecTentGrpIncRec" );
+				"CFSecSecSysRoleEnablesRec" );
 		}
 		rec = value;
 		copyRecToPKey();
-		requiredContainerGroup = null;
-		requiredParentSubGroup = null;
+		requiredContainerSysRole = null;
+		requiredParentEnableGroup = null;
 	}
 
 	@Override
-	public ICFSecSecTentGrpInc getSecTentGrpIncRec() {
-		return( (ICFSecSecTentGrpInc)getRec() );
+	public ICFSecSecSysRoleEnables getSecSysRoleEnablesRec() {
+		return( (ICFSecSecSysRoleEnables)getRec() );
 	}
 
 	@Override
-	public ICFSecSecTentGrpIncPKey getPKey() {
+	public ICFSecSecSysRoleEnablesPKey getPKey() {
 		if( pKey == null ) {
-			pKey = getSchema().getCFSecBackingStore().getFactorySecTentGrpInc().newPKey();
+			pKey = getSchema().getCFSecBackingStore().getFactorySecSysRoleEnables().newPKey();
 		}
 		return( pKey );
 	}
 
 	@Override
-	public void setPKey( ICFSecSecTentGrpIncPKey value ) {
+	public void setPKey( ICFSecSecSysRoleEnablesPKey value ) {
 		if( pKey != value ) {
 			pKey = value;
 			copyPKeyToRec();
@@ -306,19 +306,19 @@ public class CFIntSecTentGrpIncObj
 	}
 
 	@Override
-	public ICFSecSecTentGrpIncEditObj beginEdit() {
+	public ICFSecSecSysRoleEnablesEditObj beginEdit() {
 		if( edit != null ) {
 			throw new CFLibEditAlreadyOpenException( getClass(), "beginEdit" );
 		}
-		ICFSecSecTentGrpIncObj lockobj;
+		ICFSecSecSysRoleEnablesObj lockobj;
 		if( getIsNew() ) {
-			lockobj = (ICFSecSecTentGrpIncObj)this;
+			lockobj = (ICFSecSecSysRoleEnablesObj)this;
 		}
 		else {
-			lockobj = ((ICFIntSchemaObj)getSchema()).getSecTentGrpIncTableObj().lockSecTentGrpInc( getPKey() );
+			lockobj = ((ICFIntSchemaObj)getSchema()).getSecSysRoleEnablesTableObj().lockSecSysRoleEnables( getPKey() );
 		}
-		edit = ((ICFIntSchemaObj)getSchema()).getSecTentGrpIncTableObj().newEditInstance( lockobj );
-		return( (ICFSecSecTentGrpIncEditObj)edit );
+		edit = ((ICFIntSchemaObj)getSchema()).getSecSysRoleEnablesTableObj().newEditInstance( lockobj );
+		return( (ICFSecSecSysRoleEnablesEditObj)edit );
 	}
 
 	@Override
@@ -327,19 +327,19 @@ public class CFIntSecTentGrpIncObj
 	}
 
 	@Override
-	public ICFSecSecTentGrpIncEditObj getEdit() {
+	public ICFSecSecSysRoleEnablesEditObj getEdit() {
 		return( edit );
 	}
 
 	@Override
-	public ICFSecSecTentGrpIncEditObj getEditAsSecTentGrpInc() {
-		return( (ICFSecSecTentGrpIncEditObj)edit );
+	public ICFSecSecSysRoleEnablesEditObj getEditAsSecSysRoleEnables() {
+		return( (ICFSecSecSysRoleEnablesEditObj)edit );
 	}
 
 	@Override
 	public ICFSecSecUserObj getCreatedBy() {
 		if( createdBy == null ) {
-			ICFSecSecTentGrpInc rec = getRec();
+			ICFSecSecSysRoleEnables rec = getRec();
 			createdBy = ((ICFIntSchemaObj)getSchema()).getSecUserTableObj().readSecUserByIdIdx( rec.getCreatedByUserId() );
 		}
 		return( createdBy );
@@ -353,7 +353,7 @@ public class CFIntSecTentGrpIncObj
 	@Override
 	public ICFSecSecUserObj getUpdatedBy() {
 		if( updatedBy == null ) {
-			ICFSecSecTentGrpInc rec = getRec();
+			ICFSecSecSysRoleEnables rec = getRec();
 			updatedBy = ((ICFIntSchemaObj)getSchema()).getSecUserTableObj().readSecUserByIdIdx( rec.getUpdatedByUserId() );
 		}
 		return( updatedBy );
@@ -365,52 +365,52 @@ public class CFIntSecTentGrpIncObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredSecTentGrpId() {
-		return( getPKey().getRequiredSecTentGrpId() );
+	public CFLibDbKeyHash256 getRequiredSecSysRoleId() {
+		return( getPKey().getRequiredSecSysRoleId() );
 	}
 
 	@Override
-	public String getRequiredInclName() {
-		return( getPKey().getRequiredInclName() );
+	public String getRequiredEnableName() {
+		return( getPKey().getRequiredEnableName() );
 	}
 
 	@Override
-	public ICFSecSecTentGrpObj getRequiredContainerGroup() {
-		return( getRequiredContainerGroup( false ) );
+	public ICFSecSecSysRoleObj getRequiredContainerSysRole() {
+		return( getRequiredContainerSysRole( false ) );
 	}
 
 	@Override
-	public ICFSecSecTentGrpObj getRequiredContainerGroup( boolean forceRead ) {
-		if( ( requiredContainerGroup == null ) || forceRead ) {
+	public ICFSecSecSysRoleObj getRequiredContainerSysRole( boolean forceRead ) {
+		if( ( requiredContainerSysRole == null ) || forceRead ) {
 			boolean anyMissing = false;
 			if( ! anyMissing ) {
-				requiredContainerGroup = ((ICFIntSchemaObj)getSchema()).getSecTentGrpTableObj().readSecTentGrpByIdIdx( getPKey().getRequiredSecTentGrpId(), forceRead );
+				requiredContainerSysRole = ((ICFIntSchemaObj)getSchema()).getSecSysRoleTableObj().readSecSysRoleByIdIdx( getPKey().getRequiredSecSysRoleId(), forceRead );
 			}
 		}
-		return( requiredContainerGroup );
+		return( requiredContainerSysRole );
 	}
 
 	@Override
-	public ICFSecSecSysGrpObj getRequiredParentSubGroup() {
-		return( getRequiredParentSubGroup( false ) );
+	public ICFSecSecSysGrpObj getRequiredParentEnableGroup() {
+		return( getRequiredParentEnableGroup( false ) );
 	}
 
 	@Override
-	public ICFSecSecSysGrpObj getRequiredParentSubGroup( boolean forceRead ) {
-		if( ( requiredParentSubGroup == null ) || forceRead ) {
+	public ICFSecSecSysGrpObj getRequiredParentEnableGroup( boolean forceRead ) {
+		if( ( requiredParentEnableGroup == null ) || forceRead ) {
 			boolean anyMissing = false;
 			if( ! anyMissing ) {
-				requiredParentSubGroup = ((ICFIntSchemaObj)getSchema()).getSecSysGrpTableObj().readSecSysGrpByUNameIdx( getPKey().getRequiredInclName(), forceRead );
+				requiredParentEnableGroup = ((ICFIntSchemaObj)getSchema()).getSecSysGrpTableObj().readSecSysGrpByUNameIdx( getPKey().getRequiredEnableName(), forceRead );
 			}
 		}
-		return( requiredParentSubGroup );
+		return( requiredParentEnableGroup );
 	}
 
 	@Override
 	public void copyPKeyToRec() {
 		if( rec != null ) {
-			rec.getPKey().setRequiredContainerGroup(getPKey().getRequiredContainerGroup());
-			rec.getPKey().setRequiredParentSubGroup(getPKey().getRequiredParentSubGroup());
+			rec.getPKey().setRequiredContainerSysRole(getPKey().getRequiredContainerSysRole());
+			rec.getPKey().setRequiredParentEnableGroup(getPKey().getRequiredParentEnableGroup());
 		}
 		if( edit != null ) {
 			edit.copyPKeyToRec();
@@ -420,8 +420,8 @@ public class CFIntSecTentGrpIncObj
 	@Override
 	public void copyRecToPKey() {
 		if( rec != null ) {
-			getPKey().setRequiredContainerGroup(rec.getPKey().getRequiredContainerGroup());
-			getPKey().setRequiredParentSubGroup(rec.getPKey().getRequiredParentSubGroup());
+			getPKey().setRequiredContainerSysRole(rec.getPKey().getRequiredContainerSysRole());
+			getPKey().setRequiredParentEnableGroup(rec.getPKey().getRequiredParentEnableGroup());
 		}
 	}
 }
