@@ -586,8 +586,8 @@ public class CFIntSecSysGrpIncTableObj
 		String InclName, boolean forceRead )
 	{
 		ICFSecSecSysGrpIncPKey pkey = schema.getCFSecBackingStore().getFactorySecSysGrpInc().newPKey();
-		pkey.setRequiredContainerGroup(SecSysGrpId);
-		pkey.setRequiredParentSubGroup(InclName);
+		pkey.setRequiredSecSysGrpId( SecSysGrpId );
+		pkey.setRequiredInclName( InclName );
 		ICFSecSecSysGrpIncObj obj = readSecSysGrpInc( pkey, forceRead );
 		return( obj );
 	}
@@ -784,10 +784,10 @@ public class CFIntSecSysGrpIncTableObj
 	{
 		ICFSecSecSysGrpIncObj obj = null;
 		ICFSecSecSysGrpIncPKey pkey = schema.getCFSecBackingStore().getFactorySecSysGrpInc().newPKey();
-		pkey.setRequiredContainerGroup(SecSysGrpId);
-		pkey.setRequiredParentSubGroup(InclName);
-		pkey.setRequiredContainerGroup(SecSysGrpId);
-		pkey.setRequiredParentSubGroup(InclName);
+		pkey.setRequiredSecSysGrpId( SecSysGrpId );
+		pkey.setRequiredInclName( InclName );
+		pkey.setRequiredSecSysGrpId( SecSysGrpId );
+		pkey.setRequiredInclName( InclName );
 		obj = readCachedSecSysGrpInc( pkey );
 		return( obj );
 	}
