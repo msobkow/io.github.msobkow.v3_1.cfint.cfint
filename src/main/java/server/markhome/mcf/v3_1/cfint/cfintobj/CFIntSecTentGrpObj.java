@@ -49,13 +49,13 @@ public class CFIntSecTentGrpObj
 	protected ICFSecSchemaObj schema;
 	protected CFLibDbKeyHash256 pKey;
 	protected ICFSecSecTentGrp rec;
-	protected ICFSecTenantObj requiredOwnerTenant;
+	protected ICFSecTenantObj requiredContainerTenant;
 	protected ICFSecSecSysGrpObj requiredParentSysGrp;
 	protected List<ICFSecSecTentGrpMembObj> optionalChildrenMembByGrp;
 
 	public CFIntSecTentGrpObj() {
 		isNew = true;
-		requiredOwnerTenant = null;
+		requiredContainerTenant = null;
 		requiredParentSysGrp = null;
 	}
 
@@ -63,7 +63,7 @@ public class CFIntSecTentGrpObj
 		schema = argSchema;
 		isNew = true;
 		edit = null;
-		requiredOwnerTenant = null;
+		requiredContainerTenant = null;
 		requiredParentSysGrp = null;
 	}
 
@@ -79,7 +79,8 @@ public class CFIntSecTentGrpObj
 
 	@Override
 	public ICFLibAnyObj getObjScope() {
-		return( null );
+		ICFSecTenantObj scope = getRequiredContainerTenant();
+		return( scope );
 	}
 
 	@Override
@@ -267,7 +268,7 @@ public class CFIntSecTentGrpObj
 		}
 		rec = value;
 		copyRecToPKey();
-		requiredOwnerTenant = null;
+		requiredContainerTenant = null;
 		requiredParentSysGrp = null;
 	}
 
@@ -364,19 +365,19 @@ public class CFIntSecTentGrpObj
 	}
 
 	@Override
-	public ICFSecTenantObj getRequiredOwnerTenant() {
-		return( getRequiredOwnerTenant( false ) );
+	public ICFSecTenantObj getRequiredContainerTenant() {
+		return( getRequiredContainerTenant( false ) );
 	}
 
 	@Override
-	public ICFSecTenantObj getRequiredOwnerTenant( boolean forceRead ) {
-		if( ( requiredOwnerTenant == null ) || forceRead ) {
+	public ICFSecTenantObj getRequiredContainerTenant( boolean forceRead ) {
+		if( ( requiredContainerTenant == null ) || forceRead ) {
 			boolean anyMissing = false;
 			if( ! anyMissing ) {
-				requiredOwnerTenant = ((ICFIntSchemaObj)getSchema()).getTenantTableObj().readTenantByIdIdx( getSecTentGrpRec().getRequiredTenantId(), forceRead );
+				requiredContainerTenant = ((ICFIntSchemaObj)getSchema()).getTenantTableObj().readTenantByIdIdx( getSecTentGrpRec().getRequiredTenantId(), forceRead );
 			}
 		}
-		return( requiredOwnerTenant );
+		return( requiredContainerTenant );
 	}
 
 	@Override

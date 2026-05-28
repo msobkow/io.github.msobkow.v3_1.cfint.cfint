@@ -225,6 +225,20 @@ public interface ICFIntTenantObj
 	List<ICFSecSecTentGrpObj> getOptionalComponentsSecGroup( boolean forceRead );
 
 	/**
+	 *	Get the array of optional ICFSecSecTentRoleObj array of instances referenced by the SecRole key.
+	 *
+	 *	@return	The optional ICFSecSecTentRoleObj[] array of instances referenced by the SecRole key.
+	 */
+	List<ICFSecSecTentRoleObj> getOptionalComponentsSecRole();
+
+	/**
+	 *	Get the array of optional ICFSecSecTentRoleObj array of instances referenced by the SecRole key.
+	 *
+	 *	@return	The optional ICFSecSecTentRoleObj[] array of instances referenced by the SecRole key.
+	 */
+	List<ICFSecSecTentRoleObj> getOptionalComponentsSecRole( boolean forceRead );
+
+	/**
 	 *	Get the array of optional ICFIntTldObj array of instances referenced by the Tld key.
 	 *
 	 *	@return	The optional ICFIntTldObj[] array of instances referenced by the Tld key.

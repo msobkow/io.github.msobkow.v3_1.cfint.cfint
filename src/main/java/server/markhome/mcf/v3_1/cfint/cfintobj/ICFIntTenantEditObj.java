@@ -114,6 +114,13 @@ public interface ICFIntTenantEditObj
 	List<ICFSecSecTentGrpObj> getOptionalComponentsSecGroup();
 
 	/**
+	 *	Get a list ICFSecSecTentRoleObj instances referenced by the SecRole key.
+	 *
+	 *	@return	The (potentially empty) list of ICFSecSecTentRoleObj instances referenced by the SecRole key.
+	 */
+	List<ICFSecSecTentRoleObj> getOptionalComponentsSecRole();
+
+	/**
 	 *	Get a list ICFIntTldObj instances referenced by the Tld key.
 	 *
 	 *	@return	The (potentially empty) list of ICFIntTldObj instances referenced by the Tld key.
