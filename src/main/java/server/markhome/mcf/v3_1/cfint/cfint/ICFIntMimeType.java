@@ -40,10 +40,10 @@ import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 public interface ICFIntMimeType
 {
 	public static final int MIMETYPEID_MIN_VALUE = 0;
-        public static final String S_INIT_CREATED_BY = "0000000000000000000000000000000000000000000000000000000000000000";
-        public static final CFLibDbKeyHash256 INIT_CREATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_CREATED_BY);
-        public static final String S_INIT_UPDATED_BY = "0000000000000000000000000000000000000000000000000000000000000000";
-        public static final CFLibDbKeyHash256 INIT_UPDATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_UPDATED_BY);
+	public static final String S_INIT_CREATED_BY = "0000000000000000000000000000000000000000000000000000000000000000";
+	public static final CFLibDbKeyHash256 INIT_CREATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_CREATED_BY);
+	public static final String S_INIT_UPDATED_BY = "0000000000000000000000000000000000000000000000000000000000000000";
+	public static final CFLibDbKeyHash256 INIT_UPDATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_UPDATED_BY);
 	public static final int MIMETYPEID_INIT_VALUE = 0;
 	public static final String NAME_INIT_VALUE = new String( "" );
 	public static final String FILETYPES_INIT_VALUE = new String( "" );

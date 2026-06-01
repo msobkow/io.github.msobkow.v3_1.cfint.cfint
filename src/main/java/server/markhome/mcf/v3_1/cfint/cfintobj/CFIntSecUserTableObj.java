@@ -331,6 +331,7 @@ public class CFIntSecUserTableObj
 					schema.getSecSysGrpMembTableObj().deepDisposeSecSysGrpMembByLoginIdx( existing.getRequiredLoginId() );
 					schema.getSecClusGrpMembTableObj().deepDisposeSecClusGrpMembByLoginIdx( existing.getRequiredLoginId() );
 					schema.getSecTentGrpMembTableObj().deepDisposeSecTentGrpMembByUserIdx( existing.getRequiredLoginId() );
+					schema.getSecUserPasswordTableObj().deepDisposeSecUserPasswordByIdIdx( existing.getRequiredSecUserId() );
 					schema.getSecUserPWResetTableObj().deepDisposeSecUserPWResetByIdIdx( existing.getRequiredSecUserId() );
 					schema.getSecUserEMConfTableObj().deepDisposeSecUserEMConfByIdIdx( existing.getRequiredSecUserId() );
 
