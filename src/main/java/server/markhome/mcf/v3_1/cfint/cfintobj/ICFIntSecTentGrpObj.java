@@ -201,28 +201,28 @@ public interface ICFIntSecTentGrpObj
 	 *
 	 *	@return	The required ICFIntTenantObj instance referenced by the Tenant key.
 	 */
-	ICFSecTenantObj getRequiredContainerTenant();
+	ICFSecTenantObj getRequiredOwnerTenant();
 
 	/**
 	 *	Get the required ICFSecTenantObj instance referenced by the Tenant key.
 	 *
 	 *	@return	The required ICFSecTenantObj instance referenced by the Tenant key.
 	 */
-	ICFSecTenantObj getRequiredContainerTenant( boolean forceRead );
+	ICFSecTenantObj getRequiredOwnerTenant( boolean forceRead );
 
 	/**
 	 *	Get the required ICFIntSecSysGrpObj instance referenced by the SysGrp key.
 	 *
 	 *	@return	The required ICFIntSecSysGrpObj instance referenced by the SysGrp key.
 	 */
-	ICFSecSecSysGrpObj getRequiredParentSysGrp();
+	ICFSecSecSysGrpObj getRequiredContainerSysGrp();
 
 	/**
 	 *	Get the required ICFSecSecSysGrpObj instance referenced by the SysGrp key.
 	 *
 	 *	@return	The required ICFSecSecSysGrpObj instance referenced by the SysGrp key.
 	 */
-	ICFSecSecSysGrpObj getRequiredParentSysGrp( boolean forceRead );
+	ICFSecSecSysGrpObj getRequiredContainerSysGrp( boolean forceRead );
 
 	/**
 	 *	Get the array of optional ICFSecSecTentGrpMembObj array of instances referenced by the MembByGrp key.

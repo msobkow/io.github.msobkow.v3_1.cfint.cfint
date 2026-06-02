@@ -203,32 +203,6 @@ public class CFIntClusterEditObj
 				subObj = null;
 			}
 		}
-		if( subObj == null ) {
-			try {
-				if (nextName == null) {
-					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
-				}
-				String natNextName = nextName;
-				subObj = ((ICFIntSchemaObj)getSchema()).getSecClusGrpTableObj().readSecClusGrpByUNameIdx( getRequiredId(),
-				natNextName, false );
-			}
-			catch (Throwable th) {
-				subObj = null;
-			}
-		}
-		if( subObj == null ) {
-			try {
-				if (nextName == null) {
-					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
-				}
-				String natNextName = nextName;
-				subObj = ((ICFIntSchemaObj)getSchema()).getSecClusRoleTableObj().readSecClusRoleByUNameIdx( getRequiredId(),
-				natNextName, false );
-			}
-			catch (Throwable th) {
-				subObj = null;
-			}
-		}
 		if( remainingName == null ) {
 			retObj = subObj;
 		}

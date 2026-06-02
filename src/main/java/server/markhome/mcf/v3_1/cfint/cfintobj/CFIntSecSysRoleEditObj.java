@@ -46,7 +46,7 @@ public class CFIntSecSysRoleEditObj
 	protected ICFSecSecSysRole rec;
 	protected ICFSecSecUserObj createdBy = null;
 	protected ICFSecSecUserObj updatedBy = null;
-	protected List<ICFSecSecSysRoleEnablesObj> optionalChildrenEnabledByRole;
+	protected List<ICFSecSecSysRoleEnablesObj> optionalComponentsEnabledByRole;
 	protected List<ICFSecSecSysRoleMembObj> optionalChildrenMembByRole;
 
 	public CFIntSecSysRoleEditObj( ICFSecSecSysRoleObj argOrig ) {
@@ -187,6 +187,19 @@ public class CFIntSecSysRoleEditObj
 		else {
 			nextName = objName;
 			remainingName = null;
+		}
+		if( subObj == null ) {
+			try {
+				if (nextName == null) {
+					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredEnableName");
+				}
+				String natNextName = nextName;
+				subObj = ((ICFIntSchemaObj)getSchema()).getSecSysRoleEnablesTableObj().readSecSysRoleEnablesByIdIdx( getRequiredSecSysRoleId(),
+				natNextName, false );
+			}
+			catch (Throwable th) {
+				subObj = null;
+			}
 		}
 		if( remainingName == null ) {
 			retObj = subObj;
@@ -395,7 +408,7 @@ public class CFIntSecSysRoleEditObj
 	public void setRequiredSecSysRoleId(CFLibDbKeyHash256 value) {
 		if (getPKey() != value) {
 			setPKey(value);
-			optionalChildrenEnabledByRole = null;
+			optionalComponentsEnabledByRole = null;
 			optionalChildrenMembByRole = null;
 		}
 	}
@@ -413,7 +426,7 @@ public class CFIntSecSysRoleEditObj
 	}
 
 	@Override
-	public List<ICFSecSecSysRoleEnablesObj> getOptionalChildrenEnabledByRole() {
+	public List<ICFSecSecSysRoleEnablesObj> getOptionalComponentsEnabledByRole() {
 		List<ICFSecSecSysRoleEnablesObj> retval;
 		retval = ((ICFIntSchemaObj)getSchema()).getSecSysRoleEnablesTableObj().readSecSysRoleEnablesBySysRoleIdx( getPKey(),
 			false );
@@ -421,7 +434,7 @@ public class CFIntSecSysRoleEditObj
 	}
 
 	@Override
-	public List<ICFSecSecSysRoleEnablesObj> getOptionalChildrenEnabledByRole( boolean forceRead ) {
+	public List<ICFSecSecSysRoleEnablesObj> getOptionalComponentsEnabledByRole( boolean forceRead ) {
 		List<ICFSecSecSysRoleEnablesObj> retval;
 		retval = ((ICFIntSchemaObj)getSchema()).getSecSysRoleEnablesTableObj().readSecSysRoleEnablesBySysRoleIdx( getPKey(),
 			forceRead );
