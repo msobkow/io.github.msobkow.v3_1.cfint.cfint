@@ -38,7 +38,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 //import server.markhome.mcf.v3_1.cfint.cfint.*;
 
 /**
- *	ICFIntURLProtocolHPKey History Primary Key interface for URLProtocol
+ *	ICFIntURLProtocolHPKey History Primary Key interface for URLProtocol has CodeVis Public, meaning that any user interface or referencing schema can access it.
  *		requiredURLProtocolId	Required object attribute URLProtocolId. */
 public interface ICFIntURLProtocolHPKey
 {

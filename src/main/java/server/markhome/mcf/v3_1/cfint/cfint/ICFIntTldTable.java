@@ -42,7 +42,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 import server.markhome.mcf.v3_1.cfint.cfintobj.*;
 
 /*
- *	CFIntTldTable database interface for Tld
+ *	CFIntTldTable database interface for Tld has CodeVis Public, meaning that any user interface or referencing schema can access it.
  */
 public interface ICFIntTldTable
 {

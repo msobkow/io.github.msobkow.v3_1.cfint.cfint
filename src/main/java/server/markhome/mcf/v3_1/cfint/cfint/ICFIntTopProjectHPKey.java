@@ -38,7 +38,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 //import server.markhome.mcf.v3_1.cfint.cfint.*;
 
 /**
- *	ICFIntTopProjectHPKey History Primary Key interface for TopProject
+ *	ICFIntTopProjectHPKey History Primary Key interface for TopProject has CodeVis Public, meaning that any user interface or referencing schema can access it.
  *		requiredId	Required object attribute Id. */
 public interface ICFIntTopProjectHPKey
 {

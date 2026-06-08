@@ -42,7 +42,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 import server.markhome.mcf.v3_1.cfint.cfintobj.*;
 
 /*
- *	CFIntTopDomainTable database interface for TopDomain
+ *	CFIntTopDomainTable database interface for TopDomain has CodeVis Public, meaning that any user interface or referencing schema can access it.
  */
 public interface ICFIntTopDomainTable
 {

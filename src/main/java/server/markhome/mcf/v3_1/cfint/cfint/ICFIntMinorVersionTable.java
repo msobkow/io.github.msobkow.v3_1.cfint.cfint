@@ -42,7 +42,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 import server.markhome.mcf.v3_1.cfint.cfintobj.*;
 
 /*
- *	CFIntMinorVersionTable database interface for MinorVersion
+ *	CFIntMinorVersionTable database interface for MinorVersion has CodeVis Public, meaning that any user interface or referencing schema can access it.
  */
 public interface ICFIntMinorVersionTable
 {

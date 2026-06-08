@@ -38,7 +38,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 //import server.markhome.mcf.v3_1.cfint.cfint.*;
 
 /**
- *	ICFIntTopDomainHPKey History Primary Key interface for TopDomain
+ *	ICFIntTopDomainHPKey History Primary Key interface for TopDomain has CodeVis Public, meaning that any user interface or referencing schema can access it.
  *		requiredId	Required object attribute Id. */
 public interface ICFIntTopDomainHPKey
 {

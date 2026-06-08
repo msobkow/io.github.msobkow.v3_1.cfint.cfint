@@ -38,7 +38,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 //import server.markhome.mcf.v3_1.cfint.cfint.*;
 
 /**
- *	ICFIntMimeTypeHPKey History Primary Key interface for MimeType
+ *	ICFIntMimeTypeHPKey History Primary Key interface for MimeType has CodeVis Public, meaning that any user interface or referencing schema can access it.
  *		requiredMimeTypeId	Required object attribute MimeTypeId. */
 public interface ICFIntMimeTypeHPKey
 {

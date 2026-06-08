@@ -49,15 +49,15 @@ extends ICFSecSchema
 	public static final String SCHEMA_NAME = "CFInt";
 	public static final String DBSCHEMA_NAME = "CFInt31";
 	static final AtomicReference<ApplicationContext> arApplicationContext = new AtomicReference<>(null);
-	public static final CFSecTableInfo TABLE_INFO[] = {new CFSecTableInfo("License", false, false, "Tenant"),
-		new CFSecTableInfo("MajorVersion", true, false, "Tenant"),
-		new CFSecTableInfo("MimeType", true, false, "System"),
-		new CFSecTableInfo("MinorVersion", true, false, "Tenant"),
-		new CFSecTableInfo("SubProject", true, false, "Tenant"),
-		new CFSecTableInfo("Tld", true, false, "Tenant"),
-		new CFSecTableInfo("TopDomain", true, false, "Tenant"),
-		new CFSecTableInfo("TopProject", true, false, "Tenant"),
-		new CFSecTableInfo("URLProtocol", true, false, "System")};
+	public static final CFSecTableInfo TABLE_INFO[] = {new CFSecTableInfo("CFInt", "License", false, false, "Tenant", "Public"),
+		new CFSecTableInfo("CFInt", "MajorVersion", true, false, "Tenant", "Public"),
+		new CFSecTableInfo("CFInt", "MimeType", true, false, "System", "Public"),
+		new CFSecTableInfo("CFInt", "MinorVersion", true, false, "Tenant", "Public"),
+		new CFSecTableInfo("CFInt", "SubProject", true, false, "Tenant", "Public"),
+		new CFSecTableInfo("CFInt", "Tld", true, false, "Tenant", "Public"),
+		new CFSecTableInfo("CFInt", "TopDomain", true, false, "Tenant", "Public"),
+		new CFSecTableInfo("CFInt", "TopProject", true, false, "Tenant", "Public"),
+		new CFSecTableInfo("CFInt", "URLProtocol", true, false, "System", "Public")};
 	public static final AtomicReference<CFSecTableInfo[]> consolidatedTableInfo = new AtomicReference<>(null);
 	public static final CFSecRoleInfo ROLE_INFO[] = {};
 	public static final AtomicReference<CFSecRoleInfo[]> consolidatedRoleInfo = new AtomicReference<>(null);
@@ -76,7 +76,13 @@ extends ICFSecSchema
 				lst.add(info);
 			}
 			lst.sort((o1, o2) -> {
-				return o1.getTableName().compareTo(o2.getTableName());
+				int retval = o1.getSchemaName().compareTo(o2.getSchemaName());
+				if (retval != 0) {
+					return retval;
+				}
+				else {
+					return o1.getTableName().compareTo(o2.getTableName());
+				}
 			});
 			CFSecTableInfo arr[] = new CFSecTableInfo[lst.size()];
 			int idx = 0;

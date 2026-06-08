@@ -38,7 +38,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 //import server.markhome.mcf.v3_1.cfint.cfint.*;
 
 /**
- *	ICFIntMinorVersionHPKey History Primary Key interface for MinorVersion
+ *	ICFIntMinorVersionHPKey History Primary Key interface for MinorVersion has CodeVis Public, meaning that any user interface or referencing schema can access it.
  *		requiredId	Required object attribute Id. */
 public interface ICFIntMinorVersionHPKey
 {

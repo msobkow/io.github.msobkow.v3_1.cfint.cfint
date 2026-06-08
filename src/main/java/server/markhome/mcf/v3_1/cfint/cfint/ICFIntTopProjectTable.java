@@ -42,7 +42,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 import server.markhome.mcf.v3_1.cfint.cfintobj.*;
 
 /*
- *	CFIntTopProjectTable database interface for TopProject
+ *	CFIntTopProjectTable database interface for TopProject has CodeVis Public, meaning that any user interface or referencing schema can access it.
  */
 public interface ICFIntTopProjectTable
 {
