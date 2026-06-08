@@ -251,6 +251,15 @@ extends ICFSecSchema
 	public short nextISOTZoneIdGen();
 
 	/**
+	 *	Get the next TableInfoIdGen identifier.
+	 *
+	 *	@return	The next TableInfoIdGen identifier.
+	 *
+	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	public int nextTableInfoIdGen();
+
+	/**
 	 *	Get the next MimeTypeIdGen identifier.
 	 *
 	 *	@return	The next MimeTypeIdGen identifier.
@@ -1005,6 +1014,24 @@ extends ICFSecSchema
 	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFSecSysClusterFactory getFactorySysCluster();
+
+	/**
+	 *	Get the TableInfo Table interface for the schema.
+	 *
+	 *	@return	The TableInfo Table interface for the schema.
+	 *
+	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	public ICFSecTableInfoTable getTableTableInfo();
+
+	/**
+	 *	Get the TableInfo Factory interface for the schema.
+	 *
+	 *	@return	The TableInfo Factory interface for the schema.
+	 *
+	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	public ICFSecTableInfoFactory getFactoryTableInfo();
 
 	/**
 	 *	Get the Tenant Table interface for the schema.

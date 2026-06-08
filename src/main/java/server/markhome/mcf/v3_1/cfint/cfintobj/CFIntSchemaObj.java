@@ -94,6 +94,7 @@ public class CFIntSchemaObj
 	protected ICFIntSecUserPasswordTableObj secUserPasswordTableObj;
 	protected ICFIntSubProjectTableObj subProjectTableObj;
 	protected ICFIntSysClusterTableObj sysClusterTableObj;
+	protected ICFIntTableInfoTableObj tableInfoTableObj;
 	protected ICFIntTenantTableObj tenantTableObj;
 	protected ICFIntTldTableObj tldTableObj;
 	protected ICFIntTopDomainTableObj topDomainTableObj;
@@ -137,6 +138,7 @@ public class CFIntSchemaObj
 		secUserPasswordTableObj = new CFIntSecUserPasswordTableObj( this );
 		subProjectTableObj = new CFIntSubProjectTableObj( this );
 		sysClusterTableObj = new CFIntSysClusterTableObj( this );
+		tableInfoTableObj = new CFIntTableInfoTableObj( this );
 		tenantTableObj = new CFIntTenantTableObj( this );
 		tldTableObj = new CFIntTldTableObj( this );
 		topDomainTableObj = new CFIntTopDomainTableObj( this );
@@ -469,6 +471,9 @@ public class CFIntSchemaObj
 		if( sysClusterTableObj != null ) {
 			sysClusterTableObj.minimizeMemory();
 		}
+		if( tableInfoTableObj != null ) {
+			tableInfoTableObj.minimizeMemory();
+		}
 		if( tenantTableObj != null ) {
 			tenantTableObj.minimizeMemory();
 		}
@@ -635,6 +640,10 @@ public class CFIntSchemaObj
 
 	public ICFIntSysClusterTableObj getSysClusterTableObj() {
 		return( sysClusterTableObj );
+	}
+
+	public ICFIntTableInfoTableObj getTableInfoTableObj() {
+		return( tableInfoTableObj );
 	}
 
 	public ICFIntTenantTableObj getTenantTableObj() {
