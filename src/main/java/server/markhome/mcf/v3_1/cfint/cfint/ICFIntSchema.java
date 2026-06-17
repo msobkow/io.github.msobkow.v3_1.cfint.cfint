@@ -49,31 +49,31 @@ extends ICFSecSchema
 	public static final String SCHEMA_NAME = "CFInt";
 	public static final String DBSCHEMA_NAME = "CFInt31";
 	static final AtomicReference<ApplicationContext> arApplicationContext = new AtomicReference<>(null);
-	public static final CFSecTableInfo TABLE_INFO[] = {new CFSecTableInfo("CFInt", "License", false, false, "Tenant", "Public"),
-		new CFSecTableInfo("CFInt", "MajorVersion", true, false, "Tenant", "Public"),
-		new CFSecTableInfo("CFInt", "MimeType", true, false, "System", "Public"),
-		new CFSecTableInfo("CFInt", "MinorVersion", true, false, "Tenant", "Public"),
-		new CFSecTableInfo("CFInt", "SubProject", true, false, "Tenant", "Public"),
-		new CFSecTableInfo("CFInt", "Tld", true, false, "Tenant", "Public"),
-		new CFSecTableInfo("CFInt", "TopDomain", true, false, "Tenant", "Public"),
-		new CFSecTableInfo("CFInt", "TopProject", true, false, "Tenant", "Public"),
-		new CFSecTableInfo("CFInt", "URLProtocol", true, false, "System", "Public")};
-	public static final AtomicReference<CFSecTableInfo[]> consolidatedTableInfo = new AtomicReference<>(null);
+	public static final CFSecTableData TABLE_DATA[] = {new CFSecTableData("CFInt", "License", null, false, false, "Tenant", "Public"),
+		new CFSecTableData("CFInt", "MajorVersion", null, true, false, "Tenant", "Public"),
+		new CFSecTableData("CFInt", "MimeType", null, true, false, "System", "Public"),
+		new CFSecTableData("CFInt", "MinorVersion", null, true, false, "Tenant", "Public"),
+		new CFSecTableData("CFInt", "SubProject", null, true, false, "Tenant", "Public"),
+		new CFSecTableData("CFInt", "Tld", null, true, false, "Tenant", "Public"),
+		new CFSecTableData("CFInt", "TopDomain", null, true, false, "Tenant", "Public"),
+		new CFSecTableData("CFInt", "TopProject", null, true, false, "Tenant", "Public"),
+		new CFSecTableData("CFInt", "URLProtocol", null, true, false, "System", "Public")};
+	public static final AtomicReference<CFSecTableData[]> consolidatedTableData = new AtomicReference<>(null);
 	public static final CFSecRoleInfo ROLE_INFO[] = {};
 	public static final AtomicReference<CFSecRoleInfo[]> consolidatedRoleInfo = new AtomicReference<>(null);
 
-	public static CFSecTableInfo[] getTableInfo() {
-		return TABLE_INFO;
+	public static CFSecTableData[] getTableData() {
+		return TABLE_DATA;
 	}
 
-	public static CFSecTableInfo[] getConsolidatedTableInfo() {
-		if (consolidatedTableInfo.get() == null) {
-			ArrayList<CFSecTableInfo> lst = new ArrayList<>();
-			for( CFSecTableInfo info: ICFSecSchema.getTableInfo()) {
-				lst.add(info);
+	public static CFSecTableData[] getConsolidatedTableData() {
+		if (consolidatedTableData.get() == null) {
+			ArrayList<CFSecTableData> lst = new ArrayList<>();
+			for( CFSecTableData data: ICFSecSchema.getTableData()) {
+				lst.add(data);
 			}
-			for( CFSecTableInfo info: TABLE_INFO) {
-				lst.add(info);
+			for( CFSecTableData data: TABLE_DATA) {
+				lst.add(data);
 			}
 			lst.sort((o1, o2) -> {
 				int retval = o1.getSchemaName().compareTo(o2.getSchemaName());
@@ -84,14 +84,14 @@ extends ICFSecSchema
 					return o1.getTableName().compareTo(o2.getTableName());
 				}
 			});
-			CFSecTableInfo arr[] = new CFSecTableInfo[lst.size()];
+			CFSecTableData arr[] = new CFSecTableData[lst.size()];
 			int idx = 0;
-			for(CFSecTableInfo info: lst) {
-				arr[idx++] = info;
+			for(CFSecTableData data: lst) {
+				arr[idx++] = data;
 			}
-			consolidatedTableInfo.compareAndSet(null, arr);
+			consolidatedTableData.compareAndSet(null, arr);
 		}
-		return(consolidatedTableInfo.get());
+		return(consolidatedTableData.get());
 	}
 
 	public static CFSecRoleInfo[] getRoleInfo() {
@@ -1150,6 +1150,6 @@ extends ICFSecSchema
 	 */
 	//public static void setTablePerms( ICFSecTablePerms value );
 
-	public void bootstrapSchema(CFSecTableInfo tableInfo[]);
-	public void bootstrapAllTablesSecurity(CFLibDbKeyHash256 clusterId, CFLibDbKeyHash256 tenantId, CFSecTableInfo tableInfo[]);
+	public void bootstrapSchema(CFSecTableData tableData[]);
+	public void bootstrapAllTablesSecurity(CFLibDbKeyHash256 clusterId, CFLibDbKeyHash256 tenantId, CFSecTableData tableData[]);
 }
