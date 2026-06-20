@@ -42,86 +42,122 @@ public class CFIntBuffFactoryService
 
 	@Autowired
 	@Qualifier("cfint31BuffLicenseFactoryService")
-	protected ICFIntLicenseFactory factoryLicense;
+	protected CFIntBuffLicenseFactoryService licenseFactoryService;
 
 	@Autowired
 	@Qualifier("cfint31BuffMajorVersionFactoryService")
-	protected ICFIntMajorVersionFactory factoryMajorVersion;
+	protected CFIntBuffMajorVersionFactoryService majorversionFactoryService;
 
 	@Autowired
 	@Qualifier("cfint31BuffMimeTypeFactoryService")
-	protected ICFIntMimeTypeFactory factoryMimeType;
+	protected CFIntBuffMimeTypeFactoryService mimetypeFactoryService;
 
 	@Autowired
 	@Qualifier("cfint31BuffMinorVersionFactoryService")
-	protected ICFIntMinorVersionFactory factoryMinorVersion;
+	protected CFIntBuffMinorVersionFactoryService minorversionFactoryService;
 
 	@Autowired
 	@Qualifier("cfint31BuffSubProjectFactoryService")
-	protected ICFIntSubProjectFactory factorySubProject;
+	protected CFIntBuffSubProjectFactoryService subprojectFactoryService;
 
 	@Autowired
 	@Qualifier("cfint31BuffTldFactoryService")
-	protected ICFIntTldFactory factoryTld;
+	protected CFIntBuffTldFactoryService tldFactoryService;
 
 	@Autowired
 	@Qualifier("cfint31BuffTopDomainFactoryService")
-	protected ICFIntTopDomainFactory factoryTopDomain;
+	protected CFIntBuffTopDomainFactoryService topdomainFactoryService;
 
 	@Autowired
 	@Qualifier("cfint31BuffTopProjectFactoryService")
-	protected ICFIntTopProjectFactory factoryTopProject;
+	protected CFIntBuffTopProjectFactoryService topprojectFactoryService;
 
 	@Autowired
 	@Qualifier("cfint31BuffURLProtocolFactoryService")
-	protected ICFIntURLProtocolFactory factoryURLProtocol;
+	protected CFIntBuffURLProtocolFactoryService urlprotocolFactoryService;
 
 
 	public CFIntBuffFactoryService() { }
 
 	@Override
 	public ICFIntLicenseFactory getFactoryLicense() {
-		return( factoryLicense );
+		return(licenseFactoryService);
+	}
+
+	public CFIntBuffLicenseFactoryService getLicenseFactoryService() {
+		return(licenseFactoryService);
 	}
 
 	@Override
 	public ICFIntMajorVersionFactory getFactoryMajorVersion() {
-		return( factoryMajorVersion );
+		return(majorversionFactoryService);
+	}
+
+	public CFIntBuffMajorVersionFactoryService getMajorVersionFactoryService() {
+		return(majorversionFactoryService);
 	}
 
 	@Override
 	public ICFIntMimeTypeFactory getFactoryMimeType() {
-		return( factoryMimeType );
+		return(mimetypeFactoryService);
+	}
+
+	public CFIntBuffMimeTypeFactoryService getMimeTypeFactoryService() {
+		return(mimetypeFactoryService);
 	}
 
 	@Override
 	public ICFIntMinorVersionFactory getFactoryMinorVersion() {
-		return( factoryMinorVersion );
+		return(minorversionFactoryService);
+	}
+
+	public CFIntBuffMinorVersionFactoryService getMinorVersionFactoryService() {
+		return(minorversionFactoryService);
 	}
 
 	@Override
 	public ICFIntSubProjectFactory getFactorySubProject() {
-		return( factorySubProject );
+		return(subprojectFactoryService);
+	}
+
+	public CFIntBuffSubProjectFactoryService getSubProjectFactoryService() {
+		return(subprojectFactoryService);
 	}
 
 	@Override
 	public ICFIntTldFactory getFactoryTld() {
-		return( factoryTld );
+		return(tldFactoryService);
+	}
+
+	public CFIntBuffTldFactoryService getTldFactoryService() {
+		return(tldFactoryService);
 	}
 
 	@Override
 	public ICFIntTopDomainFactory getFactoryTopDomain() {
-		return( factoryTopDomain );
+		return(topdomainFactoryService);
+	}
+
+	public CFIntBuffTopDomainFactoryService getTopDomainFactoryService() {
+		return(topdomainFactoryService);
 	}
 
 	@Override
 	public ICFIntTopProjectFactory getFactoryTopProject() {
-		return( factoryTopProject );
+		return(topprojectFactoryService);
+	}
+
+	public CFIntBuffTopProjectFactoryService getTopProjectFactoryService() {
+		return(topprojectFactoryService);
 	}
 
 	@Override
 	public ICFIntURLProtocolFactory getFactoryURLProtocol() {
-		return( factoryURLProtocol );
+		return(urlprotocolFactoryService);
+	}
+
+	public CFIntBuffURLProtocolFactoryService getURLProtocolFactoryService() {
+		return(urlprotocolFactoryService);
 	}
 
 }
