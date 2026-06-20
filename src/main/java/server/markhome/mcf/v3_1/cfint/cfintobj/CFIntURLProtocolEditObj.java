@@ -345,7 +345,7 @@ public class CFIntURLProtocolEditObj
 	@Override
 	public ICFIntURLProtocol getRec() {
 		if( rec == null ) {
-			rec = getOrigAsURLProtocol().getSchema().getCFIntBackingStore().getFactoryURLProtocol().newRec();
+			rec = getOrigAsURLProtocol().getSchema().getCFIntBackingStore().getCFIntFactory().getFactoryURLProtocol().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

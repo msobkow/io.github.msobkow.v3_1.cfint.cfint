@@ -243,7 +243,7 @@ public class CFIntSecTentRoleObj
 	public ICFSecSecTentRole getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFSecBackingStore().getFactorySecTentRole().newRec();
+				rec = getSchema().getCFSecBackingStore().getCFSecFactory().getFactorySecTentRole().newRec();
 			}
 			else {
 				// Read the data rec via the backing store

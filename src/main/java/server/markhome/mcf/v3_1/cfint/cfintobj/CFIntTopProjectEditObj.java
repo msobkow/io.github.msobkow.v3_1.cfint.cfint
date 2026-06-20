@@ -367,7 +367,7 @@ public class CFIntTopProjectEditObj
 	@Override
 	public ICFIntTopProject getRec() {
 		if( rec == null ) {
-			rec = getOrigAsTopProject().getSchema().getCFIntBackingStore().getFactoryTopProject().newRec();
+			rec = getOrigAsTopProject().getSchema().getCFIntBackingStore().getCFIntFactory().getFactoryTopProject().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

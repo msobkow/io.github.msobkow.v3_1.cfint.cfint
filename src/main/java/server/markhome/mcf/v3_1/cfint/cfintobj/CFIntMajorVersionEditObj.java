@@ -367,7 +367,7 @@ public class CFIntMajorVersionEditObj
 	@Override
 	public ICFIntMajorVersion getRec() {
 		if( rec == null ) {
-			rec = getOrigAsMajorVersion().getSchema().getCFIntBackingStore().getFactoryMajorVersion().newRec();
+			rec = getOrigAsMajorVersion().getSchema().getCFIntBackingStore().getCFIntFactory().getFactoryMajorVersion().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

@@ -187,14 +187,14 @@ public class CFIntISOCcyTableObj
 
 			if( indexByCcyCdIdx != null ) {
 				ICFSecISOCcyByCcyCdIdxKey keyCcyCdIdx =
-					schema.getCFSecBackingStore().getFactoryISOCcy().newByCcyCdIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOCcy().newByCcyCdIdxKey();
 				keyCcyCdIdx.setRequiredISOCode( keepObj.getRequiredISOCode() );
 				indexByCcyCdIdx.remove( keyCcyCdIdx );
 			}
 
 			if( indexByCcyNmIdx != null ) {
 				ICFSecISOCcyByCcyNmIdxKey keyCcyNmIdx =
-					schema.getCFSecBackingStore().getFactoryISOCcy().newByCcyNmIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOCcy().newByCcyNmIdxKey();
 				keyCcyNmIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByCcyNmIdx.remove( keyCcyNmIdx );
 			}
@@ -204,14 +204,14 @@ public class CFIntISOCcyTableObj
 
 			if( indexByCcyCdIdx != null ) {
 				ICFSecISOCcyByCcyCdIdxKey keyCcyCdIdx =
-					schema.getCFSecBackingStore().getFactoryISOCcy().newByCcyCdIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOCcy().newByCcyCdIdxKey();
 				keyCcyCdIdx.setRequiredISOCode( keepObj.getRequiredISOCode() );
 				indexByCcyCdIdx.put( keyCcyCdIdx, keepObj );
 			}
 
 			if( indexByCcyNmIdx != null ) {
 				ICFSecISOCcyByCcyNmIdxKey keyCcyNmIdx =
-					schema.getCFSecBackingStore().getFactoryISOCcy().newByCcyNmIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOCcy().newByCcyNmIdxKey();
 				keyCcyNmIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByCcyNmIdx.put( keyCcyNmIdx, keepObj );
 			}
@@ -232,14 +232,14 @@ public class CFIntISOCcyTableObj
 
 			if( indexByCcyCdIdx != null ) {
 				ICFSecISOCcyByCcyCdIdxKey keyCcyCdIdx =
-					schema.getCFSecBackingStore().getFactoryISOCcy().newByCcyCdIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOCcy().newByCcyCdIdxKey();
 				keyCcyCdIdx.setRequiredISOCode( keepObj.getRequiredISOCode() );
 				indexByCcyCdIdx.put( keyCcyCdIdx, keepObj );
 			}
 
 			if( indexByCcyNmIdx != null ) {
 				ICFSecISOCcyByCcyNmIdxKey keyCcyNmIdx =
-					schema.getCFSecBackingStore().getFactoryISOCcy().newByCcyNmIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOCcy().newByCcyNmIdxKey();
 				keyCcyNmIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByCcyNmIdx.put( keyCcyNmIdx, keepObj );
 			}
@@ -308,10 +308,10 @@ public class CFIntISOCcyTableObj
 			return;
 		}
 		members.remove( pkey );
-		ICFSecISOCcyByCcyCdIdxKey keyCcyCdIdx = schema.getCFSecBackingStore().getFactoryISOCcy().newByCcyCdIdxKey();
+		ICFSecISOCcyByCcyCdIdxKey keyCcyCdIdx = schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOCcy().newByCcyCdIdxKey();
 		keyCcyCdIdx.setRequiredISOCode( existing.getRequiredISOCode() );
 
-		ICFSecISOCcyByCcyNmIdxKey keyCcyNmIdx = schema.getCFSecBackingStore().getFactoryISOCcy().newByCcyNmIdxKey();
+		ICFSecISOCcyByCcyNmIdxKey keyCcyNmIdx = schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOCcy().newByCcyNmIdxKey();
 		keyCcyNmIdx.setRequiredName( existing.getRequiredName() );
 
 
@@ -513,7 +513,7 @@ public class CFIntISOCcyTableObj
 			indexByCcyCdIdx = new HashMap< ICFSecISOCcyByCcyCdIdxKey,
 				ICFSecISOCcyObj >();
 		}
-		ICFSecISOCcyByCcyCdIdxKey key = schema.getCFSecBackingStore().getFactoryISOCcy().newByCcyCdIdxKey();
+		ICFSecISOCcyByCcyCdIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOCcy().newByCcyCdIdxKey();
 		key.setRequiredISOCode( ISOCode );
 		ICFSecISOCcyObj obj = null;
 		if( ( ! forceRead ) && indexByCcyCdIdx.containsKey( key ) ) {
@@ -546,7 +546,7 @@ public class CFIntISOCcyTableObj
 			indexByCcyNmIdx = new HashMap< ICFSecISOCcyByCcyNmIdxKey,
 				ICFSecISOCcyObj >();
 		}
-		ICFSecISOCcyByCcyNmIdxKey key = schema.getCFSecBackingStore().getFactoryISOCcy().newByCcyNmIdxKey();
+		ICFSecISOCcyByCcyNmIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOCcy().newByCcyNmIdxKey();
 		key.setRequiredName( Name );
 		ICFSecISOCcyObj obj = null;
 		if( ( ! forceRead ) && indexByCcyNmIdx.containsKey( key ) ) {
@@ -577,7 +577,7 @@ public class CFIntISOCcyTableObj
 	public ICFSecISOCcyObj readCachedISOCcyByCcyCdIdx( String ISOCode )
 	{
 		ICFSecISOCcyObj obj = null;
-		ICFSecISOCcyByCcyCdIdxKey key = schema.getCFSecBackingStore().getFactoryISOCcy().newByCcyCdIdxKey();
+		ICFSecISOCcyByCcyCdIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOCcy().newByCcyCdIdxKey();
 		key.setRequiredISOCode( ISOCode );
 		if( indexByCcyCdIdx != null ) {
 			if( indexByCcyCdIdx.containsKey( key ) ) {
@@ -613,7 +613,7 @@ public class CFIntISOCcyTableObj
 	public ICFSecISOCcyObj readCachedISOCcyByCcyNmIdx( String Name )
 	{
 		ICFSecISOCcyObj obj = null;
-		ICFSecISOCcyByCcyNmIdxKey key = schema.getCFSecBackingStore().getFactoryISOCcy().newByCcyNmIdxKey();
+		ICFSecISOCcyByCcyNmIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOCcy().newByCcyNmIdxKey();
 		key.setRequiredName( Name );
 		if( indexByCcyNmIdx != null ) {
 			if( indexByCcyNmIdx.containsKey( key ) ) {
@@ -727,7 +727,7 @@ public class CFIntISOCcyTableObj
 			indexByCcyCdIdx = new HashMap< ICFSecISOCcyByCcyCdIdxKey,
 				ICFSecISOCcyObj >();
 		}
-		ICFSecISOCcyByCcyCdIdxKey key = schema.getCFSecBackingStore().getFactoryISOCcy().newByCcyCdIdxKey();
+		ICFSecISOCcyByCcyCdIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOCcy().newByCcyCdIdxKey();
 		key.setRequiredISOCode( ISOCode );
 		ICFSecISOCcyObj obj = null;
 		if( indexByCcyCdIdx.containsKey( key ) ) {
@@ -750,7 +750,7 @@ public class CFIntISOCcyTableObj
 			indexByCcyNmIdx = new HashMap< ICFSecISOCcyByCcyNmIdxKey,
 				ICFSecISOCcyObj >();
 		}
-		ICFSecISOCcyByCcyNmIdxKey key = schema.getCFSecBackingStore().getFactoryISOCcy().newByCcyNmIdxKey();
+		ICFSecISOCcyByCcyNmIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOCcy().newByCcyNmIdxKey();
 		key.setRequiredName( Name );
 		ICFSecISOCcyObj obj = null;
 		if( indexByCcyNmIdx.containsKey( key ) ) {

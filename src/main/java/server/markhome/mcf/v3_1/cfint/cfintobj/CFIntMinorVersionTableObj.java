@@ -208,7 +208,7 @@ public class CFIntMinorVersionTableObj
 
 			if( indexByTenantIdx != null ) {
 				ICFIntMinorVersionByTenantIdxKey keyTenantIdx =
-					schema.getCFIntBackingStore().getFactoryMinorVersion().newByTenantIdxKey();
+					schema.getCFIntBackingStore().getCFIntFactory().getFactoryMinorVersion().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
 				Map<CFLibDbKeyHash256, ICFIntMinorVersionObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
@@ -221,7 +221,7 @@ public class CFIntMinorVersionTableObj
 
 			if( indexByMajorVerIdx != null ) {
 				ICFIntMinorVersionByMajorVerIdxKey keyMajorVerIdx =
-					schema.getCFIntBackingStore().getFactoryMinorVersion().newByMajorVerIdxKey();
+					schema.getCFIntBackingStore().getCFIntFactory().getFactoryMinorVersion().newByMajorVerIdxKey();
 				keyMajorVerIdx.setRequiredMajorVersionId( keepObj.getRequiredMajorVersionId() );
 				Map<CFLibDbKeyHash256, ICFIntMinorVersionObj > mapMajorVerIdx = indexByMajorVerIdx.get( keyMajorVerIdx );
 				if( mapMajorVerIdx != null ) {
@@ -234,7 +234,7 @@ public class CFIntMinorVersionTableObj
 
 			if( indexByNameIdx != null ) {
 				ICFIntMinorVersionByNameIdxKey keyNameIdx =
-					schema.getCFIntBackingStore().getFactoryMinorVersion().newByNameIdxKey();
+					schema.getCFIntBackingStore().getCFIntFactory().getFactoryMinorVersion().newByNameIdxKey();
 				keyNameIdx.setRequiredMajorVersionId( keepObj.getRequiredMajorVersionId() );
 				keyNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByNameIdx.remove( keyNameIdx );
@@ -245,7 +245,7 @@ public class CFIntMinorVersionTableObj
 
 			if( indexByTenantIdx != null ) {
 				ICFIntMinorVersionByTenantIdxKey keyTenantIdx =
-					schema.getCFIntBackingStore().getFactoryMinorVersion().newByTenantIdxKey();
+					schema.getCFIntBackingStore().getCFIntFactory().getFactoryMinorVersion().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
 				Map<CFLibDbKeyHash256, ICFIntMinorVersionObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
@@ -255,7 +255,7 @@ public class CFIntMinorVersionTableObj
 
 			if( indexByMajorVerIdx != null ) {
 				ICFIntMinorVersionByMajorVerIdxKey keyMajorVerIdx =
-					schema.getCFIntBackingStore().getFactoryMinorVersion().newByMajorVerIdxKey();
+					schema.getCFIntBackingStore().getCFIntFactory().getFactoryMinorVersion().newByMajorVerIdxKey();
 				keyMajorVerIdx.setRequiredMajorVersionId( keepObj.getRequiredMajorVersionId() );
 				Map<CFLibDbKeyHash256, ICFIntMinorVersionObj > mapMajorVerIdx = indexByMajorVerIdx.get( keyMajorVerIdx );
 				if( mapMajorVerIdx != null ) {
@@ -265,7 +265,7 @@ public class CFIntMinorVersionTableObj
 
 			if( indexByNameIdx != null ) {
 				ICFIntMinorVersionByNameIdxKey keyNameIdx =
-					schema.getCFIntBackingStore().getFactoryMinorVersion().newByNameIdxKey();
+					schema.getCFIntBackingStore().getCFIntFactory().getFactoryMinorVersion().newByNameIdxKey();
 				keyNameIdx.setRequiredMajorVersionId( keepObj.getRequiredMajorVersionId() );
 				keyNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByNameIdx.put( keyNameIdx, keepObj );
@@ -287,7 +287,7 @@ public class CFIntMinorVersionTableObj
 
 			if( indexByTenantIdx != null ) {
 				ICFIntMinorVersionByTenantIdxKey keyTenantIdx =
-					schema.getCFIntBackingStore().getFactoryMinorVersion().newByTenantIdxKey();
+					schema.getCFIntBackingStore().getCFIntFactory().getFactoryMinorVersion().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
 				Map<CFLibDbKeyHash256, ICFIntMinorVersionObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
@@ -297,7 +297,7 @@ public class CFIntMinorVersionTableObj
 
 			if( indexByMajorVerIdx != null ) {
 				ICFIntMinorVersionByMajorVerIdxKey keyMajorVerIdx =
-					schema.getCFIntBackingStore().getFactoryMinorVersion().newByMajorVerIdxKey();
+					schema.getCFIntBackingStore().getCFIntFactory().getFactoryMinorVersion().newByMajorVerIdxKey();
 				keyMajorVerIdx.setRequiredMajorVersionId( keepObj.getRequiredMajorVersionId() );
 				Map<CFLibDbKeyHash256, ICFIntMinorVersionObj > mapMajorVerIdx = indexByMajorVerIdx.get( keyMajorVerIdx );
 				if( mapMajorVerIdx != null ) {
@@ -307,7 +307,7 @@ public class CFIntMinorVersionTableObj
 
 			if( indexByNameIdx != null ) {
 				ICFIntMinorVersionByNameIdxKey keyNameIdx =
-					schema.getCFIntBackingStore().getFactoryMinorVersion().newByNameIdxKey();
+					schema.getCFIntBackingStore().getCFIntFactory().getFactoryMinorVersion().newByNameIdxKey();
 				keyNameIdx.setRequiredMajorVersionId( keepObj.getRequiredMajorVersionId() );
 				keyNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByNameIdx.put( keyNameIdx, keepObj );
@@ -377,13 +377,13 @@ public class CFIntMinorVersionTableObj
 			return;
 		}
 		members.remove( pkey );
-		ICFIntMinorVersionByTenantIdxKey keyTenantIdx = schema.getCFIntBackingStore().getFactoryMinorVersion().newByTenantIdxKey();
+		ICFIntMinorVersionByTenantIdxKey keyTenantIdx = schema.getCFIntBackingStore().getCFIntFactory().getFactoryMinorVersion().newByTenantIdxKey();
 		keyTenantIdx.setRequiredTenantId( existing.getRequiredTenantId() );
 
-		ICFIntMinorVersionByMajorVerIdxKey keyMajorVerIdx = schema.getCFIntBackingStore().getFactoryMinorVersion().newByMajorVerIdxKey();
+		ICFIntMinorVersionByMajorVerIdxKey keyMajorVerIdx = schema.getCFIntBackingStore().getCFIntFactory().getFactoryMinorVersion().newByMajorVerIdxKey();
 		keyMajorVerIdx.setRequiredMajorVersionId( existing.getRequiredMajorVersionId() );
 
-		ICFIntMinorVersionByNameIdxKey keyNameIdx = schema.getCFIntBackingStore().getFactoryMinorVersion().newByNameIdxKey();
+		ICFIntMinorVersionByNameIdxKey keyNameIdx = schema.getCFIntBackingStore().getCFIntFactory().getFactoryMinorVersion().newByNameIdxKey();
 		keyNameIdx.setRequiredMajorVersionId( existing.getRequiredMajorVersionId() );
 		keyNameIdx.setRequiredName( existing.getRequiredName() );
 
@@ -597,7 +597,7 @@ public class CFIntMinorVersionTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readMinorVersionByTenantIdx";
-		ICFIntMinorVersionByTenantIdxKey key = schema.getCFIntBackingStore().getFactoryMinorVersion().newByTenantIdxKey();
+		ICFIntMinorVersionByTenantIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryMinorVersion().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
 		Map<CFLibDbKeyHash256, ICFIntMinorVersionObj> dict;
 		if( indexByTenantIdx == null ) {
@@ -690,7 +690,7 @@ public class CFIntMinorVersionTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readMinorVersionByMajorVerIdx";
-		ICFIntMinorVersionByMajorVerIdxKey key = schema.getCFIntBackingStore().getFactoryMinorVersion().newByMajorVerIdxKey();
+		ICFIntMinorVersionByMajorVerIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryMinorVersion().newByMajorVerIdxKey();
 		key.setRequiredMajorVersionId( MajorVersionId );
 		Map<CFLibDbKeyHash256, ICFIntMinorVersionObj> dict;
 		if( indexByMajorVerIdx == null ) {
@@ -788,7 +788,7 @@ public class CFIntMinorVersionTableObj
 			indexByNameIdx = new HashMap< ICFIntMinorVersionByNameIdxKey,
 				ICFIntMinorVersionObj >();
 		}
-		ICFIntMinorVersionByNameIdxKey key = schema.getCFIntBackingStore().getFactoryMinorVersion().newByNameIdxKey();
+		ICFIntMinorVersionByNameIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryMinorVersion().newByNameIdxKey();
 		key.setRequiredMajorVersionId( MajorVersionId );
 		key.setRequiredName( Name );
 		ICFIntMinorVersionObj obj = null;
@@ -821,7 +821,7 @@ public class CFIntMinorVersionTableObj
 	public List<ICFIntMinorVersionObj> readCachedMinorVersionByTenantIdx( CFLibDbKeyHash256 TenantId )
 	{
 		final String S_ProcName = "readCachedMinorVersionByTenantIdx";
-		ICFIntMinorVersionByTenantIdxKey key = schema.getCFIntBackingStore().getFactoryMinorVersion().newByTenantIdxKey();
+		ICFIntMinorVersionByTenantIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryMinorVersion().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
 		ArrayList<ICFIntMinorVersionObj> arrayList = new ArrayList<ICFIntMinorVersionObj>();
 		if( indexByTenantIdx != null ) {
@@ -898,7 +898,7 @@ public class CFIntMinorVersionTableObj
 	public List<ICFIntMinorVersionObj> readCachedMinorVersionByMajorVerIdx( CFLibDbKeyHash256 MajorVersionId )
 	{
 		final String S_ProcName = "readCachedMinorVersionByMajorVerIdx";
-		ICFIntMinorVersionByMajorVerIdxKey key = schema.getCFIntBackingStore().getFactoryMinorVersion().newByMajorVerIdxKey();
+		ICFIntMinorVersionByMajorVerIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryMinorVersion().newByMajorVerIdxKey();
 		key.setRequiredMajorVersionId( MajorVersionId );
 		ArrayList<ICFIntMinorVersionObj> arrayList = new ArrayList<ICFIntMinorVersionObj>();
 		if( indexByMajorVerIdx != null ) {
@@ -976,7 +976,7 @@ public class CFIntMinorVersionTableObj
 		String Name )
 	{
 		ICFIntMinorVersionObj obj = null;
-		ICFIntMinorVersionByNameIdxKey key = schema.getCFIntBackingStore().getFactoryMinorVersion().newByNameIdxKey();
+		ICFIntMinorVersionByNameIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryMinorVersion().newByNameIdxKey();
 		key.setRequiredMajorVersionId( MajorVersionId );
 		key.setRequiredName( Name );
 		if( indexByNameIdx != null ) {
@@ -1114,7 +1114,7 @@ public class CFIntMinorVersionTableObj
 	@Override
 	public void deleteMinorVersionByTenantIdx( CFLibDbKeyHash256 TenantId )
 	{
-		ICFIntMinorVersionByTenantIdxKey key = schema.getCFIntBackingStore().getFactoryMinorVersion().newByTenantIdxKey();
+		ICFIntMinorVersionByTenantIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryMinorVersion().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
 		if( indexByTenantIdx == null ) {
 			indexByTenantIdx = new HashMap< ICFIntMinorVersionByTenantIdxKey,
@@ -1148,7 +1148,7 @@ public class CFIntMinorVersionTableObj
 	@Override
 	public void deleteMinorVersionByMajorVerIdx( CFLibDbKeyHash256 MajorVersionId )
 	{
-		ICFIntMinorVersionByMajorVerIdxKey key = schema.getCFIntBackingStore().getFactoryMinorVersion().newByMajorVerIdxKey();
+		ICFIntMinorVersionByMajorVerIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryMinorVersion().newByMajorVerIdxKey();
 		key.setRequiredMajorVersionId( MajorVersionId );
 		if( indexByMajorVerIdx == null ) {
 			indexByMajorVerIdx = new HashMap< ICFIntMinorVersionByMajorVerIdxKey,
@@ -1187,7 +1187,7 @@ public class CFIntMinorVersionTableObj
 			indexByNameIdx = new HashMap< ICFIntMinorVersionByNameIdxKey,
 				ICFIntMinorVersionObj >();
 		}
-		ICFIntMinorVersionByNameIdxKey key = schema.getCFIntBackingStore().getFactoryMinorVersion().newByNameIdxKey();
+		ICFIntMinorVersionByNameIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryMinorVersion().newByNameIdxKey();
 		key.setRequiredMajorVersionId( MajorVersionId );
 		key.setRequiredName( Name );
 		ICFIntMinorVersionObj obj = null;

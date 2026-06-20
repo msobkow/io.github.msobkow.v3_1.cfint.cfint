@@ -389,7 +389,7 @@ public class CFIntTenantEditObj
 	@Override
 	public ICFSecTenant getRec() {
 		if( rec == null ) {
-			rec = getOrigAsTenant().getSchema().getCFSecBackingStore().getFactoryTenant().newRec();
+			rec = getOrigAsTenant().getSchema().getCFSecBackingStore().getCFSecFactory().getFactoryTenant().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

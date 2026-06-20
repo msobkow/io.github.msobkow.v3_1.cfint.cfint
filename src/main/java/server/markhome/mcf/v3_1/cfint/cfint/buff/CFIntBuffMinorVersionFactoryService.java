@@ -1,5 +1,5 @@
 
-// Description: Java 25 Default Factory implementation for MinorVersion buffers
+// Description: Java 25 Factory service implementation for MinorVersion buffers
 
 /*
  *	server.markhome.mcf.CFInt
@@ -35,6 +35,9 @@ import java.time.*;
 import java.util.*;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
@@ -43,12 +46,13 @@ import server.markhome.mcf.v3_1.cfint.cfint.*;
 import server.markhome.mcf.v3_1.cfsec.cfsec.buff.*;
 
 /*
- *	CFIntBuffMinorVersionFactory implementation of ICFIntMinorVersionFactory for MinorVersion
+ *	Java 25 Factory service implementation for MinorVersion buffers.
  */
-public class CFIntBuffMinorVersionDefaultFactory
+@Service("cfint31BuffMinorVersionFactoryService")
+public class CFIntBuffMinorVersionFactoryService
 	implements ICFIntMinorVersionFactory
 {
-	public CFIntBuffMinorVersionDefaultFactory() {
+	public CFIntBuffMinorVersionFactoryService() {
 	}
 
 	@Override

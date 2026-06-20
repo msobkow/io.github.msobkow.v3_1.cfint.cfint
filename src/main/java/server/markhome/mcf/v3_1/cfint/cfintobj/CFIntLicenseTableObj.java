@@ -208,7 +208,7 @@ public class CFIntLicenseTableObj
 
 			if( indexByLicnTenantIdx != null ) {
 				ICFIntLicenseByLicnTenantIdxKey keyLicnTenantIdx =
-					schema.getCFIntBackingStore().getFactoryLicense().newByLicnTenantIdxKey();
+					schema.getCFIntBackingStore().getCFIntFactory().getFactoryLicense().newByLicnTenantIdxKey();
 				keyLicnTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
 				Map<CFLibDbKeyHash256, ICFIntLicenseObj > mapLicnTenantIdx = indexByLicnTenantIdx.get( keyLicnTenantIdx );
 				if( mapLicnTenantIdx != null ) {
@@ -221,7 +221,7 @@ public class CFIntLicenseTableObj
 
 			if( indexByDomainIdx != null ) {
 				ICFIntLicenseByDomainIdxKey keyDomainIdx =
-					schema.getCFIntBackingStore().getFactoryLicense().newByDomainIdxKey();
+					schema.getCFIntBackingStore().getCFIntFactory().getFactoryLicense().newByDomainIdxKey();
 				keyDomainIdx.setRequiredTopDomainId( keepObj.getRequiredTopDomainId() );
 				Map<CFLibDbKeyHash256, ICFIntLicenseObj > mapDomainIdx = indexByDomainIdx.get( keyDomainIdx );
 				if( mapDomainIdx != null ) {
@@ -234,7 +234,7 @@ public class CFIntLicenseTableObj
 
 			if( indexByUNameIdx != null ) {
 				ICFIntLicenseByUNameIdxKey keyUNameIdx =
-					schema.getCFIntBackingStore().getFactoryLicense().newByUNameIdxKey();
+					schema.getCFIntBackingStore().getCFIntFactory().getFactoryLicense().newByUNameIdxKey();
 				keyUNameIdx.setRequiredTopDomainId( keepObj.getRequiredTopDomainId() );
 				keyUNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByUNameIdx.remove( keyUNameIdx );
@@ -245,7 +245,7 @@ public class CFIntLicenseTableObj
 
 			if( indexByLicnTenantIdx != null ) {
 				ICFIntLicenseByLicnTenantIdxKey keyLicnTenantIdx =
-					schema.getCFIntBackingStore().getFactoryLicense().newByLicnTenantIdxKey();
+					schema.getCFIntBackingStore().getCFIntFactory().getFactoryLicense().newByLicnTenantIdxKey();
 				keyLicnTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
 				Map<CFLibDbKeyHash256, ICFIntLicenseObj > mapLicnTenantIdx = indexByLicnTenantIdx.get( keyLicnTenantIdx );
 				if( mapLicnTenantIdx != null ) {
@@ -255,7 +255,7 @@ public class CFIntLicenseTableObj
 
 			if( indexByDomainIdx != null ) {
 				ICFIntLicenseByDomainIdxKey keyDomainIdx =
-					schema.getCFIntBackingStore().getFactoryLicense().newByDomainIdxKey();
+					schema.getCFIntBackingStore().getCFIntFactory().getFactoryLicense().newByDomainIdxKey();
 				keyDomainIdx.setRequiredTopDomainId( keepObj.getRequiredTopDomainId() );
 				Map<CFLibDbKeyHash256, ICFIntLicenseObj > mapDomainIdx = indexByDomainIdx.get( keyDomainIdx );
 				if( mapDomainIdx != null ) {
@@ -265,7 +265,7 @@ public class CFIntLicenseTableObj
 
 			if( indexByUNameIdx != null ) {
 				ICFIntLicenseByUNameIdxKey keyUNameIdx =
-					schema.getCFIntBackingStore().getFactoryLicense().newByUNameIdxKey();
+					schema.getCFIntBackingStore().getCFIntFactory().getFactoryLicense().newByUNameIdxKey();
 				keyUNameIdx.setRequiredTopDomainId( keepObj.getRequiredTopDomainId() );
 				keyUNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByUNameIdx.put( keyUNameIdx, keepObj );
@@ -287,7 +287,7 @@ public class CFIntLicenseTableObj
 
 			if( indexByLicnTenantIdx != null ) {
 				ICFIntLicenseByLicnTenantIdxKey keyLicnTenantIdx =
-					schema.getCFIntBackingStore().getFactoryLicense().newByLicnTenantIdxKey();
+					schema.getCFIntBackingStore().getCFIntFactory().getFactoryLicense().newByLicnTenantIdxKey();
 				keyLicnTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
 				Map<CFLibDbKeyHash256, ICFIntLicenseObj > mapLicnTenantIdx = indexByLicnTenantIdx.get( keyLicnTenantIdx );
 				if( mapLicnTenantIdx != null ) {
@@ -297,7 +297,7 @@ public class CFIntLicenseTableObj
 
 			if( indexByDomainIdx != null ) {
 				ICFIntLicenseByDomainIdxKey keyDomainIdx =
-					schema.getCFIntBackingStore().getFactoryLicense().newByDomainIdxKey();
+					schema.getCFIntBackingStore().getCFIntFactory().getFactoryLicense().newByDomainIdxKey();
 				keyDomainIdx.setRequiredTopDomainId( keepObj.getRequiredTopDomainId() );
 				Map<CFLibDbKeyHash256, ICFIntLicenseObj > mapDomainIdx = indexByDomainIdx.get( keyDomainIdx );
 				if( mapDomainIdx != null ) {
@@ -307,7 +307,7 @@ public class CFIntLicenseTableObj
 
 			if( indexByUNameIdx != null ) {
 				ICFIntLicenseByUNameIdxKey keyUNameIdx =
-					schema.getCFIntBackingStore().getFactoryLicense().newByUNameIdxKey();
+					schema.getCFIntBackingStore().getCFIntFactory().getFactoryLicense().newByUNameIdxKey();
 				keyUNameIdx.setRequiredTopDomainId( keepObj.getRequiredTopDomainId() );
 				keyUNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByUNameIdx.put( keyUNameIdx, keepObj );
@@ -377,13 +377,13 @@ public class CFIntLicenseTableObj
 			return;
 		}
 		members.remove( pkey );
-		ICFIntLicenseByLicnTenantIdxKey keyLicnTenantIdx = schema.getCFIntBackingStore().getFactoryLicense().newByLicnTenantIdxKey();
+		ICFIntLicenseByLicnTenantIdxKey keyLicnTenantIdx = schema.getCFIntBackingStore().getCFIntFactory().getFactoryLicense().newByLicnTenantIdxKey();
 		keyLicnTenantIdx.setRequiredTenantId( existing.getRequiredTenantId() );
 
-		ICFIntLicenseByDomainIdxKey keyDomainIdx = schema.getCFIntBackingStore().getFactoryLicense().newByDomainIdxKey();
+		ICFIntLicenseByDomainIdxKey keyDomainIdx = schema.getCFIntBackingStore().getCFIntFactory().getFactoryLicense().newByDomainIdxKey();
 		keyDomainIdx.setRequiredTopDomainId( existing.getRequiredTopDomainId() );
 
-		ICFIntLicenseByUNameIdxKey keyUNameIdx = schema.getCFIntBackingStore().getFactoryLicense().newByUNameIdxKey();
+		ICFIntLicenseByUNameIdxKey keyUNameIdx = schema.getCFIntBackingStore().getCFIntFactory().getFactoryLicense().newByUNameIdxKey();
 		keyUNameIdx.setRequiredTopDomainId( existing.getRequiredTopDomainId() );
 		keyUNameIdx.setRequiredName( existing.getRequiredName() );
 
@@ -597,7 +597,7 @@ public class CFIntLicenseTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readLicenseByLicnTenantIdx";
-		ICFIntLicenseByLicnTenantIdxKey key = schema.getCFIntBackingStore().getFactoryLicense().newByLicnTenantIdxKey();
+		ICFIntLicenseByLicnTenantIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryLicense().newByLicnTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
 		Map<CFLibDbKeyHash256, ICFIntLicenseObj> dict;
 		if( indexByLicnTenantIdx == null ) {
@@ -690,7 +690,7 @@ public class CFIntLicenseTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readLicenseByDomainIdx";
-		ICFIntLicenseByDomainIdxKey key = schema.getCFIntBackingStore().getFactoryLicense().newByDomainIdxKey();
+		ICFIntLicenseByDomainIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryLicense().newByDomainIdxKey();
 		key.setRequiredTopDomainId( TopDomainId );
 		Map<CFLibDbKeyHash256, ICFIntLicenseObj> dict;
 		if( indexByDomainIdx == null ) {
@@ -788,7 +788,7 @@ public class CFIntLicenseTableObj
 			indexByUNameIdx = new HashMap< ICFIntLicenseByUNameIdxKey,
 				ICFIntLicenseObj >();
 		}
-		ICFIntLicenseByUNameIdxKey key = schema.getCFIntBackingStore().getFactoryLicense().newByUNameIdxKey();
+		ICFIntLicenseByUNameIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryLicense().newByUNameIdxKey();
 		key.setRequiredTopDomainId( TopDomainId );
 		key.setRequiredName( Name );
 		ICFIntLicenseObj obj = null;
@@ -821,7 +821,7 @@ public class CFIntLicenseTableObj
 	public List<ICFIntLicenseObj> readCachedLicenseByLicnTenantIdx( CFLibDbKeyHash256 TenantId )
 	{
 		final String S_ProcName = "readCachedLicenseByLicnTenantIdx";
-		ICFIntLicenseByLicnTenantIdxKey key = schema.getCFIntBackingStore().getFactoryLicense().newByLicnTenantIdxKey();
+		ICFIntLicenseByLicnTenantIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryLicense().newByLicnTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
 		ArrayList<ICFIntLicenseObj> arrayList = new ArrayList<ICFIntLicenseObj>();
 		if( indexByLicnTenantIdx != null ) {
@@ -898,7 +898,7 @@ public class CFIntLicenseTableObj
 	public List<ICFIntLicenseObj> readCachedLicenseByDomainIdx( CFLibDbKeyHash256 TopDomainId )
 	{
 		final String S_ProcName = "readCachedLicenseByDomainIdx";
-		ICFIntLicenseByDomainIdxKey key = schema.getCFIntBackingStore().getFactoryLicense().newByDomainIdxKey();
+		ICFIntLicenseByDomainIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryLicense().newByDomainIdxKey();
 		key.setRequiredTopDomainId( TopDomainId );
 		ArrayList<ICFIntLicenseObj> arrayList = new ArrayList<ICFIntLicenseObj>();
 		if( indexByDomainIdx != null ) {
@@ -976,7 +976,7 @@ public class CFIntLicenseTableObj
 		String Name )
 	{
 		ICFIntLicenseObj obj = null;
-		ICFIntLicenseByUNameIdxKey key = schema.getCFIntBackingStore().getFactoryLicense().newByUNameIdxKey();
+		ICFIntLicenseByUNameIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryLicense().newByUNameIdxKey();
 		key.setRequiredTopDomainId( TopDomainId );
 		key.setRequiredName( Name );
 		if( indexByUNameIdx != null ) {
@@ -1114,7 +1114,7 @@ public class CFIntLicenseTableObj
 	@Override
 	public void deleteLicenseByLicnTenantIdx( CFLibDbKeyHash256 TenantId )
 	{
-		ICFIntLicenseByLicnTenantIdxKey key = schema.getCFIntBackingStore().getFactoryLicense().newByLicnTenantIdxKey();
+		ICFIntLicenseByLicnTenantIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryLicense().newByLicnTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
 		if( indexByLicnTenantIdx == null ) {
 			indexByLicnTenantIdx = new HashMap< ICFIntLicenseByLicnTenantIdxKey,
@@ -1148,7 +1148,7 @@ public class CFIntLicenseTableObj
 	@Override
 	public void deleteLicenseByDomainIdx( CFLibDbKeyHash256 TopDomainId )
 	{
-		ICFIntLicenseByDomainIdxKey key = schema.getCFIntBackingStore().getFactoryLicense().newByDomainIdxKey();
+		ICFIntLicenseByDomainIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryLicense().newByDomainIdxKey();
 		key.setRequiredTopDomainId( TopDomainId );
 		if( indexByDomainIdx == null ) {
 			indexByDomainIdx = new HashMap< ICFIntLicenseByDomainIdxKey,
@@ -1187,7 +1187,7 @@ public class CFIntLicenseTableObj
 			indexByUNameIdx = new HashMap< ICFIntLicenseByUNameIdxKey,
 				ICFIntLicenseObj >();
 		}
-		ICFIntLicenseByUNameIdxKey key = schema.getCFIntBackingStore().getFactoryLicense().newByUNameIdxKey();
+		ICFIntLicenseByUNameIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryLicense().newByUNameIdxKey();
 		key.setRequiredTopDomainId( TopDomainId );
 		key.setRequiredName( Name );
 		ICFIntLicenseObj obj = null;

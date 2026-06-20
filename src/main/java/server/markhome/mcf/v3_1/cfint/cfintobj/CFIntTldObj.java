@@ -255,7 +255,7 @@ public class CFIntTldObj
 	public ICFIntTld getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFIntBackingStore().getFactoryTld().newRec();
+				rec = getSchema().getCFIntBackingStore().getCFIntFactory().getFactoryTld().newRec();
 			}
 			else {
 				// Read the data rec via the backing store

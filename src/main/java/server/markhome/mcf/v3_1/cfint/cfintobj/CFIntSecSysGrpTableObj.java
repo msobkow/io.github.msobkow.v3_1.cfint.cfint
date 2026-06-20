@@ -187,14 +187,14 @@ public class CFIntSecSysGrpTableObj
 
 			if( indexByUNameIdx != null ) {
 				ICFSecSecSysGrpByUNameIdxKey keyUNameIdx =
-					schema.getCFSecBackingStore().getFactorySecSysGrp().newByUNameIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysGrp().newByUNameIdxKey();
 				keyUNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByUNameIdx.remove( keyUNameIdx );
 			}
 
 			if( indexBySecLevelIdx != null ) {
 				ICFSecSecSysGrpBySecLevelIdxKey keySecLevelIdx =
-					schema.getCFSecBackingStore().getFactorySecSysGrp().newBySecLevelIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysGrp().newBySecLevelIdxKey();
 				keySecLevelIdx.setRequiredSecLevel( keepObj.getRequiredSecLevel() );
 				Map<CFLibDbKeyHash256, ICFSecSecSysGrpObj > mapSecLevelIdx = indexBySecLevelIdx.get( keySecLevelIdx );
 				if( mapSecLevelIdx != null ) {
@@ -210,14 +210,14 @@ public class CFIntSecSysGrpTableObj
 
 			if( indexByUNameIdx != null ) {
 				ICFSecSecSysGrpByUNameIdxKey keyUNameIdx =
-					schema.getCFSecBackingStore().getFactorySecSysGrp().newByUNameIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysGrp().newByUNameIdxKey();
 				keyUNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByUNameIdx.put( keyUNameIdx, keepObj );
 			}
 
 			if( indexBySecLevelIdx != null ) {
 				ICFSecSecSysGrpBySecLevelIdxKey keySecLevelIdx =
-					schema.getCFSecBackingStore().getFactorySecSysGrp().newBySecLevelIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysGrp().newBySecLevelIdxKey();
 				keySecLevelIdx.setRequiredSecLevel( keepObj.getRequiredSecLevel() );
 				Map<CFLibDbKeyHash256, ICFSecSecSysGrpObj > mapSecLevelIdx = indexBySecLevelIdx.get( keySecLevelIdx );
 				if( mapSecLevelIdx != null ) {
@@ -241,14 +241,14 @@ public class CFIntSecSysGrpTableObj
 
 			if( indexByUNameIdx != null ) {
 				ICFSecSecSysGrpByUNameIdxKey keyUNameIdx =
-					schema.getCFSecBackingStore().getFactorySecSysGrp().newByUNameIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysGrp().newByUNameIdxKey();
 				keyUNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByUNameIdx.put( keyUNameIdx, keepObj );
 			}
 
 			if( indexBySecLevelIdx != null ) {
 				ICFSecSecSysGrpBySecLevelIdxKey keySecLevelIdx =
-					schema.getCFSecBackingStore().getFactorySecSysGrp().newBySecLevelIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysGrp().newBySecLevelIdxKey();
 				keySecLevelIdx.setRequiredSecLevel( keepObj.getRequiredSecLevel() );
 				Map<CFLibDbKeyHash256, ICFSecSecSysGrpObj > mapSecLevelIdx = indexBySecLevelIdx.get( keySecLevelIdx );
 				if( mapSecLevelIdx != null ) {
@@ -320,10 +320,10 @@ public class CFIntSecSysGrpTableObj
 			return;
 		}
 		members.remove( pkey );
-		ICFSecSecSysGrpByUNameIdxKey keyUNameIdx = schema.getCFSecBackingStore().getFactorySecSysGrp().newByUNameIdxKey();
+		ICFSecSecSysGrpByUNameIdxKey keyUNameIdx = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysGrp().newByUNameIdxKey();
 		keyUNameIdx.setRequiredName( existing.getRequiredName() );
 
-		ICFSecSecSysGrpBySecLevelIdxKey keySecLevelIdx = schema.getCFSecBackingStore().getFactorySecSysGrp().newBySecLevelIdxKey();
+		ICFSecSecSysGrpBySecLevelIdxKey keySecLevelIdx = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysGrp().newBySecLevelIdxKey();
 		keySecLevelIdx.setRequiredSecLevel( existing.getRequiredSecLevel() );
 
 
@@ -531,7 +531,7 @@ public class CFIntSecSysGrpTableObj
 			indexByUNameIdx = new HashMap< ICFSecSecSysGrpByUNameIdxKey,
 				ICFSecSecSysGrpObj >();
 		}
-		ICFSecSecSysGrpByUNameIdxKey key = schema.getCFSecBackingStore().getFactorySecSysGrp().newByUNameIdxKey();
+		ICFSecSecSysGrpByUNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysGrp().newByUNameIdxKey();
 		key.setRequiredName( Name );
 		ICFSecSecSysGrpObj obj = null;
 		if( ( ! forceRead ) && indexByUNameIdx.containsKey( key ) ) {
@@ -562,7 +562,7 @@ public class CFIntSecSysGrpTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readSecSysGrpBySecLevelIdx";
-		ICFSecSecSysGrpBySecLevelIdxKey key = schema.getCFSecBackingStore().getFactorySecSysGrp().newBySecLevelIdxKey();
+		ICFSecSecSysGrpBySecLevelIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysGrp().newBySecLevelIdxKey();
 		key.setRequiredSecLevel( SecLevel );
 		Map<CFLibDbKeyHash256, ICFSecSecSysGrpObj> dict;
 		if( indexBySecLevelIdx == null ) {
@@ -655,7 +655,7 @@ public class CFIntSecSysGrpTableObj
 	public ICFSecSecSysGrpObj readCachedSecSysGrpByUNameIdx( String Name )
 	{
 		ICFSecSecSysGrpObj obj = null;
-		ICFSecSecSysGrpByUNameIdxKey key = schema.getCFSecBackingStore().getFactorySecSysGrp().newByUNameIdxKey();
+		ICFSecSecSysGrpByUNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysGrp().newByUNameIdxKey();
 		key.setRequiredName( Name );
 		if( indexByUNameIdx != null ) {
 			if( indexByUNameIdx.containsKey( key ) ) {
@@ -691,7 +691,7 @@ public class CFIntSecSysGrpTableObj
 	public List<ICFSecSecSysGrpObj> readCachedSecSysGrpBySecLevelIdx( ICFSecSchema.SecLevelEnum SecLevel )
 	{
 		final String S_ProcName = "readCachedSecSysGrpBySecLevelIdx";
-		ICFSecSecSysGrpBySecLevelIdxKey key = schema.getCFSecBackingStore().getFactorySecSysGrp().newBySecLevelIdxKey();
+		ICFSecSecSysGrpBySecLevelIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysGrp().newBySecLevelIdxKey();
 		key.setRequiredSecLevel( SecLevel );
 		ArrayList<ICFSecSecSysGrpObj> arrayList = new ArrayList<ICFSecSecSysGrpObj>();
 		if( indexBySecLevelIdx != null ) {
@@ -854,7 +854,7 @@ public class CFIntSecSysGrpTableObj
 			indexByUNameIdx = new HashMap< ICFSecSecSysGrpByUNameIdxKey,
 				ICFSecSecSysGrpObj >();
 		}
-		ICFSecSecSysGrpByUNameIdxKey key = schema.getCFSecBackingStore().getFactorySecSysGrp().newByUNameIdxKey();
+		ICFSecSecSysGrpByUNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysGrp().newByUNameIdxKey();
 		key.setRequiredName( Name );
 		ICFSecSecSysGrpObj obj = null;
 		if( indexByUNameIdx.containsKey( key ) ) {
@@ -873,7 +873,7 @@ public class CFIntSecSysGrpTableObj
 	@Override
 	public void deleteSecSysGrpBySecLevelIdx( ICFSecSchema.SecLevelEnum SecLevel )
 	{
-		ICFSecSecSysGrpBySecLevelIdxKey key = schema.getCFSecBackingStore().getFactorySecSysGrp().newBySecLevelIdxKey();
+		ICFSecSecSysGrpBySecLevelIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysGrp().newBySecLevelIdxKey();
 		key.setRequiredSecLevel( SecLevel );
 		if( indexBySecLevelIdx == null ) {
 			indexBySecLevelIdx = new HashMap< ICFSecSecSysGrpBySecLevelIdxKey,

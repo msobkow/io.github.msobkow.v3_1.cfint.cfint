@@ -202,14 +202,14 @@ public class CFIntTableInfoTableObj
 
 			if( indexByTableNameIdx != null ) {
 				ICFSecTableInfoByTableNameIdxKey keyTableNameIdx =
-					schema.getCFSecBackingStore().getFactoryTableInfo().newByTableNameIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactoryTableInfo().newByTableNameIdxKey();
 				keyTableNameIdx.setRequiredTableName( keepObj.getRequiredTableName() );
 				indexByTableNameIdx.remove( keyTableNameIdx );
 			}
 
 			if( indexBySuperNameIdx != null ) {
 				ICFSecTableInfoBySuperNameIdxKey keySuperNameIdx =
-					schema.getCFSecBackingStore().getFactoryTableInfo().newBySuperNameIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactoryTableInfo().newBySuperNameIdxKey();
 				keySuperNameIdx.setOptionalSuperName( keepObj.getOptionalSuperName() );
 				Map<Integer, ICFSecTableInfoObj > mapSuperNameIdx = indexBySuperNameIdx.get( keySuperNameIdx );
 				if( mapSuperNameIdx != null ) {
@@ -222,7 +222,7 @@ public class CFIntTableInfoTableObj
 
 			if( indexBySchemaNameIdx != null ) {
 				ICFSecTableInfoBySchemaNameIdxKey keySchemaNameIdx =
-					schema.getCFSecBackingStore().getFactoryTableInfo().newBySchemaNameIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactoryTableInfo().newBySchemaNameIdxKey();
 				keySchemaNameIdx.setRequiredSchemaName( keepObj.getRequiredSchemaName() );
 				Map<Integer, ICFSecTableInfoObj > mapSchemaNameIdx = indexBySchemaNameIdx.get( keySchemaNameIdx );
 				if( mapSchemaNameIdx != null ) {
@@ -235,7 +235,7 @@ public class CFIntTableInfoTableObj
 
 			if( indexBySchemaBkCodeIdx != null ) {
 				ICFSecTableInfoBySchemaBkCodeIdxKey keySchemaBkCodeIdx =
-					schema.getCFSecBackingStore().getFactoryTableInfo().newBySchemaBkCodeIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactoryTableInfo().newBySchemaBkCodeIdxKey();
 				keySchemaBkCodeIdx.setRequiredSchemaName( keepObj.getRequiredSchemaName() );
 				keySchemaBkCodeIdx.setRequiredBackingClassCode( keepObj.getRequiredBackingClassCode() );
 				indexBySchemaBkCodeIdx.remove( keySchemaBkCodeIdx );
@@ -243,7 +243,7 @@ public class CFIntTableInfoTableObj
 
 			if( indexBySchemaRTCodeIdx != null ) {
 				ICFSecTableInfoBySchemaRTCodeIdxKey keySchemaRTCodeIdx =
-					schema.getCFSecBackingStore().getFactoryTableInfo().newBySchemaRTCodeIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactoryTableInfo().newBySchemaRTCodeIdxKey();
 				keySchemaRTCodeIdx.setRequiredRuntimeClassCode( keepObj.getRequiredRuntimeClassCode() );
 				indexBySchemaRTCodeIdx.remove( keySchemaRTCodeIdx );
 			}
@@ -253,14 +253,14 @@ public class CFIntTableInfoTableObj
 
 			if( indexByTableNameIdx != null ) {
 				ICFSecTableInfoByTableNameIdxKey keyTableNameIdx =
-					schema.getCFSecBackingStore().getFactoryTableInfo().newByTableNameIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactoryTableInfo().newByTableNameIdxKey();
 				keyTableNameIdx.setRequiredTableName( keepObj.getRequiredTableName() );
 				indexByTableNameIdx.put( keyTableNameIdx, keepObj );
 			}
 
 			if( indexBySuperNameIdx != null ) {
 				ICFSecTableInfoBySuperNameIdxKey keySuperNameIdx =
-					schema.getCFSecBackingStore().getFactoryTableInfo().newBySuperNameIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactoryTableInfo().newBySuperNameIdxKey();
 				keySuperNameIdx.setOptionalSuperName( keepObj.getOptionalSuperName() );
 				Map<Integer, ICFSecTableInfoObj > mapSuperNameIdx = indexBySuperNameIdx.get( keySuperNameIdx );
 				if( mapSuperNameIdx != null ) {
@@ -270,7 +270,7 @@ public class CFIntTableInfoTableObj
 
 			if( indexBySchemaNameIdx != null ) {
 				ICFSecTableInfoBySchemaNameIdxKey keySchemaNameIdx =
-					schema.getCFSecBackingStore().getFactoryTableInfo().newBySchemaNameIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactoryTableInfo().newBySchemaNameIdxKey();
 				keySchemaNameIdx.setRequiredSchemaName( keepObj.getRequiredSchemaName() );
 				Map<Integer, ICFSecTableInfoObj > mapSchemaNameIdx = indexBySchemaNameIdx.get( keySchemaNameIdx );
 				if( mapSchemaNameIdx != null ) {
@@ -280,7 +280,7 @@ public class CFIntTableInfoTableObj
 
 			if( indexBySchemaBkCodeIdx != null ) {
 				ICFSecTableInfoBySchemaBkCodeIdxKey keySchemaBkCodeIdx =
-					schema.getCFSecBackingStore().getFactoryTableInfo().newBySchemaBkCodeIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactoryTableInfo().newBySchemaBkCodeIdxKey();
 				keySchemaBkCodeIdx.setRequiredSchemaName( keepObj.getRequiredSchemaName() );
 				keySchemaBkCodeIdx.setRequiredBackingClassCode( keepObj.getRequiredBackingClassCode() );
 				indexBySchemaBkCodeIdx.put( keySchemaBkCodeIdx, keepObj );
@@ -288,7 +288,7 @@ public class CFIntTableInfoTableObj
 
 			if( indexBySchemaRTCodeIdx != null ) {
 				ICFSecTableInfoBySchemaRTCodeIdxKey keySchemaRTCodeIdx =
-					schema.getCFSecBackingStore().getFactoryTableInfo().newBySchemaRTCodeIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactoryTableInfo().newBySchemaRTCodeIdxKey();
 				keySchemaRTCodeIdx.setRequiredRuntimeClassCode( keepObj.getRequiredRuntimeClassCode() );
 				indexBySchemaRTCodeIdx.put( keySchemaRTCodeIdx, keepObj );
 			}
@@ -309,14 +309,14 @@ public class CFIntTableInfoTableObj
 
 			if( indexByTableNameIdx != null ) {
 				ICFSecTableInfoByTableNameIdxKey keyTableNameIdx =
-					schema.getCFSecBackingStore().getFactoryTableInfo().newByTableNameIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactoryTableInfo().newByTableNameIdxKey();
 				keyTableNameIdx.setRequiredTableName( keepObj.getRequiredTableName() );
 				indexByTableNameIdx.put( keyTableNameIdx, keepObj );
 			}
 
 			if( indexBySuperNameIdx != null ) {
 				ICFSecTableInfoBySuperNameIdxKey keySuperNameIdx =
-					schema.getCFSecBackingStore().getFactoryTableInfo().newBySuperNameIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactoryTableInfo().newBySuperNameIdxKey();
 				keySuperNameIdx.setOptionalSuperName( keepObj.getOptionalSuperName() );
 				Map<Integer, ICFSecTableInfoObj > mapSuperNameIdx = indexBySuperNameIdx.get( keySuperNameIdx );
 				if( mapSuperNameIdx != null ) {
@@ -326,7 +326,7 @@ public class CFIntTableInfoTableObj
 
 			if( indexBySchemaNameIdx != null ) {
 				ICFSecTableInfoBySchemaNameIdxKey keySchemaNameIdx =
-					schema.getCFSecBackingStore().getFactoryTableInfo().newBySchemaNameIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactoryTableInfo().newBySchemaNameIdxKey();
 				keySchemaNameIdx.setRequiredSchemaName( keepObj.getRequiredSchemaName() );
 				Map<Integer, ICFSecTableInfoObj > mapSchemaNameIdx = indexBySchemaNameIdx.get( keySchemaNameIdx );
 				if( mapSchemaNameIdx != null ) {
@@ -336,7 +336,7 @@ public class CFIntTableInfoTableObj
 
 			if( indexBySchemaBkCodeIdx != null ) {
 				ICFSecTableInfoBySchemaBkCodeIdxKey keySchemaBkCodeIdx =
-					schema.getCFSecBackingStore().getFactoryTableInfo().newBySchemaBkCodeIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactoryTableInfo().newBySchemaBkCodeIdxKey();
 				keySchemaBkCodeIdx.setRequiredSchemaName( keepObj.getRequiredSchemaName() );
 				keySchemaBkCodeIdx.setRequiredBackingClassCode( keepObj.getRequiredBackingClassCode() );
 				indexBySchemaBkCodeIdx.put( keySchemaBkCodeIdx, keepObj );
@@ -344,7 +344,7 @@ public class CFIntTableInfoTableObj
 
 			if( indexBySchemaRTCodeIdx != null ) {
 				ICFSecTableInfoBySchemaRTCodeIdxKey keySchemaRTCodeIdx =
-					schema.getCFSecBackingStore().getFactoryTableInfo().newBySchemaRTCodeIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactoryTableInfo().newBySchemaRTCodeIdxKey();
 				keySchemaRTCodeIdx.setRequiredRuntimeClassCode( keepObj.getRequiredRuntimeClassCode() );
 				indexBySchemaRTCodeIdx.put( keySchemaRTCodeIdx, keepObj );
 			}
@@ -413,20 +413,20 @@ public class CFIntTableInfoTableObj
 			return;
 		}
 		members.remove( pkey );
-		ICFSecTableInfoByTableNameIdxKey keyTableNameIdx = schema.getCFSecBackingStore().getFactoryTableInfo().newByTableNameIdxKey();
+		ICFSecTableInfoByTableNameIdxKey keyTableNameIdx = schema.getCFSecBackingStore().getCFSecFactory().getFactoryTableInfo().newByTableNameIdxKey();
 		keyTableNameIdx.setRequiredTableName( existing.getRequiredTableName() );
 
-		ICFSecTableInfoBySuperNameIdxKey keySuperNameIdx = schema.getCFSecBackingStore().getFactoryTableInfo().newBySuperNameIdxKey();
+		ICFSecTableInfoBySuperNameIdxKey keySuperNameIdx = schema.getCFSecBackingStore().getCFSecFactory().getFactoryTableInfo().newBySuperNameIdxKey();
 		keySuperNameIdx.setOptionalSuperName( existing.getOptionalSuperName() );
 
-		ICFSecTableInfoBySchemaNameIdxKey keySchemaNameIdx = schema.getCFSecBackingStore().getFactoryTableInfo().newBySchemaNameIdxKey();
+		ICFSecTableInfoBySchemaNameIdxKey keySchemaNameIdx = schema.getCFSecBackingStore().getCFSecFactory().getFactoryTableInfo().newBySchemaNameIdxKey();
 		keySchemaNameIdx.setRequiredSchemaName( existing.getRequiredSchemaName() );
 
-		ICFSecTableInfoBySchemaBkCodeIdxKey keySchemaBkCodeIdx = schema.getCFSecBackingStore().getFactoryTableInfo().newBySchemaBkCodeIdxKey();
+		ICFSecTableInfoBySchemaBkCodeIdxKey keySchemaBkCodeIdx = schema.getCFSecBackingStore().getCFSecFactory().getFactoryTableInfo().newBySchemaBkCodeIdxKey();
 		keySchemaBkCodeIdx.setRequiredSchemaName( existing.getRequiredSchemaName() );
 		keySchemaBkCodeIdx.setRequiredBackingClassCode( existing.getRequiredBackingClassCode() );
 
-		ICFSecTableInfoBySchemaRTCodeIdxKey keySchemaRTCodeIdx = schema.getCFSecBackingStore().getFactoryTableInfo().newBySchemaRTCodeIdxKey();
+		ICFSecTableInfoBySchemaRTCodeIdxKey keySchemaRTCodeIdx = schema.getCFSecBackingStore().getCFSecFactory().getFactoryTableInfo().newBySchemaRTCodeIdxKey();
 		keySchemaRTCodeIdx.setRequiredRuntimeClassCode( existing.getRequiredRuntimeClassCode() );
 
 
@@ -650,7 +650,7 @@ public class CFIntTableInfoTableObj
 			indexByTableNameIdx = new HashMap< ICFSecTableInfoByTableNameIdxKey,
 				ICFSecTableInfoObj >();
 		}
-		ICFSecTableInfoByTableNameIdxKey key = schema.getCFSecBackingStore().getFactoryTableInfo().newByTableNameIdxKey();
+		ICFSecTableInfoByTableNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryTableInfo().newByTableNameIdxKey();
 		key.setRequiredTableName( TableName );
 		ICFSecTableInfoObj obj = null;
 		if( ( ! forceRead ) && indexByTableNameIdx.containsKey( key ) ) {
@@ -681,7 +681,7 @@ public class CFIntTableInfoTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readTableInfoBySuperNameIdx";
-		ICFSecTableInfoBySuperNameIdxKey key = schema.getCFSecBackingStore().getFactoryTableInfo().newBySuperNameIdxKey();
+		ICFSecTableInfoBySuperNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryTableInfo().newBySuperNameIdxKey();
 		key.setOptionalSuperName( SuperName );
 		Map<Integer, ICFSecTableInfoObj> dict;
 		if( indexBySuperNameIdx == null ) {
@@ -774,7 +774,7 @@ public class CFIntTableInfoTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readTableInfoBySchemaNameIdx";
-		ICFSecTableInfoBySchemaNameIdxKey key = schema.getCFSecBackingStore().getFactoryTableInfo().newBySchemaNameIdxKey();
+		ICFSecTableInfoBySchemaNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryTableInfo().newBySchemaNameIdxKey();
 		key.setRequiredSchemaName( SchemaName );
 		Map<Integer, ICFSecTableInfoObj> dict;
 		if( indexBySchemaNameIdx == null ) {
@@ -872,7 +872,7 @@ public class CFIntTableInfoTableObj
 			indexBySchemaBkCodeIdx = new HashMap< ICFSecTableInfoBySchemaBkCodeIdxKey,
 				ICFSecTableInfoObj >();
 		}
-		ICFSecTableInfoBySchemaBkCodeIdxKey key = schema.getCFSecBackingStore().getFactoryTableInfo().newBySchemaBkCodeIdxKey();
+		ICFSecTableInfoBySchemaBkCodeIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryTableInfo().newBySchemaBkCodeIdxKey();
 		key.setRequiredSchemaName( SchemaName );
 		key.setRequiredBackingClassCode( BackingClassCode );
 		ICFSecTableInfoObj obj = null;
@@ -907,7 +907,7 @@ public class CFIntTableInfoTableObj
 			indexBySchemaRTCodeIdx = new HashMap< ICFSecTableInfoBySchemaRTCodeIdxKey,
 				ICFSecTableInfoObj >();
 		}
-		ICFSecTableInfoBySchemaRTCodeIdxKey key = schema.getCFSecBackingStore().getFactoryTableInfo().newBySchemaRTCodeIdxKey();
+		ICFSecTableInfoBySchemaRTCodeIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryTableInfo().newBySchemaRTCodeIdxKey();
 		key.setRequiredRuntimeClassCode( RuntimeClassCode );
 		ICFSecTableInfoObj obj = null;
 		if( ( ! forceRead ) && indexBySchemaRTCodeIdx.containsKey( key ) ) {
@@ -938,7 +938,7 @@ public class CFIntTableInfoTableObj
 	public ICFSecTableInfoObj readCachedTableInfoByTableNameIdx( String TableName )
 	{
 		ICFSecTableInfoObj obj = null;
-		ICFSecTableInfoByTableNameIdxKey key = schema.getCFSecBackingStore().getFactoryTableInfo().newByTableNameIdxKey();
+		ICFSecTableInfoByTableNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryTableInfo().newByTableNameIdxKey();
 		key.setRequiredTableName( TableName );
 		if( indexByTableNameIdx != null ) {
 			if( indexByTableNameIdx.containsKey( key ) ) {
@@ -974,7 +974,7 @@ public class CFIntTableInfoTableObj
 	public List<ICFSecTableInfoObj> readCachedTableInfoBySuperNameIdx( String SuperName )
 	{
 		final String S_ProcName = "readCachedTableInfoBySuperNameIdx";
-		ICFSecTableInfoBySuperNameIdxKey key = schema.getCFSecBackingStore().getFactoryTableInfo().newBySuperNameIdxKey();
+		ICFSecTableInfoBySuperNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryTableInfo().newBySuperNameIdxKey();
 		key.setOptionalSuperName( SuperName );
 		ArrayList<ICFSecTableInfoObj> arrayList = new ArrayList<ICFSecTableInfoObj>();
 		if( indexBySuperNameIdx != null ) {
@@ -1051,7 +1051,7 @@ public class CFIntTableInfoTableObj
 	public List<ICFSecTableInfoObj> readCachedTableInfoBySchemaNameIdx( String SchemaName )
 	{
 		final String S_ProcName = "readCachedTableInfoBySchemaNameIdx";
-		ICFSecTableInfoBySchemaNameIdxKey key = schema.getCFSecBackingStore().getFactoryTableInfo().newBySchemaNameIdxKey();
+		ICFSecTableInfoBySchemaNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryTableInfo().newBySchemaNameIdxKey();
 		key.setRequiredSchemaName( SchemaName );
 		ArrayList<ICFSecTableInfoObj> arrayList = new ArrayList<ICFSecTableInfoObj>();
 		if( indexBySchemaNameIdx != null ) {
@@ -1129,7 +1129,7 @@ public class CFIntTableInfoTableObj
 		int BackingClassCode )
 	{
 		ICFSecTableInfoObj obj = null;
-		ICFSecTableInfoBySchemaBkCodeIdxKey key = schema.getCFSecBackingStore().getFactoryTableInfo().newBySchemaBkCodeIdxKey();
+		ICFSecTableInfoBySchemaBkCodeIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryTableInfo().newBySchemaBkCodeIdxKey();
 		key.setRequiredSchemaName( SchemaName );
 		key.setRequiredBackingClassCode( BackingClassCode );
 		if( indexBySchemaBkCodeIdx != null ) {
@@ -1166,7 +1166,7 @@ public class CFIntTableInfoTableObj
 	public ICFSecTableInfoObj readCachedTableInfoBySchemaRTCodeIdx( int RuntimeClassCode )
 	{
 		ICFSecTableInfoObj obj = null;
-		ICFSecTableInfoBySchemaRTCodeIdxKey key = schema.getCFSecBackingStore().getFactoryTableInfo().newBySchemaRTCodeIdxKey();
+		ICFSecTableInfoBySchemaRTCodeIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryTableInfo().newBySchemaRTCodeIdxKey();
 		key.setRequiredRuntimeClassCode( RuntimeClassCode );
 		if( indexBySchemaRTCodeIdx != null ) {
 			if( indexBySchemaRTCodeIdx.containsKey( key ) ) {
@@ -1325,7 +1325,7 @@ public class CFIntTableInfoTableObj
 			indexByTableNameIdx = new HashMap< ICFSecTableInfoByTableNameIdxKey,
 				ICFSecTableInfoObj >();
 		}
-		ICFSecTableInfoByTableNameIdxKey key = schema.getCFSecBackingStore().getFactoryTableInfo().newByTableNameIdxKey();
+		ICFSecTableInfoByTableNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryTableInfo().newByTableNameIdxKey();
 		key.setRequiredTableName( TableName );
 		ICFSecTableInfoObj obj = null;
 		if( indexByTableNameIdx.containsKey( key ) ) {
@@ -1344,7 +1344,7 @@ public class CFIntTableInfoTableObj
 	@Override
 	public void deleteTableInfoBySuperNameIdx( String SuperName )
 	{
-		ICFSecTableInfoBySuperNameIdxKey key = schema.getCFSecBackingStore().getFactoryTableInfo().newBySuperNameIdxKey();
+		ICFSecTableInfoBySuperNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryTableInfo().newBySuperNameIdxKey();
 		key.setOptionalSuperName( SuperName );
 		if( indexBySuperNameIdx == null ) {
 			indexBySuperNameIdx = new HashMap< ICFSecTableInfoBySuperNameIdxKey,
@@ -1378,7 +1378,7 @@ public class CFIntTableInfoTableObj
 	@Override
 	public void deleteTableInfoBySchemaNameIdx( String SchemaName )
 	{
-		ICFSecTableInfoBySchemaNameIdxKey key = schema.getCFSecBackingStore().getFactoryTableInfo().newBySchemaNameIdxKey();
+		ICFSecTableInfoBySchemaNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryTableInfo().newBySchemaNameIdxKey();
 		key.setRequiredSchemaName( SchemaName );
 		if( indexBySchemaNameIdx == null ) {
 			indexBySchemaNameIdx = new HashMap< ICFSecTableInfoBySchemaNameIdxKey,
@@ -1417,7 +1417,7 @@ public class CFIntTableInfoTableObj
 			indexBySchemaBkCodeIdx = new HashMap< ICFSecTableInfoBySchemaBkCodeIdxKey,
 				ICFSecTableInfoObj >();
 		}
-		ICFSecTableInfoBySchemaBkCodeIdxKey key = schema.getCFSecBackingStore().getFactoryTableInfo().newBySchemaBkCodeIdxKey();
+		ICFSecTableInfoBySchemaBkCodeIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryTableInfo().newBySchemaBkCodeIdxKey();
 		key.setRequiredSchemaName( SchemaName );
 		key.setRequiredBackingClassCode( BackingClassCode );
 		ICFSecTableInfoObj obj = null;
@@ -1444,7 +1444,7 @@ public class CFIntTableInfoTableObj
 			indexBySchemaRTCodeIdx = new HashMap< ICFSecTableInfoBySchemaRTCodeIdxKey,
 				ICFSecTableInfoObj >();
 		}
-		ICFSecTableInfoBySchemaRTCodeIdxKey key = schema.getCFSecBackingStore().getFactoryTableInfo().newBySchemaRTCodeIdxKey();
+		ICFSecTableInfoBySchemaRTCodeIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryTableInfo().newBySchemaRTCodeIdxKey();
 		key.setRequiredRuntimeClassCode( RuntimeClassCode );
 		ICFSecTableInfoObj obj = null;
 		if( indexBySchemaRTCodeIdx.containsKey( key ) ) {

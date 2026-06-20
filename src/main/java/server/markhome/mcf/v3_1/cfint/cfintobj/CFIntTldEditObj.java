@@ -364,7 +364,7 @@ public class CFIntTldEditObj
 	@Override
 	public ICFIntTld getRec() {
 		if( rec == null ) {
-			rec = getOrigAsTld().getSchema().getCFIntBackingStore().getFactoryTld().newRec();
+			rec = getOrigAsTld().getSchema().getCFIntBackingStore().getCFIntFactory().getFactoryTld().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

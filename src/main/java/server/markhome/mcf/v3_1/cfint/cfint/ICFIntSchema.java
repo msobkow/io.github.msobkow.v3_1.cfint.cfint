@@ -413,6 +413,16 @@ extends ICFSecSchema
 	public CFLibDbKeyHash256 nextLicenseIdGen();
 
 	/**
+	 *	Get the factory for CFSec data objects.
+	 */
+	public ICFSecFactory getCFSecFactory();
+
+	/**
+	 *	Get the factory for CFInt data objects.
+	 */
+	public ICFIntFactory getCFIntFactory();
+
+	/**
 	 *	Get the Cluster Table interface for the schema.
 	 *
 	 *	@return	The Cluster Table interface for the schema.
@@ -420,15 +430,6 @@ extends ICFSecSchema
 	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFSecClusterTable getTableCluster();
-
-	/**
-	 *	Get the Cluster Factory interface for the schema.
-	 *
-	 *	@return	The Cluster Factory interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFSecClusterFactory getFactoryCluster();
 
 	/**
 	 *	Get the ISOCcy Table interface for the schema.
@@ -440,15 +441,6 @@ extends ICFSecSchema
 	public ICFSecISOCcyTable getTableISOCcy();
 
 	/**
-	 *	Get the ISOCcy Factory interface for the schema.
-	 *
-	 *	@return	The ISOCcy Factory interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFSecISOCcyFactory getFactoryISOCcy();
-
-	/**
 	 *	Get the ISOCtry Table interface for the schema.
 	 *
 	 *	@return	The ISOCtry Table interface for the schema.
@@ -456,15 +448,6 @@ extends ICFSecSchema
 	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFSecISOCtryTable getTableISOCtry();
-
-	/**
-	 *	Get the ISOCtry Factory interface for the schema.
-	 *
-	 *	@return	The ISOCtry Factory interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFSecISOCtryFactory getFactoryISOCtry();
 
 	/**
 	 *	Get the ISOCtryCcy Table interface for the schema.
@@ -476,15 +459,6 @@ extends ICFSecSchema
 	public ICFSecISOCtryCcyTable getTableISOCtryCcy();
 
 	/**
-	 *	Get the ISOCtryCcy Factory interface for the schema.
-	 *
-	 *	@return	The ISOCtryCcy Factory interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFSecISOCtryCcyFactory getFactoryISOCtryCcy();
-
-	/**
 	 *	Get the ISOCtryLang Table interface for the schema.
 	 *
 	 *	@return	The ISOCtryLang Table interface for the schema.
@@ -492,15 +466,6 @@ extends ICFSecSchema
 	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFSecISOCtryLangTable getTableISOCtryLang();
-
-	/**
-	 *	Get the ISOCtryLang Factory interface for the schema.
-	 *
-	 *	@return	The ISOCtryLang Factory interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFSecISOCtryLangFactory getFactoryISOCtryLang();
 
 	/**
 	 *	Get the ISOLang Table interface for the schema.
@@ -512,15 +477,6 @@ extends ICFSecSchema
 	public ICFSecISOLangTable getTableISOLang();
 
 	/**
-	 *	Get the ISOLang Factory interface for the schema.
-	 *
-	 *	@return	The ISOLang Factory interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFSecISOLangFactory getFactoryISOLang();
-
-	/**
 	 *	Get the ISOTZone Table interface for the schema.
 	 *
 	 *	@return	The ISOTZone Table interface for the schema.
@@ -528,15 +484,6 @@ extends ICFSecSchema
 	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFSecISOTZoneTable getTableISOTZone();
-
-	/**
-	 *	Get the ISOTZone Factory interface for the schema.
-	 *
-	 *	@return	The ISOTZone Factory interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFSecISOTZoneFactory getFactoryISOTZone();
 
 	/**
 	 *	Get the License Table interface for the schema.
@@ -548,15 +495,6 @@ extends ICFSecSchema
 	public ICFIntLicenseTable getTableLicense();
 
 	/**
-	 *	Get the License Factory interface for the schema.
-	 *
-	 *	@return	The License Factory interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFIntLicenseFactory getFactoryLicense();
-
-	/**
 	 *	Get the MajorVersion Table interface for the schema.
 	 *
 	 *	@return	The MajorVersion Table interface for the schema.
@@ -564,15 +502,6 @@ extends ICFSecSchema
 	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFIntMajorVersionTable getTableMajorVersion();
-
-	/**
-	 *	Get the MajorVersion Factory interface for the schema.
-	 *
-	 *	@return	The MajorVersion Factory interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFIntMajorVersionFactory getFactoryMajorVersion();
 
 	/**
 	 *	Get the MimeType Table interface for the schema.
@@ -584,15 +513,6 @@ extends ICFSecSchema
 	public ICFIntMimeTypeTable getTableMimeType();
 
 	/**
-	 *	Get the MimeType Factory interface for the schema.
-	 *
-	 *	@return	The MimeType Factory interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFIntMimeTypeFactory getFactoryMimeType();
-
-	/**
 	 *	Get the MinorVersion Table interface for the schema.
 	 *
 	 *	@return	The MinorVersion Table interface for the schema.
@@ -600,15 +520,6 @@ extends ICFSecSchema
 	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFIntMinorVersionTable getTableMinorVersion();
-
-	/**
-	 *	Get the MinorVersion Factory interface for the schema.
-	 *
-	 *	@return	The MinorVersion Factory interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFIntMinorVersionFactory getFactoryMinorVersion();
 
 	/**
 	 *	Get the SecClusGrp Table interface for the schema.
@@ -620,15 +531,6 @@ extends ICFSecSchema
 	public ICFSecSecClusGrpTable getTableSecClusGrp();
 
 	/**
-	 *	Get the SecClusGrp Factory interface for the schema.
-	 *
-	 *	@return	The SecClusGrp Factory interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFSecSecClusGrpFactory getFactorySecClusGrp();
-
-	/**
 	 *	Get the SecClusGrpMemb Table interface for the schema.
 	 *
 	 *	@return	The SecClusGrpMemb Table interface for the schema.
@@ -636,15 +538,6 @@ extends ICFSecSchema
 	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFSecSecClusGrpMembTable getTableSecClusGrpMemb();
-
-	/**
-	 *	Get the SecClusGrpMemb Factory interface for the schema.
-	 *
-	 *	@return	The SecClusGrpMemb Factory interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFSecSecClusGrpMembFactory getFactorySecClusGrpMemb();
 
 	/**
 	 *	Get the SecClusRole Table interface for the schema.
@@ -656,15 +549,6 @@ extends ICFSecSchema
 	public ICFSecSecClusRoleTable getTableSecClusRole();
 
 	/**
-	 *	Get the SecClusRole Factory interface for the schema.
-	 *
-	 *	@return	The SecClusRole Factory interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFSecSecClusRoleFactory getFactorySecClusRole();
-
-	/**
 	 *	Get the SecClusRoleMemb Table interface for the schema.
 	 *
 	 *	@return	The SecClusRoleMemb Table interface for the schema.
@@ -672,15 +556,6 @@ extends ICFSecSchema
 	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFSecSecClusRoleMembTable getTableSecClusRoleMemb();
-
-	/**
-	 *	Get the SecClusRoleMemb Factory interface for the schema.
-	 *
-	 *	@return	The SecClusRoleMemb Factory interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFSecSecClusRoleMembFactory getFactorySecClusRoleMemb();
 
 	/**
 	 *	Get the SecSession Table interface for the schema.
@@ -692,15 +567,6 @@ extends ICFSecSchema
 	public ICFSecSecSessionTable getTableSecSession();
 
 	/**
-	 *	Get the SecSession Factory interface for the schema.
-	 *
-	 *	@return	The SecSession Factory interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFSecSecSessionFactory getFactorySecSession();
-
-	/**
 	 *	Get the SecSysGrp Table interface for the schema.
 	 *
 	 *	@return	The SecSysGrp Table interface for the schema.
@@ -708,15 +574,6 @@ extends ICFSecSchema
 	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFSecSecSysGrpTable getTableSecSysGrp();
-
-	/**
-	 *	Get the SecSysGrp Factory interface for the schema.
-	 *
-	 *	@return	The SecSysGrp Factory interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFSecSecSysGrpFactory getFactorySecSysGrp();
 
 	/**
 	 *	Get the SecSysGrpInc Table interface for the schema.
@@ -728,15 +585,6 @@ extends ICFSecSchema
 	public ICFSecSecSysGrpIncTable getTableSecSysGrpInc();
 
 	/**
-	 *	Get the SecSysGrpInc Factory interface for the schema.
-	 *
-	 *	@return	The SecSysGrpInc Factory interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFSecSecSysGrpIncFactory getFactorySecSysGrpInc();
-
-	/**
 	 *	Get the SecSysGrpMemb Table interface for the schema.
 	 *
 	 *	@return	The SecSysGrpMemb Table interface for the schema.
@@ -744,15 +592,6 @@ extends ICFSecSchema
 	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFSecSecSysGrpMembTable getTableSecSysGrpMemb();
-
-	/**
-	 *	Get the SecSysGrpMemb Factory interface for the schema.
-	 *
-	 *	@return	The SecSysGrpMemb Factory interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFSecSecSysGrpMembFactory getFactorySecSysGrpMemb();
 
 	/**
 	 *	Get the SecSysRole Table interface for the schema.
@@ -764,15 +603,6 @@ extends ICFSecSchema
 	public ICFSecSecSysRoleTable getTableSecSysRole();
 
 	/**
-	 *	Get the SecSysRole Factory interface for the schema.
-	 *
-	 *	@return	The SecSysRole Factory interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFSecSecSysRoleFactory getFactorySecSysRole();
-
-	/**
 	 *	Get the SecSysRoleEnables Table interface for the schema.
 	 *
 	 *	@return	The SecSysRoleEnables Table interface for the schema.
@@ -780,15 +610,6 @@ extends ICFSecSchema
 	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFSecSecSysRoleEnablesTable getTableSecSysRoleEnables();
-
-	/**
-	 *	Get the SecSysRoleEnables Factory interface for the schema.
-	 *
-	 *	@return	The SecSysRoleEnables Factory interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFSecSecSysRoleEnablesFactory getFactorySecSysRoleEnables();
 
 	/**
 	 *	Get the SecSysRoleMemb Table interface for the schema.
@@ -800,15 +621,6 @@ extends ICFSecSchema
 	public ICFSecSecSysRoleMembTable getTableSecSysRoleMemb();
 
 	/**
-	 *	Get the SecSysRoleMemb Factory interface for the schema.
-	 *
-	 *	@return	The SecSysRoleMemb Factory interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFSecSecSysRoleMembFactory getFactorySecSysRoleMemb();
-
-	/**
 	 *	Get the SecTentGrp Table interface for the schema.
 	 *
 	 *	@return	The SecTentGrp Table interface for the schema.
@@ -816,15 +628,6 @@ extends ICFSecSchema
 	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFSecSecTentGrpTable getTableSecTentGrp();
-
-	/**
-	 *	Get the SecTentGrp Factory interface for the schema.
-	 *
-	 *	@return	The SecTentGrp Factory interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFSecSecTentGrpFactory getFactorySecTentGrp();
 
 	/**
 	 *	Get the SecTentGrpMemb Table interface for the schema.
@@ -836,15 +639,6 @@ extends ICFSecSchema
 	public ICFSecSecTentGrpMembTable getTableSecTentGrpMemb();
 
 	/**
-	 *	Get the SecTentGrpMemb Factory interface for the schema.
-	 *
-	 *	@return	The SecTentGrpMemb Factory interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFSecSecTentGrpMembFactory getFactorySecTentGrpMemb();
-
-	/**
 	 *	Get the SecTentRole Table interface for the schema.
 	 *
 	 *	@return	The SecTentRole Table interface for the schema.
@@ -852,15 +646,6 @@ extends ICFSecSchema
 	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFSecSecTentRoleTable getTableSecTentRole();
-
-	/**
-	 *	Get the SecTentRole Factory interface for the schema.
-	 *
-	 *	@return	The SecTentRole Factory interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFSecSecTentRoleFactory getFactorySecTentRole();
 
 	/**
 	 *	Get the SecTentRoleMemb Table interface for the schema.
@@ -872,15 +657,6 @@ extends ICFSecSchema
 	public ICFSecSecTentRoleMembTable getTableSecTentRoleMemb();
 
 	/**
-	 *	Get the SecTentRoleMemb Factory interface for the schema.
-	 *
-	 *	@return	The SecTentRoleMemb Factory interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFSecSecTentRoleMembFactory getFactorySecTentRoleMemb();
-
-	/**
 	 *	Get the SecUser Table interface for the schema.
 	 *
 	 *	@return	The SecUser Table interface for the schema.
@@ -888,15 +664,6 @@ extends ICFSecSchema
 	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFSecSecUserTable getTableSecUser();
-
-	/**
-	 *	Get the SecUser Factory interface for the schema.
-	 *
-	 *	@return	The SecUser Factory interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFSecSecUserFactory getFactorySecUser();
 
 	/**
 	 *	Get the SecUserEMConf Table interface for the schema.
@@ -908,15 +675,6 @@ extends ICFSecSchema
 	public ICFSecSecUserEMConfTable getTableSecUserEMConf();
 
 	/**
-	 *	Get the SecUserEMConf Factory interface for the schema.
-	 *
-	 *	@return	The SecUserEMConf Factory interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFSecSecUserEMConfFactory getFactorySecUserEMConf();
-
-	/**
 	 *	Get the SecUserPWHistory Table interface for the schema.
 	 *
 	 *	@return	The SecUserPWHistory Table interface for the schema.
@@ -924,15 +682,6 @@ extends ICFSecSchema
 	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFSecSecUserPWHistoryTable getTableSecUserPWHistory();
-
-	/**
-	 *	Get the SecUserPWHistory Factory interface for the schema.
-	 *
-	 *	@return	The SecUserPWHistory Factory interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFSecSecUserPWHistoryFactory getFactorySecUserPWHistory();
 
 	/**
 	 *	Get the SecUserPWReset Table interface for the schema.
@@ -944,15 +693,6 @@ extends ICFSecSchema
 	public ICFSecSecUserPWResetTable getTableSecUserPWReset();
 
 	/**
-	 *	Get the SecUserPWReset Factory interface for the schema.
-	 *
-	 *	@return	The SecUserPWReset Factory interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFSecSecUserPWResetFactory getFactorySecUserPWReset();
-
-	/**
 	 *	Get the SecUserPassword Table interface for the schema.
 	 *
 	 *	@return	The SecUserPassword Table interface for the schema.
@@ -960,15 +700,6 @@ extends ICFSecSchema
 	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFSecSecUserPasswordTable getTableSecUserPassword();
-
-	/**
-	 *	Get the SecUserPassword Factory interface for the schema.
-	 *
-	 *	@return	The SecUserPassword Factory interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFSecSecUserPasswordFactory getFactorySecUserPassword();
 
 	/**
 	 *	Get the SubProject Table interface for the schema.
@@ -980,15 +711,6 @@ extends ICFSecSchema
 	public ICFIntSubProjectTable getTableSubProject();
 
 	/**
-	 *	Get the SubProject Factory interface for the schema.
-	 *
-	 *	@return	The SubProject Factory interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFIntSubProjectFactory getFactorySubProject();
-
-	/**
 	 *	Get the SysCluster Table interface for the schema.
 	 *
 	 *	@return	The SysCluster Table interface for the schema.
@@ -996,15 +718,6 @@ extends ICFSecSchema
 	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFSecSysClusterTable getTableSysCluster();
-
-	/**
-	 *	Get the SysCluster Factory interface for the schema.
-	 *
-	 *	@return	The SysCluster Factory interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFSecSysClusterFactory getFactorySysCluster();
 
 	/**
 	 *	Get the TableInfo Table interface for the schema.
@@ -1016,15 +729,6 @@ extends ICFSecSchema
 	public ICFSecTableInfoTable getTableTableInfo();
 
 	/**
-	 *	Get the TableInfo Factory interface for the schema.
-	 *
-	 *	@return	The TableInfo Factory interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFSecTableInfoFactory getFactoryTableInfo();
-
-	/**
 	 *	Get the Tenant Table interface for the schema.
 	 *
 	 *	@return	The Tenant Table interface for the schema.
@@ -1032,15 +736,6 @@ extends ICFSecSchema
 	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFSecTenantTable getTableTenant();
-
-	/**
-	 *	Get the Tenant Factory interface for the schema.
-	 *
-	 *	@return	The Tenant Factory interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFSecTenantFactory getFactoryTenant();
 
 	/**
 	 *	Get the Tld Table interface for the schema.
@@ -1052,15 +747,6 @@ extends ICFSecSchema
 	public ICFIntTldTable getTableTld();
 
 	/**
-	 *	Get the Tld Factory interface for the schema.
-	 *
-	 *	@return	The Tld Factory interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFIntTldFactory getFactoryTld();
-
-	/**
 	 *	Get the TopDomain Table interface for the schema.
 	 *
 	 *	@return	The TopDomain Table interface for the schema.
@@ -1068,15 +754,6 @@ extends ICFSecSchema
 	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFIntTopDomainTable getTableTopDomain();
-
-	/**
-	 *	Get the TopDomain Factory interface for the schema.
-	 *
-	 *	@return	The TopDomain Factory interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFIntTopDomainFactory getFactoryTopDomain();
 
 	/**
 	 *	Get the TopProject Table interface for the schema.
@@ -1088,15 +765,6 @@ extends ICFSecSchema
 	public ICFIntTopProjectTable getTableTopProject();
 
 	/**
-	 *	Get the TopProject Factory interface for the schema.
-	 *
-	 *	@return	The TopProject Factory interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFIntTopProjectFactory getFactoryTopProject();
-
-	/**
 	 *	Get the URLProtocol Table interface for the schema.
 	 *
 	 *	@return	The URLProtocol Table interface for the schema.
@@ -1104,15 +772,6 @@ extends ICFSecSchema
 	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFIntURLProtocolTable getTableURLProtocol();
-
-	/**
-	 *	Get the URLProtocol Factory interface for the schema.
-	 *
-	 *	@return	The URLProtocol Factory interface for the schema.
-	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
-	 */
-	public ICFIntURLProtocolFactory getFactoryURLProtocol();
 
 	/**
 	 *	Get the Table Permissions interface for the schema.

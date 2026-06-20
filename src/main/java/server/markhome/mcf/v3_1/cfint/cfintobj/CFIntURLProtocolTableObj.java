@@ -203,14 +203,14 @@ public class CFIntURLProtocolTableObj
 
 			if( indexByUNameIdx != null ) {
 				ICFIntURLProtocolByUNameIdxKey keyUNameIdx =
-					schema.getCFIntBackingStore().getFactoryURLProtocol().newByUNameIdxKey();
+					schema.getCFIntBackingStore().getCFIntFactory().getFactoryURLProtocol().newByUNameIdxKey();
 				keyUNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByUNameIdx.remove( keyUNameIdx );
 			}
 
 			if( indexByIsSecureIdx != null ) {
 				ICFIntURLProtocolByIsSecureIdxKey keyIsSecureIdx =
-					schema.getCFIntBackingStore().getFactoryURLProtocol().newByIsSecureIdxKey();
+					schema.getCFIntBackingStore().getCFIntFactory().getFactoryURLProtocol().newByIsSecureIdxKey();
 				keyIsSecureIdx.setRequiredIsSecure( keepObj.getRequiredIsSecure() );
 				Map<Integer, ICFIntURLProtocolObj > mapIsSecureIdx = indexByIsSecureIdx.get( keyIsSecureIdx );
 				if( mapIsSecureIdx != null ) {
@@ -226,14 +226,14 @@ public class CFIntURLProtocolTableObj
 
 			if( indexByUNameIdx != null ) {
 				ICFIntURLProtocolByUNameIdxKey keyUNameIdx =
-					schema.getCFIntBackingStore().getFactoryURLProtocol().newByUNameIdxKey();
+					schema.getCFIntBackingStore().getCFIntFactory().getFactoryURLProtocol().newByUNameIdxKey();
 				keyUNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByUNameIdx.put( keyUNameIdx, keepObj );
 			}
 
 			if( indexByIsSecureIdx != null ) {
 				ICFIntURLProtocolByIsSecureIdxKey keyIsSecureIdx =
-					schema.getCFIntBackingStore().getFactoryURLProtocol().newByIsSecureIdxKey();
+					schema.getCFIntBackingStore().getCFIntFactory().getFactoryURLProtocol().newByIsSecureIdxKey();
 				keyIsSecureIdx.setRequiredIsSecure( keepObj.getRequiredIsSecure() );
 				Map<Integer, ICFIntURLProtocolObj > mapIsSecureIdx = indexByIsSecureIdx.get( keyIsSecureIdx );
 				if( mapIsSecureIdx != null ) {
@@ -257,14 +257,14 @@ public class CFIntURLProtocolTableObj
 
 			if( indexByUNameIdx != null ) {
 				ICFIntURLProtocolByUNameIdxKey keyUNameIdx =
-					schema.getCFIntBackingStore().getFactoryURLProtocol().newByUNameIdxKey();
+					schema.getCFIntBackingStore().getCFIntFactory().getFactoryURLProtocol().newByUNameIdxKey();
 				keyUNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByUNameIdx.put( keyUNameIdx, keepObj );
 			}
 
 			if( indexByIsSecureIdx != null ) {
 				ICFIntURLProtocolByIsSecureIdxKey keyIsSecureIdx =
-					schema.getCFIntBackingStore().getFactoryURLProtocol().newByIsSecureIdxKey();
+					schema.getCFIntBackingStore().getCFIntFactory().getFactoryURLProtocol().newByIsSecureIdxKey();
 				keyIsSecureIdx.setRequiredIsSecure( keepObj.getRequiredIsSecure() );
 				Map<Integer, ICFIntURLProtocolObj > mapIsSecureIdx = indexByIsSecureIdx.get( keyIsSecureIdx );
 				if( mapIsSecureIdx != null ) {
@@ -336,10 +336,10 @@ public class CFIntURLProtocolTableObj
 			return;
 		}
 		members.remove( pkey );
-		ICFIntURLProtocolByUNameIdxKey keyUNameIdx = schema.getCFIntBackingStore().getFactoryURLProtocol().newByUNameIdxKey();
+		ICFIntURLProtocolByUNameIdxKey keyUNameIdx = schema.getCFIntBackingStore().getCFIntFactory().getFactoryURLProtocol().newByUNameIdxKey();
 		keyUNameIdx.setRequiredName( existing.getRequiredName() );
 
-		ICFIntURLProtocolByIsSecureIdxKey keyIsSecureIdx = schema.getCFIntBackingStore().getFactoryURLProtocol().newByIsSecureIdxKey();
+		ICFIntURLProtocolByIsSecureIdxKey keyIsSecureIdx = schema.getCFIntBackingStore().getCFIntFactory().getFactoryURLProtocol().newByIsSecureIdxKey();
 		keyIsSecureIdx.setRequiredIsSecure( existing.getRequiredIsSecure() );
 
 
@@ -545,7 +545,7 @@ public class CFIntURLProtocolTableObj
 			indexByUNameIdx = new HashMap< ICFIntURLProtocolByUNameIdxKey,
 				ICFIntURLProtocolObj >();
 		}
-		ICFIntURLProtocolByUNameIdxKey key = schema.getCFIntBackingStore().getFactoryURLProtocol().newByUNameIdxKey();
+		ICFIntURLProtocolByUNameIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryURLProtocol().newByUNameIdxKey();
 		key.setRequiredName( Name );
 		ICFIntURLProtocolObj obj = null;
 		if( ( ! forceRead ) && indexByUNameIdx.containsKey( key ) ) {
@@ -576,7 +576,7 @@ public class CFIntURLProtocolTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readURLProtocolByIsSecureIdx";
-		ICFIntURLProtocolByIsSecureIdxKey key = schema.getCFIntBackingStore().getFactoryURLProtocol().newByIsSecureIdxKey();
+		ICFIntURLProtocolByIsSecureIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryURLProtocol().newByIsSecureIdxKey();
 		key.setRequiredIsSecure( IsSecure );
 		Map<Integer, ICFIntURLProtocolObj> dict;
 		if( indexByIsSecureIdx == null ) {
@@ -669,7 +669,7 @@ public class CFIntURLProtocolTableObj
 	public ICFIntURLProtocolObj readCachedURLProtocolByUNameIdx( String Name )
 	{
 		ICFIntURLProtocolObj obj = null;
-		ICFIntURLProtocolByUNameIdxKey key = schema.getCFIntBackingStore().getFactoryURLProtocol().newByUNameIdxKey();
+		ICFIntURLProtocolByUNameIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryURLProtocol().newByUNameIdxKey();
 		key.setRequiredName( Name );
 		if( indexByUNameIdx != null ) {
 			if( indexByUNameIdx.containsKey( key ) ) {
@@ -705,7 +705,7 @@ public class CFIntURLProtocolTableObj
 	public List<ICFIntURLProtocolObj> readCachedURLProtocolByIsSecureIdx( boolean IsSecure )
 	{
 		final String S_ProcName = "readCachedURLProtocolByIsSecureIdx";
-		ICFIntURLProtocolByIsSecureIdxKey key = schema.getCFIntBackingStore().getFactoryURLProtocol().newByIsSecureIdxKey();
+		ICFIntURLProtocolByIsSecureIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryURLProtocol().newByIsSecureIdxKey();
 		key.setRequiredIsSecure( IsSecure );
 		ArrayList<ICFIntURLProtocolObj> arrayList = new ArrayList<ICFIntURLProtocolObj>();
 		if( indexByIsSecureIdx != null ) {
@@ -868,7 +868,7 @@ public class CFIntURLProtocolTableObj
 			indexByUNameIdx = new HashMap< ICFIntURLProtocolByUNameIdxKey,
 				ICFIntURLProtocolObj >();
 		}
-		ICFIntURLProtocolByUNameIdxKey key = schema.getCFIntBackingStore().getFactoryURLProtocol().newByUNameIdxKey();
+		ICFIntURLProtocolByUNameIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryURLProtocol().newByUNameIdxKey();
 		key.setRequiredName( Name );
 		ICFIntURLProtocolObj obj = null;
 		if( indexByUNameIdx.containsKey( key ) ) {
@@ -887,7 +887,7 @@ public class CFIntURLProtocolTableObj
 	@Override
 	public void deleteURLProtocolByIsSecureIdx( boolean IsSecure )
 	{
-		ICFIntURLProtocolByIsSecureIdxKey key = schema.getCFIntBackingStore().getFactoryURLProtocol().newByIsSecureIdxKey();
+		ICFIntURLProtocolByIsSecureIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryURLProtocol().newByIsSecureIdxKey();
 		key.setRequiredIsSecure( IsSecure );
 		if( indexByIsSecureIdx == null ) {
 			indexByIsSecureIdx = new HashMap< ICFIntURLProtocolByIsSecureIdxKey,

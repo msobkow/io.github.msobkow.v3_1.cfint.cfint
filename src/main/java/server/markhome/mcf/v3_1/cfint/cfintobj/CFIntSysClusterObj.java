@@ -238,7 +238,7 @@ public class CFIntSysClusterObj
 	public ICFSecSysCluster getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFSecBackingStore().getFactorySysCluster().newRec();
+				rec = getSchema().getCFSecBackingStore().getCFSecFactory().getFactorySysCluster().newRec();
 			}
 			else {
 				// Read the data rec via the backing store

@@ -192,7 +192,7 @@ public class CFIntSecClusGrpTableObj
 
 			if( indexByClusterIdx != null ) {
 				ICFSecSecClusGrpByClusterIdxKey keyClusterIdx =
-					schema.getCFSecBackingStore().getFactorySecClusGrp().newByClusterIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecClusGrp().newByClusterIdxKey();
 				keyClusterIdx.setRequiredClusterId( keepObj.getRequiredClusterId() );
 				Map<CFLibDbKeyHash256, ICFSecSecClusGrpObj > mapClusterIdx = indexByClusterIdx.get( keyClusterIdx );
 				if( mapClusterIdx != null ) {
@@ -205,7 +205,7 @@ public class CFIntSecClusGrpTableObj
 
 			if( indexByNameIdx != null ) {
 				ICFSecSecClusGrpByNameIdxKey keyNameIdx =
-					schema.getCFSecBackingStore().getFactorySecClusGrp().newByNameIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecClusGrp().newByNameIdxKey();
 				keyNameIdx.setRequiredName( keepObj.getRequiredName() );
 				Map<CFLibDbKeyHash256, ICFSecSecClusGrpObj > mapNameIdx = indexByNameIdx.get( keyNameIdx );
 				if( mapNameIdx != null ) {
@@ -218,7 +218,7 @@ public class CFIntSecClusGrpTableObj
 
 			if( indexByUNameIdx != null ) {
 				ICFSecSecClusGrpByUNameIdxKey keyUNameIdx =
-					schema.getCFSecBackingStore().getFactorySecClusGrp().newByUNameIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecClusGrp().newByUNameIdxKey();
 				keyUNameIdx.setRequiredClusterId( keepObj.getRequiredClusterId() );
 				keyUNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByUNameIdx.remove( keyUNameIdx );
@@ -229,7 +229,7 @@ public class CFIntSecClusGrpTableObj
 
 			if( indexByClusterIdx != null ) {
 				ICFSecSecClusGrpByClusterIdxKey keyClusterIdx =
-					schema.getCFSecBackingStore().getFactorySecClusGrp().newByClusterIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecClusGrp().newByClusterIdxKey();
 				keyClusterIdx.setRequiredClusterId( keepObj.getRequiredClusterId() );
 				Map<CFLibDbKeyHash256, ICFSecSecClusGrpObj > mapClusterIdx = indexByClusterIdx.get( keyClusterIdx );
 				if( mapClusterIdx != null ) {
@@ -239,7 +239,7 @@ public class CFIntSecClusGrpTableObj
 
 			if( indexByNameIdx != null ) {
 				ICFSecSecClusGrpByNameIdxKey keyNameIdx =
-					schema.getCFSecBackingStore().getFactorySecClusGrp().newByNameIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecClusGrp().newByNameIdxKey();
 				keyNameIdx.setRequiredName( keepObj.getRequiredName() );
 				Map<CFLibDbKeyHash256, ICFSecSecClusGrpObj > mapNameIdx = indexByNameIdx.get( keyNameIdx );
 				if( mapNameIdx != null ) {
@@ -249,7 +249,7 @@ public class CFIntSecClusGrpTableObj
 
 			if( indexByUNameIdx != null ) {
 				ICFSecSecClusGrpByUNameIdxKey keyUNameIdx =
-					schema.getCFSecBackingStore().getFactorySecClusGrp().newByUNameIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecClusGrp().newByUNameIdxKey();
 				keyUNameIdx.setRequiredClusterId( keepObj.getRequiredClusterId() );
 				keyUNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByUNameIdx.put( keyUNameIdx, keepObj );
@@ -271,7 +271,7 @@ public class CFIntSecClusGrpTableObj
 
 			if( indexByClusterIdx != null ) {
 				ICFSecSecClusGrpByClusterIdxKey keyClusterIdx =
-					schema.getCFSecBackingStore().getFactorySecClusGrp().newByClusterIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecClusGrp().newByClusterIdxKey();
 				keyClusterIdx.setRequiredClusterId( keepObj.getRequiredClusterId() );
 				Map<CFLibDbKeyHash256, ICFSecSecClusGrpObj > mapClusterIdx = indexByClusterIdx.get( keyClusterIdx );
 				if( mapClusterIdx != null ) {
@@ -281,7 +281,7 @@ public class CFIntSecClusGrpTableObj
 
 			if( indexByNameIdx != null ) {
 				ICFSecSecClusGrpByNameIdxKey keyNameIdx =
-					schema.getCFSecBackingStore().getFactorySecClusGrp().newByNameIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecClusGrp().newByNameIdxKey();
 				keyNameIdx.setRequiredName( keepObj.getRequiredName() );
 				Map<CFLibDbKeyHash256, ICFSecSecClusGrpObj > mapNameIdx = indexByNameIdx.get( keyNameIdx );
 				if( mapNameIdx != null ) {
@@ -291,7 +291,7 @@ public class CFIntSecClusGrpTableObj
 
 			if( indexByUNameIdx != null ) {
 				ICFSecSecClusGrpByUNameIdxKey keyUNameIdx =
-					schema.getCFSecBackingStore().getFactorySecClusGrp().newByUNameIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecClusGrp().newByUNameIdxKey();
 				keyUNameIdx.setRequiredClusterId( keepObj.getRequiredClusterId() );
 				keyUNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByUNameIdx.put( keyUNameIdx, keepObj );
@@ -361,13 +361,13 @@ public class CFIntSecClusGrpTableObj
 			return;
 		}
 		members.remove( pkey );
-		ICFSecSecClusGrpByClusterIdxKey keyClusterIdx = schema.getCFSecBackingStore().getFactorySecClusGrp().newByClusterIdxKey();
+		ICFSecSecClusGrpByClusterIdxKey keyClusterIdx = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecClusGrp().newByClusterIdxKey();
 		keyClusterIdx.setRequiredClusterId( existing.getRequiredClusterId() );
 
-		ICFSecSecClusGrpByNameIdxKey keyNameIdx = schema.getCFSecBackingStore().getFactorySecClusGrp().newByNameIdxKey();
+		ICFSecSecClusGrpByNameIdxKey keyNameIdx = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecClusGrp().newByNameIdxKey();
 		keyNameIdx.setRequiredName( existing.getRequiredName() );
 
-		ICFSecSecClusGrpByUNameIdxKey keyUNameIdx = schema.getCFSecBackingStore().getFactorySecClusGrp().newByUNameIdxKey();
+		ICFSecSecClusGrpByUNameIdxKey keyUNameIdx = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecClusGrp().newByUNameIdxKey();
 		keyUNameIdx.setRequiredClusterId( existing.getRequiredClusterId() );
 		keyUNameIdx.setRequiredName( existing.getRequiredName() );
 
@@ -582,7 +582,7 @@ public class CFIntSecClusGrpTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readSecClusGrpByClusterIdx";
-		ICFSecSecClusGrpByClusterIdxKey key = schema.getCFSecBackingStore().getFactorySecClusGrp().newByClusterIdxKey();
+		ICFSecSecClusGrpByClusterIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecClusGrp().newByClusterIdxKey();
 		key.setRequiredClusterId( ClusterId );
 		Map<CFLibDbKeyHash256, ICFSecSecClusGrpObj> dict;
 		if( indexByClusterIdx == null ) {
@@ -675,7 +675,7 @@ public class CFIntSecClusGrpTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readSecClusGrpByNameIdx";
-		ICFSecSecClusGrpByNameIdxKey key = schema.getCFSecBackingStore().getFactorySecClusGrp().newByNameIdxKey();
+		ICFSecSecClusGrpByNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecClusGrp().newByNameIdxKey();
 		key.setRequiredName( Name );
 		Map<CFLibDbKeyHash256, ICFSecSecClusGrpObj> dict;
 		if( indexByNameIdx == null ) {
@@ -773,7 +773,7 @@ public class CFIntSecClusGrpTableObj
 			indexByUNameIdx = new HashMap< ICFSecSecClusGrpByUNameIdxKey,
 				ICFSecSecClusGrpObj >();
 		}
-		ICFSecSecClusGrpByUNameIdxKey key = schema.getCFSecBackingStore().getFactorySecClusGrp().newByUNameIdxKey();
+		ICFSecSecClusGrpByUNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecClusGrp().newByUNameIdxKey();
 		key.setRequiredClusterId( ClusterId );
 		key.setRequiredName( Name );
 		ICFSecSecClusGrpObj obj = null;
@@ -806,7 +806,7 @@ public class CFIntSecClusGrpTableObj
 	public List<ICFSecSecClusGrpObj> readCachedSecClusGrpByClusterIdx( CFLibDbKeyHash256 ClusterId )
 	{
 		final String S_ProcName = "readCachedSecClusGrpByClusterIdx";
-		ICFSecSecClusGrpByClusterIdxKey key = schema.getCFSecBackingStore().getFactorySecClusGrp().newByClusterIdxKey();
+		ICFSecSecClusGrpByClusterIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecClusGrp().newByClusterIdxKey();
 		key.setRequiredClusterId( ClusterId );
 		ArrayList<ICFSecSecClusGrpObj> arrayList = new ArrayList<ICFSecSecClusGrpObj>();
 		if( indexByClusterIdx != null ) {
@@ -883,7 +883,7 @@ public class CFIntSecClusGrpTableObj
 	public List<ICFSecSecClusGrpObj> readCachedSecClusGrpByNameIdx( String Name )
 	{
 		final String S_ProcName = "readCachedSecClusGrpByNameIdx";
-		ICFSecSecClusGrpByNameIdxKey key = schema.getCFSecBackingStore().getFactorySecClusGrp().newByNameIdxKey();
+		ICFSecSecClusGrpByNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecClusGrp().newByNameIdxKey();
 		key.setRequiredName( Name );
 		ArrayList<ICFSecSecClusGrpObj> arrayList = new ArrayList<ICFSecSecClusGrpObj>();
 		if( indexByNameIdx != null ) {
@@ -961,7 +961,7 @@ public class CFIntSecClusGrpTableObj
 		String Name )
 	{
 		ICFSecSecClusGrpObj obj = null;
-		ICFSecSecClusGrpByUNameIdxKey key = schema.getCFSecBackingStore().getFactorySecClusGrp().newByUNameIdxKey();
+		ICFSecSecClusGrpByUNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecClusGrp().newByUNameIdxKey();
 		key.setRequiredClusterId( ClusterId );
 		key.setRequiredName( Name );
 		if( indexByUNameIdx != null ) {
@@ -1099,7 +1099,7 @@ public class CFIntSecClusGrpTableObj
 	@Override
 	public void deleteSecClusGrpByClusterIdx( CFLibDbKeyHash256 ClusterId )
 	{
-		ICFSecSecClusGrpByClusterIdxKey key = schema.getCFSecBackingStore().getFactorySecClusGrp().newByClusterIdxKey();
+		ICFSecSecClusGrpByClusterIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecClusGrp().newByClusterIdxKey();
 		key.setRequiredClusterId( ClusterId );
 		if( indexByClusterIdx == null ) {
 			indexByClusterIdx = new HashMap< ICFSecSecClusGrpByClusterIdxKey,
@@ -1133,7 +1133,7 @@ public class CFIntSecClusGrpTableObj
 	@Override
 	public void deleteSecClusGrpByNameIdx( String Name )
 	{
-		ICFSecSecClusGrpByNameIdxKey key = schema.getCFSecBackingStore().getFactorySecClusGrp().newByNameIdxKey();
+		ICFSecSecClusGrpByNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecClusGrp().newByNameIdxKey();
 		key.setRequiredName( Name );
 		if( indexByNameIdx == null ) {
 			indexByNameIdx = new HashMap< ICFSecSecClusGrpByNameIdxKey,
@@ -1172,7 +1172,7 @@ public class CFIntSecClusGrpTableObj
 			indexByUNameIdx = new HashMap< ICFSecSecClusGrpByUNameIdxKey,
 				ICFSecSecClusGrpObj >();
 		}
-		ICFSecSecClusGrpByUNameIdxKey key = schema.getCFSecBackingStore().getFactorySecClusGrp().newByUNameIdxKey();
+		ICFSecSecClusGrpByUNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecClusGrp().newByUNameIdxKey();
 		key.setRequiredClusterId( ClusterId );
 		key.setRequiredName( Name );
 		ICFSecSecClusGrpObj obj = null;

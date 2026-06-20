@@ -182,7 +182,7 @@ public class CFIntSysClusterTableObj
 
 			if( indexByClusterIdx != null ) {
 				ICFSecSysClusterByClusterIdxKey keyClusterIdx =
-					schema.getCFSecBackingStore().getFactorySysCluster().newByClusterIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySysCluster().newByClusterIdxKey();
 				keyClusterIdx.setRequiredClusterId( keepObj.getRequiredClusterId() );
 				Map<Integer, ICFSecSysClusterObj > mapClusterIdx = indexByClusterIdx.get( keyClusterIdx );
 				if( mapClusterIdx != null ) {
@@ -198,7 +198,7 @@ public class CFIntSysClusterTableObj
 
 			if( indexByClusterIdx != null ) {
 				ICFSecSysClusterByClusterIdxKey keyClusterIdx =
-					schema.getCFSecBackingStore().getFactorySysCluster().newByClusterIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySysCluster().newByClusterIdxKey();
 				keyClusterIdx.setRequiredClusterId( keepObj.getRequiredClusterId() );
 				Map<Integer, ICFSecSysClusterObj > mapClusterIdx = indexByClusterIdx.get( keyClusterIdx );
 				if( mapClusterIdx != null ) {
@@ -222,7 +222,7 @@ public class CFIntSysClusterTableObj
 
 			if( indexByClusterIdx != null ) {
 				ICFSecSysClusterByClusterIdxKey keyClusterIdx =
-					schema.getCFSecBackingStore().getFactorySysCluster().newByClusterIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySysCluster().newByClusterIdxKey();
 				keyClusterIdx.setRequiredClusterId( keepObj.getRequiredClusterId() );
 				Map<Integer, ICFSecSysClusterObj > mapClusterIdx = indexByClusterIdx.get( keyClusterIdx );
 				if( mapClusterIdx != null ) {
@@ -294,7 +294,7 @@ public class CFIntSysClusterTableObj
 			return;
 		}
 		members.remove( pkey );
-		ICFSecSysClusterByClusterIdxKey keyClusterIdx = schema.getCFSecBackingStore().getFactorySysCluster().newByClusterIdxKey();
+		ICFSecSysClusterByClusterIdxKey keyClusterIdx = schema.getCFSecBackingStore().getCFSecFactory().getFactorySysCluster().newByClusterIdxKey();
 		keyClusterIdx.setRequiredClusterId( existing.getRequiredClusterId() );
 
 
@@ -494,7 +494,7 @@ public class CFIntSysClusterTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readSysClusterByClusterIdx";
-		ICFSecSysClusterByClusterIdxKey key = schema.getCFSecBackingStore().getFactorySysCluster().newByClusterIdxKey();
+		ICFSecSysClusterByClusterIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySysCluster().newByClusterIdxKey();
 		key.setRequiredClusterId( ClusterId );
 		Map<Integer, ICFSecSysClusterObj> dict;
 		if( indexByClusterIdx == null ) {
@@ -587,7 +587,7 @@ public class CFIntSysClusterTableObj
 	public List<ICFSecSysClusterObj> readCachedSysClusterByClusterIdx( CFLibDbKeyHash256 ClusterId )
 	{
 		final String S_ProcName = "readCachedSysClusterByClusterIdx";
-		ICFSecSysClusterByClusterIdxKey key = schema.getCFSecBackingStore().getFactorySysCluster().newByClusterIdxKey();
+		ICFSecSysClusterByClusterIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySysCluster().newByClusterIdxKey();
 		key.setRequiredClusterId( ClusterId );
 		ArrayList<ICFSecSysClusterObj> arrayList = new ArrayList<ICFSecSysClusterObj>();
 		if( indexByClusterIdx != null ) {
@@ -737,7 +737,7 @@ public class CFIntSysClusterTableObj
 	@Override
 	public void deleteSysClusterByClusterIdx( CFLibDbKeyHash256 ClusterId )
 	{
-		ICFSecSysClusterByClusterIdxKey key = schema.getCFSecBackingStore().getFactorySysCluster().newByClusterIdxKey();
+		ICFSecSysClusterByClusterIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySysCluster().newByClusterIdxKey();
 		key.setRequiredClusterId( ClusterId );
 		if( indexByClusterIdx == null ) {
 			indexByClusterIdx = new HashMap< ICFSecSysClusterByClusterIdxKey,

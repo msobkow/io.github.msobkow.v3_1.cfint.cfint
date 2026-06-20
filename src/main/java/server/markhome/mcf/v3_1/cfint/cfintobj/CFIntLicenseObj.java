@@ -243,7 +243,7 @@ public class CFIntLicenseObj
 	public ICFIntLicense getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFIntBackingStore().getFactoryLicense().newRec();
+				rec = getSchema().getCFIntBackingStore().getCFIntFactory().getFactoryLicense().newRec();
 			}
 			else {
 				// Read the data rec via the backing store

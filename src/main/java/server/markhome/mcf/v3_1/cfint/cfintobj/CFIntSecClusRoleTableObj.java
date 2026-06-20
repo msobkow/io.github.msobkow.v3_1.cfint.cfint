@@ -192,7 +192,7 @@ public class CFIntSecClusRoleTableObj
 
 			if( indexByClusterIdx != null ) {
 				ICFSecSecClusRoleByClusterIdxKey keyClusterIdx =
-					schema.getCFSecBackingStore().getFactorySecClusRole().newByClusterIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecClusRole().newByClusterIdxKey();
 				keyClusterIdx.setRequiredClusterId( keepObj.getRequiredClusterId() );
 				Map<CFLibDbKeyHash256, ICFSecSecClusRoleObj > mapClusterIdx = indexByClusterIdx.get( keyClusterIdx );
 				if( mapClusterIdx != null ) {
@@ -205,7 +205,7 @@ public class CFIntSecClusRoleTableObj
 
 			if( indexByNameIdx != null ) {
 				ICFSecSecClusRoleByNameIdxKey keyNameIdx =
-					schema.getCFSecBackingStore().getFactorySecClusRole().newByNameIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecClusRole().newByNameIdxKey();
 				keyNameIdx.setRequiredName( keepObj.getRequiredName() );
 				Map<CFLibDbKeyHash256, ICFSecSecClusRoleObj > mapNameIdx = indexByNameIdx.get( keyNameIdx );
 				if( mapNameIdx != null ) {
@@ -218,7 +218,7 @@ public class CFIntSecClusRoleTableObj
 
 			if( indexByUNameIdx != null ) {
 				ICFSecSecClusRoleByUNameIdxKey keyUNameIdx =
-					schema.getCFSecBackingStore().getFactorySecClusRole().newByUNameIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecClusRole().newByUNameIdxKey();
 				keyUNameIdx.setRequiredClusterId( keepObj.getRequiredClusterId() );
 				keyUNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByUNameIdx.remove( keyUNameIdx );
@@ -229,7 +229,7 @@ public class CFIntSecClusRoleTableObj
 
 			if( indexByClusterIdx != null ) {
 				ICFSecSecClusRoleByClusterIdxKey keyClusterIdx =
-					schema.getCFSecBackingStore().getFactorySecClusRole().newByClusterIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecClusRole().newByClusterIdxKey();
 				keyClusterIdx.setRequiredClusterId( keepObj.getRequiredClusterId() );
 				Map<CFLibDbKeyHash256, ICFSecSecClusRoleObj > mapClusterIdx = indexByClusterIdx.get( keyClusterIdx );
 				if( mapClusterIdx != null ) {
@@ -239,7 +239,7 @@ public class CFIntSecClusRoleTableObj
 
 			if( indexByNameIdx != null ) {
 				ICFSecSecClusRoleByNameIdxKey keyNameIdx =
-					schema.getCFSecBackingStore().getFactorySecClusRole().newByNameIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecClusRole().newByNameIdxKey();
 				keyNameIdx.setRequiredName( keepObj.getRequiredName() );
 				Map<CFLibDbKeyHash256, ICFSecSecClusRoleObj > mapNameIdx = indexByNameIdx.get( keyNameIdx );
 				if( mapNameIdx != null ) {
@@ -249,7 +249,7 @@ public class CFIntSecClusRoleTableObj
 
 			if( indexByUNameIdx != null ) {
 				ICFSecSecClusRoleByUNameIdxKey keyUNameIdx =
-					schema.getCFSecBackingStore().getFactorySecClusRole().newByUNameIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecClusRole().newByUNameIdxKey();
 				keyUNameIdx.setRequiredClusterId( keepObj.getRequiredClusterId() );
 				keyUNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByUNameIdx.put( keyUNameIdx, keepObj );
@@ -271,7 +271,7 @@ public class CFIntSecClusRoleTableObj
 
 			if( indexByClusterIdx != null ) {
 				ICFSecSecClusRoleByClusterIdxKey keyClusterIdx =
-					schema.getCFSecBackingStore().getFactorySecClusRole().newByClusterIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecClusRole().newByClusterIdxKey();
 				keyClusterIdx.setRequiredClusterId( keepObj.getRequiredClusterId() );
 				Map<CFLibDbKeyHash256, ICFSecSecClusRoleObj > mapClusterIdx = indexByClusterIdx.get( keyClusterIdx );
 				if( mapClusterIdx != null ) {
@@ -281,7 +281,7 @@ public class CFIntSecClusRoleTableObj
 
 			if( indexByNameIdx != null ) {
 				ICFSecSecClusRoleByNameIdxKey keyNameIdx =
-					schema.getCFSecBackingStore().getFactorySecClusRole().newByNameIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecClusRole().newByNameIdxKey();
 				keyNameIdx.setRequiredName( keepObj.getRequiredName() );
 				Map<CFLibDbKeyHash256, ICFSecSecClusRoleObj > mapNameIdx = indexByNameIdx.get( keyNameIdx );
 				if( mapNameIdx != null ) {
@@ -291,7 +291,7 @@ public class CFIntSecClusRoleTableObj
 
 			if( indexByUNameIdx != null ) {
 				ICFSecSecClusRoleByUNameIdxKey keyUNameIdx =
-					schema.getCFSecBackingStore().getFactorySecClusRole().newByUNameIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecClusRole().newByUNameIdxKey();
 				keyUNameIdx.setRequiredClusterId( keepObj.getRequiredClusterId() );
 				keyUNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByUNameIdx.put( keyUNameIdx, keepObj );
@@ -361,13 +361,13 @@ public class CFIntSecClusRoleTableObj
 			return;
 		}
 		members.remove( pkey );
-		ICFSecSecClusRoleByClusterIdxKey keyClusterIdx = schema.getCFSecBackingStore().getFactorySecClusRole().newByClusterIdxKey();
+		ICFSecSecClusRoleByClusterIdxKey keyClusterIdx = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecClusRole().newByClusterIdxKey();
 		keyClusterIdx.setRequiredClusterId( existing.getRequiredClusterId() );
 
-		ICFSecSecClusRoleByNameIdxKey keyNameIdx = schema.getCFSecBackingStore().getFactorySecClusRole().newByNameIdxKey();
+		ICFSecSecClusRoleByNameIdxKey keyNameIdx = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecClusRole().newByNameIdxKey();
 		keyNameIdx.setRequiredName( existing.getRequiredName() );
 
-		ICFSecSecClusRoleByUNameIdxKey keyUNameIdx = schema.getCFSecBackingStore().getFactorySecClusRole().newByUNameIdxKey();
+		ICFSecSecClusRoleByUNameIdxKey keyUNameIdx = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecClusRole().newByUNameIdxKey();
 		keyUNameIdx.setRequiredClusterId( existing.getRequiredClusterId() );
 		keyUNameIdx.setRequiredName( existing.getRequiredName() );
 
@@ -582,7 +582,7 @@ public class CFIntSecClusRoleTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readSecClusRoleByClusterIdx";
-		ICFSecSecClusRoleByClusterIdxKey key = schema.getCFSecBackingStore().getFactorySecClusRole().newByClusterIdxKey();
+		ICFSecSecClusRoleByClusterIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecClusRole().newByClusterIdxKey();
 		key.setRequiredClusterId( ClusterId );
 		Map<CFLibDbKeyHash256, ICFSecSecClusRoleObj> dict;
 		if( indexByClusterIdx == null ) {
@@ -675,7 +675,7 @@ public class CFIntSecClusRoleTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readSecClusRoleByNameIdx";
-		ICFSecSecClusRoleByNameIdxKey key = schema.getCFSecBackingStore().getFactorySecClusRole().newByNameIdxKey();
+		ICFSecSecClusRoleByNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecClusRole().newByNameIdxKey();
 		key.setRequiredName( Name );
 		Map<CFLibDbKeyHash256, ICFSecSecClusRoleObj> dict;
 		if( indexByNameIdx == null ) {
@@ -773,7 +773,7 @@ public class CFIntSecClusRoleTableObj
 			indexByUNameIdx = new HashMap< ICFSecSecClusRoleByUNameIdxKey,
 				ICFSecSecClusRoleObj >();
 		}
-		ICFSecSecClusRoleByUNameIdxKey key = schema.getCFSecBackingStore().getFactorySecClusRole().newByUNameIdxKey();
+		ICFSecSecClusRoleByUNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecClusRole().newByUNameIdxKey();
 		key.setRequiredClusterId( ClusterId );
 		key.setRequiredName( Name );
 		ICFSecSecClusRoleObj obj = null;
@@ -806,7 +806,7 @@ public class CFIntSecClusRoleTableObj
 	public List<ICFSecSecClusRoleObj> readCachedSecClusRoleByClusterIdx( CFLibDbKeyHash256 ClusterId )
 	{
 		final String S_ProcName = "readCachedSecClusRoleByClusterIdx";
-		ICFSecSecClusRoleByClusterIdxKey key = schema.getCFSecBackingStore().getFactorySecClusRole().newByClusterIdxKey();
+		ICFSecSecClusRoleByClusterIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecClusRole().newByClusterIdxKey();
 		key.setRequiredClusterId( ClusterId );
 		ArrayList<ICFSecSecClusRoleObj> arrayList = new ArrayList<ICFSecSecClusRoleObj>();
 		if( indexByClusterIdx != null ) {
@@ -883,7 +883,7 @@ public class CFIntSecClusRoleTableObj
 	public List<ICFSecSecClusRoleObj> readCachedSecClusRoleByNameIdx( String Name )
 	{
 		final String S_ProcName = "readCachedSecClusRoleByNameIdx";
-		ICFSecSecClusRoleByNameIdxKey key = schema.getCFSecBackingStore().getFactorySecClusRole().newByNameIdxKey();
+		ICFSecSecClusRoleByNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecClusRole().newByNameIdxKey();
 		key.setRequiredName( Name );
 		ArrayList<ICFSecSecClusRoleObj> arrayList = new ArrayList<ICFSecSecClusRoleObj>();
 		if( indexByNameIdx != null ) {
@@ -961,7 +961,7 @@ public class CFIntSecClusRoleTableObj
 		String Name )
 	{
 		ICFSecSecClusRoleObj obj = null;
-		ICFSecSecClusRoleByUNameIdxKey key = schema.getCFSecBackingStore().getFactorySecClusRole().newByUNameIdxKey();
+		ICFSecSecClusRoleByUNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecClusRole().newByUNameIdxKey();
 		key.setRequiredClusterId( ClusterId );
 		key.setRequiredName( Name );
 		if( indexByUNameIdx != null ) {
@@ -1099,7 +1099,7 @@ public class CFIntSecClusRoleTableObj
 	@Override
 	public void deleteSecClusRoleByClusterIdx( CFLibDbKeyHash256 ClusterId )
 	{
-		ICFSecSecClusRoleByClusterIdxKey key = schema.getCFSecBackingStore().getFactorySecClusRole().newByClusterIdxKey();
+		ICFSecSecClusRoleByClusterIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecClusRole().newByClusterIdxKey();
 		key.setRequiredClusterId( ClusterId );
 		if( indexByClusterIdx == null ) {
 			indexByClusterIdx = new HashMap< ICFSecSecClusRoleByClusterIdxKey,
@@ -1133,7 +1133,7 @@ public class CFIntSecClusRoleTableObj
 	@Override
 	public void deleteSecClusRoleByNameIdx( String Name )
 	{
-		ICFSecSecClusRoleByNameIdxKey key = schema.getCFSecBackingStore().getFactorySecClusRole().newByNameIdxKey();
+		ICFSecSecClusRoleByNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecClusRole().newByNameIdxKey();
 		key.setRequiredName( Name );
 		if( indexByNameIdx == null ) {
 			indexByNameIdx = new HashMap< ICFSecSecClusRoleByNameIdxKey,
@@ -1172,7 +1172,7 @@ public class CFIntSecClusRoleTableObj
 			indexByUNameIdx = new HashMap< ICFSecSecClusRoleByUNameIdxKey,
 				ICFSecSecClusRoleObj >();
 		}
-		ICFSecSecClusRoleByUNameIdxKey key = schema.getCFSecBackingStore().getFactorySecClusRole().newByUNameIdxKey();
+		ICFSecSecClusRoleByUNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecClusRole().newByUNameIdxKey();
 		key.setRequiredClusterId( ClusterId );
 		key.setRequiredName( Name );
 		ICFSecSecClusRoleObj obj = null;

@@ -203,7 +203,7 @@ public class CFIntTldTableObj
 
 			if( indexByTenantIdx != null ) {
 				ICFIntTldByTenantIdxKey keyTenantIdx =
-					schema.getCFIntBackingStore().getFactoryTld().newByTenantIdxKey();
+					schema.getCFIntBackingStore().getCFIntFactory().getFactoryTld().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
 				Map<CFLibDbKeyHash256, ICFIntTldObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
@@ -216,7 +216,7 @@ public class CFIntTldTableObj
 
 			if( indexByNameIdx != null ) {
 				ICFIntTldByNameIdxKey keyNameIdx =
-					schema.getCFIntBackingStore().getFactoryTld().newByNameIdxKey();
+					schema.getCFIntBackingStore().getCFIntFactory().getFactoryTld().newByNameIdxKey();
 				keyNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByNameIdx.remove( keyNameIdx );
 			}
@@ -226,7 +226,7 @@ public class CFIntTldTableObj
 
 			if( indexByTenantIdx != null ) {
 				ICFIntTldByTenantIdxKey keyTenantIdx =
-					schema.getCFIntBackingStore().getFactoryTld().newByTenantIdxKey();
+					schema.getCFIntBackingStore().getCFIntFactory().getFactoryTld().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
 				Map<CFLibDbKeyHash256, ICFIntTldObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
@@ -236,7 +236,7 @@ public class CFIntTldTableObj
 
 			if( indexByNameIdx != null ) {
 				ICFIntTldByNameIdxKey keyNameIdx =
-					schema.getCFIntBackingStore().getFactoryTld().newByNameIdxKey();
+					schema.getCFIntBackingStore().getCFIntFactory().getFactoryTld().newByNameIdxKey();
 				keyNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByNameIdx.put( keyNameIdx, keepObj );
 			}
@@ -257,7 +257,7 @@ public class CFIntTldTableObj
 
 			if( indexByTenantIdx != null ) {
 				ICFIntTldByTenantIdxKey keyTenantIdx =
-					schema.getCFIntBackingStore().getFactoryTld().newByTenantIdxKey();
+					schema.getCFIntBackingStore().getCFIntFactory().getFactoryTld().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
 				Map<CFLibDbKeyHash256, ICFIntTldObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
@@ -267,7 +267,7 @@ public class CFIntTldTableObj
 
 			if( indexByNameIdx != null ) {
 				ICFIntTldByNameIdxKey keyNameIdx =
-					schema.getCFIntBackingStore().getFactoryTld().newByNameIdxKey();
+					schema.getCFIntBackingStore().getCFIntFactory().getFactoryTld().newByNameIdxKey();
 				keyNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByNameIdx.put( keyNameIdx, keepObj );
 			}
@@ -336,10 +336,10 @@ public class CFIntTldTableObj
 			return;
 		}
 		members.remove( pkey );
-		ICFIntTldByTenantIdxKey keyTenantIdx = schema.getCFIntBackingStore().getFactoryTld().newByTenantIdxKey();
+		ICFIntTldByTenantIdxKey keyTenantIdx = schema.getCFIntBackingStore().getCFIntFactory().getFactoryTld().newByTenantIdxKey();
 		keyTenantIdx.setRequiredTenantId( existing.getRequiredTenantId() );
 
-		ICFIntTldByNameIdxKey keyNameIdx = schema.getCFIntBackingStore().getFactoryTld().newByNameIdxKey();
+		ICFIntTldByNameIdxKey keyNameIdx = schema.getCFIntBackingStore().getCFIntFactory().getFactoryTld().newByNameIdxKey();
 		keyNameIdx.setRequiredName( existing.getRequiredName() );
 
 
@@ -544,7 +544,7 @@ public class CFIntTldTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readTldByTenantIdx";
-		ICFIntTldByTenantIdxKey key = schema.getCFIntBackingStore().getFactoryTld().newByTenantIdxKey();
+		ICFIntTldByTenantIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryTld().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
 		Map<CFLibDbKeyHash256, ICFIntTldObj> dict;
 		if( indexByTenantIdx == null ) {
@@ -639,7 +639,7 @@ public class CFIntTldTableObj
 			indexByNameIdx = new HashMap< ICFIntTldByNameIdxKey,
 				ICFIntTldObj >();
 		}
-		ICFIntTldByNameIdxKey key = schema.getCFIntBackingStore().getFactoryTld().newByNameIdxKey();
+		ICFIntTldByNameIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryTld().newByNameIdxKey();
 		key.setRequiredName( Name );
 		ICFIntTldObj obj = null;
 		if( ( ! forceRead ) && indexByNameIdx.containsKey( key ) ) {
@@ -670,7 +670,7 @@ public class CFIntTldTableObj
 	public List<ICFIntTldObj> readCachedTldByTenantIdx( CFLibDbKeyHash256 TenantId )
 	{
 		final String S_ProcName = "readCachedTldByTenantIdx";
-		ICFIntTldByTenantIdxKey key = schema.getCFIntBackingStore().getFactoryTld().newByTenantIdxKey();
+		ICFIntTldByTenantIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryTld().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
 		ArrayList<ICFIntTldObj> arrayList = new ArrayList<ICFIntTldObj>();
 		if( indexByTenantIdx != null ) {
@@ -747,7 +747,7 @@ public class CFIntTldTableObj
 	public ICFIntTldObj readCachedTldByNameIdx( String Name )
 	{
 		ICFIntTldObj obj = null;
-		ICFIntTldByNameIdxKey key = schema.getCFIntBackingStore().getFactoryTld().newByNameIdxKey();
+		ICFIntTldByNameIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryTld().newByNameIdxKey();
 		key.setRequiredName( Name );
 		if( indexByNameIdx != null ) {
 			if( indexByNameIdx.containsKey( key ) ) {
@@ -865,7 +865,7 @@ public class CFIntTldTableObj
 	@Override
 	public void deleteTldByTenantIdx( CFLibDbKeyHash256 TenantId )
 	{
-		ICFIntTldByTenantIdxKey key = schema.getCFIntBackingStore().getFactoryTld().newByTenantIdxKey();
+		ICFIntTldByTenantIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryTld().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
 		if( indexByTenantIdx == null ) {
 			indexByTenantIdx = new HashMap< ICFIntTldByTenantIdxKey,
@@ -903,7 +903,7 @@ public class CFIntTldTableObj
 			indexByNameIdx = new HashMap< ICFIntTldByNameIdxKey,
 				ICFIntTldObj >();
 		}
-		ICFIntTldByNameIdxKey key = schema.getCFIntBackingStore().getFactoryTld().newByNameIdxKey();
+		ICFIntTldByNameIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryTld().newByNameIdxKey();
 		key.setRequiredName( Name );
 		ICFIntTldObj obj = null;
 		if( indexByNameIdx.containsKey( key ) ) {

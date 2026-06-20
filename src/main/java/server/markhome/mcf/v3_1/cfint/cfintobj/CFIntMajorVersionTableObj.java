@@ -208,7 +208,7 @@ public class CFIntMajorVersionTableObj
 
 			if( indexByTenantIdx != null ) {
 				ICFIntMajorVersionByTenantIdxKey keyTenantIdx =
-					schema.getCFIntBackingStore().getFactoryMajorVersion().newByTenantIdxKey();
+					schema.getCFIntBackingStore().getCFIntFactory().getFactoryMajorVersion().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
 				Map<CFLibDbKeyHash256, ICFIntMajorVersionObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
@@ -221,7 +221,7 @@ public class CFIntMajorVersionTableObj
 
 			if( indexBySubProjectIdx != null ) {
 				ICFIntMajorVersionBySubProjectIdxKey keySubProjectIdx =
-					schema.getCFIntBackingStore().getFactoryMajorVersion().newBySubProjectIdxKey();
+					schema.getCFIntBackingStore().getCFIntFactory().getFactoryMajorVersion().newBySubProjectIdxKey();
 				keySubProjectIdx.setRequiredSubProjectId( keepObj.getRequiredSubProjectId() );
 				Map<CFLibDbKeyHash256, ICFIntMajorVersionObj > mapSubProjectIdx = indexBySubProjectIdx.get( keySubProjectIdx );
 				if( mapSubProjectIdx != null ) {
@@ -234,7 +234,7 @@ public class CFIntMajorVersionTableObj
 
 			if( indexByNameIdx != null ) {
 				ICFIntMajorVersionByNameIdxKey keyNameIdx =
-					schema.getCFIntBackingStore().getFactoryMajorVersion().newByNameIdxKey();
+					schema.getCFIntBackingStore().getCFIntFactory().getFactoryMajorVersion().newByNameIdxKey();
 				keyNameIdx.setRequiredSubProjectId( keepObj.getRequiredSubProjectId() );
 				keyNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByNameIdx.remove( keyNameIdx );
@@ -245,7 +245,7 @@ public class CFIntMajorVersionTableObj
 
 			if( indexByTenantIdx != null ) {
 				ICFIntMajorVersionByTenantIdxKey keyTenantIdx =
-					schema.getCFIntBackingStore().getFactoryMajorVersion().newByTenantIdxKey();
+					schema.getCFIntBackingStore().getCFIntFactory().getFactoryMajorVersion().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
 				Map<CFLibDbKeyHash256, ICFIntMajorVersionObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
@@ -255,7 +255,7 @@ public class CFIntMajorVersionTableObj
 
 			if( indexBySubProjectIdx != null ) {
 				ICFIntMajorVersionBySubProjectIdxKey keySubProjectIdx =
-					schema.getCFIntBackingStore().getFactoryMajorVersion().newBySubProjectIdxKey();
+					schema.getCFIntBackingStore().getCFIntFactory().getFactoryMajorVersion().newBySubProjectIdxKey();
 				keySubProjectIdx.setRequiredSubProjectId( keepObj.getRequiredSubProjectId() );
 				Map<CFLibDbKeyHash256, ICFIntMajorVersionObj > mapSubProjectIdx = indexBySubProjectIdx.get( keySubProjectIdx );
 				if( mapSubProjectIdx != null ) {
@@ -265,7 +265,7 @@ public class CFIntMajorVersionTableObj
 
 			if( indexByNameIdx != null ) {
 				ICFIntMajorVersionByNameIdxKey keyNameIdx =
-					schema.getCFIntBackingStore().getFactoryMajorVersion().newByNameIdxKey();
+					schema.getCFIntBackingStore().getCFIntFactory().getFactoryMajorVersion().newByNameIdxKey();
 				keyNameIdx.setRequiredSubProjectId( keepObj.getRequiredSubProjectId() );
 				keyNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByNameIdx.put( keyNameIdx, keepObj );
@@ -287,7 +287,7 @@ public class CFIntMajorVersionTableObj
 
 			if( indexByTenantIdx != null ) {
 				ICFIntMajorVersionByTenantIdxKey keyTenantIdx =
-					schema.getCFIntBackingStore().getFactoryMajorVersion().newByTenantIdxKey();
+					schema.getCFIntBackingStore().getCFIntFactory().getFactoryMajorVersion().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
 				Map<CFLibDbKeyHash256, ICFIntMajorVersionObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
@@ -297,7 +297,7 @@ public class CFIntMajorVersionTableObj
 
 			if( indexBySubProjectIdx != null ) {
 				ICFIntMajorVersionBySubProjectIdxKey keySubProjectIdx =
-					schema.getCFIntBackingStore().getFactoryMajorVersion().newBySubProjectIdxKey();
+					schema.getCFIntBackingStore().getCFIntFactory().getFactoryMajorVersion().newBySubProjectIdxKey();
 				keySubProjectIdx.setRequiredSubProjectId( keepObj.getRequiredSubProjectId() );
 				Map<CFLibDbKeyHash256, ICFIntMajorVersionObj > mapSubProjectIdx = indexBySubProjectIdx.get( keySubProjectIdx );
 				if( mapSubProjectIdx != null ) {
@@ -307,7 +307,7 @@ public class CFIntMajorVersionTableObj
 
 			if( indexByNameIdx != null ) {
 				ICFIntMajorVersionByNameIdxKey keyNameIdx =
-					schema.getCFIntBackingStore().getFactoryMajorVersion().newByNameIdxKey();
+					schema.getCFIntBackingStore().getCFIntFactory().getFactoryMajorVersion().newByNameIdxKey();
 				keyNameIdx.setRequiredSubProjectId( keepObj.getRequiredSubProjectId() );
 				keyNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByNameIdx.put( keyNameIdx, keepObj );
@@ -377,13 +377,13 @@ public class CFIntMajorVersionTableObj
 			return;
 		}
 		members.remove( pkey );
-		ICFIntMajorVersionByTenantIdxKey keyTenantIdx = schema.getCFIntBackingStore().getFactoryMajorVersion().newByTenantIdxKey();
+		ICFIntMajorVersionByTenantIdxKey keyTenantIdx = schema.getCFIntBackingStore().getCFIntFactory().getFactoryMajorVersion().newByTenantIdxKey();
 		keyTenantIdx.setRequiredTenantId( existing.getRequiredTenantId() );
 
-		ICFIntMajorVersionBySubProjectIdxKey keySubProjectIdx = schema.getCFIntBackingStore().getFactoryMajorVersion().newBySubProjectIdxKey();
+		ICFIntMajorVersionBySubProjectIdxKey keySubProjectIdx = schema.getCFIntBackingStore().getCFIntFactory().getFactoryMajorVersion().newBySubProjectIdxKey();
 		keySubProjectIdx.setRequiredSubProjectId( existing.getRequiredSubProjectId() );
 
-		ICFIntMajorVersionByNameIdxKey keyNameIdx = schema.getCFIntBackingStore().getFactoryMajorVersion().newByNameIdxKey();
+		ICFIntMajorVersionByNameIdxKey keyNameIdx = schema.getCFIntBackingStore().getCFIntFactory().getFactoryMajorVersion().newByNameIdxKey();
 		keyNameIdx.setRequiredSubProjectId( existing.getRequiredSubProjectId() );
 		keyNameIdx.setRequiredName( existing.getRequiredName() );
 
@@ -598,7 +598,7 @@ public class CFIntMajorVersionTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readMajorVersionByTenantIdx";
-		ICFIntMajorVersionByTenantIdxKey key = schema.getCFIntBackingStore().getFactoryMajorVersion().newByTenantIdxKey();
+		ICFIntMajorVersionByTenantIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryMajorVersion().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
 		Map<CFLibDbKeyHash256, ICFIntMajorVersionObj> dict;
 		if( indexByTenantIdx == null ) {
@@ -691,7 +691,7 @@ public class CFIntMajorVersionTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readMajorVersionBySubProjectIdx";
-		ICFIntMajorVersionBySubProjectIdxKey key = schema.getCFIntBackingStore().getFactoryMajorVersion().newBySubProjectIdxKey();
+		ICFIntMajorVersionBySubProjectIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryMajorVersion().newBySubProjectIdxKey();
 		key.setRequiredSubProjectId( SubProjectId );
 		Map<CFLibDbKeyHash256, ICFIntMajorVersionObj> dict;
 		if( indexBySubProjectIdx == null ) {
@@ -789,7 +789,7 @@ public class CFIntMajorVersionTableObj
 			indexByNameIdx = new HashMap< ICFIntMajorVersionByNameIdxKey,
 				ICFIntMajorVersionObj >();
 		}
-		ICFIntMajorVersionByNameIdxKey key = schema.getCFIntBackingStore().getFactoryMajorVersion().newByNameIdxKey();
+		ICFIntMajorVersionByNameIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryMajorVersion().newByNameIdxKey();
 		key.setRequiredSubProjectId( SubProjectId );
 		key.setRequiredName( Name );
 		ICFIntMajorVersionObj obj = null;
@@ -822,7 +822,7 @@ public class CFIntMajorVersionTableObj
 	public List<ICFIntMajorVersionObj> readCachedMajorVersionByTenantIdx( CFLibDbKeyHash256 TenantId )
 	{
 		final String S_ProcName = "readCachedMajorVersionByTenantIdx";
-		ICFIntMajorVersionByTenantIdxKey key = schema.getCFIntBackingStore().getFactoryMajorVersion().newByTenantIdxKey();
+		ICFIntMajorVersionByTenantIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryMajorVersion().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
 		ArrayList<ICFIntMajorVersionObj> arrayList = new ArrayList<ICFIntMajorVersionObj>();
 		if( indexByTenantIdx != null ) {
@@ -899,7 +899,7 @@ public class CFIntMajorVersionTableObj
 	public List<ICFIntMajorVersionObj> readCachedMajorVersionBySubProjectIdx( CFLibDbKeyHash256 SubProjectId )
 	{
 		final String S_ProcName = "readCachedMajorVersionBySubProjectIdx";
-		ICFIntMajorVersionBySubProjectIdxKey key = schema.getCFIntBackingStore().getFactoryMajorVersion().newBySubProjectIdxKey();
+		ICFIntMajorVersionBySubProjectIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryMajorVersion().newBySubProjectIdxKey();
 		key.setRequiredSubProjectId( SubProjectId );
 		ArrayList<ICFIntMajorVersionObj> arrayList = new ArrayList<ICFIntMajorVersionObj>();
 		if( indexBySubProjectIdx != null ) {
@@ -977,7 +977,7 @@ public class CFIntMajorVersionTableObj
 		String Name )
 	{
 		ICFIntMajorVersionObj obj = null;
-		ICFIntMajorVersionByNameIdxKey key = schema.getCFIntBackingStore().getFactoryMajorVersion().newByNameIdxKey();
+		ICFIntMajorVersionByNameIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryMajorVersion().newByNameIdxKey();
 		key.setRequiredSubProjectId( SubProjectId );
 		key.setRequiredName( Name );
 		if( indexByNameIdx != null ) {
@@ -1115,7 +1115,7 @@ public class CFIntMajorVersionTableObj
 	@Override
 	public void deleteMajorVersionByTenantIdx( CFLibDbKeyHash256 TenantId )
 	{
-		ICFIntMajorVersionByTenantIdxKey key = schema.getCFIntBackingStore().getFactoryMajorVersion().newByTenantIdxKey();
+		ICFIntMajorVersionByTenantIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryMajorVersion().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
 		if( indexByTenantIdx == null ) {
 			indexByTenantIdx = new HashMap< ICFIntMajorVersionByTenantIdxKey,
@@ -1149,7 +1149,7 @@ public class CFIntMajorVersionTableObj
 	@Override
 	public void deleteMajorVersionBySubProjectIdx( CFLibDbKeyHash256 SubProjectId )
 	{
-		ICFIntMajorVersionBySubProjectIdxKey key = schema.getCFIntBackingStore().getFactoryMajorVersion().newBySubProjectIdxKey();
+		ICFIntMajorVersionBySubProjectIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryMajorVersion().newBySubProjectIdxKey();
 		key.setRequiredSubProjectId( SubProjectId );
 		if( indexBySubProjectIdx == null ) {
 			indexBySubProjectIdx = new HashMap< ICFIntMajorVersionBySubProjectIdxKey,
@@ -1188,7 +1188,7 @@ public class CFIntMajorVersionTableObj
 			indexByNameIdx = new HashMap< ICFIntMajorVersionByNameIdxKey,
 				ICFIntMajorVersionObj >();
 		}
-		ICFIntMajorVersionByNameIdxKey key = schema.getCFIntBackingStore().getFactoryMajorVersion().newByNameIdxKey();
+		ICFIntMajorVersionByNameIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryMajorVersion().newByNameIdxKey();
 		key.setRequiredSubProjectId( SubProjectId );
 		key.setRequiredName( Name );
 		ICFIntMajorVersionObj obj = null;

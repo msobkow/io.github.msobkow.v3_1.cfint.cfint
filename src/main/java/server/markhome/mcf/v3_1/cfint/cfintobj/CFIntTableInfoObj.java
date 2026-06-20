@@ -237,7 +237,7 @@ public class CFIntTableInfoObj
 	public ICFSecTableInfo getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFSecBackingStore().getFactoryTableInfo().newRec();
+				rec = getSchema().getCFSecBackingStore().getCFSecFactory().getFactoryTableInfo().newRec();
 			}
 			else {
 				// Read the data rec via the backing store

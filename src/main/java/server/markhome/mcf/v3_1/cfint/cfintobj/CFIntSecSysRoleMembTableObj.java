@@ -187,7 +187,7 @@ public class CFIntSecSysRoleMembTableObj
 
 			if( indexBySysRoleIdx != null ) {
 				ICFSecSecSysRoleMembBySysRoleIdxKey keySysRoleIdx =
-					schema.getCFSecBackingStore().getFactorySecSysRoleMemb().newBySysRoleIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysRoleMemb().newBySysRoleIdxKey();
 				keySysRoleIdx.setRequiredSecSysRoleId( keepObj.getRequiredSecSysRoleId() );
 				Map<ICFSecSecSysRoleMembPKey, ICFSecSecSysRoleMembObj > mapSysRoleIdx = indexBySysRoleIdx.get( keySysRoleIdx );
 				if( mapSysRoleIdx != null ) {
@@ -200,7 +200,7 @@ public class CFIntSecSysRoleMembTableObj
 
 			if( indexByLoginIdx != null ) {
 				ICFSecSecSysRoleMembByLoginIdxKey keyLoginIdx =
-					schema.getCFSecBackingStore().getFactorySecSysRoleMemb().newByLoginIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysRoleMemb().newByLoginIdxKey();
 				keyLoginIdx.setRequiredLoginId( keepObj.getRequiredLoginId() );
 				Map<ICFSecSecSysRoleMembPKey, ICFSecSecSysRoleMembObj > mapLoginIdx = indexByLoginIdx.get( keyLoginIdx );
 				if( mapLoginIdx != null ) {
@@ -216,7 +216,7 @@ public class CFIntSecSysRoleMembTableObj
 
 			if( indexBySysRoleIdx != null ) {
 				ICFSecSecSysRoleMembBySysRoleIdxKey keySysRoleIdx =
-					schema.getCFSecBackingStore().getFactorySecSysRoleMemb().newBySysRoleIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysRoleMemb().newBySysRoleIdxKey();
 				keySysRoleIdx.setRequiredSecSysRoleId( keepObj.getRequiredSecSysRoleId() );
 				Map<ICFSecSecSysRoleMembPKey, ICFSecSecSysRoleMembObj > mapSysRoleIdx = indexBySysRoleIdx.get( keySysRoleIdx );
 				if( mapSysRoleIdx != null ) {
@@ -226,7 +226,7 @@ public class CFIntSecSysRoleMembTableObj
 
 			if( indexByLoginIdx != null ) {
 				ICFSecSecSysRoleMembByLoginIdxKey keyLoginIdx =
-					schema.getCFSecBackingStore().getFactorySecSysRoleMemb().newByLoginIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysRoleMemb().newByLoginIdxKey();
 				keyLoginIdx.setRequiredLoginId( keepObj.getRequiredLoginId() );
 				Map<ICFSecSecSysRoleMembPKey, ICFSecSecSysRoleMembObj > mapLoginIdx = indexByLoginIdx.get( keyLoginIdx );
 				if( mapLoginIdx != null ) {
@@ -250,7 +250,7 @@ public class CFIntSecSysRoleMembTableObj
 
 			if( indexBySysRoleIdx != null ) {
 				ICFSecSecSysRoleMembBySysRoleIdxKey keySysRoleIdx =
-					schema.getCFSecBackingStore().getFactorySecSysRoleMemb().newBySysRoleIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysRoleMemb().newBySysRoleIdxKey();
 				keySysRoleIdx.setRequiredSecSysRoleId( keepObj.getRequiredSecSysRoleId() );
 				Map<ICFSecSecSysRoleMembPKey, ICFSecSecSysRoleMembObj > mapSysRoleIdx = indexBySysRoleIdx.get( keySysRoleIdx );
 				if( mapSysRoleIdx != null ) {
@@ -260,7 +260,7 @@ public class CFIntSecSysRoleMembTableObj
 
 			if( indexByLoginIdx != null ) {
 				ICFSecSecSysRoleMembByLoginIdxKey keyLoginIdx =
-					schema.getCFSecBackingStore().getFactorySecSysRoleMemb().newByLoginIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysRoleMemb().newByLoginIdxKey();
 				keyLoginIdx.setRequiredLoginId( keepObj.getRequiredLoginId() );
 				Map<ICFSecSecSysRoleMembPKey, ICFSecSecSysRoleMembObj > mapLoginIdx = indexByLoginIdx.get( keyLoginIdx );
 				if( mapLoginIdx != null ) {
@@ -356,10 +356,10 @@ public class CFIntSecSysRoleMembTableObj
 			return;
 		}
 		members.remove( pkey );
-		ICFSecSecSysRoleMembBySysRoleIdxKey keySysRoleIdx = schema.getCFSecBackingStore().getFactorySecSysRoleMemb().newBySysRoleIdxKey();
+		ICFSecSecSysRoleMembBySysRoleIdxKey keySysRoleIdx = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysRoleMemb().newBySysRoleIdxKey();
 		keySysRoleIdx.setRequiredSecSysRoleId( existing.getRequiredSecSysRoleId() );
 
-		ICFSecSecSysRoleMembByLoginIdxKey keyLoginIdx = schema.getCFSecBackingStore().getFactorySecSysRoleMemb().newByLoginIdxKey();
+		ICFSecSecSysRoleMembByLoginIdxKey keyLoginIdx = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysRoleMemb().newByLoginIdxKey();
 		keyLoginIdx.setRequiredLoginId( existing.getRequiredLoginId() );
 
 
@@ -585,7 +585,7 @@ public class CFIntSecSysRoleMembTableObj
 	public ICFSecSecSysRoleMembObj readSecSysRoleMembByIdIdx( CFLibDbKeyHash256 SecSysRoleId,
 		String LoginId, boolean forceRead )
 	{
-		ICFSecSecSysRoleMembPKey pkey = schema.getCFSecBackingStore().getFactorySecSysRoleMemb().newPKey();
+		ICFSecSecSysRoleMembPKey pkey = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysRoleMemb().newPKey();
 		pkey.setRequiredSecSysRoleId( SecSysRoleId );
 		pkey.setRequiredLoginId( LoginId );
 		ICFSecSecSysRoleMembObj obj = readSecSysRoleMemb( pkey, forceRead );
@@ -604,7 +604,7 @@ public class CFIntSecSysRoleMembTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readSecSysRoleMembBySysRoleIdx";
-		ICFSecSecSysRoleMembBySysRoleIdxKey key = schema.getCFSecBackingStore().getFactorySecSysRoleMemb().newBySysRoleIdxKey();
+		ICFSecSecSysRoleMembBySysRoleIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysRoleMemb().newBySysRoleIdxKey();
 		key.setRequiredSecSysRoleId( SecSysRoleId );
 		Map<ICFSecSecSysRoleMembPKey, ICFSecSecSysRoleMembObj> dict;
 		if( indexBySysRoleIdx == null ) {
@@ -697,7 +697,7 @@ public class CFIntSecSysRoleMembTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readSecSysRoleMembByLoginIdx";
-		ICFSecSecSysRoleMembByLoginIdxKey key = schema.getCFSecBackingStore().getFactorySecSysRoleMemb().newByLoginIdxKey();
+		ICFSecSecSysRoleMembByLoginIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysRoleMemb().newByLoginIdxKey();
 		key.setRequiredLoginId( LoginId );
 		Map<ICFSecSecSysRoleMembPKey, ICFSecSecSysRoleMembObj> dict;
 		if( indexByLoginIdx == null ) {
@@ -783,7 +783,7 @@ public class CFIntSecSysRoleMembTableObj
 		String LoginId )
 	{
 		ICFSecSecSysRoleMembObj obj = null;
-		ICFSecSecSysRoleMembPKey pkey = schema.getCFSecBackingStore().getFactorySecSysRoleMemb().newPKey();
+		ICFSecSecSysRoleMembPKey pkey = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysRoleMemb().newPKey();
 		pkey.setRequiredSecSysRoleId( SecSysRoleId );
 		pkey.setRequiredLoginId( LoginId );
 		pkey.setRequiredSecSysRoleId( SecSysRoleId );
@@ -796,7 +796,7 @@ public class CFIntSecSysRoleMembTableObj
 	public List<ICFSecSecSysRoleMembObj> readCachedSecSysRoleMembBySysRoleIdx( CFLibDbKeyHash256 SecSysRoleId )
 	{
 		final String S_ProcName = "readCachedSecSysRoleMembBySysRoleIdx";
-		ICFSecSecSysRoleMembBySysRoleIdxKey key = schema.getCFSecBackingStore().getFactorySecSysRoleMemb().newBySysRoleIdxKey();
+		ICFSecSecSysRoleMembBySysRoleIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysRoleMemb().newBySysRoleIdxKey();
 		key.setRequiredSecSysRoleId( SecSysRoleId );
 		ArrayList<ICFSecSecSysRoleMembObj> arrayList = new ArrayList<ICFSecSecSysRoleMembObj>();
 		if( indexBySysRoleIdx != null ) {
@@ -873,7 +873,7 @@ public class CFIntSecSysRoleMembTableObj
 	public List<ICFSecSecSysRoleMembObj> readCachedSecSysRoleMembByLoginIdx( String LoginId )
 	{
 		final String S_ProcName = "readCachedSecSysRoleMembByLoginIdx";
-		ICFSecSecSysRoleMembByLoginIdxKey key = schema.getCFSecBackingStore().getFactorySecSysRoleMemb().newByLoginIdxKey();
+		ICFSecSecSysRoleMembByLoginIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysRoleMemb().newByLoginIdxKey();
 		key.setRequiredLoginId( LoginId );
 		ArrayList<ICFSecSecSysRoleMembObj> arrayList = new ArrayList<ICFSecSecSysRoleMembObj>();
 		if( indexByLoginIdx != null ) {
@@ -1006,7 +1006,7 @@ public class CFIntSecSysRoleMembTableObj
 		String priorLoginId )
 	{
 		final String S_ProcName = "pageSecSysRoleMembBySysRoleIdx";
-		ICFSecSecSysRoleMembBySysRoleIdxKey key = schema.getCFSecBackingStore().getFactorySecSysRoleMemb().newBySysRoleIdxKey();
+		ICFSecSecSysRoleMembBySysRoleIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysRoleMemb().newBySysRoleIdxKey();
 		key.setRequiredSecSysRoleId( SecSysRoleId );
 		List<ICFSecSecSysRoleMembObj> retList = new LinkedList<ICFSecSecSysRoleMembObj>();
 		ICFSecSecSysRoleMembObj obj;
@@ -1041,7 +1041,7 @@ public class CFIntSecSysRoleMembTableObj
 		String priorLoginId )
 	{
 		final String S_ProcName = "pageSecSysRoleMembByLoginIdx";
-		ICFSecSecSysRoleMembByLoginIdxKey key = schema.getCFSecBackingStore().getFactorySecSysRoleMemb().newByLoginIdxKey();
+		ICFSecSecSysRoleMembByLoginIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysRoleMemb().newByLoginIdxKey();
 		key.setRequiredLoginId( LoginId );
 		List<ICFSecSecSysRoleMembObj> retList = new LinkedList<ICFSecSecSysRoleMembObj>();
 		ICFSecSecSysRoleMembObj obj;
@@ -1115,7 +1115,7 @@ public class CFIntSecSysRoleMembTableObj
 	@Override
 	public void deleteSecSysRoleMembBySysRoleIdx( CFLibDbKeyHash256 SecSysRoleId )
 	{
-		ICFSecSecSysRoleMembBySysRoleIdxKey key = schema.getCFSecBackingStore().getFactorySecSysRoleMemb().newBySysRoleIdxKey();
+		ICFSecSecSysRoleMembBySysRoleIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysRoleMemb().newBySysRoleIdxKey();
 		key.setRequiredSecSysRoleId( SecSysRoleId );
 		if( indexBySysRoleIdx == null ) {
 			indexBySysRoleIdx = new HashMap< ICFSecSecSysRoleMembBySysRoleIdxKey,
@@ -1149,7 +1149,7 @@ public class CFIntSecSysRoleMembTableObj
 	@Override
 	public void deleteSecSysRoleMembByLoginIdx( String LoginId )
 	{
-		ICFSecSecSysRoleMembByLoginIdxKey key = schema.getCFSecBackingStore().getFactorySecSysRoleMemb().newByLoginIdxKey();
+		ICFSecSecSysRoleMembByLoginIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysRoleMemb().newByLoginIdxKey();
 		key.setRequiredLoginId( LoginId );
 		if( indexByLoginIdx == null ) {
 			indexByLoginIdx = new HashMap< ICFSecSecSysRoleMembByLoginIdxKey,

@@ -244,7 +244,7 @@ public class CFIntSecTentRoleMembObj
 	public ICFSecSecTentRoleMemb getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFSecBackingStore().getFactorySecTentRoleMemb().newRec();
+				rec = getSchema().getCFSecBackingStore().getCFSecFactory().getFactorySecTentRoleMemb().newRec();
 			}
 			else {
 				// Read the data rec via the backing store
@@ -282,7 +282,7 @@ public class CFIntSecTentRoleMembObj
 	@Override
 	public ICFSecSecTentRoleMembPKey getPKey() {
 		if( pKey == null ) {
-			pKey = getSchema().getCFSecBackingStore().getFactorySecTentRoleMemb().newPKey();
+			pKey = getSchema().getCFSecBackingStore().getCFSecFactory().getFactorySecTentRoleMemb().newPKey();
 		}
 		return( pKey );
 	}

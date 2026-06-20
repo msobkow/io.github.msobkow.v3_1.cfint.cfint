@@ -198,7 +198,7 @@ public class CFIntMimeTypeTableObj
 
 			if( indexByUNameIdx != null ) {
 				ICFIntMimeTypeByUNameIdxKey keyUNameIdx =
-					schema.getCFIntBackingStore().getFactoryMimeType().newByUNameIdxKey();
+					schema.getCFIntBackingStore().getCFIntFactory().getFactoryMimeType().newByUNameIdxKey();
 				keyUNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByUNameIdx.remove( keyUNameIdx );
 			}
@@ -208,7 +208,7 @@ public class CFIntMimeTypeTableObj
 
 			if( indexByUNameIdx != null ) {
 				ICFIntMimeTypeByUNameIdxKey keyUNameIdx =
-					schema.getCFIntBackingStore().getFactoryMimeType().newByUNameIdxKey();
+					schema.getCFIntBackingStore().getCFIntFactory().getFactoryMimeType().newByUNameIdxKey();
 				keyUNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByUNameIdx.put( keyUNameIdx, keepObj );
 			}
@@ -229,7 +229,7 @@ public class CFIntMimeTypeTableObj
 
 			if( indexByUNameIdx != null ) {
 				ICFIntMimeTypeByUNameIdxKey keyUNameIdx =
-					schema.getCFIntBackingStore().getFactoryMimeType().newByUNameIdxKey();
+					schema.getCFIntBackingStore().getCFIntFactory().getFactoryMimeType().newByUNameIdxKey();
 				keyUNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByUNameIdx.put( keyUNameIdx, keepObj );
 			}
@@ -298,7 +298,7 @@ public class CFIntMimeTypeTableObj
 			return;
 		}
 		members.remove( pkey );
-		ICFIntMimeTypeByUNameIdxKey keyUNameIdx = schema.getCFIntBackingStore().getFactoryMimeType().newByUNameIdxKey();
+		ICFIntMimeTypeByUNameIdxKey keyUNameIdx = schema.getCFIntBackingStore().getCFIntFactory().getFactoryMimeType().newByUNameIdxKey();
 		keyUNameIdx.setRequiredName( existing.getRequiredName() );
 
 
@@ -495,7 +495,7 @@ public class CFIntMimeTypeTableObj
 			indexByUNameIdx = new HashMap< ICFIntMimeTypeByUNameIdxKey,
 				ICFIntMimeTypeObj >();
 		}
-		ICFIntMimeTypeByUNameIdxKey key = schema.getCFIntBackingStore().getFactoryMimeType().newByUNameIdxKey();
+		ICFIntMimeTypeByUNameIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryMimeType().newByUNameIdxKey();
 		key.setRequiredName( Name );
 		ICFIntMimeTypeObj obj = null;
 		if( ( ! forceRead ) && indexByUNameIdx.containsKey( key ) ) {
@@ -526,7 +526,7 @@ public class CFIntMimeTypeTableObj
 	public ICFIntMimeTypeObj readCachedMimeTypeByUNameIdx( String Name )
 	{
 		ICFIntMimeTypeObj obj = null;
-		ICFIntMimeTypeByUNameIdxKey key = schema.getCFIntBackingStore().getFactoryMimeType().newByUNameIdxKey();
+		ICFIntMimeTypeByUNameIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryMimeType().newByUNameIdxKey();
 		key.setRequiredName( Name );
 		if( indexByUNameIdx != null ) {
 			if( indexByUNameIdx.containsKey( key ) ) {
@@ -631,7 +631,7 @@ public class CFIntMimeTypeTableObj
 			indexByUNameIdx = new HashMap< ICFIntMimeTypeByUNameIdxKey,
 				ICFIntMimeTypeObj >();
 		}
-		ICFIntMimeTypeByUNameIdxKey key = schema.getCFIntBackingStore().getFactoryMimeType().newByUNameIdxKey();
+		ICFIntMimeTypeByUNameIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryMimeType().newByUNameIdxKey();
 		key.setRequiredName( Name );
 		ICFIntMimeTypeObj obj = null;
 		if( indexByUNameIdx.containsKey( key ) ) {

@@ -1,5 +1,5 @@
 
-// Description: Java 25 Default Factory implementation for MimeType buffers
+// Description: Java 25 Factory service implementation for MimeType buffers
 
 /*
  *	server.markhome.mcf.CFInt
@@ -35,6 +35,9 @@ import java.time.*;
 import java.util.*;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
@@ -43,12 +46,13 @@ import server.markhome.mcf.v3_1.cfint.cfint.*;
 import server.markhome.mcf.v3_1.cfsec.cfsec.buff.*;
 
 /*
- *	CFIntBuffMimeTypeFactory implementation of ICFIntMimeTypeFactory for MimeType
+ *	Java 25 Factory service implementation for MimeType buffers.
  */
-public class CFIntBuffMimeTypeDefaultFactory
+@Service("cfint31BuffMimeTypeFactoryService")
+public class CFIntBuffMimeTypeFactoryService
 	implements ICFIntMimeTypeFactory
 {
-	public CFIntBuffMimeTypeDefaultFactory() {
+	public CFIntBuffMimeTypeFactoryService() {
 	}
 
 	@Override

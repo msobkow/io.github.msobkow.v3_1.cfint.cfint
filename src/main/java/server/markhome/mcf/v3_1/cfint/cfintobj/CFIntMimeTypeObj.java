@@ -235,7 +235,7 @@ public class CFIntMimeTypeObj
 	public ICFIntMimeType getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFIntBackingStore().getFactoryMimeType().newRec();
+				rec = getSchema().getCFIntBackingStore().getCFIntFactory().getFactoryMimeType().newRec();
 			}
 			else {
 				// Read the data rec via the backing store

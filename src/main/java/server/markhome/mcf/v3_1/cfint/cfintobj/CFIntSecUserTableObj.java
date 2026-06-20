@@ -187,14 +187,14 @@ public class CFIntSecUserTableObj
 
 			if( indexByULoginIdx != null ) {
 				ICFSecSecUserByULoginIdxKey keyULoginIdx =
-					schema.getCFSecBackingStore().getFactorySecUser().newByULoginIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUser().newByULoginIdxKey();
 				keyULoginIdx.setRequiredLoginId( keepObj.getRequiredLoginId() );
 				indexByULoginIdx.remove( keyULoginIdx );
 			}
 
 			if( indexByEMAddrIdx != null ) {
 				ICFSecSecUserByEMAddrIdxKey keyEMAddrIdx =
-					schema.getCFSecBackingStore().getFactorySecUser().newByEMAddrIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUser().newByEMAddrIdxKey();
 				keyEMAddrIdx.setRequiredEMailAddress( keepObj.getRequiredEMailAddress() );
 				Map<CFLibDbKeyHash256, ICFSecSecUserObj > mapEMAddrIdx = indexByEMAddrIdx.get( keyEMAddrIdx );
 				if( mapEMAddrIdx != null ) {
@@ -210,14 +210,14 @@ public class CFIntSecUserTableObj
 
 			if( indexByULoginIdx != null ) {
 				ICFSecSecUserByULoginIdxKey keyULoginIdx =
-					schema.getCFSecBackingStore().getFactorySecUser().newByULoginIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUser().newByULoginIdxKey();
 				keyULoginIdx.setRequiredLoginId( keepObj.getRequiredLoginId() );
 				indexByULoginIdx.put( keyULoginIdx, keepObj );
 			}
 
 			if( indexByEMAddrIdx != null ) {
 				ICFSecSecUserByEMAddrIdxKey keyEMAddrIdx =
-					schema.getCFSecBackingStore().getFactorySecUser().newByEMAddrIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUser().newByEMAddrIdxKey();
 				keyEMAddrIdx.setRequiredEMailAddress( keepObj.getRequiredEMailAddress() );
 				Map<CFLibDbKeyHash256, ICFSecSecUserObj > mapEMAddrIdx = indexByEMAddrIdx.get( keyEMAddrIdx );
 				if( mapEMAddrIdx != null ) {
@@ -241,14 +241,14 @@ public class CFIntSecUserTableObj
 
 			if( indexByULoginIdx != null ) {
 				ICFSecSecUserByULoginIdxKey keyULoginIdx =
-					schema.getCFSecBackingStore().getFactorySecUser().newByULoginIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUser().newByULoginIdxKey();
 				keyULoginIdx.setRequiredLoginId( keepObj.getRequiredLoginId() );
 				indexByULoginIdx.put( keyULoginIdx, keepObj );
 			}
 
 			if( indexByEMAddrIdx != null ) {
 				ICFSecSecUserByEMAddrIdxKey keyEMAddrIdx =
-					schema.getCFSecBackingStore().getFactorySecUser().newByEMAddrIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUser().newByEMAddrIdxKey();
 				keyEMAddrIdx.setRequiredEMailAddress( keepObj.getRequiredEMailAddress() );
 				Map<CFLibDbKeyHash256, ICFSecSecUserObj > mapEMAddrIdx = indexByEMAddrIdx.get( keyEMAddrIdx );
 				if( mapEMAddrIdx != null ) {
@@ -320,10 +320,10 @@ public class CFIntSecUserTableObj
 			return;
 		}
 		members.remove( pkey );
-		ICFSecSecUserByULoginIdxKey keyULoginIdx = schema.getCFSecBackingStore().getFactorySecUser().newByULoginIdxKey();
+		ICFSecSecUserByULoginIdxKey keyULoginIdx = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUser().newByULoginIdxKey();
 		keyULoginIdx.setRequiredLoginId( existing.getRequiredLoginId() );
 
-		ICFSecSecUserByEMAddrIdxKey keyEMAddrIdx = schema.getCFSecBackingStore().getFactorySecUser().newByEMAddrIdxKey();
+		ICFSecSecUserByEMAddrIdxKey keyEMAddrIdx = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUser().newByEMAddrIdxKey();
 		keyEMAddrIdx.setRequiredEMailAddress( existing.getRequiredEMailAddress() );
 
 
@@ -564,7 +564,7 @@ public class CFIntSecUserTableObj
 			indexByULoginIdx = new HashMap< ICFSecSecUserByULoginIdxKey,
 				ICFSecSecUserObj >();
 		}
-		ICFSecSecUserByULoginIdxKey key = schema.getCFSecBackingStore().getFactorySecUser().newByULoginIdxKey();
+		ICFSecSecUserByULoginIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUser().newByULoginIdxKey();
 		key.setRequiredLoginId( LoginId );
 		ICFSecSecUserObj obj = null;
 		if( ( ! forceRead ) && indexByULoginIdx.containsKey( key ) ) {
@@ -595,7 +595,7 @@ public class CFIntSecUserTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readSecUserByEMAddrIdx";
-		ICFSecSecUserByEMAddrIdxKey key = schema.getCFSecBackingStore().getFactorySecUser().newByEMAddrIdxKey();
+		ICFSecSecUserByEMAddrIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUser().newByEMAddrIdxKey();
 		key.setRequiredEMailAddress( EMailAddress );
 		Map<CFLibDbKeyHash256, ICFSecSecUserObj> dict;
 		if( indexByEMAddrIdx == null ) {
@@ -688,7 +688,7 @@ public class CFIntSecUserTableObj
 	public ICFSecSecUserObj readCachedSecUserByULoginIdx( String LoginId )
 	{
 		ICFSecSecUserObj obj = null;
-		ICFSecSecUserByULoginIdxKey key = schema.getCFSecBackingStore().getFactorySecUser().newByULoginIdxKey();
+		ICFSecSecUserByULoginIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUser().newByULoginIdxKey();
 		key.setRequiredLoginId( LoginId );
 		if( indexByULoginIdx != null ) {
 			if( indexByULoginIdx.containsKey( key ) ) {
@@ -724,7 +724,7 @@ public class CFIntSecUserTableObj
 	public List<ICFSecSecUserObj> readCachedSecUserByEMAddrIdx( String EMailAddress )
 	{
 		final String S_ProcName = "readCachedSecUserByEMAddrIdx";
-		ICFSecSecUserByEMAddrIdxKey key = schema.getCFSecBackingStore().getFactorySecUser().newByEMAddrIdxKey();
+		ICFSecSecUserByEMAddrIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUser().newByEMAddrIdxKey();
 		key.setRequiredEMailAddress( EMailAddress );
 		ArrayList<ICFSecSecUserObj> arrayList = new ArrayList<ICFSecSecUserObj>();
 		if( indexByEMAddrIdx != null ) {
@@ -846,7 +846,7 @@ public class CFIntSecUserTableObj
 		CFLibDbKeyHash256 priorSecUserId )
 	{
 		final String S_ProcName = "pageSecUserByEMAddrIdx";
-		ICFSecSecUserByEMAddrIdxKey key = schema.getCFSecBackingStore().getFactorySecUser().newByEMAddrIdxKey();
+		ICFSecSecUserByEMAddrIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUser().newByEMAddrIdxKey();
 		key.setRequiredEMailAddress( EMailAddress );
 		List<ICFSecSecUserObj> retList = new LinkedList<ICFSecSecUserObj>();
 		ICFSecSecUserObj obj;
@@ -920,7 +920,7 @@ public class CFIntSecUserTableObj
 			indexByULoginIdx = new HashMap< ICFSecSecUserByULoginIdxKey,
 				ICFSecSecUserObj >();
 		}
-		ICFSecSecUserByULoginIdxKey key = schema.getCFSecBackingStore().getFactorySecUser().newByULoginIdxKey();
+		ICFSecSecUserByULoginIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUser().newByULoginIdxKey();
 		key.setRequiredLoginId( LoginId );
 		ICFSecSecUserObj obj = null;
 		if( indexByULoginIdx.containsKey( key ) ) {
@@ -939,7 +939,7 @@ public class CFIntSecUserTableObj
 	@Override
 	public void deleteSecUserByEMAddrIdx( String EMailAddress )
 	{
-		ICFSecSecUserByEMAddrIdxKey key = schema.getCFSecBackingStore().getFactorySecUser().newByEMAddrIdxKey();
+		ICFSecSecUserByEMAddrIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUser().newByEMAddrIdxKey();
 		key.setRequiredEMailAddress( EMailAddress );
 		if( indexByEMAddrIdx == null ) {
 			indexByEMAddrIdx = new HashMap< ICFSecSecUserByEMAddrIdxKey,

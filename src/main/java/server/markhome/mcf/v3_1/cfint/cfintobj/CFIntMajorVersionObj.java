@@ -259,7 +259,7 @@ public class CFIntMajorVersionObj
 	public ICFIntMajorVersion getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFIntBackingStore().getFactoryMajorVersion().newRec();
+				rec = getSchema().getCFIntBackingStore().getCFIntFactory().getFactoryMajorVersion().newRec();
 			}
 			else {
 				// Read the data rec via the backing store
