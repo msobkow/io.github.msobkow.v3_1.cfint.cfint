@@ -45,6 +45,13 @@ public interface ICFIntLicenseFactory
 {
 
 	/**
+	 *	Allocate a primary history key for License instances.
+	 *
+	 *	@return	The new instance.
+	 */
+	ICFIntLicenseHPKey newHPKey();
+
+	/**
 	 *	Allocate a LicnTenantIdx key over License instances.
 	 *
 	 *	@return	The new instance.
@@ -71,5 +78,12 @@ public interface ICFIntLicenseFactory
 	 *	@return	The new instance.
 	 */
 	public ICFIntLicense newRec();
+
+	/**
+	 *	Allocate a License history interface implementation.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntLicenseH newHRec();
 
 }

@@ -268,10 +268,26 @@ public class CFIntBuffSchema
 			return(sch.getCFSecFactory());
 		}
 	}
+	
+	@Override
+	public CFSecBuffFactoryService getCFSecBuffFactory() {
+		ICFSecSchema sch = ICFSecSchema.getBackingCFSec();
+		if (sch == null) {
+			return null;
+		}
+		else {
+			return((CFSecBuffFactoryService)(sch.getCFSecBuffFactory()));
+		}
+	}
 
 	@Override
 	public ICFIntFactory getCFIntFactory() {
 		return(CFIntBuffSchema.getBuffHooksSchema().getFactoryService());
+	}
+
+	@Override
+	public CFIntBuffFactoryService getCFIntBuffFactory() {
+		return((CFIntBuffFactoryService)(CFIntBuffSchema.getBuffHooksSchema().getFactoryService()));
 	}
 
 	public CFIntBuffSchema() {

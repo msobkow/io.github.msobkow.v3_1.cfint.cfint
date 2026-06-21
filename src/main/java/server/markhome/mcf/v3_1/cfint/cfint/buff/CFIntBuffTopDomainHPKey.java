@@ -476,7 +476,7 @@ public class CFIntBuffTopDomainHPKey
 				"compareTo",
 				"obj",
 				obj,
-				"ICFIntTopDomainPKey, ICFIntTopDomain, ICFIntTopDomainHPKey, ICFIntTopDomainH" );
+				"ICFIntTopDomainPKey, ICFIntTopDomain$emitHPKeyHistoryClassNames$" );
 		}
 	}
 

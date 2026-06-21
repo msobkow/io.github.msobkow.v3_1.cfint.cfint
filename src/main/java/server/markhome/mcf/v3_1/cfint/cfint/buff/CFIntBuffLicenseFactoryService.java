@@ -56,6 +56,31 @@ public class CFIntBuffLicenseFactoryService
 	}
 
 	@Override
+	public ICFIntLicenseHPKey newHPKey() {
+		ICFIntLicenseHPKey hpkey =
+			new CFIntBuffLicenseHPKey();
+		return( hpkey );
+	}
+
+	public CFIntBuffLicenseHPKey ensureHPKey(ICFIntLicenseHPKey key) {
+		if (key == null) {
+			return( null );
+		}
+		else if( key instanceof CFIntBuffLicenseHPKey) {
+			return( (CFIntBuffLicenseHPKey)key );
+		}
+		else {
+			CFIntBuffLicenseHPKey mapped = new CFIntBuffLicenseHPKey();
+			mapped.setAuditClusterId(key.getAuditClusterId());
+			mapped.setAuditActionId(key.getAuditActionId());
+			mapped.setAuditSessionId(key.getAuditSessionId());
+			mapped.setAuditStamp(key.getAuditStamp());
+			mapped.setRequiredId( key.getRequiredId() );
+			return( mapped );
+		}
+	}
+
+	@Override
 	public ICFIntLicenseByLicnTenantIdxKey newByLicnTenantIdxKey() {
 		ICFIntLicenseByLicnTenantIdxKey key =
 			new CFIntBuffLicenseByLicnTenantIdxKey();
@@ -143,6 +168,34 @@ public class CFIntBuffLicenseFactoryService
 					throw new CFLibUnsupportedClassException(getClass(), "ensureRec",
 						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFIntLicense",
 						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFIntLicense");
+			}
+		}
+	}
+
+	@Override
+	public ICFIntLicenseH newHRec() {
+		ICFIntLicenseH hrec =
+			new CFIntBuffLicenseH();
+		return( hrec );
+	}
+
+	public CFIntBuffLicenseH ensureHRec(ICFIntLicenseH hrec) {
+		if( hrec == null ) {
+			return( null );
+		}
+		else if (hrec instanceof CFIntBuffLicenseH) {
+			return ((CFIntBuffLicenseH)hrec);
+		}
+		else {	
+			switch (hrec.getClassCode()) {
+				case ICFIntLicense.CLASS_CODE: {
+					CFIntBuffLicenseH mapped = new CFIntBuffLicenseH();
+					mapped.set(hrec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureHRec",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFIntLicense",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFIntLicense");
 			}
 		}
 	}

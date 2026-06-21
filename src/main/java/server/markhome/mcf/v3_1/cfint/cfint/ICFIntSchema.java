@@ -43,6 +43,11 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 
+import server.markhome.mcf.v3_1.cfsec.cfsec.buff.CFSecBuffSchema;
+import server.markhome.mcf.v3_1.cfsec.cfsec.buff.CFSecBuffFactoryService;
+import server.markhome.mcf.v3_1.cfint.cfint.buff.CFIntBuffSchema;
+import server.markhome.mcf.v3_1.cfint.cfint.buff.CFIntBuffFactoryService;
+
 public interface ICFIntSchema
 extends ICFSecSchema
 {
@@ -418,9 +423,19 @@ extends ICFSecSchema
 	public ICFSecFactory getCFSecFactory();
 
 	/**
+	 *	Get the buffer factory for CFSec data buffers.
+	 */
+	public CFSecBuffFactoryService getCFSecBuffFactory();
+
+	/**
 	 *	Get the factory for CFInt data objects.
 	 */
 	public ICFIntFactory getCFIntFactory();
+
+	/**
+	 *	Get the buffer factory for CFInt data buffers.
+	 */
+	public CFIntBuffFactoryService getCFIntBuffFactory();
 
 	/**
 	 *	Get the Cluster Table interface for the schema.

@@ -476,7 +476,7 @@ public class CFIntBuffTopProjectHPKey
 				"compareTo",
 				"obj",
 				obj,
-				"ICFIntTopProjectPKey, ICFIntTopProject, ICFIntTopProjectHPKey, ICFIntTopProjectH" );
+				"ICFIntTopProjectPKey, ICFIntTopProject$emitHPKeyHistoryClassNames$" );
 		}
 	}
 

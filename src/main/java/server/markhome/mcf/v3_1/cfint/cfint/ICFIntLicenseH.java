@@ -1,4 +1,4 @@
-// Description: Java 25 interface for a License record implementation
+// Description: Java 25 interface for a License history object
 
 /*
  *	server.markhome.mcf.CFInt
@@ -38,41 +38,32 @@ import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 //import server.markhome.mcf.v3_1.cfint.cfint.*;
 
 /**
- *	ICFIntLicense persistence instances have CodeVis Public, meaning that any user interface or referencing schema can access it.
+ *	ICFIntLicenseH provides access to history records matching the CFIntLicense object change history.
  */
-public interface ICFIntLicense
+public interface ICFIntLicenseH
 {
-	public static final String S_ID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 ID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_ID_INIT_VALUE );
-	public static final String S_TENANTID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 TENANTID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_TENANTID_INIT_VALUE );
-	public static final String S_TOPDOMAINID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 TOPDOMAINID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_TOPDOMAINID_INIT_VALUE );
-	public static final String NAME_INIT_VALUE = new String( "" );
-	public static final String DESCRIPTION_INIT_VALUE = new String( "" );
-	public static final String EMBEDDEDTEXT_INIT_VALUE = new String( "" );
-	public static final String FULLTEXT_INIT_VALUE = new String( "" );
-	public final static int CLASS_CODE = 0xa110;
-	public final static String S_CLASS_CODE = "a110";
-
 	public int getClassCode();
 
-	public CFLibDbKeyHash256 getPKey();
-	public void setPKey(CFLibDbKeyHash256 requiredId);
-	
-	public CFLibDbKeyHash256 getRequiredId();
-	public void setRequiredId( CFLibDbKeyHash256 value );
+	public ICFIntLicenseHPKey getPKey();
+	public void setPKey( ICFIntLicenseHPKey pkey );
+	public CFLibDbKeyHash256 getAuditClusterId();
+	public void setAuditClusterId(CFLibDbKeyHash256 auditClusterId);
+	public LocalDateTime getAuditStamp();
+	public void setAuditStamp(LocalDateTime auditStamp);
+	public short getAuditActionId();
+	public void setAuditActionId(short auditActionId);
 	public int getRequiredRevision();
-	public void setRequiredRevision( int value );
+	public void setRequiredRevision(int revision);
+	public CFLibDbKeyHash256 getAuditSessionId();
+	public void setAuditSessionId(CFLibDbKeyHash256 auditSessionId);
 
-	public ICFSecTenant getRequiredOwnerTenant();
-	public ICFIntTopDomain getRequiredContainerTopDomain();
-	public void setRequiredOwnerTenant(ICFSecTenant argObj);
-	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId);
-	public void setRequiredContainerTopDomain(ICFIntTopDomain argObj);
-	public void setRequiredContainerTopDomain(CFLibDbKeyHash256 argTopDomainId);
+	public CFLibDbKeyHash256 getRequiredId();
+	public void setRequiredId( CFLibDbKeyHash256 requiredId );
+
 	public CFLibDbKeyHash256 getRequiredTenantId();
+	public void setRequiredTenantId( CFLibDbKeyHash256 value );
 	public CFLibDbKeyHash256 getRequiredTopDomainId();
+	public void setRequiredTopDomainId( CFLibDbKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public String getOptionalDescription();
@@ -83,18 +74,17 @@ public interface ICFIntLicense
 	public void setOptionalFullText( String value );
 	@Override
 	public boolean equals( Object obj );
-	
+
 	@Override
 	public int hashCode();
 
-	//@Override not necessary because interfaces aren't able to implement Comparable, but they can double-team on the requirement
+	//@Override
 	public int compareTo( Object obj );
 
 	public void set( ICFIntLicense src );
-	public void setLicense( ICFIntLicense src );
 	public void set( ICFIntLicenseH src );
+	public void setLicense( ICFIntLicense src );
 	public void setLicense( ICFIntLicenseH src );
-
 	public String getXmlAttrFragment();
 
 	@Override

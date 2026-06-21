@@ -476,7 +476,7 @@ public class CFIntBuffMinorVersionHPKey
 				"compareTo",
 				"obj",
 				obj,
-				"ICFIntMinorVersionPKey, ICFIntMinorVersion, ICFIntMinorVersionHPKey, ICFIntMinorVersionH" );
+				"ICFIntMinorVersionPKey, ICFIntMinorVersion$emitHPKeyHistoryClassNames$" );
 		}
 	}
 

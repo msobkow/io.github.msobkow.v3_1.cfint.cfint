@@ -1,4 +1,4 @@
-// Description: Java 25 implementation of a Tld history buffer primary key
+// Description: Java 25 implementation of a License history buffer primary key
 
 /*
  *	server.markhome.mcf.CFInt
@@ -39,11 +39,11 @@ import server.markhome.mcf.v3_1.cfint.cfint.*;
 import server.markhome.mcf.v3_1.cfsec.cfsec.buff.*;
 
 /**
- *	CFIntBuffTldHPKey History Primary Key for Tld
+ *	CFIntBuffLicenseHPKey History Primary Key for License
  *		requiredId	Required object attribute Id.
  */
-public class CFIntBuffTldHPKey
-	implements ICFIntTldHPKey, Comparable<Object>, Serializable
+public class CFIntBuffLicenseHPKey
+	implements ICFIntLicenseHPKey, Comparable<Object>, Serializable
 {
 	protected CFLibDbKeyHash256 auditClusterId;
 	protected LocalDateTime auditStamp;
@@ -53,13 +53,13 @@ public class CFIntBuffTldHPKey
 
 	protected CFLibDbKeyHash256 requiredId;
 
-	public CFIntBuffTldHPKey() {
+	public CFIntBuffLicenseHPKey() {
 		auditClusterId = ICFSecCluster.ID_INIT_VALUE;
 		auditStamp = LocalDateTime.now();
 		auditActionId = 0;
 		requiredRevision = 1;
 		auditSessionId = CFLibDbKeyHash256.nullGet();
-		requiredId = CFLibDbKeyHash256.fromHex( ICFIntTld.ID_INIT_VALUE.toString() );
+		requiredId = CFLibDbKeyHash256.fromHex( ICFIntLicense.ID_INIT_VALUE.toString() );
 	}
 
 	@Override
@@ -133,8 +133,8 @@ public class CFIntBuffTldHPKey
 		if (obj == null) {
 			return( false );
 		}
-		else if (obj instanceof ICFIntTld) {
-			ICFIntTld rhs = (ICFIntTld)obj;
+		else if (obj instanceof ICFIntLicense) {
+			ICFIntLicense rhs = (ICFIntLicense)obj;
 			if( getRequiredId() != null ) {
 				if( rhs.getRequiredId() != null ) {
 					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {
@@ -152,8 +152,8 @@ public class CFIntBuffTldHPKey
 			}
 			return( true );
 		}
-		else if (obj instanceof ICFIntTldHPKey) {
-			ICFIntTldHPKey rhs = (ICFIntTldHPKey)obj;
+		else if (obj instanceof ICFIntLicenseHPKey) {
+			ICFIntLicenseHPKey rhs = (ICFIntLicenseHPKey)obj;
 			if (getAuditClusterId() != null) {
 				if (rhs.getAuditClusterId() != null) {
 					if ( ! getAuditClusterId().equals(rhs.getAuditClusterId())) {
@@ -216,8 +216,8 @@ public class CFIntBuffTldHPKey
 			}
 			return( true );
 		}
-		else if (obj instanceof ICFIntTldH) {
-			ICFIntTldH rhs = (ICFIntTldH)obj;
+		else if (obj instanceof ICFIntLicenseH) {
+			ICFIntLicenseH rhs = (ICFIntLicenseH)obj;
 			if (getAuditClusterId() != null) {
 				if (rhs.getAuditClusterId() != null) {
 					if ( ! getAuditClusterId().equals(rhs.getAuditClusterId())) {
@@ -309,8 +309,8 @@ public class CFIntBuffTldHPKey
 		if (obj == null) {
 			return( 1 );
 		}
-		else if (obj instanceof ICFIntTld) {
-			ICFIntTld rhs = (ICFIntTld)obj;
+		else if (obj instanceof ICFIntLicense) {
+			ICFIntLicense rhs = (ICFIntLicense)obj;
 			if (getRequiredId() != null) {
 				if (rhs.getRequiredId() != null) {
 					cmp = getRequiredId().compareTo( rhs.getRequiredId() );
@@ -327,8 +327,8 @@ public class CFIntBuffTldHPKey
 			}
 			return( 0 );
 		}
-		else if (obj instanceof ICFIntTldHPKey) {
-			ICFIntTldHPKey rhs = (ICFIntTldHPKey)obj;
+		else if (obj instanceof ICFIntLicenseHPKey) {
+			ICFIntLicenseHPKey rhs = (ICFIntLicenseHPKey)obj;
 			if( getAuditClusterId() == null ) {
 				if( rhs.getAuditClusterId() != null ) {
 					return( -1 );
@@ -399,8 +399,8 @@ public class CFIntBuffTldHPKey
 			}
 			return( 0 );
 		}
-		else if (obj instanceof ICFIntTldH) {
-			ICFIntTldH rhs = (ICFIntTldH)obj;
+		else if (obj instanceof ICFIntLicenseH) {
+			ICFIntLicenseH rhs = (ICFIntLicenseH)obj;
 			if( getAuditClusterId() == null ) {
 				if( rhs.getAuditClusterId() != null ) {
 					return( -1 );
@@ -476,7 +476,7 @@ public class CFIntBuffTldHPKey
 				"compareTo",
 				"obj",
 				obj,
-				"ICFIntTldPKey, ICFIntTld$emitHPKeyHistoryClassNames$" );
+				"ICFIntLicensePKey, ICFIntLicense$emitHPKeyHistoryClassNames$" );
 		}
 	}
 
@@ -493,7 +493,7 @@ public class CFIntBuffTldHPKey
 
 	@Override
 	public String toString() {
-		String ret = "<CFIntBuffTldHPKey" + getXmlAttrFragment() + "/>";
+		String ret = "<CFIntBuffLicenseHPKey" + getXmlAttrFragment() + "/>";
 		return( ret );
 	}
 }
