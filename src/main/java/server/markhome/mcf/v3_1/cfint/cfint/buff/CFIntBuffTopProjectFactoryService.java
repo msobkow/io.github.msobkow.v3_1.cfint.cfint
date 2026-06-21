@@ -156,12 +156,19 @@ public class CFIntBuffTopProjectFactoryService
 			return( null );
 		}
 		else if (rec instanceof CFIntBuffTopProject) {
-			return( (CFIntBuffTopProject)rec );
+			return ((CFIntBuffTopProject)rec);
 		}
-		else {
-			CFIntBuffTopProject mapped = new CFIntBuffTopProject();
-			mapped.set(rec);
-			return( mapped );
+		else {	
+			switch (rec.getClassCode()) {
+				case ICFIntTopProject.CLASS_CODE: {
+					CFIntBuffTopProject mapped = new CFIntBuffTopProject();
+					mapped.set(rec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureRec",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFIntTopProject",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFIntTopProject");
+			}
 		}
 	}
 
@@ -173,16 +180,23 @@ public class CFIntBuffTopProjectFactoryService
 	}
 
 	public CFIntBuffTopProjectH ensureHRec(ICFIntTopProjectH hrec) {
-		if (hrec == null) {
+		if( hrec == null ) {
 			return( null );
 		}
-		else if( hrec instanceof CFIntBuffTopProjectH) {
-			return( (CFIntBuffTopProjectH)hrec );
+		else if (hrec instanceof CFIntBuffTopProjectH) {
+			return ((CFIntBuffTopProjectH)hrec);
 		}
-		else {
-			CFIntBuffTopProjectH mapped = new CFIntBuffTopProjectH();
-			mapped.set(hrec);
-			return( mapped );
+		else {	
+			switch (hrec.getClassCode()) {
+				case ICFIntTopProject.CLASS_CODE: {
+					CFIntBuffTopProjectH mapped = new CFIntBuffTopProjectH();
+					mapped.set(hrec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureHRec",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFIntTopProject",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFIntTopProject");
+			}
 		}
 	}
 }

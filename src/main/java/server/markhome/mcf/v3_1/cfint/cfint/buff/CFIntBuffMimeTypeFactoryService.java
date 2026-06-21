@@ -113,12 +113,19 @@ public class CFIntBuffMimeTypeFactoryService
 			return( null );
 		}
 		else if (rec instanceof CFIntBuffMimeType) {
-			return( (CFIntBuffMimeType)rec );
+			return ((CFIntBuffMimeType)rec);
 		}
-		else {
-			CFIntBuffMimeType mapped = new CFIntBuffMimeType();
-			mapped.set(rec);
-			return( mapped );
+		else {	
+			switch (rec.getClassCode()) {
+				case ICFIntMimeType.CLASS_CODE: {
+					CFIntBuffMimeType mapped = new CFIntBuffMimeType();
+					mapped.set(rec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureRec",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFIntMimeType",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFIntMimeType");
+			}
 		}
 	}
 
@@ -130,16 +137,23 @@ public class CFIntBuffMimeTypeFactoryService
 	}
 
 	public CFIntBuffMimeTypeH ensureHRec(ICFIntMimeTypeH hrec) {
-		if (hrec == null) {
+		if( hrec == null ) {
 			return( null );
 		}
-		else if( hrec instanceof CFIntBuffMimeTypeH) {
-			return( (CFIntBuffMimeTypeH)hrec );
+		else if (hrec instanceof CFIntBuffMimeTypeH) {
+			return ((CFIntBuffMimeTypeH)hrec);
 		}
-		else {
-			CFIntBuffMimeTypeH mapped = new CFIntBuffMimeTypeH();
-			mapped.set(hrec);
-			return( mapped );
+		else {	
+			switch (hrec.getClassCode()) {
+				case ICFIntMimeType.CLASS_CODE: {
+					CFIntBuffMimeTypeH mapped = new CFIntBuffMimeTypeH();
+					mapped.set(hrec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureHRec",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFIntMimeType",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFIntMimeType");
+			}
 		}
 	}
 }

@@ -156,12 +156,19 @@ public class CFIntBuffTopDomainFactoryService
 			return( null );
 		}
 		else if (rec instanceof CFIntBuffTopDomain) {
-			return( (CFIntBuffTopDomain)rec );
+			return ((CFIntBuffTopDomain)rec);
 		}
-		else {
-			CFIntBuffTopDomain mapped = new CFIntBuffTopDomain();
-			mapped.set(rec);
-			return( mapped );
+		else {	
+			switch (rec.getClassCode()) {
+				case ICFIntTopDomain.CLASS_CODE: {
+					CFIntBuffTopDomain mapped = new CFIntBuffTopDomain();
+					mapped.set(rec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureRec",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFIntTopDomain",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFIntTopDomain");
+			}
 		}
 	}
 
@@ -173,16 +180,23 @@ public class CFIntBuffTopDomainFactoryService
 	}
 
 	public CFIntBuffTopDomainH ensureHRec(ICFIntTopDomainH hrec) {
-		if (hrec == null) {
+		if( hrec == null ) {
 			return( null );
 		}
-		else if( hrec instanceof CFIntBuffTopDomainH) {
-			return( (CFIntBuffTopDomainH)hrec );
+		else if (hrec instanceof CFIntBuffTopDomainH) {
+			return ((CFIntBuffTopDomainH)hrec);
 		}
-		else {
-			CFIntBuffTopDomainH mapped = new CFIntBuffTopDomainH();
-			mapped.set(hrec);
-			return( mapped );
+		else {	
+			switch (hrec.getClassCode()) {
+				case ICFIntTopDomain.CLASS_CODE: {
+					CFIntBuffTopDomainH mapped = new CFIntBuffTopDomainH();
+					mapped.set(hrec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureHRec",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFIntTopDomain",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFIntTopDomain");
+			}
 		}
 	}
 }

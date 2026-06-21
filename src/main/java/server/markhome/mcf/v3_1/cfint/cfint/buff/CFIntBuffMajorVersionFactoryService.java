@@ -156,12 +156,19 @@ public class CFIntBuffMajorVersionFactoryService
 			return( null );
 		}
 		else if (rec instanceof CFIntBuffMajorVersion) {
-			return( (CFIntBuffMajorVersion)rec );
+			return ((CFIntBuffMajorVersion)rec);
 		}
-		else {
-			CFIntBuffMajorVersion mapped = new CFIntBuffMajorVersion();
-			mapped.set(rec);
-			return( mapped );
+		else {	
+			switch (rec.getClassCode()) {
+				case ICFIntMajorVersion.CLASS_CODE: {
+					CFIntBuffMajorVersion mapped = new CFIntBuffMajorVersion();
+					mapped.set(rec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureRec",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFIntMajorVersion",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFIntMajorVersion");
+			}
 		}
 	}
 
@@ -173,16 +180,23 @@ public class CFIntBuffMajorVersionFactoryService
 	}
 
 	public CFIntBuffMajorVersionH ensureHRec(ICFIntMajorVersionH hrec) {
-		if (hrec == null) {
+		if( hrec == null ) {
 			return( null );
 		}
-		else if( hrec instanceof CFIntBuffMajorVersionH) {
-			return( (CFIntBuffMajorVersionH)hrec );
+		else if (hrec instanceof CFIntBuffMajorVersionH) {
+			return ((CFIntBuffMajorVersionH)hrec);
 		}
-		else {
-			CFIntBuffMajorVersionH mapped = new CFIntBuffMajorVersionH();
-			mapped.set(hrec);
-			return( mapped );
+		else {	
+			switch (hrec.getClassCode()) {
+				case ICFIntMajorVersion.CLASS_CODE: {
+					CFIntBuffMajorVersionH mapped = new CFIntBuffMajorVersionH();
+					mapped.set(hrec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureHRec",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFIntMajorVersion",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFIntMajorVersion");
+			}
 		}
 	}
 }

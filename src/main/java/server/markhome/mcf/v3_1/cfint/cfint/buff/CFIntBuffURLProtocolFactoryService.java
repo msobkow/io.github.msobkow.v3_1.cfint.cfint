@@ -134,12 +134,19 @@ public class CFIntBuffURLProtocolFactoryService
 			return( null );
 		}
 		else if (rec instanceof CFIntBuffURLProtocol) {
-			return( (CFIntBuffURLProtocol)rec );
+			return ((CFIntBuffURLProtocol)rec);
 		}
-		else {
-			CFIntBuffURLProtocol mapped = new CFIntBuffURLProtocol();
-			mapped.set(rec);
-			return( mapped );
+		else {	
+			switch (rec.getClassCode()) {
+				case ICFIntURLProtocol.CLASS_CODE: {
+					CFIntBuffURLProtocol mapped = new CFIntBuffURLProtocol();
+					mapped.set(rec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureRec",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFIntURLProtocol",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFIntURLProtocol");
+			}
 		}
 	}
 
@@ -151,16 +158,23 @@ public class CFIntBuffURLProtocolFactoryService
 	}
 
 	public CFIntBuffURLProtocolH ensureHRec(ICFIntURLProtocolH hrec) {
-		if (hrec == null) {
+		if( hrec == null ) {
 			return( null );
 		}
-		else if( hrec instanceof CFIntBuffURLProtocolH) {
-			return( (CFIntBuffURLProtocolH)hrec );
+		else if (hrec instanceof CFIntBuffURLProtocolH) {
+			return ((CFIntBuffURLProtocolH)hrec);
 		}
-		else {
-			CFIntBuffURLProtocolH mapped = new CFIntBuffURLProtocolH();
-			mapped.set(hrec);
-			return( mapped );
+		else {	
+			switch (hrec.getClassCode()) {
+				case ICFIntURLProtocol.CLASS_CODE: {
+					CFIntBuffURLProtocolH mapped = new CFIntBuffURLProtocolH();
+					mapped.set(hrec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureHRec",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFIntURLProtocol",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFIntURLProtocol");
+			}
 		}
 	}
 }

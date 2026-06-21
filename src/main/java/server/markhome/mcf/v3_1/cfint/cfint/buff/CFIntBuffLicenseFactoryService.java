@@ -131,12 +131,19 @@ public class CFIntBuffLicenseFactoryService
 			return( null );
 		}
 		else if (rec instanceof CFIntBuffLicense) {
-			return( (CFIntBuffLicense)rec );
+			return ((CFIntBuffLicense)rec);
 		}
-		else {
-			CFIntBuffLicense mapped = new CFIntBuffLicense();
-			mapped.set(rec);
-			return( mapped );
+		else {	
+			switch (rec.getClassCode()) {
+				case ICFIntLicense.CLASS_CODE: {
+					CFIntBuffLicense mapped = new CFIntBuffLicense();
+					mapped.set(rec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureRec",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFIntLicense",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFIntLicense");
+			}
 		}
 	}
 }
