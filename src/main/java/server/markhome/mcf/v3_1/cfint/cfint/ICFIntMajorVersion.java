@@ -34,8 +34,13 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-//import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintprot.*;
+import server.markhome.mcf.v3_1.cfint.cfintprotobj.*;
 
 /**
  *	ICFIntMajorVersion persistence instances have CodeVis Public, meaning that any user interface or referencing schema can access it.
@@ -80,8 +85,12 @@ public interface ICFIntMajorVersion
 	public ICFSecTenant getRequiredOwnerTenant();
 	public ICFIntSubProject getRequiredContainerParentSPrj();
 	public void setRequiredOwnerTenant(ICFSecTenant argObj);
+	public void setRequiredOwnerTenant(ICFSecProtTenant argObj);
+	public void setRequiredOwnerTenant(ICFSecPubTenant argObj);
 	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId);
 	public void setRequiredContainerParentSPrj(ICFIntSubProject argObj);
+	public void setRequiredContainerParentSPrj(ICFIntProtSubProject argObj);
+	public void setRequiredContainerParentSPrj(ICFIntPubSubProject argObj);
 	public void setRequiredContainerParentSPrj(CFLibDbKeyHash256 argSubProjectId);
 	public CFLibDbKeyHash256 getRequiredTenantId();
 	public CFLibDbKeyHash256 getRequiredSubProjectId();
