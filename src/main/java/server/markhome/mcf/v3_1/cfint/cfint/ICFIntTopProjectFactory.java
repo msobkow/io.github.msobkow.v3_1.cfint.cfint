@@ -36,12 +36,17 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintprot.*;
+import server.markhome.mcf.v3_1.cfint.cfintprotobj.*;
 
 /*
  *	ICFIntTopProjectFactory interface for TopProject
  */
-public interface ICFIntTopProjectFactory
+public interface ICFIntTopProjectFactory extends ICFIntProtTopProjectFactory
 {
 
 	/**
@@ -52,11 +57,39 @@ public interface ICFIntTopProjectFactory
 	ICFIntTopProjectHPKey newHPKey();
 
 	/**
+	 *	Allocate a protected primary history key for TopProject instances from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	ICFIntProtTopProjectHPKey asProtected(ICFIntTopProjectHPKey src);
+
+	/**
+	 *	Allocate a public primary history key for TopProject instances from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	ICFIntPubTopProjectHPKey asPublic(ICFIntTopProjectHPKey src);
+
+	/**
 	 *	Allocate a TenantIdx key over TopProject instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFIntTopProjectByTenantIdxKey newByTenantIdxKey();
+
+	/**
+	 *	Allocate a protected TenantIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntProtTopProjectByTenantIdxKey asProtected(ICFIntTopProjectByTenantIdxKey src);
+
+	/**
+	 *	Allocate a public TenantIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubTopProjectByTenantIdxKey asPublic(ICFIntTopProjectByTenantIdxKey src);
 
 	/**
 	 *	Allocate a TopDomainIdx key over TopProject instances.
@@ -66,11 +99,39 @@ public interface ICFIntTopProjectFactory
 	public ICFIntTopProjectByTopDomainIdxKey newByTopDomainIdxKey();
 
 	/**
+	 *	Allocate a protected TopDomainIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntProtTopProjectByTopDomainIdxKey asProtected(ICFIntTopProjectByTopDomainIdxKey src);
+
+	/**
+	 *	Allocate a public TopDomainIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubTopProjectByTopDomainIdxKey asPublic(ICFIntTopProjectByTopDomainIdxKey src);
+
+	/**
 	 *	Allocate a NameIdx key over TopProject instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFIntTopProjectByNameIdxKey newByNameIdxKey();
+
+	/**
+	 *	Allocate a protected NameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntProtTopProjectByNameIdxKey asProtected(ICFIntTopProjectByNameIdxKey src);
+
+	/**
+	 *	Allocate a public NameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubTopProjectByNameIdxKey asPublic(ICFIntTopProjectByNameIdxKey src);
 
 	/**
 	 *	Allocate a TopProject interface implementation.
@@ -80,10 +141,38 @@ public interface ICFIntTopProjectFactory
 	public ICFIntTopProject newRec();
 
 	/**
+	 *	Allocate a protected TopProject interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntProtTopProject asProtected(ICFIntTopProject src);
+
+	/**
+	 *	Allocate a public TopProject interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubTopProject asPublic(ICFIntTopProject src);
+
+	/**
 	 *	Allocate a TopProject history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFIntTopProjectH newHRec();
+
+	/**
+	 *	Allocate a protected TopProject history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntProtTopProjectH asProtected(ICFIntTopProjectH src);
+
+	/**
+	 *	Allocate a public TopProject history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubTopProjectH asPublic(ICFIntTopProjectH src);
 
 }

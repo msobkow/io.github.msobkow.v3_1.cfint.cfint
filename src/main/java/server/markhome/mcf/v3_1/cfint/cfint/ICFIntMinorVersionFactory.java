@@ -36,12 +36,17 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintprot.*;
+import server.markhome.mcf.v3_1.cfint.cfintprotobj.*;
 
 /*
  *	ICFIntMinorVersionFactory interface for MinorVersion
  */
-public interface ICFIntMinorVersionFactory
+public interface ICFIntMinorVersionFactory extends ICFIntProtMinorVersionFactory
 {
 
 	/**
@@ -52,11 +57,39 @@ public interface ICFIntMinorVersionFactory
 	ICFIntMinorVersionHPKey newHPKey();
 
 	/**
+	 *	Allocate a protected primary history key for MinorVersion instances from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	ICFIntProtMinorVersionHPKey asProtected(ICFIntMinorVersionHPKey src);
+
+	/**
+	 *	Allocate a public primary history key for MinorVersion instances from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	ICFIntPubMinorVersionHPKey asPublic(ICFIntMinorVersionHPKey src);
+
+	/**
 	 *	Allocate a TenantIdx key over MinorVersion instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFIntMinorVersionByTenantIdxKey newByTenantIdxKey();
+
+	/**
+	 *	Allocate a protected TenantIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntProtMinorVersionByTenantIdxKey asProtected(ICFIntMinorVersionByTenantIdxKey src);
+
+	/**
+	 *	Allocate a public TenantIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubMinorVersionByTenantIdxKey asPublic(ICFIntMinorVersionByTenantIdxKey src);
 
 	/**
 	 *	Allocate a MajorVerIdx key over MinorVersion instances.
@@ -66,11 +99,39 @@ public interface ICFIntMinorVersionFactory
 	public ICFIntMinorVersionByMajorVerIdxKey newByMajorVerIdxKey();
 
 	/**
+	 *	Allocate a protected MajorVerIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntProtMinorVersionByMajorVerIdxKey asProtected(ICFIntMinorVersionByMajorVerIdxKey src);
+
+	/**
+	 *	Allocate a public MajorVerIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubMinorVersionByMajorVerIdxKey asPublic(ICFIntMinorVersionByMajorVerIdxKey src);
+
+	/**
 	 *	Allocate a NameIdx key over MinorVersion instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFIntMinorVersionByNameIdxKey newByNameIdxKey();
+
+	/**
+	 *	Allocate a protected NameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntProtMinorVersionByNameIdxKey asProtected(ICFIntMinorVersionByNameIdxKey src);
+
+	/**
+	 *	Allocate a public NameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubMinorVersionByNameIdxKey asPublic(ICFIntMinorVersionByNameIdxKey src);
 
 	/**
 	 *	Allocate a MinorVersion interface implementation.
@@ -80,10 +141,38 @@ public interface ICFIntMinorVersionFactory
 	public ICFIntMinorVersion newRec();
 
 	/**
+	 *	Allocate a protected MinorVersion interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntProtMinorVersion asProtected(ICFIntMinorVersion src);
+
+	/**
+	 *	Allocate a public MinorVersion interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubMinorVersion asPublic(ICFIntMinorVersion src);
+
+	/**
 	 *	Allocate a MinorVersion history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFIntMinorVersionH newHRec();
+
+	/**
+	 *	Allocate a protected MinorVersion history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntProtMinorVersionH asProtected(ICFIntMinorVersionH src);
+
+	/**
+	 *	Allocate a public MinorVersion history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubMinorVersionH asPublic(ICFIntMinorVersionH src);
 
 }

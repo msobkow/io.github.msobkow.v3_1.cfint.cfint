@@ -36,12 +36,17 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintprot.*;
+import server.markhome.mcf.v3_1.cfint.cfintprotobj.*;
 
 /*
  *	ICFIntSubProjectFactory interface for SubProject
  */
-public interface ICFIntSubProjectFactory
+public interface ICFIntSubProjectFactory extends ICFIntProtSubProjectFactory
 {
 
 	/**
@@ -52,11 +57,39 @@ public interface ICFIntSubProjectFactory
 	ICFIntSubProjectHPKey newHPKey();
 
 	/**
+	 *	Allocate a protected primary history key for SubProject instances from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	ICFIntProtSubProjectHPKey asProtected(ICFIntSubProjectHPKey src);
+
+	/**
+	 *	Allocate a public primary history key for SubProject instances from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	ICFIntPubSubProjectHPKey asPublic(ICFIntSubProjectHPKey src);
+
+	/**
 	 *	Allocate a TenantIdx key over SubProject instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFIntSubProjectByTenantIdxKey newByTenantIdxKey();
+
+	/**
+	 *	Allocate a protected TenantIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntProtSubProjectByTenantIdxKey asProtected(ICFIntSubProjectByTenantIdxKey src);
+
+	/**
+	 *	Allocate a public TenantIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubSubProjectByTenantIdxKey asPublic(ICFIntSubProjectByTenantIdxKey src);
 
 	/**
 	 *	Allocate a TopProjectIdx key over SubProject instances.
@@ -66,11 +99,39 @@ public interface ICFIntSubProjectFactory
 	public ICFIntSubProjectByTopProjectIdxKey newByTopProjectIdxKey();
 
 	/**
+	 *	Allocate a protected TopProjectIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntProtSubProjectByTopProjectIdxKey asProtected(ICFIntSubProjectByTopProjectIdxKey src);
+
+	/**
+	 *	Allocate a public TopProjectIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubSubProjectByTopProjectIdxKey asPublic(ICFIntSubProjectByTopProjectIdxKey src);
+
+	/**
 	 *	Allocate a NameIdx key over SubProject instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFIntSubProjectByNameIdxKey newByNameIdxKey();
+
+	/**
+	 *	Allocate a protected NameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntProtSubProjectByNameIdxKey asProtected(ICFIntSubProjectByNameIdxKey src);
+
+	/**
+	 *	Allocate a public NameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubSubProjectByNameIdxKey asPublic(ICFIntSubProjectByNameIdxKey src);
 
 	/**
 	 *	Allocate a SubProject interface implementation.
@@ -80,10 +141,38 @@ public interface ICFIntSubProjectFactory
 	public ICFIntSubProject newRec();
 
 	/**
+	 *	Allocate a protected SubProject interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntProtSubProject asProtected(ICFIntSubProject src);
+
+	/**
+	 *	Allocate a public SubProject interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubSubProject asPublic(ICFIntSubProject src);
+
+	/**
 	 *	Allocate a SubProject history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFIntSubProjectH newHRec();
+
+	/**
+	 *	Allocate a protected SubProject history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntProtSubProjectH asProtected(ICFIntSubProjectH src);
+
+	/**
+	 *	Allocate a public SubProject history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubSubProjectH asPublic(ICFIntSubProjectH src);
 
 }

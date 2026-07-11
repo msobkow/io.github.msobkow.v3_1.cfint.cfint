@@ -36,12 +36,17 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintprot.*;
+import server.markhome.mcf.v3_1.cfint.cfintprotobj.*;
 
 /*
  *	ICFIntURLProtocolFactory interface for URLProtocol
  */
-public interface ICFIntURLProtocolFactory
+public interface ICFIntURLProtocolFactory extends ICFIntProtURLProtocolFactory
 {
 
 	/**
@@ -52,11 +57,39 @@ public interface ICFIntURLProtocolFactory
 	ICFIntURLProtocolHPKey newHPKey();
 
 	/**
+	 *	Allocate a protected primary history key for URLProtocol instances from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	ICFIntProtURLProtocolHPKey asProtected(ICFIntURLProtocolHPKey src);
+
+	/**
+	 *	Allocate a public primary history key for URLProtocol instances from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	ICFIntPubURLProtocolHPKey asPublic(ICFIntURLProtocolHPKey src);
+
+	/**
 	 *	Allocate a UNameIdx key over URLProtocol instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFIntURLProtocolByUNameIdxKey newByUNameIdxKey();
+
+	/**
+	 *	Allocate a protected UNameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntProtURLProtocolByUNameIdxKey asProtected(ICFIntURLProtocolByUNameIdxKey src);
+
+	/**
+	 *	Allocate a public UNameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubURLProtocolByUNameIdxKey asPublic(ICFIntURLProtocolByUNameIdxKey src);
 
 	/**
 	 *	Allocate a IsSecureIdx key over URLProtocol instances.
@@ -66,6 +99,20 @@ public interface ICFIntURLProtocolFactory
 	public ICFIntURLProtocolByIsSecureIdxKey newByIsSecureIdxKey();
 
 	/**
+	 *	Allocate a protected IsSecureIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntProtURLProtocolByIsSecureIdxKey asProtected(ICFIntURLProtocolByIsSecureIdxKey src);
+
+	/**
+	 *	Allocate a public IsSecureIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubURLProtocolByIsSecureIdxKey asPublic(ICFIntURLProtocolByIsSecureIdxKey src);
+
+	/**
 	 *	Allocate a URLProtocol interface implementation.
 	 *
 	 *	@return	The new instance.
@@ -73,10 +120,38 @@ public interface ICFIntURLProtocolFactory
 	public ICFIntURLProtocol newRec();
 
 	/**
+	 *	Allocate a protected URLProtocol interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntProtURLProtocol asProtected(ICFIntURLProtocol src);
+
+	/**
+	 *	Allocate a public URLProtocol interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubURLProtocol asPublic(ICFIntURLProtocol src);
+
+	/**
 	 *	Allocate a URLProtocol history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFIntURLProtocolH newHRec();
+
+	/**
+	 *	Allocate a protected URLProtocol history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntProtURLProtocolH asProtected(ICFIntURLProtocolH src);
+
+	/**
+	 *	Allocate a public URLProtocol history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubURLProtocolH asPublic(ICFIntURLProtocolH src);
 
 }

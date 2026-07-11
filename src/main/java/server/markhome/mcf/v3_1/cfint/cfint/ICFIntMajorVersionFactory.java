@@ -36,12 +36,17 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintprot.*;
+import server.markhome.mcf.v3_1.cfint.cfintprotobj.*;
 
 /*
  *	ICFIntMajorVersionFactory interface for MajorVersion
  */
-public interface ICFIntMajorVersionFactory
+public interface ICFIntMajorVersionFactory extends ICFIntProtMajorVersionFactory
 {
 
 	/**
@@ -52,11 +57,39 @@ public interface ICFIntMajorVersionFactory
 	ICFIntMajorVersionHPKey newHPKey();
 
 	/**
+	 *	Allocate a protected primary history key for MajorVersion instances from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	ICFIntProtMajorVersionHPKey asProtected(ICFIntMajorVersionHPKey src);
+
+	/**
+	 *	Allocate a public primary history key for MajorVersion instances from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	ICFIntPubMajorVersionHPKey asPublic(ICFIntMajorVersionHPKey src);
+
+	/**
 	 *	Allocate a TenantIdx key over MajorVersion instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFIntMajorVersionByTenantIdxKey newByTenantIdxKey();
+
+	/**
+	 *	Allocate a protected TenantIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntProtMajorVersionByTenantIdxKey asProtected(ICFIntMajorVersionByTenantIdxKey src);
+
+	/**
+	 *	Allocate a public TenantIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubMajorVersionByTenantIdxKey asPublic(ICFIntMajorVersionByTenantIdxKey src);
 
 	/**
 	 *	Allocate a SubProjectIdx key over MajorVersion instances.
@@ -66,11 +99,39 @@ public interface ICFIntMajorVersionFactory
 	public ICFIntMajorVersionBySubProjectIdxKey newBySubProjectIdxKey();
 
 	/**
+	 *	Allocate a protected SubProjectIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntProtMajorVersionBySubProjectIdxKey asProtected(ICFIntMajorVersionBySubProjectIdxKey src);
+
+	/**
+	 *	Allocate a public SubProjectIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubMajorVersionBySubProjectIdxKey asPublic(ICFIntMajorVersionBySubProjectIdxKey src);
+
+	/**
 	 *	Allocate a NameIdx key over MajorVersion instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFIntMajorVersionByNameIdxKey newByNameIdxKey();
+
+	/**
+	 *	Allocate a protected NameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntProtMajorVersionByNameIdxKey asProtected(ICFIntMajorVersionByNameIdxKey src);
+
+	/**
+	 *	Allocate a public NameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubMajorVersionByNameIdxKey asPublic(ICFIntMajorVersionByNameIdxKey src);
 
 	/**
 	 *	Allocate a MajorVersion interface implementation.
@@ -80,10 +141,38 @@ public interface ICFIntMajorVersionFactory
 	public ICFIntMajorVersion newRec();
 
 	/**
+	 *	Allocate a protected MajorVersion interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntProtMajorVersion asProtected(ICFIntMajorVersion src);
+
+	/**
+	 *	Allocate a public MajorVersion interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubMajorVersion asPublic(ICFIntMajorVersion src);
+
+	/**
 	 *	Allocate a MajorVersion history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFIntMajorVersionH newHRec();
+
+	/**
+	 *	Allocate a protected MajorVersion history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntProtMajorVersionH asProtected(ICFIntMajorVersionH src);
+
+	/**
+	 *	Allocate a public MajorVersion history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubMajorVersionH asPublic(ICFIntMajorVersionH src);
 
 }

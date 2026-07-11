@@ -36,12 +36,17 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintprot.*;
+import server.markhome.mcf.v3_1.cfint.cfintprotobj.*;
 
 /*
  *	ICFIntLicenseFactory interface for License
  */
-public interface ICFIntLicenseFactory
+public interface ICFIntLicenseFactory extends ICFIntProtLicenseFactory
 {
 
 	/**
@@ -52,11 +57,39 @@ public interface ICFIntLicenseFactory
 	ICFIntLicenseHPKey newHPKey();
 
 	/**
+	 *	Allocate a protected primary history key for License instances from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	ICFIntProtLicenseHPKey asProtected(ICFIntLicenseHPKey src);
+
+	/**
+	 *	Allocate a public primary history key for License instances from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	ICFIntPubLicenseHPKey asPublic(ICFIntLicenseHPKey src);
+
+	/**
 	 *	Allocate a LicnTenantIdx key over License instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFIntLicenseByLicnTenantIdxKey newByLicnTenantIdxKey();
+
+	/**
+	 *	Allocate a protected LicnTenantIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntProtLicenseByLicnTenantIdxKey asProtected(ICFIntLicenseByLicnTenantIdxKey src);
+
+	/**
+	 *	Allocate a public LicnTenantIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubLicenseByLicnTenantIdxKey asPublic(ICFIntLicenseByLicnTenantIdxKey src);
 
 	/**
 	 *	Allocate a DomainIdx key over License instances.
@@ -66,11 +99,39 @@ public interface ICFIntLicenseFactory
 	public ICFIntLicenseByDomainIdxKey newByDomainIdxKey();
 
 	/**
+	 *	Allocate a protected DomainIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntProtLicenseByDomainIdxKey asProtected(ICFIntLicenseByDomainIdxKey src);
+
+	/**
+	 *	Allocate a public DomainIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubLicenseByDomainIdxKey asPublic(ICFIntLicenseByDomainIdxKey src);
+
+	/**
 	 *	Allocate a UNameIdx key over License instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFIntLicenseByUNameIdxKey newByUNameIdxKey();
+
+	/**
+	 *	Allocate a protected UNameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntProtLicenseByUNameIdxKey asProtected(ICFIntLicenseByUNameIdxKey src);
+
+	/**
+	 *	Allocate a public UNameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubLicenseByUNameIdxKey asPublic(ICFIntLicenseByUNameIdxKey src);
 
 	/**
 	 *	Allocate a License interface implementation.
@@ -80,10 +141,38 @@ public interface ICFIntLicenseFactory
 	public ICFIntLicense newRec();
 
 	/**
+	 *	Allocate a protected License interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntProtLicense asProtected(ICFIntLicense src);
+
+	/**
+	 *	Allocate a public License interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubLicense asPublic(ICFIntLicense src);
+
+	/**
 	 *	Allocate a License history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFIntLicenseH newHRec();
+
+	/**
+	 *	Allocate a protected License history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntProtLicenseH asProtected(ICFIntLicenseH src);
+
+	/**
+	 *	Allocate a public License history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubLicenseH asPublic(ICFIntLicenseH src);
 
 }

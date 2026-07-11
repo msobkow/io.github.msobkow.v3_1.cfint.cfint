@@ -36,12 +36,17 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintprot.*;
+import server.markhome.mcf.v3_1.cfint.cfintprotobj.*;
 
 /*
  *	ICFIntMimeTypeFactory interface for MimeType
  */
-public interface ICFIntMimeTypeFactory
+public interface ICFIntMimeTypeFactory extends ICFIntProtMimeTypeFactory
 {
 
 	/**
@@ -52,11 +57,39 @@ public interface ICFIntMimeTypeFactory
 	ICFIntMimeTypeHPKey newHPKey();
 
 	/**
+	 *	Allocate a protected primary history key for MimeType instances from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	ICFIntProtMimeTypeHPKey asProtected(ICFIntMimeTypeHPKey src);
+
+	/**
+	 *	Allocate a public primary history key for MimeType instances from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	ICFIntPubMimeTypeHPKey asPublic(ICFIntMimeTypeHPKey src);
+
+	/**
 	 *	Allocate a UNameIdx key over MimeType instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFIntMimeTypeByUNameIdxKey newByUNameIdxKey();
+
+	/**
+	 *	Allocate a protected UNameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntProtMimeTypeByUNameIdxKey asProtected(ICFIntMimeTypeByUNameIdxKey src);
+
+	/**
+	 *	Allocate a public UNameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubMimeTypeByUNameIdxKey asPublic(ICFIntMimeTypeByUNameIdxKey src);
 
 	/**
 	 *	Allocate a MimeType interface implementation.
@@ -66,10 +99,38 @@ public interface ICFIntMimeTypeFactory
 	public ICFIntMimeType newRec();
 
 	/**
+	 *	Allocate a protected MimeType interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntProtMimeType asProtected(ICFIntMimeType src);
+
+	/**
+	 *	Allocate a public MimeType interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubMimeType asPublic(ICFIntMimeType src);
+
+	/**
 	 *	Allocate a MimeType history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFIntMimeTypeH newHRec();
+
+	/**
+	 *	Allocate a protected MimeType history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntProtMimeTypeH asProtected(ICFIntMimeTypeH src);
+
+	/**
+	 *	Allocate a public MimeType history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubMimeTypeH asPublic(ICFIntMimeTypeH src);
 
 }

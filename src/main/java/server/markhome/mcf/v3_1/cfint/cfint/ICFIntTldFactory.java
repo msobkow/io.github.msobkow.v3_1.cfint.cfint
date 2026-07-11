@@ -36,12 +36,17 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintprot.*;
+import server.markhome.mcf.v3_1.cfint.cfintprotobj.*;
 
 /*
  *	ICFIntTldFactory interface for Tld
  */
-public interface ICFIntTldFactory
+public interface ICFIntTldFactory extends ICFIntProtTldFactory
 {
 
 	/**
@@ -52,11 +57,39 @@ public interface ICFIntTldFactory
 	ICFIntTldHPKey newHPKey();
 
 	/**
+	 *	Allocate a protected primary history key for Tld instances from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	ICFIntProtTldHPKey asProtected(ICFIntTldHPKey src);
+
+	/**
+	 *	Allocate a public primary history key for Tld instances from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	ICFIntPubTldHPKey asPublic(ICFIntTldHPKey src);
+
+	/**
 	 *	Allocate a TenantIdx key over Tld instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFIntTldByTenantIdxKey newByTenantIdxKey();
+
+	/**
+	 *	Allocate a protected TenantIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntProtTldByTenantIdxKey asProtected(ICFIntTldByTenantIdxKey src);
+
+	/**
+	 *	Allocate a public TenantIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubTldByTenantIdxKey asPublic(ICFIntTldByTenantIdxKey src);
 
 	/**
 	 *	Allocate a NameIdx key over Tld instances.
@@ -66,6 +99,20 @@ public interface ICFIntTldFactory
 	public ICFIntTldByNameIdxKey newByNameIdxKey();
 
 	/**
+	 *	Allocate a protected NameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntProtTldByNameIdxKey asProtected(ICFIntTldByNameIdxKey src);
+
+	/**
+	 *	Allocate a public NameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubTldByNameIdxKey asPublic(ICFIntTldByNameIdxKey src);
+
+	/**
 	 *	Allocate a Tld interface implementation.
 	 *
 	 *	@return	The new instance.
@@ -73,10 +120,38 @@ public interface ICFIntTldFactory
 	public ICFIntTld newRec();
 
 	/**
+	 *	Allocate a protected Tld interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntProtTld asProtected(ICFIntTld src);
+
+	/**
+	 *	Allocate a public Tld interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubTld asPublic(ICFIntTld src);
+
+	/**
 	 *	Allocate a Tld history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFIntTldH newHRec();
+
+	/**
+	 *	Allocate a protected Tld history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntProtTldH asProtected(ICFIntTldH src);
+
+	/**
+	 *	Allocate a public Tld history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubTldH asPublic(ICFIntTldH src);
 
 }
