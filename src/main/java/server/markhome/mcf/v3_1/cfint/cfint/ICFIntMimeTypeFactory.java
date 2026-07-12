@@ -78,6 +78,20 @@ public interface ICFIntMimeTypeFactory extends ICFIntProtMimeTypeFactory
 	public ICFIntMimeTypeByUNameIdxKey newByUNameIdxKey();
 
 	/**
+	 *	Allocate a protected UNameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntProtMimeTypeByUNameIdxKey asProtected(ICFIntMimeTypeByUNameIdxKey src);
+
+	/**
+	 *	Allocate a public UNameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubMimeTypeByUNameIdxKey asPublic(ICFIntMimeTypeByUNameIdxKey src);
+
+	/**
 	 *	Allocate a MimeType interface implementation.
 	 *
 	 *	@return	The new instance.

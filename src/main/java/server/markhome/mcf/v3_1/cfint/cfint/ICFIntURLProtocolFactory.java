@@ -78,11 +78,39 @@ public interface ICFIntURLProtocolFactory extends ICFIntProtURLProtocolFactory
 	public ICFIntURLProtocolByUNameIdxKey newByUNameIdxKey();
 
 	/**
+	 *	Allocate a protected UNameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntProtURLProtocolByUNameIdxKey asProtected(ICFIntURLProtocolByUNameIdxKey src);
+
+	/**
+	 *	Allocate a public UNameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubURLProtocolByUNameIdxKey asPublic(ICFIntURLProtocolByUNameIdxKey src);
+
+	/**
 	 *	Allocate a IsSecureIdx key over URLProtocol instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFIntURLProtocolByIsSecureIdxKey newByIsSecureIdxKey();
+
+	/**
+	 *	Allocate a protected IsSecureIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntProtURLProtocolByIsSecureIdxKey asProtected(ICFIntURLProtocolByIsSecureIdxKey src);
+
+	/**
+	 *	Allocate a public IsSecureIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFIntPubURLProtocolByIsSecureIdxKey asPublic(ICFIntURLProtocolByIsSecureIdxKey src);
 
 	/**
 	 *	Allocate a URLProtocol interface implementation.
