@@ -80,7 +80,7 @@ public interface ICFIntLicense
 			setRequiredContainerTopDomain((ICFIntTopDomain)null);
 		}
 		else {
-			setRequiredContainerTopDomain(argObj.getRequiredTopDomainId());
+			setRequiredContainerTopDomain(argObj.getRequiredId());
 		}
 	}
 

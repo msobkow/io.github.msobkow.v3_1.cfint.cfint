@@ -92,7 +92,7 @@ public interface ICFIntMajorVersion
 			setRequiredContainerParentSPrj((ICFIntSubProject)null);
 		}
 		else {
-			setRequiredContainerParentSPrj(argObj.getRequiredSubProjectId());
+			setRequiredContainerParentSPrj(argObj.getRequiredId());
 		}
 	}
 

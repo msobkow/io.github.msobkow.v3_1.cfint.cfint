@@ -92,7 +92,7 @@ public interface ICFIntTopProject
 			setRequiredContainerParentSDom((ICFIntTopDomain)null);
 		}
 		else {
-			setRequiredContainerParentSDom(argObj.getRequiredTopDomainId());
+			setRequiredContainerParentSDom(argObj.getRequiredId());
 		}
 	}
 

@@ -93,7 +93,7 @@ public interface ICFIntTopDomain
 			setRequiredContainerParentTld((ICFIntTld)null);
 		}
 		else {
-			setRequiredContainerParentTld(argObj.getRequiredTldId());
+			setRequiredContainerParentTld(argObj.getRequiredId());
 		}
 	}
 

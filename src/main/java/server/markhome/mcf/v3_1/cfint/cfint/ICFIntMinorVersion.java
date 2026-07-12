@@ -91,7 +91,7 @@ public interface ICFIntMinorVersion
 			setRequiredContainerParentMajVer((ICFIntMajorVersion)null);
 		}
 		else {
-			setRequiredContainerParentMajVer(argObj.getRequiredMajorVersionId());
+			setRequiredContainerParentMajVer(argObj.getRequiredId());
 		}
 	}
 
