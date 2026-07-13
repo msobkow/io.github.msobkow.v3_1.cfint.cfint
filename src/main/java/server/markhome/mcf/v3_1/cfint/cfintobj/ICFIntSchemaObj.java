@@ -35,5 +35,81 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
-import server.markhome.mcf.v3_1.cfint.cfintpub.*;$importJavaProtPackageSchemaName default empty$$importJavaPackageSchemaName default empty$
-import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;importJavaProtPackageSchemaNameObj$JavaSchemaObjImport$ReferencedJavaSchemaObjImport$public interface I$SchemaName$SchemaObj$iterate SchemaRefs( first extendISchemaSchemaObj each commaNewlineISchemaSchemaObj empty empty )${$iterate SchemaRefs( each empty empty declISchemaSchemaObj )$iterate SchemaRefs( each declISchemaSchemaObjBSAccessors empty empty )$declISchemaSchemaObjBSAccessors$iterate SchemaTables( each declISchemaSchemaObjTableObjAccessors empty empty )$JavaSchemaObjInterface$ReferencedJavaSchemaObjInterface$}
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintprot.*;
+import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintprotobj.*;
+
+public interface ICFIntSchemaObj
+	extends ICFSecSchemaObj
+{
+	public ICFSecSchema getCFSecBackingStore();
+	public void setCFSecBackingStore(ICFSecSchema cfsecBackingStore);
+
+	public ICFIntSchema getCFIntBackingStore();
+	public void setCFIntBackingStore(ICFIntSchema cfintBackingStore);
+
+	/**
+	 *	Get the License interface for the schema.
+	 *
+	 *	@return	The ICFIntLicenseTableObj interface implementation for the schema.
+	 */
+	ICFIntLicenseTableObj getLicenseTableObj();
+
+	/**
+	 *	Get the MajorVersion interface for the schema.
+	 *
+	 *	@return	The ICFIntMajorVersionTableObj interface implementation for the schema.
+	 */
+	ICFIntMajorVersionTableObj getMajorVersionTableObj();
+
+	/**
+	 *	Get the MimeType interface for the schema.
+	 *
+	 *	@return	The ICFIntMimeTypeTableObj interface implementation for the schema.
+	 */
+	ICFIntMimeTypeTableObj getMimeTypeTableObj();
+
+	/**
+	 *	Get the MinorVersion interface for the schema.
+	 *
+	 *	@return	The ICFIntMinorVersionTableObj interface implementation for the schema.
+	 */
+	ICFIntMinorVersionTableObj getMinorVersionTableObj();
+
+	/**
+	 *	Get the SubProject interface for the schema.
+	 *
+	 *	@return	The ICFIntSubProjectTableObj interface implementation for the schema.
+	 */
+	ICFIntSubProjectTableObj getSubProjectTableObj();
+
+	/**
+	 *	Get the Tld interface for the schema.
+	 *
+	 *	@return	The ICFIntTldTableObj interface implementation for the schema.
+	 */
+	ICFIntTldTableObj getTldTableObj();
+
+	/**
+	 *	Get the TopDomain interface for the schema.
+	 *
+	 *	@return	The ICFIntTopDomainTableObj interface implementation for the schema.
+	 */
+	ICFIntTopDomainTableObj getTopDomainTableObj();
+
+	/**
+	 *	Get the TopProject interface for the schema.
+	 *
+	 *	@return	The ICFIntTopProjectTableObj interface implementation for the schema.
+	 */
+	ICFIntTopProjectTableObj getTopProjectTableObj();
+
+	/**
+	 *	Get the URLProtocol interface for the schema.
+	 *
+	 *	@return	The ICFIntURLProtocolTableObj interface implementation for the schema.
+	 */
+	ICFIntURLProtocolTableObj getURLProtocolTableObj();
+}

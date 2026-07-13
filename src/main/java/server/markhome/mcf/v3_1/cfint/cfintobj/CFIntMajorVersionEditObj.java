@@ -40,7 +40,8 @@ import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintprot.*;
 import server.markhome.mcf.v3_1.cfint.cfint.*;
 import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
-import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;$switch HasDefSchema no importJavaProtPackageSchemaNameObj$
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintprotobj.*;
 
 public class CFIntMajorVersionEditObj
 	implements ICFIntMajorVersionEditObj

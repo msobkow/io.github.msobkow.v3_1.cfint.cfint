@@ -38,7 +38,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
-import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;$switch HasDefSchema no importJavaProtPackageSchemaNameObj$
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
 
 public interface ICFIntSecUserEditObj
 	extends ICFIntSecUserObj, ICFSecSecUserEditObj

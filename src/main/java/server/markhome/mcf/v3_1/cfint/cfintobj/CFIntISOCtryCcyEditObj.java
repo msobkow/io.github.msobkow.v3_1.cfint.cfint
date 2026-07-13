@@ -38,7 +38,7 @@ import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
-import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;$switch HasDefSchema no importJavaProtPackageSchemaNameObj$
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
 
 public class CFIntISOCtryCcyEditObj
 	implements ICFIntISOCtryCcyEditObj
