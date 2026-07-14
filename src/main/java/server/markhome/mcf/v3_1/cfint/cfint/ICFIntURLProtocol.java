@@ -98,6 +98,16 @@ public interface ICFIntURLProtocol
 	public void set( ICFIntURLProtocolH src );
 	public void setURLProtocol( ICFIntURLProtocolH src );
 
+	public void set( ICFIntProtURLProtocol src );
+	public void setURLProtocol( ICFIntProtURLProtocol src );
+	public void set( ICFIntProtURLProtocolH src );
+	public void setURLProtocol( ICFIntProtURLProtocolH src );
+
+	public void set( ICFIntPubURLProtocol src );
+	public void setURLProtocol( ICFIntPubURLProtocol src );
+	public void set( ICFIntPubURLProtocolH src );
+	public void setURLProtocol( ICFIntPubURLProtocolH src );
+
 	public String getXmlAttrFragment();
 
 	@Override

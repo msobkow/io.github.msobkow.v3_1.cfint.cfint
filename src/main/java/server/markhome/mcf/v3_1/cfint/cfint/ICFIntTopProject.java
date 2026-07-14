@@ -117,6 +117,16 @@ public interface ICFIntTopProject
 	public void set( ICFIntTopProjectH src );
 	public void setTopProject( ICFIntTopProjectH src );
 
+	public void set( ICFIntProtTopProject src );
+	public void setTopProject( ICFIntProtTopProject src );
+	public void set( ICFIntProtTopProjectH src );
+	public void setTopProject( ICFIntProtTopProjectH src );
+
+	public void set( ICFIntPubTopProject src );
+	public void setTopProject( ICFIntPubTopProject src );
+	public void set( ICFIntPubTopProjectH src );
+	public void setTopProject( ICFIntPubTopProjectH src );
+
 	public String getXmlAttrFragment();
 
 	@Override

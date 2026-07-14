@@ -116,6 +116,16 @@ public interface ICFIntMinorVersion
 	public void set( ICFIntMinorVersionH src );
 	public void setMinorVersion( ICFIntMinorVersionH src );
 
+	public void set( ICFIntProtMinorVersion src );
+	public void setMinorVersion( ICFIntProtMinorVersion src );
+	public void set( ICFIntProtMinorVersionH src );
+	public void setMinorVersion( ICFIntProtMinorVersionH src );
+
+	public void set( ICFIntPubMinorVersion src );
+	public void setMinorVersion( ICFIntPubMinorVersion src );
+	public void set( ICFIntPubMinorVersionH src );
+	public void setMinorVersion( ICFIntPubMinorVersionH src );
+
 	public String getXmlAttrFragment();
 
 	@Override

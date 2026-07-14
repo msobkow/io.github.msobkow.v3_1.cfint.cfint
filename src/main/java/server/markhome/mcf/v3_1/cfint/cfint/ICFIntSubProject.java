@@ -117,6 +117,16 @@ public interface ICFIntSubProject
 	public void set( ICFIntSubProjectH src );
 	public void setSubProject( ICFIntSubProjectH src );
 
+	public void set( ICFIntProtSubProject src );
+	public void setSubProject( ICFIntProtSubProject src );
+	public void set( ICFIntProtSubProjectH src );
+	public void setSubProject( ICFIntProtSubProjectH src );
+
+	public void set( ICFIntPubSubProject src );
+	public void setSubProject( ICFIntPubSubProject src );
+	public void set( ICFIntPubSubProjectH src );
+	public void setSubProject( ICFIntPubSubProjectH src );
+
 	public String getXmlAttrFragment();
 
 	@Override

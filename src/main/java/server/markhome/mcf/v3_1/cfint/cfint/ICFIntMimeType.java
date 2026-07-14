@@ -95,6 +95,16 @@ public interface ICFIntMimeType
 	public void set( ICFIntMimeTypeH src );
 	public void setMimeType( ICFIntMimeTypeH src );
 
+	public void set( ICFIntProtMimeType src );
+	public void setMimeType( ICFIntProtMimeType src );
+	public void set( ICFIntProtMimeTypeH src );
+	public void setMimeType( ICFIntProtMimeTypeH src );
+
+	public void set( ICFIntPubMimeType src );
+	public void setMimeType( ICFIntPubMimeType src );
+	public void set( ICFIntPubMimeTypeH src );
+	public void setMimeType( ICFIntPubMimeTypeH src );
+
 	public String getXmlAttrFragment();
 
 	@Override

@@ -195,6 +195,26 @@ public class CFIntBuffTld
 	}
 
 	@Override
+	public void setRequiredContainerTenant(ICFSecPubTenant argObj) {
+		if(argObj == null) {
+			requiredTenantId = null;
+		}
+		else {
+			requiredTenantId = argObj.getRequiredId();
+		}
+	}
+
+	@Override
+	public void setRequiredContainerTenant(ICFSecPubTenant argObj) {
+		if(argObj == null) {
+			requiredTenantId = null;
+		}
+		else {
+			requiredTenantId = argObj.getRequiredId();
+		}
+	}
+
+	@Override
 	public void setRequiredContainerTenant(CFLibDbKeyHash256 argTenantId) {
 		requiredTenantId = argTenantId;
 	}

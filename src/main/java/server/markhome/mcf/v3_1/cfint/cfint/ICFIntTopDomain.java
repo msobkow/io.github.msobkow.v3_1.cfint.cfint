@@ -118,6 +118,16 @@ public interface ICFIntTopDomain
 	public void set( ICFIntTopDomainH src );
 	public void setTopDomain( ICFIntTopDomainH src );
 
+	public void set( ICFIntProtTopDomain src );
+	public void setTopDomain( ICFIntProtTopDomain src );
+	public void set( ICFIntProtTopDomainH src );
+	public void setTopDomain( ICFIntProtTopDomainH src );
+
+	public void set( ICFIntPubTopDomain src );
+	public void setTopDomain( ICFIntPubTopDomain src );
+	public void set( ICFIntPubTopDomainH src );
+	public void setTopDomain( ICFIntPubTopDomainH src );
+
 	public String getXmlAttrFragment();
 
 	@Override

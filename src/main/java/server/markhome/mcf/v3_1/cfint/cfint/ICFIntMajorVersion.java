@@ -117,6 +117,16 @@ public interface ICFIntMajorVersion
 	public void set( ICFIntMajorVersionH src );
 	public void setMajorVersion( ICFIntMajorVersionH src );
 
+	public void set( ICFIntProtMajorVersion src );
+	public void setMajorVersion( ICFIntProtMajorVersion src );
+	public void set( ICFIntProtMajorVersionH src );
+	public void setMajorVersion( ICFIntProtMajorVersionH src );
+
+	public void set( ICFIntPubMajorVersion src );
+	public void setMajorVersion( ICFIntPubMajorVersion src );
+	public void set( ICFIntPubMajorVersionH src );
+	public void setMajorVersion( ICFIntPubMajorVersionH src );
+
 	public String getXmlAttrFragment();
 
 	@Override

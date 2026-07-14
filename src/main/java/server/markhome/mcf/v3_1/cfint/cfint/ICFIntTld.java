@@ -102,6 +102,16 @@ public interface ICFIntTld
 	public void set( ICFIntTldH src );
 	public void setTld( ICFIntTldH src );
 
+	public void set( ICFIntProtTld src );
+	public void setTld( ICFIntProtTld src );
+	public void set( ICFIntProtTldH src );
+	public void setTld( ICFIntProtTldH src );
+
+	public void set( ICFIntPubTld src );
+	public void setTld( ICFIntPubTld src );
+	public void set( ICFIntPubTldH src );
+	public void setTld( ICFIntPubTldH src );
+
 	public String getXmlAttrFragment();
 
 	@Override

@@ -109,6 +109,16 @@ public interface ICFIntLicense
 	public void set( ICFIntLicenseH src );
 	public void setLicense( ICFIntLicenseH src );
 
+	public void set( ICFIntProtLicense src );
+	public void setLicense( ICFIntProtLicense src );
+	public void set( ICFIntProtLicenseH src );
+	public void setLicense( ICFIntProtLicenseH src );
+
+	public void set( ICFIntPubLicense src );
+	public void setLicense( ICFIntPubLicense src );
+	public void set( ICFIntPubLicenseH src );
+	public void setLicense( ICFIntPubLicenseH src );
+
 	public String getXmlAttrFragment();
 
 	@Override
