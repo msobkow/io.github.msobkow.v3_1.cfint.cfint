@@ -77,7 +77,16 @@ public interface ICFIntLicense
 	public void setRequiredContainerTopDomain(ICFIntTopDomain argObj);
 	public default void setRequiredContainerTopDomain(ICFIntProtTopDomain argObj) {
 		if (argObj == null) {
-			setRequiredContainerTopDomain((ICFIntTopDomain)null);
+			setRequiredContainerTopDomain((CFLibDbKeyHash256)null);
+		}
+		else {
+			setRequiredContainerTopDomain(argObj.getRequiredId());
+		}
+	}
+
+	public default void setRequiredContainerTopDomain(ICFIntPubTopDomain argObj) {
+		if (argObj == null) {
+			setRequiredContainerTopDomain((CFLibDbKeyHash256)null);
 		}
 		else {
 			setRequiredContainerTopDomain(argObj.getRequiredId());

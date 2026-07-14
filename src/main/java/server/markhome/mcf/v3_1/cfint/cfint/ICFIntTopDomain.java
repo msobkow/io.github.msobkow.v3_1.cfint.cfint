@@ -90,7 +90,16 @@ public interface ICFIntTopDomain
 	public void setRequiredContainerParentTld(ICFIntTld argObj);
 	public default void setRequiredContainerParentTld(ICFIntProtTld argObj) {
 		if (argObj == null) {
-			setRequiredContainerParentTld((ICFIntTld)null);
+			setRequiredContainerParentTld((CFLibDbKeyHash256)null);
+		}
+		else {
+			setRequiredContainerParentTld(argObj.getRequiredId());
+		}
+	}
+
+	public default void setRequiredContainerParentTld(ICFIntPubTld argObj) {
+		if (argObj == null) {
+			setRequiredContainerParentTld((CFLibDbKeyHash256)null);
 		}
 		else {
 			setRequiredContainerParentTld(argObj.getRequiredId());

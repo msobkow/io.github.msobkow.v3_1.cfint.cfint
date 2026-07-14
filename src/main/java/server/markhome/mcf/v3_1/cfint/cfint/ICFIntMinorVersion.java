@@ -88,7 +88,16 @@ public interface ICFIntMinorVersion
 	public void setRequiredContainerParentMajVer(ICFIntMajorVersion argObj);
 	public default void setRequiredContainerParentMajVer(ICFIntProtMajorVersion argObj) {
 		if (argObj == null) {
-			setRequiredContainerParentMajVer((ICFIntMajorVersion)null);
+			setRequiredContainerParentMajVer((CFLibDbKeyHash256)null);
+		}
+		else {
+			setRequiredContainerParentMajVer(argObj.getRequiredId());
+		}
+	}
+
+	public default void setRequiredContainerParentMajVer(ICFIntPubMajorVersion argObj) {
+		if (argObj == null) {
+			setRequiredContainerParentMajVer((CFLibDbKeyHash256)null);
 		}
 		else {
 			setRequiredContainerParentMajVer(argObj.getRequiredId());

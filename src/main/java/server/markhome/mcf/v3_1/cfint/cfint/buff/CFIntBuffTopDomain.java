@@ -220,26 +220,6 @@ public class CFIntBuffTopDomain
 	}
 
 	@Override
-	public void setRequiredOwnerTenant(ICFSecPubTenant argObj) {
-		if(argObj == null) {
-			requiredTenantId = null;
-		}
-		else {
-			requiredTenantId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
-	public void setRequiredOwnerTenant(ICFSecPubTenant argObj) {
-		if(argObj == null) {
-			requiredTenantId = null;
-		}
-		else {
-			requiredTenantId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
 	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId) {
 		requiredTenantId = argTenantId;
 	}
@@ -261,26 +241,6 @@ public class CFIntBuffTopDomain
 	public void setRequiredContainerParentTld(ICFIntTld argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setContainerParentTld", 1, "argObj");
-		}
-		else {
-			requiredTldId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
-	public void setRequiredContainerParentTld(ICFIntProtTld argObj) {
-		if(argObj == null) {
-			requiredTldId = null;
-		}
-		else {
-			requiredTldId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
-	public void setRequiredContainerParentTld(ICFIntPubTld argObj) {
-		if(argObj == null) {
-			requiredTldId = null;
 		}
 		else {
 			requiredTldId = argObj.getRequiredId();

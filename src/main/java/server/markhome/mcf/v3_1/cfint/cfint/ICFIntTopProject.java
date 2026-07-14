@@ -89,7 +89,16 @@ public interface ICFIntTopProject
 	public void setRequiredContainerParentSDom(ICFIntTopDomain argObj);
 	public default void setRequiredContainerParentSDom(ICFIntProtTopDomain argObj) {
 		if (argObj == null) {
-			setRequiredContainerParentSDom((ICFIntTopDomain)null);
+			setRequiredContainerParentSDom((CFLibDbKeyHash256)null);
+		}
+		else {
+			setRequiredContainerParentSDom(argObj.getRequiredId());
+		}
+	}
+
+	public default void setRequiredContainerParentSDom(ICFIntPubTopDomain argObj) {
+		if (argObj == null) {
+			setRequiredContainerParentSDom((CFLibDbKeyHash256)null);
 		}
 		else {
 			setRequiredContainerParentSDom(argObj.getRequiredId());

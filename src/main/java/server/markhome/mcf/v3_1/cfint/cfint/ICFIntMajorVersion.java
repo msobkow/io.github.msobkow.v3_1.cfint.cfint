@@ -89,7 +89,16 @@ public interface ICFIntMajorVersion
 	public void setRequiredContainerParentSPrj(ICFIntSubProject argObj);
 	public default void setRequiredContainerParentSPrj(ICFIntProtSubProject argObj) {
 		if (argObj == null) {
-			setRequiredContainerParentSPrj((ICFIntSubProject)null);
+			setRequiredContainerParentSPrj((CFLibDbKeyHash256)null);
+		}
+		else {
+			setRequiredContainerParentSPrj(argObj.getRequiredId());
+		}
+	}
+
+	public default void setRequiredContainerParentSPrj(ICFIntPubSubProject argObj) {
+		if (argObj == null) {
+			setRequiredContainerParentSPrj((CFLibDbKeyHash256)null);
 		}
 		else {
 			setRequiredContainerParentSPrj(argObj.getRequiredId());
