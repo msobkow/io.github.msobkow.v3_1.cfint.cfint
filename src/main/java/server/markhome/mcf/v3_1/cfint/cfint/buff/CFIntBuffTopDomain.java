@@ -309,8 +309,7 @@ public class CFIntBuffTopDomain
 		if( obj == null ) {
 			return( false );
 		}
-		else if( obj instanceof ICFIntTopDomain ) {
-			ICFIntTopDomain rhs = (ICFIntTopDomain)obj;
+		else if( obj instanceof ICFIntTopDomain rhs ) {
 			if( ! getCreatedByUserId().equals( rhs.getCreatedByUserId() ) ) {
 				return( false );
 			}
@@ -570,6 +569,522 @@ public class CFIntBuffTopDomain
 			}
 			return( true );
 		}
+		else if( obj instanceof ICFIntProtTopDomain rhs ) {
+			if( ! getCreatedByUserId().equals( rhs.getCreatedByUserId() ) ) {
+				return( false );
+			}
+			if( ! getCreatedAt().equals( rhs.getCreatedAt() ) ) {
+				return( false );
+			}
+			if( ! getUpdatedByUserId().equals( rhs.getUpdatedByUserId() ) ) {
+				return( false );
+			}
+			if( ! getUpdatedAt().equals( rhs.getUpdatedAt() ) ) {
+				return( false );
+			}
+			if( getRequiredId() != null ) {
+				if( rhs.getRequiredId() != null ) {
+					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredId() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredTenantId() != null ) {
+				if( rhs.getRequiredTenantId() != null ) {
+					if( ! getRequiredTenantId().equals( rhs.getRequiredTenantId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredTenantId() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredTldId() != null ) {
+				if( rhs.getRequiredTldId() != null ) {
+					if( ! getRequiredTldId().equals( rhs.getRequiredTldId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredTldId() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredName() != null ) {
+				if( rhs.getRequiredName() != null ) {
+					if( ! getRequiredName().equals( rhs.getRequiredName() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredName() != null ) {
+					return( false );
+				}
+			}
+			if( getOptionalDescription() != null ) {
+				if( rhs.getOptionalDescription() != null ) {
+					if( ! getOptionalDescription().equals( rhs.getOptionalDescription() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getOptionalDescription() != null ) {
+					return( false );
+				}
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFIntProtTopDomainH rhs ) {
+			if( getRequiredId() != null ) {
+				if( rhs.getRequiredId() != null ) {
+					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredId() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredTenantId() != null ) {
+				if( rhs.getRequiredTenantId() != null ) {
+					if( ! getRequiredTenantId().equals( rhs.getRequiredTenantId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredTenantId() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredTldId() != null ) {
+				if( rhs.getRequiredTldId() != null ) {
+					if( ! getRequiredTldId().equals( rhs.getRequiredTldId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredTldId() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredName() != null ) {
+				if( rhs.getRequiredName() != null ) {
+					if( ! getRequiredName().equals( rhs.getRequiredName() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredName() != null ) {
+					return( false );
+				}
+			}
+			if( getOptionalDescription() != null ) {
+				if( rhs.getOptionalDescription() != null ) {
+					if( ! getOptionalDescription().equals( rhs.getOptionalDescription() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getOptionalDescription() != null ) {
+					return( false );
+				}
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFIntProtTopDomainHPKey rhs ) {
+			if( getRequiredId() != null ) {
+				if( rhs.getRequiredId() != null ) {
+					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredId() != null ) {
+					return( false );
+				}
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFIntTopDomainByTenantIdxKey ) {
+			ICFIntTopDomainByTenantIdxKey rhs = (ICFIntTopDomainByTenantIdxKey)obj;
+			if( getRequiredTenantId() != null ) {
+				if( rhs.getRequiredTenantId() != null ) {
+					if( ! getRequiredTenantId().equals( rhs.getRequiredTenantId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredTenantId() != null ) {
+					return( false );
+				}
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFIntTopDomainByTldIdxKey ) {
+			ICFIntTopDomainByTldIdxKey rhs = (ICFIntTopDomainByTldIdxKey)obj;
+			if( getRequiredTldId() != null ) {
+				if( rhs.getRequiredTldId() != null ) {
+					if( ! getRequiredTldId().equals( rhs.getRequiredTldId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredTldId() != null ) {
+					return( false );
+				}
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFIntTopDomainByNameIdxKey ) {
+			ICFIntTopDomainByNameIdxKey rhs = (ICFIntTopDomainByNameIdxKey)obj;
+			if( getRequiredTldId() != null ) {
+				if( rhs.getRequiredTldId() != null ) {
+					if( ! getRequiredTldId().equals( rhs.getRequiredTldId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredTldId() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredName() != null ) {
+				if( rhs.getRequiredName() != null ) {
+					if( ! getRequiredName().equals( rhs.getRequiredName() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredName() != null ) {
+					return( false );
+				}
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFIntPubTopDomain rhs ) {
+			if( ! getCreatedByUserId().equals( rhs.getCreatedByUserId() ) ) {
+				return( false );
+			}
+			if( ! getCreatedAt().equals( rhs.getCreatedAt() ) ) {
+				return( false );
+			}
+			if( ! getUpdatedByUserId().equals( rhs.getUpdatedByUserId() ) ) {
+				return( false );
+			}
+			if( ! getUpdatedAt().equals( rhs.getUpdatedAt() ) ) {
+				return( false );
+			}
+			if( getRequiredId() != null ) {
+				if( rhs.getRequiredId() != null ) {
+					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredId() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredTenantId() != null ) {
+				if( rhs.getRequiredTenantId() != null ) {
+					if( ! getRequiredTenantId().equals( rhs.getRequiredTenantId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredTenantId() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredTldId() != null ) {
+				if( rhs.getRequiredTldId() != null ) {
+					if( ! getRequiredTldId().equals( rhs.getRequiredTldId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredTldId() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredName() != null ) {
+				if( rhs.getRequiredName() != null ) {
+					if( ! getRequiredName().equals( rhs.getRequiredName() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredName() != null ) {
+					return( false );
+				}
+			}
+			if( getOptionalDescription() != null ) {
+				if( rhs.getOptionalDescription() != null ) {
+					if( ! getOptionalDescription().equals( rhs.getOptionalDescription() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getOptionalDescription() != null ) {
+					return( false );
+				}
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFIntPubTopDomainH rhs ) {
+			if( getRequiredId() != null ) {
+				if( rhs.getRequiredId() != null ) {
+					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredId() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredTenantId() != null ) {
+				if( rhs.getRequiredTenantId() != null ) {
+					if( ! getRequiredTenantId().equals( rhs.getRequiredTenantId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredTenantId() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredTldId() != null ) {
+				if( rhs.getRequiredTldId() != null ) {
+					if( ! getRequiredTldId().equals( rhs.getRequiredTldId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredTldId() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredName() != null ) {
+				if( rhs.getRequiredName() != null ) {
+					if( ! getRequiredName().equals( rhs.getRequiredName() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredName() != null ) {
+					return( false );
+				}
+			}
+			if( getOptionalDescription() != null ) {
+				if( rhs.getOptionalDescription() != null ) {
+					if( ! getOptionalDescription().equals( rhs.getOptionalDescription() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getOptionalDescription() != null ) {
+					return( false );
+				}
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFIntPubTopDomainHPKey rhs ) {
+			if( getRequiredId() != null ) {
+				if( rhs.getRequiredId() != null ) {
+					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredId() != null ) {
+					return( false );
+				}
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFIntTopDomainByTenantIdxKey ) {
+			ICFIntTopDomainByTenantIdxKey rhs = (ICFIntTopDomainByTenantIdxKey)obj;
+			if( getRequiredTenantId() != null ) {
+				if( rhs.getRequiredTenantId() != null ) {
+					if( ! getRequiredTenantId().equals( rhs.getRequiredTenantId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredTenantId() != null ) {
+					return( false );
+				}
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFIntTopDomainByTldIdxKey ) {
+			ICFIntTopDomainByTldIdxKey rhs = (ICFIntTopDomainByTldIdxKey)obj;
+			if( getRequiredTldId() != null ) {
+				if( rhs.getRequiredTldId() != null ) {
+					if( ! getRequiredTldId().equals( rhs.getRequiredTldId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredTldId() != null ) {
+					return( false );
+				}
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFIntTopDomainByNameIdxKey ) {
+			ICFIntTopDomainByNameIdxKey rhs = (ICFIntTopDomainByNameIdxKey)obj;
+			if( getRequiredTldId() != null ) {
+				if( rhs.getRequiredTldId() != null ) {
+					if( ! getRequiredTldId().equals( rhs.getRequiredTldId() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredTldId() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredName() != null ) {
+				if( rhs.getRequiredName() != null ) {
+					if( ! getRequiredName().equals( rhs.getRequiredName() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredName() != null ) {
+					return( false );
+				}
+			}
+			return( true );
+		}
 		else {
 			boolean retval = super.equals( obj );
 			return( retval );
@@ -601,8 +1116,7 @@ public class CFIntBuffTopDomain
 		if( obj == null ) {
 			return( -1 );
 		}
-		else if( obj instanceof ICFIntTopDomain ) {
-			ICFIntTopDomain rhs = (ICFIntTopDomain)obj;
+		else if( obj instanceof ICFIntTopDomain rhs ) {
 			cmp = 0;
 			{
 				cmp = getCreatedByUserId().compareTo( rhs.getCreatedByUserId() );
@@ -699,8 +1213,7 @@ public class CFIntBuffTopDomain
 			}
 			return( 0 );
 		}
-		else if( obj instanceof ICFIntTopDomainHPKey ) {
-			ICFIntTopDomainHPKey rhs = (ICFIntTopDomainHPKey)obj;
+		else if( obj instanceof ICFIntTopDomainHPKey rhs ) {
 			if( getRequiredRevision() < rhs.getRequiredRevision() ) {
 				return( -1 );
 			}
@@ -723,8 +1236,7 @@ public class CFIntBuffTopDomain
 			}
 			return( 0 );
 		}
-		else if( obj instanceof ICFIntTopDomainH ) {
-			ICFIntTopDomainH rhs = (ICFIntTopDomainH)obj;
+		else if( obj instanceof ICFIntTopDomainH rhs ) {
 			cmp = 0;
 			if (getRequiredId() != null) {
 				if (rhs.getRequiredId() != null) {
@@ -800,9 +1312,7 @@ public class CFIntBuffTopDomain
 			}
 			return( 0 );
 		}
-		else if( obj instanceof ICFIntTopDomainByTenantIdxKey ) {
-			ICFIntTopDomainByTenantIdxKey rhs = (ICFIntTopDomainByTenantIdxKey)obj;
-
+		else if( obj instanceof ICFIntTopDomainByTenantIdxKey rhs ) {
 			if (getRequiredTenantId() != null) {
 				if (rhs.getRequiredTenantId() != null) {
 					cmp = getRequiredTenantId().compareTo( rhs.getRequiredTenantId() );
@@ -818,9 +1328,7 @@ public class CFIntBuffTopDomain
 				return( -1 );
 			}			return( 0 );
 		}
-		else if( obj instanceof ICFIntTopDomainByTldIdxKey ) {
-			ICFIntTopDomainByTldIdxKey rhs = (ICFIntTopDomainByTldIdxKey)obj;
-
+		else if( obj instanceof ICFIntTopDomainByTldIdxKey rhs ) {
 			if (getRequiredTldId() != null) {
 				if (rhs.getRequiredTldId() != null) {
 					cmp = getRequiredTldId().compareTo( rhs.getRequiredTldId() );
@@ -836,9 +1344,523 @@ public class CFIntBuffTopDomain
 				return( -1 );
 			}			return( 0 );
 		}
-		else if( obj instanceof ICFIntTopDomainByNameIdxKey ) {
-			ICFIntTopDomainByNameIdxKey rhs = (ICFIntTopDomainByNameIdxKey)obj;
+		else if( obj instanceof ICFIntTopDomainByNameIdxKey rhs ) {
+			if (getRequiredTldId() != null) {
+				if (rhs.getRequiredTldId() != null) {
+					cmp = getRequiredTldId().compareTo( rhs.getRequiredTldId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredTldId() != null) {
+				return( -1 );
+			}
+			if (getRequiredName() != null) {
+				if (rhs.getRequiredName() != null) {
+					cmp = getRequiredName().compareTo( rhs.getRequiredName() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredName() != null) {
+				return( -1 );
+			}			return( 0 );
+		}
+		else if( obj instanceof ICFIntProtTopDomain rhs ) {
+			cmp = 0;
+			{
+				cmp = getCreatedByUserId().compareTo( rhs.getCreatedByUserId() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
 
+				cmp = getCreatedAt().compareTo( rhs.getCreatedAt() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+
+				cmp = getUpdatedByUserId().compareTo( rhs.getUpdatedByUserId() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+
+				cmp = getUpdatedAt().compareTo( rhs.getUpdatedAt() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+			}
+			if (getRequiredId() != null) {
+				if (rhs.getRequiredId() != null) {
+					cmp = getRequiredId().compareTo( rhs.getRequiredId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredId() != null) {
+				return( -1 );
+			}
+			if (getRequiredTenantId() != null) {
+				if (rhs.getRequiredTenantId() != null) {
+					cmp = getRequiredTenantId().compareTo( rhs.getRequiredTenantId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredTenantId() != null) {
+				return( -1 );
+			}
+			if (getRequiredTldId() != null) {
+				if (rhs.getRequiredTldId() != null) {
+					cmp = getRequiredTldId().compareTo( rhs.getRequiredTldId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredTldId() != null) {
+				return( -1 );
+			}
+			if (getRequiredName() != null) {
+				if (rhs.getRequiredName() != null) {
+					cmp = getRequiredName().compareTo( rhs.getRequiredName() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredName() != null) {
+				return( -1 );
+			}
+			if( getOptionalDescription() != null ) {
+				if( rhs.getOptionalDescription() != null ) {
+					cmp = getOptionalDescription().compareTo( rhs.getOptionalDescription() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else {
+				if( rhs.getOptionalDescription() != null ) {
+					return( -1 );
+				}
+			}
+			return( 0 );
+ 		}
+		else if( obj instanceof ICFIntProtTopDomainHPKey rhs ) {
+			if( getRequiredRevision() < rhs.getRequiredRevision() ) {
+				return( -1 );
+			}
+			else if( getRequiredRevision() > rhs.getRequiredRevision() ) {
+				return( 1 );
+			}
+			if (getRequiredId() != null) {
+				if (rhs.getRequiredId() != null) {
+					cmp = getRequiredId().compareTo( rhs.getRequiredId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredId() != null) {
+				return( -1 );
+			}
+			return( 0 );
+		}
+		else if( obj instanceof ICFIntProtTopDomainH rhs ) {
+			cmp = 0;
+			if (getRequiredId() != null) {
+				if (rhs.getRequiredId() != null) {
+					cmp = getRequiredId().compareTo( rhs.getRequiredId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredId() != null) {
+				return( -1 );
+			}
+			if (getRequiredTenantId() != null) {
+				if (rhs.getRequiredTenantId() != null) {
+					cmp = getRequiredTenantId().compareTo( rhs.getRequiredTenantId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredTenantId() != null) {
+				return( -1 );
+			}
+			if (getRequiredTldId() != null) {
+				if (rhs.getRequiredTldId() != null) {
+					cmp = getRequiredTldId().compareTo( rhs.getRequiredTldId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredTldId() != null) {
+				return( -1 );
+			}
+			if (getRequiredName() != null) {
+				if (rhs.getRequiredName() != null) {
+					cmp = getRequiredName().compareTo( rhs.getRequiredName() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredName() != null) {
+				return( -1 );
+			}
+			if( getOptionalDescription() != null ) {
+				if( rhs.getOptionalDescription() != null ) {
+					cmp = getOptionalDescription().compareTo( rhs.getOptionalDescription() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else {
+				if( rhs.getOptionalDescription() != null ) {
+					return( -1 );
+				}
+			}
+			return( 0 );
+		}
+		else if( obj instanceof ICFIntProtTopDomainByTenantIdxKey rhs ) {
+			if (getRequiredTenantId() != null) {
+				if (rhs.getRequiredTenantId() != null) {
+					cmp = getRequiredTenantId().compareTo( rhs.getRequiredTenantId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredTenantId() != null) {
+				return( -1 );
+			}			return( 0 );
+		}
+		else if( obj instanceof ICFIntProtTopDomainByTldIdxKey rhs ) {
+			if (getRequiredTldId() != null) {
+				if (rhs.getRequiredTldId() != null) {
+					cmp = getRequiredTldId().compareTo( rhs.getRequiredTldId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredTldId() != null) {
+				return( -1 );
+			}			return( 0 );
+		}
+		else if( obj instanceof ICFIntProtTopDomainByNameIdxKey rhs ) {
+			if (getRequiredTldId() != null) {
+				if (rhs.getRequiredTldId() != null) {
+					cmp = getRequiredTldId().compareTo( rhs.getRequiredTldId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredTldId() != null) {
+				return( -1 );
+			}
+			if (getRequiredName() != null) {
+				if (rhs.getRequiredName() != null) {
+					cmp = getRequiredName().compareTo( rhs.getRequiredName() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredName() != null) {
+				return( -1 );
+			}			return( 0 );
+		}
+		else if( obj instanceof ICFIntPubTopDomain rhs ) {
+			cmp = 0;
+			{
+				cmp = getCreatedByUserId().compareTo( rhs.getCreatedByUserId() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+
+				cmp = getCreatedAt().compareTo( rhs.getCreatedAt() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+
+				cmp = getUpdatedByUserId().compareTo( rhs.getUpdatedByUserId() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+
+				cmp = getUpdatedAt().compareTo( rhs.getUpdatedAt() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+			}
+			if (getRequiredId() != null) {
+				if (rhs.getRequiredId() != null) {
+					cmp = getRequiredId().compareTo( rhs.getRequiredId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredId() != null) {
+				return( -1 );
+			}
+			if (getRequiredTenantId() != null) {
+				if (rhs.getRequiredTenantId() != null) {
+					cmp = getRequiredTenantId().compareTo( rhs.getRequiredTenantId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredTenantId() != null) {
+				return( -1 );
+			}
+			if (getRequiredTldId() != null) {
+				if (rhs.getRequiredTldId() != null) {
+					cmp = getRequiredTldId().compareTo( rhs.getRequiredTldId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredTldId() != null) {
+				return( -1 );
+			}
+			if (getRequiredName() != null) {
+				if (rhs.getRequiredName() != null) {
+					cmp = getRequiredName().compareTo( rhs.getRequiredName() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredName() != null) {
+				return( -1 );
+			}
+			if( getOptionalDescription() != null ) {
+				if( rhs.getOptionalDescription() != null ) {
+					cmp = getOptionalDescription().compareTo( rhs.getOptionalDescription() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else {
+				if( rhs.getOptionalDescription() != null ) {
+					return( -1 );
+				}
+			}
+			return( 0 );
+		}
+		else if( obj instanceof ICFIntPubTopDomainHPKey rhs ) {
+			if( getRequiredRevision() < rhs.getRequiredRevision() ) {
+				return( -1 );
+			}
+			else if( getRequiredRevision() > rhs.getRequiredRevision() ) {
+				return( 1 );
+			}
+			if (getRequiredId() != null) {
+				if (rhs.getRequiredId() != null) {
+					cmp = getRequiredId().compareTo( rhs.getRequiredId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredId() != null) {
+				return( -1 );
+			}
+			return( 0 );
+		}
+		else if( obj instanceof ICFIntPubTopDomainH rhs ) {
+			cmp = 0;
+			if (getRequiredId() != null) {
+				if (rhs.getRequiredId() != null) {
+					cmp = getRequiredId().compareTo( rhs.getRequiredId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredId() != null) {
+				return( -1 );
+			}
+			if (getRequiredTenantId() != null) {
+				if (rhs.getRequiredTenantId() != null) {
+					cmp = getRequiredTenantId().compareTo( rhs.getRequiredTenantId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredTenantId() != null) {
+				return( -1 );
+			}
+			if (getRequiredTldId() != null) {
+				if (rhs.getRequiredTldId() != null) {
+					cmp = getRequiredTldId().compareTo( rhs.getRequiredTldId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredTldId() != null) {
+				return( -1 );
+			}
+			if (getRequiredName() != null) {
+				if (rhs.getRequiredName() != null) {
+					cmp = getRequiredName().compareTo( rhs.getRequiredName() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredName() != null) {
+				return( -1 );
+			}
+			if( getOptionalDescription() != null ) {
+				if( rhs.getOptionalDescription() != null ) {
+					cmp = getOptionalDescription().compareTo( rhs.getOptionalDescription() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else {
+				if( rhs.getOptionalDescription() != null ) {
+					return( -1 );
+				}
+			}
+			return( 0 );
+		}
+		else if( obj instanceof ICFIntPubTopDomainByTenantIdxKey rhs ) {
+			if (getRequiredTenantId() != null) {
+				if (rhs.getRequiredTenantId() != null) {
+					cmp = getRequiredTenantId().compareTo( rhs.getRequiredTenantId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredTenantId() != null) {
+				return( -1 );
+			}			return( 0 );
+		}
+		else if( obj instanceof ICFIntPubTopDomainByTldIdxKey rhs ) {
+			if (getRequiredTldId() != null) {
+				if (rhs.getRequiredTldId() != null) {
+					cmp = getRequiredTldId().compareTo( rhs.getRequiredTldId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredTldId() != null) {
+				return( -1 );
+			}			return( 0 );
+		}
+		else if( obj instanceof ICFIntPubTopDomainByNameIdxKey rhs ) {
 			if (getRequiredTldId() != null) {
 				if (rhs.getRequiredTldId() != null) {
 					cmp = getRequiredTldId().compareTo( rhs.getRequiredTldId() );
@@ -903,6 +1925,72 @@ public class CFIntBuffTopDomain
 
 	@Override
 	public void setTopDomain( ICFIntTopDomainH src ) {
+		setRequiredId(src.getRequiredId());
+		setRequiredOwnerTenant(src.getRequiredTenantId());
+		setRequiredContainerParentTld(src.getRequiredTldId());
+		setRequiredName(src.getRequiredName());
+		setOptionalDescription(src.getOptionalDescription());
+	}
+
+	@Override
+	public void set( ICFIntProtTopDomain src ) {
+		setTopDomain( src );
+	}
+
+	@Override
+	public void setTopDomain( ICFIntProtTopDomain src ) {
+		setRequiredId(src.getRequiredId());
+		setRequiredRevision( src.getRequiredRevision() );
+		setCreatedByUserId( src.getCreatedByUserId() );
+		setCreatedAt( src.getCreatedAt() );
+		setUpdatedByUserId( src.getUpdatedByUserId() );
+		setUpdatedAt( src.getUpdatedAt() );
+		setRequiredOwnerTenant(src.getRequiredTenantId());
+		setRequiredContainerParentTld(src.getRequiredContainerParentTld());
+		setRequiredName(src.getRequiredName());
+		setOptionalDescription(src.getOptionalDescription());
+	}
+
+	@Override
+	public void set( ICFIntProtTopDomainH src ) {
+		setTopDomain( src );
+	}
+
+	@Override
+	public void setTopDomain( ICFIntProtTopDomainH src ) {
+		setRequiredId(src.getRequiredId());
+		setRequiredOwnerTenant(src.getRequiredTenantId());
+		setRequiredContainerParentTld(src.getRequiredTldId());
+		setRequiredName(src.getRequiredName());
+		setOptionalDescription(src.getOptionalDescription());
+	}
+
+	@Override
+	public void set( ICFIntPubTopDomain src ) {
+		setTopDomain( src );
+	}
+
+	@Override
+	public void setTopDomain( ICFIntPubTopDomain src ) {
+		setRequiredId(src.getRequiredId());
+		setRequiredRevision( src.getRequiredRevision() );
+		setCreatedByUserId( src.getCreatedByUserId() );
+		setCreatedAt( src.getCreatedAt() );
+		setUpdatedByUserId( src.getUpdatedByUserId() );
+		setUpdatedAt( src.getUpdatedAt() );
+		setRequiredOwnerTenant(src.getRequiredTenantId());
+		setRequiredContainerParentTld(src.getRequiredContainerParentTld());
+		setRequiredName(src.getRequiredName());
+		setOptionalDescription(src.getOptionalDescription());
+	}
+
+	@Override
+	public void set( ICFIntPubTopDomainH src ) {
+		setTopDomain( src );
+	}
+
+	@Override
+	public void setTopDomain( ICFIntPubTopDomainH src ) {
 		setRequiredId(src.getRequiredId());
 		setRequiredOwnerTenant(src.getRequiredTenantId());
 		setRequiredContainerParentTld(src.getRequiredTldId());

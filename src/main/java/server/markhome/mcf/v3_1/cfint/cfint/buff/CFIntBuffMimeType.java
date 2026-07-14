@@ -195,8 +195,7 @@ public class CFIntBuffMimeType
 		if( obj == null ) {
 			return( false );
 		}
-		else if( obj instanceof ICFIntMimeType ) {
-			ICFIntMimeType rhs = (ICFIntMimeType)obj;
+		else if( obj instanceof ICFIntMimeType rhs ) {
 			if( ! getCreatedByUserId().equals( rhs.getCreatedByUserId() ) ) {
 				return( false );
 			}
@@ -307,6 +306,224 @@ public class CFIntBuffMimeType
 			}
 			return( true );
 		}
+		else if( obj instanceof ICFIntProtMimeType rhs ) {
+			if( ! getCreatedByUserId().equals( rhs.getCreatedByUserId() ) ) {
+				return( false );
+			}
+			if( ! getCreatedAt().equals( rhs.getCreatedAt() ) ) {
+				return( false );
+			}
+			if( ! getUpdatedByUserId().equals( rhs.getUpdatedByUserId() ) ) {
+				return( false );
+			}
+			if( ! getUpdatedAt().equals( rhs.getUpdatedAt() ) ) {
+				return( false );
+			}
+			if( getRequiredMimeTypeId() != rhs.getRequiredMimeTypeId() ) {
+				return( false );
+			}
+			if( getRequiredName() != null ) {
+				if( rhs.getRequiredName() != null ) {
+					if( ! getRequiredName().equals( rhs.getRequiredName() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredName() != null ) {
+					return( false );
+				}
+			}
+			if( getOptionalFileTypes() != null ) {
+				if( rhs.getOptionalFileTypes() != null ) {
+					if( ! getOptionalFileTypes().equals( rhs.getOptionalFileTypes() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getOptionalFileTypes() != null ) {
+					return( false );
+				}
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFIntProtMimeTypeH rhs ) {
+			if( getRequiredMimeTypeId() != rhs.getRequiredMimeTypeId() ) {
+				return( false );
+			}
+			if( getRequiredName() != null ) {
+				if( rhs.getRequiredName() != null ) {
+					if( ! getRequiredName().equals( rhs.getRequiredName() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredName() != null ) {
+					return( false );
+				}
+			}
+			if( getOptionalFileTypes() != null ) {
+				if( rhs.getOptionalFileTypes() != null ) {
+					if( ! getOptionalFileTypes().equals( rhs.getOptionalFileTypes() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getOptionalFileTypes() != null ) {
+					return( false );
+				}
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFIntProtMimeTypeHPKey rhs ) {
+			if( getRequiredMimeTypeId() != rhs.getRequiredMimeTypeId() ) {
+				return( false );
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFIntMimeTypeByUNameIdxKey ) {
+			ICFIntMimeTypeByUNameIdxKey rhs = (ICFIntMimeTypeByUNameIdxKey)obj;
+			if( getRequiredName() != null ) {
+				if( rhs.getRequiredName() != null ) {
+					if( ! getRequiredName().equals( rhs.getRequiredName() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredName() != null ) {
+					return( false );
+				}
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFIntPubMimeType rhs ) {
+			if( ! getCreatedByUserId().equals( rhs.getCreatedByUserId() ) ) {
+				return( false );
+			}
+			if( ! getCreatedAt().equals( rhs.getCreatedAt() ) ) {
+				return( false );
+			}
+			if( ! getUpdatedByUserId().equals( rhs.getUpdatedByUserId() ) ) {
+				return( false );
+			}
+			if( ! getUpdatedAt().equals( rhs.getUpdatedAt() ) ) {
+				return( false );
+			}
+			if( getRequiredMimeTypeId() != rhs.getRequiredMimeTypeId() ) {
+				return( false );
+			}
+			if( getRequiredName() != null ) {
+				if( rhs.getRequiredName() != null ) {
+					if( ! getRequiredName().equals( rhs.getRequiredName() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredName() != null ) {
+					return( false );
+				}
+			}
+			if( getOptionalFileTypes() != null ) {
+				if( rhs.getOptionalFileTypes() != null ) {
+					if( ! getOptionalFileTypes().equals( rhs.getOptionalFileTypes() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getOptionalFileTypes() != null ) {
+					return( false );
+				}
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFIntPubMimeTypeH rhs ) {
+			if( getRequiredMimeTypeId() != rhs.getRequiredMimeTypeId() ) {
+				return( false );
+			}
+			if( getRequiredName() != null ) {
+				if( rhs.getRequiredName() != null ) {
+					if( ! getRequiredName().equals( rhs.getRequiredName() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredName() != null ) {
+					return( false );
+				}
+			}
+			if( getOptionalFileTypes() != null ) {
+				if( rhs.getOptionalFileTypes() != null ) {
+					if( ! getOptionalFileTypes().equals( rhs.getOptionalFileTypes() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getOptionalFileTypes() != null ) {
+					return( false );
+				}
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFIntPubMimeTypeHPKey rhs ) {
+			if( getRequiredMimeTypeId() != rhs.getRequiredMimeTypeId() ) {
+				return( false );
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFIntMimeTypeByUNameIdxKey ) {
+			ICFIntMimeTypeByUNameIdxKey rhs = (ICFIntMimeTypeByUNameIdxKey)obj;
+			if( getRequiredName() != null ) {
+				if( rhs.getRequiredName() != null ) {
+					if( ! getRequiredName().equals( rhs.getRequiredName() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredName() != null ) {
+					return( false );
+				}
+			}
+			return( true );
+		}
 		else {
 			boolean retval = super.equals( obj );
 			return( retval );
@@ -336,8 +553,7 @@ public class CFIntBuffMimeType
 		if( obj == null ) {
 			return( -1 );
 		}
-		else if( obj instanceof ICFIntMimeType ) {
-			ICFIntMimeType rhs = (ICFIntMimeType)obj;
+		else if( obj instanceof ICFIntMimeType rhs ) {
 			cmp = 0;
 			{
 				cmp = getCreatedByUserId().compareTo( rhs.getCreatedByUserId() );
@@ -398,8 +614,7 @@ public class CFIntBuffMimeType
 			}
 			return( 0 );
 		}
-		else if( obj instanceof ICFIntMimeTypeHPKey ) {
-			ICFIntMimeTypeHPKey rhs = (ICFIntMimeTypeHPKey)obj;
+		else if( obj instanceof ICFIntMimeTypeHPKey rhs ) {
 			if( getRequiredRevision() < rhs.getRequiredRevision() ) {
 				return( -1 );
 			}
@@ -414,8 +629,7 @@ public class CFIntBuffMimeType
 			}
 			return( 0 );
 		}
-		else if( obj instanceof ICFIntMimeTypeH ) {
-			ICFIntMimeTypeH rhs = (ICFIntMimeTypeH)obj;
+		else if( obj instanceof ICFIntMimeTypeH rhs ) {
 			cmp = 0;
 			if( getRequiredMimeTypeId() < rhs.getRequiredMimeTypeId() ) {
 				return( -1 );
@@ -455,9 +669,271 @@ public class CFIntBuffMimeType
 			}
 			return( 0 );
 		}
-		else if( obj instanceof ICFIntMimeTypeByUNameIdxKey ) {
-			ICFIntMimeTypeByUNameIdxKey rhs = (ICFIntMimeTypeByUNameIdxKey)obj;
+		else if( obj instanceof ICFIntMimeTypeByUNameIdxKey rhs ) {
+			if (getRequiredName() != null) {
+				if (rhs.getRequiredName() != null) {
+					cmp = getRequiredName().compareTo( rhs.getRequiredName() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredName() != null) {
+				return( -1 );
+			}			return( 0 );
+		}
+		else if( obj instanceof ICFIntProtMimeType rhs ) {
+			cmp = 0;
+			{
+				cmp = getCreatedByUserId().compareTo( rhs.getCreatedByUserId() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
 
+				cmp = getCreatedAt().compareTo( rhs.getCreatedAt() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+
+				cmp = getUpdatedByUserId().compareTo( rhs.getUpdatedByUserId() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+
+				cmp = getUpdatedAt().compareTo( rhs.getUpdatedAt() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+			}
+			if( getRequiredMimeTypeId() < rhs.getRequiredMimeTypeId() ) {
+				return( -1 );
+			}
+			else if( getRequiredMimeTypeId() > rhs.getRequiredMimeTypeId() ) {
+				return( 1 );
+			}
+			if (getRequiredName() != null) {
+				if (rhs.getRequiredName() != null) {
+					cmp = getRequiredName().compareTo( rhs.getRequiredName() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredName() != null) {
+				return( -1 );
+			}
+			if( getOptionalFileTypes() != null ) {
+				if( rhs.getOptionalFileTypes() != null ) {
+					cmp = getOptionalFileTypes().compareTo( rhs.getOptionalFileTypes() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else {
+				if( rhs.getOptionalFileTypes() != null ) {
+					return( -1 );
+				}
+			}
+			return( 0 );
+ 		}
+		else if( obj instanceof ICFIntProtMimeTypeHPKey rhs ) {
+			if( getRequiredRevision() < rhs.getRequiredRevision() ) {
+				return( -1 );
+			}
+			else if( getRequiredRevision() > rhs.getRequiredRevision() ) {
+				return( 1 );
+			}
+			if( getRequiredMimeTypeId() < rhs.getRequiredMimeTypeId() ) {
+				return( -1 );
+			}
+			else if( getRequiredMimeTypeId() > rhs.getRequiredMimeTypeId() ) {
+				return( 1 );
+			}
+			return( 0 );
+		}
+		else if( obj instanceof ICFIntProtMimeTypeH rhs ) {
+			cmp = 0;
+			if( getRequiredMimeTypeId() < rhs.getRequiredMimeTypeId() ) {
+				return( -1 );
+			}
+			else if( getRequiredMimeTypeId() > rhs.getRequiredMimeTypeId() ) {
+				return( 1 );
+			}
+			if (getRequiredName() != null) {
+				if (rhs.getRequiredName() != null) {
+					cmp = getRequiredName().compareTo( rhs.getRequiredName() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredName() != null) {
+				return( -1 );
+			}
+			if( getOptionalFileTypes() != null ) {
+				if( rhs.getOptionalFileTypes() != null ) {
+					cmp = getOptionalFileTypes().compareTo( rhs.getOptionalFileTypes() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else {
+				if( rhs.getOptionalFileTypes() != null ) {
+					return( -1 );
+				}
+			}
+			return( 0 );
+		}
+		else if( obj instanceof ICFIntProtMimeTypeByUNameIdxKey rhs ) {
+			if (getRequiredName() != null) {
+				if (rhs.getRequiredName() != null) {
+					cmp = getRequiredName().compareTo( rhs.getRequiredName() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredName() != null) {
+				return( -1 );
+			}			return( 0 );
+		}
+		else if( obj instanceof ICFIntPubMimeType rhs ) {
+			cmp = 0;
+			{
+				cmp = getCreatedByUserId().compareTo( rhs.getCreatedByUserId() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+
+				cmp = getCreatedAt().compareTo( rhs.getCreatedAt() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+
+				cmp = getUpdatedByUserId().compareTo( rhs.getUpdatedByUserId() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+
+				cmp = getUpdatedAt().compareTo( rhs.getUpdatedAt() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+			}
+			if( getRequiredMimeTypeId() < rhs.getRequiredMimeTypeId() ) {
+				return( -1 );
+			}
+			else if( getRequiredMimeTypeId() > rhs.getRequiredMimeTypeId() ) {
+				return( 1 );
+			}
+			if (getRequiredName() != null) {
+				if (rhs.getRequiredName() != null) {
+					cmp = getRequiredName().compareTo( rhs.getRequiredName() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredName() != null) {
+				return( -1 );
+			}
+			if( getOptionalFileTypes() != null ) {
+				if( rhs.getOptionalFileTypes() != null ) {
+					cmp = getOptionalFileTypes().compareTo( rhs.getOptionalFileTypes() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else {
+				if( rhs.getOptionalFileTypes() != null ) {
+					return( -1 );
+				}
+			}
+			return( 0 );
+		}
+		else if( obj instanceof ICFIntPubMimeTypeHPKey rhs ) {
+			if( getRequiredRevision() < rhs.getRequiredRevision() ) {
+				return( -1 );
+			}
+			else if( getRequiredRevision() > rhs.getRequiredRevision() ) {
+				return( 1 );
+			}
+			if( getRequiredMimeTypeId() < rhs.getRequiredMimeTypeId() ) {
+				return( -1 );
+			}
+			else if( getRequiredMimeTypeId() > rhs.getRequiredMimeTypeId() ) {
+				return( 1 );
+			}
+			return( 0 );
+		}
+		else if( obj instanceof ICFIntPubMimeTypeH rhs ) {
+			cmp = 0;
+			if( getRequiredMimeTypeId() < rhs.getRequiredMimeTypeId() ) {
+				return( -1 );
+			}
+			else if( getRequiredMimeTypeId() > rhs.getRequiredMimeTypeId() ) {
+				return( 1 );
+			}
+			if (getRequiredName() != null) {
+				if (rhs.getRequiredName() != null) {
+					cmp = getRequiredName().compareTo( rhs.getRequiredName() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredName() != null) {
+				return( -1 );
+			}
+			if( getOptionalFileTypes() != null ) {
+				if( rhs.getOptionalFileTypes() != null ) {
+					cmp = getOptionalFileTypes().compareTo( rhs.getOptionalFileTypes() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else {
+				if( rhs.getOptionalFileTypes() != null ) {
+					return( -1 );
+				}
+			}
+			return( 0 );
+		}
+		else if( obj instanceof ICFIntPubMimeTypeByUNameIdxKey rhs ) {
 			if (getRequiredName() != null) {
 				if (rhs.getRequiredName() != null) {
 					cmp = getRequiredName().compareTo( rhs.getRequiredName() );
@@ -506,6 +982,64 @@ public class CFIntBuffMimeType
 
 	@Override
 	public void setMimeType( ICFIntMimeTypeH src ) {
+		setRequiredMimeTypeId(src.getRequiredMimeTypeId());
+		setRequiredName(src.getRequiredName());
+		setOptionalFileTypes(src.getOptionalFileTypes());
+	}
+
+	@Override
+	public void set( ICFIntProtMimeType src ) {
+		setMimeType( src );
+	}
+
+	@Override
+	public void setMimeType( ICFIntProtMimeType src ) {
+		setRequiredMimeTypeId(src.getRequiredMimeTypeId());
+		setRequiredRevision( src.getRequiredRevision() );
+		setCreatedByUserId( src.getCreatedByUserId() );
+		setCreatedAt( src.getCreatedAt() );
+		setUpdatedByUserId( src.getUpdatedByUserId() );
+		setUpdatedAt( src.getUpdatedAt() );
+		setRequiredName(src.getRequiredName());
+		setOptionalFileTypes(src.getOptionalFileTypes());
+	}
+
+	@Override
+	public void set( ICFIntProtMimeTypeH src ) {
+		setMimeType( src );
+	}
+
+	@Override
+	public void setMimeType( ICFIntProtMimeTypeH src ) {
+		setRequiredMimeTypeId(src.getRequiredMimeTypeId());
+		setRequiredName(src.getRequiredName());
+		setOptionalFileTypes(src.getOptionalFileTypes());
+	}
+
+	@Override
+	public void set( ICFIntPubMimeType src ) {
+		setMimeType( src );
+	}
+
+	@Override
+	public void setMimeType( ICFIntPubMimeType src ) {
+		setRequiredMimeTypeId(src.getRequiredMimeTypeId());
+		setRequiredRevision( src.getRequiredRevision() );
+		setCreatedByUserId( src.getCreatedByUserId() );
+		setCreatedAt( src.getCreatedAt() );
+		setUpdatedByUserId( src.getUpdatedByUserId() );
+		setUpdatedAt( src.getUpdatedAt() );
+		setRequiredName(src.getRequiredName());
+		setOptionalFileTypes(src.getOptionalFileTypes());
+	}
+
+	@Override
+	public void set( ICFIntPubMimeTypeH src ) {
+		setMimeType( src );
+	}
+
+	@Override
+	public void setMimeType( ICFIntPubMimeTypeH src ) {
 		setRequiredMimeTypeId(src.getRequiredMimeTypeId());
 		setRequiredName(src.getRequiredName());
 		setOptionalFileTypes(src.getOptionalFileTypes());

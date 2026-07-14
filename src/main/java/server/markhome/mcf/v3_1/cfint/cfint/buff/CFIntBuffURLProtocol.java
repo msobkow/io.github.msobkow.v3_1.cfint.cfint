@@ -213,8 +213,7 @@ public class CFIntBuffURLProtocol
 		if( obj == null ) {
 			return( false );
 		}
-		else if( obj instanceof ICFIntURLProtocol ) {
-			ICFIntURLProtocol rhs = (ICFIntURLProtocol)obj;
+		else if( obj instanceof ICFIntURLProtocol rhs ) {
 			if( ! getCreatedByUserId().equals( rhs.getCreatedByUserId() ) ) {
 				return( false );
 			}
@@ -338,6 +337,250 @@ public class CFIntBuffURLProtocol
 			}
 			return( true );
 		}
+		else if( obj instanceof ICFIntProtURLProtocol rhs ) {
+			if( ! getCreatedByUserId().equals( rhs.getCreatedByUserId() ) ) {
+				return( false );
+			}
+			if( ! getCreatedAt().equals( rhs.getCreatedAt() ) ) {
+				return( false );
+			}
+			if( ! getUpdatedByUserId().equals( rhs.getUpdatedByUserId() ) ) {
+				return( false );
+			}
+			if( ! getUpdatedAt().equals( rhs.getUpdatedAt() ) ) {
+				return( false );
+			}
+			if( getRequiredURLProtocolId() != rhs.getRequiredURLProtocolId() ) {
+				return( false );
+			}
+			if( getRequiredName() != null ) {
+				if( rhs.getRequiredName() != null ) {
+					if( ! getRequiredName().equals( rhs.getRequiredName() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredName() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredDescription() != null ) {
+				if( rhs.getRequiredDescription() != null ) {
+					if( ! getRequiredDescription().equals( rhs.getRequiredDescription() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredDescription() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredIsSecure() != rhs.getRequiredIsSecure() ) {
+				return( false );
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFIntProtURLProtocolH rhs ) {
+			if( getRequiredURLProtocolId() != rhs.getRequiredURLProtocolId() ) {
+				return( false );
+			}
+			if( getRequiredName() != null ) {
+				if( rhs.getRequiredName() != null ) {
+					if( ! getRequiredName().equals( rhs.getRequiredName() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredName() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredDescription() != null ) {
+				if( rhs.getRequiredDescription() != null ) {
+					if( ! getRequiredDescription().equals( rhs.getRequiredDescription() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredDescription() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredIsSecure() != rhs.getRequiredIsSecure() ) {
+				return( false );
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFIntProtURLProtocolHPKey rhs ) {
+			if( getRequiredURLProtocolId() != rhs.getRequiredURLProtocolId() ) {
+				return( false );
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFIntURLProtocolByUNameIdxKey ) {
+			ICFIntURLProtocolByUNameIdxKey rhs = (ICFIntURLProtocolByUNameIdxKey)obj;
+			if( getRequiredName() != null ) {
+				if( rhs.getRequiredName() != null ) {
+					if( ! getRequiredName().equals( rhs.getRequiredName() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredName() != null ) {
+					return( false );
+				}
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFIntURLProtocolByIsSecureIdxKey ) {
+			ICFIntURLProtocolByIsSecureIdxKey rhs = (ICFIntURLProtocolByIsSecureIdxKey)obj;
+			if( getRequiredIsSecure() != rhs.getRequiredIsSecure() ) {
+				return( false );
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFIntPubURLProtocol rhs ) {
+			if( ! getCreatedByUserId().equals( rhs.getCreatedByUserId() ) ) {
+				return( false );
+			}
+			if( ! getCreatedAt().equals( rhs.getCreatedAt() ) ) {
+				return( false );
+			}
+			if( ! getUpdatedByUserId().equals( rhs.getUpdatedByUserId() ) ) {
+				return( false );
+			}
+			if( ! getUpdatedAt().equals( rhs.getUpdatedAt() ) ) {
+				return( false );
+			}
+			if( getRequiredURLProtocolId() != rhs.getRequiredURLProtocolId() ) {
+				return( false );
+			}
+			if( getRequiredName() != null ) {
+				if( rhs.getRequiredName() != null ) {
+					if( ! getRequiredName().equals( rhs.getRequiredName() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredName() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredDescription() != null ) {
+				if( rhs.getRequiredDescription() != null ) {
+					if( ! getRequiredDescription().equals( rhs.getRequiredDescription() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredDescription() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredIsSecure() != rhs.getRequiredIsSecure() ) {
+				return( false );
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFIntPubURLProtocolH rhs ) {
+			if( getRequiredURLProtocolId() != rhs.getRequiredURLProtocolId() ) {
+				return( false );
+			}
+			if( getRequiredName() != null ) {
+				if( rhs.getRequiredName() != null ) {
+					if( ! getRequiredName().equals( rhs.getRequiredName() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredName() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredDescription() != null ) {
+				if( rhs.getRequiredDescription() != null ) {
+					if( ! getRequiredDescription().equals( rhs.getRequiredDescription() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredDescription() != null ) {
+					return( false );
+				}
+			}
+			if( getRequiredIsSecure() != rhs.getRequiredIsSecure() ) {
+				return( false );
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFIntPubURLProtocolHPKey rhs ) {
+			if( getRequiredURLProtocolId() != rhs.getRequiredURLProtocolId() ) {
+				return( false );
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFIntURLProtocolByUNameIdxKey ) {
+			ICFIntURLProtocolByUNameIdxKey rhs = (ICFIntURLProtocolByUNameIdxKey)obj;
+			if( getRequiredName() != null ) {
+				if( rhs.getRequiredName() != null ) {
+					if( ! getRequiredName().equals( rhs.getRequiredName() ) ) {
+						return( false );
+					}
+				}
+				else {
+					return( false );
+				}
+			}
+			else {
+				if( rhs.getRequiredName() != null ) {
+					return( false );
+				}
+			}
+			return( true );
+		}
+		else if( obj instanceof ICFIntURLProtocolByIsSecureIdxKey ) {
+			ICFIntURLProtocolByIsSecureIdxKey rhs = (ICFIntURLProtocolByIsSecureIdxKey)obj;
+			if( getRequiredIsSecure() != rhs.getRequiredIsSecure() ) {
+				return( false );
+			}
+			return( true );
+		}
 		else {
 			boolean retval = super.equals( obj );
 			return( retval );
@@ -373,8 +616,7 @@ public class CFIntBuffURLProtocol
 		if( obj == null ) {
 			return( -1 );
 		}
-		else if( obj instanceof ICFIntURLProtocol ) {
-			ICFIntURLProtocol rhs = (ICFIntURLProtocol)obj;
+		else if( obj instanceof ICFIntURLProtocol rhs ) {
 			cmp = 0;
 			{
 				cmp = getCreatedByUserId().compareTo( rhs.getCreatedByUserId() );
@@ -443,8 +685,7 @@ public class CFIntBuffURLProtocol
 			}
 			return( 0 );
 		}
-		else if( obj instanceof ICFIntURLProtocolHPKey ) {
-			ICFIntURLProtocolHPKey rhs = (ICFIntURLProtocolHPKey)obj;
+		else if( obj instanceof ICFIntURLProtocolHPKey rhs ) {
 			if( getRequiredRevision() < rhs.getRequiredRevision() ) {
 				return( -1 );
 			}
@@ -459,8 +700,7 @@ public class CFIntBuffURLProtocol
 			}
 			return( 0 );
 		}
-		else if( obj instanceof ICFIntURLProtocolH ) {
-			ICFIntURLProtocolH rhs = (ICFIntURLProtocolH)obj;
+		else if( obj instanceof ICFIntURLProtocolH rhs ) {
 			cmp = 0;
 			if( getRequiredURLProtocolId() < rhs.getRequiredURLProtocolId() ) {
 				return( -1 );
@@ -508,9 +748,7 @@ public class CFIntBuffURLProtocol
 			}
 			return( 0 );
 		}
-		else if( obj instanceof ICFIntURLProtocolByUNameIdxKey ) {
-			ICFIntURLProtocolByUNameIdxKey rhs = (ICFIntURLProtocolByUNameIdxKey)obj;
-
+		else if( obj instanceof ICFIntURLProtocolByUNameIdxKey rhs ) {
 			if (getRequiredName() != null) {
 				if (rhs.getRequiredName() != null) {
 					cmp = getRequiredName().compareTo( rhs.getRequiredName() );
@@ -526,9 +764,327 @@ public class CFIntBuffURLProtocol
 				return( -1 );
 			}			return( 0 );
 		}
-		else if( obj instanceof ICFIntURLProtocolByIsSecureIdxKey ) {
-			ICFIntURLProtocolByIsSecureIdxKey rhs = (ICFIntURLProtocolByIsSecureIdxKey)obj;
+		else if( obj instanceof ICFIntURLProtocolByIsSecureIdxKey rhs ) {
+			if( getRequiredIsSecure() ) {
+				if( ! rhs.getRequiredIsSecure() ) {
+					return( 1 );
+				}
+			}
+			else {
+				if( rhs.getRequiredIsSecure() ) {
+					return( -1 );
+				}
+			}			return( 0 );
+		}
+		else if( obj instanceof ICFIntProtURLProtocol rhs ) {
+			cmp = 0;
+			{
+				cmp = getCreatedByUserId().compareTo( rhs.getCreatedByUserId() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
 
+				cmp = getCreatedAt().compareTo( rhs.getCreatedAt() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+
+				cmp = getUpdatedByUserId().compareTo( rhs.getUpdatedByUserId() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+
+				cmp = getUpdatedAt().compareTo( rhs.getUpdatedAt() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+			}
+			if( getRequiredURLProtocolId() < rhs.getRequiredURLProtocolId() ) {
+				return( -1 );
+			}
+			else if( getRequiredURLProtocolId() > rhs.getRequiredURLProtocolId() ) {
+				return( 1 );
+			}
+			if (getRequiredName() != null) {
+				if (rhs.getRequiredName() != null) {
+					cmp = getRequiredName().compareTo( rhs.getRequiredName() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredName() != null) {
+				return( -1 );
+			}
+			if (getRequiredDescription() != null) {
+				if (rhs.getRequiredDescription() != null) {
+					cmp = getRequiredDescription().compareTo( rhs.getRequiredDescription() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredDescription() != null) {
+				return( -1 );
+			}
+			if( getRequiredIsSecure() ) {
+				if( ! rhs.getRequiredIsSecure() ) {
+					return( 1 );
+				}
+			}
+			else {
+				if( rhs.getRequiredIsSecure() ) {
+					return( -1 );
+				}
+			}
+			return( 0 );
+ 		}
+		else if( obj instanceof ICFIntProtURLProtocolHPKey rhs ) {
+			if( getRequiredRevision() < rhs.getRequiredRevision() ) {
+				return( -1 );
+			}
+			else if( getRequiredRevision() > rhs.getRequiredRevision() ) {
+				return( 1 );
+			}
+			if( getRequiredURLProtocolId() < rhs.getRequiredURLProtocolId() ) {
+				return( -1 );
+			}
+			else if( getRequiredURLProtocolId() > rhs.getRequiredURLProtocolId() ) {
+				return( 1 );
+			}
+			return( 0 );
+		}
+		else if( obj instanceof ICFIntProtURLProtocolH rhs ) {
+			cmp = 0;
+			if( getRequiredURLProtocolId() < rhs.getRequiredURLProtocolId() ) {
+				return( -1 );
+			}
+			else if( getRequiredURLProtocolId() > rhs.getRequiredURLProtocolId() ) {
+				return( 1 );
+			}
+			if (getRequiredName() != null) {
+				if (rhs.getRequiredName() != null) {
+					cmp = getRequiredName().compareTo( rhs.getRequiredName() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredName() != null) {
+				return( -1 );
+			}
+			if (getRequiredDescription() != null) {
+				if (rhs.getRequiredDescription() != null) {
+					cmp = getRequiredDescription().compareTo( rhs.getRequiredDescription() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredDescription() != null) {
+				return( -1 );
+			}
+			if( getRequiredIsSecure() ) {
+				if( ! rhs.getRequiredIsSecure() ) {
+					return( 1 );
+				}
+			}
+			else {
+				if( rhs.getRequiredIsSecure() ) {
+					return( -1 );
+				}
+			}
+			return( 0 );
+		}
+		else if( obj instanceof ICFIntProtURLProtocolByUNameIdxKey rhs ) {
+			if (getRequiredName() != null) {
+				if (rhs.getRequiredName() != null) {
+					cmp = getRequiredName().compareTo( rhs.getRequiredName() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredName() != null) {
+				return( -1 );
+			}			return( 0 );
+		}
+		else if( obj instanceof ICFIntProtURLProtocolByIsSecureIdxKey rhs ) {
+			if( getRequiredIsSecure() ) {
+				if( ! rhs.getRequiredIsSecure() ) {
+					return( 1 );
+				}
+			}
+			else {
+				if( rhs.getRequiredIsSecure() ) {
+					return( -1 );
+				}
+			}			return( 0 );
+		}
+		else if( obj instanceof ICFIntPubURLProtocol rhs ) {
+			cmp = 0;
+			{
+				cmp = getCreatedByUserId().compareTo( rhs.getCreatedByUserId() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+
+				cmp = getCreatedAt().compareTo( rhs.getCreatedAt() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+
+				cmp = getUpdatedByUserId().compareTo( rhs.getUpdatedByUserId() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+
+				cmp = getUpdatedAt().compareTo( rhs.getUpdatedAt() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+			}
+			if( getRequiredURLProtocolId() < rhs.getRequiredURLProtocolId() ) {
+				return( -1 );
+			}
+			else if( getRequiredURLProtocolId() > rhs.getRequiredURLProtocolId() ) {
+				return( 1 );
+			}
+			if (getRequiredName() != null) {
+				if (rhs.getRequiredName() != null) {
+					cmp = getRequiredName().compareTo( rhs.getRequiredName() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredName() != null) {
+				return( -1 );
+			}
+			if (getRequiredDescription() != null) {
+				if (rhs.getRequiredDescription() != null) {
+					cmp = getRequiredDescription().compareTo( rhs.getRequiredDescription() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredDescription() != null) {
+				return( -1 );
+			}
+			if( getRequiredIsSecure() ) {
+				if( ! rhs.getRequiredIsSecure() ) {
+					return( 1 );
+				}
+			}
+			else {
+				if( rhs.getRequiredIsSecure() ) {
+					return( -1 );
+				}
+			}
+			return( 0 );
+		}
+		else if( obj instanceof ICFIntPubURLProtocolHPKey rhs ) {
+			if( getRequiredRevision() < rhs.getRequiredRevision() ) {
+				return( -1 );
+			}
+			else if( getRequiredRevision() > rhs.getRequiredRevision() ) {
+				return( 1 );
+			}
+			if( getRequiredURLProtocolId() < rhs.getRequiredURLProtocolId() ) {
+				return( -1 );
+			}
+			else if( getRequiredURLProtocolId() > rhs.getRequiredURLProtocolId() ) {
+				return( 1 );
+			}
+			return( 0 );
+		}
+		else if( obj instanceof ICFIntPubURLProtocolH rhs ) {
+			cmp = 0;
+			if( getRequiredURLProtocolId() < rhs.getRequiredURLProtocolId() ) {
+				return( -1 );
+			}
+			else if( getRequiredURLProtocolId() > rhs.getRequiredURLProtocolId() ) {
+				return( 1 );
+			}
+			if (getRequiredName() != null) {
+				if (rhs.getRequiredName() != null) {
+					cmp = getRequiredName().compareTo( rhs.getRequiredName() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredName() != null) {
+				return( -1 );
+			}
+			if (getRequiredDescription() != null) {
+				if (rhs.getRequiredDescription() != null) {
+					cmp = getRequiredDescription().compareTo( rhs.getRequiredDescription() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredDescription() != null) {
+				return( -1 );
+			}
+			if( getRequiredIsSecure() ) {
+				if( ! rhs.getRequiredIsSecure() ) {
+					return( 1 );
+				}
+			}
+			else {
+				if( rhs.getRequiredIsSecure() ) {
+					return( -1 );
+				}
+			}
+			return( 0 );
+		}
+		else if( obj instanceof ICFIntPubURLProtocolByUNameIdxKey rhs ) {
+			if (getRequiredName() != null) {
+				if (rhs.getRequiredName() != null) {
+					cmp = getRequiredName().compareTo( rhs.getRequiredName() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredName() != null) {
+				return( -1 );
+			}			return( 0 );
+		}
+		else if( obj instanceof ICFIntPubURLProtocolByIsSecureIdxKey rhs ) {
 			if( getRequiredIsSecure() ) {
 				if( ! rhs.getRequiredIsSecure() ) {
 					return( 1 );
@@ -574,6 +1130,68 @@ public class CFIntBuffURLProtocol
 
 	@Override
 	public void setURLProtocol( ICFIntURLProtocolH src ) {
+		setRequiredURLProtocolId(src.getRequiredURLProtocolId());
+		setRequiredName(src.getRequiredName());
+		setRequiredDescription(src.getRequiredDescription());
+		setRequiredIsSecure(src.getRequiredIsSecure());
+	}
+
+	@Override
+	public void set( ICFIntProtURLProtocol src ) {
+		setURLProtocol( src );
+	}
+
+	@Override
+	public void setURLProtocol( ICFIntProtURLProtocol src ) {
+		setRequiredURLProtocolId(src.getRequiredURLProtocolId());
+		setRequiredRevision( src.getRequiredRevision() );
+		setCreatedByUserId( src.getCreatedByUserId() );
+		setCreatedAt( src.getCreatedAt() );
+		setUpdatedByUserId( src.getUpdatedByUserId() );
+		setUpdatedAt( src.getUpdatedAt() );
+		setRequiredName(src.getRequiredName());
+		setRequiredDescription(src.getRequiredDescription());
+		setRequiredIsSecure(src.getRequiredIsSecure());
+	}
+
+	@Override
+	public void set( ICFIntProtURLProtocolH src ) {
+		setURLProtocol( src );
+	}
+
+	@Override
+	public void setURLProtocol( ICFIntProtURLProtocolH src ) {
+		setRequiredURLProtocolId(src.getRequiredURLProtocolId());
+		setRequiredName(src.getRequiredName());
+		setRequiredDescription(src.getRequiredDescription());
+		setRequiredIsSecure(src.getRequiredIsSecure());
+	}
+
+	@Override
+	public void set( ICFIntPubURLProtocol src ) {
+		setURLProtocol( src );
+	}
+
+	@Override
+	public void setURLProtocol( ICFIntPubURLProtocol src ) {
+		setRequiredURLProtocolId(src.getRequiredURLProtocolId());
+		setRequiredRevision( src.getRequiredRevision() );
+		setCreatedByUserId( src.getCreatedByUserId() );
+		setCreatedAt( src.getCreatedAt() );
+		setUpdatedByUserId( src.getUpdatedByUserId() );
+		setUpdatedAt( src.getUpdatedAt() );
+		setRequiredName(src.getRequiredName());
+		setRequiredDescription(src.getRequiredDescription());
+		setRequiredIsSecure(src.getRequiredIsSecure());
+	}
+
+	@Override
+	public void set( ICFIntPubURLProtocolH src ) {
+		setURLProtocol( src );
+	}
+
+	@Override
+	public void setURLProtocol( ICFIntPubURLProtocolH src ) {
 		setRequiredURLProtocolId(src.getRequiredURLProtocolId());
 		setRequiredName(src.getRequiredName());
 		setRequiredDescription(src.getRequiredDescription());
