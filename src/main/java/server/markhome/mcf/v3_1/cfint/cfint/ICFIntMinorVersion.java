@@ -83,28 +83,12 @@ public interface ICFIntMinorVersion
 
 	public ICFSecTenant getRequiredOwnerTenant();
 	public ICFIntMajorVersion getRequiredContainerParentMajVer();
-	public void setRequiredOwnerTenant(ICFSecTenant argObj);
 	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId);
-	public void setRequiredContainerParentMajVer(ICFIntMajorVersion argObj);
-	public default void setRequiredContainerParentMajVer(ICFIntProtMajorVersion argObj) {
-		if (argObj == null) {
-			setRequiredContainerParentMajVer((CFLibDbKeyHash256)null);
-		}
-		else {
-			setRequiredContainerParentMajVer(argObj.getRequiredId());
-		}
-	}
-
-	public default void setRequiredContainerParentMajVer(ICFIntPubMajorVersion argObj) {
-		if (argObj == null) {
-			setRequiredContainerParentMajVer((CFLibDbKeyHash256)null);
-		}
-		else {
-			setRequiredContainerParentMajVer(argObj.getRequiredId());
-		}
-	}
-
+	public void setRequiredOwnerTenant(ICFSecPubTenant argObj);
 	public void setRequiredContainerParentMajVer(CFLibDbKeyHash256 argMajorVersionId);
+	public void setRequiredContainerParentMajVer(ICFIntMajorVersion argObj);
+	public void setRequiredContainerParentMajVer(ICFIntProtMajorVersion argObj);
+	public void setRequiredContainerParentMajVer(ICFIntPubMajorVersion argObj);
 	public CFLibDbKeyHash256 getRequiredTenantId();
 	public CFLibDbKeyHash256 getRequiredMajorVersionId();
 	public String getRequiredName();

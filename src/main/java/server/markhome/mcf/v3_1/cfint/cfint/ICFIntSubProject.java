@@ -84,28 +84,12 @@ public interface ICFIntSubProject
 
 	public ICFSecTenant getRequiredOwnerTenant();
 	public ICFIntTopProject getRequiredContainerParentTPrj();
-	public void setRequiredOwnerTenant(ICFSecTenant argObj);
 	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId);
-	public void setRequiredContainerParentTPrj(ICFIntTopProject argObj);
-	public default void setRequiredContainerParentTPrj(ICFIntProtTopProject argObj) {
-		if (argObj == null) {
-			setRequiredContainerParentTPrj((CFLibDbKeyHash256)null);
-		}
-		else {
-			setRequiredContainerParentTPrj(argObj.getRequiredId());
-		}
-	}
-
-	public default void setRequiredContainerParentTPrj(ICFIntPubTopProject argObj) {
-		if (argObj == null) {
-			setRequiredContainerParentTPrj((CFLibDbKeyHash256)null);
-		}
-		else {
-			setRequiredContainerParentTPrj(argObj.getRequiredId());
-		}
-	}
-
+	public void setRequiredOwnerTenant(ICFSecPubTenant argObj);
 	public void setRequiredContainerParentTPrj(CFLibDbKeyHash256 argTopProjectId);
+	public void setRequiredContainerParentTPrj(ICFIntTopProject argObj);
+	public void setRequiredContainerParentTPrj(ICFIntProtTopProject argObj);
+	public void setRequiredContainerParentTPrj(ICFIntPubTopProject argObj);
 	public CFLibDbKeyHash256 getRequiredTenantId();
 	public CFLibDbKeyHash256 getRequiredTopProjectId();
 	public String getRequiredName();

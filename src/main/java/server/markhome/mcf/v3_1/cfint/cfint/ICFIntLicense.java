@@ -72,28 +72,12 @@ public interface ICFIntLicense
 
 	public ICFSecTenant getRequiredOwnerTenant();
 	public ICFIntTopDomain getRequiredContainerTopDomain();
-	public void setRequiredOwnerTenant(ICFSecTenant argObj);
 	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId);
-	public void setRequiredContainerTopDomain(ICFIntTopDomain argObj);
-	public default void setRequiredContainerTopDomain(ICFIntProtTopDomain argObj) {
-		if (argObj == null) {
-			setRequiredContainerTopDomain((CFLibDbKeyHash256)null);
-		}
-		else {
-			setRequiredContainerTopDomain(argObj.getRequiredId());
-		}
-	}
-
-	public default void setRequiredContainerTopDomain(ICFIntPubTopDomain argObj) {
-		if (argObj == null) {
-			setRequiredContainerTopDomain((CFLibDbKeyHash256)null);
-		}
-		else {
-			setRequiredContainerTopDomain(argObj.getRequiredId());
-		}
-	}
-
+	public void setRequiredOwnerTenant(ICFSecPubTenant argObj);
 	public void setRequiredContainerTopDomain(CFLibDbKeyHash256 argTopDomainId);
+	public void setRequiredContainerTopDomain(ICFIntTopDomain argObj);
+	public void setRequiredContainerTopDomain(ICFIntProtTopDomain argObj);
+	public void setRequiredContainerTopDomain(ICFIntPubTopDomain argObj);
 	public CFLibDbKeyHash256 getRequiredTenantId();
 	public CFLibDbKeyHash256 getRequiredTopDomainId();
 	public String getRequiredName();

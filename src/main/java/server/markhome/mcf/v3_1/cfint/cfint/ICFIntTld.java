@@ -81,8 +81,8 @@ public interface ICFIntTld
 	public void setRequiredRevision( int value );
 
 	public ICFSecTenant getRequiredContainerTenant();
-	public void setRequiredContainerTenant(ICFSecTenant argObj);
 	public void setRequiredContainerTenant(CFLibDbKeyHash256 argTenantId);
+	public void setRequiredContainerTenant(ICFSecPubTenant argObj);
 	public CFLibDbKeyHash256 getRequiredTenantId();
 	public String getRequiredName();
 	public void setRequiredName( String value );
