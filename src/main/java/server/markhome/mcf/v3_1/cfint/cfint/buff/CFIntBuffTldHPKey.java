@@ -204,24 +204,6 @@ public class CFIntBuffTldHPKey
 			}
 			return( true );
 		}
-		else if (obj instanceof ICFIntTldPKey rhs) {
-			if( getRequiredId() != null ) {
-				if( rhs.getRequiredId() != null ) {
-					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {
-						return( false );
-					}
-				}
-				else {
-					return( false );
-				}
-			}
-			else {
-				if( rhs.getRequiredId() != null ) {
-					return( false );
-				}
-			}
-			return( true );
-		}
 		else if (obj instanceof ICFIntTldH rhs) {
 			if (getAuditClusterId() != null) {
 				if (rhs.getAuditClusterId() != null) {
@@ -366,24 +348,6 @@ public class CFIntBuffTldHPKey
 			}
 			return( true );
 		}
-		else if (obj instanceof ICFIntProtTldPKey rhs) {
-			if( getRequiredId() != null ) {
-				if( rhs.getRequiredId() != null ) {
-					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {
-						return( false );
-					}
-				}
-				else {
-					return( false );
-				}
-			}
-			else {
-				if( rhs.getRequiredId() != null ) {
-					return( false );
-				}
-			}
-			return( true );
-		}
 		else if (obj instanceof ICFIntProtTldH rhs) {
 			if (getAuditClusterId() != null) {
 				if (rhs.getAuditClusterId() != null) {
@@ -511,24 +475,6 @@ public class CFIntBuffTldHPKey
 			else if (rhs.getAuditSessionId() != null && !rhs.getAuditSessionId().isNull() ) {
 				return( false );
 			}
-			if( getRequiredId() != null ) {
-				if( rhs.getRequiredId() != null ) {
-					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {
-						return( false );
-					}
-				}
-				else {
-					return( false );
-				}
-			}
-			else {
-				if( rhs.getRequiredId() != null ) {
-					return( false );
-				}
-			}
-			return( true );
-		}
-		else if (obj instanceof ICFIntPubTldPKey rhs) {
 			if( getRequiredId() != null ) {
 				if( rhs.getRequiredId() != null ) {
 					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {
@@ -714,23 +660,6 @@ public class CFIntBuffTldHPKey
 					return( cmp );
 				}
 			}
-			if (getRequiredId() != null) {
-				if (rhs.getRequiredId() != null) {
-					cmp = getRequiredId().compareTo( rhs.getRequiredId() );
-					if( cmp != 0 ) {
-						return( cmp );
-					}
-				}
-				else {
-					return( 1 );
-				}
-			}
-			else if (rhs.getRequiredId() != null) {
-				return( -1 );
-			}
-			return( 0 );
-		}
-		else if (obj instanceof ICFIntTldPKey rhs) {
 			if (getRequiredId() != null) {
 				if (rhs.getRequiredId() != null) {
 					cmp = getRequiredId().compareTo( rhs.getRequiredId() );
@@ -1067,23 +996,6 @@ public class CFIntBuffTldHPKey
 					return( cmp );
 				}
 			}
-			if (getRequiredId() != null) {
-				if (rhs.getRequiredId() != null) {
-					cmp = getRequiredId().compareTo( rhs.getRequiredId() );
-					if( cmp != 0 ) {
-						return( cmp );
-					}
-				}
-				else {
-					return( 1 );
-				}
-			}
-			else if (rhs.getRequiredId() != null) {
-				return( -1 );
-			}
-			return( 0 );
-		}
-		else if (obj instanceof ICFIntPubTldPKey rhs) {
 			if (getRequiredId() != null) {
 				if (rhs.getRequiredId() != null) {
 					cmp = getRequiredId().compareTo( rhs.getRequiredId() );

@@ -194,12 +194,6 @@ public class CFIntBuffMimeTypeHPKey
 			}
 			return( true );
 		}
-		else if (obj instanceof ICFIntMimeTypePKey rhs) {
-			if( getRequiredMimeTypeId() != rhs.getRequiredMimeTypeId() ) {
-				return( false );
-			}
-			return( true );
-		}
 		else if (obj instanceof ICFIntMimeTypeH rhs) {
 			if (getAuditClusterId() != null) {
 				if (rhs.getAuditClusterId() != null) {
@@ -308,12 +302,6 @@ public class CFIntBuffMimeTypeHPKey
 			}
 			return( true );
 		}
-		else if (obj instanceof ICFIntProtMimeTypePKey rhs) {
-			if( getRequiredMimeTypeId() != rhs.getRequiredMimeTypeId() ) {
-				return( false );
-			}
-			return( true );
-		}
 		else if (obj instanceof ICFIntProtMimeTypeH rhs) {
 			if (getAuditClusterId() != null) {
 				if (rhs.getAuditClusterId() != null) {
@@ -417,12 +405,6 @@ public class CFIntBuffMimeTypeHPKey
 			else if (rhs.getAuditSessionId() != null && !rhs.getAuditSessionId().isNull() ) {
 				return( false );
 			}
-			if( getRequiredMimeTypeId() != rhs.getRequiredMimeTypeId() ) {
-				return( false );
-			}
-			return( true );
-		}
-		else if (obj instanceof ICFIntPubMimeTypePKey rhs) {
 			if( getRequiredMimeTypeId() != rhs.getRequiredMimeTypeId() ) {
 				return( false );
 			}
@@ -572,15 +554,6 @@ public class CFIntBuffMimeTypeHPKey
 					return( cmp );
 				}
 			}
-			if( getRequiredMimeTypeId() < rhs.getRequiredMimeTypeId() ) {
-				return( -1 );
-			}
-			else if( getRequiredMimeTypeId() > rhs.getRequiredMimeTypeId() ) {
-				return( 1 );
-			}
-			return( 0 );
-		}
-		else if (obj instanceof ICFIntMimeTypePKey rhs) {
 			if( getRequiredMimeTypeId() < rhs.getRequiredMimeTypeId() ) {
 				return( -1 );
 			}
@@ -861,15 +834,6 @@ public class CFIntBuffMimeTypeHPKey
 					return( cmp );
 				}
 			}
-			if( getRequiredMimeTypeId() < rhs.getRequiredMimeTypeId() ) {
-				return( -1 );
-			}
-			else if( getRequiredMimeTypeId() > rhs.getRequiredMimeTypeId() ) {
-				return( 1 );
-			}
-			return( 0 );
-		}
-		else if (obj instanceof ICFIntPubMimeTypePKey rhs) {
 			if( getRequiredMimeTypeId() < rhs.getRequiredMimeTypeId() ) {
 				return( -1 );
 			}
