@@ -248,6 +248,16 @@ public class CFIntBuffTopDomain
 	}
 
 	@Override
+	public void setRequiredContainerParentTld(ICFIntProtTld argObj) {
+		setRequiredContainerParentTld(argObj.getRequiredId());
+	}
+
+	@Override
+	public void setRequiredContainerParentTld(ICFIntPubTld argObj) {
+		setRequiredContainerParentTld(argObj.getRequiredId());
+	}
+
+	@Override
 	public void setRequiredContainerParentTld(CFLibDbKeyHash256 argTldId) {
 		requiredTldId = argTldId;
 	}

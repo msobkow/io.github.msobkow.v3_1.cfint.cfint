@@ -163,6 +163,16 @@ public class CFIntBuffLicense
 	}
 
 	@Override
+	public void setRequiredContainerTopDomain(ICFIntProtTopDomain argObj) {
+		setRequiredContainerTopDomain(argObj.getRequiredId());
+	}
+
+	@Override
+	public void setRequiredContainerTopDomain(ICFIntPubTopDomain argObj) {
+		setRequiredContainerTopDomain(argObj.getRequiredId());
+	}
+
+	@Override
 	public void setRequiredContainerTopDomain(CFLibDbKeyHash256 argTopDomainId) {
 		requiredTopDomainId = argTopDomainId;
 	}

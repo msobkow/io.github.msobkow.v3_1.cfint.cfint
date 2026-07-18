@@ -202,6 +202,16 @@ public class CFIntBuffMinorVersion
 	}
 
 	@Override
+	public void setRequiredContainerParentMajVer(ICFIntProtMajorVersion argObj) {
+		setRequiredContainerParentMajVer(argObj.getRequiredId());
+	}
+
+	@Override
+	public void setRequiredContainerParentMajVer(ICFIntPubMajorVersion argObj) {
+		setRequiredContainerParentMajVer(argObj.getRequiredId());
+	}
+
+	@Override
 	public void setRequiredContainerParentMajVer(CFLibDbKeyHash256 argMajorVersionId) {
 		requiredMajorVersionId = argMajorVersionId;
 	}

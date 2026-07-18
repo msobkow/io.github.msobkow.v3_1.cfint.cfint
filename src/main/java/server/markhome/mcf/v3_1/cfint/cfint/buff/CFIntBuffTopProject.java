@@ -225,6 +225,16 @@ public class CFIntBuffTopProject
 	}
 
 	@Override
+	public void setRequiredContainerParentSDom(ICFIntProtTopDomain argObj) {
+		setRequiredContainerParentSDom(argObj.getRequiredId());
+	}
+
+	@Override
+	public void setRequiredContainerParentSDom(ICFIntPubTopDomain argObj) {
+		setRequiredContainerParentSDom(argObj.getRequiredId());
+	}
+
+	@Override
 	public void setRequiredContainerParentSDom(CFLibDbKeyHash256 argTopDomainId) {
 		requiredTopDomainId = argTopDomainId;
 	}

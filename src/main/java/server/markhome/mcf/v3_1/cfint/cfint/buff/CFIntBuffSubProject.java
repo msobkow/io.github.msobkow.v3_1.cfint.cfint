@@ -225,6 +225,16 @@ public class CFIntBuffSubProject
 	}
 
 	@Override
+	public void setRequiredContainerParentTPrj(ICFIntProtTopProject argObj) {
+		setRequiredContainerParentTPrj(argObj.getRequiredId());
+	}
+
+	@Override
+	public void setRequiredContainerParentTPrj(ICFIntPubTopProject argObj) {
+		setRequiredContainerParentTPrj(argObj.getRequiredId());
+	}
+
+	@Override
 	public void setRequiredContainerParentTPrj(CFLibDbKeyHash256 argTopProjectId) {
 		requiredTopProjectId = argTopProjectId;
 	}
