@@ -698,15 +698,6 @@ public class CFIntBuffURLProtocolHPKey
 			}
 			return( 0 );
 		}
-		else if (obj instanceof ICFIntProtURLProtocolPKey rhs) {
-			if( getRequiredURLProtocolId() < rhs.getRequiredURLProtocolId() ) {
-				return( -1 );
-			}
-			else if( getRequiredURLProtocolId() > rhs.getRequiredURLProtocolId() ) {
-				return( 1 );
-			}
-			return( 0 );
-		}
 		else if (obj instanceof ICFIntProtURLProtocolH rhs) {
 			if( getAuditClusterId() == null ) {
 				if( rhs.getAuditClusterId() != null ) {
