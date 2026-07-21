@@ -125,18 +125,18 @@ public class CFIntBuffLicense
 		return(targetRec);
 	}
 	@Override
-	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId) {
-		requiredTenantId = argTenantId;
-	}
-
-	@Override
-	public void setRequiredOwnerTenant(ICFSecPubTenant argObj) {
+	public void setRequiredOwnerTenant(ICFSecTenant argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setOwnerTenant", 1, "argObj");
 		}
 		else {
 			requiredTenantId = argObj.getRequiredId();
 		}
+	}
+
+	@Override
+	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId) {
+		requiredTenantId = argTenantId;
 	}
 
 	@Override
@@ -153,11 +153,6 @@ public class CFIntBuffLicense
 		return(targetRec);
 	}
 	@Override
-	public void setRequiredContainerTopDomain(CFLibDbKeyHash256 argTopDomainId) {
-		requiredTopDomainId = argTopDomainId;
-	}
-
-	@Override
 	public void setRequiredContainerTopDomain(ICFIntTopDomain argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setContainerTopDomain", 1, "argObj");
@@ -169,22 +164,17 @@ public class CFIntBuffLicense
 
 	@Override
 	public void setRequiredContainerTopDomain(ICFIntProtTopDomain argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerTopDomain", 1, "argObj");
-		}
-		else {
-			requiredTopDomainId = argObj.getRequiredId();
-		}
+		setRequiredContainerTopDomain(argObj.getRequiredId());
 	}
 
 	@Override
 	public void setRequiredContainerTopDomain(ICFIntPubTopDomain argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerTopDomain", 1, "argObj");
-		}
-		else {
-			requiredTopDomainId = argObj.getRequiredId();
-		}
+		setRequiredContainerTopDomain(argObj.getRequiredId());
+	}
+
+	@Override
+	public void setRequiredContainerTopDomain(CFLibDbKeyHash256 argTopDomainId) {
+		requiredTopDomainId = argTopDomainId;
 	}
 
 	@Override

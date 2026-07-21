@@ -187,18 +187,18 @@ public class CFIntBuffMajorVersion
 		return(targetRec);
 	}
 	@Override
-	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId) {
-		requiredTenantId = argTenantId;
-	}
-
-	@Override
-	public void setRequiredOwnerTenant(ICFSecPubTenant argObj) {
+	public void setRequiredOwnerTenant(ICFSecTenant argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setOwnerTenant", 1, "argObj");
 		}
 		else {
 			requiredTenantId = argObj.getRequiredId();
 		}
+	}
+
+	@Override
+	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId) {
+		requiredTenantId = argTenantId;
 	}
 
 	@Override
@@ -215,11 +215,6 @@ public class CFIntBuffMajorVersion
 		return(targetRec);
 	}
 	@Override
-	public void setRequiredContainerParentSPrj(CFLibDbKeyHash256 argSubProjectId) {
-		requiredSubProjectId = argSubProjectId;
-	}
-
-	@Override
 	public void setRequiredContainerParentSPrj(ICFIntSubProject argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setContainerParentSPrj", 1, "argObj");
@@ -231,22 +226,17 @@ public class CFIntBuffMajorVersion
 
 	@Override
 	public void setRequiredContainerParentSPrj(ICFIntProtSubProject argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerParentSPrj", 1, "argObj");
-		}
-		else {
-			requiredSubProjectId = argObj.getRequiredId();
-		}
+		setRequiredContainerParentSPrj(argObj.getRequiredId());
 	}
 
 	@Override
 	public void setRequiredContainerParentSPrj(ICFIntPubSubProject argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerParentSPrj", 1, "argObj");
-		}
-		else {
-			requiredSubProjectId = argObj.getRequiredId();
-		}
+		setRequiredContainerParentSPrj(argObj.getRequiredId());
+	}
+
+	@Override
+	public void setRequiredContainerParentSPrj(CFLibDbKeyHash256 argSubProjectId) {
+		requiredSubProjectId = argSubProjectId;
 	}
 
 	@Override
