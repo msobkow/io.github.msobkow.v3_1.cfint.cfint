@@ -185,18 +185,18 @@ public class CFIntBuffTld
 		return(targetRec);
 	}
 	@Override
-	public void setRequiredContainerTenant(ICFSecTenant argObj) {
+	public void setRequiredContainerTenant(CFLibDbKeyHash256 argTenantId) {
+		requiredTenantId = argTenantId;
+	}
+
+	@Override
+	public void setRequiredContainerTenant(ICFSecPubTenant argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setContainerTenant", 1, "argObj");
 		}
 		else {
 			requiredTenantId = argObj.getRequiredId();
 		}
-	}
-
-	@Override
-	public void setRequiredContainerTenant(CFLibDbKeyHash256 argTenantId) {
-		requiredTenantId = argTenantId;
 	}
 
 	@Override
