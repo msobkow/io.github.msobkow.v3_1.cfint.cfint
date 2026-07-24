@@ -75,16 +75,16 @@ public interface ICFIntTopDomain
 
 	public CFLibDbKeyHash256 getPKey();
 	public void setPKey(CFLibDbKeyHash256 requiredId);
-
+	
+	public List<ICFIntTopProject> getOptionalComponentsTopProject();
+	public List<ICFIntLicense> getOptionalComponentsLicense();
 	public CFLibDbKeyHash256 getRequiredId();
 	public void setRequiredId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
-	public ICFSecPubTenant getRequiredOwnerTenant();
+	public ICFSecTenant getRequiredOwnerTenant();
 	public ICFIntTld getRequiredContainerParentTld();
-	public List<ICFIntTopProject> getOptionalComponentsTopProject();
-	public List<ICFIntLicense> getOptionalComponentsLicense();
 	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId);
 	public void setRequiredOwnerTenant(ICFSecPubTenant argObj);
 	public void setRequiredContainerParentTld(CFLibDbKeyHash256 argTldId);

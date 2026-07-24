@@ -73,14 +73,14 @@ public interface ICFIntTld
 
 	public CFLibDbKeyHash256 getPKey();
 	public void setPKey(CFLibDbKeyHash256 requiredId);
-
+	
+	public List<ICFIntTopDomain> getOptionalComponentsTopDomain();
 	public CFLibDbKeyHash256 getRequiredId();
 	public void setRequiredId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
-	public ICFSecPubTenant getRequiredContainerTenant();
-	public List<ICFIntTopDomain> getOptionalComponentsTopDomain();
+	public ICFSecTenant getRequiredContainerTenant();
 	public void setRequiredContainerTenant(CFLibDbKeyHash256 argTenantId);
 	public void setRequiredContainerTenant(ICFSecPubTenant argObj);
 	public CFLibDbKeyHash256 getRequiredTenantId();

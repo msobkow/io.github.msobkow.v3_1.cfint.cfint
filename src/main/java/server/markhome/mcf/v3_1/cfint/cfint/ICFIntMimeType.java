@@ -71,7 +71,7 @@ public interface ICFIntMimeType
 
 	public Integer getPKey();
 	public void setPKey(Integer requiredMimeTypeId);
-
+	
 	public int getRequiredMimeTypeId();
 	public void setRequiredMimeTypeId( int value );
 	public int getRequiredRevision();
