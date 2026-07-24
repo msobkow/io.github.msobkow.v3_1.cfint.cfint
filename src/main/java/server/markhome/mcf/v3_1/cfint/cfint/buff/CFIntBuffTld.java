@@ -102,22 +102,6 @@ public class CFIntBuffTld
 		}
 	}
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
-		return( requiredId );
-	}
-
-	@Override
-	public void setRequiredId( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredId",
-				1,
-				"value" );
-		}
-		requiredId = value;
-	}
-
-	@Override
 	public CFLibDbKeyHash256 getCreatedByUserId() {
 		return( createdByUserId );
 	}
@@ -172,7 +156,7 @@ public class CFIntBuffTld
 	}
 
 	@Override
-	public ICFSecTenant getRequiredContainerTenant() {
+	public ICFSecPubTenant getRequiredContainerTenant() {
 		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
 		if (targetBackingSchema == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerTenant", 0, "ICFSecSchema.getBackingCFSec()");
@@ -185,7 +169,7 @@ public class CFIntBuffTld
 		return(targetRec);
 	}
 	@Override
-	public void setRequiredContainerTenant(ICFSecTenant argObj) {
+	public void setRequiredContainerTenant(ICFSecPubTenant argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setContainerTenant", 1, "argObj");
 		}
