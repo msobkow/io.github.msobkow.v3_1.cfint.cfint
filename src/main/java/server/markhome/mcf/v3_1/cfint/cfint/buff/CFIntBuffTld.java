@@ -101,6 +101,7 @@ public class CFIntBuffTld
 			return( results );
 		}
 	}
+
 	@Override
 	public CFLibDbKeyHash256 getRequiredId() {
 		return( requiredId );
@@ -156,6 +157,7 @@ public class CFIntBuffTld
 	public void setUpdatedAt( LocalDateTime value ) {
 		updatedAt = value;
 	}
+
 	@Override
 	public int getRequiredRevision() {
 		return( requiredRevision );
@@ -184,6 +186,7 @@ public class CFIntBuffTld
 		ICFSecTenant targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredTenantId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setRequiredContainerTenant(ICFSecTenant argObj) {
 		if(argObj == null) {

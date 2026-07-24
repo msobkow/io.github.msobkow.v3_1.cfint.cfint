@@ -135,6 +135,7 @@ public class CFIntBuffMinorVersion
 	public void setUpdatedAt( LocalDateTime value ) {
 		updatedAt = value;
 	}
+
 	@Override
 	public int getRequiredRevision() {
 		return( requiredRevision );
@@ -163,6 +164,7 @@ public class CFIntBuffMinorVersion
 		ICFSecTenant targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredTenantId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setRequiredOwnerTenant(ICFSecTenant argObj) {
 		if(argObj == null) {
@@ -191,6 +193,7 @@ public class CFIntBuffMinorVersion
 		ICFIntMajorVersion targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredMajorVersionId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setRequiredContainerParentMajVer(ICFIntMajorVersion argObj) {
 		if(argObj == null) {

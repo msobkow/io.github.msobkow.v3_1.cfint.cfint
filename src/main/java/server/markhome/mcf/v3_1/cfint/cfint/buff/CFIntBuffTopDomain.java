@@ -103,6 +103,7 @@ public class CFIntBuffTopDomain
 			return( results );
 		}
 	}
+
 	@Override
 	public List<ICFIntLicense> getOptionalComponentsLicense() {
 		ICFIntSchema targetBackingSchema = ICFIntSchema.getBackingCFInt();
@@ -126,6 +127,7 @@ public class CFIntBuffTopDomain
 			return( results );
 		}
 	}
+
 	@Override
 	public CFLibDbKeyHash256 getRequiredId() {
 		return( requiredId );
@@ -181,6 +183,7 @@ public class CFIntBuffTopDomain
 	public void setUpdatedAt( LocalDateTime value ) {
 		updatedAt = value;
 	}
+
 	@Override
 	public int getRequiredRevision() {
 		return( requiredRevision );
@@ -209,6 +212,7 @@ public class CFIntBuffTopDomain
 		ICFSecTenant targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredTenantId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setRequiredOwnerTenant(ICFSecTenant argObj) {
 		if(argObj == null) {
@@ -237,6 +241,7 @@ public class CFIntBuffTopDomain
 		ICFIntTld targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredTldId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setRequiredContainerParentTld(ICFIntTld argObj) {
 		if(argObj == null) {

@@ -124,6 +124,7 @@ public class CFIntBuffLicense
 		ICFSecTenant targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredTenantId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setRequiredOwnerTenant(ICFSecTenant argObj) {
 		if(argObj == null) {
@@ -152,6 +153,7 @@ public class CFIntBuffLicense
 		ICFIntTopDomain targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredTopDomainId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setRequiredContainerTopDomain(ICFIntTopDomain argObj) {
 		if(argObj == null) {

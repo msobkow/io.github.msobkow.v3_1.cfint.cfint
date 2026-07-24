@@ -103,6 +103,7 @@ public class CFIntBuffSubProject
 			return( results );
 		}
 	}
+
 	@Override
 	public CFLibDbKeyHash256 getRequiredId() {
 		return( requiredId );
@@ -158,6 +159,7 @@ public class CFIntBuffSubProject
 	public void setUpdatedAt( LocalDateTime value ) {
 		updatedAt = value;
 	}
+
 	@Override
 	public int getRequiredRevision() {
 		return( requiredRevision );
@@ -186,6 +188,7 @@ public class CFIntBuffSubProject
 		ICFSecTenant targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredTenantId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setRequiredOwnerTenant(ICFSecTenant argObj) {
 		if(argObj == null) {
@@ -214,6 +217,7 @@ public class CFIntBuffSubProject
 		ICFIntTopProject targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredTopProjectId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setRequiredContainerParentTPrj(ICFIntTopProject argObj) {
 		if(argObj == null) {
