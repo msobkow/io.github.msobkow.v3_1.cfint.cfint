@@ -1,4 +1,4 @@
-// Description: Java 25 interface for a MinorVersion record implementation
+// Description: Java 25 interface for a MinorVersion record declementation
 
 /*
  *	server.markhome.mcf.CFInt
@@ -65,17 +65,25 @@ public interface ICFIntMinorVersion
 	public int getClassCode();
 
 	public CFLibDbKeyHash256 getCreatedByUserId();
+
 	public void setCreatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getCreatedAt();
+
 	public void setCreatedAt( LocalDateTime value );
+
 	public CFLibDbKeyHash256 getUpdatedByUserId();
+
 	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getUpdatedAt();
+
 	public void setUpdatedAt( LocalDateTime value );
 
 	public CFLibDbKeyHash256 getPKey();
+
 	public void setPKey(CFLibDbKeyHash256 requiredId);
-	
+
 	public CFLibDbKeyHash256 getRequiredId();
 	public void setRequiredId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
@@ -90,37 +98,45 @@ public interface ICFIntMinorVersion
 	public void setRequiredContainerParentMajVer(ICFIntProtMajorVersion argObj);
 	public void setRequiredContainerParentMajVer(ICFIntPubMajorVersion argObj);
 	public CFLibDbKeyHash256 getRequiredTenantId();
+	public void setRequiredTenantId( CFLibDbKeyHash256 value );
 	public CFLibDbKeyHash256 getRequiredMajorVersionId();
+	public void setRequiredMajorVersionId( CFLibDbKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public String getOptionalDescription();
 	public void setOptionalDescription( String value );
-	@Override
 	public boolean equals( Object obj );
-	
-	@Override
+
 	public int hashCode();
 
-	//@Override not necessary because interfaces aren't able to implement Comparable, but they can double-team on the requirement
 	public int compareTo( Object obj );
 
 	public void set( ICFIntMinorVersion src );
+
 	public void setMinorVersion( ICFIntMinorVersion src );
+
 	public void set( ICFIntMinorVersionH src );
+
 	public void setMinorVersion( ICFIntMinorVersionH src );
 
 	public void set( ICFIntProtMinorVersion src );
+
+	@Override
 	public void setMinorVersion( ICFIntProtMinorVersion src );
+
 	public void set( ICFIntProtMinorVersionH src );
+
 	public void setMinorVersion( ICFIntProtMinorVersionH src );
 
 	public void set( ICFIntPubMinorVersion src );
+
 	public void setMinorVersion( ICFIntPubMinorVersion src );
+
 	public void set( ICFIntPubMinorVersionH src );
+
 	public void setMinorVersion( ICFIntPubMinorVersionH src );
 
 	public String getXmlAttrFragment();
 
-	@Override
 	public String toString();
 }

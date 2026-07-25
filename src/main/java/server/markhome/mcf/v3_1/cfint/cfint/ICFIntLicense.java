@@ -1,4 +1,4 @@
-// Description: Java 25 interface for a License record implementation
+// Description: Java 25 interface for a License record declementation
 
 /*
  *	server.markhome.mcf.CFInt
@@ -63,8 +63,9 @@ public interface ICFIntLicense
 	public int getClassCode();
 
 	public CFLibDbKeyHash256 getPKey();
+
 	public void setPKey(CFLibDbKeyHash256 requiredId);
-	
+
 	public CFLibDbKeyHash256 getRequiredId();
 	public void setRequiredId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
@@ -79,7 +80,9 @@ public interface ICFIntLicense
 	public void setRequiredContainerTopDomain(ICFIntProtTopDomain argObj);
 	public void setRequiredContainerTopDomain(ICFIntPubTopDomain argObj);
 	public CFLibDbKeyHash256 getRequiredTenantId();
+	public void setRequiredTenantId( CFLibDbKeyHash256 value );
 	public CFLibDbKeyHash256 getRequiredTopDomainId();
+	public void setRequiredTopDomainId( CFLibDbKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public String getOptionalDescription();
@@ -88,32 +91,38 @@ public interface ICFIntLicense
 	public void setOptionalEmbeddedText( String value );
 	public String getOptionalFullText();
 	public void setOptionalFullText( String value );
-	@Override
 	public boolean equals( Object obj );
-	
-	@Override
+
 	public int hashCode();
 
-	//@Override not necessary because interfaces aren't able to implement Comparable, but they can double-team on the requirement
 	public int compareTo( Object obj );
 
 	public void set( ICFIntLicense src );
+
 	public void setLicense( ICFIntLicense src );
+
 	public void set( ICFIntLicenseH src );
+
 	public void setLicense( ICFIntLicenseH src );
 
 	public void set( ICFIntProtLicense src );
+
+	@Override
 	public void setLicense( ICFIntProtLicense src );
+
 	public void set( ICFIntProtLicenseH src );
+
 	public void setLicense( ICFIntProtLicenseH src );
 
 	public void set( ICFIntPubLicense src );
+
 	public void setLicense( ICFIntPubLicense src );
+
 	public void set( ICFIntPubLicenseH src );
+
 	public void setLicense( ICFIntPubLicenseH src );
 
 	public String getXmlAttrFragment();
 
-	@Override
 	public String toString();
 }

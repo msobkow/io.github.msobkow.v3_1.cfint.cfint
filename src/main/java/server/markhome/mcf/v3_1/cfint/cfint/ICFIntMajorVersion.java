@@ -1,4 +1,4 @@
-// Description: Java 25 interface for a MajorVersion record implementation
+// Description: Java 25 interface for a MajorVersion record declementation
 
 /*
  *	server.markhome.mcf.CFInt
@@ -65,18 +65,27 @@ public interface ICFIntMajorVersion
 	public int getClassCode();
 
 	public CFLibDbKeyHash256 getCreatedByUserId();
+
 	public void setCreatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getCreatedAt();
+
 	public void setCreatedAt( LocalDateTime value );
+
 	public CFLibDbKeyHash256 getUpdatedByUserId();
+
 	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getUpdatedAt();
+
 	public void setUpdatedAt( LocalDateTime value );
 
 	public CFLibDbKeyHash256 getPKey();
+
 	public void setPKey(CFLibDbKeyHash256 requiredId);
-	
+
 	public List<ICFIntMinorVersion> getOptionalComponentsMinorVer();
+
 	public CFLibDbKeyHash256 getRequiredId();
 	public void setRequiredId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
@@ -91,37 +100,45 @@ public interface ICFIntMajorVersion
 	public void setRequiredContainerParentSPrj(ICFIntProtSubProject argObj);
 	public void setRequiredContainerParentSPrj(ICFIntPubSubProject argObj);
 	public CFLibDbKeyHash256 getRequiredTenantId();
+	public void setRequiredTenantId( CFLibDbKeyHash256 value );
 	public CFLibDbKeyHash256 getRequiredSubProjectId();
+	public void setRequiredSubProjectId( CFLibDbKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public String getOptionalDescription();
 	public void setOptionalDescription( String value );
-	@Override
 	public boolean equals( Object obj );
-	
-	@Override
+
 	public int hashCode();
 
-	//@Override not necessary because interfaces aren't able to implement Comparable, but they can double-team on the requirement
 	public int compareTo( Object obj );
 
 	public void set( ICFIntMajorVersion src );
+
 	public void setMajorVersion( ICFIntMajorVersion src );
+
 	public void set( ICFIntMajorVersionH src );
+
 	public void setMajorVersion( ICFIntMajorVersionH src );
 
 	public void set( ICFIntProtMajorVersion src );
+
+	@Override
 	public void setMajorVersion( ICFIntProtMajorVersion src );
+
 	public void set( ICFIntProtMajorVersionH src );
+
 	public void setMajorVersion( ICFIntProtMajorVersionH src );
 
 	public void set( ICFIntPubMajorVersion src );
+
 	public void setMajorVersion( ICFIntPubMajorVersion src );
+
 	public void set( ICFIntPubMajorVersionH src );
+
 	public void setMajorVersion( ICFIntPubMajorVersionH src );
 
 	public String getXmlAttrFragment();
 
-	@Override
 	public String toString();
 }

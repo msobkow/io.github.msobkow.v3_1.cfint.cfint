@@ -1,4 +1,4 @@
-// Description: Java 25 interface for a Tld record implementation
+// Description: Java 25 interface for a Tld record declementation
 
 /*
  *	server.markhome.mcf.CFInt
@@ -63,18 +63,27 @@ public interface ICFIntTld
 	public int getClassCode();
 
 	public CFLibDbKeyHash256 getCreatedByUserId();
+
 	public void setCreatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getCreatedAt();
+
 	public void setCreatedAt( LocalDateTime value );
+
 	public CFLibDbKeyHash256 getUpdatedByUserId();
+
 	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getUpdatedAt();
+
 	public void setUpdatedAt( LocalDateTime value );
 
 	public CFLibDbKeyHash256 getPKey();
+
 	public void setPKey(CFLibDbKeyHash256 requiredId);
-	
+
 	public List<ICFIntTopDomain> getOptionalComponentsTopDomain();
+
 	public CFLibDbKeyHash256 getRequiredId();
 	public void setRequiredId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
@@ -84,36 +93,43 @@ public interface ICFIntTld
 	public void setRequiredContainerTenant(CFLibDbKeyHash256 argTenantId);
 	public void setRequiredContainerTenant(ICFSecPubTenant argObj);
 	public CFLibDbKeyHash256 getRequiredTenantId();
+	public void setRequiredTenantId( CFLibDbKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public String getOptionalDescription();
 	public void setOptionalDescription( String value );
-	@Override
 	public boolean equals( Object obj );
-	
-	@Override
+
 	public int hashCode();
 
-	//@Override not necessary because interfaces aren't able to implement Comparable, but they can double-team on the requirement
 	public int compareTo( Object obj );
 
 	public void set( ICFIntTld src );
+
 	public void setTld( ICFIntTld src );
+
 	public void set( ICFIntTldH src );
+
 	public void setTld( ICFIntTldH src );
 
 	public void set( ICFIntProtTld src );
+
+	@Override
 	public void setTld( ICFIntProtTld src );
+
 	public void set( ICFIntProtTldH src );
+
 	public void setTld( ICFIntProtTldH src );
 
 	public void set( ICFIntPubTld src );
+
 	public void setTld( ICFIntPubTld src );
+
 	public void set( ICFIntPubTldH src );
+
 	public void setTld( ICFIntPubTldH src );
 
 	public String getXmlAttrFragment();
 
-	@Override
 	public String toString();
 }

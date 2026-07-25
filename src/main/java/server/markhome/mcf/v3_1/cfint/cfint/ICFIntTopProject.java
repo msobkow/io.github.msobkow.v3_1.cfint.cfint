@@ -1,4 +1,4 @@
-// Description: Java 25 interface for a TopProject record implementation
+// Description: Java 25 interface for a TopProject record declementation
 
 /*
  *	server.markhome.mcf.CFInt
@@ -65,18 +65,27 @@ public interface ICFIntTopProject
 	public int getClassCode();
 
 	public CFLibDbKeyHash256 getCreatedByUserId();
+
 	public void setCreatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getCreatedAt();
+
 	public void setCreatedAt( LocalDateTime value );
+
 	public CFLibDbKeyHash256 getUpdatedByUserId();
+
 	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getUpdatedAt();
+
 	public void setUpdatedAt( LocalDateTime value );
 
 	public CFLibDbKeyHash256 getPKey();
+
 	public void setPKey(CFLibDbKeyHash256 requiredId);
-	
+
 	public List<ICFIntSubProject> getOptionalComponentsSubProject();
+
 	public CFLibDbKeyHash256 getRequiredId();
 	public void setRequiredId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
@@ -91,37 +100,45 @@ public interface ICFIntTopProject
 	public void setRequiredContainerParentSDom(ICFIntProtTopDomain argObj);
 	public void setRequiredContainerParentSDom(ICFIntPubTopDomain argObj);
 	public CFLibDbKeyHash256 getRequiredTenantId();
+	public void setRequiredTenantId( CFLibDbKeyHash256 value );
 	public CFLibDbKeyHash256 getRequiredTopDomainId();
+	public void setRequiredTopDomainId( CFLibDbKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public String getOptionalDescription();
 	public void setOptionalDescription( String value );
-	@Override
 	public boolean equals( Object obj );
-	
-	@Override
+
 	public int hashCode();
 
-	//@Override not necessary because interfaces aren't able to implement Comparable, but they can double-team on the requirement
 	public int compareTo( Object obj );
 
 	public void set( ICFIntTopProject src );
+
 	public void setTopProject( ICFIntTopProject src );
+
 	public void set( ICFIntTopProjectH src );
+
 	public void setTopProject( ICFIntTopProjectH src );
 
 	public void set( ICFIntProtTopProject src );
+
+	@Override
 	public void setTopProject( ICFIntProtTopProject src );
+
 	public void set( ICFIntProtTopProjectH src );
+
 	public void setTopProject( ICFIntProtTopProjectH src );
 
 	public void set( ICFIntPubTopProject src );
+
 	public void setTopProject( ICFIntPubTopProject src );
+
 	public void set( ICFIntPubTopProjectH src );
+
 	public void setTopProject( ICFIntPubTopProjectH src );
 
 	public String getXmlAttrFragment();
 
-	@Override
 	public String toString();
 }

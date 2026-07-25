@@ -1,4 +1,4 @@
-// Description: Java 25 interface for a URLProtocol record implementation
+// Description: Java 25 interface for a URLProtocol record declementation
 
 /*
  *	server.markhome.mcf.CFInt
@@ -62,17 +62,25 @@ public interface ICFIntURLProtocol
 	public int getClassCode();
 
 	public CFLibDbKeyHash256 getCreatedByUserId();
+
 	public void setCreatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getCreatedAt();
+
 	public void setCreatedAt( LocalDateTime value );
+
 	public CFLibDbKeyHash256 getUpdatedByUserId();
+
 	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getUpdatedAt();
+
 	public void setUpdatedAt( LocalDateTime value );
 
 	public Integer getPKey();
+
 	public void setPKey(Integer requiredURLProtocolId);
-	
+
 	public int getRequiredURLProtocolId();
 	public void setRequiredURLProtocolId( int value );
 	public int getRequiredRevision();
@@ -84,32 +92,38 @@ public interface ICFIntURLProtocol
 	public void setRequiredDescription( String value );
 	public boolean getRequiredIsSecure();
 	public void setRequiredIsSecure( boolean value );
-	@Override
 	public boolean equals( Object obj );
-	
-	@Override
+
 	public int hashCode();
 
-	//@Override not necessary because interfaces aren't able to implement Comparable, but they can double-team on the requirement
 	public int compareTo( Object obj );
 
 	public void set( ICFIntURLProtocol src );
+
 	public void setURLProtocol( ICFIntURLProtocol src );
+
 	public void set( ICFIntURLProtocolH src );
+
 	public void setURLProtocol( ICFIntURLProtocolH src );
 
 	public void set( ICFIntProtURLProtocol src );
+
+	@Override
 	public void setURLProtocol( ICFIntProtURLProtocol src );
+
 	public void set( ICFIntProtURLProtocolH src );
+
 	public void setURLProtocol( ICFIntProtURLProtocolH src );
 
 	public void set( ICFIntPubURLProtocol src );
+
 	public void setURLProtocol( ICFIntPubURLProtocol src );
+
 	public void set( ICFIntPubURLProtocolH src );
+
 	public void setURLProtocol( ICFIntPubURLProtocolH src );
 
 	public String getXmlAttrFragment();
 
-	@Override
 	public String toString();
 }
