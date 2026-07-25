@@ -105,7 +105,6 @@ public interface ICFIntMimeType
 
 	public void set( ICFIntProtMimeType src );
 
-	@Override
 	public void setMimeType( ICFIntProtMimeType src );
 
 	public void set( ICFIntProtMimeTypeH src );

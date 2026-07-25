@@ -108,7 +108,6 @@ public interface ICFIntURLProtocol
 
 	public void set( ICFIntProtURLProtocol src );
 
-	@Override
 	public void setURLProtocol( ICFIntProtURLProtocol src );
 
 	public void set( ICFIntProtURLProtocolH src );

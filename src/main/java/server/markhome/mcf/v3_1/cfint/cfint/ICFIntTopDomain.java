@@ -102,9 +102,7 @@ public interface ICFIntTopDomain
 	public void setRequiredContainerParentTld(ICFIntProtTld argObj);
 	public void setRequiredContainerParentTld(ICFIntPubTld argObj);
 	public CFLibDbKeyHash256 getRequiredTenantId();
-	public void setRequiredTenantId( CFLibDbKeyHash256 value );
 	public CFLibDbKeyHash256 getRequiredTldId();
-	public void setRequiredTldId( CFLibDbKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public String getOptionalDescription();
@@ -125,7 +123,6 @@ public interface ICFIntTopDomain
 
 	public void set( ICFIntProtTopDomain src );
 
-	@Override
 	public void setTopDomain( ICFIntProtTopDomain src );
 
 	public void set( ICFIntProtTopDomainH src );

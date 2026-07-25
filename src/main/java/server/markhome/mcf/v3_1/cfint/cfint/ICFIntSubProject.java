@@ -100,9 +100,7 @@ public interface ICFIntSubProject
 	public void setRequiredContainerParentTPrj(ICFIntProtTopProject argObj);
 	public void setRequiredContainerParentTPrj(ICFIntPubTopProject argObj);
 	public CFLibDbKeyHash256 getRequiredTenantId();
-	public void setRequiredTenantId( CFLibDbKeyHash256 value );
 	public CFLibDbKeyHash256 getRequiredTopProjectId();
-	public void setRequiredTopProjectId( CFLibDbKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public String getOptionalDescription();
@@ -123,7 +121,6 @@ public interface ICFIntSubProject
 
 	public void set( ICFIntProtSubProject src );
 
-	@Override
 	public void setSubProject( ICFIntProtSubProject src );
 
 	public void set( ICFIntProtSubProjectH src );

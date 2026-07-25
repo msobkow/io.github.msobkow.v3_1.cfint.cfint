@@ -93,7 +93,6 @@ public interface ICFIntTld
 	public void setRequiredContainerTenant(CFLibDbKeyHash256 argTenantId);
 	public void setRequiredContainerTenant(ICFSecPubTenant argObj);
 	public CFLibDbKeyHash256 getRequiredTenantId();
-	public void setRequiredTenantId( CFLibDbKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public String getOptionalDescription();
@@ -114,7 +113,6 @@ public interface ICFIntTld
 
 	public void set( ICFIntProtTld src );
 
-	@Override
 	public void setTld( ICFIntProtTld src );
 
 	public void set( ICFIntProtTldH src );
