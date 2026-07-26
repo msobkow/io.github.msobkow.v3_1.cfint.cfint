@@ -95,6 +95,8 @@ public interface ICFIntTopDomain
 
 	public ICFSecTenant getRequiredOwnerTenant();
 	public ICFIntTld getRequiredContainerParentTld();
+	public List<ICFIntTopProject> getOptionalComponentsTopProject();
+	public List<ICFIntLicense> getOptionalComponentsLicense();
 	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId);
 	public void setRequiredOwnerTenant(ICFSecPubTenant argObj);
 	public void setRequiredContainerParentTld(CFLibDbKeyHash256 argTldId);

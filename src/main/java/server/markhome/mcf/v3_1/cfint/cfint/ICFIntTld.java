@@ -90,6 +90,7 @@ public interface ICFIntTld
 	public void setRequiredRevision( int value );
 
 	public ICFSecTenant getRequiredContainerTenant();
+	public List<ICFIntTopDomain> getOptionalComponentsTopDomain();
 	public void setRequiredContainerTenant(CFLibDbKeyHash256 argTenantId);
 	public void setRequiredContainerTenant(ICFSecPubTenant argObj);
 	public CFLibDbKeyHash256 getRequiredTenantId();

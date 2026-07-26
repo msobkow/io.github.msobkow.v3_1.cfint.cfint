@@ -93,6 +93,7 @@ public interface ICFIntTopProject
 
 	public ICFSecTenant getRequiredOwnerTenant();
 	public ICFIntTopDomain getRequiredContainerParentSDom();
+	public List<ICFIntSubProject> getOptionalComponentsSubProject();
 	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId);
 	public void setRequiredOwnerTenant(ICFSecPubTenant argObj);
 	public void setRequiredContainerParentSDom(CFLibDbKeyHash256 argTopDomainId);

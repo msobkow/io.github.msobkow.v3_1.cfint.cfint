@@ -93,6 +93,7 @@ public interface ICFIntMajorVersion
 
 	public ICFSecTenant getRequiredOwnerTenant();
 	public ICFIntSubProject getRequiredContainerParentSPrj();
+	public List<ICFIntMinorVersion> getOptionalComponentsMinorVer();
 	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId);
 	public void setRequiredOwnerTenant(ICFSecPubTenant argObj);
 	public void setRequiredContainerParentSPrj(CFLibDbKeyHash256 argSubProjectId);
