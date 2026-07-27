@@ -91,15 +91,8 @@ public interface ICFIntTopProject
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
-	public ICFSecTenant getRequiredOwnerTenant();
+	public ICFSecPubTenant getRequiredOwnerTenant();
 	public ICFIntTopDomain getRequiredContainerParentSDom();
-	public List<ICFIntSubProject> getOptionalComponentsSubProject();
-	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId);
-	public void setRequiredOwnerTenant(ICFSecPubTenant argObj);
-	public void setRequiredContainerParentSDom(CFLibDbKeyHash256 argTopDomainId);
-	public void setRequiredContainerParentSDom(ICFIntTopDomain argObj);
-	public void setRequiredContainerParentSDom(ICFIntProtTopDomain argObj);
-	public void setRequiredContainerParentSDom(ICFIntPubTopDomain argObj);
 	public CFLibDbKeyHash256 getRequiredTenantId();
 	public CFLibDbKeyHash256 getRequiredTopDomainId();
 	public String getRequiredName();

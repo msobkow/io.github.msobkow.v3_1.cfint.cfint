@@ -214,21 +214,6 @@ public class CFIntBuffTopDomain
 	}
 
 	@Override
-	public void setRequiredOwnerTenant(ICFSecTenant argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOwnerTenant", 1, "argObj");
-		}
-		else {
-			requiredTenantId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
-	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId) {
-		requiredTenantId = argTenantId;
-	}
-
-	@Override
 	public ICFIntTld getRequiredContainerParentTld() {
 		ICFIntSchema targetBackingSchema = ICFIntSchema.getBackingCFInt();
 		if (targetBackingSchema == null) {
@@ -240,31 +225,6 @@ public class CFIntBuffTopDomain
 		}
 		ICFIntTld targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredTldId());
 		return(targetRec);
-	}
-
-	@Override
-	public void setRequiredContainerParentTld(ICFIntTld argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerParentTld", 1, "argObj");
-		}
-		else {
-			requiredTldId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
-	public void setRequiredContainerParentTld(ICFIntProtTld argObj) {
-		setRequiredContainerParentTld(argObj.getRequiredId());
-	}
-
-	@Override
-	public void setRequiredContainerParentTld(ICFIntPubTld argObj) {
-		setRequiredContainerParentTld(argObj.getRequiredId());
-	}
-
-	@Override
-	public void setRequiredContainerParentTld(CFLibDbKeyHash256 argTldId) {
-		requiredTldId = argTldId;
 	}
 
 	@Override

@@ -91,15 +91,8 @@ public interface ICFIntMajorVersion
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
-	public ICFSecTenant getRequiredOwnerTenant();
+	public ICFSecPubTenant getRequiredOwnerTenant();
 	public ICFIntSubProject getRequiredContainerParentSPrj();
-	public List<ICFIntMinorVersion> getOptionalComponentsMinorVer();
-	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId);
-	public void setRequiredOwnerTenant(ICFSecPubTenant argObj);
-	public void setRequiredContainerParentSPrj(CFLibDbKeyHash256 argSubProjectId);
-	public void setRequiredContainerParentSPrj(ICFIntSubProject argObj);
-	public void setRequiredContainerParentSPrj(ICFIntProtSubProject argObj);
-	public void setRequiredContainerParentSPrj(ICFIntPubSubProject argObj);
 	public CFLibDbKeyHash256 getRequiredTenantId();
 	public CFLibDbKeyHash256 getRequiredSubProjectId();
 	public String getRequiredName();
