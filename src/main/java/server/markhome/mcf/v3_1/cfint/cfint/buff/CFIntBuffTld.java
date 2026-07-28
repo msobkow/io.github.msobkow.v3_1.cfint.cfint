@@ -79,32 +79,8 @@ public class CFIntBuffTld
 	}
 
 	@Override
-	public List<ICFIntTopDomain> getOptionalComponentsTopDomain() {
-		ICFIntSchema targetBackingSchema = ICFIntSchema.getBackingCFInt();
-		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsTopDomain", 0, "ICFIntSchema.getBackingCFInt()");
-		}
-		ICFIntTopDomainTable targetTable = targetBackingSchema.getTableTopDomain();
-		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsTopDomain", 0, "ICFIntSchema.getBackingCFInt().getTableTopDomain()");
-		}
-		ICFIntTopDomain[] targetArr = targetTable.readDerivedByTldIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
-		if( targetArr != null ) {
-			List<ICFIntTopDomain> results = new ArrayList<>(targetArr.length);
-			for (int idx = 0; idx < targetArr.length; idx++) {
-				results.add(targetArr[idx]);
-			}
-			return( results );
-		}
-		else {
-			List<ICFIntTopDomain> results = new ArrayList<>();
-			return( results );
-		}
-	}
-
-	@Override
 	public CFLibDbKeyHash256 getRequiredId() {
-		return( requiredId );
+		return( getPKey() );
 	}
 
 	@Override
@@ -115,7 +91,7 @@ public class CFIntBuffTld
 				1,
 				"value" );
 		}
-		requiredId = value;
+		setPKey( value );
 	}
 
 	@Override
@@ -185,6 +161,30 @@ public class CFIntBuffTld
 		}
 		ICFSecTenant targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredTenantId());
 		return(targetRec);
+	}
+
+	@Override
+	public List<ICFIntTopDomain> getOptionalComponentsTopDomain() {
+		ICFIntSchema targetBackingSchema = ICFIntSchema.getBackingCFInt();
+		if (targetBackingSchema == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsTopDomain", 0, "ICFIntSchema.getBackingCFInt()");
+		}
+		ICFIntTopDomainTable targetTable = targetBackingSchema.getTableTopDomain();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsTopDomain", 0, "ICFIntSchema.getBackingCFInt().getTableTopDomain()");
+		}
+		ICFIntTopDomain[] targetArr = targetTable.readDerivedByTldIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
+		if( targetArr != null ) {
+			List<ICFIntTopDomain> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFIntTopDomain> results = new ArrayList<>();
+			return( results );
+		}
 	}
 
 	@Override

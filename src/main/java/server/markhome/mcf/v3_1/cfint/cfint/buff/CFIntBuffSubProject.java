@@ -81,32 +81,8 @@ public class CFIntBuffSubProject
 	}
 
 	@Override
-	public List<ICFIntMajorVersion> getOptionalComponentsMajorVer() {
-		ICFIntSchema targetBackingSchema = ICFIntSchema.getBackingCFInt();
-		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsMajorVer", 0, "ICFIntSchema.getBackingCFInt()");
-		}
-		ICFIntMajorVersionTable targetTable = targetBackingSchema.getTableMajorVersion();
-		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsMajorVer", 0, "ICFIntSchema.getBackingCFInt().getTableMajorVersion()");
-		}
-		ICFIntMajorVersion[] targetArr = targetTable.readDerivedBySubProjectIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
-		if( targetArr != null ) {
-			List<ICFIntMajorVersion> results = new ArrayList<>(targetArr.length);
-			for (int idx = 0; idx < targetArr.length; idx++) {
-				results.add(targetArr[idx]);
-			}
-			return( results );
-		}
-		else {
-			List<ICFIntMajorVersion> results = new ArrayList<>();
-			return( results );
-		}
-	}
-
-	@Override
 	public CFLibDbKeyHash256 getRequiredId() {
-		return( requiredId );
+		return( getPKey() );
 	}
 
 	@Override
@@ -117,7 +93,7 @@ public class CFIntBuffSubProject
 				1,
 				"value" );
 		}
-		requiredId = value;
+		setPKey( value );
 	}
 
 	@Override
@@ -201,6 +177,30 @@ public class CFIntBuffSubProject
 		}
 		ICFIntTopProject targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredTopProjectId());
 		return(targetRec);
+	}
+
+	@Override
+	public List<ICFIntMajorVersion> getOptionalComponentsMajorVer() {
+		ICFIntSchema targetBackingSchema = ICFIntSchema.getBackingCFInt();
+		if (targetBackingSchema == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsMajorVer", 0, "ICFIntSchema.getBackingCFInt()");
+		}
+		ICFIntMajorVersionTable targetTable = targetBackingSchema.getTableMajorVersion();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsMajorVer", 0, "ICFIntSchema.getBackingCFInt().getTableMajorVersion()");
+		}
+		ICFIntMajorVersion[] targetArr = targetTable.readDerivedBySubProjectIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
+		if( targetArr != null ) {
+			List<ICFIntMajorVersion> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFIntMajorVersion> results = new ArrayList<>();
+			return( results );
+		}
 	}
 
 	@Override

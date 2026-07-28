@@ -81,32 +81,8 @@ public class CFIntBuffMajorVersion
 	}
 
 	@Override
-	public List<ICFIntMinorVersion> getOptionalComponentsMinorVer() {
-		ICFIntSchema targetBackingSchema = ICFIntSchema.getBackingCFInt();
-		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsMinorVer", 0, "ICFIntSchema.getBackingCFInt()");
-		}
-		ICFIntMinorVersionTable targetTable = targetBackingSchema.getTableMinorVersion();
-		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsMinorVer", 0, "ICFIntSchema.getBackingCFInt().getTableMinorVersion()");
-		}
-		ICFIntMinorVersion[] targetArr = targetTable.readDerivedByMajorVerIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
-		if( targetArr != null ) {
-			List<ICFIntMinorVersion> results = new ArrayList<>(targetArr.length);
-			for (int idx = 0; idx < targetArr.length; idx++) {
-				results.add(targetArr[idx]);
-			}
-			return( results );
-		}
-		else {
-			List<ICFIntMinorVersion> results = new ArrayList<>();
-			return( results );
-		}
-	}
-
-	@Override
 	public CFLibDbKeyHash256 getRequiredId() {
-		return( requiredId );
+		return( getPKey() );
 	}
 
 	@Override
@@ -117,7 +93,7 @@ public class CFIntBuffMajorVersion
 				1,
 				"value" );
 		}
-		requiredId = value;
+		setPKey( value );
 	}
 
 	@Override
@@ -201,6 +177,30 @@ public class CFIntBuffMajorVersion
 		}
 		ICFIntSubProject targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSubProjectId());
 		return(targetRec);
+	}
+
+	@Override
+	public List<ICFIntMinorVersion> getOptionalComponentsMinorVer() {
+		ICFIntSchema targetBackingSchema = ICFIntSchema.getBackingCFInt();
+		if (targetBackingSchema == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsMinorVer", 0, "ICFIntSchema.getBackingCFInt()");
+		}
+		ICFIntMinorVersionTable targetTable = targetBackingSchema.getTableMinorVersion();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsMinorVer", 0, "ICFIntSchema.getBackingCFInt().getTableMinorVersion()");
+		}
+		ICFIntMinorVersion[] targetArr = targetTable.readDerivedByMajorVerIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
+		if( targetArr != null ) {
+			List<ICFIntMinorVersion> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFIntMinorVersion> results = new ArrayList<>();
+			return( results );
+		}
 	}
 
 	@Override

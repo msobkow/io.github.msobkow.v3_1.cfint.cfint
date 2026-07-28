@@ -82,7 +82,7 @@ public class CFIntBuffMinorVersion
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredId() {
-		return( requiredId );
+		return( getPKey() );
 	}
 
 	@Override
@@ -93,7 +93,7 @@ public class CFIntBuffMinorVersion
 				1,
 				"value" );
 		}
-		requiredId = value;
+		setPKey( value );
 	}
 
 	@Override

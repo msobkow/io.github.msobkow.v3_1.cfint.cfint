@@ -81,32 +81,8 @@ public class CFIntBuffTopProject
 	}
 
 	@Override
-	public List<ICFIntSubProject> getOptionalComponentsSubProject() {
-		ICFIntSchema targetBackingSchema = ICFIntSchema.getBackingCFInt();
-		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsSubProject", 0, "ICFIntSchema.getBackingCFInt()");
-		}
-		ICFIntSubProjectTable targetTable = targetBackingSchema.getTableSubProject();
-		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsSubProject", 0, "ICFIntSchema.getBackingCFInt().getTableSubProject()");
-		}
-		ICFIntSubProject[] targetArr = targetTable.readDerivedByTopProjectIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
-		if( targetArr != null ) {
-			List<ICFIntSubProject> results = new ArrayList<>(targetArr.length);
-			for (int idx = 0; idx < targetArr.length; idx++) {
-				results.add(targetArr[idx]);
-			}
-			return( results );
-		}
-		else {
-			List<ICFIntSubProject> results = new ArrayList<>();
-			return( results );
-		}
-	}
-
-	@Override
 	public CFLibDbKeyHash256 getRequiredId() {
-		return( requiredId );
+		return( getPKey() );
 	}
 
 	@Override
@@ -117,7 +93,7 @@ public class CFIntBuffTopProject
 				1,
 				"value" );
 		}
-		requiredId = value;
+		setPKey( value );
 	}
 
 	@Override
@@ -201,6 +177,30 @@ public class CFIntBuffTopProject
 		}
 		ICFIntTopDomain targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredTopDomainId());
 		return(targetRec);
+	}
+
+	@Override
+	public List<ICFIntSubProject> getOptionalComponentsSubProject() {
+		ICFIntSchema targetBackingSchema = ICFIntSchema.getBackingCFInt();
+		if (targetBackingSchema == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsSubProject", 0, "ICFIntSchema.getBackingCFInt()");
+		}
+		ICFIntSubProjectTable targetTable = targetBackingSchema.getTableSubProject();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsSubProject", 0, "ICFIntSchema.getBackingCFInt().getTableSubProject()");
+		}
+		ICFIntSubProject[] targetArr = targetTable.readDerivedByTopProjectIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
+		if( targetArr != null ) {
+			List<ICFIntSubProject> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFIntSubProject> results = new ArrayList<>();
+			return( results );
+		}
 	}
 
 	@Override

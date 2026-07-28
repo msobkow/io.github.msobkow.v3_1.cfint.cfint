@@ -78,7 +78,7 @@ public class CFIntBuffMimeType
 
 	@Override
 	public int getRequiredMimeTypeId() {
-		return( requiredMimeTypeId );
+		return( getPKey() );
 	}
 
 	@Override
@@ -91,7 +91,7 @@ public class CFIntBuffMimeType
 				value,
 				ICFIntMimeType.MIMETYPEID_MIN_VALUE );
 		}
-		requiredMimeTypeId = value;
+		setPKey( value );
 	}
 
 	@Override
