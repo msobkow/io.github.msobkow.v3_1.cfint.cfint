@@ -210,30 +210,8 @@ public class CFIntBuffMinorVersionH
 	}
 
 	@Override
-	public void setRequiredTenantId( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredTenantId",
-				1,
-				"value" );
-		}
-		requiredTenantId = value;
-	}
-
-	@Override
 	public CFLibDbKeyHash256 getRequiredMajorVersionId() {
 		return( requiredMajorVersionId );
-	}
-
-	@Override
-	public void setRequiredMajorVersionId( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredMajorVersionId",
-				1,
-				"value" );
-		}
-		requiredMajorVersionId = value;
 	}
 
 	@Override

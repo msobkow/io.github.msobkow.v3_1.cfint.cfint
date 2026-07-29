@@ -210,30 +210,8 @@ public class CFIntBuffSubProjectH
 	}
 
 	@Override
-	public void setRequiredTenantId( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredTenantId",
-				1,
-				"value" );
-		}
-		requiredTenantId = value;
-	}
-
-	@Override
 	public CFLibDbKeyHash256 getRequiredTopProjectId() {
 		return( requiredTopProjectId );
-	}
-
-	@Override
-	public void setRequiredTopProjectId( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredTopProjectId",
-				1,
-				"value" );
-		}
-		requiredTopProjectId = value;
 	}
 
 	@Override

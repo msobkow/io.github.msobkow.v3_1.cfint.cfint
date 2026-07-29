@@ -158,30 +158,8 @@ public class CFIntBuffLicenseH
 	}
 
 	@Override
-	public void setRequiredTenantId( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredTenantId",
-				1,
-				"value" );
-		}
-		requiredTenantId = value;
-	}
-
-	@Override
 	public CFLibDbKeyHash256 getRequiredTopDomainId() {
 		return( requiredTopDomainId );
-	}
-
-	@Override
-	public void setRequiredTopDomainId( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredTopDomainId",
-				1,
-				"value" );
-		}
-		requiredTopDomainId = value;
 	}
 
 	@Override
