@@ -60,16 +60,29 @@ public interface ICFIntURLProtocol
 	public final static String S_CLASS_CODE = "a109";
 
 	public int getClassCode();
+
 	public CFLibDbKeyHash256 getCreatedByUserId();
+
 	public void setCreatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getCreatedAt();
+
 	public void setCreatedAt( LocalDateTime value );
+
 	public CFLibDbKeyHash256 getUpdatedByUserId();
+
 	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getUpdatedAt();
+
 	public void setUpdatedAt( LocalDateTime value );
+
 	public Integer getPKey();
+
 	public void setPKey(Integer requiredURLProtocolId);
+
+	public int getRequiredURLProtocolId();
+	public void setRequiredURLProtocolId( int value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
@@ -80,20 +93,36 @@ public interface ICFIntURLProtocol
 	public boolean getRequiredIsSecure();
 	public void setRequiredIsSecure( boolean value );
 	public boolean equals( Object obj );
+
 	public int hashCode();
+
 	public int compareTo( Object obj );
+
 	public void set( ICFIntURLProtocol src );
+
 	public void setURLProtocol( ICFIntURLProtocol src );
+
 	public void set( ICFIntURLProtocolH src );
+
 	public void setURLProtocol( ICFIntURLProtocolH src );
+
 	public void set( ICFIntProtURLProtocol src );
+
 	public void setURLProtocol( ICFIntProtURLProtocol src );
+
 	public void set( ICFIntProtURLProtocolH src );
+
 	public void setURLProtocol( ICFIntProtURLProtocolH src );
+
 	public void set( ICFIntPubURLProtocol src );
+
 	public void setURLProtocol( ICFIntPubURLProtocol src );
+
 	public void set( ICFIntPubURLProtocolH src );
+
 	public void setURLProtocol( ICFIntPubURLProtocolH src );
+
 	public String getXmlAttrFragment();
+
 	public String toString();
 }

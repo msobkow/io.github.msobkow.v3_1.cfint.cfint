@@ -59,16 +59,29 @@ public interface ICFIntMimeType
 	public final static String S_CLASS_CODE = "a103";
 
 	public int getClassCode();
+
 	public CFLibDbKeyHash256 getCreatedByUserId();
+
 	public void setCreatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getCreatedAt();
+
 	public void setCreatedAt( LocalDateTime value );
+
 	public CFLibDbKeyHash256 getUpdatedByUserId();
+
 	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getUpdatedAt();
+
 	public void setUpdatedAt( LocalDateTime value );
+
 	public Integer getPKey();
+
 	public void setPKey(Integer requiredMimeTypeId);
+
+	public int getRequiredMimeTypeId();
+	public void setRequiredMimeTypeId( int value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
@@ -77,20 +90,36 @@ public interface ICFIntMimeType
 	public String getOptionalFileTypes();
 	public void setOptionalFileTypes( String value );
 	public boolean equals( Object obj );
+
 	public int hashCode();
+
 	public int compareTo( Object obj );
+
 	public void set( ICFIntMimeType src );
+
 	public void setMimeType( ICFIntMimeType src );
+
 	public void set( ICFIntMimeTypeH src );
+
 	public void setMimeType( ICFIntMimeTypeH src );
+
 	public void set( ICFIntProtMimeType src );
+
 	public void setMimeType( ICFIntProtMimeType src );
+
 	public void set( ICFIntProtMimeTypeH src );
+
 	public void setMimeType( ICFIntProtMimeTypeH src );
+
 	public void set( ICFIntPubMimeType src );
+
 	public void setMimeType( ICFIntPubMimeType src );
+
 	public void set( ICFIntPubMimeTypeH src );
+
 	public void setMimeType( ICFIntPubMimeTypeH src );
+
 	public String getXmlAttrFragment();
+
 	public String toString();
 }

@@ -63,22 +63,40 @@ public interface ICFIntTopProject
 	public final static String S_CLASS_CODE = "a108";
 
 	public int getClassCode();
+
 	public CFLibDbKeyHash256 getCreatedByUserId();
+
 	public void setCreatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getCreatedAt();
+
 	public void setCreatedAt( LocalDateTime value );
+
 	public CFLibDbKeyHash256 getUpdatedByUserId();
+
 	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getUpdatedAt();
+
 	public void setUpdatedAt( LocalDateTime value );
+
 	public CFLibDbKeyHash256 getPKey();
+
 	public void setPKey(CFLibDbKeyHash256 requiredId);
+
+	public List<ICFIntSubProject> getOptionalComponentsSubProject();
+
+	public CFLibDbKeyHash256 getRequiredId();
+	public void setRequiredId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
 	public ICFSecTenant getRequiredOwnerTenant();
+
 	public ICFIntTopDomain getRequiredContainerParentSDom();
+
 	public List<ICFIntSubProject> getOptionalComponentsSubProject();
+
 	public CFLibDbKeyHash256 getRequiredTenantId();
 	public CFLibDbKeyHash256 getRequiredTopDomainId();
 	public String getRequiredName();
@@ -86,20 +104,36 @@ public interface ICFIntTopProject
 	public String getOptionalDescription();
 	public void setOptionalDescription( String value );
 	public boolean equals( Object obj );
+
 	public int hashCode();
+
 	public int compareTo( Object obj );
+
 	public void set( ICFIntTopProject src );
+
 	public void setTopProject( ICFIntTopProject src );
+
 	public void set( ICFIntTopProjectH src );
+
 	public void setTopProject( ICFIntTopProjectH src );
+
 	public void set( ICFIntProtTopProject src );
+
 	public void setTopProject( ICFIntProtTopProject src );
+
 	public void set( ICFIntProtTopProjectH src );
+
 	public void setTopProject( ICFIntProtTopProjectH src );
+
 	public void set( ICFIntPubTopProject src );
+
 	public void setTopProject( ICFIntPubTopProject src );
+
 	public void set( ICFIntPubTopProjectH src );
+
 	public void setTopProject( ICFIntPubTopProjectH src );
+
 	public String getXmlAttrFragment();
+
 	public String toString();
 }

@@ -61,41 +61,74 @@ public interface ICFIntTld
 	public final static String S_CLASS_CODE = "a106";
 
 	public int getClassCode();
+
 	public CFLibDbKeyHash256 getCreatedByUserId();
+
 	public void setCreatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getCreatedAt();
+
 	public void setCreatedAt( LocalDateTime value );
+
 	public CFLibDbKeyHash256 getUpdatedByUserId();
+
 	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getUpdatedAt();
+
 	public void setUpdatedAt( LocalDateTime value );
+
 	public CFLibDbKeyHash256 getPKey();
+
 	public void setPKey(CFLibDbKeyHash256 requiredId);
+
+	public List<ICFIntTopDomain> getOptionalComponentsTopDomain();
+
+	public CFLibDbKeyHash256 getRequiredId();
+	public void setRequiredId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
 	public ICFSecTenant getRequiredContainerTenant();
+
 	public List<ICFIntTopDomain> getOptionalComponentsTopDomain();
+
 	public CFLibDbKeyHash256 getRequiredTenantId();
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public String getOptionalDescription();
 	public void setOptionalDescription( String value );
 	public boolean equals( Object obj );
+
 	public int hashCode();
+
 	public int compareTo( Object obj );
+
 	public void set( ICFIntTld src );
+
 	public void setTld( ICFIntTld src );
+
 	public void set( ICFIntTldH src );
+
 	public void setTld( ICFIntTldH src );
+
 	public void set( ICFIntProtTld src );
+
 	public void setTld( ICFIntProtTld src );
+
 	public void set( ICFIntProtTldH src );
+
 	public void setTld( ICFIntProtTldH src );
+
 	public void set( ICFIntPubTld src );
+
 	public void setTld( ICFIntPubTld src );
+
 	public void set( ICFIntPubTldH src );
+
 	public void setTld( ICFIntPubTldH src );
+
 	public String getXmlAttrFragment();
+
 	public String toString();
 }

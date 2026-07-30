@@ -63,22 +63,40 @@ public interface ICFIntSubProject
 	public final static String S_CLASS_CODE = "a105";
 
 	public int getClassCode();
+
 	public CFLibDbKeyHash256 getCreatedByUserId();
+
 	public void setCreatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getCreatedAt();
+
 	public void setCreatedAt( LocalDateTime value );
+
 	public CFLibDbKeyHash256 getUpdatedByUserId();
+
 	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getUpdatedAt();
+
 	public void setUpdatedAt( LocalDateTime value );
+
 	public CFLibDbKeyHash256 getPKey();
+
 	public void setPKey(CFLibDbKeyHash256 requiredId);
+
+	public List<ICFIntMajorVersion> getOptionalComponentsMajorVer();
+
+	public CFLibDbKeyHash256 getRequiredId();
+	public void setRequiredId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
 	public ICFSecTenant getRequiredOwnerTenant();
+
 	public ICFIntTopProject getRequiredContainerParentTPrj();
+
 	public List<ICFIntMajorVersion> getOptionalComponentsMajorVer();
+
 	public CFLibDbKeyHash256 getRequiredTenantId();
 	public CFLibDbKeyHash256 getRequiredTopProjectId();
 	public String getRequiredName();
@@ -86,20 +104,36 @@ public interface ICFIntSubProject
 	public String getOptionalDescription();
 	public void setOptionalDescription( String value );
 	public boolean equals( Object obj );
+
 	public int hashCode();
+
 	public int compareTo( Object obj );
+
 	public void set( ICFIntSubProject src );
+
 	public void setSubProject( ICFIntSubProject src );
+
 	public void set( ICFIntSubProjectH src );
+
 	public void setSubProject( ICFIntSubProjectH src );
+
 	public void set( ICFIntProtSubProject src );
+
 	public void setSubProject( ICFIntProtSubProject src );
+
 	public void set( ICFIntProtSubProjectH src );
+
 	public void setSubProject( ICFIntProtSubProjectH src );
+
 	public void set( ICFIntPubSubProject src );
+
 	public void setSubProject( ICFIntPubSubProject src );
+
 	public void set( ICFIntPubSubProjectH src );
+
 	public void setSubProject( ICFIntPubSubProjectH src );
+
 	public String getXmlAttrFragment();
+
 	public String toString();
 }
