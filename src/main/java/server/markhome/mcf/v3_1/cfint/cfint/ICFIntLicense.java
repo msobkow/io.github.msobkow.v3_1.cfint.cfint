@@ -61,20 +61,13 @@ public interface ICFIntLicense
 	public final static String S_CLASS_CODE = "a110";
 
 	public int getClassCode();
-
 	public CFLibDbKeyHash256 getPKey();
-
 	public void setPKey(CFLibDbKeyHash256 requiredId);
-
-	public CFLibDbKeyHash256 getRequiredId();
-	public void setRequiredId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
 	public ICFSecTenant getRequiredOwnerTenant();
-
 	public ICFIntTopDomain getRequiredContainerTopDomain();
-
 	public CFLibDbKeyHash256 getRequiredTenantId();
 	public CFLibDbKeyHash256 getRequiredTopDomainId();
 	public String getRequiredName();
@@ -86,36 +79,20 @@ public interface ICFIntLicense
 	public String getOptionalFullText();
 	public void setOptionalFullText( String value );
 	public boolean equals( Object obj );
-
 	public int hashCode();
-
 	public int compareTo( Object obj );
-
 	public void set( ICFIntLicense src );
-
 	public void setLicense( ICFIntLicense src );
-
 	public void set( ICFIntLicenseH src );
-
 	public void setLicense( ICFIntLicenseH src );
-
 	public void set( ICFIntProtLicense src );
-
 	public void setLicense( ICFIntProtLicense src );
-
 	public void set( ICFIntProtLicenseH src );
-
 	public void setLicense( ICFIntProtLicenseH src );
-
 	public void set( ICFIntPubLicense src );
-
 	public void setLicense( ICFIntPubLicense src );
-
 	public void set( ICFIntPubLicenseH src );
-
 	public void setLicense( ICFIntPubLicenseH src );
-
 	public String getXmlAttrFragment();
-
 	public String toString();
 }

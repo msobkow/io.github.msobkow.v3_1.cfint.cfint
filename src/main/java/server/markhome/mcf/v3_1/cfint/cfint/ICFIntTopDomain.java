@@ -63,44 +63,23 @@ public interface ICFIntTopDomain
 	public final static String S_CLASS_CODE = "a107";
 
 	public int getClassCode();
-
 	public CFLibDbKeyHash256 getCreatedByUserId();
-
 	public void setCreatedByUserId( CFLibDbKeyHash256 value );
-
 	public LocalDateTime getCreatedAt();
-
 	public void setCreatedAt( LocalDateTime value );
-
 	public CFLibDbKeyHash256 getUpdatedByUserId();
-
 	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
-
 	public LocalDateTime getUpdatedAt();
-
 	public void setUpdatedAt( LocalDateTime value );
-
 	public CFLibDbKeyHash256 getPKey();
-
 	public void setPKey(CFLibDbKeyHash256 requiredId);
-
-	public List<ICFIntTopProject> getOptionalComponentsTopProject();
-
-	public List<ICFIntLicense> getOptionalComponentsLicense();
-
-	public CFLibDbKeyHash256 getRequiredId();
-	public void setRequiredId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
 	public ICFSecTenant getRequiredOwnerTenant();
-
 	public ICFIntTld getRequiredContainerParentTld();
-
 	public List<ICFIntTopProject> getOptionalComponentsTopProject();
-
 	public List<ICFIntLicense> getOptionalComponentsLicense();
-
 	public CFLibDbKeyHash256 getRequiredTenantId();
 	public CFLibDbKeyHash256 getRequiredTldId();
 	public String getRequiredName();
@@ -108,36 +87,20 @@ public interface ICFIntTopDomain
 	public String getOptionalDescription();
 	public void setOptionalDescription( String value );
 	public boolean equals( Object obj );
-
 	public int hashCode();
-
 	public int compareTo( Object obj );
-
 	public void set( ICFIntTopDomain src );
-
 	public void setTopDomain( ICFIntTopDomain src );
-
 	public void set( ICFIntTopDomainH src );
-
 	public void setTopDomain( ICFIntTopDomainH src );
-
 	public void set( ICFIntProtTopDomain src );
-
 	public void setTopDomain( ICFIntProtTopDomain src );
-
 	public void set( ICFIntProtTopDomainH src );
-
 	public void setTopDomain( ICFIntProtTopDomainH src );
-
 	public void set( ICFIntPubTopDomain src );
-
 	public void setTopDomain( ICFIntPubTopDomain src );
-
 	public void set( ICFIntPubTopDomainH src );
-
 	public void setTopDomain( ICFIntPubTopDomainH src );
-
 	public String getXmlAttrFragment();
-
 	public String toString();
 }
