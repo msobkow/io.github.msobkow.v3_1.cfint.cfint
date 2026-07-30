@@ -89,8 +89,10 @@ public interface ICFIntMinorVersion
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
-	public ICFSecPubTenant getRequiredOwnerTenant();
+	public ICFSecTenant getRequiredOwnerTenant();
+
 	public ICFIntMajorVersion getRequiredContainerParentMajVer();
+
 	public CFLibDbKeyHash256 getRequiredTenantId();
 	public CFLibDbKeyHash256 getRequiredMajorVersionId();
 	public String getRequiredName();

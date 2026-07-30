@@ -91,8 +91,12 @@ public interface ICFIntTopProject
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
-	public ICFSecPubTenant getRequiredOwnerTenant();
+	public ICFSecTenant getRequiredOwnerTenant();
+
 	public ICFIntTopDomain getRequiredContainerParentSDom();
+
+	public List<ICFIntSubProject> getOptionalComponentsSubProject();
+
 	public CFLibDbKeyHash256 getRequiredTenantId();
 	public CFLibDbKeyHash256 getRequiredTopDomainId();
 	public String getRequiredName();
