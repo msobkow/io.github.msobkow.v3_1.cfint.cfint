@@ -81,9 +81,7 @@ public interface ICFIntMajorVersion
 	public void setUpdatedAt( LocalDateTime value );
 
 	public CFLibDbKeyHash256 getPKey();
-
 	public void setPKey(CFLibDbKeyHash256 requiredId);
-
 	public List<ICFIntMinorVersion> getOptionalComponentsMinorVer();
 
 	public CFLibDbKeyHash256 getRequiredId();
@@ -94,8 +92,6 @@ public interface ICFIntMajorVersion
 	public ICFSecTenant getRequiredOwnerTenant();
 
 	public ICFIntSubProject getRequiredContainerParentSPrj();
-
-	public List<ICFIntMinorVersion> getOptionalComponentsMinorVer();
 
 	public CFLibDbKeyHash256 getRequiredTenantId();
 	public CFLibDbKeyHash256 getRequiredSubProjectId();

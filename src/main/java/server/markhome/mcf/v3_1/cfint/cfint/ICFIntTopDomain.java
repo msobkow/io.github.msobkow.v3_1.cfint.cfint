@@ -81,9 +81,7 @@ public interface ICFIntTopDomain
 	public void setUpdatedAt( LocalDateTime value );
 
 	public CFLibDbKeyHash256 getPKey();
-
 	public void setPKey(CFLibDbKeyHash256 requiredId);
-
 	public List<ICFIntTopProject> getOptionalComponentsTopProject();
 
 	public List<ICFIntLicense> getOptionalComponentsLicense();
@@ -96,10 +94,6 @@ public interface ICFIntTopDomain
 	public ICFSecTenant getRequiredOwnerTenant();
 
 	public ICFIntTld getRequiredContainerParentTld();
-
-	public List<ICFIntTopProject> getOptionalComponentsTopProject();
-
-	public List<ICFIntLicense> getOptionalComponentsLicense();
 
 	public CFLibDbKeyHash256 getRequiredTenantId();
 	public CFLibDbKeyHash256 getRequiredTldId();

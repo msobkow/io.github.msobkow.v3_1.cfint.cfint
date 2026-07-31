@@ -78,9 +78,7 @@ public interface ICFIntURLProtocol
 	public void setUpdatedAt( LocalDateTime value );
 
 	public Integer getPKey();
-
 	public void setPKey(Integer requiredURLProtocolId);
-
 	public int getRequiredURLProtocolId();
 	public void setRequiredURLProtocolId( int value );
 	public int getRequiredRevision();
