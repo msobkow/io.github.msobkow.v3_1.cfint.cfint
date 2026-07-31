@@ -61,6 +61,7 @@ public class CFIntBuffTld
 	protected String requiredName;
 	protected String optionalDescription;
 
+	@Override
 	public CFIntBuffTld() {
 		requiredId = CFLibDbKeyHash256.fromHex( ICFIntTld.ID_INIT_VALUE.toString() );
 		requiredTenantId = CFLibDbKeyHash256.fromHex( ICFIntTld.TENANTID_INIT_VALUE.toString() );
@@ -77,6 +78,9 @@ public class CFIntBuffTld
 	public void setPKey(CFLibDbKeyHash256 requiredId) {
 		this.requiredId = requiredId;
 	}
+
+	@Override
+	public List<ICFIntTopDomain> getOptionalComponentsTopDomain();
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredId() {
@@ -164,28 +168,12 @@ public class CFIntBuffTld
 	}
 
 	@Override
-	public List<ICFIntTopDomain> getOptionalComponentsTopDomain() {
-		ICFIntSchema targetBackingSchema = ICFIntSchema.getBackingCFInt();
-		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsTopDomain", 0, "ICFIntSchema.getBackingCFInt()");
-		}
-		ICFIntTopDomainTable targetTable = targetBackingSchema.getTableTopDomain();
-		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsTopDomain", 0, "ICFIntSchema.getBackingCFInt().getTableTopDomain()");
-		}
-		ICFIntTopDomain[] targetArr = targetTable.readDerivedByTldIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
-		if( targetArr != null ) {
-			List<ICFIntTopDomain> results = new ArrayList<>(targetArr.length);
-			for (int idx = 0; idx < targetArr.length; idx++) {
-				results.add(targetArr[idx]);
-			}
-			return( results );
-		}
-		else {
-			List<ICFIntTopDomain> results = new ArrayList<>();
-			return( results );
-		}
+	public void setRequiredContainerTenant(CFLibDbKeyHash256 argTenantId) {
+		requiredTenantId = argTenantId;
 	}
+
+	@Override
+	public void setRequiredContainerTenant(ICFSecPubTenant argObj);
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredTenantId() {

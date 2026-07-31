@@ -61,6 +61,7 @@ public class CFIntBuffURLProtocol
 	protected String requiredDescription;
 	protected boolean requiredIsSecure;
 
+	@Override
 	public CFIntBuffURLProtocol() {
 		requiredURLProtocolId = ICFIntURLProtocol.URLPROTOCOLID_INIT_VALUE;
 		requiredName = ICFIntURLProtocol.NAME_INIT_VALUE;

@@ -62,6 +62,7 @@ public class CFIntBuffTopProject
 	protected String requiredName;
 	protected String optionalDescription;
 
+	@Override
 	public CFIntBuffTopProject() {
 		requiredId = CFLibDbKeyHash256.fromHex( ICFIntTopProject.ID_INIT_VALUE.toString() );
 		requiredTenantId = CFLibDbKeyHash256.fromHex( ICFIntTopProject.TENANTID_INIT_VALUE.toString() );
@@ -79,6 +80,9 @@ public class CFIntBuffTopProject
 	public void setPKey(CFLibDbKeyHash256 requiredId) {
 		this.requiredId = requiredId;
 	}
+
+	@Override
+	public List<ICFIntSubProject> getOptionalComponentsSubProject();
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredId() {
@@ -166,6 +170,14 @@ public class CFIntBuffTopProject
 	}
 
 	@Override
+	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId) {
+		requiredTenantId = argTenantId;
+	}
+
+	@Override
+	public void setRequiredOwnerTenant(ICFSecPubTenant argObj);
+
+	@Override
 	public ICFIntTopDomain getRequiredContainerParentSDom() {
 		ICFIntSchema targetBackingSchema = ICFIntSchema.getBackingCFInt();
 		if (targetBackingSchema == null) {
@@ -180,26 +192,30 @@ public class CFIntBuffTopProject
 	}
 
 	@Override
-	public List<ICFIntSubProject> getOptionalComponentsSubProject() {
-		ICFIntSchema targetBackingSchema = ICFIntSchema.getBackingCFInt();
-		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsSubProject", 0, "ICFIntSchema.getBackingCFInt()");
-		}
-		ICFIntSubProjectTable targetTable = targetBackingSchema.getTableSubProject();
-		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsSubProject", 0, "ICFIntSchema.getBackingCFInt().getTableSubProject()");
-		}
-		ICFIntSubProject[] targetArr = targetTable.readDerivedByTopProjectIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
-		if( targetArr != null ) {
-			List<ICFIntSubProject> results = new ArrayList<>(targetArr.length);
-			for (int idx = 0; idx < targetArr.length; idx++) {
-				results.add(targetArr[idx]);
-			}
-			return( results );
+	public void setRequiredContainerParentSDom(CFLibDbKeyHash256 argTopDomainId) {
+		requiredTopDomainId = argTopDomainId;
+	}
+
+	@Override
+	public void setRequiredContainerParentSDom(ICFIntTopDomain argObj);
+
+	@Override
+	public void setRequiredContainerParentSDom(ICFIntProtTopDomain argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerParentSDom", 1, "argObj");
 		}
 		else {
-			List<ICFIntSubProject> results = new ArrayList<>();
-			return( results );
+			requiredTopDomainId = argObj.getRequiredId();
+		}
+	}
+
+	@Override
+	public void setRequiredContainerParentSDom(ICFIntPubTopDomain argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerParentSDom", 1, "argObj");
+		}
+		else {
+			requiredTopDomainId = argObj.getRequiredId();
 		}
 	}
 

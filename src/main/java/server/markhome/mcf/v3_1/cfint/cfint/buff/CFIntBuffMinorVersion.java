@@ -62,6 +62,7 @@ public class CFIntBuffMinorVersion
 	protected String requiredName;
 	protected String optionalDescription;
 
+	@Override
 	public CFIntBuffMinorVersion() {
 		requiredId = CFLibDbKeyHash256.fromHex( ICFIntMinorVersion.ID_INIT_VALUE.toString() );
 		requiredTenantId = CFLibDbKeyHash256.fromHex( ICFIntMinorVersion.TENANTID_INIT_VALUE.toString() );
@@ -166,6 +167,14 @@ public class CFIntBuffMinorVersion
 	}
 
 	@Override
+	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId) {
+		requiredTenantId = argTenantId;
+	}
+
+	@Override
+	public void setRequiredOwnerTenant(ICFSecPubTenant argObj);
+
+	@Override
 	public ICFIntMajorVersion getRequiredContainerParentMajVer() {
 		ICFIntSchema targetBackingSchema = ICFIntSchema.getBackingCFInt();
 		if (targetBackingSchema == null) {
@@ -177,6 +186,34 @@ public class CFIntBuffMinorVersion
 		}
 		ICFIntMajorVersion targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredMajorVersionId());
 		return(targetRec);
+	}
+
+	@Override
+	public void setRequiredContainerParentMajVer(CFLibDbKeyHash256 argMajorVersionId) {
+		requiredMajorVersionId = argMajorVersionId;
+	}
+
+	@Override
+	public void setRequiredContainerParentMajVer(ICFIntMajorVersion argObj);
+
+	@Override
+	public void setRequiredContainerParentMajVer(ICFIntProtMajorVersion argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerParentMajVer", 1, "argObj");
+		}
+		else {
+			requiredMajorVersionId = argObj.getRequiredId();
+		}
+	}
+
+	@Override
+	public void setRequiredContainerParentMajVer(ICFIntPubMajorVersion argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerParentMajVer", 1, "argObj");
+		}
+		else {
+			requiredMajorVersionId = argObj.getRequiredId();
+		}
 	}
 
 	@Override

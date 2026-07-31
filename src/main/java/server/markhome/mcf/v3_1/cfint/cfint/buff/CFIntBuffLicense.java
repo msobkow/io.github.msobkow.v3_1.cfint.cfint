@@ -60,6 +60,7 @@ public class CFIntBuffLicense
 	protected String optionalEmbeddedText;
 	protected String optionalFullText;
 
+	@Override
 	public CFIntBuffLicense() {
 		requiredId = CFLibDbKeyHash256.fromHex( ICFIntLicense.ID_INIT_VALUE.toString() );
 		requiredTenantId = CFLibDbKeyHash256.fromHex( ICFIntLicense.TENANTID_INIT_VALUE.toString() );
@@ -126,6 +127,14 @@ public class CFIntBuffLicense
 	}
 
 	@Override
+	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId) {
+		requiredTenantId = argTenantId;
+	}
+
+	@Override
+	public void setRequiredOwnerTenant(ICFSecPubTenant argObj);
+
+	@Override
 	public ICFIntTopDomain getRequiredContainerTopDomain() {
 		ICFIntSchema targetBackingSchema = ICFIntSchema.getBackingCFInt();
 		if (targetBackingSchema == null) {
@@ -137,6 +146,34 @@ public class CFIntBuffLicense
 		}
 		ICFIntTopDomain targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredTopDomainId());
 		return(targetRec);
+	}
+
+	@Override
+	public void setRequiredContainerTopDomain(CFLibDbKeyHash256 argTopDomainId) {
+		requiredTopDomainId = argTopDomainId;
+	}
+
+	@Override
+	public void setRequiredContainerTopDomain(ICFIntTopDomain argObj);
+
+	@Override
+	public void setRequiredContainerTopDomain(ICFIntProtTopDomain argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerTopDomain", 1, "argObj");
+		}
+		else {
+			requiredTopDomainId = argObj.getRequiredId();
+		}
+	}
+
+	@Override
+	public void setRequiredContainerTopDomain(ICFIntPubTopDomain argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerTopDomain", 1, "argObj");
+		}
+		else {
+			requiredTopDomainId = argObj.getRequiredId();
+		}
 	}
 
 	@Override
