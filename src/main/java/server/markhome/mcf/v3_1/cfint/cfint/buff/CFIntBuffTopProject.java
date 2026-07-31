@@ -62,7 +62,6 @@ public class CFIntBuffTopProject
 	protected String requiredName;
 	protected String optionalDescription;
 
-	@Override
 	public CFIntBuffTopProject() {
 		requiredId = CFLibDbKeyHash256.fromHex( ICFIntTopProject.ID_INIT_VALUE.toString() );
 		requiredTenantId = CFLibDbKeyHash256.fromHex( ICFIntTopProject.TENANTID_INIT_VALUE.toString() );
@@ -73,12 +72,14 @@ public class CFIntBuffTopProject
 
 	@Override
 	public CFLibDbKeyHash256 getPKey() {
-		return getRequiredId();
+		return (requiredId);
 	}
 
 	@Override
 	public void setPKey(CFLibDbKeyHash256 requiredId) {
-		this.requiredId = requiredId;
+		if(requiredId != null) {
+			this.requiredId = requiredId;
+		}
 	}
 
 	@Override

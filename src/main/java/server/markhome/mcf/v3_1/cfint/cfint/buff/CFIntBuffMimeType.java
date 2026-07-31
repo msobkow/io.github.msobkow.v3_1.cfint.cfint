@@ -60,7 +60,6 @@ public class CFIntBuffMimeType
 	protected String requiredName;
 	protected String optionalFileTypes;
 
-	@Override
 	public CFIntBuffMimeType() {
 		requiredMimeTypeId = ICFIntMimeType.MIMETYPEID_INIT_VALUE;
 		requiredName = ICFIntMimeType.NAME_INIT_VALUE;
@@ -69,12 +68,14 @@ public class CFIntBuffMimeType
 
 	@Override
 	public Integer getPKey() {
-		return getRequiredMimeTypeId();
+		return (requiredMimeTypeId);
 	}
 
 	@Override
 	public void setPKey(Integer requiredMimeTypeId) {
-		this.requiredMimeTypeId = requiredMimeTypeId;
+		if(requiredMimeTypeId != null) {
+			this.requiredMimeTypeId = requiredMimeTypeId;
+		}
 	}
 
 	@Override

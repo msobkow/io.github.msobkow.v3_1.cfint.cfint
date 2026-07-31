@@ -60,7 +60,6 @@ public class CFIntBuffLicense
 	protected String optionalEmbeddedText;
 	protected String optionalFullText;
 
-	@Override
 	public CFIntBuffLicense() {
 		requiredId = CFLibDbKeyHash256.fromHex( ICFIntLicense.ID_INIT_VALUE.toString() );
 		requiredTenantId = CFLibDbKeyHash256.fromHex( ICFIntLicense.TENANTID_INIT_VALUE.toString() );
@@ -73,12 +72,14 @@ public class CFIntBuffLicense
 
 	@Override
 	public CFLibDbKeyHash256 getPKey() {
-		return getRequiredId();
+		return (requiredId);
 	}
 
 	@Override
 	public void setPKey(CFLibDbKeyHash256 requiredId) {
-		this.requiredId = requiredId;
+		if(requiredId != null) {
+			this.requiredId = requiredId;
+		}
 	}
 
 	@Override

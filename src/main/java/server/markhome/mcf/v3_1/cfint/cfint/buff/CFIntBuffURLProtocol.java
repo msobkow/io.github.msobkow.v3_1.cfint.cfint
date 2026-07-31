@@ -61,7 +61,6 @@ public class CFIntBuffURLProtocol
 	protected String requiredDescription;
 	protected boolean requiredIsSecure;
 
-	@Override
 	public CFIntBuffURLProtocol() {
 		requiredURLProtocolId = ICFIntURLProtocol.URLPROTOCOLID_INIT_VALUE;
 		requiredName = ICFIntURLProtocol.NAME_INIT_VALUE;
@@ -71,12 +70,14 @@ public class CFIntBuffURLProtocol
 
 	@Override
 	public Integer getPKey() {
-		return getRequiredURLProtocolId();
+		return (requiredURLProtocolId);
 	}
 
 	@Override
 	public void setPKey(Integer requiredURLProtocolId) {
-		this.requiredURLProtocolId = requiredURLProtocolId;
+		if(requiredURLProtocolId != null) {
+			this.requiredURLProtocolId = requiredURLProtocolId;
+		}
 	}
 
 	@Override

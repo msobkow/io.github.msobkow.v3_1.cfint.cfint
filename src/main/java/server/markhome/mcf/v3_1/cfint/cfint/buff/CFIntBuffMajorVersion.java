@@ -62,7 +62,6 @@ public class CFIntBuffMajorVersion
 	protected String requiredName;
 	protected String optionalDescription;
 
-	@Override
 	public CFIntBuffMajorVersion() {
 		requiredId = CFLibDbKeyHash256.fromHex( ICFIntMajorVersion.ID_INIT_VALUE.toString() );
 		requiredTenantId = CFLibDbKeyHash256.fromHex( ICFIntMajorVersion.TENANTID_INIT_VALUE.toString() );
@@ -73,12 +72,14 @@ public class CFIntBuffMajorVersion
 
 	@Override
 	public CFLibDbKeyHash256 getPKey() {
-		return getRequiredId();
+		return (requiredId);
 	}
 
 	@Override
 	public void setPKey(CFLibDbKeyHash256 requiredId) {
-		this.requiredId = requiredId;
+		if(requiredId != null) {
+			this.requiredId = requiredId;
+		}
 	}
 
 	@Override
