@@ -83,7 +83,28 @@ public class CFIntBuffTopProject
 	}
 
 	@Override
-	public List<ICFIntSubProject> getOptionalComponentsSubProject();
+	public List<ICFIntSubProject> getOptionalComponentsSubProject() {
+		ICFIntSchema targetBackingSchema = ICFIntSchema.getBackingCFInt();
+		if (targetBackingSchema == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsSubProject", 0, "ICFIntSchema.getBackingCFInt()");
+		}
+		ICFIntSubProjectTable targetTable = targetBackingSchema.getTableSubProject();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsSubProject", 0, "ICFIntSchema.getBackingCFInt().getTableSubProject()");
+		}
+		ICFIntSubProject[] targetArr = targetTable.readDerivedByTopProjectIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
+		if( targetArr != null ) {
+			List<ICFIntSubProject> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFIntSubProject> results = new ArrayList<>();
+			return( results );
+		}
+	}
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredId() {
@@ -176,7 +197,9 @@ public class CFIntBuffTopProject
 	}
 
 	@Override
-	public void setRequiredOwnerTenant(ICFSecPubTenant argObj);
+	public void setRequiredOwnerTenant(ICFSecPubTenant argObj) {
+		setRequiredOwnerTenant(argObj.getRequiredId());
+	}
 
 	@Override
 	public ICFIntTopDomain getRequiredContainerParentSDom() {
@@ -198,7 +221,9 @@ public class CFIntBuffTopProject
 	}
 
 	@Override
-	public void setRequiredContainerParentSDom(ICFIntTopDomain argObj);
+	public void setRequiredContainerParentSDom(ICFIntTopDomain argObj) {
+		setRequiredContainerParentSDom(argObj.getRequiredId());
+	}
 
 	@Override
 	public void setRequiredContainerParentSDom(ICFIntProtTopDomain argObj) {

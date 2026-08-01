@@ -83,10 +83,52 @@ public class CFIntBuffTopDomain
 	}
 
 	@Override
-	public List<ICFIntTopProject> getOptionalComponentsTopProject();
+	public List<ICFIntTopProject> getOptionalComponentsTopProject() {
+		ICFIntSchema targetBackingSchema = ICFIntSchema.getBackingCFInt();
+		if (targetBackingSchema == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsTopProject", 0, "ICFIntSchema.getBackingCFInt()");
+		}
+		ICFIntTopProjectTable targetTable = targetBackingSchema.getTableTopProject();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsTopProject", 0, "ICFIntSchema.getBackingCFInt().getTableTopProject()");
+		}
+		ICFIntTopProject[] targetArr = targetTable.readDerivedByTopDomainIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
+		if( targetArr != null ) {
+			List<ICFIntTopProject> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFIntTopProject> results = new ArrayList<>();
+			return( results );
+		}
+	}
 
 	@Override
-	public List<ICFIntLicense> getOptionalComponentsLicense();
+	public List<ICFIntLicense> getOptionalComponentsLicense() {
+		ICFIntSchema targetBackingSchema = ICFIntSchema.getBackingCFInt();
+		if (targetBackingSchema == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsLicense", 0, "ICFIntSchema.getBackingCFInt()");
+		}
+		ICFIntLicenseTable targetTable = targetBackingSchema.getTableLicense();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsLicense", 0, "ICFIntSchema.getBackingCFInt().getTableLicense()");
+		}
+		ICFIntLicense[] targetArr = targetTable.readDerivedByDomainIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
+		if( targetArr != null ) {
+			List<ICFIntLicense> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFIntLicense> results = new ArrayList<>();
+			return( results );
+		}
+	}
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredId() {
@@ -179,7 +221,9 @@ public class CFIntBuffTopDomain
 	}
 
 	@Override
-	public void setRequiredOwnerTenant(ICFSecPubTenant argObj);
+	public void setRequiredOwnerTenant(ICFSecPubTenant argObj) {
+		setRequiredOwnerTenant(argObj.getRequiredId());
+	}
 
 	@Override
 	public ICFIntTld getRequiredContainerParentTld() {
@@ -201,7 +245,9 @@ public class CFIntBuffTopDomain
 	}
 
 	@Override
-	public void setRequiredContainerParentTld(ICFIntTld argObj);
+	public void setRequiredContainerParentTld(ICFIntTld argObj) {
+		setRequiredContainerParentTld(argObj.getRequiredId());
+	}
 
 	@Override
 	public void setRequiredContainerParentTld(ICFIntProtTld argObj) {

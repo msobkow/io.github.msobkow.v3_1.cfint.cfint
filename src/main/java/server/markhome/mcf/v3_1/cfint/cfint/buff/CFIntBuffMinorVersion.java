@@ -173,7 +173,9 @@ public class CFIntBuffMinorVersion
 	}
 
 	@Override
-	public void setRequiredOwnerTenant(ICFSecPubTenant argObj);
+	public void setRequiredOwnerTenant(ICFSecPubTenant argObj) {
+		setRequiredOwnerTenant(argObj.getRequiredId());
+	}
 
 	@Override
 	public ICFIntMajorVersion getRequiredContainerParentMajVer() {
@@ -195,7 +197,9 @@ public class CFIntBuffMinorVersion
 	}
 
 	@Override
-	public void setRequiredContainerParentMajVer(ICFIntMajorVersion argObj);
+	public void setRequiredContainerParentMajVer(ICFIntMajorVersion argObj) {
+		setRequiredContainerParentMajVer(argObj.getRequiredId());
+	}
 
 	@Override
 	public void setRequiredContainerParentMajVer(ICFIntProtMajorVersion argObj) {

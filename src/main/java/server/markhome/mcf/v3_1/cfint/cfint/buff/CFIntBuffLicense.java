@@ -133,7 +133,9 @@ public class CFIntBuffLicense
 	}
 
 	@Override
-	public void setRequiredOwnerTenant(ICFSecPubTenant argObj);
+	public void setRequiredOwnerTenant(ICFSecPubTenant argObj) {
+		setRequiredOwnerTenant(argObj.getRequiredId());
+	}
 
 	@Override
 	public ICFIntTopDomain getRequiredContainerTopDomain() {
@@ -155,7 +157,9 @@ public class CFIntBuffLicense
 	}
 
 	@Override
-	public void setRequiredContainerTopDomain(ICFIntTopDomain argObj);
+	public void setRequiredContainerTopDomain(ICFIntTopDomain argObj) {
+		setRequiredContainerTopDomain(argObj.getRequiredId());
+	}
 
 	@Override
 	public void setRequiredContainerTopDomain(ICFIntProtTopDomain argObj) {

@@ -83,7 +83,28 @@ public class CFIntBuffMajorVersion
 	}
 
 	@Override
-	public List<ICFIntMinorVersion> getOptionalComponentsMinorVer();
+	public List<ICFIntMinorVersion> getOptionalComponentsMinorVer() {
+		ICFIntSchema targetBackingSchema = ICFIntSchema.getBackingCFInt();
+		if (targetBackingSchema == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsMinorVer", 0, "ICFIntSchema.getBackingCFInt()");
+		}
+		ICFIntMinorVersionTable targetTable = targetBackingSchema.getTableMinorVersion();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsMinorVer", 0, "ICFIntSchema.getBackingCFInt().getTableMinorVersion()");
+		}
+		ICFIntMinorVersion[] targetArr = targetTable.readDerivedByMajorVerIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
+		if( targetArr != null ) {
+			List<ICFIntMinorVersion> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFIntMinorVersion> results = new ArrayList<>();
+			return( results );
+		}
+	}
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredId() {
@@ -176,7 +197,9 @@ public class CFIntBuffMajorVersion
 	}
 
 	@Override
-	public void setRequiredOwnerTenant(ICFSecPubTenant argObj);
+	public void setRequiredOwnerTenant(ICFSecPubTenant argObj) {
+		setRequiredOwnerTenant(argObj.getRequiredId());
+	}
 
 	@Override
 	public ICFIntSubProject getRequiredContainerParentSPrj() {
@@ -198,7 +221,9 @@ public class CFIntBuffMajorVersion
 	}
 
 	@Override
-	public void setRequiredContainerParentSPrj(ICFIntSubProject argObj);
+	public void setRequiredContainerParentSPrj(ICFIntSubProject argObj) {
+		setRequiredContainerParentSPrj(argObj.getRequiredId());
+	}
 
 	@Override
 	public void setRequiredContainerParentSPrj(ICFIntProtSubProject argObj) {
