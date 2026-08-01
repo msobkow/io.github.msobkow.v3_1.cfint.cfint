@@ -196,7 +196,12 @@ public class CFIntBuffTld
 
 	@Override
 	public void setRequiredContainerTenant(ICFSecPubTenant argObj) {
-		setRequiredContainerTenant(argObj.getRequiredId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerTenant", 1, "argObj");
+		}
+		else {
+			requiredTenantId = argObj.getRequiredId();
+		}
 	}
 
 	@Override

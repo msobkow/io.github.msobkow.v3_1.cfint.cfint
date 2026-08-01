@@ -198,7 +198,12 @@ public class CFIntBuffSubProject
 
 	@Override
 	public void setRequiredOwnerTenant(ICFSecPubTenant argObj) {
-		setRequiredOwnerTenant(argObj.getRequiredId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOwnerTenant", 1, "argObj");
+		}
+		else {
+			requiredTenantId = argObj.getRequiredId();
+		}
 	}
 
 	@Override
@@ -222,7 +227,12 @@ public class CFIntBuffSubProject
 
 	@Override
 	public void setRequiredContainerParentTPrj(ICFIntTopProject argObj) {
-		setRequiredContainerParentTPrj(argObj.getRequiredId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerParentTPrj", 1, "argObj");
+		}
+		else {
+			requiredTopProjectId = argObj.getRequiredId();
+		}
 	}
 
 	@Override
