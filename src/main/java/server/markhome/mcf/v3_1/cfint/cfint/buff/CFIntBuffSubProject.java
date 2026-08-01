@@ -111,7 +111,6 @@ public class CFIntBuffSubProject
 		return( getPKey() );
 	}
 
-	@Override
 	public void setRequiredId( CFLibDbKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -202,7 +201,7 @@ public class CFIntBuffSubProject
 			throw new CFLibNullArgumentException(getClass(), "setOwnerTenant", 1, "argObj");
 		}
 		else {
-			requiredTenantId = argObj.getRequiredId();
+			setRequiredTenantId(argObj.getRequiredId());
 		}
 	}
 
@@ -231,7 +230,7 @@ public class CFIntBuffSubProject
 			throw new CFLibNullArgumentException(getClass(), "setContainerParentTPrj", 1, "argObj");
 		}
 		else {
-			requiredTopProjectId = argObj.getRequiredId();
+			setRequiredTopProjectId(argObj.getRequiredId());
 		}
 	}
 
@@ -241,7 +240,7 @@ public class CFIntBuffSubProject
 			throw new CFLibNullArgumentException(getClass(), "setContainerParentTPrj", 1, "argObj");
 		}
 		else {
-			requiredTopProjectId = argObj.getRequiredId();
+			setRequiredTopProjectId(argObj.getRequiredId());
 		}
 	}
 
@@ -251,7 +250,7 @@ public class CFIntBuffSubProject
 			throw new CFLibNullArgumentException(getClass(), "setContainerParentTPrj", 1, "argObj");
 		}
 		else {
-			requiredTopProjectId = argObj.getRequiredId();
+			setRequiredTopProjectId(argObj.getRequiredId());
 		}
 	}
 
@@ -260,9 +259,29 @@ public class CFIntBuffSubProject
 		return( requiredTenantId );
 	}
 
+	public void setRequiredTenantId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredTenantId",
+				1,
+				"value" );
+		}
+		requiredTenantId = value;
+	}
+
 	@Override
 	public CFLibDbKeyHash256 getRequiredTopProjectId() {
 		return( requiredTopProjectId );
+	}
+
+	public void setRequiredTopProjectId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredTopProjectId",
+				1,
+				"value" );
+		}
+		requiredTopProjectId = value;
 	}
 
 	@Override
@@ -270,7 +289,6 @@ public class CFIntBuffSubProject
 		return( requiredName );
 	}
 
-	@Override
 	public void setRequiredName( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -294,7 +312,6 @@ public class CFIntBuffSubProject
 		return( optionalDescription );
 	}
 
-	@Override
 	public void setOptionalDescription( String value ) {
 		if( value != null && value.length() > 1024 ) {
 			throw new CFLibArgumentOverflowException( getClass(),

@@ -87,7 +87,6 @@ public class CFIntBuffLicense
 		return( getPKey() );
 	}
 
-	@Override
 	public void setRequiredId( CFLibDbKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -138,7 +137,7 @@ public class CFIntBuffLicense
 			throw new CFLibNullArgumentException(getClass(), "setOwnerTenant", 1, "argObj");
 		}
 		else {
-			requiredTenantId = argObj.getRequiredId();
+			setRequiredTenantId(argObj.getRequiredId());
 		}
 	}
 
@@ -167,7 +166,7 @@ public class CFIntBuffLicense
 			throw new CFLibNullArgumentException(getClass(), "setContainerTopDomain", 1, "argObj");
 		}
 		else {
-			requiredTopDomainId = argObj.getRequiredId();
+			setRequiredTopDomainId(argObj.getRequiredId());
 		}
 	}
 
@@ -177,7 +176,7 @@ public class CFIntBuffLicense
 			throw new CFLibNullArgumentException(getClass(), "setContainerTopDomain", 1, "argObj");
 		}
 		else {
-			requiredTopDomainId = argObj.getRequiredId();
+			setRequiredTopDomainId(argObj.getRequiredId());
 		}
 	}
 
@@ -187,7 +186,7 @@ public class CFIntBuffLicense
 			throw new CFLibNullArgumentException(getClass(), "setContainerTopDomain", 1, "argObj");
 		}
 		else {
-			requiredTopDomainId = argObj.getRequiredId();
+			setRequiredTopDomainId(argObj.getRequiredId());
 		}
 	}
 
@@ -196,9 +195,29 @@ public class CFIntBuffLicense
 		return( requiredTenantId );
 	}
 
+	public void setRequiredTenantId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredTenantId",
+				1,
+				"value" );
+		}
+		requiredTenantId = value;
+	}
+
 	@Override
 	public CFLibDbKeyHash256 getRequiredTopDomainId() {
 		return( requiredTopDomainId );
+	}
+
+	public void setRequiredTopDomainId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredTopDomainId",
+				1,
+				"value" );
+		}
+		requiredTopDomainId = value;
 	}
 
 	@Override
@@ -206,7 +225,6 @@ public class CFIntBuffLicense
 		return( requiredName );
 	}
 
-	@Override
 	public void setRequiredName( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -230,7 +248,6 @@ public class CFIntBuffLicense
 		return( optionalDescription );
 	}
 
-	@Override
 	public void setOptionalDescription( String value ) {
 		if( value != null && value.length() > 1024 ) {
 			throw new CFLibArgumentOverflowException( getClass(),
@@ -248,7 +265,6 @@ public class CFIntBuffLicense
 		return( optionalEmbeddedText );
 	}
 
-	@Override
 	public void setOptionalEmbeddedText( String value ) {
 		if( value != null && value.length() > 8000 ) {
 			throw new CFLibArgumentOverflowException( getClass(),
@@ -266,7 +282,6 @@ public class CFIntBuffLicense
 		return( optionalFullText );
 	}
 
-	@Override
 	public void setOptionalFullText( String value ) {
 		if( value != null && value.length() > 8000 ) {
 			throw new CFLibArgumentOverflowException( getClass(),

@@ -142,19 +142,34 @@ public class CFIntBuffLicenseH
         pkey.setAuditSessionId(auditSessionId);
     }
 
-    @Override
-    public CFLibDbKeyHash256 getRequiredId() {
-        return( pkey.getRequiredId() );
-    }
+	@Override
+	public CFLibDbKeyHash256 getRequiredId() {
+		return( getPKey() );
+	}
 
-    @Override
-    public void setRequiredId( CFLibDbKeyHash256 requiredId ) {
-        pkey.setRequiredId( requiredId );
-    }
+	public void setRequiredId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredId",
+				1,
+				"value" );
+		}
+		setPKey( value );
+	}
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredTenantId() {
 		return( requiredTenantId );
+	}
+
+	public void setRequiredTenantId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredTenantId",
+				1,
+				"value" );
+		}
+		requiredTenantId = value;
 	}
 
 	@Override
@@ -162,12 +177,21 @@ public class CFIntBuffLicenseH
 		return( requiredTopDomainId );
 	}
 
+	public void setRequiredTopDomainId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredTopDomainId",
+				1,
+				"value" );
+		}
+		requiredTopDomainId = value;
+	}
+
 	@Override
 	public String getRequiredName() {
 		return( requiredName );
 	}
 
-	@Override
 	public void setRequiredName( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -191,7 +215,6 @@ public class CFIntBuffLicenseH
 		return( optionalDescription );
 	}
 
-	@Override
 	public void setOptionalDescription( String value ) {
 		if( value != null && value.length() > 1024 ) {
 			throw new CFLibArgumentOverflowException( getClass(),
@@ -209,7 +232,6 @@ public class CFIntBuffLicenseH
 		return( optionalEmbeddedText );
 	}
 
-	@Override
 	public void setOptionalEmbeddedText( String value ) {
 		if( value != null && value.length() > 8000 ) {
 			throw new CFLibArgumentOverflowException( getClass(),
@@ -227,7 +249,6 @@ public class CFIntBuffLicenseH
 		return( optionalFullText );
 	}
 
-	@Override
 	public void setOptionalFullText( String value ) {
 		if( value != null && value.length() > 8000 ) {
 			throw new CFLibArgumentOverflowException( getClass(),

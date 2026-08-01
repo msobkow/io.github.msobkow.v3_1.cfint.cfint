@@ -63,7 +63,6 @@ public class CFIntBuffTopDomainByNameIdxKey
 		return( requiredTldId );
 	}
 
-	@Override
 	public void setRequiredTldId( CFLibDbKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -79,7 +78,6 @@ public class CFIntBuffTopDomainByNameIdxKey
 		return( requiredName );
 	}
 
-	@Override
 	public void setRequiredName( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),

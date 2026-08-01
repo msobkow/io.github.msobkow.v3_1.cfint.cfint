@@ -190,22 +190,29 @@ public class CFIntBuffMimeTypeH
         pkey.setAuditSessionId(auditSessionId);
     }
 
-    @Override
-    public int getRequiredMimeTypeId() {
-        return( pkey.getRequiredMimeTypeId() );
-    }
+	@Override
+	public int getRequiredMimeTypeId() {
+		return( getPKey() );
+	}
 
-    @Override
-    public void setRequiredMimeTypeId( int requiredMimeTypeId ) {
-        pkey.setRequiredMimeTypeId( requiredMimeTypeId );
-    }
+	@Override
+	public void setRequiredMimeTypeId( int value ) {
+		if( value < ICFIntMimeType.MIMETYPEID_MIN_VALUE ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				"setRequiredMimeTypeId",
+				1,
+				"value",
+				value,
+				ICFIntMimeType.MIMETYPEID_MIN_VALUE );
+		}
+		setPKey( value );
+	}
 
 	@Override
 	public String getRequiredName() {
 		return( requiredName );
 	}
 
-	@Override
 	public void setRequiredName( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -229,7 +236,6 @@ public class CFIntBuffMimeTypeH
 		return( optionalFileTypes );
 	}
 
-	@Override
 	public void setOptionalFileTypes( String value ) {
 		if( value != null && value.length() > 128 ) {
 			throw new CFLibArgumentOverflowException( getClass(),

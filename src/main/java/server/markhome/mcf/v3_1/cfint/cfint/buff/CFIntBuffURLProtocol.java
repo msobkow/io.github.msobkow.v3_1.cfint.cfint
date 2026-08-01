@@ -158,7 +158,6 @@ public class CFIntBuffURLProtocol
 		return( requiredName );
 	}
 
-	@Override
 	public void setRequiredName( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -182,7 +181,6 @@ public class CFIntBuffURLProtocol
 		return( requiredDescription );
 	}
 
-	@Override
 	public void setRequiredDescription( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -206,7 +204,6 @@ public class CFIntBuffURLProtocol
 		return( requiredIsSecure );
 	}
 
-	@Override
 	public void setRequiredIsSecure( boolean value ) {
 		requiredIsSecure = value;
 	}

@@ -61,7 +61,6 @@ public class CFIntBuffMinorVersionByMajorVerIdxKey
 		return( requiredMajorVersionId );
 	}
 
-	@Override
 	public void setRequiredMajorVersionId( CFLibDbKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),

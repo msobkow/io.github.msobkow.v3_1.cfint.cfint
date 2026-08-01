@@ -192,22 +192,29 @@ public class CFIntBuffURLProtocolH
         pkey.setAuditSessionId(auditSessionId);
     }
 
-    @Override
-    public int getRequiredURLProtocolId() {
-        return( pkey.getRequiredURLProtocolId() );
-    }
+	@Override
+	public int getRequiredURLProtocolId() {
+		return( getPKey() );
+	}
 
-    @Override
-    public void setRequiredURLProtocolId( int requiredURLProtocolId ) {
-        pkey.setRequiredURLProtocolId( requiredURLProtocolId );
-    }
+	@Override
+	public void setRequiredURLProtocolId( int value ) {
+		if( value < ICFIntURLProtocol.URLPROTOCOLID_MIN_VALUE ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				"setRequiredURLProtocolId",
+				1,
+				"value",
+				value,
+				ICFIntURLProtocol.URLPROTOCOLID_MIN_VALUE );
+		}
+		setPKey( value );
+	}
 
 	@Override
 	public String getRequiredName() {
 		return( requiredName );
 	}
 
-	@Override
 	public void setRequiredName( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -231,7 +238,6 @@ public class CFIntBuffURLProtocolH
 		return( requiredDescription );
 	}
 
-	@Override
 	public void setRequiredDescription( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -255,7 +261,6 @@ public class CFIntBuffURLProtocolH
 		return( requiredIsSecure );
 	}
 
-	@Override
 	public void setRequiredIsSecure( boolean value ) {
 		requiredIsSecure = value;
 	}

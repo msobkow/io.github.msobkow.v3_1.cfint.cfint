@@ -61,7 +61,6 @@ public class CFIntBuffTopProjectByTopDomainIdxKey
 		return( requiredTopDomainId );
 	}
 
-	@Override
 	public void setRequiredTopDomainId( CFLibDbKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),

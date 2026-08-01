@@ -87,7 +87,6 @@ public class CFIntBuffMinorVersion
 		return( getPKey() );
 	}
 
-	@Override
 	public void setRequiredId( CFLibDbKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -178,7 +177,7 @@ public class CFIntBuffMinorVersion
 			throw new CFLibNullArgumentException(getClass(), "setOwnerTenant", 1, "argObj");
 		}
 		else {
-			requiredTenantId = argObj.getRequiredId();
+			setRequiredTenantId(argObj.getRequiredId());
 		}
 	}
 
@@ -207,7 +206,7 @@ public class CFIntBuffMinorVersion
 			throw new CFLibNullArgumentException(getClass(), "setContainerParentMajVer", 1, "argObj");
 		}
 		else {
-			requiredMajorVersionId = argObj.getRequiredId();
+			setRequiredMajorVersionId(argObj.getRequiredId());
 		}
 	}
 
@@ -217,7 +216,7 @@ public class CFIntBuffMinorVersion
 			throw new CFLibNullArgumentException(getClass(), "setContainerParentMajVer", 1, "argObj");
 		}
 		else {
-			requiredMajorVersionId = argObj.getRequiredId();
+			setRequiredMajorVersionId(argObj.getRequiredId());
 		}
 	}
 
@@ -227,7 +226,7 @@ public class CFIntBuffMinorVersion
 			throw new CFLibNullArgumentException(getClass(), "setContainerParentMajVer", 1, "argObj");
 		}
 		else {
-			requiredMajorVersionId = argObj.getRequiredId();
+			setRequiredMajorVersionId(argObj.getRequiredId());
 		}
 	}
 
@@ -236,9 +235,29 @@ public class CFIntBuffMinorVersion
 		return( requiredTenantId );
 	}
 
+	public void setRequiredTenantId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredTenantId",
+				1,
+				"value" );
+		}
+		requiredTenantId = value;
+	}
+
 	@Override
 	public CFLibDbKeyHash256 getRequiredMajorVersionId() {
 		return( requiredMajorVersionId );
+	}
+
+	public void setRequiredMajorVersionId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredMajorVersionId",
+				1,
+				"value" );
+		}
+		requiredMajorVersionId = value;
 	}
 
 	@Override
@@ -246,7 +265,6 @@ public class CFIntBuffMinorVersion
 		return( requiredName );
 	}
 
-	@Override
 	public void setRequiredName( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -270,7 +288,6 @@ public class CFIntBuffMinorVersion
 		return( optionalDescription );
 	}
 
-	@Override
 	public void setOptionalDescription( String value ) {
 		if( value != null && value.length() > 1024 ) {
 			throw new CFLibArgumentOverflowException( getClass(),
