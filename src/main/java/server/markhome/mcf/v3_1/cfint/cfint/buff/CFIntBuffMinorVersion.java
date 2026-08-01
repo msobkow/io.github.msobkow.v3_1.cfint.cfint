@@ -168,7 +168,7 @@ public class CFIntBuffMinorVersion
 
 	@Override
 	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId) {
-		requiredTenantId = argTenantId;
+		setRequiredTenantId(argTenantId);
 	}
 
 	@Override
@@ -197,7 +197,7 @@ public class CFIntBuffMinorVersion
 
 	@Override
 	public void setRequiredContainerParentMajVer(CFLibDbKeyHash256 argMajorVersionId) {
-		requiredMajorVersionId = argMajorVersionId;
+		setRequiredMajorVersionId(argMajorVersionId);
 	}
 
 	@Override

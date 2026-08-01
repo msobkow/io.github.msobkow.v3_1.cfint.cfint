@@ -190,7 +190,7 @@ public class CFIntBuffTld
 
 	@Override
 	public void setRequiredContainerTenant(CFLibDbKeyHash256 argTenantId) {
-		requiredTenantId = argTenantId;
+		setRequiredTenantId(argTenantId);
 	}
 
 	@Override

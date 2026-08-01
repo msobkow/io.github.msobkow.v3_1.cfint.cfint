@@ -192,7 +192,7 @@ public class CFIntBuffMajorVersion
 
 	@Override
 	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId) {
-		requiredTenantId = argTenantId;
+		setRequiredTenantId(argTenantId);
 	}
 
 	@Override
@@ -221,7 +221,7 @@ public class CFIntBuffMajorVersion
 
 	@Override
 	public void setRequiredContainerParentSPrj(CFLibDbKeyHash256 argSubProjectId) {
-		requiredSubProjectId = argSubProjectId;
+		setRequiredSubProjectId(argSubProjectId);
 	}
 
 	@Override
