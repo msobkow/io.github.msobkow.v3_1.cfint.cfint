@@ -68,6 +68,7 @@ public class CFIntBuffTopDomainByTenantIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredTenantId = value;
 	}
 

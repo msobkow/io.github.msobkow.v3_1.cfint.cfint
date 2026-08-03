@@ -129,6 +129,7 @@ public class CFIntBuffMajorVersionHPKey
 				1,
 				"value" );
 		}
+		
 		requiredId = value;
 	}
 

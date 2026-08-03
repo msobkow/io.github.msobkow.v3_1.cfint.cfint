@@ -68,6 +68,7 @@ public class CFIntBuffSubProjectByTopProjectIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredTopProjectId = value;
 	}
 

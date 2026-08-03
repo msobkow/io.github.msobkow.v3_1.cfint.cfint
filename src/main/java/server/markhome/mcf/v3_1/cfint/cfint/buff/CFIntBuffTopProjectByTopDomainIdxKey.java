@@ -68,6 +68,7 @@ public class CFIntBuffTopProjectByTopDomainIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredTopDomainId = value;
 	}
 

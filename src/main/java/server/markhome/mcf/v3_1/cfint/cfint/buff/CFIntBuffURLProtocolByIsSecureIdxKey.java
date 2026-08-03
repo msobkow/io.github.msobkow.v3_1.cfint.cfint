@@ -62,6 +62,7 @@ public class CFIntBuffURLProtocolByIsSecureIdxKey
 	}
 
 	public void setRequiredIsSecure( boolean value ) {
+		
 		requiredIsSecure = value;
 	}
 

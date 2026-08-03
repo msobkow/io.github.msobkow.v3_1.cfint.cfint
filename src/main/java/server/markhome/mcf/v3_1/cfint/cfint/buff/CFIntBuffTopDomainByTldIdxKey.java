@@ -68,6 +68,7 @@ public class CFIntBuffTopDomainByTldIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredTldId = value;
 	}
 

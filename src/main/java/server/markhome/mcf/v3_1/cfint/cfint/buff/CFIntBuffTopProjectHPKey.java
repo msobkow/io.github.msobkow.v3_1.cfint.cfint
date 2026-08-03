@@ -129,6 +129,7 @@ public class CFIntBuffTopProjectHPKey
 				1,
 				"value" );
 		}
+		
 		requiredId = value;
 	}
 

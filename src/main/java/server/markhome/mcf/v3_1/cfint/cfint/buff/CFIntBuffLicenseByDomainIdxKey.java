@@ -68,6 +68,7 @@ public class CFIntBuffLicenseByDomainIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredTopDomainId = value;
 	}
 

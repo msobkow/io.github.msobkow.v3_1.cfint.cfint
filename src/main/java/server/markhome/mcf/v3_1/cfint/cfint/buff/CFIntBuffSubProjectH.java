@@ -206,7 +206,8 @@ public class CFIntBuffSubProjectH
 				1,
 				"value" );
 		}
-		setPKey( value );
+		
+		setPKey(value);
 	}
 
 	@Override
@@ -221,6 +222,7 @@ public class CFIntBuffSubProjectH
 				1,
 				"value" );
 		}
+		
 		requiredTenantId = value;
 	}
 
@@ -236,6 +238,7 @@ public class CFIntBuffSubProjectH
 				1,
 				"value" );
 		}
+		
 		requiredTopProjectId = value;
 	}
 
@@ -259,6 +262,7 @@ public class CFIntBuffSubProjectH
 				value.length(),
 				64 );
 		}
+		
 		requiredName = value;
 	}
 
@@ -276,6 +280,7 @@ public class CFIntBuffSubProjectH
 				value.length(),
 				1024 );
 		}
+		
 		optionalDescription = value;
 	}
 

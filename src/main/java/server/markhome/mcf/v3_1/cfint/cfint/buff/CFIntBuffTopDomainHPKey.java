@@ -129,6 +129,7 @@ public class CFIntBuffTopDomainHPKey
 				1,
 				"value" );
 		}
+		
 		requiredId = value;
 	}
 

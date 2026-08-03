@@ -68,6 +68,7 @@ public class CFIntBuffLicenseByLicnTenantIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredTenantId = value;
 	}
 

@@ -206,7 +206,8 @@ public class CFIntBuffMinorVersionH
 				1,
 				"value" );
 		}
-		setPKey( value );
+		
+		setPKey(value);
 	}
 
 	@Override
@@ -221,6 +222,7 @@ public class CFIntBuffMinorVersionH
 				1,
 				"value" );
 		}
+		
 		requiredTenantId = value;
 	}
 
@@ -236,6 +238,7 @@ public class CFIntBuffMinorVersionH
 				1,
 				"value" );
 		}
+		
 		requiredMajorVersionId = value;
 	}
 
@@ -259,6 +262,7 @@ public class CFIntBuffMinorVersionH
 				value.length(),
 				64 );
 		}
+		
 		requiredName = value;
 	}
 
@@ -276,6 +280,7 @@ public class CFIntBuffMinorVersionH
 				value.length(),
 				1024 );
 		}
+		
 		optionalDescription = value;
 	}
 

@@ -68,6 +68,7 @@ public class CFIntBuffSubProjectByTenantIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredTenantId = value;
 	}
 

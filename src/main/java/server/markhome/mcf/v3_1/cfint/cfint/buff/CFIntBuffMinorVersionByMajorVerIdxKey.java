@@ -68,6 +68,7 @@ public class CFIntBuffMinorVersionByMajorVerIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredMajorVersionId = value;
 	}
 

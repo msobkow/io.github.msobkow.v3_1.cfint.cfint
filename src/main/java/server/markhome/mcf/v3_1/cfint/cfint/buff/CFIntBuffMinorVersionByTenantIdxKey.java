@@ -68,6 +68,7 @@ public class CFIntBuffMinorVersionByTenantIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredTenantId = value;
 	}
 

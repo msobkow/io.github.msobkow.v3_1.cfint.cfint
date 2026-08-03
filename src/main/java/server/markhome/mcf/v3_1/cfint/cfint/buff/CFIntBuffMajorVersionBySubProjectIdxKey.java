@@ -68,6 +68,7 @@ public class CFIntBuffMajorVersionBySubProjectIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredSubProjectId = value;
 	}
 

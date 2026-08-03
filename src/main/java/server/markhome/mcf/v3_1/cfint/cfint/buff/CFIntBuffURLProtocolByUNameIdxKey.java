@@ -76,6 +76,7 @@ public class CFIntBuffURLProtocolByUNameIdxKey
 				value.length(),
 				16 );
 		}
+		
 		requiredName = value;
 	}
 

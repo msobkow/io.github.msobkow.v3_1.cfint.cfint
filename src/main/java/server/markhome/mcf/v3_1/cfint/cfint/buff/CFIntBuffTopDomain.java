@@ -142,7 +142,8 @@ public class CFIntBuffTopDomain
 				1,
 				"value" );
 		}
-		setPKey( value );
+		
+		setPKey(value);
 	}
 
 	@Override
@@ -290,6 +291,7 @@ public class CFIntBuffTopDomain
 				1,
 				"value" );
 		}
+		
 		requiredTenantId = value;
 	}
 
@@ -305,6 +307,7 @@ public class CFIntBuffTopDomain
 				1,
 				"value" );
 		}
+		
 		requiredTldId = value;
 	}
 
@@ -328,6 +331,7 @@ public class CFIntBuffTopDomain
 				value.length(),
 				64 );
 		}
+		
 		requiredName = value;
 	}
 
@@ -345,6 +349,7 @@ public class CFIntBuffTopDomain
 				value.length(),
 				1024 );
 		}
+		
 		optionalDescription = value;
 	}
 

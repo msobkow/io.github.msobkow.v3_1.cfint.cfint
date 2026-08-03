@@ -129,6 +129,7 @@ public class CFIntBuffLicenseHPKey
 				1,
 				"value" );
 		}
+		
 		requiredId = value;
 	}
 

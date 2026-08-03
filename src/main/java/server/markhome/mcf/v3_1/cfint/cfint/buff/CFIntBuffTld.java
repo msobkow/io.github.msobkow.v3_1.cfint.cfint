@@ -116,7 +116,8 @@ public class CFIntBuffTld
 				1,
 				"value" );
 		}
-		setPKey( value );
+		
+		setPKey(value);
 	}
 
 	@Override
@@ -215,6 +216,7 @@ public class CFIntBuffTld
 				1,
 				"value" );
 		}
+		
 		requiredTenantId = value;
 	}
 
@@ -238,6 +240,7 @@ public class CFIntBuffTld
 				value.length(),
 				64 );
 		}
+		
 		requiredName = value;
 	}
 
@@ -255,6 +258,7 @@ public class CFIntBuffTld
 				value.length(),
 				1024 );
 		}
+		
 		optionalDescription = value;
 	}
 

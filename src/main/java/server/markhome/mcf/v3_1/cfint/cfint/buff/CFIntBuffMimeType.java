@@ -85,15 +85,24 @@ public class CFIntBuffMimeType
 
 	@Override
 	public void setRequiredMimeTypeId( int value ) {
-		if( value < ICFIntMimeType.MIMETYPEID_MIN_VALUE ) {
+		if( value < ICFIntPubMimeType.MIMETYPEID_MIN_VALUE ) {
 			throw new CFLibArgumentUnderflowException( getClass(),
 				"setRequiredMimeTypeId",
 				1,
 				"value",
 				value,
-				ICFIntMimeType.MIMETYPEID_MIN_VALUE );
+				ICFIntPubMimeType.MIMETYPEID_MIN_VALUE );
 		}
-		setPKey( value );
+		
+		if( value < ICFIntPubMimeType.MIMETYPEID_MIN_VALUE ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				"setRequiredMimeTypeId",
+				1,
+				"value",
+				value,
+				ICFIntPubMimeType.MIMETYPEID_MIN_VALUE );
+		}
+		setPKey(value);
 	}
 
 	@Override
@@ -171,6 +180,7 @@ public class CFIntBuffMimeType
 				value.length(),
 				128 );
 		}
+		
 		requiredName = value;
 	}
 
@@ -188,6 +198,7 @@ public class CFIntBuffMimeType
 				value.length(),
 				128 );
 		}
+		
 		optionalFileTypes = value;
 	}
 

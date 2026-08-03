@@ -94,7 +94,8 @@ public class CFIntBuffLicense
 				1,
 				"value" );
 		}
-		setPKey( value );
+		
+		setPKey(value);
 	}
 
 	@Override
@@ -202,6 +203,7 @@ public class CFIntBuffLicense
 				1,
 				"value" );
 		}
+		
 		requiredTenantId = value;
 	}
 
@@ -217,6 +219,7 @@ public class CFIntBuffLicense
 				1,
 				"value" );
 		}
+		
 		requiredTopDomainId = value;
 	}
 
@@ -240,6 +243,7 @@ public class CFIntBuffLicense
 				value.length(),
 				64 );
 		}
+		
 		requiredName = value;
 	}
 
@@ -257,6 +261,7 @@ public class CFIntBuffLicense
 				value.length(),
 				1024 );
 		}
+		
 		optionalDescription = value;
 	}
 
@@ -274,6 +279,7 @@ public class CFIntBuffLicense
 				value.length(),
 				8000 );
 		}
+		
 		optionalEmbeddedText = value;
 	}
 
@@ -291,6 +297,7 @@ public class CFIntBuffLicense
 				value.length(),
 				8000 );
 		}
+		
 		optionalFullText = value;
 	}
 

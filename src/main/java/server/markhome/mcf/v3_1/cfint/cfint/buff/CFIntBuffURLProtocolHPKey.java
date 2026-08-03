@@ -124,13 +124,22 @@ public class CFIntBuffURLProtocolHPKey
 
 	@Override
 	public void setRequiredURLProtocolId( int value ) {
-		if( value < ICFIntURLProtocol.URLPROTOCOLID_MIN_VALUE ) {
+		if( value < ICFIntPubURLProtocol.URLPROTOCOLID_MIN_VALUE ) {
 			throw new CFLibArgumentUnderflowException( getClass(),
 				"setRequiredURLProtocolId",
 				1,
 				"value",
 				value,
-				ICFIntURLProtocol.URLPROTOCOLID_MIN_VALUE );
+				ICFIntPubURLProtocol.URLPROTOCOLID_MIN_VALUE );
+		}
+		
+		if( value < ICFIntPubURLProtocol.URLPROTOCOLID_MIN_VALUE ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				"setRequiredURLProtocolId",
+				1,
+				"value",
+				value,
+				ICFIntPubURLProtocol.URLPROTOCOLID_MIN_VALUE );
 		}
 		requiredURLProtocolId = value;
 	}

@@ -70,6 +70,7 @@ public class CFIntBuffLicenseByUNameIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredTopDomainId = value;
 	}
 
@@ -93,6 +94,7 @@ public class CFIntBuffLicenseByUNameIdxKey
 				value.length(),
 				64 );
 		}
+		
 		requiredName = value;
 	}
 

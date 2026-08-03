@@ -70,6 +70,7 @@ public class CFIntBuffMajorVersionByNameIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredSubProjectId = value;
 	}
 
@@ -93,6 +94,7 @@ public class CFIntBuffMajorVersionByNameIdxKey
 				value.length(),
 				64 );
 		}
+		
 		requiredName = value;
 	}
 

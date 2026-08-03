@@ -129,6 +129,7 @@ public class CFIntBuffTldHPKey
 				1,
 				"value" );
 		}
+		
 		requiredId = value;
 	}
 

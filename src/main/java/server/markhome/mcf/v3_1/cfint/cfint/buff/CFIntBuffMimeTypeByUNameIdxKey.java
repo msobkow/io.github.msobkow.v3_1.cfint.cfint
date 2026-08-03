@@ -76,6 +76,7 @@ public class CFIntBuffMimeTypeByUNameIdxKey
 				value.length(),
 				128 );
 		}
+		
 		requiredName = value;
 	}
 

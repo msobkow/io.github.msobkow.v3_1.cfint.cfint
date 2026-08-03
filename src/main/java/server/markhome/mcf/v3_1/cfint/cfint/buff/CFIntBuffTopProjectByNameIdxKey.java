@@ -70,6 +70,7 @@ public class CFIntBuffTopProjectByNameIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredTopDomainId = value;
 	}
 
@@ -93,6 +94,7 @@ public class CFIntBuffTopProjectByNameIdxKey
 				value.length(),
 				64 );
 		}
+		
 		requiredName = value;
 	}
 
