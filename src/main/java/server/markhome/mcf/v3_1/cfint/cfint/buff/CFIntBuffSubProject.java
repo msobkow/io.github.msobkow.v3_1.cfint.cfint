@@ -108,7 +108,7 @@ public class CFIntBuffSubProject
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredId() {
-		return( getPKey() );
+		return( requiredId );
 	}
 
 	public void setRequiredId( CFLibDbKeyHash256 value ) {
@@ -119,7 +119,7 @@ public class CFIntBuffSubProject
 				"value" );
 		}
 		
-		setPKey(value);
+		requiredId = value;
 	}
 
 	@Override
@@ -424,8 +424,7 @@ public class CFIntBuffSubProject
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntSubProjectH ) {
-			ICFIntSubProjectH rhs = (ICFIntSubProjectH)obj;
+		else if( obj instanceof ICFIntSubProjectH rhs ) {
 			if( getRequiredId() != null ) {
 				if( rhs.getRequiredId() != null ) {
 					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {
@@ -522,8 +521,7 @@ public class CFIntBuffSubProject
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntSubProjectByTenantIdxKey ) {
-			ICFIntSubProjectByTenantIdxKey rhs = (ICFIntSubProjectByTenantIdxKey)obj;
+		else if( obj instanceof ICFIntSubProjectByTenantIdxKey rhs ) {
 			if( getRequiredTenantId() != null ) {
 				if( rhs.getRequiredTenantId() != null ) {
 					if( ! getRequiredTenantId().equals( rhs.getRequiredTenantId() ) ) {
@@ -541,8 +539,7 @@ public class CFIntBuffSubProject
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntSubProjectByTopProjectIdxKey ) {
-			ICFIntSubProjectByTopProjectIdxKey rhs = (ICFIntSubProjectByTopProjectIdxKey)obj;
+		else if( obj instanceof ICFIntSubProjectByTopProjectIdxKey rhs ) {
 			if( getRequiredTopProjectId() != null ) {
 				if( rhs.getRequiredTopProjectId() != null ) {
 					if( ! getRequiredTopProjectId().equals( rhs.getRequiredTopProjectId() ) ) {
@@ -560,8 +557,7 @@ public class CFIntBuffSubProject
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntSubProjectByNameIdxKey ) {
-			ICFIntSubProjectByNameIdxKey rhs = (ICFIntSubProjectByNameIdxKey)obj;
+		else if( obj instanceof ICFIntSubProjectByNameIdxKey rhs ) {
 			if( getRequiredTopProjectId() != null ) {
 				if( rhs.getRequiredTopProjectId() != null ) {
 					if( ! getRequiredTopProjectId().equals( rhs.getRequiredTopProjectId() ) ) {
@@ -780,8 +776,7 @@ public class CFIntBuffSubProject
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntSubProjectByTenantIdxKey ) {
-			ICFIntSubProjectByTenantIdxKey rhs = (ICFIntSubProjectByTenantIdxKey)obj;
+		else if( obj instanceof ICFIntSubProjectByTenantIdxKey rhs ) {
 			if( getRequiredTenantId() != null ) {
 				if( rhs.getRequiredTenantId() != null ) {
 					if( ! getRequiredTenantId().equals( rhs.getRequiredTenantId() ) ) {
@@ -799,8 +794,7 @@ public class CFIntBuffSubProject
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntSubProjectByTopProjectIdxKey ) {
-			ICFIntSubProjectByTopProjectIdxKey rhs = (ICFIntSubProjectByTopProjectIdxKey)obj;
+		else if( obj instanceof ICFIntSubProjectByTopProjectIdxKey rhs ) {
 			if( getRequiredTopProjectId() != null ) {
 				if( rhs.getRequiredTopProjectId() != null ) {
 					if( ! getRequiredTopProjectId().equals( rhs.getRequiredTopProjectId() ) ) {
@@ -818,8 +812,7 @@ public class CFIntBuffSubProject
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntSubProjectByNameIdxKey ) {
-			ICFIntSubProjectByNameIdxKey rhs = (ICFIntSubProjectByNameIdxKey)obj;
+		else if( obj instanceof ICFIntSubProjectByNameIdxKey rhs ) {
 			if( getRequiredTopProjectId() != null ) {
 				if( rhs.getRequiredTopProjectId() != null ) {
 					if( ! getRequiredTopProjectId().equals( rhs.getRequiredTopProjectId() ) ) {
@@ -1038,8 +1031,7 @@ public class CFIntBuffSubProject
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntSubProjectByTenantIdxKey ) {
-			ICFIntSubProjectByTenantIdxKey rhs = (ICFIntSubProjectByTenantIdxKey)obj;
+		else if( obj instanceof ICFIntSubProjectByTenantIdxKey rhs ) {
 			if( getRequiredTenantId() != null ) {
 				if( rhs.getRequiredTenantId() != null ) {
 					if( ! getRequiredTenantId().equals( rhs.getRequiredTenantId() ) ) {
@@ -1057,8 +1049,7 @@ public class CFIntBuffSubProject
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntSubProjectByTopProjectIdxKey ) {
-			ICFIntSubProjectByTopProjectIdxKey rhs = (ICFIntSubProjectByTopProjectIdxKey)obj;
+		else if( obj instanceof ICFIntSubProjectByTopProjectIdxKey rhs ) {
 			if( getRequiredTopProjectId() != null ) {
 				if( rhs.getRequiredTopProjectId() != null ) {
 					if( ! getRequiredTopProjectId().equals( rhs.getRequiredTopProjectId() ) ) {
@@ -1076,8 +1067,7 @@ public class CFIntBuffSubProject
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntSubProjectByNameIdxKey ) {
-			ICFIntSubProjectByNameIdxKey rhs = (ICFIntSubProjectByNameIdxKey)obj;
+		else if( obj instanceof ICFIntSubProjectByNameIdxKey rhs ) {
 			if( getRequiredTopProjectId() != null ) {
 				if( rhs.getRequiredTopProjectId() != null ) {
 					if( ! getRequiredTopProjectId().equals( rhs.getRequiredTopProjectId() ) ) {

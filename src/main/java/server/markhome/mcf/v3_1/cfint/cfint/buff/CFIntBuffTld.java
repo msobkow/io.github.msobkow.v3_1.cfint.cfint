@@ -106,7 +106,7 @@ public class CFIntBuffTld
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredId() {
-		return( getPKey() );
+		return( requiredId );
 	}
 
 	public void setRequiredId( CFLibDbKeyHash256 value ) {
@@ -117,7 +117,7 @@ public class CFIntBuffTld
 				"value" );
 		}
 		
-		setPKey(value);
+		requiredId = value;
 	}
 
 	@Override
@@ -342,8 +342,7 @@ public class CFIntBuffTld
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntTldH ) {
-			ICFIntTldH rhs = (ICFIntTldH)obj;
+		else if( obj instanceof ICFIntTldH rhs ) {
 			if( getRequiredId() != null ) {
 				if( rhs.getRequiredId() != null ) {
 					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {
@@ -425,8 +424,7 @@ public class CFIntBuffTld
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntTldByTenantIdxKey ) {
-			ICFIntTldByTenantIdxKey rhs = (ICFIntTldByTenantIdxKey)obj;
+		else if( obj instanceof ICFIntTldByTenantIdxKey rhs ) {
 			if( getRequiredTenantId() != null ) {
 				if( rhs.getRequiredTenantId() != null ) {
 					if( ! getRequiredTenantId().equals( rhs.getRequiredTenantId() ) ) {
@@ -444,8 +442,7 @@ public class CFIntBuffTld
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntTldByNameIdxKey ) {
-			ICFIntTldByNameIdxKey rhs = (ICFIntTldByNameIdxKey)obj;
+		else if( obj instanceof ICFIntTldByNameIdxKey rhs ) {
 			if( getRequiredName() != null ) {
 				if( rhs.getRequiredName() != null ) {
 					if( ! getRequiredName().equals( rhs.getRequiredName() ) ) {
@@ -619,8 +616,7 @@ public class CFIntBuffTld
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntTldByTenantIdxKey ) {
-			ICFIntTldByTenantIdxKey rhs = (ICFIntTldByTenantIdxKey)obj;
+		else if( obj instanceof ICFIntTldByTenantIdxKey rhs ) {
 			if( getRequiredTenantId() != null ) {
 				if( rhs.getRequiredTenantId() != null ) {
 					if( ! getRequiredTenantId().equals( rhs.getRequiredTenantId() ) ) {
@@ -638,8 +634,7 @@ public class CFIntBuffTld
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntTldByNameIdxKey ) {
-			ICFIntTldByNameIdxKey rhs = (ICFIntTldByNameIdxKey)obj;
+		else if( obj instanceof ICFIntTldByNameIdxKey rhs ) {
 			if( getRequiredName() != null ) {
 				if( rhs.getRequiredName() != null ) {
 					if( ! getRequiredName().equals( rhs.getRequiredName() ) ) {
@@ -813,8 +808,7 @@ public class CFIntBuffTld
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntTldByTenantIdxKey ) {
-			ICFIntTldByTenantIdxKey rhs = (ICFIntTldByTenantIdxKey)obj;
+		else if( obj instanceof ICFIntTldByTenantIdxKey rhs ) {
 			if( getRequiredTenantId() != null ) {
 				if( rhs.getRequiredTenantId() != null ) {
 					if( ! getRequiredTenantId().equals( rhs.getRequiredTenantId() ) ) {
@@ -832,8 +826,7 @@ public class CFIntBuffTld
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntTldByNameIdxKey ) {
-			ICFIntTldByNameIdxKey rhs = (ICFIntTldByNameIdxKey)obj;
+		else if( obj instanceof ICFIntTldByNameIdxKey rhs ) {
 			if( getRequiredName() != null ) {
 				if( rhs.getRequiredName() != null ) {
 					if( ! getRequiredName().equals( rhs.getRequiredName() ) ) {

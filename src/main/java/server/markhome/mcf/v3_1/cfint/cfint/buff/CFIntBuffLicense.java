@@ -84,7 +84,7 @@ public class CFIntBuffLicense
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredId() {
-		return( getPKey() );
+		return( requiredId );
 	}
 
 	public void setRequiredId( CFLibDbKeyHash256 value ) {
@@ -95,7 +95,7 @@ public class CFIntBuffLicense
 				"value" );
 		}
 		
-		setPKey(value);
+		requiredId = value;
 	}
 
 	@Override
@@ -414,8 +414,7 @@ public class CFIntBuffLicense
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntLicenseH ) {
-			ICFIntLicenseH rhs = (ICFIntLicenseH)obj;
+		else if( obj instanceof ICFIntLicenseH rhs ) {
 			if( getRequiredId() != null ) {
 				if( rhs.getRequiredId() != null ) {
 					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {
@@ -542,8 +541,7 @@ public class CFIntBuffLicense
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntLicenseByLicnTenantIdxKey ) {
-			ICFIntLicenseByLicnTenantIdxKey rhs = (ICFIntLicenseByLicnTenantIdxKey)obj;
+		else if( obj instanceof ICFIntLicenseByLicnTenantIdxKey rhs ) {
 			if( getRequiredTenantId() != null ) {
 				if( rhs.getRequiredTenantId() != null ) {
 					if( ! getRequiredTenantId().equals( rhs.getRequiredTenantId() ) ) {
@@ -561,8 +559,7 @@ public class CFIntBuffLicense
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntLicenseByDomainIdxKey ) {
-			ICFIntLicenseByDomainIdxKey rhs = (ICFIntLicenseByDomainIdxKey)obj;
+		else if( obj instanceof ICFIntLicenseByDomainIdxKey rhs ) {
 			if( getRequiredTopDomainId() != null ) {
 				if( rhs.getRequiredTopDomainId() != null ) {
 					if( ! getRequiredTopDomainId().equals( rhs.getRequiredTopDomainId() ) ) {
@@ -580,8 +577,7 @@ public class CFIntBuffLicense
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntLicenseByUNameIdxKey ) {
-			ICFIntLicenseByUNameIdxKey rhs = (ICFIntLicenseByUNameIdxKey)obj;
+		else if( obj instanceof ICFIntLicenseByUNameIdxKey rhs ) {
 			if( getRequiredTopDomainId() != null ) {
 				if( rhs.getRequiredTopDomainId() != null ) {
 					if( ! getRequiredTopDomainId().equals( rhs.getRequiredTopDomainId() ) ) {
@@ -848,8 +844,7 @@ public class CFIntBuffLicense
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntLicenseByLicnTenantIdxKey ) {
-			ICFIntLicenseByLicnTenantIdxKey rhs = (ICFIntLicenseByLicnTenantIdxKey)obj;
+		else if( obj instanceof ICFIntLicenseByLicnTenantIdxKey rhs ) {
 			if( getRequiredTenantId() != null ) {
 				if( rhs.getRequiredTenantId() != null ) {
 					if( ! getRequiredTenantId().equals( rhs.getRequiredTenantId() ) ) {
@@ -867,8 +862,7 @@ public class CFIntBuffLicense
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntLicenseByDomainIdxKey ) {
-			ICFIntLicenseByDomainIdxKey rhs = (ICFIntLicenseByDomainIdxKey)obj;
+		else if( obj instanceof ICFIntLicenseByDomainIdxKey rhs ) {
 			if( getRequiredTopDomainId() != null ) {
 				if( rhs.getRequiredTopDomainId() != null ) {
 					if( ! getRequiredTopDomainId().equals( rhs.getRequiredTopDomainId() ) ) {
@@ -886,8 +880,7 @@ public class CFIntBuffLicense
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntLicenseByUNameIdxKey ) {
-			ICFIntLicenseByUNameIdxKey rhs = (ICFIntLicenseByUNameIdxKey)obj;
+		else if( obj instanceof ICFIntLicenseByUNameIdxKey rhs ) {
 			if( getRequiredTopDomainId() != null ) {
 				if( rhs.getRequiredTopDomainId() != null ) {
 					if( ! getRequiredTopDomainId().equals( rhs.getRequiredTopDomainId() ) ) {
@@ -1154,8 +1147,7 @@ public class CFIntBuffLicense
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntLicenseByLicnTenantIdxKey ) {
-			ICFIntLicenseByLicnTenantIdxKey rhs = (ICFIntLicenseByLicnTenantIdxKey)obj;
+		else if( obj instanceof ICFIntLicenseByLicnTenantIdxKey rhs ) {
 			if( getRequiredTenantId() != null ) {
 				if( rhs.getRequiredTenantId() != null ) {
 					if( ! getRequiredTenantId().equals( rhs.getRequiredTenantId() ) ) {
@@ -1173,8 +1165,7 @@ public class CFIntBuffLicense
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntLicenseByDomainIdxKey ) {
-			ICFIntLicenseByDomainIdxKey rhs = (ICFIntLicenseByDomainIdxKey)obj;
+		else if( obj instanceof ICFIntLicenseByDomainIdxKey rhs ) {
 			if( getRequiredTopDomainId() != null ) {
 				if( rhs.getRequiredTopDomainId() != null ) {
 					if( ! getRequiredTopDomainId().equals( rhs.getRequiredTopDomainId() ) ) {
@@ -1192,8 +1183,7 @@ public class CFIntBuffLicense
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntLicenseByUNameIdxKey ) {
-			ICFIntLicenseByUNameIdxKey rhs = (ICFIntLicenseByUNameIdxKey)obj;
+		else if( obj instanceof ICFIntLicenseByUNameIdxKey rhs ) {
 			if( getRequiredTopDomainId() != null ) {
 				if( rhs.getRequiredTopDomainId() != null ) {
 					if( ! getRequiredTopDomainId().equals( rhs.getRequiredTopDomainId() ) ) {

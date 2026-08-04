@@ -82,7 +82,7 @@ public class CFIntBuffURLProtocol
 
 	@Override
 	public int getRequiredURLProtocolId() {
-		return( getPKey() );
+		return( requiredURLProtocolId );
 	}
 
 	@Override
@@ -104,7 +104,7 @@ public class CFIntBuffURLProtocol
 				value,
 				ICFIntPubURLProtocol.URLPROTOCOLID_MIN_VALUE );
 		}
-		setPKey(value);
+		requiredURLProtocolId = value;
 	}
 
 	@Override
@@ -276,8 +276,7 @@ public class CFIntBuffURLProtocol
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntURLProtocolH ) {
-			ICFIntURLProtocolH rhs = (ICFIntURLProtocolH)obj;
+		else if( obj instanceof ICFIntURLProtocolH rhs ) {
 			if( getRequiredURLProtocolId() != rhs.getRequiredURLProtocolId() ) {
 				return( false );
 			}
@@ -323,8 +322,7 @@ public class CFIntBuffURLProtocol
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntURLProtocolByUNameIdxKey ) {
-			ICFIntURLProtocolByUNameIdxKey rhs = (ICFIntURLProtocolByUNameIdxKey)obj;
+		else if( obj instanceof ICFIntURLProtocolByUNameIdxKey rhs ) {
 			if( getRequiredName() != null ) {
 				if( rhs.getRequiredName() != null ) {
 					if( ! getRequiredName().equals( rhs.getRequiredName() ) ) {
@@ -342,8 +340,7 @@ public class CFIntBuffURLProtocol
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntURLProtocolByIsSecureIdxKey ) {
-			ICFIntURLProtocolByIsSecureIdxKey rhs = (ICFIntURLProtocolByIsSecureIdxKey)obj;
+		else if( obj instanceof ICFIntURLProtocolByIsSecureIdxKey rhs ) {
 			if( getRequiredIsSecure() != rhs.getRequiredIsSecure() ) {
 				return( false );
 			}
@@ -445,8 +442,7 @@ public class CFIntBuffURLProtocol
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntURLProtocolByUNameIdxKey ) {
-			ICFIntURLProtocolByUNameIdxKey rhs = (ICFIntURLProtocolByUNameIdxKey)obj;
+		else if( obj instanceof ICFIntURLProtocolByUNameIdxKey rhs ) {
 			if( getRequiredName() != null ) {
 				if( rhs.getRequiredName() != null ) {
 					if( ! getRequiredName().equals( rhs.getRequiredName() ) ) {
@@ -464,8 +460,7 @@ public class CFIntBuffURLProtocol
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntURLProtocolByIsSecureIdxKey ) {
-			ICFIntURLProtocolByIsSecureIdxKey rhs = (ICFIntURLProtocolByIsSecureIdxKey)obj;
+		else if( obj instanceof ICFIntURLProtocolByIsSecureIdxKey rhs ) {
 			if( getRequiredIsSecure() != rhs.getRequiredIsSecure() ) {
 				return( false );
 			}
@@ -567,8 +562,7 @@ public class CFIntBuffURLProtocol
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntURLProtocolByUNameIdxKey ) {
-			ICFIntURLProtocolByUNameIdxKey rhs = (ICFIntURLProtocolByUNameIdxKey)obj;
+		else if( obj instanceof ICFIntURLProtocolByUNameIdxKey rhs ) {
 			if( getRequiredName() != null ) {
 				if( rhs.getRequiredName() != null ) {
 					if( ! getRequiredName().equals( rhs.getRequiredName() ) ) {
@@ -586,8 +580,7 @@ public class CFIntBuffURLProtocol
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntURLProtocolByIsSecureIdxKey ) {
-			ICFIntURLProtocolByIsSecureIdxKey rhs = (ICFIntURLProtocolByIsSecureIdxKey)obj;
+		else if( obj instanceof ICFIntURLProtocolByIsSecureIdxKey rhs ) {
 			if( getRequiredIsSecure() != rhs.getRequiredIsSecure() ) {
 				return( false );
 			}

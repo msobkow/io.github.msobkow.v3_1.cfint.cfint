@@ -108,7 +108,7 @@ public class CFIntBuffMajorVersion
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredId() {
-		return( getPKey() );
+		return( requiredId );
 	}
 
 	public void setRequiredId( CFLibDbKeyHash256 value ) {
@@ -119,7 +119,7 @@ public class CFIntBuffMajorVersion
 				"value" );
 		}
 		
-		setPKey(value);
+		requiredId = value;
 	}
 
 	@Override
@@ -424,8 +424,7 @@ public class CFIntBuffMajorVersion
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntMajorVersionH ) {
-			ICFIntMajorVersionH rhs = (ICFIntMajorVersionH)obj;
+		else if( obj instanceof ICFIntMajorVersionH rhs ) {
 			if( getRequiredId() != null ) {
 				if( rhs.getRequiredId() != null ) {
 					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {
@@ -522,8 +521,7 @@ public class CFIntBuffMajorVersion
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntMajorVersionByTenantIdxKey ) {
-			ICFIntMajorVersionByTenantIdxKey rhs = (ICFIntMajorVersionByTenantIdxKey)obj;
+		else if( obj instanceof ICFIntMajorVersionByTenantIdxKey rhs ) {
 			if( getRequiredTenantId() != null ) {
 				if( rhs.getRequiredTenantId() != null ) {
 					if( ! getRequiredTenantId().equals( rhs.getRequiredTenantId() ) ) {
@@ -541,8 +539,7 @@ public class CFIntBuffMajorVersion
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntMajorVersionBySubProjectIdxKey ) {
-			ICFIntMajorVersionBySubProjectIdxKey rhs = (ICFIntMajorVersionBySubProjectIdxKey)obj;
+		else if( obj instanceof ICFIntMajorVersionBySubProjectIdxKey rhs ) {
 			if( getRequiredSubProjectId() != null ) {
 				if( rhs.getRequiredSubProjectId() != null ) {
 					if( ! getRequiredSubProjectId().equals( rhs.getRequiredSubProjectId() ) ) {
@@ -560,8 +557,7 @@ public class CFIntBuffMajorVersion
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntMajorVersionByNameIdxKey ) {
-			ICFIntMajorVersionByNameIdxKey rhs = (ICFIntMajorVersionByNameIdxKey)obj;
+		else if( obj instanceof ICFIntMajorVersionByNameIdxKey rhs ) {
 			if( getRequiredSubProjectId() != null ) {
 				if( rhs.getRequiredSubProjectId() != null ) {
 					if( ! getRequiredSubProjectId().equals( rhs.getRequiredSubProjectId() ) ) {
@@ -780,8 +776,7 @@ public class CFIntBuffMajorVersion
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntMajorVersionByTenantIdxKey ) {
-			ICFIntMajorVersionByTenantIdxKey rhs = (ICFIntMajorVersionByTenantIdxKey)obj;
+		else if( obj instanceof ICFIntMajorVersionByTenantIdxKey rhs ) {
 			if( getRequiredTenantId() != null ) {
 				if( rhs.getRequiredTenantId() != null ) {
 					if( ! getRequiredTenantId().equals( rhs.getRequiredTenantId() ) ) {
@@ -799,8 +794,7 @@ public class CFIntBuffMajorVersion
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntMajorVersionBySubProjectIdxKey ) {
-			ICFIntMajorVersionBySubProjectIdxKey rhs = (ICFIntMajorVersionBySubProjectIdxKey)obj;
+		else if( obj instanceof ICFIntMajorVersionBySubProjectIdxKey rhs ) {
 			if( getRequiredSubProjectId() != null ) {
 				if( rhs.getRequiredSubProjectId() != null ) {
 					if( ! getRequiredSubProjectId().equals( rhs.getRequiredSubProjectId() ) ) {
@@ -818,8 +812,7 @@ public class CFIntBuffMajorVersion
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntMajorVersionByNameIdxKey ) {
-			ICFIntMajorVersionByNameIdxKey rhs = (ICFIntMajorVersionByNameIdxKey)obj;
+		else if( obj instanceof ICFIntMajorVersionByNameIdxKey rhs ) {
 			if( getRequiredSubProjectId() != null ) {
 				if( rhs.getRequiredSubProjectId() != null ) {
 					if( ! getRequiredSubProjectId().equals( rhs.getRequiredSubProjectId() ) ) {
@@ -1038,8 +1031,7 @@ public class CFIntBuffMajorVersion
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntMajorVersionByTenantIdxKey ) {
-			ICFIntMajorVersionByTenantIdxKey rhs = (ICFIntMajorVersionByTenantIdxKey)obj;
+		else if( obj instanceof ICFIntMajorVersionByTenantIdxKey rhs ) {
 			if( getRequiredTenantId() != null ) {
 				if( rhs.getRequiredTenantId() != null ) {
 					if( ! getRequiredTenantId().equals( rhs.getRequiredTenantId() ) ) {
@@ -1057,8 +1049,7 @@ public class CFIntBuffMajorVersion
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntMajorVersionBySubProjectIdxKey ) {
-			ICFIntMajorVersionBySubProjectIdxKey rhs = (ICFIntMajorVersionBySubProjectIdxKey)obj;
+		else if( obj instanceof ICFIntMajorVersionBySubProjectIdxKey rhs ) {
 			if( getRequiredSubProjectId() != null ) {
 				if( rhs.getRequiredSubProjectId() != null ) {
 					if( ! getRequiredSubProjectId().equals( rhs.getRequiredSubProjectId() ) ) {
@@ -1076,8 +1067,7 @@ public class CFIntBuffMajorVersion
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntMajorVersionByNameIdxKey ) {
-			ICFIntMajorVersionByNameIdxKey rhs = (ICFIntMajorVersionByNameIdxKey)obj;
+		else if( obj instanceof ICFIntMajorVersionByNameIdxKey rhs ) {
 			if( getRequiredSubProjectId() != null ) {
 				if( rhs.getRequiredSubProjectId() != null ) {
 					if( ! getRequiredSubProjectId().equals( rhs.getRequiredSubProjectId() ) ) {

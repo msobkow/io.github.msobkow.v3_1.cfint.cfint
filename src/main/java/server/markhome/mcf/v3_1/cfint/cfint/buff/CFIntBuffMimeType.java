@@ -80,7 +80,7 @@ public class CFIntBuffMimeType
 
 	@Override
 	public int getRequiredMimeTypeId() {
-		return( getPKey() );
+		return( requiredMimeTypeId );
 	}
 
 	@Override
@@ -102,7 +102,7 @@ public class CFIntBuffMimeType
 				value,
 				ICFIntPubMimeType.MIMETYPEID_MIN_VALUE );
 		}
-		setPKey(value);
+		requiredMimeTypeId = value;
 	}
 
 	@Override
@@ -255,8 +255,7 @@ public class CFIntBuffMimeType
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntMimeTypeH ) {
-			ICFIntMimeTypeH rhs = (ICFIntMimeTypeH)obj;
+		else if( obj instanceof ICFIntMimeTypeH rhs ) {
 			if( getRequiredMimeTypeId() != rhs.getRequiredMimeTypeId() ) {
 				return( false );
 			}
@@ -299,8 +298,7 @@ public class CFIntBuffMimeType
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntMimeTypeByUNameIdxKey ) {
-			ICFIntMimeTypeByUNameIdxKey rhs = (ICFIntMimeTypeByUNameIdxKey)obj;
+		else if( obj instanceof ICFIntMimeTypeByUNameIdxKey rhs ) {
 			if( getRequiredName() != null ) {
 				if( rhs.getRequiredName() != null ) {
 					if( ! getRequiredName().equals( rhs.getRequiredName() ) ) {
@@ -408,8 +406,7 @@ public class CFIntBuffMimeType
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntMimeTypeByUNameIdxKey ) {
-			ICFIntMimeTypeByUNameIdxKey rhs = (ICFIntMimeTypeByUNameIdxKey)obj;
+		else if( obj instanceof ICFIntMimeTypeByUNameIdxKey rhs ) {
 			if( getRequiredName() != null ) {
 				if( rhs.getRequiredName() != null ) {
 					if( ! getRequiredName().equals( rhs.getRequiredName() ) ) {
@@ -517,8 +514,7 @@ public class CFIntBuffMimeType
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntMimeTypeByUNameIdxKey ) {
-			ICFIntMimeTypeByUNameIdxKey rhs = (ICFIntMimeTypeByUNameIdxKey)obj;
+		else if( obj instanceof ICFIntMimeTypeByUNameIdxKey rhs ) {
 			if( getRequiredName() != null ) {
 				if( rhs.getRequiredName() != null ) {
 					if( ! getRequiredName().equals( rhs.getRequiredName() ) ) {

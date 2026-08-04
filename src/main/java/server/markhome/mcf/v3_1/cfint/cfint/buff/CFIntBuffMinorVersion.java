@@ -84,7 +84,7 @@ public class CFIntBuffMinorVersion
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredId() {
-		return( getPKey() );
+		return( requiredId );
 	}
 
 	public void setRequiredId( CFLibDbKeyHash256 value ) {
@@ -95,7 +95,7 @@ public class CFIntBuffMinorVersion
 				"value" );
 		}
 		
-		setPKey(value);
+		requiredId = value;
 	}
 
 	@Override
@@ -400,8 +400,7 @@ public class CFIntBuffMinorVersion
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntMinorVersionH ) {
-			ICFIntMinorVersionH rhs = (ICFIntMinorVersionH)obj;
+		else if( obj instanceof ICFIntMinorVersionH rhs ) {
 			if( getRequiredId() != null ) {
 				if( rhs.getRequiredId() != null ) {
 					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {
@@ -498,8 +497,7 @@ public class CFIntBuffMinorVersion
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntMinorVersionByTenantIdxKey ) {
-			ICFIntMinorVersionByTenantIdxKey rhs = (ICFIntMinorVersionByTenantIdxKey)obj;
+		else if( obj instanceof ICFIntMinorVersionByTenantIdxKey rhs ) {
 			if( getRequiredTenantId() != null ) {
 				if( rhs.getRequiredTenantId() != null ) {
 					if( ! getRequiredTenantId().equals( rhs.getRequiredTenantId() ) ) {
@@ -517,8 +515,7 @@ public class CFIntBuffMinorVersion
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntMinorVersionByMajorVerIdxKey ) {
-			ICFIntMinorVersionByMajorVerIdxKey rhs = (ICFIntMinorVersionByMajorVerIdxKey)obj;
+		else if( obj instanceof ICFIntMinorVersionByMajorVerIdxKey rhs ) {
 			if( getRequiredMajorVersionId() != null ) {
 				if( rhs.getRequiredMajorVersionId() != null ) {
 					if( ! getRequiredMajorVersionId().equals( rhs.getRequiredMajorVersionId() ) ) {
@@ -536,8 +533,7 @@ public class CFIntBuffMinorVersion
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntMinorVersionByNameIdxKey ) {
-			ICFIntMinorVersionByNameIdxKey rhs = (ICFIntMinorVersionByNameIdxKey)obj;
+		else if( obj instanceof ICFIntMinorVersionByNameIdxKey rhs ) {
 			if( getRequiredMajorVersionId() != null ) {
 				if( rhs.getRequiredMajorVersionId() != null ) {
 					if( ! getRequiredMajorVersionId().equals( rhs.getRequiredMajorVersionId() ) ) {
@@ -756,8 +752,7 @@ public class CFIntBuffMinorVersion
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntMinorVersionByTenantIdxKey ) {
-			ICFIntMinorVersionByTenantIdxKey rhs = (ICFIntMinorVersionByTenantIdxKey)obj;
+		else if( obj instanceof ICFIntMinorVersionByTenantIdxKey rhs ) {
 			if( getRequiredTenantId() != null ) {
 				if( rhs.getRequiredTenantId() != null ) {
 					if( ! getRequiredTenantId().equals( rhs.getRequiredTenantId() ) ) {
@@ -775,8 +770,7 @@ public class CFIntBuffMinorVersion
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntMinorVersionByMajorVerIdxKey ) {
-			ICFIntMinorVersionByMajorVerIdxKey rhs = (ICFIntMinorVersionByMajorVerIdxKey)obj;
+		else if( obj instanceof ICFIntMinorVersionByMajorVerIdxKey rhs ) {
 			if( getRequiredMajorVersionId() != null ) {
 				if( rhs.getRequiredMajorVersionId() != null ) {
 					if( ! getRequiredMajorVersionId().equals( rhs.getRequiredMajorVersionId() ) ) {
@@ -794,8 +788,7 @@ public class CFIntBuffMinorVersion
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntMinorVersionByNameIdxKey ) {
-			ICFIntMinorVersionByNameIdxKey rhs = (ICFIntMinorVersionByNameIdxKey)obj;
+		else if( obj instanceof ICFIntMinorVersionByNameIdxKey rhs ) {
 			if( getRequiredMajorVersionId() != null ) {
 				if( rhs.getRequiredMajorVersionId() != null ) {
 					if( ! getRequiredMajorVersionId().equals( rhs.getRequiredMajorVersionId() ) ) {
@@ -1014,8 +1007,7 @@ public class CFIntBuffMinorVersion
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntMinorVersionByTenantIdxKey ) {
-			ICFIntMinorVersionByTenantIdxKey rhs = (ICFIntMinorVersionByTenantIdxKey)obj;
+		else if( obj instanceof ICFIntMinorVersionByTenantIdxKey rhs ) {
 			if( getRequiredTenantId() != null ) {
 				if( rhs.getRequiredTenantId() != null ) {
 					if( ! getRequiredTenantId().equals( rhs.getRequiredTenantId() ) ) {
@@ -1033,8 +1025,7 @@ public class CFIntBuffMinorVersion
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntMinorVersionByMajorVerIdxKey ) {
-			ICFIntMinorVersionByMajorVerIdxKey rhs = (ICFIntMinorVersionByMajorVerIdxKey)obj;
+		else if( obj instanceof ICFIntMinorVersionByMajorVerIdxKey rhs ) {
 			if( getRequiredMajorVersionId() != null ) {
 				if( rhs.getRequiredMajorVersionId() != null ) {
 					if( ! getRequiredMajorVersionId().equals( rhs.getRequiredMajorVersionId() ) ) {
@@ -1052,8 +1043,7 @@ public class CFIntBuffMinorVersion
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntMinorVersionByNameIdxKey ) {
-			ICFIntMinorVersionByNameIdxKey rhs = (ICFIntMinorVersionByNameIdxKey)obj;
+		else if( obj instanceof ICFIntMinorVersionByNameIdxKey rhs ) {
 			if( getRequiredMajorVersionId() != null ) {
 				if( rhs.getRequiredMajorVersionId() != null ) {
 					if( ! getRequiredMajorVersionId().equals( rhs.getRequiredMajorVersionId() ) ) {

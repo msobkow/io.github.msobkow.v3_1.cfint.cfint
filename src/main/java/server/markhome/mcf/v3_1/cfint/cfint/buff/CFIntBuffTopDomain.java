@@ -132,7 +132,7 @@ public class CFIntBuffTopDomain
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredId() {
-		return( getPKey() );
+		return( requiredId );
 	}
 
 	public void setRequiredId( CFLibDbKeyHash256 value ) {
@@ -143,7 +143,7 @@ public class CFIntBuffTopDomain
 				"value" );
 		}
 		
-		setPKey(value);
+		requiredId = value;
 	}
 
 	@Override
@@ -448,8 +448,7 @@ public class CFIntBuffTopDomain
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntTopDomainH ) {
-			ICFIntTopDomainH rhs = (ICFIntTopDomainH)obj;
+		else if( obj instanceof ICFIntTopDomainH rhs ) {
 			if( getRequiredId() != null ) {
 				if( rhs.getRequiredId() != null ) {
 					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {
@@ -546,8 +545,7 @@ public class CFIntBuffTopDomain
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntTopDomainByTenantIdxKey ) {
-			ICFIntTopDomainByTenantIdxKey rhs = (ICFIntTopDomainByTenantIdxKey)obj;
+		else if( obj instanceof ICFIntTopDomainByTenantIdxKey rhs ) {
 			if( getRequiredTenantId() != null ) {
 				if( rhs.getRequiredTenantId() != null ) {
 					if( ! getRequiredTenantId().equals( rhs.getRequiredTenantId() ) ) {
@@ -565,8 +563,7 @@ public class CFIntBuffTopDomain
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntTopDomainByTldIdxKey ) {
-			ICFIntTopDomainByTldIdxKey rhs = (ICFIntTopDomainByTldIdxKey)obj;
+		else if( obj instanceof ICFIntTopDomainByTldIdxKey rhs ) {
 			if( getRequiredTldId() != null ) {
 				if( rhs.getRequiredTldId() != null ) {
 					if( ! getRequiredTldId().equals( rhs.getRequiredTldId() ) ) {
@@ -584,8 +581,7 @@ public class CFIntBuffTopDomain
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntTopDomainByNameIdxKey ) {
-			ICFIntTopDomainByNameIdxKey rhs = (ICFIntTopDomainByNameIdxKey)obj;
+		else if( obj instanceof ICFIntTopDomainByNameIdxKey rhs ) {
 			if( getRequiredTldId() != null ) {
 				if( rhs.getRequiredTldId() != null ) {
 					if( ! getRequiredTldId().equals( rhs.getRequiredTldId() ) ) {
@@ -804,8 +800,7 @@ public class CFIntBuffTopDomain
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntTopDomainByTenantIdxKey ) {
-			ICFIntTopDomainByTenantIdxKey rhs = (ICFIntTopDomainByTenantIdxKey)obj;
+		else if( obj instanceof ICFIntTopDomainByTenantIdxKey rhs ) {
 			if( getRequiredTenantId() != null ) {
 				if( rhs.getRequiredTenantId() != null ) {
 					if( ! getRequiredTenantId().equals( rhs.getRequiredTenantId() ) ) {
@@ -823,8 +818,7 @@ public class CFIntBuffTopDomain
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntTopDomainByTldIdxKey ) {
-			ICFIntTopDomainByTldIdxKey rhs = (ICFIntTopDomainByTldIdxKey)obj;
+		else if( obj instanceof ICFIntTopDomainByTldIdxKey rhs ) {
 			if( getRequiredTldId() != null ) {
 				if( rhs.getRequiredTldId() != null ) {
 					if( ! getRequiredTldId().equals( rhs.getRequiredTldId() ) ) {
@@ -842,8 +836,7 @@ public class CFIntBuffTopDomain
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntTopDomainByNameIdxKey ) {
-			ICFIntTopDomainByNameIdxKey rhs = (ICFIntTopDomainByNameIdxKey)obj;
+		else if( obj instanceof ICFIntTopDomainByNameIdxKey rhs ) {
 			if( getRequiredTldId() != null ) {
 				if( rhs.getRequiredTldId() != null ) {
 					if( ! getRequiredTldId().equals( rhs.getRequiredTldId() ) ) {
@@ -1062,8 +1055,7 @@ public class CFIntBuffTopDomain
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntTopDomainByTenantIdxKey ) {
-			ICFIntTopDomainByTenantIdxKey rhs = (ICFIntTopDomainByTenantIdxKey)obj;
+		else if( obj instanceof ICFIntTopDomainByTenantIdxKey rhs ) {
 			if( getRequiredTenantId() != null ) {
 				if( rhs.getRequiredTenantId() != null ) {
 					if( ! getRequiredTenantId().equals( rhs.getRequiredTenantId() ) ) {
@@ -1081,8 +1073,7 @@ public class CFIntBuffTopDomain
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntTopDomainByTldIdxKey ) {
-			ICFIntTopDomainByTldIdxKey rhs = (ICFIntTopDomainByTldIdxKey)obj;
+		else if( obj instanceof ICFIntTopDomainByTldIdxKey rhs ) {
 			if( getRequiredTldId() != null ) {
 				if( rhs.getRequiredTldId() != null ) {
 					if( ! getRequiredTldId().equals( rhs.getRequiredTldId() ) ) {
@@ -1100,8 +1091,7 @@ public class CFIntBuffTopDomain
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntTopDomainByNameIdxKey ) {
-			ICFIntTopDomainByNameIdxKey rhs = (ICFIntTopDomainByNameIdxKey)obj;
+		else if( obj instanceof ICFIntTopDomainByNameIdxKey rhs ) {
 			if( getRequiredTldId() != null ) {
 				if( rhs.getRequiredTldId() != null ) {
 					if( ! getRequiredTldId().equals( rhs.getRequiredTldId() ) ) {
