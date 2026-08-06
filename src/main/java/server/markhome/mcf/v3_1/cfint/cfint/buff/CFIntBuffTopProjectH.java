@@ -52,9 +52,11 @@ public class CFIntBuffTopProjectH
     implements ICFIntTopProjectH, Comparable<Object>, Serializable
 {
     protected CFIntBuffTopProjectHPKey pkey;
-	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFIntTopProject.S_INIT_CREATED_BY);
+	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFIntPubSecUser.S_INIT_CREATED_BY.toString());
+	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFIntPubSecSession.S_INIT_CREATED_BY.toString());
 	protected LocalDateTime createdAt = LocalDateTime.now();
-	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFIntTopProject.S_INIT_UPDATED_BY);
+	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFIntPubSecUser.S_INIT_UPDATED_BY.toString());
+	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFIntPubSecSession.S_INIT_UPDATED_BY.toString());
 	protected LocalDateTime updatedAt = LocalDateTime.now();
 	protected CFLibDbKeyHash256 requiredTenantId;
 	protected CFLibDbKeyHash256 requiredTopDomainId;
@@ -206,7 +208,7 @@ public class CFIntBuffTopProjectH
 				1,
 				"value" );
 		}
-		requiredId = value;
+		getPKey().setRequiredId(value);
 	}
 
 	@Override

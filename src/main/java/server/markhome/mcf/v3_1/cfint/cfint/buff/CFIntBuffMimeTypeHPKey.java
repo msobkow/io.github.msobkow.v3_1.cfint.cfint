@@ -59,7 +59,7 @@ public class CFIntBuffMimeTypeHPKey
 	protected int requiredMimeTypeId;
 
 	public CFIntBuffMimeTypeHPKey() {
-		auditClusterId = ICFSecCluster.ID_INIT_VALUE;
+		auditClusterId = ICFSec$emitScopingMidfix$Cluster.ID_INIT_VALUE;
 		auditStamp = LocalDateTime.now();
 		auditActionId = 0;
 		requiredRevision = 1;
