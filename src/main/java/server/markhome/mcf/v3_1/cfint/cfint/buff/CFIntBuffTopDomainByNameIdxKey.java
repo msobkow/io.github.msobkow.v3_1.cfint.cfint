@@ -60,7 +60,7 @@ public class CFIntBuffTopDomainByNameIdxKey
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredTldId() {
-		return( requiredTldId );
+		return(requiredTldId);
 	}
 
 	public void setRequiredTldId( CFLibDbKeyHash256 value ) {
@@ -70,13 +70,12 @@ public class CFIntBuffTopDomainByNameIdxKey
 				1,
 				"value" );
 		}
-		
 		requiredTldId = value;
 	}
 
 	@Override
 	public String getRequiredName() {
-		return( requiredName );
+		return(requiredName);
 	}
 
 	public void setRequiredName( String value ) {
@@ -94,7 +93,6 @@ public class CFIntBuffTopDomainByNameIdxKey
 				value.length(),
 				64 );
 		}
-		
 		requiredName = value;
 	}
 

@@ -58,7 +58,7 @@ public class CFIntBuffMajorVersionBySubProjectIdxKey
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSubProjectId() {
-		return( requiredSubProjectId );
+		return(requiredSubProjectId);
 	}
 
 	public void setRequiredSubProjectId( CFLibDbKeyHash256 value ) {
@@ -68,7 +68,6 @@ public class CFIntBuffMajorVersionBySubProjectIdxKey
 				1,
 				"value" );
 		}
-		
 		requiredSubProjectId = value;
 	}
 

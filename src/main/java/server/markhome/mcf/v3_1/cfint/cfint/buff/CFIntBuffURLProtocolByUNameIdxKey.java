@@ -58,7 +58,7 @@ public class CFIntBuffURLProtocolByUNameIdxKey
 
 	@Override
 	public String getRequiredName() {
-		return( requiredName );
+		return(requiredName);
 	}
 
 	public void setRequiredName( String value ) {
@@ -76,7 +76,6 @@ public class CFIntBuffURLProtocolByUNameIdxKey
 				value.length(),
 				16 );
 		}
-		
 		requiredName = value;
 	}
 

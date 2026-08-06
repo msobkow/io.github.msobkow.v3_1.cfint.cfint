@@ -58,7 +58,7 @@ public class CFIntBuffTopDomainByTenantIdxKey
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredTenantId() {
-		return( requiredTenantId );
+		return(requiredTenantId);
 	}
 
 	public void setRequiredTenantId( CFLibDbKeyHash256 value ) {
@@ -68,7 +68,6 @@ public class CFIntBuffTopDomainByTenantIdxKey
 				1,
 				"value" );
 		}
-		
 		requiredTenantId = value;
 	}
 

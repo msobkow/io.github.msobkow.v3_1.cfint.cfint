@@ -58,7 +58,7 @@ public class CFIntBuffTopDomainByTldIdxKey
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredTldId() {
-		return( requiredTldId );
+		return(requiredTldId);
 	}
 
 	public void setRequiredTldId( CFLibDbKeyHash256 value ) {
@@ -68,7 +68,6 @@ public class CFIntBuffTopDomainByTldIdxKey
 				1,
 				"value" );
 		}
-		
 		requiredTldId = value;
 	}
 

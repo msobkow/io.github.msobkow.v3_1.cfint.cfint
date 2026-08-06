@@ -108,7 +108,7 @@ public class CFIntBuffSubProject
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredId() {
-		return( requiredId );
+		return(requiredId);
 	}
 
 	public void setRequiredId( CFLibDbKeyHash256 value ) {
@@ -118,7 +118,6 @@ public class CFIntBuffSubProject
 				1,
 				"value" );
 		}
-		
 		requiredId = value;
 	}
 
@@ -257,7 +256,7 @@ public class CFIntBuffSubProject
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredTenantId() {
-		return( requiredTenantId );
+		return(requiredTenantId);
 	}
 
 	public void setRequiredTenantId( CFLibDbKeyHash256 value ) {
@@ -267,13 +266,12 @@ public class CFIntBuffSubProject
 				1,
 				"value" );
 		}
-		
 		requiredTenantId = value;
 	}
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredTopProjectId() {
-		return( requiredTopProjectId );
+		return(requiredTopProjectId);
 	}
 
 	public void setRequiredTopProjectId( CFLibDbKeyHash256 value ) {
@@ -283,13 +281,12 @@ public class CFIntBuffSubProject
 				1,
 				"value" );
 		}
-		
 		requiredTopProjectId = value;
 	}
 
 	@Override
 	public String getRequiredName() {
-		return( requiredName );
+		return(requiredName);
 	}
 
 	public void setRequiredName( String value ) {
@@ -307,13 +304,12 @@ public class CFIntBuffSubProject
 				value.length(),
 				64 );
 		}
-		
 		requiredName = value;
 	}
 
 	@Override
 	public String getOptionalDescription() {
-		return( optionalDescription );
+		return(optionalDescription);
 	}
 
 	public void setOptionalDescription( String value ) {
@@ -325,7 +321,6 @@ public class CFIntBuffSubProject
 				value.length(),
 				1024 );
 		}
-		
 		optionalDescription = value;
 	}
 
@@ -1929,6 +1924,8 @@ public class CFIntBuffSubProject
 		setUpdatedAt( src.getUpdatedAt() );
 		setRequiredOwnerTenant(src.getRequiredTenantId());
 		setRequiredContainerParentTPrj(src.getRequiredContainerParentTPrj());
+		setRequiredTenantId(src.getRequiredTenantId());
+		setRequiredTopProjectId(src.getRequiredTopProjectId());
 		setRequiredName(src.getRequiredName());
 		setOptionalDescription(src.getOptionalDescription());
 	}
@@ -1943,6 +1940,8 @@ public class CFIntBuffSubProject
 		setRequiredId(src.getRequiredId());
 		setRequiredOwnerTenant(src.getRequiredTenantId());
 		setRequiredContainerParentTPrj(src.getRequiredTopProjectId());
+		setRequiredTenantId(src.getRequiredTenantId());
+		setRequiredTopProjectId(src.getRequiredTopProjectId());
 		setRequiredName(src.getRequiredName());
 		setOptionalDescription(src.getOptionalDescription());
 	}
@@ -1962,6 +1961,8 @@ public class CFIntBuffSubProject
 		setUpdatedAt( src.getUpdatedAt() );
 		setRequiredOwnerTenant(src.getRequiredTenantId());
 		setRequiredContainerParentTPrj(src.getRequiredContainerParentTPrj());
+		setRequiredTenantId(src.getRequiredTenantId());
+		setRequiredTopProjectId(src.getRequiredTopProjectId());
 		setRequiredName(src.getRequiredName());
 		setOptionalDescription(src.getOptionalDescription());
 	}
@@ -1976,6 +1977,8 @@ public class CFIntBuffSubProject
 		setRequiredId(src.getRequiredId());
 		setRequiredOwnerTenant(src.getRequiredTenantId());
 		setRequiredContainerParentTPrj(src.getRequiredTopProjectId());
+		setRequiredTenantId(src.getRequiredTenantId());
+		setRequiredTopProjectId(src.getRequiredTopProjectId());
 		setRequiredName(src.getRequiredName());
 		setOptionalDescription(src.getOptionalDescription());
 	}
@@ -1995,6 +1998,8 @@ public class CFIntBuffSubProject
 		setUpdatedAt( src.getUpdatedAt() );
 		setRequiredOwnerTenant(src.getRequiredTenantId());
 		setRequiredContainerParentTPrj(src.getRequiredContainerParentTPrj());
+		setRequiredTenantId(src.getRequiredTenantId());
+		setRequiredTopProjectId(src.getRequiredTopProjectId());
 		setRequiredName(src.getRequiredName());
 		setOptionalDescription(src.getOptionalDescription());
 	}
@@ -2009,6 +2014,8 @@ public class CFIntBuffSubProject
 		setRequiredId(src.getRequiredId());
 		setRequiredOwnerTenant(src.getRequiredTenantId());
 		setRequiredContainerParentTPrj(src.getRequiredTopProjectId());
+		setRequiredTenantId(src.getRequiredTenantId());
+		setRequiredTopProjectId(src.getRequiredTopProjectId());
 		setRequiredName(src.getRequiredName());
 		setOptionalDescription(src.getOptionalDescription());
 	}

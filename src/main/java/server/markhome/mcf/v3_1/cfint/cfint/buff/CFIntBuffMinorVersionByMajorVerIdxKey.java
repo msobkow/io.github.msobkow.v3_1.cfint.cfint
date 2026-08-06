@@ -58,7 +58,7 @@ public class CFIntBuffMinorVersionByMajorVerIdxKey
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredMajorVersionId() {
-		return( requiredMajorVersionId );
+		return(requiredMajorVersionId);
 	}
 
 	public void setRequiredMajorVersionId( CFLibDbKeyHash256 value ) {
@@ -68,7 +68,6 @@ public class CFIntBuffMinorVersionByMajorVerIdxKey
 				1,
 				"value" );
 		}
-		
 		requiredMajorVersionId = value;
 	}
 

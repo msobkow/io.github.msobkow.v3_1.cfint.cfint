@@ -60,7 +60,7 @@ public class CFIntBuffMajorVersionByNameIdxKey
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSubProjectId() {
-		return( requiredSubProjectId );
+		return(requiredSubProjectId);
 	}
 
 	public void setRequiredSubProjectId( CFLibDbKeyHash256 value ) {
@@ -70,13 +70,12 @@ public class CFIntBuffMajorVersionByNameIdxKey
 				1,
 				"value" );
 		}
-		
 		requiredSubProjectId = value;
 	}
 
 	@Override
 	public String getRequiredName() {
-		return( requiredName );
+		return(requiredName);
 	}
 
 	public void setRequiredName( String value ) {
@@ -94,7 +93,6 @@ public class CFIntBuffMajorVersionByNameIdxKey
 				value.length(),
 				64 );
 		}
-		
 		requiredName = value;
 	}
 

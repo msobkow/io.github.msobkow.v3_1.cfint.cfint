@@ -58,7 +58,7 @@ public class CFIntBuffMimeTypeByUNameIdxKey
 
 	@Override
 	public String getRequiredName() {
-		return( requiredName );
+		return(requiredName);
 	}
 
 	public void setRequiredName( String value ) {
@@ -76,7 +76,6 @@ public class CFIntBuffMimeTypeByUNameIdxKey
 				value.length(),
 				128 );
 		}
-		
 		requiredName = value;
 	}
 

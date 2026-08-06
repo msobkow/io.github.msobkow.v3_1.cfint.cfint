@@ -106,7 +106,9 @@ public interface ICFIntMajorVersion
 	public void setRequiredContainerParentSPrj(ICFIntPubSubProject argObj);
 
 	public CFLibDbKeyHash256 getRequiredTenantId();
+	public void setRequiredTenantId( CFLibDbKeyHash256 value );
 	public CFLibDbKeyHash256 getRequiredSubProjectId();
+	public void setRequiredSubProjectId( CFLibDbKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public String getOptionalDescription();

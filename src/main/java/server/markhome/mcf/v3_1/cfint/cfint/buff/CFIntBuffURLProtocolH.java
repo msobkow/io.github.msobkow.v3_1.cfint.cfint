@@ -194,20 +194,11 @@ public class CFIntBuffURLProtocolH
 
 	@Override
 	public int getRequiredURLProtocolId() {
-		return( requiredURLProtocolId );
+		return(requiredURLProtocolId);
 	}
 
 	@Override
 	public void setRequiredURLProtocolId( int value ) {
-		if( value < ICFIntPubURLProtocol.URLPROTOCOLID_MIN_VALUE ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
-				"setRequiredURLProtocolId",
-				1,
-				"value",
-				value,
-				ICFIntPubURLProtocol.URLPROTOCOLID_MIN_VALUE );
-		}
-		
 		if( value < ICFIntPubURLProtocol.URLPROTOCOLID_MIN_VALUE ) {
 			throw new CFLibArgumentUnderflowException( getClass(),
 				"setRequiredURLProtocolId",
@@ -221,7 +212,7 @@ public class CFIntBuffURLProtocolH
 
 	@Override
 	public String getRequiredName() {
-		return( requiredName );
+		return(requiredName);
 	}
 
 	public void setRequiredName( String value ) {
@@ -239,13 +230,12 @@ public class CFIntBuffURLProtocolH
 				value.length(),
 				16 );
 		}
-		
 		requiredName = value;
 	}
 
 	@Override
 	public String getRequiredDescription() {
-		return( requiredDescription );
+		return(requiredDescription);
 	}
 
 	public void setRequiredDescription( String value ) {
@@ -263,17 +253,15 @@ public class CFIntBuffURLProtocolH
 				value.length(),
 				50 );
 		}
-		
 		requiredDescription = value;
 	}
 
 	@Override
 	public boolean getRequiredIsSecure() {
-		return( requiredIsSecure );
+		return(requiredIsSecure);
 	}
 
 	public void setRequiredIsSecure( boolean value ) {
-		
 		requiredIsSecure = value;
 	}
 

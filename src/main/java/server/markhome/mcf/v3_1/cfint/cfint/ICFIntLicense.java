@@ -86,7 +86,9 @@ public interface ICFIntLicense
 	public void setRequiredContainerTopDomain(ICFIntPubTopDomain argObj);
 
 	public CFLibDbKeyHash256 getRequiredTenantId();
+	public void setRequiredTenantId( CFLibDbKeyHash256 value );
 	public CFLibDbKeyHash256 getRequiredTopDomainId();
+	public void setRequiredTopDomainId( CFLibDbKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public String getOptionalDescription();

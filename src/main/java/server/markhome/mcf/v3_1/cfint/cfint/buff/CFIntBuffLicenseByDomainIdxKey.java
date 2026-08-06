@@ -58,7 +58,7 @@ public class CFIntBuffLicenseByDomainIdxKey
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredTopDomainId() {
-		return( requiredTopDomainId );
+		return(requiredTopDomainId);
 	}
 
 	public void setRequiredTopDomainId( CFLibDbKeyHash256 value ) {
@@ -68,7 +68,6 @@ public class CFIntBuffLicenseByDomainIdxKey
 				1,
 				"value" );
 		}
-		
 		requiredTopDomainId = value;
 	}
 
