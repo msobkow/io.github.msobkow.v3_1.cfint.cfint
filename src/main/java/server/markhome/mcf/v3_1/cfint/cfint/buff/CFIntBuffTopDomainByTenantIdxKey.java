@@ -53,7 +53,7 @@ public class CFIntBuffTopDomainByTenantIdxKey
 {
 	protected CFLibDbKeyHash256 requiredTenantId;
 	public CFIntBuffTopDomainByTenantIdxKey() {
-		requiredTenantId = CFLibDbKeyHash256.fromHex( ICFIntTopDomain.TENANTID_INIT_VALUE.toString() );
+		requiredTenantId = CFLibDbKeyHash256.fromHex( ICFIntPubTopDomain.TENANTID_INIT_VALUE.toString() );
 	}
 
 	@Override

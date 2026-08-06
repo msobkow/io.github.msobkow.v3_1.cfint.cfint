@@ -53,7 +53,7 @@ public class CFIntBuffURLProtocolByUNameIdxKey
 {
 	protected String requiredName;
 	public CFIntBuffURLProtocolByUNameIdxKey() {
-		requiredName = ICFIntURLProtocol.NAME_INIT_VALUE;
+		requiredName = ICFIntPubURLProtocol.NAME_INIT_VALUE;
 	}
 
 	@Override

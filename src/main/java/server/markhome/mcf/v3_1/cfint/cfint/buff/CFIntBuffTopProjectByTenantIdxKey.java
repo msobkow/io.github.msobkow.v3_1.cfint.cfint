@@ -53,7 +53,7 @@ public class CFIntBuffTopProjectByTenantIdxKey
 {
 	protected CFLibDbKeyHash256 requiredTenantId;
 	public CFIntBuffTopProjectByTenantIdxKey() {
-		requiredTenantId = CFLibDbKeyHash256.fromHex( ICFIntTopProject.TENANTID_INIT_VALUE.toString() );
+		requiredTenantId = CFLibDbKeyHash256.fromHex( ICFIntPubTopProject.TENANTID_INIT_VALUE.toString() );
 	}
 
 	@Override

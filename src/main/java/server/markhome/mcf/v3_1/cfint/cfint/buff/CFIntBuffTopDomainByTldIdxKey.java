@@ -53,7 +53,7 @@ public class CFIntBuffTopDomainByTldIdxKey
 {
 	protected CFLibDbKeyHash256 requiredTldId;
 	public CFIntBuffTopDomainByTldIdxKey() {
-		requiredTldId = CFLibDbKeyHash256.fromHex( ICFIntTopDomain.TLDID_INIT_VALUE.toString() );
+		requiredTldId = CFLibDbKeyHash256.fromHex( ICFIntPubTopDomain.TLDID_INIT_VALUE.toString() );
 	}
 
 	@Override

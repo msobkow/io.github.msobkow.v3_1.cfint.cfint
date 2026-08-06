@@ -53,7 +53,7 @@ public class CFIntBuffMimeTypeByUNameIdxKey
 {
 	protected String requiredName;
 	public CFIntBuffMimeTypeByUNameIdxKey() {
-		requiredName = ICFIntMimeType.NAME_INIT_VALUE;
+		requiredName = ICFIntPubMimeType.NAME_INIT_VALUE;
 	}
 
 	@Override

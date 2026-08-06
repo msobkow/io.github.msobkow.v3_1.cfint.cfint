@@ -64,7 +64,7 @@ public class CFIntBuffMajorVersionHPKey
 		auditActionId = 0;
 		requiredRevision = 1;
 		auditSessionId = CFLibDbKeyHash256.nullGet();
-		requiredId = CFLibDbKeyHash256.fromHex( ICFIntMajorVersion.ID_INIT_VALUE.toString() );
+		requiredId = CFLibDbKeyHash256.fromHex( ICFIntPubMajorVersion.ID_INIT_VALUE.toString() );
 	}
 
 	@Override

@@ -64,7 +64,7 @@ public class CFIntBuffTopDomainHPKey
 		auditActionId = 0;
 		requiredRevision = 1;
 		auditSessionId = CFLibDbKeyHash256.nullGet();
-		requiredId = CFLibDbKeyHash256.fromHex( ICFIntTopDomain.ID_INIT_VALUE.toString() );
+		requiredId = CFLibDbKeyHash256.fromHex( ICFIntPubTopDomain.ID_INIT_VALUE.toString() );
 	}
 
 	@Override

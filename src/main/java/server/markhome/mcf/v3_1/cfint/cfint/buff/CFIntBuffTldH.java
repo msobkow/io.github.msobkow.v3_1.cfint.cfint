@@ -52,11 +52,11 @@ public class CFIntBuffTldH
     implements ICFIntTldH, Comparable<Object>, Serializable
 {
     protected CFIntBuffTldHPKey pkey;
-	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFIntPubSecUser.S_INIT_CREATED_BY.toString());
-	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFIntPubSecSession.S_INIT_CREATED_BY.toString());
+	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFIntPubSecUser.S_INIT_CREATED_BY);
+	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFIntPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime createdAt = LocalDateTime.now();
-	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFIntPubSecUser.S_INIT_UPDATED_BY.toString());
-	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFIntPubSecSession.S_INIT_UPDATED_BY.toString());
+	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFIntPubSecUser.S_INIT_UPDATED_BY);
+	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFIntPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
 	protected CFLibDbKeyHash256 requiredTenantId;
 	protected String requiredName;
@@ -65,8 +65,8 @@ public class CFIntBuffTldH
     public CFIntBuffTldH() {
             // The primary key member attributes are initialized on construction
             pkey = new CFIntBuffTldHPKey();
-		requiredTenantId = CFLibDbKeyHash256.fromHex( ICFIntTld.TENANTID_INIT_VALUE.toString() );
-		requiredName = ICFIntTld.NAME_INIT_VALUE;
+		requiredTenantId = CFLibDbKeyHash256.fromHex( ICFIntPubTld.TENANTID_INIT_VALUE.toString() );
+		requiredName = ICFIntPubTld.NAME_INIT_VALUE;
 		optionalDescription = null;
     }
 

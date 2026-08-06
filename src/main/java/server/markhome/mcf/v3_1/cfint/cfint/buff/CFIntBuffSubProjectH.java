@@ -52,11 +52,11 @@ public class CFIntBuffSubProjectH
     implements ICFIntSubProjectH, Comparable<Object>, Serializable
 {
     protected CFIntBuffSubProjectHPKey pkey;
-	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFIntPubSecUser.S_INIT_CREATED_BY.toString());
-	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFIntPubSecSession.S_INIT_CREATED_BY.toString());
+	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFIntPubSecUser.S_INIT_CREATED_BY);
+	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFIntPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime createdAt = LocalDateTime.now();
-	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFIntPubSecUser.S_INIT_UPDATED_BY.toString());
-	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFIntPubSecSession.S_INIT_UPDATED_BY.toString());
+	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFIntPubSecUser.S_INIT_UPDATED_BY);
+	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFIntPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
 	protected CFLibDbKeyHash256 requiredTenantId;
 	protected CFLibDbKeyHash256 requiredTopProjectId;
@@ -66,9 +66,9 @@ public class CFIntBuffSubProjectH
     public CFIntBuffSubProjectH() {
             // The primary key member attributes are initialized on construction
             pkey = new CFIntBuffSubProjectHPKey();
-		requiredTenantId = CFLibDbKeyHash256.fromHex( ICFIntSubProject.TENANTID_INIT_VALUE.toString() );
-		requiredTopProjectId = CFLibDbKeyHash256.fromHex( ICFIntSubProject.TOPPROJECTID_INIT_VALUE.toString() );
-		requiredName = ICFIntSubProject.NAME_INIT_VALUE;
+		requiredTenantId = CFLibDbKeyHash256.fromHex( ICFIntPubSubProject.TENANTID_INIT_VALUE.toString() );
+		requiredTopProjectId = CFLibDbKeyHash256.fromHex( ICFIntPubSubProject.TOPPROJECTID_INIT_VALUE.toString() );
+		requiredName = ICFIntPubSubProject.NAME_INIT_VALUE;
 		optionalDescription = null;
     }
 

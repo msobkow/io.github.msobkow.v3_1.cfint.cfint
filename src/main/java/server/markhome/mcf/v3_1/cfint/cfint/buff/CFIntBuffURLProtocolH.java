@@ -52,11 +52,11 @@ public class CFIntBuffURLProtocolH
     implements ICFIntURLProtocolH, Comparable<Object>, Serializable
 {
     protected CFIntBuffURLProtocolHPKey pkey;
-	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFIntPubSecUser.S_INIT_CREATED_BY.toString());
-	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFIntPubSecSession.S_INIT_CREATED_BY.toString());
+	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFIntPubSecUser.S_INIT_CREATED_BY);
+	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFIntPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime createdAt = LocalDateTime.now();
-	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFIntPubSecUser.S_INIT_UPDATED_BY.toString());
-	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFIntPubSecSession.S_INIT_UPDATED_BY.toString());
+	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFIntPubSecUser.S_INIT_UPDATED_BY);
+	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFIntPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
 	protected String requiredName;
 	protected String requiredDescription;
@@ -65,9 +65,9 @@ public class CFIntBuffURLProtocolH
     public CFIntBuffURLProtocolH() {
             // The primary key member attributes are initialized on construction
             pkey = new CFIntBuffURLProtocolHPKey();
-		requiredName = ICFIntURLProtocol.NAME_INIT_VALUE;
-		requiredDescription = ICFIntURLProtocol.DESCRIPTION_INIT_VALUE;
-		requiredIsSecure = ICFIntURLProtocol.ISSECURE_INIT_VALUE;
+		requiredName = ICFIntPubURLProtocol.NAME_INIT_VALUE;
+		requiredDescription = ICFIntPubURLProtocol.DESCRIPTION_INIT_VALUE;
+		requiredIsSecure = ICFIntPubURLProtocol.ISSECURE_INIT_VALUE;
     }
 
     @Override

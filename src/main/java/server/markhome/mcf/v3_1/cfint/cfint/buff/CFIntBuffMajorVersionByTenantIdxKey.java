@@ -53,7 +53,7 @@ public class CFIntBuffMajorVersionByTenantIdxKey
 {
 	protected CFLibDbKeyHash256 requiredTenantId;
 	public CFIntBuffMajorVersionByTenantIdxKey() {
-		requiredTenantId = CFLibDbKeyHash256.fromHex( ICFIntMajorVersion.TENANTID_INIT_VALUE.toString() );
+		requiredTenantId = CFLibDbKeyHash256.fromHex( ICFIntPubMajorVersion.TENANTID_INIT_VALUE.toString() );
 	}
 
 	@Override

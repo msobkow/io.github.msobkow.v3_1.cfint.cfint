@@ -64,7 +64,7 @@ public class CFIntBuffURLProtocolHPKey
 		auditActionId = 0;
 		requiredRevision = 1;
 		auditSessionId = CFLibDbKeyHash256.nullGet();
-		requiredURLProtocolId = ICFIntURLProtocol.URLPROTOCOLID_INIT_VALUE;
+		requiredURLProtocolId = ICFIntPubURLProtocol.URLPROTOCOLID_INIT_VALUE;
 	}
 
 	@Override

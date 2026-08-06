@@ -62,9 +62,9 @@ public class CFIntBuffLicenseH
     public CFIntBuffLicenseH() {
             // The primary key member attributes are initialized on construction
             pkey = new CFIntBuffLicenseHPKey();
-		requiredTenantId = CFLibDbKeyHash256.fromHex( ICFIntLicense.TENANTID_INIT_VALUE.toString() );
-		requiredTopDomainId = CFLibDbKeyHash256.fromHex( ICFIntLicense.TOPDOMAINID_INIT_VALUE.toString() );
-		requiredName = ICFIntLicense.NAME_INIT_VALUE;
+		requiredTenantId = CFLibDbKeyHash256.fromHex( ICFIntPubLicense.TENANTID_INIT_VALUE.toString() );
+		requiredTopDomainId = CFLibDbKeyHash256.fromHex( ICFIntPubLicense.TOPDOMAINID_INIT_VALUE.toString() );
+		requiredName = ICFIntPubLicense.NAME_INIT_VALUE;
 		optionalDescription = null;
 		optionalEmbeddedText = null;
 		optionalFullText = null;

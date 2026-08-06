@@ -53,7 +53,7 @@ public class CFIntBuffLicenseByDomainIdxKey
 {
 	protected CFLibDbKeyHash256 requiredTopDomainId;
 	public CFIntBuffLicenseByDomainIdxKey() {
-		requiredTopDomainId = CFLibDbKeyHash256.fromHex( ICFIntLicense.TOPDOMAINID_INIT_VALUE.toString() );
+		requiredTopDomainId = CFLibDbKeyHash256.fromHex( ICFIntPubLicense.TOPDOMAINID_INIT_VALUE.toString() );
 	}
 
 	@Override

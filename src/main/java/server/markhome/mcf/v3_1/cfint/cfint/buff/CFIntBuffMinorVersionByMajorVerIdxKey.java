@@ -53,7 +53,7 @@ public class CFIntBuffMinorVersionByMajorVerIdxKey
 {
 	protected CFLibDbKeyHash256 requiredMajorVersionId;
 	public CFIntBuffMinorVersionByMajorVerIdxKey() {
-		requiredMajorVersionId = CFLibDbKeyHash256.fromHex( ICFIntMinorVersion.MAJORVERSIONID_INIT_VALUE.toString() );
+		requiredMajorVersionId = CFLibDbKeyHash256.fromHex( ICFIntPubMinorVersion.MAJORVERSIONID_INIT_VALUE.toString() );
 	}
 
 	@Override

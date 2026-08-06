@@ -53,7 +53,7 @@ public class CFIntBuffURLProtocolByIsSecureIdxKey
 {
 	protected boolean requiredIsSecure;
 	public CFIntBuffURLProtocolByIsSecureIdxKey() {
-		requiredIsSecure = ICFIntURLProtocol.ISSECURE_INIT_VALUE;
+		requiredIsSecure = ICFIntPubURLProtocol.ISSECURE_INIT_VALUE;
 	}
 
 	@Override

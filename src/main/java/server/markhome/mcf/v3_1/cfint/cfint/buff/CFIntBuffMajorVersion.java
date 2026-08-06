@@ -53,11 +53,11 @@ public class CFIntBuffMajorVersion
 {
 	protected CFLibDbKeyHash256 requiredId;
 	protected int requiredRevision;
-	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFIntPubSecUser.S_INIT_CREATED_BY.toString());
-	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFIntPubSecSession.S_INIT_CREATED_BY.toString());
+	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFIntPubSecUser.S_INIT_CREATED_BY);
+	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFIntPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime createdAt = LocalDateTime.now();
-	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFIntPubSecUser.S_INIT_UPDATED_BY.toString());
-	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFIntPubSecSession.S_INIT_UPDATED_BY.toString());
+	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFIntPubSecUser.S_INIT_UPDATED_BY);
+	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFIntPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
 	protected CFLibDbKeyHash256 requiredTenantId;
 	protected CFLibDbKeyHash256 requiredSubProjectId;
@@ -65,10 +65,10 @@ public class CFIntBuffMajorVersion
 	protected String optionalDescription;
 
 	public CFIntBuffMajorVersion() {
-		requiredId = CFLibDbKeyHash256.fromHex( ICFIntMajorVersion.ID_INIT_VALUE.toString() );
-		requiredTenantId = CFLibDbKeyHash256.fromHex( ICFIntMajorVersion.TENANTID_INIT_VALUE.toString() );
-		requiredSubProjectId = CFLibDbKeyHash256.fromHex( ICFIntMajorVersion.SUBPROJECTID_INIT_VALUE.toString() );
-		requiredName = ICFIntMajorVersion.NAME_INIT_VALUE;
+		requiredId = CFLibDbKeyHash256.fromHex( ICFIntPubMajorVersion.ID_INIT_VALUE.toString() );
+		requiredTenantId = CFLibDbKeyHash256.fromHex( ICFIntPubMajorVersion.TENANTID_INIT_VALUE.toString() );
+		requiredSubProjectId = CFLibDbKeyHash256.fromHex( ICFIntPubMajorVersion.SUBPROJECTID_INIT_VALUE.toString() );
+		requiredName = ICFIntPubMajorVersion.NAME_INIT_VALUE;
 		optionalDescription = null;
 	}
 

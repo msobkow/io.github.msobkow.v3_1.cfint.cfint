@@ -53,7 +53,7 @@ public class CFIntBuffTldByNameIdxKey
 {
 	protected String requiredName;
 	public CFIntBuffTldByNameIdxKey() {
-		requiredName = ICFIntTld.NAME_INIT_VALUE;
+		requiredName = ICFIntPubTld.NAME_INIT_VALUE;
 	}
 
 	@Override
