@@ -59,7 +59,7 @@ public class CFIntBuffSubProjectHPKey
 	protected CFLibDbKeyHash256 requiredId;
 
 	public CFIntBuffSubProjectHPKey() {
-		auditClusterId = ICFSec$emitScopingMidfix$Cluster.ID_INIT_VALUE;
+		auditClusterId = ICFSecPubCluster.ID_INIT_VALUE;
 		auditStamp = LocalDateTime.now();
 		auditActionId = 0;
 		requiredRevision = 1;
