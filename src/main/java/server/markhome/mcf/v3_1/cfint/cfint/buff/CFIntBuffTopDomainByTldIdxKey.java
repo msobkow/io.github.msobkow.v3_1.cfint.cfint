@@ -57,21 +57,6 @@ public class CFIntBuffTopDomainByTldIdxKey
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredTldId() {
-		return(requiredTldId);
-	}
-
-	public void setRequiredTldId( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredTldId",
-				1,
-				"value" );
-		}
-		requiredTldId = value;
-	}
-
-	@Override
 	public boolean equals( Object obj ) {
 		if( obj == null ) {
 			return( false );

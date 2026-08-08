@@ -57,21 +57,6 @@ public class CFIntBuffMajorVersionBySubProjectIdxKey
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredSubProjectId() {
-		return(requiredSubProjectId);
-	}
-
-	public void setRequiredSubProjectId( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredSubProjectId",
-				1,
-				"value" );
-		}
-		requiredSubProjectId = value;
-	}
-
-	@Override
 	public boolean equals( Object obj ) {
 		if( obj == null ) {
 			return( false );

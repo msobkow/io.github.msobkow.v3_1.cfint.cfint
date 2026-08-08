@@ -57,15 +57,6 @@ public class CFIntBuffURLProtocolByIsSecureIdxKey
 	}
 
 	@Override
-	public boolean getRequiredIsSecure() {
-		return(requiredIsSecure);
-	}
-
-	public void setRequiredIsSecure( boolean value ) {
-		requiredIsSecure = value;
-	}
-
-	@Override
 	public boolean equals( Object obj ) {
 		if( obj == null ) {
 			return( false );
