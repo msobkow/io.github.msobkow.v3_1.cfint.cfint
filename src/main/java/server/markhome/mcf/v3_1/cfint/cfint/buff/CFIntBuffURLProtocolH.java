@@ -194,6 +194,79 @@ public class CFIntBuffURLProtocolH
         pkey.setAuditSessionId(auditSessionId);
     }
 
+	@Override
+	public int getRequiredURLProtocolId() {
+		return(requiredURLProtocolId);
+	}
+
+	@Override
+	public void setRequiredURLProtocolId( int value ) {
+		if( value < ICFIntPubURLProtocol.URLPROTOCOLID_MIN_VALUE ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				"setRequiredURLProtocolId",
+				1,
+				"value",
+				value,
+				ICFIntPubURLProtocol.URLPROTOCOLID_MIN_VALUE );
+		}
+		getPKey().setRequiredURLProtocolId(value);
+	}
+
+	@Override
+	public String getRequiredName() {
+		return(requiredName);
+	}
+
+	public void setRequiredName( String value ) {
+		if( value == null ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredName",
+				1,
+				"value" );
+		}
+		else if( value.length() > 16 ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+				"setRequiredName",
+				1,
+				"value.length()",
+				value.length(),
+				16 );
+		}
+		requiredName = value;
+	}
+
+	@Override
+	public String getRequiredDescription() {
+		return(requiredDescription);
+	}
+
+	public void setRequiredDescription( String value ) {
+		if( value == null ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredDescription",
+				1,
+				"value" );
+		}
+		else if( value.length() > 50 ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+				"setRequiredDescription",
+				1,
+				"value.length()",
+				value.length(),
+				50 );
+		}
+		requiredDescription = value;
+	}
+
+	@Override
+	public boolean getRequiredIsSecure() {
+		return(requiredIsSecure);
+	}
+
+	public void setRequiredIsSecure( boolean value ) {
+		requiredIsSecure = value;
+	}
+
     @Override
     public boolean equals( Object obj ) {
         if (obj == null) {

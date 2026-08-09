@@ -193,6 +193,47 @@ public class CFIntBuffMimeTypeH
     }
 
 	@Override
+	public int getRequiredMimeTypeId() {
+		return(requiredMimeTypeId);
+	}
+
+	@Override
+	public void setRequiredMimeTypeId( int value ) {
+		if( value < ICFIntPubMimeType.MIMETYPEID_MIN_VALUE ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				"setRequiredMimeTypeId",
+				1,
+				"value",
+				value,
+				ICFIntPubMimeType.MIMETYPEID_MIN_VALUE );
+		}
+		getPKey().setRequiredMimeTypeId(value);
+	}
+
+	@Override
+	public String getRequiredName() {
+		return(requiredName);
+	}
+
+	public void setRequiredName( String value ) {
+		if( value == null ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredName",
+				1,
+				"value" );
+		}
+		else if( value.length() > 128 ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+				"setRequiredName",
+				1,
+				"value.length()",
+				value.length(),
+				128 );
+		}
+		requiredName = value;
+	}
+
+	@Override
 	public String getOptionalFileTypes() {
 		return(optionalFileTypes);
 	}

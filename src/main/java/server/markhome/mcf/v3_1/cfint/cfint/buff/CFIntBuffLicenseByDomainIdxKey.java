@@ -57,6 +57,21 @@ public class CFIntBuffLicenseByDomainIdxKey
 	}
 
 	@Override
+	public CFLibDbKeyHash256 getRequiredTopDomainId() {
+		return(requiredTopDomainId);
+	}
+
+	public void setRequiredTopDomainId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredTopDomainId",
+				1,
+				"value" );
+		}
+		requiredTopDomainId = value;
+	}
+
+	@Override
 	public boolean equals( Object obj ) {
 		if( obj == null ) {
 			return( false );

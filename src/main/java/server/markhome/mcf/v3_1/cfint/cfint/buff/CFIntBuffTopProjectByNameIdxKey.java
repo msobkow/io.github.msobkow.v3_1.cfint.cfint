@@ -59,6 +59,44 @@ public class CFIntBuffTopProjectByNameIdxKey
 	}
 
 	@Override
+	public CFLibDbKeyHash256 getRequiredTopDomainId() {
+		return(requiredTopDomainId);
+	}
+
+	public void setRequiredTopDomainId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredTopDomainId",
+				1,
+				"value" );
+		}
+		requiredTopDomainId = value;
+	}
+
+	@Override
+	public String getRequiredName() {
+		return(requiredName);
+	}
+
+	public void setRequiredName( String value ) {
+		if( value == null ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredName",
+				1,
+				"value" );
+		}
+		else if( value.length() > 64 ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+				"setRequiredName",
+				1,
+				"value.length()",
+				value.length(),
+				64 );
+		}
+		requiredName = value;
+	}
+
+	@Override
 	public boolean equals( Object obj ) {
 		if( obj == null ) {
 			return( false );

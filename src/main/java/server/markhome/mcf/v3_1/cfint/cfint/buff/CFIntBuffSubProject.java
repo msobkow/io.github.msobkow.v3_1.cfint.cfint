@@ -85,6 +85,60 @@ public class CFIntBuffSubProject
 	}
 
 	@Override
+	public List<ICFIntMajorVersion> getOptionalComponentsMajorVer() {
+		ICFIntSchema targetBackingSchema = ICFIntSchema.getBackingCFInt();
+		if (targetBackingSchema == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsMajorVer", 0, "ICFIntSchema.getBackingCFInt()");
+		}
+		ICFIntMajorVersionTable targetTable = targetBackingSchema.getTableMajorVersion();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsMajorVer", 0, "ICFIntSchema.getBackingCFInt().getTableMajorVersion()");
+		}
+		ICFIntMajorVersion[] targetArr = targetTable.readDerivedBySubProjectIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
+		if( targetArr != null ) {
+			List<ICFIntMajorVersion> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFIntMajorVersion> results = new ArrayList<>();
+			return( results );
+		}
+	}
+
+	@Override
+	public CFLibDbKeyHash256 getRequiredId() {
+		return(requiredId);
+	}
+
+	public void setRequiredId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredId",
+				1,
+				"value" );
+		}
+		getPKey().setRequiredId(value);
+	}
+
+	@Override
+	public CFLibDbKeyHash256 getRequiredId() {
+		return(requiredId);
+	}
+
+	public void setRequiredId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredId",
+				1,
+				"value" );
+		}
+		requiredId = value;
+	}
+
+	@Override
 	public CFLibDbKeyHash256 getCreatedByUserId() {
 		return( createdByUserId );
 	}
@@ -218,27 +272,56 @@ public class CFIntBuffSubProject
 	}
 
 	@Override
-	public List<ICFIntMajorVersion> getOptionalComponentsMajorVer() {
-		ICFIntSchema targetBackingSchema = ICFIntSchema.getBackingCFInt();
-		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsMajorVer", 0, "ICFIntSchema.getBackingCFInt()");
+	public CFLibDbKeyHash256 getRequiredTenantId() {
+		return(requiredTenantId);
+	}
+
+	public void setRequiredTenantId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredTenantId",
+				1,
+				"value" );
 		}
-		ICFIntMajorVersionTable targetTable = targetBackingSchema.getTableMajorVersion();
-		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsMajorVer", 0, "ICFIntSchema.getBackingCFInt().getTableMajorVersion()");
+		requiredTenantId = value;
+	}
+
+	@Override
+	public CFLibDbKeyHash256 getRequiredTopProjectId() {
+		return(requiredTopProjectId);
+	}
+
+	public void setRequiredTopProjectId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredTopProjectId",
+				1,
+				"value" );
 		}
-		ICFIntMajorVersion[] targetArr = targetTable.readDerivedBySubProjectIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
-		if( targetArr != null ) {
-			List<ICFIntMajorVersion> results = new ArrayList<>(targetArr.length);
-			for (int idx = 0; idx < targetArr.length; idx++) {
-				results.add(targetArr[idx]);
-			}
-			return( results );
+		requiredTopProjectId = value;
+	}
+
+	@Override
+	public String getRequiredName() {
+		return(requiredName);
+	}
+
+	public void setRequiredName( String value ) {
+		if( value == null ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredName",
+				1,
+				"value" );
 		}
-		else {
-			List<ICFIntMajorVersion> results = new ArrayList<>();
-			return( results );
+		else if( value.length() > 64 ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+				"setRequiredName",
+				1,
+				"value.length()",
+				value.length(),
+				64 );
 		}
+		requiredName = value;
 	}
 
 	@Override
