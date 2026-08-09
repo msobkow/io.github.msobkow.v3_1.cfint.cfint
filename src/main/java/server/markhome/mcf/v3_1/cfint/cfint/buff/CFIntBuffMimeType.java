@@ -95,7 +95,7 @@ public class CFIntBuffMimeType
 				value,
 				ICFIntPubMimeType.MIMETYPEID_MIN_VALUE );
 		}
-		getPKey().setRequiredMimeTypeId(value);
+		requiredMimeTypeId = value;
 	}
 
 	@Override

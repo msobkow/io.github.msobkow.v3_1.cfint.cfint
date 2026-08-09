@@ -118,7 +118,7 @@ public class CFIntBuffTld
 				1,
 				"value" );
 		}
-		getPKey().setRequiredId(value);
+		requiredId = value;
 	}
 
 	@Override

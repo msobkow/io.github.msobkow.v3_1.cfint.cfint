@@ -97,7 +97,7 @@ public class CFIntBuffURLProtocol
 				value,
 				ICFIntPubURLProtocol.URLPROTOCOLID_MIN_VALUE );
 		}
-		getPKey().setRequiredURLProtocolId(value);
+		requiredURLProtocolId = value;
 	}
 
 	@Override

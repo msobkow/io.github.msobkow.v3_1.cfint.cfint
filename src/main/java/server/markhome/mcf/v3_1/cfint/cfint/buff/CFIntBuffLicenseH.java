@@ -154,7 +154,7 @@ public class CFIntBuffLicenseH
 				1,
 				"value" );
 		}
-		getPKey().setRequiredId(value);
+		requiredId = value;
 	}
 
 	@Override

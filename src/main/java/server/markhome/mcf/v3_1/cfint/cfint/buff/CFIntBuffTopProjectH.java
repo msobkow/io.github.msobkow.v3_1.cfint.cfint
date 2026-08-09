@@ -208,7 +208,7 @@ public class CFIntBuffTopProjectH
 				1,
 				"value" );
 		}
-		getPKey().setRequiredId(value);
+		requiredId = value;
 	}
 
 	@Override
