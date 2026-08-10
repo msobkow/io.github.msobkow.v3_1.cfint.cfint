@@ -194,7 +194,7 @@ public class CFIntBuffMimeTypeH
 
 	@Override
 	public int getRequiredMimeTypeId() {
-		return(requiredMimeTypeId);
+		return(getPKey().getRequiredMimeTypeId());
 	}
 
 	@Override
@@ -207,7 +207,7 @@ public class CFIntBuffMimeTypeH
 				value,
 				ICFIntPubMimeType.MIMETYPEID_MIN_VALUE );
 		}
-		requiredMimeTypeId = value;
+		getPKey().setRequiredMimeTypeId(value);
 	}
 
 	@Override

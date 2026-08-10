@@ -196,7 +196,7 @@ public class CFIntBuffURLProtocolH
 
 	@Override
 	public int getRequiredURLProtocolId() {
-		return(requiredURLProtocolId);
+		return(getPKey().getRequiredURLProtocolId());
 	}
 
 	@Override
@@ -209,7 +209,7 @@ public class CFIntBuffURLProtocolH
 				value,
 				ICFIntPubURLProtocol.URLPROTOCOLID_MIN_VALUE );
 		}
-		requiredURLProtocolId = value;
+		getPKey().setRequiredURLProtocolId(value);
 	}
 
 	@Override

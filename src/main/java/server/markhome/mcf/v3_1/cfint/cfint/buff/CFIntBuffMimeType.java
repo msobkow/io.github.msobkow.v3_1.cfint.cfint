@@ -99,24 +99,6 @@ public class CFIntBuffMimeType
 	}
 
 	@Override
-	public int getRequiredMimeTypeId() {
-		return(requiredMimeTypeId);
-	}
-
-	@Override
-	public void setRequiredMimeTypeId( int value ) {
-		if( value < ICFIntPubMimeType.MIMETYPEID_MIN_VALUE ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
-				"setRequiredMimeTypeId",
-				1,
-				"value",
-				value,
-				ICFIntPubMimeType.MIMETYPEID_MIN_VALUE );
-		}
-		requiredMimeTypeId = value;
-	}
-
-	@Override
 	public CFLibDbKeyHash256 getCreatedByUserId() {
 		return( createdByUserId );
 	}
