@@ -170,7 +170,13 @@ public class CFIntBuffMinorVersion
 
 	@Override
 	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId) {
+		ICFSecTenant found = getRequiredOwnerTenant(argTenantId);
+		if (found == null || (found != null && ((!found instanceof ICFSecTenant) && (!found instanceof ICFSecProtTenant) && (!found instanceof ICFSecPubTenant))) {
 		setRequiredTenantId(argTenantId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredOwnerTenant-args", "ICFSecTenantICFSecProtTenantICFSecPubTenant", found);
+		}
 	}
 
 	@Override
@@ -199,7 +205,13 @@ public class CFIntBuffMinorVersion
 
 	@Override
 	public void setRequiredContainerParentMajVer(CFLibDbKeyHash256 argMajorVersionId) {
+		ICFIntMajorVersion found = getRequiredContainerParentMajVer(argMajorVersionId);
+		if (found == null || (found != null && ((!found instanceof ICFIntMajorVersion) && (!found instanceof ICFIntProtMajorVersion) && (!found instanceof ICFIntPubMajorVersion))) {
 		setRequiredMajorVersionId(argMajorVersionId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerParentMajVer-args", "ICFIntMajorVersionICFIntProtMajorVersionICFIntPubMajorVersion", found);
+		}
 	}
 
 	@Override

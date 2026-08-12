@@ -194,7 +194,13 @@ public class CFIntBuffSubProject
 
 	@Override
 	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId) {
+		ICFSecTenant found = getRequiredOwnerTenant(argTenantId);
+		if (found == null || (found != null && ((!found instanceof ICFSecTenant) && (!found instanceof ICFSecProtTenant) && (!found instanceof ICFSecPubTenant))) {
 		setRequiredTenantId(argTenantId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredOwnerTenant-args", "ICFSecTenantICFSecProtTenantICFSecPubTenant", found);
+		}
 	}
 
 	@Override
@@ -223,7 +229,13 @@ public class CFIntBuffSubProject
 
 	@Override
 	public void setRequiredContainerParentTPrj(CFLibDbKeyHash256 argTopProjectId) {
+		ICFIntTopProject found = getRequiredContainerParentTPrj(argTopProjectId);
+		if (found == null || (found != null && ((!found instanceof ICFIntTopProject) && (!found instanceof ICFIntProtTopProject) && (!found instanceof ICFIntPubTopProject))) {
 		setRequiredTopProjectId(argTopProjectId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerParentTPrj-args", "ICFIntTopProjectICFIntProtTopProjectICFIntPubTopProject", found);
+		}
 	}
 
 	@Override

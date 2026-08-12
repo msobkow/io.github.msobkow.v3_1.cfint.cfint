@@ -192,7 +192,13 @@ public class CFIntBuffTld
 
 	@Override
 	public void setRequiredContainerTenant(CFLibDbKeyHash256 argTenantId) {
+		ICFSecTenant found = getRequiredContainerTenant(argTenantId);
+		if (found == null || (found != null && ((!found instanceof ICFSecTenant) && (!found instanceof ICFSecProtTenant) && (!found instanceof ICFSecPubTenant))) {
 		setRequiredTenantId(argTenantId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerTenant-args", "ICFSecTenantICFSecProtTenantICFSecPubTenant", found);
+		}
 	}
 
 	@Override

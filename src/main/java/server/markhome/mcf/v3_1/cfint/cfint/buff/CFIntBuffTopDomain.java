@@ -218,7 +218,13 @@ public class CFIntBuffTopDomain
 
 	@Override
 	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId) {
+		ICFSecTenant found = getRequiredOwnerTenant(argTenantId);
+		if (found == null || (found != null && ((!found instanceof ICFSecTenant) && (!found instanceof ICFSecProtTenant) && (!found instanceof ICFSecPubTenant))) {
 		setRequiredTenantId(argTenantId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredOwnerTenant-args", "ICFSecTenantICFSecProtTenantICFSecPubTenant", found);
+		}
 	}
 
 	@Override
@@ -247,7 +253,13 @@ public class CFIntBuffTopDomain
 
 	@Override
 	public void setRequiredContainerParentTld(CFLibDbKeyHash256 argTldId) {
+		ICFIntTld found = getRequiredContainerParentTld(argTldId);
+		if (found == null || (found != null && ((!found instanceof ICFIntTld) && (!found instanceof ICFIntProtTld) && (!found instanceof ICFIntPubTld))) {
 		setRequiredTldId(argTldId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerParentTld-args", "ICFIntTldICFIntProtTldICFIntPubTld", found);
+		}
 	}
 
 	@Override
