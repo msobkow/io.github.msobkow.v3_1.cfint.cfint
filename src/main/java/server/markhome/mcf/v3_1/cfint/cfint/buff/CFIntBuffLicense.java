@@ -128,12 +128,23 @@ public class CFIntBuffLicense
 
 	@Override
 	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId) {
-		ICFSecTenant found = getRequiredOwnerTenant(argTenantId);
-		if (found == null || (found != null && ((!found instanceof ICFSecTenant) && (!found instanceof ICFSecProtTenant) && (!found instanceof ICFSecPubTenant))) {
+		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
+		if (targetBackingSchema == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerTenant-args", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecTenantTable targetTable = targetBackingSchema.getTableTenant();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerTenant", 0, "ICFSecSchema.getBackingCFSec().getTableTenant()");
+		}
+		ICFSecTenant found = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argTenantId);
+		if (found == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerTenant-args", 0, "found");
+		}
+		else if ((found instanceof ICFSecTenant) || (found instanceof ICFSecProtTenant) || (found instanceof ICFSecPubTenant)) {
 		setRequiredTenantId(argTenantId);
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setRequiredOwnerTenant-args", "ICFSecTenantICFSecProtTenantICFSecPubTenant", found);
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredOwnerTenant-args", "found", found, "ICFSecTenantICFSecProtTenantICFSecPubTenant");
 		}
 	}
 
@@ -163,12 +174,23 @@ public class CFIntBuffLicense
 
 	@Override
 	public void setRequiredContainerTopDomain(CFLibDbKeyHash256 argTopDomainId) {
-		ICFIntTopDomain found = getRequiredContainerTopDomain(argTopDomainId);
-		if (found == null || (found != null && ((!found instanceof ICFIntTopDomain) && (!found instanceof ICFIntProtTopDomain) && (!found instanceof ICFIntPubTopDomain))) {
+		ICFIntSchema targetBackingSchema = ICFIntSchema.getBackingCFInt();
+		if (targetBackingSchema == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerTopDomain-args", 0, "ICFIntSchema.getBackingCFInt()");
+		}
+		ICFIntTopDomainTable targetTable = targetBackingSchema.getTableTopDomain();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerTopDomain", 0, "ICFIntSchema.getBackingCFInt().getTableTopDomain()");
+		}
+		ICFIntTopDomain found = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argTopDomainId);
+		if (found == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerTopDomain-args", 0, "found");
+		}
+		else if ((found instanceof ICFIntTopDomain) || (found instanceof ICFIntProtTopDomain) || (found instanceof ICFIntPubTopDomain)) {
 		setRequiredTopDomainId(argTopDomainId);
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerTopDomain-args", "ICFIntTopDomainICFIntProtTopDomainICFIntPubTopDomain", found);
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerTopDomain-args", "found", found, "ICFIntTopDomainICFIntProtTopDomainICFIntPubTopDomain");
 		}
 	}
 

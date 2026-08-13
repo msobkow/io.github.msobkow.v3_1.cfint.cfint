@@ -194,12 +194,23 @@ public class CFIntBuffMajorVersion
 
 	@Override
 	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId) {
-		ICFSecTenant found = getRequiredOwnerTenant(argTenantId);
-		if (found == null || (found != null && ((!found instanceof ICFSecTenant) && (!found instanceof ICFSecProtTenant) && (!found instanceof ICFSecPubTenant))) {
+		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
+		if (targetBackingSchema == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerTenant-args", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecTenantTable targetTable = targetBackingSchema.getTableTenant();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerTenant", 0, "ICFSecSchema.getBackingCFSec().getTableTenant()");
+		}
+		ICFSecTenant found = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argTenantId);
+		if (found == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerTenant-args", 0, "found");
+		}
+		else if ((found instanceof ICFSecTenant) || (found instanceof ICFSecProtTenant) || (found instanceof ICFSecPubTenant)) {
 		setRequiredTenantId(argTenantId);
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setRequiredOwnerTenant-args", "ICFSecTenantICFSecProtTenantICFSecPubTenant", found);
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredOwnerTenant-args", "found", found, "ICFSecTenantICFSecProtTenantICFSecPubTenant");
 		}
 	}
 
@@ -229,12 +240,23 @@ public class CFIntBuffMajorVersion
 
 	@Override
 	public void setRequiredContainerParentSPrj(CFLibDbKeyHash256 argSubProjectId) {
-		ICFIntSubProject found = getRequiredContainerParentSPrj(argSubProjectId);
-		if (found == null || (found != null && ((!found instanceof ICFIntSubProject) && (!found instanceof ICFIntProtSubProject) && (!found instanceof ICFIntPubSubProject))) {
+		ICFIntSchema targetBackingSchema = ICFIntSchema.getBackingCFInt();
+		if (targetBackingSchema == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerParentSPrj-args", 0, "ICFIntSchema.getBackingCFInt()");
+		}
+		ICFIntSubProjectTable targetTable = targetBackingSchema.getTableSubProject();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerParentSPrj", 0, "ICFIntSchema.getBackingCFInt().getTableSubProject()");
+		}
+		ICFIntSubProject found = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argSubProjectId);
+		if (found == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerParentSPrj-args", 0, "found");
+		}
+		else if ((found instanceof ICFIntSubProject) || (found instanceof ICFIntProtSubProject) || (found instanceof ICFIntPubSubProject)) {
 		setRequiredSubProjectId(argSubProjectId);
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerParentSPrj-args", "ICFIntSubProjectICFIntProtSubProjectICFIntPubSubProject", found);
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerParentSPrj-args", "found", found, "ICFIntSubProjectICFIntProtSubProjectICFIntPubSubProject");
 		}
 	}
 
