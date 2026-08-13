@@ -140,7 +140,7 @@ extends ICFSecSchema
 		
 		public ICFIntSchema getCFIntSchema();
 		public void setCFIntSchema(ICFIntSchema schema);
-		
+
 		public static int doInitClassMapEntries(int value) {
 			value = ICFSecSchema.doInitClassMapEntries(value);
 			if (ICFIntSchema.entries.isEmpty()) {
