@@ -178,7 +178,7 @@ public class CFIntBuffTld
 
 	@Override
 	public ICFSecTenant getRequiredContainerTenant() {
-		ICFSecPubSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		ICFSecPubSchema targetBackingCFSec = ICFSecPubSchema.getBackingCFSec();
 		if (targetBackingCFSec == null) {
 			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerTenant", 0, "ICFSecPubSchema.getBackingCFSec()");
 		}

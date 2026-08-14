@@ -156,7 +156,7 @@ public class CFIntBuffMinorVersion
 
 	@Override
 	public ICFSecTenant getRequiredOwnerTenant() {
-		ICFSecPubSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		ICFSecPubSchema targetBackingCFSec = ICFSecPubSchema.getBackingCFSec();
 		if (targetBackingCFSec == null) {
 			throw new CFLibNullArgumentException(getClass(), "getRequiredOwnerTenant", 0, "ICFSecPubSchema.getBackingCFSec()");
 		}
@@ -258,15 +258,15 @@ public class CFIntBuffMinorVersion
 
 	@Override
 	public void setRequiredContainerParentMajVer(CFLibDbKeyHash256 argMajorVersionId) {
-		ICFIntPubSchema targetBackingCFInt = ICFIntPubSchema.getBackingCFInt();
+		ICFIntSchema targetBackingCFInt = ICFIntSchema.getBackingCFInt();
 		if (targetBackingCFInt == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerParentMajVer-args", 0, "ICFIntPubSchema.getBackingCFInt()");
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerParentMajVer-args", 0, "ICFIntSchema.getBackingCFInt()");
 		}
-		ICFIntPubMajorVersionTable targetTable = targetBackingCFInt.getTableMajorVersion();
+		ICFIntMajorVersionTable targetTable = targetBackingCFInt.getTableMajorVersion();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerParentMajVer", 0, "ICFIntPubSchema.getBackingCFInt().getTableMajorVersion()");
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerParentMajVer", 0, "ICFIntSchema.getBackingCFInt().getTableMajorVersion()");
 		}
-		ICFIntPubMajorVersion found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argMajorVersionId);
+		ICFIntMajorVersion found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argMajorVersionId);
 		if (found == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerParentMajVer-args", 0, "found");
 		}

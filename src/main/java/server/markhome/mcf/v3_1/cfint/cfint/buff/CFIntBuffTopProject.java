@@ -180,7 +180,7 @@ public class CFIntBuffTopProject
 
 	@Override
 	public ICFSecTenant getRequiredOwnerTenant() {
-		ICFSecPubSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		ICFSecPubSchema targetBackingCFSec = ICFSecPubSchema.getBackingCFSec();
 		if (targetBackingCFSec == null) {
 			throw new CFLibNullArgumentException(getClass(), "getRequiredOwnerTenant", 0, "ICFSecPubSchema.getBackingCFSec()");
 		}
@@ -282,15 +282,15 @@ public class CFIntBuffTopProject
 
 	@Override
 	public void setRequiredContainerParentSDom(CFLibDbKeyHash256 argTopDomainId) {
-		ICFIntPubSchema targetBackingCFInt = ICFIntPubSchema.getBackingCFInt();
+		ICFIntSchema targetBackingCFInt = ICFIntSchema.getBackingCFInt();
 		if (targetBackingCFInt == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerParentSDom-args", 0, "ICFIntPubSchema.getBackingCFInt()");
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerParentSDom-args", 0, "ICFIntSchema.getBackingCFInt()");
 		}
-		ICFIntPubTopDomainTable targetTable = targetBackingCFInt.getTableTopDomain();
+		ICFIntTopDomainTable targetTable = targetBackingCFInt.getTableTopDomain();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerParentSDom", 0, "ICFIntPubSchema.getBackingCFInt().getTableTopDomain()");
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerParentSDom", 0, "ICFIntSchema.getBackingCFInt().getTableTopDomain()");
 		}
-		ICFIntPubTopDomain found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argTopDomainId);
+		ICFIntTopDomain found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argTopDomainId);
 		if (found == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerParentSDom-args", 0, "found");
 		}
