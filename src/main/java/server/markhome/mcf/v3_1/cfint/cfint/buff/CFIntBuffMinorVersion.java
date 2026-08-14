@@ -164,7 +164,7 @@ public class CFIntBuffMinorVersion
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getRequiredOwnerTenant", 0, "ICFSecPubSchema.getBackingCFSec().getTableTenant()");
 		}
-		ICFSecPubTenant targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredTenantId());
+		ICFSecPubTenant targetRec = targetTable.pubreadDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredTenantId());
 		return(targetRec);
 	}
 
@@ -178,7 +178,7 @@ public class CFIntBuffMinorVersion
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerTenant", 0, "ICFSecPubSchema.getBackingCFSec().getTableTenant()");
 		}
-		ICFSecPubTenant found = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argTenantId);
+		ICFSecPubTenant found = targetTable.pubreadDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argTenantId);
 		if (found == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerTenant-args", 0, "found");
 		}
@@ -210,7 +210,7 @@ public class CFIntBuffMinorVersion
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerParentMajVer", 0, "ICFIntSchema.getBackingCFInt().getTableMajorVersion()");
 		}
-		ICFIntMajorVersion targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredMajorVersionId());
+		ICFIntMajorVersion targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredMajorVersionId());
 		return(targetRec);
 	}
 
@@ -224,7 +224,7 @@ public class CFIntBuffMinorVersion
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerParentMajVer", 0, "ICFIntSchema.getBackingCFInt()");
 		}
-		ICFIntMajorVersion found = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argMajorVersionId);
+		ICFIntMajorVersion found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argMajorVersionId);
 		if (found == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerParentMajVer-args", 0, "found");
 		}
@@ -266,7 +266,7 @@ public class CFIntBuffMinorVersion
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerParentMajVer", 0, "ICFIntPubSchema.getBackingCFInt().getTableMajorVersion()");
 		}
-		ICFIntPubMajorVersion found = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argMajorVersionId);
+		ICFIntPubMajorVersion found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argMajorVersionId);
 		if (found == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerParentMajVer-args", 0, "found");
 		}
