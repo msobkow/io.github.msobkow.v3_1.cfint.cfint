@@ -264,7 +264,7 @@ public class CFIntBuffMinorVersion
 		}
 		ICFIntMajorVersionTable targetTable = targetBackingCFInt.getTableMajorVersion();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerParentMajVer", 0, "ICFIntSchema.getBackingCFInt().getTableMajorVersion()");
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerParentMajVer", 0, "ICFIntSchema.getBackingCFInt()");
 		}
 		ICFIntMajorVersion found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argMajorVersionId);
 		if (found == null) {

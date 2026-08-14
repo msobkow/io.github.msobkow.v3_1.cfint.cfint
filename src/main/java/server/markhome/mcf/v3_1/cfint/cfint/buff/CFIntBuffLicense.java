@@ -222,7 +222,7 @@ public class CFIntBuffLicense
 		}
 		ICFIntTopDomainTable targetTable = targetBackingCFInt.getTableTopDomain();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerTopDomain", 0, "ICFIntSchema.getBackingCFInt().getTableTopDomain()");
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerTopDomain", 0, "ICFIntSchema.getBackingCFInt()");
 		}
 		ICFIntTopDomain found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argTopDomainId);
 		if (found == null) {

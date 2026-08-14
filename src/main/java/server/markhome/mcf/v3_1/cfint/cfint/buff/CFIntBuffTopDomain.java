@@ -312,7 +312,7 @@ public class CFIntBuffTopDomain
 		}
 		ICFIntTldTable targetTable = targetBackingCFInt.getTableTld();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerParentTld", 0, "ICFIntSchema.getBackingCFInt().getTableTld()");
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerParentTld", 0, "ICFIntSchema.getBackingCFInt()");
 		}
 		ICFIntTld found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argTldId);
 		if (found == null) {

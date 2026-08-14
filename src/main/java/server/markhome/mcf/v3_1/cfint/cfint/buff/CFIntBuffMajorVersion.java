@@ -288,7 +288,7 @@ public class CFIntBuffMajorVersion
 		}
 		ICFIntSubProjectTable targetTable = targetBackingCFInt.getTableSubProject();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerParentSPrj", 0, "ICFIntSchema.getBackingCFInt().getTableSubProject()");
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerParentSPrj", 0, "ICFIntSchema.getBackingCFInt()");
 		}
 		ICFIntSubProject found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argSubProjectId);
 		if (found == null) {
