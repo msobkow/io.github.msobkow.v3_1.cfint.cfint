@@ -169,28 +169,6 @@ public class CFIntBuffMinorVersion
 	}
 
 	@Override
-	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId) {
-		ICFSecPubSchema targetBackingCFSec = ICFSecPubSchema.getBackingCFSec();
-		if (targetBackingCFSec == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerTenant-args", 0, "ICFSecPubSchema.getBackingCFSec()");
-		}
-		ICFSecPubTenantTable targetTable = targetBackingCFSec.getTableTenant();
-		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerTenant", 0, "ICFSecPubSchema.getBackingCFSec().getTableTenant()");
-		}
-		ICFSecPubTenant found = targetTable.pubreadDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argTenantId);
-		if (found == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerTenant-args", 0, "found");
-		}
-		else if (found instanceof ICFSecPubTenant) {
-		setRequiredTenantId(argTenantId);
-		}
-		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setRequiredOwnerTenant-args", "found", found, "ICFSecPubTenant");
-		}
-	}
-
-	@Override
 	public void setRequiredOwnerTenant(ICFSecPubTenant argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setOwnerTenant", 1, "argObj");
@@ -212,80 +190,6 @@ public class CFIntBuffMinorVersion
 		}
 		ICFIntMajorVersion targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredMajorVersionId());
 		return(targetRec);
-	}
-
-	@Override
-	public void setRequiredContainerParentMajVer(CFLibDbKeyHash256 argMajorVersionId) {
-		ICFIntSchema targetBackingCFInt = ICFIntSchema.getBackingCFInt();
-		if (targetBackingCFInt == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerParentMajVer-args", 0, "ICFIntSchema.getBackingCFInt()");
-		}
-		ICFIntMajorVersionTable targetTable = targetBackingCFInt.getTableMajorVersion();
-		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerParentMajVer", 0, "ICFIntSchema.getBackingCFInt()");
-		}
-		ICFIntMajorVersion found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argMajorVersionId);
-		if (found == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerParentMajVer-args", 0, "found");
-		}
-		else if ((found instanceof ICFIntMajorVersion) || (found instanceof ICFIntProtMajorVersion) || (found instanceof ICFIntPubMajorVersion)) {
-		setRequiredMajorVersionId(argMajorVersionId);
-		}
-		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerParentMajVer-args", "found", found, "ICFIntMajorVersionICFIntProtMajorVersionICFIntPubMajorVersion");
-		}
-	}
-
-	@Override
-	public void setRequiredContainerParentMajVer(ICFIntMajorVersion argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerParentMajVer", 1, "argObj");
-		}
-		else {
-			setRequiredMajorVersionId(argObj.getRequiredId());
-		}
-	}
-
-	@Override
-	public void setRequiredContainerParentMajVer(ICFIntProtMajorVersion argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerParentMajVer", 1, "argObj");
-		}
-		else {
-			setRequiredMajorVersionId(argObj.getRequiredId());
-		}
-	}
-
-	@Override
-	public void setRequiredContainerParentMajVer(CFLibDbKeyHash256 argMajorVersionId) {
-		ICFIntSchema targetBackingCFInt = ICFIntSchema.getBackingCFInt();
-		if (targetBackingCFInt == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerParentMajVer-args", 0, "ICFIntSchema.getBackingCFInt()");
-		}
-		ICFIntMajorVersionTable targetTable = targetBackingCFInt.getTableMajorVersion();
-		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerParentMajVer", 0, "ICFIntSchema.getBackingCFInt()");
-		}
-		ICFIntMajorVersion found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argMajorVersionId);
-		if (found == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerParentMajVer-args", 0, "found");
-		}
-		else if ((found instanceof ICFIntMajorVersion) || (found instanceof ICFIntProtMajorVersion) || (found instanceof ICFIntPubMajorVersion)) {
-		setRequiredMajorVersionId(argMajorVersionId);
-		}
-		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerParentMajVer-args", "found", found, "ICFIntMajorVersionICFIntProtMajorVersionICFIntPubMajorVersion");
-		}
-	}
-
-	@Override
-	public void setRequiredContainerParentMajVer(ICFIntPubMajorVersion argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerParentMajVer", 1, "argObj");
-		}
-		else {
-			setRequiredMajorVersionId(argObj.getRequiredId());
-		}
 	}
 
 	@Override

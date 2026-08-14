@@ -191,28 +191,6 @@ public class CFIntBuffTld
 	}
 
 	@Override
-	public void setRequiredContainerTenant(CFLibDbKeyHash256 argTenantId) {
-		ICFSecPubSchema targetBackingCFSec = ICFSecPubSchema.getBackingCFSec();
-		if (targetBackingCFSec == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerTenant-args", 0, "ICFSecPubSchema.getBackingCFSec()");
-		}
-		ICFSecPubTenantTable targetTable = targetBackingCFSec.getTableTenant();
-		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerTenant", 0, "ICFSecPubSchema.getBackingCFSec().getTableTenant()");
-		}
-		ICFSecPubTenant found = targetTable.pubreadDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argTenantId);
-		if (found == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerTenant-args", 0, "found");
-		}
-		else if (found instanceof ICFSecPubTenant) {
-		setRequiredTenantId(argTenantId);
-		}
-		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerTenant-args", "found", found, "ICFSecPubTenant");
-		}
-	}
-
-	@Override
 	public void setRequiredContainerTenant(ICFSecPubTenant argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setContainerTenant", 1, "argObj");
