@@ -196,11 +196,11 @@ public class CFIntBuffTldH
     }
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
+	public ICFLibKeyHash256 getRequiredId() {
 		return(getPKey().getRequiredId());
 	}
 
-	public void setRequiredId( CFLibDbKeyHash256 value ) {
+	public void setRequiredId( ICFLibKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredId",
@@ -211,11 +211,11 @@ public class CFIntBuffTldH
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredTenantId() {
+	public ICFLibKeyHash256 getRequiredTenantId() {
 		return(requiredTenantId);
 	}
 
-	public void setRequiredTenantId( CFLibDbKeyHash256 value ) {
+	public void setRequiredTenantId( ICFLibKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredTenantId",

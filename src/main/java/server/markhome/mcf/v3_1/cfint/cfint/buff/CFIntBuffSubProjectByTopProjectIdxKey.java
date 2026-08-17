@@ -58,11 +58,11 @@ public class CFIntBuffSubProjectByTopProjectIdxKey
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredTopProjectId() {
+	public ICFLibKeyHash256 getRequiredTopProjectId() {
 		return(requiredTopProjectId);
 	}
 
-	public void setRequiredTopProjectId( CFLibDbKeyHash256 value ) {
+	public void setRequiredTopProjectId( ICFLibKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredTopProjectId",

@@ -198,11 +198,11 @@ public class CFIntBuffMajorVersionH
     }
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
+	public ICFLibKeyHash256 getRequiredId() {
 		return(getPKey().getRequiredId());
 	}
 
-	public void setRequiredId( CFLibDbKeyHash256 value ) {
+	public void setRequiredId( ICFLibKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredId",
@@ -213,11 +213,11 @@ public class CFIntBuffMajorVersionH
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredTenantId() {
+	public ICFLibKeyHash256 getRequiredTenantId() {
 		return(requiredTenantId);
 	}
 
-	public void setRequiredTenantId( CFLibDbKeyHash256 value ) {
+	public void setRequiredTenantId( ICFLibKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredTenantId",
@@ -228,11 +228,11 @@ public class CFIntBuffMajorVersionH
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredSubProjectId() {
+	public ICFLibKeyHash256 getRequiredSubProjectId() {
 		return(requiredSubProjectId);
 	}
 
-	public void setRequiredSubProjectId( CFLibDbKeyHash256 value ) {
+	public void setRequiredSubProjectId( ICFLibKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredSubProjectId",

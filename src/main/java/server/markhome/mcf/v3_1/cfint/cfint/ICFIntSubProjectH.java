@@ -74,10 +74,10 @@ public interface ICFIntSubProjectH
 	public ICFLibKeyHash256 getRequiredId();
 	public void setRequiredId( ICFLibKeyHash256 requiredId );
 
-	public CFLibDbKeyHash256 getRequiredTenantId();
-	public void setRequiredTenantId( CFLibDbKeyHash256 value );
-	public CFLibDbKeyHash256 getRequiredTopProjectId();
-	public void setRequiredTopProjectId( CFLibDbKeyHash256 value );
+	public ICFLibKeyHash256 getRequiredTenantId();
+	public void setRequiredTenantId( ICFLibKeyHash256 value );
+	public ICFLibKeyHash256 getRequiredTopProjectId();
+	public void setRequiredTopProjectId( ICFLibKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public String getOptionalDescription();

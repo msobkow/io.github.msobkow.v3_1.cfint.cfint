@@ -47,8 +47,8 @@ import server.markhome.mcf.v3_1.cfint.cfintprotobj.*;
  */
 public interface ICFIntTopDomainByNameIdxKey
 {
-	public CFLibDbKeyHash256 getRequiredTldId();
-	public void setRequiredTldId( CFLibDbKeyHash256 value );
+	public ICFLibKeyHash256 getRequiredTldId();
+	public void setRequiredTldId( ICFLibKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	@Override

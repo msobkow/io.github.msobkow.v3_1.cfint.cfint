@@ -58,11 +58,11 @@ public class CFIntBuffTopProjectByTopDomainIdxKey
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredTopDomainId() {
+	public ICFLibKeyHash256 getRequiredTopDomainId() {
 		return(requiredTopDomainId);
 	}
 
-	public void setRequiredTopDomainId( CFLibDbKeyHash256 value ) {
+	public void setRequiredTopDomainId( ICFLibKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredTopDomainId",

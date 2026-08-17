@@ -47,8 +47,8 @@ import server.markhome.mcf.v3_1.cfint.cfintprotobj.*;
  */
 public interface ICFIntSubProjectByNameIdxKey
 {
-	public CFLibDbKeyHash256 getRequiredTopProjectId();
-	public void setRequiredTopProjectId( CFLibDbKeyHash256 value );
+	public ICFLibKeyHash256 getRequiredTopProjectId();
+	public void setRequiredTopProjectId( ICFLibKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	@Override
