@@ -361,7 +361,7 @@ public class CFIntSecTentRoleObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredSecTentRoleId() {
+	public ICFLibKeyHash256 getRequiredSecTentRoleId() {
 		return( getPKey() );
 	}
 
@@ -414,12 +414,12 @@ public class CFIntSecTentRoleObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredTenantId() {
+	public ICFLibKeyHash256 getRequiredTenantId() {
 		return( getSecTentRoleRec().getRequiredTenantId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredName() {
+	public String getRequiredName() {
 		return( getSecTentRoleRec().getRequiredName() );
 	}
 

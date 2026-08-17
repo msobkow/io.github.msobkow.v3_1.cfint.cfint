@@ -51,7 +51,7 @@ import server.markhome.mcf.v3_1.cfint.cfintobj.*;
 public class CFIntBuffMajorVersionBySubProjectIdxKey
 	implements ICFIntMajorVersionBySubProjectIdxKey, Comparable<Object>, Serializable
 {
-	protected $implJavaAtomType$ requiredSubProjectId;
+	protected ICFLibKeyHash256 requiredSubProjectId;
 	public CFIntBuffMajorVersionBySubProjectIdxKey() {
 		requiredSubProjectId = CFLibDbKeyHash256.fromHex( ICFIntPubMajorVersion.SUBPROJECTID_INIT_VALUE.toString() );
 	}

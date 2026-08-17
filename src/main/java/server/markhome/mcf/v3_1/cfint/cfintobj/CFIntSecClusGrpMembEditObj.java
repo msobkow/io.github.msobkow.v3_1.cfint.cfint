@@ -393,12 +393,12 @@ public class CFIntSecClusGrpMembEditObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredSecClusGrpId() {
+	public ICFLibKeyHash256 getRequiredSecClusGrpId() {
 		return( getPKey().getRequiredSecClusGrpId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredLoginId() {
+	public String getRequiredLoginId() {
 		return( getPKey().getRequiredLoginId() );
 	}
 

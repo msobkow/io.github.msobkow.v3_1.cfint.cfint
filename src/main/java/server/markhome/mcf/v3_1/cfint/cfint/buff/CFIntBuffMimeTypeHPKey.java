@@ -56,7 +56,7 @@ public class CFIntBuffMimeTypeHPKey
 	protected int requiredRevision;
 	protected CFLibDbKeyHash256 auditSessionId;
 
-	protected $implJavaAtomType$ requiredMimeTypeId;
+	protected int requiredMimeTypeId;
 
 	public CFIntBuffMimeTypeHPKey() {
 		auditClusterId = ICFSecPubCluster.ID_INIT_VALUE;

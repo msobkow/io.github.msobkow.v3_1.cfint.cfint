@@ -51,7 +51,7 @@ import server.markhome.mcf.v3_1.cfint.cfintobj.*;
 public class CFIntBuffTldByNameIdxKey
 	implements ICFIntTldByNameIdxKey, Comparable<Object>, Serializable
 {
-	protected $implJavaAtomType$ requiredName;
+	protected String requiredName;
 	public CFIntBuffTldByNameIdxKey() {
 		requiredName = ICFIntPubTld.NAME_INIT_VALUE;
 	}

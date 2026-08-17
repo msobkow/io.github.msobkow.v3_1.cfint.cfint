@@ -156,7 +156,7 @@ public class CFIntTopDomainObj
 				if (nextName == null) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 				}
-				$implJavaAtomType$ natNextName = nextName;
+				String natNextName = nextName;
 				subObj = ((ICFIntSchemaObj)getSchema()).getTopProjectTableObj().readTopProjectByNameIdx( getRequiredId(),
 				natNextName, false );
 			}
@@ -169,7 +169,7 @@ public class CFIntTopDomainObj
 				if (nextName == null) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 				}
-				$implJavaAtomType$ natNextName = nextName;
+				String natNextName = nextName;
 				subObj = ((ICFIntSchemaObj)getSchema()).getLicenseTableObj().readLicenseByUNameIdx( getRequiredId(),
 				natNextName, false );
 			}
@@ -394,7 +394,7 @@ public class CFIntTopDomainObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredId() {
+	public ICFLibKeyHash256 getRequiredId() {
 		return( getPKey() );
 	}
 
@@ -463,22 +463,22 @@ public class CFIntTopDomainObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredTenantId() {
+	public ICFLibKeyHash256 getRequiredTenantId() {
 		return( getTopDomainRec().getRequiredTenantId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredTldId() {
+	public ICFLibKeyHash256 getRequiredTldId() {
 		return( getTopDomainRec().getRequiredTldId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredName() {
+	public String getRequiredName() {
 		return( getTopDomainRec().getRequiredName() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalDescription() {
+	public String getOptionalDescription() {
 		return( getTopDomainRec().getOptionalDescription() );
 	}
 

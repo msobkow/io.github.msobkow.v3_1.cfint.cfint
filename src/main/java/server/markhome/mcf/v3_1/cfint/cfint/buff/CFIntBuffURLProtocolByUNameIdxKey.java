@@ -51,7 +51,7 @@ import server.markhome.mcf.v3_1.cfint.cfintobj.*;
 public class CFIntBuffURLProtocolByUNameIdxKey
 	implements ICFIntURLProtocolByUNameIdxKey, Comparable<Object>, Serializable
 {
-	protected $implJavaAtomType$ requiredName;
+	protected String requiredName;
 	public CFIntBuffURLProtocolByUNameIdxKey() {
 		requiredName = ICFIntPubURLProtocol.NAME_INIT_VALUE;
 	}

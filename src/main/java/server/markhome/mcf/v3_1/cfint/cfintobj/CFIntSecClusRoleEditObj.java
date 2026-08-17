@@ -394,12 +394,12 @@ public class CFIntSecClusRoleEditObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredSecClusRoleId() {
+	public ICFLibKeyHash256 getRequiredSecClusRoleId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredSecClusRoleId($implJavaAtomType$ value) {
+	public void setRequiredSecClusRoleId(ICFLibKeyHash256 value) {
 		if (getPKey() != value) {
 			setPKey(value);
 			requiredOwnerCluster = null;
@@ -409,12 +409,12 @@ public class CFIntSecClusRoleEditObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredClusterId() {
+	public ICFLibKeyHash256 getRequiredClusterId() {
 		return( getSecClusRoleRec().getRequiredClusterId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredName() {
+	public String getRequiredName() {
 		return( getSecClusRoleRec().getRequiredName() );
 	}
 

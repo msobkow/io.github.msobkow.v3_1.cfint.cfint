@@ -51,7 +51,7 @@ import server.markhome.mcf.v3_1.cfint.cfintobj.*;
 public class CFIntBuffMimeType
 	implements ICFIntMimeType, Comparable<Object>, Serializable
 {
-	protected $implJavaAtomType$ requiredMimeTypeId;
+	protected int requiredMimeTypeId;
 	protected int requiredRevision;
 	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFIntPubSecUser.S_INIT_CREATED_BY);
 	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFIntPubSecSession.S_SECSESSIONID_INIT_VALUE);
@@ -59,8 +59,8 @@ public class CFIntBuffMimeType
 	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFIntPubSecUser.S_INIT_UPDATED_BY);
 	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFIntPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
-	protected $implJavaAtomType$ requiredName;
-	protected $implJavaAtomType$ optionalFileTypes;
+	protected String requiredName;
+	protected String optionalFileTypes;
 
 	public CFIntBuffMimeType() {
 		requiredMimeTypeId = ICFIntPubMimeType.MIMETYPEID_INIT_VALUE;
@@ -69,12 +69,12 @@ public class CFIntBuffMimeType
 	}
 
 	@Override
-	public $implJavaOptAtomType$ getPKey() {
+	public Integer getPKey() {
 		return (requiredMimeTypeId);
 	}
 
 	@Override
-	public void setPKey($implJavaOptAtomType$ requiredMimeTypeId) {
+	public void setPKey(Integer requiredMimeTypeId) {
 		if(requiredMimeTypeId != null) {
 			this.requiredMimeTypeId = requiredMimeTypeId;
 		}

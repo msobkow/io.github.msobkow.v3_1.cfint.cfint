@@ -198,7 +198,7 @@ public class CFIntTenantEditObj
 				if (nextName == null) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 				}
-				$implJavaAtomType$ natNextName = nextName;
+				String natNextName = nextName;
 				subObj = ((ICFIntSchemaObj)getSchema()).getSecTentGrpTableObj().readSecTentGrpByUNameIdx( getRequiredId(),
 				natNextName, false );
 			}
@@ -211,7 +211,7 @@ public class CFIntTenantEditObj
 				if (nextName == null) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 				}
-				$implJavaAtomType$ natNextName = nextName;
+				String natNextName = nextName;
 				subObj = ((ICFIntSchemaObj)getSchema()).getSecTentRoleTableObj().readSecTentRoleByUNameIdx( getRequiredId(),
 				natNextName, false );
 			}
@@ -224,7 +224,7 @@ public class CFIntTenantEditObj
 				if (nextName == null) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 				}
-				$implJavaAtomType$ natNextName = nextName;
+				String natNextName = nextName;
 				subObj = ((ICFIntSchemaObj)getSchema()).getTldTableObj().readTldByNameIdx( natNextName, false );
 			}
 			catch (Throwable th) {
@@ -431,12 +431,12 @@ public class CFIntTenantEditObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredId() {
+	public ICFLibKeyHash256 getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredId($implJavaAtomType$ value) {
+	public void setRequiredId(ICFLibKeyHash256 value) {
 		if (getPKey() != value) {
 			setPKey(value);
 			requiredContainerCluster = null;
@@ -447,17 +447,17 @@ public class CFIntTenantEditObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredClusterId() {
+	public ICFLibKeyHash256 getRequiredClusterId() {
 		return( getTenantRec().getRequiredClusterId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredTenantName() {
+	public String getRequiredTenantName() {
 		return( getTenantRec().getRequiredTenantName() );
 	}
 
 	@Override
-	public void setRequiredTenantName( $implJavaAtomType$ value ) {
+	public void setRequiredTenantName( String value ) {
 		if( getTenantRec().getRequiredTenantName() != value ) {
 			getTenantRec().setRequiredTenantName( value );
 		}

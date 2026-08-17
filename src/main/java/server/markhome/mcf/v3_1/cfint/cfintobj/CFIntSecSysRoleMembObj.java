@@ -366,12 +366,12 @@ public class CFIntSecSysRoleMembObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredSecSysRoleId() {
+	public ICFLibKeyHash256 getRequiredSecSysRoleId() {
 		return( getPKey().getRequiredSecSysRoleId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredLoginId() {
+	public String getRequiredLoginId() {
 		return( getPKey().getRequiredLoginId() );
 	}
 

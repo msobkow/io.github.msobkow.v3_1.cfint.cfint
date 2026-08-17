@@ -352,7 +352,7 @@ public class CFIntISOLangObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredISOLangId() {
+	public short getRequiredISOLangId() {
 		return( getPKey() );
 	}
 
@@ -373,17 +373,17 @@ public class CFIntISOLangObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredISO6392Code() {
+	public String getRequiredISO6392Code() {
 		return( getISOLangRec().getRequiredISO6392Code() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalISO6391Code() {
+	public String getOptionalISO6391Code() {
 		return( getISOLangRec().getOptionalISO6391Code() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredEnglishName() {
+	public String getRequiredEnglishName() {
 		return( getISOLangRec().getRequiredEnglishName() );
 	}
 

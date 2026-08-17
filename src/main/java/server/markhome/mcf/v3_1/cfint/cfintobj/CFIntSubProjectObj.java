@@ -155,7 +155,7 @@ public class CFIntSubProjectObj
 				if (nextName == null) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 				}
-				$implJavaAtomType$ natNextName = nextName;
+				String natNextName = nextName;
 				subObj = ((ICFIntSchemaObj)getSchema()).getMajorVersionTableObj().readMajorVersionByNameIdx( getRequiredId(),
 				natNextName, false );
 			}
@@ -380,7 +380,7 @@ public class CFIntSubProjectObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredId() {
+	public ICFLibKeyHash256 getRequiredId() {
 		return( getPKey() );
 	}
 
@@ -433,22 +433,22 @@ public class CFIntSubProjectObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredTenantId() {
+	public ICFLibKeyHash256 getRequiredTenantId() {
 		return( getSubProjectRec().getRequiredTenantId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredTopProjectId() {
+	public ICFLibKeyHash256 getRequiredTopProjectId() {
 		return( getSubProjectRec().getRequiredTopProjectId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredName() {
+	public String getRequiredName() {
 		return( getSubProjectRec().getRequiredName() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalDescription() {
+	public String getOptionalDescription() {
 		return( getSubProjectRec().getOptionalDescription() );
 	}
 

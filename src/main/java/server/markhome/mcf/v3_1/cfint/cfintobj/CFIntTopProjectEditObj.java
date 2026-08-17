@@ -201,7 +201,7 @@ public class CFIntTopProjectEditObj
 				if (nextName == null) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 				}
-				$implJavaAtomType$ natNextName = nextName;
+				String natNextName = nextName;
 				subObj = ((ICFIntSchemaObj)getSchema()).getSubProjectTableObj().readSubProjectByNameIdx( getRequiredId(),
 				natNextName, false );
 			}
@@ -413,12 +413,12 @@ public class CFIntTopProjectEditObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredId() {
+	public ICFLibKeyHash256 getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredId($implJavaAtomType$ value) {
+	public void setRequiredId(ICFLibKeyHash256 value) {
 		if (getPKey() != value) {
 			setPKey(value);
 			requiredOwnerTenant = null;
@@ -428,34 +428,34 @@ public class CFIntTopProjectEditObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredTenantId() {
+	public ICFLibKeyHash256 getRequiredTenantId() {
 		return( getTopProjectRec().getRequiredTenantId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredTopDomainId() {
+	public ICFLibKeyHash256 getRequiredTopDomainId() {
 		return( getTopProjectRec().getRequiredTopDomainId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredName() {
+	public String getRequiredName() {
 		return( getTopProjectRec().getRequiredName() );
 	}
 
 	@Override
-	public void setRequiredName( $implJavaAtomType$ value ) {
+	public void setRequiredName( String value ) {
 		if( getTopProjectRec().getRequiredName() != value ) {
 			getTopProjectRec().setRequiredName( value );
 		}
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalDescription() {
+	public String getOptionalDescription() {
 		return( getTopProjectRec().getOptionalDescription() );
 	}
 
 	@Override
-	public void setOptionalDescription( $implJavaAtomType$ value ) {
+	public void setOptionalDescription( String value ) {
 		if( getTopProjectRec().getOptionalDescription() != value ) {
 			getTopProjectRec().setOptionalDescription( value );
 		}

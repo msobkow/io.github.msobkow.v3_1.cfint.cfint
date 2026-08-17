@@ -354,22 +354,22 @@ public class CFIntURLProtocolObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredURLProtocolId() {
+	public int getRequiredURLProtocolId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredName() {
+	public String getRequiredName() {
 		return( getURLProtocolRec().getRequiredName() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredDescription() {
+	public String getRequiredDescription() {
 		return( getURLProtocolRec().getRequiredDescription() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredIsSecure() {
+	public boolean getRequiredIsSecure() {
 		return( getURLProtocolRec().getRequiredIsSecure() );
 	}
 

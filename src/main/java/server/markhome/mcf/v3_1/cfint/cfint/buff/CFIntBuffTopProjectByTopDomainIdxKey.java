@@ -51,7 +51,7 @@ import server.markhome.mcf.v3_1.cfint.cfintobj.*;
 public class CFIntBuffTopProjectByTopDomainIdxKey
 	implements ICFIntTopProjectByTopDomainIdxKey, Comparable<Object>, Serializable
 {
-	protected $implJavaAtomType$ requiredTopDomainId;
+	protected ICFLibKeyHash256 requiredTopDomainId;
 	public CFIntBuffTopProjectByTopDomainIdxKey() {
 		requiredTopDomainId = CFLibDbKeyHash256.fromHex( ICFIntPubTopProject.TOPDOMAINID_INIT_VALUE.toString() );
 	}

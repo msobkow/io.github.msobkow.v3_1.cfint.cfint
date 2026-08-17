@@ -335,19 +335,19 @@ public class CFIntSysClusterEditObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredSingletonId() {
+	public int getRequiredSingletonId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredSingletonId($implJavaAtomType$ value) {
+	public void setRequiredSingletonId(int value) {
 		if (getPKey() != value) {
 			setPKey(value);
 		}
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredClusterId() {
+	public ICFLibKeyHash256 getRequiredClusterId() {
 		return( getSysClusterRec().getRequiredClusterId() );
 	}
 

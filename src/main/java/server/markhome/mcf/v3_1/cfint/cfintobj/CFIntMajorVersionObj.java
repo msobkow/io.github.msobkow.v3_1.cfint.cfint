@@ -155,7 +155,7 @@ public class CFIntMajorVersionObj
 				if (nextName == null) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 				}
-				$implJavaAtomType$ natNextName = nextName;
+				String natNextName = nextName;
 				subObj = ((ICFIntSchemaObj)getSchema()).getMinorVersionTableObj().readMinorVersionByNameIdx( getRequiredId(),
 				natNextName, false );
 			}
@@ -380,7 +380,7 @@ public class CFIntMajorVersionObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredId() {
+	public ICFLibKeyHash256 getRequiredId() {
 		return( getPKey() );
 	}
 
@@ -433,22 +433,22 @@ public class CFIntMajorVersionObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredTenantId() {
+	public ICFLibKeyHash256 getRequiredTenantId() {
 		return( getMajorVersionRec().getRequiredTenantId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredSubProjectId() {
+	public ICFLibKeyHash256 getRequiredSubProjectId() {
 		return( getMajorVersionRec().getRequiredSubProjectId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredName() {
+	public String getRequiredName() {
 		return( getMajorVersionRec().getRequiredName() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalDescription() {
+	public String getOptionalDescription() {
 		return( getMajorVersionRec().getOptionalDescription() );
 	}
 

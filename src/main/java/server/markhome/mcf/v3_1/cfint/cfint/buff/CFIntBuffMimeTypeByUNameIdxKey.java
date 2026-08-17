@@ -51,7 +51,7 @@ import server.markhome.mcf.v3_1.cfint.cfintobj.*;
 public class CFIntBuffMimeTypeByUNameIdxKey
 	implements ICFIntMimeTypeByUNameIdxKey, Comparable<Object>, Serializable
 {
-	protected $implJavaAtomType$ requiredName;
+	protected String requiredName;
 	public CFIntBuffMimeTypeByUNameIdxKey() {
 		requiredName = ICFIntPubMimeType.NAME_INIT_VALUE;
 	}

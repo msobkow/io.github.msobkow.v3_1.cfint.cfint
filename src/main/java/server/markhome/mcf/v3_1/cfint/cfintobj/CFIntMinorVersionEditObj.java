@@ -399,46 +399,46 @@ public class CFIntMinorVersionEditObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredId() {
+	public ICFLibKeyHash256 getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredId($implJavaAtomType$ value) {
+	public void setRequiredId(ICFLibKeyHash256 value) {
 		if (getPKey() != value) {
 			setPKey(value);
 		}
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredTenantId() {
+	public ICFLibKeyHash256 getRequiredTenantId() {
 		return( getMinorVersionRec().getRequiredTenantId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredMajorVersionId() {
+	public ICFLibKeyHash256 getRequiredMajorVersionId() {
 		return( getMinorVersionRec().getRequiredMajorVersionId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredName() {
+	public String getRequiredName() {
 		return( getMinorVersionRec().getRequiredName() );
 	}
 
 	@Override
-	public void setRequiredName( $implJavaAtomType$ value ) {
+	public void setRequiredName( String value ) {
 		if( getMinorVersionRec().getRequiredName() != value ) {
 			getMinorVersionRec().setRequiredName( value );
 		}
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalDescription() {
+	public String getOptionalDescription() {
 		return( getMinorVersionRec().getOptionalDescription() );
 	}
 
 	@Override
-	public void setOptionalDescription( $implJavaAtomType$ value ) {
+	public void setOptionalDescription( String value ) {
 		if( getMinorVersionRec().getOptionalDescription() != value ) {
 			getMinorVersionRec().setOptionalDescription( value );
 		}
