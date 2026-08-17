@@ -51,7 +51,7 @@ import server.markhome.mcf.v3_1.cfint.cfintobj.*;
 public class CFIntBuffMajorVersionByTenantIdxKey
 	implements ICFIntMajorVersionByTenantIdxKey, Comparable<Object>, Serializable
 {
-	protected CFLibDbKeyHash256 requiredTenantId;
+	protected $implJavaAtomType$ requiredTenantId;
 	public CFIntBuffMajorVersionByTenantIdxKey() {
 		requiredTenantId = CFLibDbKeyHash256.fromHex( ICFIntPubMajorVersion.TENANTID_INIT_VALUE.toString() );
 	}

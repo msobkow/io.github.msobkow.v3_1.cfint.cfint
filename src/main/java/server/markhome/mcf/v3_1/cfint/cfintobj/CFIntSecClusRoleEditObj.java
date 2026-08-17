@@ -373,12 +373,12 @@ public class CFIntSecClusRoleEditObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getPKey() {
+	public ICFLibKeyHash256 getPKey() {
 		return( orig.getPKey() );
 	}
 
 	@Override
-	public void setPKey( CFLibDbKeyHash256 value ) {
+	public void setPKey( ICFLibKeyHash256 value ) {
 		orig.setPKey( value );
 		copyPKeyToRec();
 	}
@@ -394,12 +394,12 @@ public class CFIntSecClusRoleEditObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredSecClusRoleId() {
+	public $implJavaAtomType$ getRequiredSecClusRoleId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredSecClusRoleId(CFLibDbKeyHash256 value) {
+	public void setRequiredSecClusRoleId($implJavaAtomType$ value) {
 		if (getPKey() != value) {
 			setPKey(value);
 			requiredOwnerCluster = null;
@@ -409,12 +409,12 @@ public class CFIntSecClusRoleEditObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredClusterId() {
+	public $implJavaAtomType$ getRequiredClusterId() {
 		return( getSecClusRoleRec().getRequiredClusterId() );
 	}
 
 	@Override
-	public String getRequiredName() {
+	public $implJavaAtomType$ getRequiredName() {
 		return( getSecClusRoleRec().getRequiredName() );
 	}
 

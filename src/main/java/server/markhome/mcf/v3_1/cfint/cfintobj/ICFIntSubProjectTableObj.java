@@ -100,7 +100,7 @@ public interface ICFIntSubProjectTableObj
 	 *	@return	The SubProject-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFIntSubProjectObj readSubProject( CFLibDbKeyHash256 pkey );
+	ICFIntSubProjectObj readSubProject( ICFLibKeyHash256 pkey );
 
 	/**
 	 *	Read a SubProject-derived instance by it's primary key.
@@ -110,19 +110,19 @@ public interface ICFIntSubProjectTableObj
 	 *	@return	The SubProject-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFIntSubProjectObj readSubProject( CFLibDbKeyHash256 pkey,
+	ICFIntSubProjectObj readSubProject( ICFLibKeyHash256 pkey,
 		boolean forceRead );
 
-	ICFIntSubProjectObj readCachedSubProject( CFLibDbKeyHash256 pkey );
+	ICFIntSubProjectObj readCachedSubProject( ICFLibKeyHash256 pkey );
 
 	public void reallyDeepDisposeSubProject( ICFIntSubProjectObj obj );
 
-	void deepDisposeSubProject( CFLibDbKeyHash256 pkey );
+	void deepDisposeSubProject( ICFLibKeyHash256 pkey );
 
 	/**
 	 *	Internal use only.
 	 */
-	ICFIntSubProjectObj lockSubProject( CFLibDbKeyHash256 pkey );
+	ICFIntSubProjectObj lockSubProject( ICFLibKeyHash256 pkey );
 
 	/**
 	 *	Return a sorted list of all the SubProject-derived instances in the database.
@@ -150,7 +150,7 @@ public interface ICFIntSubProjectTableObj
 	 *	@return	CFIntSubProjectObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFIntSubProjectObj readSubProjectByIdIdx( CFLibDbKeyHash256 Id );
+	ICFIntSubProjectObj readSubProjectByIdIdx( ICFLibKeyHash256 Id );
 
 	/**
 	 *	Get the CFIntSubProjectObj instance for the primary key attributes.
@@ -160,7 +160,7 @@ public interface ICFIntSubProjectTableObj
 	 *	@return	CFIntSubProjectObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFIntSubProjectObj readSubProjectByIdIdx( CFLibDbKeyHash256 Id,
+	ICFIntSubProjectObj readSubProjectByIdIdx( ICFLibKeyHash256 Id,
 		boolean forceRead );
 
 	/**
@@ -171,7 +171,7 @@ public interface ICFIntSubProjectTableObj
 	 *	@return	List of CFIntSubProjectObj cached instances sorted by their primary keys for the duplicate TenantIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFIntSubProjectObj> readSubProjectByTenantIdx( CFLibDbKeyHash256 TenantId );
+	List<ICFIntSubProjectObj> readSubProjectByTenantIdx( ICFLibKeyHash256 TenantId );
 
 	/**
 	 *	Get the map of CFIntSubProjectObj instances sorted by their primary keys for the duplicate TenantIdx key.
@@ -181,7 +181,7 @@ public interface ICFIntSubProjectTableObj
 	 *	@return	List of CFIntSubProjectObj cached instances sorted by their primary keys for the duplicate TenantIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFIntSubProjectObj> readSubProjectByTenantIdx( CFLibDbKeyHash256 TenantId,
+	List<ICFIntSubProjectObj> readSubProjectByTenantIdx( ICFLibKeyHash256 TenantId,
 		boolean forceRead );
 
 	/**
@@ -192,7 +192,7 @@ public interface ICFIntSubProjectTableObj
 	 *	@return	List of CFIntSubProjectObj cached instances sorted by their primary keys for the duplicate TopProjectIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFIntSubProjectObj> readSubProjectByTopProjectIdx( CFLibDbKeyHash256 TopProjectId );
+	List<ICFIntSubProjectObj> readSubProjectByTopProjectIdx( ICFLibKeyHash256 TopProjectId );
 
 	/**
 	 *	Get the map of CFIntSubProjectObj instances sorted by their primary keys for the duplicate TopProjectIdx key.
@@ -202,7 +202,7 @@ public interface ICFIntSubProjectTableObj
 	 *	@return	List of CFIntSubProjectObj cached instances sorted by their primary keys for the duplicate TopProjectIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFIntSubProjectObj> readSubProjectByTopProjectIdx( CFLibDbKeyHash256 TopProjectId,
+	List<ICFIntSubProjectObj> readSubProjectByTopProjectIdx( ICFLibKeyHash256 TopProjectId,
 		boolean forceRead );
 
 	/**
@@ -215,7 +215,7 @@ public interface ICFIntSubProjectTableObj
 	 *	@return	CFIntSubProjectObj cached instance for the unique NameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFIntSubProjectObj readSubProjectByNameIdx(CFLibDbKeyHash256 TopProjectId,
+	ICFIntSubProjectObj readSubProjectByNameIdx(ICFLibKeyHash256 TopProjectId,
 		String Name );
 
 	/**
@@ -228,26 +228,26 @@ public interface ICFIntSubProjectTableObj
 	 *	@return	CFIntSubProjectObj refreshed instance for the unique NameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFIntSubProjectObj readSubProjectByNameIdx(CFLibDbKeyHash256 TopProjectId,
+	ICFIntSubProjectObj readSubProjectByNameIdx(ICFLibKeyHash256 TopProjectId,
 		String Name,
 		boolean forceRead );
 
-	ICFIntSubProjectObj readCachedSubProjectByIdIdx( CFLibDbKeyHash256 Id );
+	ICFIntSubProjectObj readCachedSubProjectByIdIdx( ICFLibKeyHash256 Id );
 
-	List<ICFIntSubProjectObj> readCachedSubProjectByTenantIdx( CFLibDbKeyHash256 TenantId );
+	List<ICFIntSubProjectObj> readCachedSubProjectByTenantIdx( ICFLibKeyHash256 TenantId );
 
-	List<ICFIntSubProjectObj> readCachedSubProjectByTopProjectIdx( CFLibDbKeyHash256 TopProjectId );
+	List<ICFIntSubProjectObj> readCachedSubProjectByTopProjectIdx( ICFLibKeyHash256 TopProjectId );
 
-	ICFIntSubProjectObj readCachedSubProjectByNameIdx( CFLibDbKeyHash256 TopProjectId,
+	ICFIntSubProjectObj readCachedSubProjectByNameIdx( ICFLibKeyHash256 TopProjectId,
 		String Name );
 
-	void deepDisposeSubProjectByIdIdx( CFLibDbKeyHash256 Id );
+	void deepDisposeSubProjectByIdIdx( ICFLibKeyHash256 Id );
 
-	void deepDisposeSubProjectByTenantIdx( CFLibDbKeyHash256 TenantId );
+	void deepDisposeSubProjectByTenantIdx( ICFLibKeyHash256 TenantId );
 
-	void deepDisposeSubProjectByTopProjectIdx( CFLibDbKeyHash256 TopProjectId );
+	void deepDisposeSubProjectByTopProjectIdx( ICFLibKeyHash256 TopProjectId );
 
-	void deepDisposeSubProjectByNameIdx( CFLibDbKeyHash256 TopProjectId,
+	void deepDisposeSubProjectByNameIdx( ICFLibKeyHash256 TopProjectId,
 		String Name );
 
 	/**
@@ -265,21 +265,21 @@ public interface ICFIntSubProjectTableObj
 	 *
 	 *	@param	Id	The SubProject key attribute of the instance generating the id.
 	 */
-	void deleteSubProjectByIdIdx( CFLibDbKeyHash256 Id );
+	void deleteSubProjectByIdIdx( ICFLibKeyHash256 Id );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	TenantId	The SubProject key attribute of the instance generating the id.
 	 */
-	void deleteSubProjectByTenantIdx( CFLibDbKeyHash256 TenantId );
+	void deleteSubProjectByTenantIdx( ICFLibKeyHash256 TenantId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	TopProjectId	The SubProject key attribute of the instance generating the id.
 	 */
-	void deleteSubProjectByTopProjectIdx( CFLibDbKeyHash256 TopProjectId );
+	void deleteSubProjectByTopProjectIdx( ICFLibKeyHash256 TopProjectId );
 
 	/**
 	 *	Internal use only.
@@ -288,6 +288,6 @@ public interface ICFIntSubProjectTableObj
 	 *
 	 *	@param	Name	The SubProject key attribute of the instance generating the id.
 	 */
-	void deleteSubProjectByNameIdx(CFLibDbKeyHash256 TopProjectId,
+	void deleteSubProjectByNameIdx(ICFLibKeyHash256 TopProjectId,
 		String Name );
 }

@@ -185,11 +185,11 @@ public interface ICFIntSecUserPasswordObj
 	ICFSecSecUserObj getRequiredContainerUser( boolean forceRead );
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute SecUserId.
+	 *	Get the required ICFLibKeyHash256 attribute SecUserId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute SecUserId.
+	 *	@return	The required ICFLibKeyHash256 attribute SecUserId.
 	 */
-	CFLibDbKeyHash256 getRequiredSecUserId();
+	ICFLibKeyHash256 getRequiredSecUserId();
 
 	/**
 	 *	Get the required LocalDateTime attribute PWSetStamp.

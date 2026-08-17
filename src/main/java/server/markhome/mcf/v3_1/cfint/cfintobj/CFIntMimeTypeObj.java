@@ -354,17 +354,17 @@ public class CFIntMimeTypeObj
 	}
 
 	@Override
-	public int getRequiredMimeTypeId() {
+	public $implJavaAtomType$ getRequiredMimeTypeId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public String getRequiredName() {
+	public $implJavaAtomType$ getRequiredName() {
 		return( getMimeTypeRec().getRequiredName() );
 	}
 
 	@Override
-	public String getOptionalFileTypes() {
+	public $implJavaAtomType$ getOptionalFileTypes() {
 		return( getMimeTypeRec().getOptionalFileTypes() );
 	}
 

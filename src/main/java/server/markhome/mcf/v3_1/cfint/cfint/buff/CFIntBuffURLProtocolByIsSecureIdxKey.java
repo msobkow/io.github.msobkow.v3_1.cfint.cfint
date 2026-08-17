@@ -51,7 +51,7 @@ import server.markhome.mcf.v3_1.cfint.cfintobj.*;
 public class CFIntBuffURLProtocolByIsSecureIdxKey
 	implements ICFIntURLProtocolByIsSecureIdxKey, Comparable<Object>, Serializable
 {
-	protected boolean requiredIsSecure;
+	protected $implJavaAtomType$ requiredIsSecure;
 	public CFIntBuffURLProtocolByIsSecureIdxKey() {
 		requiredIsSecure = ICFIntPubURLProtocol.ISSECURE_INIT_VALUE;
 	}

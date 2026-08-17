@@ -92,7 +92,7 @@ public interface ICFIntLicenseTable
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	void deleteLicenseByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argKey );
+		ICFLibKeyHash256 argKey );
 	/**
 	 *	Delete the License instances identified by the key LicnTenantIdx.
 	 *
@@ -101,7 +101,7 @@ public interface ICFIntLicenseTable
 	 *	@param	TenantId	The License key attribute of the instance generating the id.
 	 */
 	void deleteLicenseByLicnTenantIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argTenantId );
+		ICFLibKeyHash256 argTenantId );
 
 	/**
 	 *	Delete the License instances identified by the key LicnTenantIdx.
@@ -120,7 +120,7 @@ public interface ICFIntLicenseTable
 	 *	@param	TopDomainId	The License key attribute of the instance generating the id.
 	 */
 	void deleteLicenseByDomainIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argTopDomainId );
+		ICFLibKeyHash256 argTopDomainId );
 
 	/**
 	 *	Delete the License instances identified by the key DomainIdx.
@@ -141,7 +141,7 @@ public interface ICFIntLicenseTable
 	 *	@param	Name	The License key attribute of the instance generating the id.
 	 */
 	void deleteLicenseByUNameIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argTopDomainId,
+		ICFLibKeyHash256 argTopDomainId,
 		String argName );
 
 	/**
@@ -166,7 +166,7 @@ public interface ICFIntLicenseTable
 	 *		no such existing key value.
 	 */
 	ICFIntLicense readDerived( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Lock the derived License record instance by primary key.
@@ -179,7 +179,7 @@ public interface ICFIntLicenseTable
 	 *		no such existing key value.
 	 */
 	ICFIntLicense lockDerived( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Read all License instances.
@@ -201,7 +201,7 @@ public interface ICFIntLicenseTable
 	 *		no such existing key value.
 	 */
 	ICFIntLicense readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 Id );
+		ICFLibKeyHash256 Id );
 
 	/**
 	 *	Read an array of the derived License record instances identified by the duplicate key LicnTenantIdx.
@@ -213,7 +213,7 @@ public interface ICFIntLicenseTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFIntLicense[] readDerivedByLicnTenantIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 TenantId );
+		ICFLibKeyHash256 TenantId );
 
 	/**
 	 *	Read an array of the derived License record instances identified by the duplicate key DomainIdx.
@@ -225,7 +225,7 @@ public interface ICFIntLicenseTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFIntLicense[] readDerivedByDomainIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 TopDomainId );
+		ICFLibKeyHash256 TopDomainId );
 
 	/**
 	 *	Read the derived License record instance identified by the unique key UNameIdx.
@@ -240,7 +240,7 @@ public interface ICFIntLicenseTable
 	 *		no such existing key value.
 	 */
 	ICFIntLicense readDerivedByUNameIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 TopDomainId,
+		ICFLibKeyHash256 TopDomainId,
 		String Name );
 
 	/**
@@ -256,7 +256,7 @@ public interface ICFIntLicenseTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFIntLicense readRec( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Lock the specific License record instance identified by the primary key.
@@ -271,7 +271,7 @@ public interface ICFIntLicenseTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFIntLicense lockRec( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Read all the specific License record instances.
@@ -295,7 +295,7 @@ public interface ICFIntLicenseTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFIntLicense readRecByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 Id );
+		ICFLibKeyHash256 Id );
 
 	/**
 	 *	Read an array of the specific License record instances identified by the duplicate key LicnTenantIdx.
@@ -309,7 +309,7 @@ public interface ICFIntLicenseTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFIntLicense[] readRecByLicnTenantIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 TenantId );
+		ICFLibKeyHash256 TenantId );
 
 	/**
 	 *	Read an array of the specific License record instances identified by the duplicate key DomainIdx.
@@ -323,7 +323,7 @@ public interface ICFIntLicenseTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFIntLicense[] readRecByDomainIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 TopDomainId );
+		ICFLibKeyHash256 TopDomainId );
 
 	/**
 	 *	Read the specific License record instance identified by the unique key UNameIdx.
@@ -340,6 +340,6 @@ public interface ICFIntLicenseTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFIntLicense readRecByUNameIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 TopDomainId,
+		ICFLibKeyHash256 TopDomainId,
 		String Name );
 }

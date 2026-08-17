@@ -166,32 +166,32 @@ public interface ICFIntTopDomainEditObj
 	List<ICFIntLicenseObj> getOptionalComponentsLicense();
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute Id.
+	 *	Get the required ICFLibKeyHash256 attribute Id.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute Id.
+	 *	@return	The required ICFLibKeyHash256 attribute Id.
 	 */
-	CFLibDbKeyHash256 getRequiredId();
+	ICFLibKeyHash256 getRequiredId();
 
 	/**
-	 *	Set the required CFLibDbKeyHash256 attribute Id.
+	 *	Set the required ICFLibKeyHash256 attribute Id.
 	 *
-	 *	@param value The required CFLibDbKeyHash256 attribute Id value to be applied.
+	 *	@param value The required ICFLibKeyHash256 attribute Id value to be applied.
 	 */
-	void setRequiredId(CFLibDbKeyHash256 value);
+	void setRequiredId(ICFLibKeyHash256 value);
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute TenantId.
+	 *	Get the required ICFLibKeyHash256 attribute TenantId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute TenantId.
+	 *	@return	The required ICFLibKeyHash256 attribute TenantId.
 	 */
-	CFLibDbKeyHash256 getRequiredTenantId();
+	ICFLibKeyHash256 getRequiredTenantId();
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute TldId.
+	 *	Get the required ICFLibKeyHash256 attribute TldId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute TldId.
+	 *	@return	The required ICFLibKeyHash256 attribute TldId.
 	 */
-	CFLibDbKeyHash256 getRequiredTldId();
+	ICFLibKeyHash256 getRequiredTldId();
 
 	/**
 	 *	Get the required String attribute Name.

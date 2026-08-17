@@ -51,14 +51,14 @@ import server.markhome.mcf.v3_1.cfint.cfintobj.*;
 public class CFIntBuffLicense
 	implements ICFIntLicense, Comparable<Object>, Serializable
 {
-	protected CFLibDbKeyHash256 requiredId;
+	protected $implJavaAtomType$ requiredId;
 	protected int requiredRevision;
-	protected CFLibDbKeyHash256 requiredTenantId;
-	protected CFLibDbKeyHash256 requiredTopDomainId;
-	protected String requiredName;
-	protected String optionalDescription;
-	protected String optionalEmbeddedText;
-	protected String optionalFullText;
+	protected $implJavaAtomType$ requiredTenantId;
+	protected $implJavaAtomType$ requiredTopDomainId;
+	protected $implJavaAtomType$ requiredName;
+	protected $implJavaAtomType$ optionalDescription;
+	protected $implJavaAtomType$ optionalEmbeddedText;
+	protected $implJavaAtomType$ optionalFullText;
 
 	public CFIntBuffLicense() {
 		requiredId = CFLibDbKeyHash256.fromHex( ICFIntPubLicense.ID_INIT_VALUE.toString() );
@@ -71,12 +71,12 @@ public class CFIntBuffLicense
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getPKey() {
+	public $implJavaOptAtomType$ getPKey() {
 		return (requiredId);
 	}
 
 	@Override
-	public void setPKey(CFLibDbKeyHash256 requiredId) {
+	public void setPKey($implJavaOptAtomType$ requiredId) {
 		if(requiredId != null) {
 			this.requiredId = requiredId;
 		}

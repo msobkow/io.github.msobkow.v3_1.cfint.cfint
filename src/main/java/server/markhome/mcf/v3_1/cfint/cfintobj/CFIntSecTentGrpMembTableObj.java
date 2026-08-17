@@ -313,14 +313,14 @@ public class CFIntSecTentGrpMembTableObj
 	}
 
 	@Override
-	public ICFSecSecTentGrpMembObj readSecTentGrpMemb( CFLibDbKeyHash256 SecTentGrpId,
+	public ICFSecSecTentGrpMembObj readSecTentGrpMemb( ICFLibKeyHash256 SecTentGrpId,
 		String LoginId ) {
 		return( readSecTentGrpMemb( SecTentGrpId,
 			LoginId, false ) );
 	}
 
 	@Override
-	public ICFSecSecTentGrpMembObj readSecTentGrpMemb( CFLibDbKeyHash256 SecTentGrpId,
+	public ICFSecSecTentGrpMembObj readSecTentGrpMemb( ICFLibKeyHash256 SecTentGrpId,
 		String LoginId, boolean forceRead ) {
 		ICFSecSecTentGrpMembObj obj = null;
 		ICFSecSecTentGrpMemb readRec = schema.getCFSecBackingStore().getTableSecTentGrpMemb().readDerivedByIdIdx( null,
@@ -551,7 +551,7 @@ public class CFIntSecTentGrpMembTableObj
 	 *		may include an empty set.
 	 */
 	@Override
-	public List<ICFSecSecTentGrpMembObj> pageAllSecTentGrpMemb(CFLibDbKeyHash256 priorSecTentGrpId,
+	public List<ICFSecSecTentGrpMembObj> pageAllSecTentGrpMemb(ICFLibKeyHash256 priorSecTentGrpId,
 		String priorLoginId )
 	{
 		final String S_ProcName = "pageAllSecTentGrpMemb";
@@ -575,7 +575,7 @@ public class CFIntSecTentGrpMembTableObj
 	}
 
 	@Override
-	public ICFSecSecTentGrpMembObj readSecTentGrpMembByIdIdx( CFLibDbKeyHash256 SecTentGrpId,
+	public ICFSecSecTentGrpMembObj readSecTentGrpMembByIdIdx( ICFLibKeyHash256 SecTentGrpId,
 		String LoginId )
 	{
 		return( readSecTentGrpMembByIdIdx( SecTentGrpId,
@@ -584,7 +584,7 @@ public class CFIntSecTentGrpMembTableObj
 	}
 
 	@Override
-	public ICFSecSecTentGrpMembObj readSecTentGrpMembByIdIdx( CFLibDbKeyHash256 SecTentGrpId,
+	public ICFSecSecTentGrpMembObj readSecTentGrpMembByIdIdx( ICFLibKeyHash256 SecTentGrpId,
 		String LoginId, boolean forceRead )
 	{
 		ICFSecSecTentGrpMembPKey pkey = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentGrpMemb().newPKey();
@@ -595,14 +595,14 @@ public class CFIntSecTentGrpMembTableObj
 	}
 
 	@Override
-	public List<ICFSecSecTentGrpMembObj> readSecTentGrpMembByTentGrpIdx( CFLibDbKeyHash256 SecTentGrpId )
+	public List<ICFSecSecTentGrpMembObj> readSecTentGrpMembByTentGrpIdx( ICFLibKeyHash256 SecTentGrpId )
 	{
 		return( readSecTentGrpMembByTentGrpIdx( SecTentGrpId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFSecSecTentGrpMembObj> readSecTentGrpMembByTentGrpIdx( CFLibDbKeyHash256 SecTentGrpId,
+	public List<ICFSecSecTentGrpMembObj> readSecTentGrpMembByTentGrpIdx( ICFLibKeyHash256 SecTentGrpId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readSecTentGrpMembByTentGrpIdx";
@@ -781,7 +781,7 @@ public class CFIntSecTentGrpMembTableObj
 	}
 
 	@Override
-	public ICFSecSecTentGrpMembObj readCachedSecTentGrpMembByIdIdx( CFLibDbKeyHash256 SecTentGrpId,
+	public ICFSecSecTentGrpMembObj readCachedSecTentGrpMembByIdIdx( ICFLibKeyHash256 SecTentGrpId,
 		String LoginId )
 	{
 		ICFSecSecTentGrpMembObj obj = null;
@@ -795,7 +795,7 @@ public class CFIntSecTentGrpMembTableObj
 	}
 
 	@Override
-	public List<ICFSecSecTentGrpMembObj> readCachedSecTentGrpMembByTentGrpIdx( CFLibDbKeyHash256 SecTentGrpId )
+	public List<ICFSecSecTentGrpMembObj> readCachedSecTentGrpMembByTentGrpIdx( ICFLibKeyHash256 SecTentGrpId )
 	{
 		final String S_ProcName = "readCachedSecTentGrpMembByTentGrpIdx";
 		ICFSecSecTentGrpMembByTentGrpIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentGrpMemb().newByTentGrpIdxKey();
@@ -949,7 +949,7 @@ public class CFIntSecTentGrpMembTableObj
 	}
 
 	@Override
-	public void deepDisposeSecTentGrpMembByIdIdx( CFLibDbKeyHash256 SecTentGrpId,
+	public void deepDisposeSecTentGrpMembByIdIdx( ICFLibKeyHash256 SecTentGrpId,
 		String LoginId )
 	{
 		ICFSecSecTentGrpMembObj obj = readCachedSecTentGrpMembByIdIdx( SecTentGrpId,
@@ -960,7 +960,7 @@ public class CFIntSecTentGrpMembTableObj
 	}
 
 	@Override
-	public void deepDisposeSecTentGrpMembByTentGrpIdx( CFLibDbKeyHash256 SecTentGrpId )
+	public void deepDisposeSecTentGrpMembByTentGrpIdx( ICFLibKeyHash256 SecTentGrpId )
 	{
 		final String S_ProcName = "deepDisposeSecTentGrpMembByTentGrpIdx";
 		ICFSecSecTentGrpMembObj obj;
@@ -1003,8 +1003,8 @@ public class CFIntSecTentGrpMembTableObj
 	 *		as identified by the key attributes, which may be an empty set.
 	 */
 	@Override
-	public List<ICFSecSecTentGrpMembObj> pageSecTentGrpMembByTentGrpIdx( CFLibDbKeyHash256 SecTentGrpId,
-		CFLibDbKeyHash256 priorSecTentGrpId,
+	public List<ICFSecSecTentGrpMembObj> pageSecTentGrpMembByTentGrpIdx( ICFLibKeyHash256 SecTentGrpId,
+		ICFLibKeyHash256 priorSecTentGrpId,
 		String priorLoginId )
 	{
 		final String S_ProcName = "pageSecTentGrpMembByTentGrpIdx";
@@ -1039,7 +1039,7 @@ public class CFIntSecTentGrpMembTableObj
 	 */
 	@Override
 	public List<ICFSecSecTentGrpMembObj> pageSecTentGrpMembByUserIdx( String LoginId,
-		CFLibDbKeyHash256 priorSecTentGrpId,
+		ICFLibKeyHash256 priorSecTentGrpId,
 		String priorLoginId )
 	{
 		final String S_ProcName = "pageSecTentGrpMembByUserIdx";
@@ -1082,7 +1082,7 @@ public class CFIntSecTentGrpMembTableObj
 	}
 
 	@Override
-	public void deleteSecTentGrpMembByIdIdx( CFLibDbKeyHash256 SecTentGrpId,
+	public void deleteSecTentGrpMembByIdIdx( ICFLibKeyHash256 SecTentGrpId,
 		String LoginId )
 	{
 		ICFSecSecTentGrpMembObj obj = readSecTentGrpMemb(SecTentGrpId,
@@ -1115,7 +1115,7 @@ public class CFIntSecTentGrpMembTableObj
 	}
 
 	@Override
-	public void deleteSecTentGrpMembByTentGrpIdx( CFLibDbKeyHash256 SecTentGrpId )
+	public void deleteSecTentGrpMembByTentGrpIdx( ICFLibKeyHash256 SecTentGrpId )
 	{
 		ICFSecSecTentGrpMembByTentGrpIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentGrpMemb().newByTentGrpIdxKey();
 		key.setRequiredSecTentGrpId( SecTentGrpId );

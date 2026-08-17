@@ -51,7 +51,7 @@ import server.markhome.mcf.v3_1.cfint.cfintobj.*;
 public class CFIntBuffURLProtocol
 	implements ICFIntURLProtocol, Comparable<Object>, Serializable
 {
-	protected int requiredURLProtocolId;
+	protected $implJavaAtomType$ requiredURLProtocolId;
 	protected int requiredRevision;
 	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFIntPubSecUser.S_INIT_CREATED_BY);
 	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFIntPubSecSession.S_SECSESSIONID_INIT_VALUE);
@@ -59,9 +59,9 @@ public class CFIntBuffURLProtocol
 	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFIntPubSecUser.S_INIT_UPDATED_BY);
 	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFIntPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
-	protected String requiredName;
-	protected String requiredDescription;
-	protected boolean requiredIsSecure;
+	protected $implJavaAtomType$ requiredName;
+	protected $implJavaAtomType$ requiredDescription;
+	protected $implJavaAtomType$ requiredIsSecure;
 
 	public CFIntBuffURLProtocol() {
 		requiredURLProtocolId = ICFIntPubURLProtocol.URLPROTOCOLID_INIT_VALUE;
@@ -71,12 +71,12 @@ public class CFIntBuffURLProtocol
 	}
 
 	@Override
-	public Integer getPKey() {
+	public $implJavaOptAtomType$ getPKey() {
 		return (requiredURLProtocolId);
 	}
 
 	@Override
-	public void setPKey(Integer requiredURLProtocolId) {
+	public void setPKey($implJavaOptAtomType$ requiredURLProtocolId) {
 		if(requiredURLProtocolId != null) {
 			this.requiredURLProtocolId = requiredURLProtocolId;
 		}

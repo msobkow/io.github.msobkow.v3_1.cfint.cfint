@@ -254,18 +254,18 @@ public interface ICFIntTenantObj
 	List<ICFIntTldObj> getOptionalComponentsTld( boolean forceRead );
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute Id.
+	 *	Get the required ICFLibKeyHash256 attribute Id.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute Id.
+	 *	@return	The required ICFLibKeyHash256 attribute Id.
 	 */
-	CFLibDbKeyHash256 getRequiredId();
+	ICFLibKeyHash256 getRequiredId();
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute ClusterId.
+	 *	Get the required ICFLibKeyHash256 attribute ClusterId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute ClusterId.
+	 *	@return	The required ICFLibKeyHash256 attribute ClusterId.
 	 */
-	CFLibDbKeyHash256 getRequiredClusterId();
+	ICFLibKeyHash256 getRequiredClusterId();
 
 	/**
 	 *	Get the required String attribute TenantName.

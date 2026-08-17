@@ -51,8 +51,8 @@ import server.markhome.mcf.v3_1.cfint.cfintobj.*;
 public class CFIntBuffMinorVersionByNameIdxKey
 	implements ICFIntMinorVersionByNameIdxKey, Comparable<Object>, Serializable
 {
-	protected CFLibDbKeyHash256 requiredMajorVersionId;
-	protected String requiredName;
+	protected $implJavaAtomType$ requiredMajorVersionId;
+	protected $implJavaAtomType$ requiredName;
 	public CFIntBuffMinorVersionByNameIdxKey() {
 		requiredMajorVersionId = CFLibDbKeyHash256.fromHex( ICFIntPubMinorVersion.MAJORVERSIONID_INIT_VALUE.toString() );
 		requiredName = ICFIntPubMinorVersion.NAME_INIT_VALUE;

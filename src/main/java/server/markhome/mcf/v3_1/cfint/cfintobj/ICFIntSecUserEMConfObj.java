@@ -212,11 +212,11 @@ public interface ICFIntSecUserEMConfObj
 	ICFSecSecUserObj getRequiredContainerUser( boolean forceRead );
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute SecUserId.
+	 *	Get the required ICFLibKeyHash256 attribute SecUserId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute SecUserId.
+	 *	@return	The required ICFLibKeyHash256 attribute SecUserId.
 	 */
-	CFLibDbKeyHash256 getRequiredSecUserId();
+	ICFLibKeyHash256 getRequiredSecUserId();
 
 	/**
 	 *	Get the required String attribute ConfirmEMailAddr.
@@ -233,11 +233,11 @@ public interface ICFIntSecUserEMConfObj
 	LocalDateTime getRequiredEMailSentStamp();
 
 	/**
-	 *	Get the required CFLibUuid6 attribute EMConfirmationUuid6.
+	 *	Get the required ICFLibUuid6 attribute EMConfirmationUuid6.
 	 *
-	 *	@return	The required CFLibUuid6 attribute EMConfirmationUuid6.
+	 *	@return	The required ICFLibUuid6 attribute EMConfirmationUuid6.
 	 */
-	CFLibUuid6 getRequiredEMConfirmationUuid6();
+	ICFLibUuid6 getRequiredEMConfirmationUuid6();
 
 	/**
 	 *	Get the required boolean attribute NewAccount.

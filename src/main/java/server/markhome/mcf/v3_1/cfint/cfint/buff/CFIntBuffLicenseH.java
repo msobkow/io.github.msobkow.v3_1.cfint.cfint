@@ -52,12 +52,12 @@ public class CFIntBuffLicenseH
     implements ICFIntLicenseH, Comparable<Object>, Serializable
 {
     protected CFIntBuffLicenseHPKey pkey;
-	protected CFLibDbKeyHash256 requiredTenantId;
-	protected CFLibDbKeyHash256 requiredTopDomainId;
-	protected String requiredName;
-	protected String optionalDescription;
-	protected String optionalEmbeddedText;
-	protected String optionalFullText;
+	protected $implJavaAtomType$ requiredTenantId;
+	protected $implJavaAtomType$ requiredTopDomainId;
+	protected $implJavaAtomType$ requiredName;
+	protected $implJavaAtomType$ optionalDescription;
+	protected $implJavaAtomType$ optionalEmbeddedText;
+	protected $implJavaAtomType$ optionalFullText;
 
     public CFIntBuffLicenseH() {
             // The primary key member attributes are initialized on construction

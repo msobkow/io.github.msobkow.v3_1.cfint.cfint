@@ -51,7 +51,7 @@ import server.markhome.mcf.v3_1.cfint.cfintobj.*;
 public class CFIntBuffSubProject
 	implements ICFIntSubProject, Comparable<Object>, Serializable
 {
-	protected CFLibDbKeyHash256 requiredId;
+	protected $implJavaAtomType$ requiredId;
 	protected int requiredRevision;
 	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFIntPubSecUser.S_INIT_CREATED_BY);
 	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFIntPubSecSession.S_SECSESSIONID_INIT_VALUE);
@@ -59,10 +59,10 @@ public class CFIntBuffSubProject
 	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFIntPubSecUser.S_INIT_UPDATED_BY);
 	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFIntPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
-	protected CFLibDbKeyHash256 requiredTenantId;
-	protected CFLibDbKeyHash256 requiredTopProjectId;
-	protected String requiredName;
-	protected String optionalDescription;
+	protected $implJavaAtomType$ requiredTenantId;
+	protected $implJavaAtomType$ requiredTopProjectId;
+	protected $implJavaAtomType$ requiredName;
+	protected $implJavaAtomType$ optionalDescription;
 
 	public CFIntBuffSubProject() {
 		requiredId = CFLibDbKeyHash256.fromHex( ICFIntPubSubProject.ID_INIT_VALUE.toString() );
@@ -73,12 +73,12 @@ public class CFIntBuffSubProject
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getPKey() {
+	public $implJavaOptAtomType$ getPKey() {
 		return (requiredId);
 	}
 
 	@Override
-	public void setPKey(CFLibDbKeyHash256 requiredId) {
+	public void setPKey($implJavaOptAtomType$ requiredId) {
 		if(requiredId != null) {
 			this.requiredId = requiredId;
 		}

@@ -44,18 +44,18 @@ public class CFIntSecUserTableObj
 	implements ICFIntSecUserTableObj
 {
 	protected ICFIntSchemaObj schema;
-	private Map<CFLibDbKeyHash256, ICFSecSecUserObj> members;
-	private Map<CFLibDbKeyHash256, ICFSecSecUserObj> allSecUser;
+	private Map<ICFLibKeyHash256, ICFSecSecUserObj> members;
+	private Map<ICFLibKeyHash256, ICFSecSecUserObj> allSecUser;
 	private Map< ICFSecSecUserByULoginIdxKey,
 		ICFSecSecUserObj > indexByULoginIdx;
 	private Map< ICFSecSecUserByEMAddrIdxKey,
-		Map<CFLibDbKeyHash256, ICFSecSecUserObj > > indexByEMAddrIdx;
+		Map<ICFLibKeyHash256, ICFSecSecUserObj > > indexByEMAddrIdx;
 	public static String TABLE_NAME = "SecUser";
 	public static String TABLE_DBNAME = "secuser";
 
 	public CFIntSecUserTableObj() {
 		schema = null;
-		members = new HashMap<CFLibDbKeyHash256, ICFSecSecUserObj>();
+		members = new HashMap<ICFLibKeyHash256, ICFSecSecUserObj>();
 		allSecUser = null;
 		indexByULoginIdx = null;
 		indexByEMAddrIdx = null;
@@ -63,7 +63,7 @@ public class CFIntSecUserTableObj
 
 	public CFIntSecUserTableObj( ICFSecSchemaObj argSchema ) {
 		schema = (ICFIntSchemaObj)argSchema;
-		members = new HashMap<CFLibDbKeyHash256, ICFSecSecUserObj>();
+		members = new HashMap<ICFLibKeyHash256, ICFSecSecUserObj>();
 		allSecUser = null;
 		indexByULoginIdx = null;
 		indexByEMAddrIdx = null;
@@ -174,7 +174,7 @@ public class CFIntSecUserTableObj
 	@Override
 	public ICFSecSecUserObj realiseSecUser( ICFSecSecUserObj Obj ) {
 		ICFSecSecUserObj obj = Obj;
-		CFLibDbKeyHash256 pkey = obj.getPKey();
+		ICFLibKeyHash256 pkey = obj.getPKey();
 		ICFSecSecUserObj keepObj = null;
 		if( members.containsKey( pkey ) && ( null != members.get( pkey ) ) ) {
 			ICFSecSecUserObj existingObj = members.get( pkey );
@@ -198,7 +198,7 @@ public class CFIntSecUserTableObj
 				ICFSecSecUserByEMAddrIdxKey keyEMAddrIdx =
 					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUser().newByEMAddrIdxKey();
 				keyEMAddrIdx.setRequiredEMailAddress( keepObj.getRequiredEMailAddress() );
-				Map<CFLibDbKeyHash256, ICFSecSecUserObj > mapEMAddrIdx = indexByEMAddrIdx.get( keyEMAddrIdx );
+				Map<ICFLibKeyHash256, ICFSecSecUserObj > mapEMAddrIdx = indexByEMAddrIdx.get( keyEMAddrIdx );
 				if( mapEMAddrIdx != null ) {
 					mapEMAddrIdx.remove( keepObj.getPKey() );
 					if( mapEMAddrIdx.size() <= 0 ) {
@@ -221,7 +221,7 @@ public class CFIntSecUserTableObj
 				ICFSecSecUserByEMAddrIdxKey keyEMAddrIdx =
 					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUser().newByEMAddrIdxKey();
 				keyEMAddrIdx.setRequiredEMailAddress( keepObj.getRequiredEMailAddress() );
-				Map<CFLibDbKeyHash256, ICFSecSecUserObj > mapEMAddrIdx = indexByEMAddrIdx.get( keyEMAddrIdx );
+				Map<ICFLibKeyHash256, ICFSecSecUserObj > mapEMAddrIdx = indexByEMAddrIdx.get( keyEMAddrIdx );
 				if( mapEMAddrIdx != null ) {
 					mapEMAddrIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -252,7 +252,7 @@ public class CFIntSecUserTableObj
 				ICFSecSecUserByEMAddrIdxKey keyEMAddrIdx =
 					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUser().newByEMAddrIdxKey();
 				keyEMAddrIdx.setRequiredEMailAddress( keepObj.getRequiredEMailAddress() );
-				Map<CFLibDbKeyHash256, ICFSecSecUserObj > mapEMAddrIdx = indexByEMAddrIdx.get( keyEMAddrIdx );
+				Map<ICFLibKeyHash256, ICFSecSecUserObj > mapEMAddrIdx = indexByEMAddrIdx.get( keyEMAddrIdx );
 				if( mapEMAddrIdx != null ) {
 					mapEMAddrIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -276,12 +276,12 @@ public class CFIntSecUserTableObj
 	}
 
 	@Override
-	public ICFSecSecUserObj readSecUser( CFLibDbKeyHash256 pkey ) {
+	public ICFSecSecUserObj readSecUser( ICFLibKeyHash256 pkey ) {
 		return( readSecUser( pkey, false ) );
 	}
 
 	@Override
-	public ICFSecSecUserObj readSecUser( CFLibDbKeyHash256 pkey, boolean forceRead ) {
+	public ICFSecSecUserObj readSecUser( ICFLibKeyHash256 pkey, boolean forceRead ) {
 		ICFSecSecUserObj obj = null;
 		if( ( ! forceRead ) && members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -300,7 +300,7 @@ public class CFIntSecUserTableObj
 	}
 
 	@Override
-	public ICFSecSecUserObj readCachedSecUser( CFLibDbKeyHash256 pkey ) {
+	public ICFSecSecUserObj readCachedSecUser( ICFLibKeyHash256 pkey ) {
 		ICFSecSecUserObj obj = null;
 		if( members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -316,7 +316,7 @@ public class CFIntSecUserTableObj
 		if( obj == null ) {
 			return;
 		}
-		CFLibDbKeyHash256 pkey = obj.getPKey();
+		ICFLibKeyHash256 pkey = obj.getPKey();
 		ICFSecSecUserObj existing = readCachedSecUser( pkey );
 		if( existing == null ) {
 			return;
@@ -353,7 +353,7 @@ public class CFIntSecUserTableObj
 
 	}
 	@Override
-	public void deepDisposeSecUser( CFLibDbKeyHash256 pkey ) {
+	public void deepDisposeSecUser( ICFLibKeyHash256 pkey ) {
 		ICFSecSecUserObj obj = readCachedSecUser( pkey );
 		if( obj != null ) {
 			obj.forget();
@@ -361,7 +361,7 @@ public class CFIntSecUserTableObj
 	}
 
 	@Override
-	public ICFSecSecUserObj lockSecUser( CFLibDbKeyHash256 pkey ) {
+	public ICFSecSecUserObj lockSecUser( ICFLibKeyHash256 pkey ) {
 		ICFSecSecUserObj locked = null;
 		ICFSecSecUser lockRec = schema.getCFSecBackingStore().getTableSecUser().lockDerived( null, pkey );
 		if( lockRec != null ) {
@@ -385,7 +385,7 @@ public class CFIntSecUserTableObj
 	public List<ICFSecSecUserObj> readAllSecUser( boolean forceRead ) {
 		final String S_ProcName = "readAllSecUser";
 		if( ( allSecUser == null ) || forceRead ) {
-			Map<CFLibDbKeyHash256, ICFSecSecUserObj> map = new HashMap<CFLibDbKeyHash256,ICFSecSecUserObj>();
+			Map<ICFLibKeyHash256, ICFSecSecUserObj> map = new HashMap<ICFLibKeyHash256,ICFSecSecUserObj>();
 			allSecUser = map;
 			ICFSecSecUser[] recList = schema.getCFSecBackingStore().getTableSecUser().readAllDerived( null );
 			ICFSecSecUser rec;
@@ -441,8 +441,8 @@ public class CFIntSecUserTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -499,8 +499,8 @@ public class CFIntSecUserTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -517,10 +517,10 @@ public class CFIntSecUserTableObj
 	 *		may include an empty set.
 	 */
 	@Override
-	public List<ICFSecSecUserObj> pageAllSecUser(CFLibDbKeyHash256 priorSecUserId )
+	public List<ICFSecSecUserObj> pageAllSecUser(ICFLibKeyHash256 priorSecUserId )
 	{
 		final String S_ProcName = "pageAllSecUser";
-		Map<CFLibDbKeyHash256, ICFSecSecUserObj> map = new HashMap<CFLibDbKeyHash256,ICFSecSecUserObj>();
+		Map<ICFLibKeyHash256, ICFSecSecUserObj> map = new HashMap<ICFLibKeyHash256,ICFSecSecUserObj>();
 		ICFSecSecUser[] recList = schema.getCFSecBackingStore().getTableSecUser().pageAllRec( null,
 			priorSecUserId );
 		ICFSecSecUser rec;
@@ -539,14 +539,14 @@ public class CFIntSecUserTableObj
 	}
 
 	@Override
-	public ICFSecSecUserObj readSecUserByIdIdx( CFLibDbKeyHash256 SecUserId )
+	public ICFSecSecUserObj readSecUserByIdIdx( ICFLibKeyHash256 SecUserId )
 	{
 		return( readSecUserByIdIdx( SecUserId,
 			false ) );
 	}
 
 	@Override
-	public ICFSecSecUserObj readSecUserByIdIdx( CFLibDbKeyHash256 SecUserId, boolean forceRead )
+	public ICFSecSecUserObj readSecUserByIdIdx( ICFLibKeyHash256 SecUserId, boolean forceRead )
 	{
 		ICFSecSecUserObj obj = readSecUser( SecUserId, forceRead );
 		return( obj );
@@ -599,16 +599,16 @@ public class CFIntSecUserTableObj
 		final String S_ProcName = "readSecUserByEMAddrIdx";
 		ICFSecSecUserByEMAddrIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUser().newByEMAddrIdxKey();
 		key.setRequiredEMailAddress( EMailAddress );
-		Map<CFLibDbKeyHash256, ICFSecSecUserObj> dict;
+		Map<ICFLibKeyHash256, ICFSecSecUserObj> dict;
 		if( indexByEMAddrIdx == null ) {
 			indexByEMAddrIdx = new HashMap< ICFSecSecUserByEMAddrIdxKey,
-				Map< CFLibDbKeyHash256, ICFSecSecUserObj > >();
+				Map< ICFLibKeyHash256, ICFSecSecUserObj > >();
 		}
 		if( ( ! forceRead ) && indexByEMAddrIdx.containsKey( key ) ) {
 			dict = indexByEMAddrIdx.get( key );
 		}
 		else {
-			dict = new HashMap<CFLibDbKeyHash256, ICFSecSecUserObj>();
+			dict = new HashMap<ICFLibKeyHash256, ICFSecSecUserObj>();
 			ICFSecSecUserObj obj;
 			ICFSecSecUser[] recList = schema.getCFSecBackingStore().getTableSecUser().readDerivedByEMAddrIdx( null,
 				EMailAddress );
@@ -666,8 +666,8 @@ public class CFIntSecUserTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -679,7 +679,7 @@ public class CFIntSecUserTableObj
 	}
 
 	@Override
-	public ICFSecSecUserObj readCachedSecUserByIdIdx( CFLibDbKeyHash256 SecUserId )
+	public ICFSecSecUserObj readCachedSecUserByIdIdx( ICFLibKeyHash256 SecUserId )
 	{
 		ICFSecSecUserObj obj = null;
 		obj = readCachedSecUser( SecUserId );
@@ -730,7 +730,7 @@ public class CFIntSecUserTableObj
 		key.setRequiredEMailAddress( EMailAddress );
 		ArrayList<ICFSecSecUserObj> arrayList = new ArrayList<ICFSecSecUserObj>();
 		if( indexByEMAddrIdx != null ) {
-			Map<CFLibDbKeyHash256, ICFSecSecUserObj> dict;
+			Map<ICFLibKeyHash256, ICFSecSecUserObj> dict;
 			if( indexByEMAddrIdx.containsKey( key ) ) {
 				dict = indexByEMAddrIdx.get( key );
 				int len = dict.size();
@@ -788,8 +788,8 @@ public class CFIntSecUserTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -800,7 +800,7 @@ public class CFIntSecUserTableObj
 	}
 
 	@Override
-	public void deepDisposeSecUserByIdIdx( CFLibDbKeyHash256 SecUserId )
+	public void deepDisposeSecUserByIdIdx( ICFLibKeyHash256 SecUserId )
 	{
 		ICFSecSecUserObj obj = readCachedSecUserByIdIdx( SecUserId );
 		if( obj != null ) {
@@ -845,7 +845,7 @@ public class CFIntSecUserTableObj
 	 */
 	@Override
 	public List<ICFSecSecUserObj> pageSecUserByEMAddrIdx( String EMailAddress,
-		CFLibDbKeyHash256 priorSecUserId )
+		ICFLibKeyHash256 priorSecUserId )
 	{
 		final String S_ProcName = "pageSecUserByEMAddrIdx";
 		ICFSecSecUserByEMAddrIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUser().newByEMAddrIdxKey();
@@ -886,7 +886,7 @@ public class CFIntSecUserTableObj
 	}
 
 	@Override
-	public void deleteSecUserByIdIdx( CFLibDbKeyHash256 SecUserId )
+	public void deleteSecUserByIdIdx( ICFLibKeyHash256 SecUserId )
 	{
 		ICFSecSecUserObj obj = readSecUser(SecUserId);
 		if( obj != null ) {
@@ -945,10 +945,10 @@ public class CFIntSecUserTableObj
 		key.setRequiredEMailAddress( EMailAddress );
 		if( indexByEMAddrIdx == null ) {
 			indexByEMAddrIdx = new HashMap< ICFSecSecUserByEMAddrIdxKey,
-				Map< CFLibDbKeyHash256, ICFSecSecUserObj > >();
+				Map< ICFLibKeyHash256, ICFSecSecUserObj > >();
 		}
 		if( indexByEMAddrIdx.containsKey( key ) ) {
-			Map<CFLibDbKeyHash256, ICFSecSecUserObj> dict = indexByEMAddrIdx.get( key );
+			Map<ICFLibKeyHash256, ICFSecSecUserObj> dict = indexByEMAddrIdx.get( key );
 			schema.getCFSecBackingStore().getTableSecUser().deleteSecUserByEMAddrIdx( null,
 				EMailAddress );
 			Iterator<ICFSecSecUserObj> iter = dict.values().iterator();

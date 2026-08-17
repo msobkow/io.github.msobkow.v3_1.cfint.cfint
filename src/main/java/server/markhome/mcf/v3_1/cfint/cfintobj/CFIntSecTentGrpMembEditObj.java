@@ -393,12 +393,12 @@ public class CFIntSecTentGrpMembEditObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredSecTentGrpId() {
+	public $implJavaAtomType$ getRequiredSecTentGrpId() {
 		return( getPKey().getRequiredSecTentGrpId() );
 	}
 
 	@Override
-	public String getRequiredLoginId() {
+	public $implJavaAtomType$ getRequiredLoginId() {
 		return( getPKey().getRequiredLoginId() );
 	}
 

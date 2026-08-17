@@ -92,7 +92,7 @@ public interface ICFIntSubProjectTable
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	void deleteSubProjectByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argKey );
+		ICFLibKeyHash256 argKey );
 	/**
 	 *	Delete the SubProject instances identified by the key TenantIdx.
 	 *
@@ -101,7 +101,7 @@ public interface ICFIntSubProjectTable
 	 *	@param	TenantId	The SubProject key attribute of the instance generating the id.
 	 */
 	void deleteSubProjectByTenantIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argTenantId );
+		ICFLibKeyHash256 argTenantId );
 
 	/**
 	 *	Delete the SubProject instances identified by the key TenantIdx.
@@ -120,7 +120,7 @@ public interface ICFIntSubProjectTable
 	 *	@param	TopProjectId	The SubProject key attribute of the instance generating the id.
 	 */
 	void deleteSubProjectByTopProjectIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argTopProjectId );
+		ICFLibKeyHash256 argTopProjectId );
 
 	/**
 	 *	Delete the SubProject instances identified by the key TopProjectIdx.
@@ -141,7 +141,7 @@ public interface ICFIntSubProjectTable
 	 *	@param	Name	The SubProject key attribute of the instance generating the id.
 	 */
 	void deleteSubProjectByNameIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argTopProjectId,
+		ICFLibKeyHash256 argTopProjectId,
 		String argName );
 
 	/**
@@ -166,7 +166,7 @@ public interface ICFIntSubProjectTable
 	 *		no such existing key value.
 	 */
 	ICFIntSubProject readDerived( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Lock the derived SubProject record instance by primary key.
@@ -179,7 +179,7 @@ public interface ICFIntSubProjectTable
 	 *		no such existing key value.
 	 */
 	ICFIntSubProject lockDerived( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Read all SubProject instances.
@@ -201,7 +201,7 @@ public interface ICFIntSubProjectTable
 	 *		no such existing key value.
 	 */
 	ICFIntSubProject readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 Id );
+		ICFLibKeyHash256 Id );
 
 	/**
 	 *	Read an array of the derived SubProject record instances identified by the duplicate key TenantIdx.
@@ -213,7 +213,7 @@ public interface ICFIntSubProjectTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFIntSubProject[] readDerivedByTenantIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 TenantId );
+		ICFLibKeyHash256 TenantId );
 
 	/**
 	 *	Read an array of the derived SubProject record instances identified by the duplicate key TopProjectIdx.
@@ -225,7 +225,7 @@ public interface ICFIntSubProjectTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFIntSubProject[] readDerivedByTopProjectIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 TopProjectId );
+		ICFLibKeyHash256 TopProjectId );
 
 	/**
 	 *	Read the derived SubProject record instance identified by the unique key NameIdx.
@@ -240,7 +240,7 @@ public interface ICFIntSubProjectTable
 	 *		no such existing key value.
 	 */
 	ICFIntSubProject readDerivedByNameIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 TopProjectId,
+		ICFLibKeyHash256 TopProjectId,
 		String Name );
 
 	/**
@@ -256,7 +256,7 @@ public interface ICFIntSubProjectTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFIntSubProject readRec( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Lock the specific SubProject record instance identified by the primary key.
@@ -271,7 +271,7 @@ public interface ICFIntSubProjectTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFIntSubProject lockRec( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Read all the specific SubProject record instances.
@@ -295,7 +295,7 @@ public interface ICFIntSubProjectTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFIntSubProject readRecByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 Id );
+		ICFLibKeyHash256 Id );
 
 	/**
 	 *	Read an array of the specific SubProject record instances identified by the duplicate key TenantIdx.
@@ -309,7 +309,7 @@ public interface ICFIntSubProjectTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFIntSubProject[] readRecByTenantIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 TenantId );
+		ICFLibKeyHash256 TenantId );
 
 	/**
 	 *	Read an array of the specific SubProject record instances identified by the duplicate key TopProjectIdx.
@@ -323,7 +323,7 @@ public interface ICFIntSubProjectTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFIntSubProject[] readRecByTopProjectIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 TopProjectId );
+		ICFLibKeyHash256 TopProjectId );
 
 	/**
 	 *	Read the specific SubProject record instance identified by the unique key NameIdx.
@@ -340,6 +340,6 @@ public interface ICFIntSubProjectTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFIntSubProject readRecByNameIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 TopProjectId,
+		ICFLibKeyHash256 TopProjectId,
 		String Name );
 }

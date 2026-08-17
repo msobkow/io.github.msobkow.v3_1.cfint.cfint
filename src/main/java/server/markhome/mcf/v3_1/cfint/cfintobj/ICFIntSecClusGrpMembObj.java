@@ -226,11 +226,11 @@ public interface ICFIntSecClusGrpMembObj
 	ICFSecSecUserObj getRequiredParentUser( boolean forceRead );
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute SecClusGrpId.
+	 *	Get the required ICFLibKeyHash256 attribute SecClusGrpId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute SecClusGrpId.
+	 *	@return	The required ICFLibKeyHash256 attribute SecClusGrpId.
 	 */
-	CFLibDbKeyHash256 getRequiredSecClusGrpId();
+	ICFLibKeyHash256 getRequiredSecClusGrpId();
 
 	/**
 	 *	Get the required String attribute LoginId.

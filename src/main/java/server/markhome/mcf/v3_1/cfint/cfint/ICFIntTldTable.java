@@ -92,7 +92,7 @@ public interface ICFIntTldTable
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	void deleteTldByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argKey );
+		ICFLibKeyHash256 argKey );
 	/**
 	 *	Delete the Tld instances identified by the key TenantIdx.
 	 *
@@ -101,7 +101,7 @@ public interface ICFIntTldTable
 	 *	@param	TenantId	The Tld key attribute of the instance generating the id.
 	 */
 	void deleteTldByTenantIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argTenantId );
+		ICFLibKeyHash256 argTenantId );
 
 	/**
 	 *	Delete the Tld instances identified by the key TenantIdx.
@@ -144,7 +144,7 @@ public interface ICFIntTldTable
 	 *		no such existing key value.
 	 */
 	ICFIntTld readDerived( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Lock the derived Tld record instance by primary key.
@@ -157,7 +157,7 @@ public interface ICFIntTldTable
 	 *		no such existing key value.
 	 */
 	ICFIntTld lockDerived( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Read all Tld instances.
@@ -179,7 +179,7 @@ public interface ICFIntTldTable
 	 *		no such existing key value.
 	 */
 	ICFIntTld readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 Id );
+		ICFLibKeyHash256 Id );
 
 	/**
 	 *	Read an array of the derived Tld record instances identified by the duplicate key TenantIdx.
@@ -191,7 +191,7 @@ public interface ICFIntTldTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFIntTld[] readDerivedByTenantIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 TenantId );
+		ICFLibKeyHash256 TenantId );
 
 	/**
 	 *	Read the derived Tld record instance identified by the unique key NameIdx.
@@ -219,7 +219,7 @@ public interface ICFIntTldTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFIntTld readRec( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Lock the specific Tld record instance identified by the primary key.
@@ -234,7 +234,7 @@ public interface ICFIntTldTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFIntTld lockRec( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Read all the specific Tld record instances.
@@ -258,7 +258,7 @@ public interface ICFIntTldTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFIntTld readRecByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 Id );
+		ICFLibKeyHash256 Id );
 
 	/**
 	 *	Read an array of the specific Tld record instances identified by the duplicate key TenantIdx.
@@ -272,7 +272,7 @@ public interface ICFIntTldTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFIntTld[] readRecByTenantIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 TenantId );
+		ICFLibKeyHash256 TenantId );
 
 	/**
 	 *	Read the specific Tld record instance identified by the unique key NameIdx.

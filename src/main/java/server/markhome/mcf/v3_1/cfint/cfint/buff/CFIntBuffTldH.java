@@ -58,9 +58,9 @@ public class CFIntBuffTldH
 	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFIntPubSecUser.S_INIT_UPDATED_BY);
 	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFIntPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
-	protected CFLibDbKeyHash256 requiredTenantId;
-	protected String requiredName;
-	protected String optionalDescription;
+	protected $implJavaAtomType$ requiredTenantId;
+	protected $implJavaAtomType$ requiredName;
+	protected $implJavaAtomType$ optionalDescription;
 
     public CFIntBuffTldH() {
             // The primary key member attributes are initialized on construction

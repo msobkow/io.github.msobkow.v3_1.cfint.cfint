@@ -56,7 +56,7 @@ public class CFIntBuffURLProtocolHPKey
 	protected int requiredRevision;
 	protected CFLibDbKeyHash256 auditSessionId;
 
-	protected int requiredURLProtocolId;
+	protected $implJavaAtomType$ requiredURLProtocolId;
 
 	public CFIntBuffURLProtocolHPKey() {
 		auditClusterId = ICFSecPubCluster.ID_INIT_VALUE;

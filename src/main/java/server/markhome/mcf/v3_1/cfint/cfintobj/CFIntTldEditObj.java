@@ -198,7 +198,7 @@ public class CFIntTldEditObj
 				if (nextName == null) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 				}
-				String natNextName = nextName;
+				$implJavaAtomType$ natNextName = nextName;
 				subObj = ((ICFIntSchemaObj)getSchema()).getTopDomainTableObj().readTopDomainByNameIdx( getRequiredId(),
 				natNextName, false );
 			}
@@ -388,12 +388,12 @@ public class CFIntTldEditObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getPKey() {
+	public ICFLibKeyHash256 getPKey() {
 		return( orig.getPKey() );
 	}
 
 	@Override
-	public void setPKey( CFLibDbKeyHash256 value ) {
+	public void setPKey( ICFLibKeyHash256 value ) {
 		orig.setPKey( value );
 		copyPKeyToRec();
 	}
@@ -409,12 +409,12 @@ public class CFIntTldEditObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
+	public $implJavaAtomType$ getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredId(CFLibDbKeyHash256 value) {
+	public void setRequiredId($implJavaAtomType$ value) {
 		if (getPKey() != value) {
 			setPKey(value);
 			requiredContainerTenant = null;
@@ -423,29 +423,29 @@ public class CFIntTldEditObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredTenantId() {
+	public $implJavaAtomType$ getRequiredTenantId() {
 		return( getTldRec().getRequiredTenantId() );
 	}
 
 	@Override
-	public String getRequiredName() {
+	public $implJavaAtomType$ getRequiredName() {
 		return( getTldRec().getRequiredName() );
 	}
 
 	@Override
-	public void setRequiredName( String value ) {
+	public void setRequiredName( $implJavaAtomType$ value ) {
 		if( getTldRec().getRequiredName() != value ) {
 			getTldRec().setRequiredName( value );
 		}
 	}
 
 	@Override
-	public String getOptionalDescription() {
+	public $implJavaAtomType$ getOptionalDescription() {
 		return( getTldRec().getOptionalDescription() );
 	}
 
 	@Override
-	public void setOptionalDescription( String value ) {
+	public void setOptionalDescription( $implJavaAtomType$ value ) {
 		if( getTldRec().getOptionalDescription() != value ) {
 			getTldRec().setOptionalDescription( value );
 		}

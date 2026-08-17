@@ -51,7 +51,7 @@ public class CFIntMajorVersionObj
 	protected boolean isNew;
 	protected ICFIntMajorVersionEditObj edit;
 	protected ICFIntSchemaObj schema;
-	protected CFLibDbKeyHash256 pKey;
+	protected ICFLibKeyHash256 pKey;
 	protected ICFIntMajorVersion rec;
 	protected ICFSecTenantObj requiredOwnerTenant;
 	protected ICFIntSubProjectObj requiredContainerParentSPrj;
@@ -155,7 +155,7 @@ public class CFIntMajorVersionObj
 				if (nextName == null) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 				}
-				String natNextName = nextName;
+				$implJavaAtomType$ natNextName = nextName;
 				subObj = ((ICFIntSchemaObj)getSchema()).getMinorVersionTableObj().readMinorVersionByNameIdx( getRequiredId(),
 				natNextName, false );
 			}
@@ -298,12 +298,12 @@ public class CFIntMajorVersionObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getPKey() {
+	public ICFLibKeyHash256 getPKey() {
 		return( pKey );
 	}
 
 	@Override
-	public void setPKey( CFLibDbKeyHash256 value ) {
+	public void setPKey( ICFLibKeyHash256 value ) {
 		if( pKey != value ) {
        		pKey = value;
 			copyPKeyToRec();
@@ -380,7 +380,7 @@ public class CFIntMajorVersionObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
+	public $implJavaAtomType$ getRequiredId() {
 		return( getPKey() );
 	}
 
@@ -433,22 +433,22 @@ public class CFIntMajorVersionObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredTenantId() {
+	public $implJavaAtomType$ getRequiredTenantId() {
 		return( getMajorVersionRec().getRequiredTenantId() );
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredSubProjectId() {
+	public $implJavaAtomType$ getRequiredSubProjectId() {
 		return( getMajorVersionRec().getRequiredSubProjectId() );
 	}
 
 	@Override
-	public String getRequiredName() {
+	public $implJavaAtomType$ getRequiredName() {
 		return( getMajorVersionRec().getRequiredName() );
 	}
 
 	@Override
-	public String getOptionalDescription() {
+	public $implJavaAtomType$ getOptionalDescription() {
 		return( getMajorVersionRec().getOptionalDescription() );
 	}
 

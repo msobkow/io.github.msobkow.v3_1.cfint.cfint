@@ -100,7 +100,7 @@ public interface ICFIntMajorVersionTableObj
 	 *	@return	The MajorVersion-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFIntMajorVersionObj readMajorVersion( CFLibDbKeyHash256 pkey );
+	ICFIntMajorVersionObj readMajorVersion( ICFLibKeyHash256 pkey );
 
 	/**
 	 *	Read a MajorVersion-derived instance by it's primary key.
@@ -110,19 +110,19 @@ public interface ICFIntMajorVersionTableObj
 	 *	@return	The MajorVersion-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFIntMajorVersionObj readMajorVersion( CFLibDbKeyHash256 pkey,
+	ICFIntMajorVersionObj readMajorVersion( ICFLibKeyHash256 pkey,
 		boolean forceRead );
 
-	ICFIntMajorVersionObj readCachedMajorVersion( CFLibDbKeyHash256 pkey );
+	ICFIntMajorVersionObj readCachedMajorVersion( ICFLibKeyHash256 pkey );
 
 	public void reallyDeepDisposeMajorVersion( ICFIntMajorVersionObj obj );
 
-	void deepDisposeMajorVersion( CFLibDbKeyHash256 pkey );
+	void deepDisposeMajorVersion( ICFLibKeyHash256 pkey );
 
 	/**
 	 *	Internal use only.
 	 */
-	ICFIntMajorVersionObj lockMajorVersion( CFLibDbKeyHash256 pkey );
+	ICFIntMajorVersionObj lockMajorVersion( ICFLibKeyHash256 pkey );
 
 	/**
 	 *	Return a sorted list of all the MajorVersion-derived instances in the database.
@@ -150,7 +150,7 @@ public interface ICFIntMajorVersionTableObj
 	 *	@return	CFIntMajorVersionObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFIntMajorVersionObj readMajorVersionByIdIdx( CFLibDbKeyHash256 Id );
+	ICFIntMajorVersionObj readMajorVersionByIdIdx( ICFLibKeyHash256 Id );
 
 	/**
 	 *	Get the CFIntMajorVersionObj instance for the primary key attributes.
@@ -160,7 +160,7 @@ public interface ICFIntMajorVersionTableObj
 	 *	@return	CFIntMajorVersionObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFIntMajorVersionObj readMajorVersionByIdIdx( CFLibDbKeyHash256 Id,
+	ICFIntMajorVersionObj readMajorVersionByIdIdx( ICFLibKeyHash256 Id,
 		boolean forceRead );
 
 	/**
@@ -171,7 +171,7 @@ public interface ICFIntMajorVersionTableObj
 	 *	@return	List of CFIntMajorVersionObj cached instances sorted by their primary keys for the duplicate TenantIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFIntMajorVersionObj> readMajorVersionByTenantIdx( CFLibDbKeyHash256 TenantId );
+	List<ICFIntMajorVersionObj> readMajorVersionByTenantIdx( ICFLibKeyHash256 TenantId );
 
 	/**
 	 *	Get the map of CFIntMajorVersionObj instances sorted by their primary keys for the duplicate TenantIdx key.
@@ -181,7 +181,7 @@ public interface ICFIntMajorVersionTableObj
 	 *	@return	List of CFIntMajorVersionObj cached instances sorted by their primary keys for the duplicate TenantIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFIntMajorVersionObj> readMajorVersionByTenantIdx( CFLibDbKeyHash256 TenantId,
+	List<ICFIntMajorVersionObj> readMajorVersionByTenantIdx( ICFLibKeyHash256 TenantId,
 		boolean forceRead );
 
 	/**
@@ -192,7 +192,7 @@ public interface ICFIntMajorVersionTableObj
 	 *	@return	List of CFIntMajorVersionObj cached instances sorted by their primary keys for the duplicate SubProjectIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFIntMajorVersionObj> readMajorVersionBySubProjectIdx( CFLibDbKeyHash256 SubProjectId );
+	List<ICFIntMajorVersionObj> readMajorVersionBySubProjectIdx( ICFLibKeyHash256 SubProjectId );
 
 	/**
 	 *	Get the map of CFIntMajorVersionObj instances sorted by their primary keys for the duplicate SubProjectIdx key.
@@ -202,7 +202,7 @@ public interface ICFIntMajorVersionTableObj
 	 *	@return	List of CFIntMajorVersionObj cached instances sorted by their primary keys for the duplicate SubProjectIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFIntMajorVersionObj> readMajorVersionBySubProjectIdx( CFLibDbKeyHash256 SubProjectId,
+	List<ICFIntMajorVersionObj> readMajorVersionBySubProjectIdx( ICFLibKeyHash256 SubProjectId,
 		boolean forceRead );
 
 	/**
@@ -215,7 +215,7 @@ public interface ICFIntMajorVersionTableObj
 	 *	@return	CFIntMajorVersionObj cached instance for the unique NameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFIntMajorVersionObj readMajorVersionByNameIdx(CFLibDbKeyHash256 SubProjectId,
+	ICFIntMajorVersionObj readMajorVersionByNameIdx(ICFLibKeyHash256 SubProjectId,
 		String Name );
 
 	/**
@@ -228,26 +228,26 @@ public interface ICFIntMajorVersionTableObj
 	 *	@return	CFIntMajorVersionObj refreshed instance for the unique NameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFIntMajorVersionObj readMajorVersionByNameIdx(CFLibDbKeyHash256 SubProjectId,
+	ICFIntMajorVersionObj readMajorVersionByNameIdx(ICFLibKeyHash256 SubProjectId,
 		String Name,
 		boolean forceRead );
 
-	ICFIntMajorVersionObj readCachedMajorVersionByIdIdx( CFLibDbKeyHash256 Id );
+	ICFIntMajorVersionObj readCachedMajorVersionByIdIdx( ICFLibKeyHash256 Id );
 
-	List<ICFIntMajorVersionObj> readCachedMajorVersionByTenantIdx( CFLibDbKeyHash256 TenantId );
+	List<ICFIntMajorVersionObj> readCachedMajorVersionByTenantIdx( ICFLibKeyHash256 TenantId );
 
-	List<ICFIntMajorVersionObj> readCachedMajorVersionBySubProjectIdx( CFLibDbKeyHash256 SubProjectId );
+	List<ICFIntMajorVersionObj> readCachedMajorVersionBySubProjectIdx( ICFLibKeyHash256 SubProjectId );
 
-	ICFIntMajorVersionObj readCachedMajorVersionByNameIdx( CFLibDbKeyHash256 SubProjectId,
+	ICFIntMajorVersionObj readCachedMajorVersionByNameIdx( ICFLibKeyHash256 SubProjectId,
 		String Name );
 
-	void deepDisposeMajorVersionByIdIdx( CFLibDbKeyHash256 Id );
+	void deepDisposeMajorVersionByIdIdx( ICFLibKeyHash256 Id );
 
-	void deepDisposeMajorVersionByTenantIdx( CFLibDbKeyHash256 TenantId );
+	void deepDisposeMajorVersionByTenantIdx( ICFLibKeyHash256 TenantId );
 
-	void deepDisposeMajorVersionBySubProjectIdx( CFLibDbKeyHash256 SubProjectId );
+	void deepDisposeMajorVersionBySubProjectIdx( ICFLibKeyHash256 SubProjectId );
 
-	void deepDisposeMajorVersionByNameIdx( CFLibDbKeyHash256 SubProjectId,
+	void deepDisposeMajorVersionByNameIdx( ICFLibKeyHash256 SubProjectId,
 		String Name );
 
 	/**
@@ -265,21 +265,21 @@ public interface ICFIntMajorVersionTableObj
 	 *
 	 *	@param	Id	The MajorVersion key attribute of the instance generating the id.
 	 */
-	void deleteMajorVersionByIdIdx( CFLibDbKeyHash256 Id );
+	void deleteMajorVersionByIdIdx( ICFLibKeyHash256 Id );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	TenantId	The MajorVersion key attribute of the instance generating the id.
 	 */
-	void deleteMajorVersionByTenantIdx( CFLibDbKeyHash256 TenantId );
+	void deleteMajorVersionByTenantIdx( ICFLibKeyHash256 TenantId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	SubProjectId	The MajorVersion key attribute of the instance generating the id.
 	 */
-	void deleteMajorVersionBySubProjectIdx( CFLibDbKeyHash256 SubProjectId );
+	void deleteMajorVersionBySubProjectIdx( ICFLibKeyHash256 SubProjectId );
 
 	/**
 	 *	Internal use only.
@@ -288,6 +288,6 @@ public interface ICFIntMajorVersionTableObj
 	 *
 	 *	@param	Name	The MajorVersion key attribute of the instance generating the id.
 	 */
-	void deleteMajorVersionByNameIdx(CFLibDbKeyHash256 SubProjectId,
+	void deleteMajorVersionByNameIdx(ICFLibKeyHash256 SubProjectId,
 		String Name );
 }

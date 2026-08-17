@@ -212,11 +212,11 @@ public interface ICFIntSecUserPWResetObj
 	ICFSecSecUserObj getRequiredContainerUser( boolean forceRead );
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute SecUserId.
+	 *	Get the required ICFLibKeyHash256 attribute SecUserId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute SecUserId.
+	 *	@return	The required ICFLibKeyHash256 attribute SecUserId.
 	 */
-	CFLibDbKeyHash256 getRequiredSecUserId();
+	ICFLibKeyHash256 getRequiredSecUserId();
 
 	/**
 	 *	Get the required String attribute SentToEMailAddr.
@@ -226,11 +226,11 @@ public interface ICFIntSecUserPWResetObj
 	String getRequiredSentToEMailAddr();
 
 	/**
-	 *	Get the required CFLibUuid6 attribute PasswordResetUuid6.
+	 *	Get the required ICFLibUuid6 attribute PasswordResetUuid6.
 	 *
-	 *	@return	The required CFLibUuid6 attribute PasswordResetUuid6.
+	 *	@return	The required ICFLibUuid6 attribute PasswordResetUuid6.
 	 */
-	CFLibUuid6 getRequiredPasswordResetUuid6();
+	ICFLibUuid6 getRequiredPasswordResetUuid6();
 
 	/**
 	 *	Get the required boolean attribute NewAccount.

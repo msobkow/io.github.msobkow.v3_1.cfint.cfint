@@ -100,7 +100,7 @@ public interface ICFIntTldTableObj
 	 *	@return	The Tld-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFIntTldObj readTld( CFLibDbKeyHash256 pkey );
+	ICFIntTldObj readTld( ICFLibKeyHash256 pkey );
 
 	/**
 	 *	Read a Tld-derived instance by it's primary key.
@@ -110,19 +110,19 @@ public interface ICFIntTldTableObj
 	 *	@return	The Tld-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFIntTldObj readTld( CFLibDbKeyHash256 pkey,
+	ICFIntTldObj readTld( ICFLibKeyHash256 pkey,
 		boolean forceRead );
 
-	ICFIntTldObj readCachedTld( CFLibDbKeyHash256 pkey );
+	ICFIntTldObj readCachedTld( ICFLibKeyHash256 pkey );
 
 	public void reallyDeepDisposeTld( ICFIntTldObj obj );
 
-	void deepDisposeTld( CFLibDbKeyHash256 pkey );
+	void deepDisposeTld( ICFLibKeyHash256 pkey );
 
 	/**
 	 *	Internal use only.
 	 */
-	ICFIntTldObj lockTld( CFLibDbKeyHash256 pkey );
+	ICFIntTldObj lockTld( ICFLibKeyHash256 pkey );
 
 	/**
 	 *	Return a sorted list of all the Tld-derived instances in the database.
@@ -150,7 +150,7 @@ public interface ICFIntTldTableObj
 	 *	@return	CFIntTldObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFIntTldObj readTldByIdIdx( CFLibDbKeyHash256 Id );
+	ICFIntTldObj readTldByIdIdx( ICFLibKeyHash256 Id );
 
 	/**
 	 *	Get the CFIntTldObj instance for the primary key attributes.
@@ -160,7 +160,7 @@ public interface ICFIntTldTableObj
 	 *	@return	CFIntTldObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFIntTldObj readTldByIdIdx( CFLibDbKeyHash256 Id,
+	ICFIntTldObj readTldByIdIdx( ICFLibKeyHash256 Id,
 		boolean forceRead );
 
 	/**
@@ -171,7 +171,7 @@ public interface ICFIntTldTableObj
 	 *	@return	List of CFIntTldObj cached instances sorted by their primary keys for the duplicate TenantIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFIntTldObj> readTldByTenantIdx( CFLibDbKeyHash256 TenantId );
+	List<ICFIntTldObj> readTldByTenantIdx( ICFLibKeyHash256 TenantId );
 
 	/**
 	 *	Get the map of CFIntTldObj instances sorted by their primary keys for the duplicate TenantIdx key.
@@ -181,7 +181,7 @@ public interface ICFIntTldTableObj
 	 *	@return	List of CFIntTldObj cached instances sorted by their primary keys for the duplicate TenantIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFIntTldObj> readTldByTenantIdx( CFLibDbKeyHash256 TenantId,
+	List<ICFIntTldObj> readTldByTenantIdx( ICFLibKeyHash256 TenantId,
 		boolean forceRead );
 
 	/**
@@ -205,15 +205,15 @@ public interface ICFIntTldTableObj
 	ICFIntTldObj readTldByNameIdx(String Name,
 		boolean forceRead );
 
-	ICFIntTldObj readCachedTldByIdIdx( CFLibDbKeyHash256 Id );
+	ICFIntTldObj readCachedTldByIdIdx( ICFLibKeyHash256 Id );
 
-	List<ICFIntTldObj> readCachedTldByTenantIdx( CFLibDbKeyHash256 TenantId );
+	List<ICFIntTldObj> readCachedTldByTenantIdx( ICFLibKeyHash256 TenantId );
 
 	ICFIntTldObj readCachedTldByNameIdx( String Name );
 
-	void deepDisposeTldByIdIdx( CFLibDbKeyHash256 Id );
+	void deepDisposeTldByIdIdx( ICFLibKeyHash256 Id );
 
-	void deepDisposeTldByTenantIdx( CFLibDbKeyHash256 TenantId );
+	void deepDisposeTldByTenantIdx( ICFLibKeyHash256 TenantId );
 
 	void deepDisposeTldByNameIdx( String Name );
 
@@ -232,14 +232,14 @@ public interface ICFIntTldTableObj
 	 *
 	 *	@param	Id	The Tld key attribute of the instance generating the id.
 	 */
-	void deleteTldByIdIdx( CFLibDbKeyHash256 Id );
+	void deleteTldByIdIdx( ICFLibKeyHash256 Id );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	TenantId	The Tld key attribute of the instance generating the id.
 	 */
-	void deleteTldByTenantIdx( CFLibDbKeyHash256 TenantId );
+	void deleteTldByTenantIdx( ICFLibKeyHash256 TenantId );
 
 	/**
 	 *	Internal use only.

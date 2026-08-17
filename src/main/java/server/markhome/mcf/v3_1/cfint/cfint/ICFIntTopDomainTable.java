@@ -92,7 +92,7 @@ public interface ICFIntTopDomainTable
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	void deleteTopDomainByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argKey );
+		ICFLibKeyHash256 argKey );
 	/**
 	 *	Delete the TopDomain instances identified by the key TenantIdx.
 	 *
@@ -101,7 +101,7 @@ public interface ICFIntTopDomainTable
 	 *	@param	TenantId	The TopDomain key attribute of the instance generating the id.
 	 */
 	void deleteTopDomainByTenantIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argTenantId );
+		ICFLibKeyHash256 argTenantId );
 
 	/**
 	 *	Delete the TopDomain instances identified by the key TenantIdx.
@@ -120,7 +120,7 @@ public interface ICFIntTopDomainTable
 	 *	@param	TldId	The TopDomain key attribute of the instance generating the id.
 	 */
 	void deleteTopDomainByTldIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argTldId );
+		ICFLibKeyHash256 argTldId );
 
 	/**
 	 *	Delete the TopDomain instances identified by the key TldIdx.
@@ -141,7 +141,7 @@ public interface ICFIntTopDomainTable
 	 *	@param	Name	The TopDomain key attribute of the instance generating the id.
 	 */
 	void deleteTopDomainByNameIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argTldId,
+		ICFLibKeyHash256 argTldId,
 		String argName );
 
 	/**
@@ -166,7 +166,7 @@ public interface ICFIntTopDomainTable
 	 *		no such existing key value.
 	 */
 	ICFIntTopDomain readDerived( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Lock the derived TopDomain record instance by primary key.
@@ -179,7 +179,7 @@ public interface ICFIntTopDomainTable
 	 *		no such existing key value.
 	 */
 	ICFIntTopDomain lockDerived( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Read all TopDomain instances.
@@ -201,7 +201,7 @@ public interface ICFIntTopDomainTable
 	 *		no such existing key value.
 	 */
 	ICFIntTopDomain readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 Id );
+		ICFLibKeyHash256 Id );
 
 	/**
 	 *	Read an array of the derived TopDomain record instances identified by the duplicate key TenantIdx.
@@ -213,7 +213,7 @@ public interface ICFIntTopDomainTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFIntTopDomain[] readDerivedByTenantIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 TenantId );
+		ICFLibKeyHash256 TenantId );
 
 	/**
 	 *	Read an array of the derived TopDomain record instances identified by the duplicate key TldIdx.
@@ -225,7 +225,7 @@ public interface ICFIntTopDomainTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFIntTopDomain[] readDerivedByTldIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 TldId );
+		ICFLibKeyHash256 TldId );
 
 	/**
 	 *	Read the derived TopDomain record instance identified by the unique key NameIdx.
@@ -240,7 +240,7 @@ public interface ICFIntTopDomainTable
 	 *		no such existing key value.
 	 */
 	ICFIntTopDomain readDerivedByNameIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 TldId,
+		ICFLibKeyHash256 TldId,
 		String Name );
 
 	/**
@@ -256,7 +256,7 @@ public interface ICFIntTopDomainTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFIntTopDomain readRec( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Lock the specific TopDomain record instance identified by the primary key.
@@ -271,7 +271,7 @@ public interface ICFIntTopDomainTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFIntTopDomain lockRec( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Read all the specific TopDomain record instances.
@@ -295,7 +295,7 @@ public interface ICFIntTopDomainTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFIntTopDomain readRecByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 Id );
+		ICFLibKeyHash256 Id );
 
 	/**
 	 *	Read an array of the specific TopDomain record instances identified by the duplicate key TenantIdx.
@@ -309,7 +309,7 @@ public interface ICFIntTopDomainTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFIntTopDomain[] readRecByTenantIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 TenantId );
+		ICFLibKeyHash256 TenantId );
 
 	/**
 	 *	Read an array of the specific TopDomain record instances identified by the duplicate key TldIdx.
@@ -323,7 +323,7 @@ public interface ICFIntTopDomainTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFIntTopDomain[] readRecByTldIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 TldId );
+		ICFLibKeyHash256 TldId );
 
 	/**
 	 *	Read the specific TopDomain record instance identified by the unique key NameIdx.
@@ -340,6 +340,6 @@ public interface ICFIntTopDomainTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFIntTopDomain readRecByNameIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 TldId,
+		ICFLibKeyHash256 TldId,
 		String Name );
 }

@@ -100,7 +100,7 @@ public interface ICFIntLicenseTableObj
 	 *	@return	The License-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFIntLicenseObj readLicense( CFLibDbKeyHash256 pkey );
+	ICFIntLicenseObj readLicense( ICFLibKeyHash256 pkey );
 
 	/**
 	 *	Read a License-derived instance by it's primary key.
@@ -110,19 +110,19 @@ public interface ICFIntLicenseTableObj
 	 *	@return	The License-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFIntLicenseObj readLicense( CFLibDbKeyHash256 pkey,
+	ICFIntLicenseObj readLicense( ICFLibKeyHash256 pkey,
 		boolean forceRead );
 
-	ICFIntLicenseObj readCachedLicense( CFLibDbKeyHash256 pkey );
+	ICFIntLicenseObj readCachedLicense( ICFLibKeyHash256 pkey );
 
 	public void reallyDeepDisposeLicense( ICFIntLicenseObj obj );
 
-	void deepDisposeLicense( CFLibDbKeyHash256 pkey );
+	void deepDisposeLicense( ICFLibKeyHash256 pkey );
 
 	/**
 	 *	Internal use only.
 	 */
-	ICFIntLicenseObj lockLicense( CFLibDbKeyHash256 pkey );
+	ICFIntLicenseObj lockLicense( ICFLibKeyHash256 pkey );
 
 	/**
 	 *	Return a sorted list of all the License-derived instances in the database.
@@ -150,7 +150,7 @@ public interface ICFIntLicenseTableObj
 	 *	@return	CFIntLicenseObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFIntLicenseObj readLicenseByIdIdx( CFLibDbKeyHash256 Id );
+	ICFIntLicenseObj readLicenseByIdIdx( ICFLibKeyHash256 Id );
 
 	/**
 	 *	Get the CFIntLicenseObj instance for the primary key attributes.
@@ -160,7 +160,7 @@ public interface ICFIntLicenseTableObj
 	 *	@return	CFIntLicenseObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFIntLicenseObj readLicenseByIdIdx( CFLibDbKeyHash256 Id,
+	ICFIntLicenseObj readLicenseByIdIdx( ICFLibKeyHash256 Id,
 		boolean forceRead );
 
 	/**
@@ -171,7 +171,7 @@ public interface ICFIntLicenseTableObj
 	 *	@return	List of CFIntLicenseObj cached instances sorted by their primary keys for the duplicate LicnTenantIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFIntLicenseObj> readLicenseByLicnTenantIdx( CFLibDbKeyHash256 TenantId );
+	List<ICFIntLicenseObj> readLicenseByLicnTenantIdx( ICFLibKeyHash256 TenantId );
 
 	/**
 	 *	Get the map of CFIntLicenseObj instances sorted by their primary keys for the duplicate LicnTenantIdx key.
@@ -181,7 +181,7 @@ public interface ICFIntLicenseTableObj
 	 *	@return	List of CFIntLicenseObj cached instances sorted by their primary keys for the duplicate LicnTenantIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFIntLicenseObj> readLicenseByLicnTenantIdx( CFLibDbKeyHash256 TenantId,
+	List<ICFIntLicenseObj> readLicenseByLicnTenantIdx( ICFLibKeyHash256 TenantId,
 		boolean forceRead );
 
 	/**
@@ -192,7 +192,7 @@ public interface ICFIntLicenseTableObj
 	 *	@return	List of CFIntLicenseObj cached instances sorted by their primary keys for the duplicate DomainIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFIntLicenseObj> readLicenseByDomainIdx( CFLibDbKeyHash256 TopDomainId );
+	List<ICFIntLicenseObj> readLicenseByDomainIdx( ICFLibKeyHash256 TopDomainId );
 
 	/**
 	 *	Get the map of CFIntLicenseObj instances sorted by their primary keys for the duplicate DomainIdx key.
@@ -202,7 +202,7 @@ public interface ICFIntLicenseTableObj
 	 *	@return	List of CFIntLicenseObj cached instances sorted by their primary keys for the duplicate DomainIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFIntLicenseObj> readLicenseByDomainIdx( CFLibDbKeyHash256 TopDomainId,
+	List<ICFIntLicenseObj> readLicenseByDomainIdx( ICFLibKeyHash256 TopDomainId,
 		boolean forceRead );
 
 	/**
@@ -215,7 +215,7 @@ public interface ICFIntLicenseTableObj
 	 *	@return	CFIntLicenseObj cached instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFIntLicenseObj readLicenseByUNameIdx(CFLibDbKeyHash256 TopDomainId,
+	ICFIntLicenseObj readLicenseByUNameIdx(ICFLibKeyHash256 TopDomainId,
 		String Name );
 
 	/**
@@ -228,26 +228,26 @@ public interface ICFIntLicenseTableObj
 	 *	@return	CFIntLicenseObj refreshed instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFIntLicenseObj readLicenseByUNameIdx(CFLibDbKeyHash256 TopDomainId,
+	ICFIntLicenseObj readLicenseByUNameIdx(ICFLibKeyHash256 TopDomainId,
 		String Name,
 		boolean forceRead );
 
-	ICFIntLicenseObj readCachedLicenseByIdIdx( CFLibDbKeyHash256 Id );
+	ICFIntLicenseObj readCachedLicenseByIdIdx( ICFLibKeyHash256 Id );
 
-	List<ICFIntLicenseObj> readCachedLicenseByLicnTenantIdx( CFLibDbKeyHash256 TenantId );
+	List<ICFIntLicenseObj> readCachedLicenseByLicnTenantIdx( ICFLibKeyHash256 TenantId );
 
-	List<ICFIntLicenseObj> readCachedLicenseByDomainIdx( CFLibDbKeyHash256 TopDomainId );
+	List<ICFIntLicenseObj> readCachedLicenseByDomainIdx( ICFLibKeyHash256 TopDomainId );
 
-	ICFIntLicenseObj readCachedLicenseByUNameIdx( CFLibDbKeyHash256 TopDomainId,
+	ICFIntLicenseObj readCachedLicenseByUNameIdx( ICFLibKeyHash256 TopDomainId,
 		String Name );
 
-	void deepDisposeLicenseByIdIdx( CFLibDbKeyHash256 Id );
+	void deepDisposeLicenseByIdIdx( ICFLibKeyHash256 Id );
 
-	void deepDisposeLicenseByLicnTenantIdx( CFLibDbKeyHash256 TenantId );
+	void deepDisposeLicenseByLicnTenantIdx( ICFLibKeyHash256 TenantId );
 
-	void deepDisposeLicenseByDomainIdx( CFLibDbKeyHash256 TopDomainId );
+	void deepDisposeLicenseByDomainIdx( ICFLibKeyHash256 TopDomainId );
 
-	void deepDisposeLicenseByUNameIdx( CFLibDbKeyHash256 TopDomainId,
+	void deepDisposeLicenseByUNameIdx( ICFLibKeyHash256 TopDomainId,
 		String Name );
 
 	/**
@@ -265,21 +265,21 @@ public interface ICFIntLicenseTableObj
 	 *
 	 *	@param	Id	The License key attribute of the instance generating the id.
 	 */
-	void deleteLicenseByIdIdx( CFLibDbKeyHash256 Id );
+	void deleteLicenseByIdIdx( ICFLibKeyHash256 Id );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	TenantId	The License key attribute of the instance generating the id.
 	 */
-	void deleteLicenseByLicnTenantIdx( CFLibDbKeyHash256 TenantId );
+	void deleteLicenseByLicnTenantIdx( ICFLibKeyHash256 TenantId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	TopDomainId	The License key attribute of the instance generating the id.
 	 */
-	void deleteLicenseByDomainIdx( CFLibDbKeyHash256 TopDomainId );
+	void deleteLicenseByDomainIdx( ICFLibKeyHash256 TopDomainId );
 
 	/**
 	 *	Internal use only.
@@ -288,6 +288,6 @@ public interface ICFIntLicenseTableObj
 	 *
 	 *	@param	Name	The License key attribute of the instance generating the id.
 	 */
-	void deleteLicenseByUNameIdx(CFLibDbKeyHash256 TopDomainId,
+	void deleteLicenseByUNameIdx(ICFLibKeyHash256 TopDomainId,
 		String Name );
 }

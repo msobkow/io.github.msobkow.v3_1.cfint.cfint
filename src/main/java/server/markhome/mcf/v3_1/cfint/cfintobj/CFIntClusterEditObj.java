@@ -196,7 +196,7 @@ public class CFIntClusterEditObj
 				if (nextName == null) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredTenantName");
 				}
-				String natNextName = nextName;
+				$implJavaAtomType$ natNextName = nextName;
 				subObj = ((ICFIntSchemaObj)getSchema()).getTenantTableObj().readTenantByUNameIdx( getRequiredId(),
 				natNextName, false );
 			}
@@ -382,12 +382,12 @@ public class CFIntClusterEditObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getPKey() {
+	public ICFLibKeyHash256 getPKey() {
 		return( orig.getPKey() );
 	}
 
 	@Override
-	public void setPKey( CFLibDbKeyHash256 value ) {
+	public void setPKey( ICFLibKeyHash256 value ) {
 		orig.setPKey( value );
 		copyPKeyToRec();
 	}
@@ -403,12 +403,12 @@ public class CFIntClusterEditObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
+	public $implJavaAtomType$ getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredId(CFLibDbKeyHash256 value) {
+	public void setRequiredId($implJavaAtomType$ value) {
 		if (getPKey() != value) {
 			setPKey(value);
 			optionalComponentsTenant = null;
@@ -419,24 +419,24 @@ public class CFIntClusterEditObj
 	}
 
 	@Override
-	public String getRequiredFullDomName() {
+	public $implJavaAtomType$ getRequiredFullDomName() {
 		return( getClusterRec().getRequiredFullDomName() );
 	}
 
 	@Override
-	public void setRequiredFullDomName( String value ) {
+	public void setRequiredFullDomName( $implJavaAtomType$ value ) {
 		if( getClusterRec().getRequiredFullDomName() != value ) {
 			getClusterRec().setRequiredFullDomName( value );
 		}
 	}
 
 	@Override
-	public String getRequiredDescription() {
+	public $implJavaAtomType$ getRequiredDescription() {
 		return( getClusterRec().getRequiredDescription() );
 	}
 
 	@Override
-	public void setRequiredDescription( String value ) {
+	public void setRequiredDescription( $implJavaAtomType$ value ) {
 		if( getClusterRec().getRequiredDescription() != value ) {
 			getClusterRec().setRequiredDescription( value );
 		}

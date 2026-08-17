@@ -100,7 +100,7 @@ public interface ICFIntTopProjectTableObj
 	 *	@return	The TopProject-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFIntTopProjectObj readTopProject( CFLibDbKeyHash256 pkey );
+	ICFIntTopProjectObj readTopProject( ICFLibKeyHash256 pkey );
 
 	/**
 	 *	Read a TopProject-derived instance by it's primary key.
@@ -110,19 +110,19 @@ public interface ICFIntTopProjectTableObj
 	 *	@return	The TopProject-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFIntTopProjectObj readTopProject( CFLibDbKeyHash256 pkey,
+	ICFIntTopProjectObj readTopProject( ICFLibKeyHash256 pkey,
 		boolean forceRead );
 
-	ICFIntTopProjectObj readCachedTopProject( CFLibDbKeyHash256 pkey );
+	ICFIntTopProjectObj readCachedTopProject( ICFLibKeyHash256 pkey );
 
 	public void reallyDeepDisposeTopProject( ICFIntTopProjectObj obj );
 
-	void deepDisposeTopProject( CFLibDbKeyHash256 pkey );
+	void deepDisposeTopProject( ICFLibKeyHash256 pkey );
 
 	/**
 	 *	Internal use only.
 	 */
-	ICFIntTopProjectObj lockTopProject( CFLibDbKeyHash256 pkey );
+	ICFIntTopProjectObj lockTopProject( ICFLibKeyHash256 pkey );
 
 	/**
 	 *	Return a sorted list of all the TopProject-derived instances in the database.
@@ -150,7 +150,7 @@ public interface ICFIntTopProjectTableObj
 	 *	@return	CFIntTopProjectObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFIntTopProjectObj readTopProjectByIdIdx( CFLibDbKeyHash256 Id );
+	ICFIntTopProjectObj readTopProjectByIdIdx( ICFLibKeyHash256 Id );
 
 	/**
 	 *	Get the CFIntTopProjectObj instance for the primary key attributes.
@@ -160,7 +160,7 @@ public interface ICFIntTopProjectTableObj
 	 *	@return	CFIntTopProjectObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFIntTopProjectObj readTopProjectByIdIdx( CFLibDbKeyHash256 Id,
+	ICFIntTopProjectObj readTopProjectByIdIdx( ICFLibKeyHash256 Id,
 		boolean forceRead );
 
 	/**
@@ -171,7 +171,7 @@ public interface ICFIntTopProjectTableObj
 	 *	@return	List of CFIntTopProjectObj cached instances sorted by their primary keys for the duplicate TenantIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFIntTopProjectObj> readTopProjectByTenantIdx( CFLibDbKeyHash256 TenantId );
+	List<ICFIntTopProjectObj> readTopProjectByTenantIdx( ICFLibKeyHash256 TenantId );
 
 	/**
 	 *	Get the map of CFIntTopProjectObj instances sorted by their primary keys for the duplicate TenantIdx key.
@@ -181,7 +181,7 @@ public interface ICFIntTopProjectTableObj
 	 *	@return	List of CFIntTopProjectObj cached instances sorted by their primary keys for the duplicate TenantIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFIntTopProjectObj> readTopProjectByTenantIdx( CFLibDbKeyHash256 TenantId,
+	List<ICFIntTopProjectObj> readTopProjectByTenantIdx( ICFLibKeyHash256 TenantId,
 		boolean forceRead );
 
 	/**
@@ -192,7 +192,7 @@ public interface ICFIntTopProjectTableObj
 	 *	@return	List of CFIntTopProjectObj cached instances sorted by their primary keys for the duplicate TopDomainIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFIntTopProjectObj> readTopProjectByTopDomainIdx( CFLibDbKeyHash256 TopDomainId );
+	List<ICFIntTopProjectObj> readTopProjectByTopDomainIdx( ICFLibKeyHash256 TopDomainId );
 
 	/**
 	 *	Get the map of CFIntTopProjectObj instances sorted by their primary keys for the duplicate TopDomainIdx key.
@@ -202,7 +202,7 @@ public interface ICFIntTopProjectTableObj
 	 *	@return	List of CFIntTopProjectObj cached instances sorted by their primary keys for the duplicate TopDomainIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFIntTopProjectObj> readTopProjectByTopDomainIdx( CFLibDbKeyHash256 TopDomainId,
+	List<ICFIntTopProjectObj> readTopProjectByTopDomainIdx( ICFLibKeyHash256 TopDomainId,
 		boolean forceRead );
 
 	/**
@@ -215,7 +215,7 @@ public interface ICFIntTopProjectTableObj
 	 *	@return	CFIntTopProjectObj cached instance for the unique NameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFIntTopProjectObj readTopProjectByNameIdx(CFLibDbKeyHash256 TopDomainId,
+	ICFIntTopProjectObj readTopProjectByNameIdx(ICFLibKeyHash256 TopDomainId,
 		String Name );
 
 	/**
@@ -228,26 +228,26 @@ public interface ICFIntTopProjectTableObj
 	 *	@return	CFIntTopProjectObj refreshed instance for the unique NameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFIntTopProjectObj readTopProjectByNameIdx(CFLibDbKeyHash256 TopDomainId,
+	ICFIntTopProjectObj readTopProjectByNameIdx(ICFLibKeyHash256 TopDomainId,
 		String Name,
 		boolean forceRead );
 
-	ICFIntTopProjectObj readCachedTopProjectByIdIdx( CFLibDbKeyHash256 Id );
+	ICFIntTopProjectObj readCachedTopProjectByIdIdx( ICFLibKeyHash256 Id );
 
-	List<ICFIntTopProjectObj> readCachedTopProjectByTenantIdx( CFLibDbKeyHash256 TenantId );
+	List<ICFIntTopProjectObj> readCachedTopProjectByTenantIdx( ICFLibKeyHash256 TenantId );
 
-	List<ICFIntTopProjectObj> readCachedTopProjectByTopDomainIdx( CFLibDbKeyHash256 TopDomainId );
+	List<ICFIntTopProjectObj> readCachedTopProjectByTopDomainIdx( ICFLibKeyHash256 TopDomainId );
 
-	ICFIntTopProjectObj readCachedTopProjectByNameIdx( CFLibDbKeyHash256 TopDomainId,
+	ICFIntTopProjectObj readCachedTopProjectByNameIdx( ICFLibKeyHash256 TopDomainId,
 		String Name );
 
-	void deepDisposeTopProjectByIdIdx( CFLibDbKeyHash256 Id );
+	void deepDisposeTopProjectByIdIdx( ICFLibKeyHash256 Id );
 
-	void deepDisposeTopProjectByTenantIdx( CFLibDbKeyHash256 TenantId );
+	void deepDisposeTopProjectByTenantIdx( ICFLibKeyHash256 TenantId );
 
-	void deepDisposeTopProjectByTopDomainIdx( CFLibDbKeyHash256 TopDomainId );
+	void deepDisposeTopProjectByTopDomainIdx( ICFLibKeyHash256 TopDomainId );
 
-	void deepDisposeTopProjectByNameIdx( CFLibDbKeyHash256 TopDomainId,
+	void deepDisposeTopProjectByNameIdx( ICFLibKeyHash256 TopDomainId,
 		String Name );
 
 	/**
@@ -265,21 +265,21 @@ public interface ICFIntTopProjectTableObj
 	 *
 	 *	@param	Id	The TopProject key attribute of the instance generating the id.
 	 */
-	void deleteTopProjectByIdIdx( CFLibDbKeyHash256 Id );
+	void deleteTopProjectByIdIdx( ICFLibKeyHash256 Id );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	TenantId	The TopProject key attribute of the instance generating the id.
 	 */
-	void deleteTopProjectByTenantIdx( CFLibDbKeyHash256 TenantId );
+	void deleteTopProjectByTenantIdx( ICFLibKeyHash256 TenantId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	TopDomainId	The TopProject key attribute of the instance generating the id.
 	 */
-	void deleteTopProjectByTopDomainIdx( CFLibDbKeyHash256 TopDomainId );
+	void deleteTopProjectByTopDomainIdx( ICFLibKeyHash256 TopDomainId );
 
 	/**
 	 *	Internal use only.
@@ -288,6 +288,6 @@ public interface ICFIntTopProjectTableObj
 	 *
 	 *	@param	Name	The TopProject key attribute of the instance generating the id.
 	 */
-	void deleteTopProjectByNameIdx(CFLibDbKeyHash256 TopDomainId,
+	void deleteTopProjectByNameIdx(ICFLibKeyHash256 TopDomainId,
 		String Name );
 }

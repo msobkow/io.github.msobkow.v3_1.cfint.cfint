@@ -58,9 +58,9 @@ public class CFIntBuffURLProtocolH
 	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFIntPubSecUser.S_INIT_UPDATED_BY);
 	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFIntPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
-	protected String requiredName;
-	protected String requiredDescription;
-	protected boolean requiredIsSecure;
+	protected $implJavaAtomType$ requiredName;
+	protected $implJavaAtomType$ requiredDescription;
+	protected $implJavaAtomType$ requiredIsSecure;
 
     public CFIntBuffURLProtocolH() {
             // The primary key member attributes are initialized on construction
