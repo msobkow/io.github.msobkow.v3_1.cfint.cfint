@@ -123,6 +123,54 @@ public class CFIntBuffTld
 	}
 
 	@Override
+	public List<ICFIntTopDomain> getOptionalComponentsTopDomain() {
+		ICFIntSchema targetBackingCFInt = ICFIntSchema.getBackingCFInt();
+		if (targetBackingCFInt == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsTopDomain", 0, "ICFIntSchema.getBackingCFInt()");
+		}
+		ICFIntTopDomainTable targetTable = targetBackingCFInt.getTableTopDomain();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsTopDomain", 0, "ICFIntSchema.getBackingCFInt().getTableTopDomain()");
+		}
+		ICFIntTopDomain[] targetArr = targetTable.readDerivedByTldIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
+		if( targetArr != null ) {
+			List<ICFIntTopDomain> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFIntTopDomain> results = new ArrayList<>();
+			return( results );
+		}
+	}
+
+	@Override
+	public List<ICFIntTopDomain> getOptionalComponentsTopDomain() {
+		ICFIntSchema targetBackingCFInt = ICFIntSchema.getBackingCFInt();
+		if (targetBackingCFInt == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsTopDomain", 0, "ICFIntSchema.getBackingCFInt()");
+		}
+		ICFIntTopDomainTable targetTable = targetBackingCFInt.getTableTopDomain();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsTopDomain", 0, "ICFIntSchema.getBackingCFInt().getTableTopDomain()");
+		}
+		ICFIntPubTopDomain[] targetArr = targetTable.readDerivedByTldIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
+		if( targetArr != null ) {
+			List<ICFIntPubTopDomain> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFIntPubTopDomain> results = new ArrayList<>();
+			return( results );
+		}
+	}
+
+	@Override
 	public CFLibDbKeyHash256 getCreatedByUserId() {
 		return( createdByUserId );
 	}
@@ -176,26 +224,40 @@ public class CFIntBuffTld
 	public int getClassCode() {
 		return( ICFIntTld.CLASS_CODE );
 	}
-$implSchemaBuffTablePubRelationGetterWithArgs$
+
+	@Override
+	public ICFSecTenant getRequiredContainerTenant() {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerTenant", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecTenantTable targetTable = targetBackingCFSec.getTableTenant();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerTenant", 0, "ICFSecSchema.getBackingCFSec().getTableTenant()");
+		}
+		ICFSecPubTenant targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredTenantId());
+		return(targetRec);
+	}
+
 	@Override
 	public void setRequiredContainerTenant(ICFLibKeyHash256 argTenantId) {
-		ICFSecPubSchema targetBackingCFSec = ICFSecPubSchema.getBackingCFSec();
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
 		if (targetBackingCFSec == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerTenant-args", 0, "ICFSecPubSchema.getBackingCFSec()");
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerTenant-args", 0, "ICFSecSchema.getBackingCFSec()");
 		}
-		ICFSecPubTenantTable targetTable = targetBackingCFSec.getTableTenant();
+		ICFSecTenantTable targetTable = targetBackingCFSec.getTableTenant();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerTenant", 0, "ICFSecPubSchema.getBackingCFSec().getTableTenant()");
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerTenant", 0, "ICFSecSchema.getBackingCFSec()");
 		}
-		ICFSecPubTenant found = targetTable.pubreadDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argTenantId);
+		ICFSecTenant found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argTenantId);
 		if (found == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerTenant-args", 0, "found");
 		}
-		else if ((found instanceof ICFSecProtTenant) || (found instanceof ICFSecPubTenant)) {
+		else if ((found instanceof ICFSecTenant) || (found instanceof ICFSecProtTenant) || (found instanceof ICFSecPubTenant)) {
 		setRequiredTenantId(argTenantId);
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerTenant-args", "found", found, "ICFSecProtTenantICFSecPubTenant");
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerTenant-args", "found", found, "ICFSecTenantICFSecProtTenantICFSecPubTenant");
 		}
 	}
 
@@ -1488,7 +1550,7 @@ $implSchemaBuffTablePubRelationGetterWithArgs$
 		setCreatedAt( src.getCreatedAt() );
 		setUpdatedByUserId( src.getUpdatedByUserId() );
 		setUpdatedAt( src.getUpdatedAt() );
-		setRequiredContainerTenant(src.getRequiredTenantId());
+		setRequiredContainerTenant(src.getRequiredContainerTenant());
 		setRequiredTenantId(src.getRequiredTenantId());
 		setRequiredName(src.getRequiredName());
 		setOptionalDescription(src.getOptionalDescription());
@@ -1502,7 +1564,7 @@ $implSchemaBuffTablePubRelationGetterWithArgs$
 	@Override
 	public void setTld( ICFIntTldH src ) {
 		setRequiredId(src.getRequiredId());
-		setRequiredContainerTenant(src.getRequiredTenantId());
+		setRequiredContainerTenant(src.getRequiredContainerTenant());
 		setRequiredTenantId(src.getRequiredTenantId());
 		setRequiredName(src.getRequiredName());
 		setOptionalDescription(src.getOptionalDescription());
@@ -1521,7 +1583,7 @@ $implSchemaBuffTablePubRelationGetterWithArgs$
 		setCreatedAt( src.getCreatedAt() );
 		setUpdatedByUserId( src.getUpdatedByUserId() );
 		setUpdatedAt( src.getUpdatedAt() );
-		setRequiredContainerTenant(src.getRequiredTenantId());
+		setRequiredContainerTenant(src.getRequiredContainerTenant());
 		setRequiredTenantId(src.getRequiredTenantId());
 		setRequiredName(src.getRequiredName());
 		setOptionalDescription(src.getOptionalDescription());
@@ -1535,7 +1597,7 @@ $implSchemaBuffTablePubRelationGetterWithArgs$
 	@Override
 	public void setTld( ICFIntProtTldH src ) {
 		setRequiredId(src.getRequiredId());
-		setRequiredContainerTenant(src.getRequiredTenantId());
+		setRequiredContainerTenant(src.getRequiredContainerTenant());
 		setRequiredTenantId(src.getRequiredTenantId());
 		setRequiredName(src.getRequiredName());
 		setOptionalDescription(src.getOptionalDescription());
@@ -1554,7 +1616,7 @@ $implSchemaBuffTablePubRelationGetterWithArgs$
 		setCreatedAt( src.getCreatedAt() );
 		setUpdatedByUserId( src.getUpdatedByUserId() );
 		setUpdatedAt( src.getUpdatedAt() );
-		setRequiredContainerTenant(src.getRequiredTenantId());
+		setRequiredContainerTenant(src.getRequiredContainerTenant());
 		setRequiredTenantId(src.getRequiredTenantId());
 		setRequiredName(src.getRequiredName());
 		setOptionalDescription(src.getOptionalDescription());
@@ -1568,7 +1630,7 @@ $implSchemaBuffTablePubRelationGetterWithArgs$
 	@Override
 	public void setTld( ICFIntPubTldH src ) {
 		setRequiredId(src.getRequiredId());
-		setRequiredContainerTenant(src.getRequiredTenantId());
+		setRequiredContainerTenant(src.getRequiredContainerTenant());
 		setRequiredTenantId(src.getRequiredTenantId());
 		setRequiredName(src.getRequiredName());
 		setOptionalDescription(src.getOptionalDescription());

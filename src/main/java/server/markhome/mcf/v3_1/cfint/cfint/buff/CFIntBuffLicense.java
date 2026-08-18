@@ -112,26 +112,40 @@ public class CFIntBuffLicense
 	public int getClassCode() {
 		return( ICFIntLicense.CLASS_CODE );
 	}
-$implSchemaBuffTablePubRelationGetterWithArgs$
+
+	@Override
+	public ICFSecTenant getRequiredOwnerTenant() {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredOwnerTenant", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecTenantTable targetTable = targetBackingCFSec.getTableTenant();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredOwnerTenant", 0, "ICFSecSchema.getBackingCFSec().getTableTenant()");
+		}
+		ICFSecPubTenant targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredTenantId());
+		return(targetRec);
+	}
+
 	@Override
 	public void setRequiredOwnerTenant(ICFLibKeyHash256 argTenantId) {
-		ICFSecPubSchema targetBackingCFSec = ICFSecPubSchema.getBackingCFSec();
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
 		if (targetBackingCFSec == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerTenant-args", 0, "ICFSecPubSchema.getBackingCFSec()");
+			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerTenant-args", 0, "ICFSecSchema.getBackingCFSec()");
 		}
-		ICFSecPubTenantTable targetTable = targetBackingCFSec.getTableTenant();
+		ICFSecTenantTable targetTable = targetBackingCFSec.getTableTenant();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerTenant", 0, "ICFSecPubSchema.getBackingCFSec().getTableTenant()");
+			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerTenant", 0, "ICFSecSchema.getBackingCFSec()");
 		}
-		ICFSecPubTenant found = targetTable.pubreadDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argTenantId);
+		ICFSecTenant found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argTenantId);
 		if (found == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerTenant-args", 0, "found");
 		}
-		else if ((found instanceof ICFSecProtTenant) || (found instanceof ICFSecPubTenant)) {
+		else if ((found instanceof ICFSecTenant) || (found instanceof ICFSecProtTenant) || (found instanceof ICFSecPubTenant)) {
 		setRequiredTenantId(argTenantId);
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setRequiredOwnerTenant-args", "found", found, "ICFSecProtTenantICFSecPubTenant");
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredOwnerTenant-args", "found", found, "ICFSecTenantICFSecProtTenantICFSecPubTenant");
 		}
 	}
 
@@ -146,6 +160,34 @@ $implSchemaBuffTablePubRelationGetterWithArgs$
 			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerTopDomain", 0, "ICFIntSchema.getBackingCFInt().getTableTopDomain()");
 		}
 		ICFIntTopDomain targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredTopDomainId());
+		return(targetRec);
+	}
+
+	@Override
+	public ICFIntTopDomain getRequiredContainerTopDomain() {
+		ICFIntSchema targetBackingCFInt = ICFIntSchema.getBackingCFInt();
+		if (targetBackingCFInt == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerTopDomain", 0, "ICFIntSchema.getBackingCFInt()");
+		}
+		ICFIntTopDomainTable targetTable = targetBackingCFInt.getTableTopDomain();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerTopDomain", 0, "ICFIntSchema.getBackingCFInt().getTableTopDomain()");
+		}
+		ICFIntTopDomain targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredTopDomainId());
+		return(targetRec);
+	}
+
+	@Override
+	public ICFIntTopDomain getRequiredContainerTopDomain() {
+		ICFIntSchema targetBackingCFInt = ICFIntSchema.getBackingCFInt();
+		if (targetBackingCFInt == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerTopDomain", 0, "ICFIntSchema.getBackingCFInt()");
+		}
+		ICFIntTopDomainTable targetTable = targetBackingCFInt.getTableTopDomain();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerTopDomain", 0, "ICFIntSchema.getBackingCFInt().getTableTopDomain()");
+		}
+		ICFIntPubTopDomain targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredTopDomainId());
 		return(targetRec);
 	}
 
@@ -173,26 +215,6 @@ $implSchemaBuffTablePubRelationGetterWithArgs$
 
 	@Override
 	public void setRequiredContainerTopDomain(ICFIntTopDomain argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerTopDomain", 1, "argObj");
-		}
-		else {
-			setRequiredTopDomainId(argObj.getRequiredId());
-		}
-	}
-
-	@Override
-	public void setRequiredContainerTopDomain(ICFIntProtTopDomain argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerTopDomain", 1, "argObj");
-		}
-		else {
-			setRequiredTopDomainId(argObj.getRequiredId());
-		}
-	}
-
-	@Override
-	public void setRequiredContainerTopDomain(ICFIntPubTopDomain argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setContainerTopDomain", 1, "argObj");
 		}
@@ -2174,7 +2196,7 @@ $implSchemaBuffTablePubRelationGetterWithArgs$
 	public void setLicense( ICFIntLicense src ) {
 		setRequiredId(src.getRequiredId());
 		setRequiredRevision( src.getRequiredRevision() );
-		setRequiredOwnerTenant(src.getRequiredTenantId());
+		setRequiredOwnerTenant(src.getRequiredOwnerTenant());
 		setRequiredContainerTopDomain(src.getRequiredContainerTopDomain());
 		setRequiredTenantId(src.getRequiredTenantId());
 		setRequiredTopDomainId(src.getRequiredTopDomainId());
@@ -2192,8 +2214,8 @@ $implSchemaBuffTablePubRelationGetterWithArgs$
 	@Override
 	public void setLicense( ICFIntLicenseH src ) {
 		setRequiredId(src.getRequiredId());
-		setRequiredOwnerTenant(src.getRequiredTenantId());
-		setRequiredContainerTopDomain(src.getRequiredTopDomainId());
+		setRequiredOwnerTenant(src.getRequiredOwnerTenant());
+		setRequiredContainerTopDomain(src.getRequiredContainerTopDomain());
 		setRequiredTenantId(src.getRequiredTenantId());
 		setRequiredTopDomainId(src.getRequiredTopDomainId());
 		setRequiredName(src.getRequiredName());
@@ -2211,7 +2233,7 @@ $implSchemaBuffTablePubRelationGetterWithArgs$
 	public void setLicense( ICFIntProtLicense src ) {
 		setRequiredId(src.getRequiredId());
 		setRequiredRevision( src.getRequiredRevision() );
-		setRequiredOwnerTenant(src.getRequiredTenantId());
+		setRequiredOwnerTenant(src.getRequiredOwnerTenant());
 		setRequiredContainerTopDomain(src.getRequiredContainerTopDomain());
 		setRequiredTenantId(src.getRequiredTenantId());
 		setRequiredTopDomainId(src.getRequiredTopDomainId());
@@ -2229,8 +2251,8 @@ $implSchemaBuffTablePubRelationGetterWithArgs$
 	@Override
 	public void setLicense( ICFIntProtLicenseH src ) {
 		setRequiredId(src.getRequiredId());
-		setRequiredOwnerTenant(src.getRequiredTenantId());
-		setRequiredContainerTopDomain(src.getRequiredTopDomainId());
+		setRequiredOwnerTenant(src.getRequiredOwnerTenant());
+		setRequiredContainerTopDomain(src.getRequiredContainerTopDomain());
 		setRequiredTenantId(src.getRequiredTenantId());
 		setRequiredTopDomainId(src.getRequiredTopDomainId());
 		setRequiredName(src.getRequiredName());
@@ -2248,7 +2270,7 @@ $implSchemaBuffTablePubRelationGetterWithArgs$
 	public void setLicense( ICFIntPubLicense src ) {
 		setRequiredId(src.getRequiredId());
 		setRequiredRevision( src.getRequiredRevision() );
-		setRequiredOwnerTenant(src.getRequiredTenantId());
+		setRequiredOwnerTenant(src.getRequiredOwnerTenant());
 		setRequiredContainerTopDomain(src.getRequiredContainerTopDomain());
 		setRequiredTenantId(src.getRequiredTenantId());
 		setRequiredTopDomainId(src.getRequiredTopDomainId());
@@ -2266,8 +2288,8 @@ $implSchemaBuffTablePubRelationGetterWithArgs$
 	@Override
 	public void setLicense( ICFIntPubLicenseH src ) {
 		setRequiredId(src.getRequiredId());
-		setRequiredOwnerTenant(src.getRequiredTenantId());
-		setRequiredContainerTopDomain(src.getRequiredTopDomainId());
+		setRequiredOwnerTenant(src.getRequiredOwnerTenant());
+		setRequiredContainerTopDomain(src.getRequiredContainerTopDomain());
 		setRequiredTenantId(src.getRequiredTenantId());
 		setRequiredTopDomainId(src.getRequiredTopDomainId());
 		setRequiredName(src.getRequiredName());

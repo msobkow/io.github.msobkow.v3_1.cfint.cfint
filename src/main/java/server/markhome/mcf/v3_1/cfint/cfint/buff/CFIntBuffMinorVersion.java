@@ -154,26 +154,40 @@ public class CFIntBuffMinorVersion
 	public int getClassCode() {
 		return( ICFIntMinorVersion.CLASS_CODE );
 	}
-$implSchemaBuffTablePubRelationGetterWithArgs$
+
+	@Override
+	public ICFSecTenant getRequiredOwnerTenant() {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredOwnerTenant", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecTenantTable targetTable = targetBackingCFSec.getTableTenant();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredOwnerTenant", 0, "ICFSecSchema.getBackingCFSec().getTableTenant()");
+		}
+		ICFSecPubTenant targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredTenantId());
+		return(targetRec);
+	}
+
 	@Override
 	public void setRequiredOwnerTenant(ICFLibKeyHash256 argTenantId) {
-		ICFSecPubSchema targetBackingCFSec = ICFSecPubSchema.getBackingCFSec();
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
 		if (targetBackingCFSec == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerTenant-args", 0, "ICFSecPubSchema.getBackingCFSec()");
+			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerTenant-args", 0, "ICFSecSchema.getBackingCFSec()");
 		}
-		ICFSecPubTenantTable targetTable = targetBackingCFSec.getTableTenant();
+		ICFSecTenantTable targetTable = targetBackingCFSec.getTableTenant();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerTenant", 0, "ICFSecPubSchema.getBackingCFSec().getTableTenant()");
+			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerTenant", 0, "ICFSecSchema.getBackingCFSec()");
 		}
-		ICFSecPubTenant found = targetTable.pubreadDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argTenantId);
+		ICFSecTenant found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argTenantId);
 		if (found == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerTenant-args", 0, "found");
 		}
-		else if ((found instanceof ICFSecProtTenant) || (found instanceof ICFSecPubTenant)) {
+		else if ((found instanceof ICFSecTenant) || (found instanceof ICFSecProtTenant) || (found instanceof ICFSecPubTenant)) {
 		setRequiredTenantId(argTenantId);
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setRequiredOwnerTenant-args", "found", found, "ICFSecProtTenantICFSecPubTenant");
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredOwnerTenant-args", "found", found, "ICFSecTenantICFSecProtTenantICFSecPubTenant");
 		}
 	}
 
@@ -188,6 +202,34 @@ $implSchemaBuffTablePubRelationGetterWithArgs$
 			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerParentMajVer", 0, "ICFIntSchema.getBackingCFInt().getTableMajorVersion()");
 		}
 		ICFIntMajorVersion targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredMajorVersionId());
+		return(targetRec);
+	}
+
+	@Override
+	public ICFIntMajorVersion getRequiredContainerParentMajVer() {
+		ICFIntSchema targetBackingCFInt = ICFIntSchema.getBackingCFInt();
+		if (targetBackingCFInt == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerParentMajVer", 0, "ICFIntSchema.getBackingCFInt()");
+		}
+		ICFIntMajorVersionTable targetTable = targetBackingCFInt.getTableMajorVersion();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerParentMajVer", 0, "ICFIntSchema.getBackingCFInt().getTableMajorVersion()");
+		}
+		ICFIntMajorVersion targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredMajorVersionId());
+		return(targetRec);
+	}
+
+	@Override
+	public ICFIntMajorVersion getRequiredContainerParentMajVer() {
+		ICFIntSchema targetBackingCFInt = ICFIntSchema.getBackingCFInt();
+		if (targetBackingCFInt == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerParentMajVer", 0, "ICFIntSchema.getBackingCFInt()");
+		}
+		ICFIntMajorVersionTable targetTable = targetBackingCFInt.getTableMajorVersion();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerParentMajVer", 0, "ICFIntSchema.getBackingCFInt().getTableMajorVersion()");
+		}
+		ICFIntPubMajorVersion targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredMajorVersionId());
 		return(targetRec);
 	}
 
@@ -215,26 +257,6 @@ $implSchemaBuffTablePubRelationGetterWithArgs$
 
 	@Override
 	public void setRequiredContainerParentMajVer(ICFIntMajorVersion argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerParentMajVer", 1, "argObj");
-		}
-		else {
-			setRequiredMajorVersionId(argObj.getRequiredId());
-		}
-	}
-
-	@Override
-	public void setRequiredContainerParentMajVer(ICFIntProtMajorVersion argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerParentMajVer", 1, "argObj");
-		}
-		else {
-			setRequiredMajorVersionId(argObj.getRequiredId());
-		}
-	}
-
-	@Override
-	public void setRequiredContainerParentMajVer(ICFIntPubMajorVersion argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setContainerParentMajVer", 1, "argObj");
 		}
@@ -1911,7 +1933,7 @@ $implSchemaBuffTablePubRelationGetterWithArgs$
 		setCreatedAt( src.getCreatedAt() );
 		setUpdatedByUserId( src.getUpdatedByUserId() );
 		setUpdatedAt( src.getUpdatedAt() );
-		setRequiredOwnerTenant(src.getRequiredTenantId());
+		setRequiredOwnerTenant(src.getRequiredOwnerTenant());
 		setRequiredContainerParentMajVer(src.getRequiredContainerParentMajVer());
 		setRequiredTenantId(src.getRequiredTenantId());
 		setRequiredMajorVersionId(src.getRequiredMajorVersionId());
@@ -1927,8 +1949,8 @@ $implSchemaBuffTablePubRelationGetterWithArgs$
 	@Override
 	public void setMinorVersion( ICFIntMinorVersionH src ) {
 		setRequiredId(src.getRequiredId());
-		setRequiredOwnerTenant(src.getRequiredTenantId());
-		setRequiredContainerParentMajVer(src.getRequiredMajorVersionId());
+		setRequiredOwnerTenant(src.getRequiredOwnerTenant());
+		setRequiredContainerParentMajVer(src.getRequiredContainerParentMajVer());
 		setRequiredTenantId(src.getRequiredTenantId());
 		setRequiredMajorVersionId(src.getRequiredMajorVersionId());
 		setRequiredName(src.getRequiredName());
@@ -1948,7 +1970,7 @@ $implSchemaBuffTablePubRelationGetterWithArgs$
 		setCreatedAt( src.getCreatedAt() );
 		setUpdatedByUserId( src.getUpdatedByUserId() );
 		setUpdatedAt( src.getUpdatedAt() );
-		setRequiredOwnerTenant(src.getRequiredTenantId());
+		setRequiredOwnerTenant(src.getRequiredOwnerTenant());
 		setRequiredContainerParentMajVer(src.getRequiredContainerParentMajVer());
 		setRequiredTenantId(src.getRequiredTenantId());
 		setRequiredMajorVersionId(src.getRequiredMajorVersionId());
@@ -1964,8 +1986,8 @@ $implSchemaBuffTablePubRelationGetterWithArgs$
 	@Override
 	public void setMinorVersion( ICFIntProtMinorVersionH src ) {
 		setRequiredId(src.getRequiredId());
-		setRequiredOwnerTenant(src.getRequiredTenantId());
-		setRequiredContainerParentMajVer(src.getRequiredMajorVersionId());
+		setRequiredOwnerTenant(src.getRequiredOwnerTenant());
+		setRequiredContainerParentMajVer(src.getRequiredContainerParentMajVer());
 		setRequiredTenantId(src.getRequiredTenantId());
 		setRequiredMajorVersionId(src.getRequiredMajorVersionId());
 		setRequiredName(src.getRequiredName());
@@ -1985,7 +2007,7 @@ $implSchemaBuffTablePubRelationGetterWithArgs$
 		setCreatedAt( src.getCreatedAt() );
 		setUpdatedByUserId( src.getUpdatedByUserId() );
 		setUpdatedAt( src.getUpdatedAt() );
-		setRequiredOwnerTenant(src.getRequiredTenantId());
+		setRequiredOwnerTenant(src.getRequiredOwnerTenant());
 		setRequiredContainerParentMajVer(src.getRequiredContainerParentMajVer());
 		setRequiredTenantId(src.getRequiredTenantId());
 		setRequiredMajorVersionId(src.getRequiredMajorVersionId());
@@ -2001,8 +2023,8 @@ $implSchemaBuffTablePubRelationGetterWithArgs$
 	@Override
 	public void setMinorVersion( ICFIntPubMinorVersionH src ) {
 		setRequiredId(src.getRequiredId());
-		setRequiredOwnerTenant(src.getRequiredTenantId());
-		setRequiredContainerParentMajVer(src.getRequiredMajorVersionId());
+		setRequiredOwnerTenant(src.getRequiredOwnerTenant());
+		setRequiredContainerParentMajVer(src.getRequiredContainerParentMajVer());
 		setRequiredTenantId(src.getRequiredTenantId());
 		setRequiredMajorVersionId(src.getRequiredMajorVersionId());
 		setRequiredName(src.getRequiredName());
