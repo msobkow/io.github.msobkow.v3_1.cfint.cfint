@@ -176,28 +176,26 @@ public class CFIntBuffTld
 	public int getClassCode() {
 		return( ICFIntTld.CLASS_CODE );
 	}
-
+$implSchemaBuffTablePubRelationGetterWithArgs$
 	@Override
-	public ICFSecTenant getRequiredContainerTenant() {
+	public void setRequiredContainerTenant(ICFLibKeyHash256 argTenantId) {
 		ICFSecPubSchema targetBackingCFSec = ICFSecPubSchema.getBackingCFSec();
 		if (targetBackingCFSec == null) {
-			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerTenant", 0, "ICFSecPubSchema.getBackingCFSec()");
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerTenant-args", 0, "ICFSecPubSchema.getBackingCFSec()");
 		}
-		ICFSecTenantTable targetTable = targetBackingCFSec.getTableTenant();
+		ICFSecPubTenantTable targetTable = targetBackingCFSec.getTableTenant();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerTenant", 0, "ICFSecPubSchema.getBackingCFSec().getTableTenant()");
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerTenant", 0, "ICFSecPubSchema.getBackingCFSec().getTableTenant()");
 		}
-		ICFSecPubTenant targetRec = targetTable.pubreadDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredTenantId());
-		return(targetRec);
-	}
-
-	@Override
-	public void setRequiredContainerTenant(ICFSecPubTenant argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerTenant", 1, "argObj");
+		ICFSecPubTenant found = targetTable.pubreadDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argTenantId);
+		if (found == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerTenant-args", 0, "found");
+		}
+		else if ((found instanceof ICFSecProtTenant) || (found instanceof ICFSecPubTenant)) {
+		setRequiredTenantId(argTenantId);
 		}
 		else {
-			setRequiredTenantId(argObj.getRequiredId());
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerTenant-args", "found", found, "ICFSecProtTenantICFSecPubTenant");
 		}
 	}
 
