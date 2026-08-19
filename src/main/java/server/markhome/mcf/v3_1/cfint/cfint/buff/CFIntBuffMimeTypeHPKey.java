@@ -911,7 +911,7 @@ public class CFIntBuffMimeTypeHPKey
 				"compareTo",
 				"obj",
 				obj,
-				"ICFIntMimeTypePKey, ICFIntMimeType$emitHPKeyHistoryClassNames$" );
+				"ICFIntMimeTypePKey, ICFIntMimeType, CFIntMimeTypeHPKey, CFIntMimeTypeH" );
 		}
 	}
 

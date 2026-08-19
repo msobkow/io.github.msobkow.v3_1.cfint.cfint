@@ -1088,7 +1088,7 @@ public class CFIntBuffSubProjectHPKey
 				"compareTo",
 				"obj",
 				obj,
-				"ICFIntSubProjectPKey, ICFIntSubProject$emitHPKeyHistoryClassNames$" );
+				"ICFIntSubProjectPKey, ICFIntSubProject, CFIntSubProjectHPKey, CFIntSubProjectH" );
 		}
 	}
 

@@ -911,7 +911,7 @@ public class CFIntBuffURLProtocolHPKey
 				"compareTo",
 				"obj",
 				obj,
-				"ICFIntURLProtocolPKey, ICFIntURLProtocol$emitHPKeyHistoryClassNames$" );
+				"ICFIntURLProtocolPKey, ICFIntURLProtocol, CFIntURLProtocolHPKey, CFIntURLProtocolH" );
 		}
 	}
 

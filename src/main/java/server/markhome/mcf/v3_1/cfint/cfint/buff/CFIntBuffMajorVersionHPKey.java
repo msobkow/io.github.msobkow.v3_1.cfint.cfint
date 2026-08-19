@@ -1088,7 +1088,7 @@ public class CFIntBuffMajorVersionHPKey
 				"compareTo",
 				"obj",
 				obj,
-				"ICFIntMajorVersionPKey, ICFIntMajorVersion$emitHPKeyHistoryClassNames$" );
+				"ICFIntMajorVersionPKey, ICFIntMajorVersion, CFIntMajorVersionHPKey, CFIntMajorVersionH" );
 		}
 	}
 
