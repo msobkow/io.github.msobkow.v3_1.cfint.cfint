@@ -1,4 +1,4 @@
-// Description: Java 25 implJustProtementation of a License buffer
+// Description: Java 25 implJustProtementation of a TopProject buffer
 
 /*
  *	server.markhome.mcf.CFInt
@@ -47,26 +47,28 @@ import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
 import server.markhome.mcf.v3_1.cfint.cfintprot.*;
 import server.markhome.mcf.v3_1.cfint.cfintprotobj.*;
 
-public class CFIntProtBuffLicense
-	implJustProtements ICFIntLicense, Comparable<Object>, Serializable
+public class CFIntProtBuffTopProject
+	implJustProtements ICFIntTopProject, Comparable<Object>, Serializable
 {
 	protected $implJustProtIJavaAtomType$ requiredId;
 	protected int requiredRevision;
+	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFIntPubSecUser.S_INIT_CREATED_BY);
+	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFIntPubSecSession.S_SECSESSIONID_INIT_VALUE);
+	protected LocalDateTime createdAt = LocalDateTime.now();
+	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFIntPubSecUser.S_INIT_UPDATED_BY);
+	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFIntPubSecSession.S_SECSESSIONID_INIT_VALUE);
+	protected LocalDateTime updatedAt = LocalDateTime.now();
 	protected ICFLibKeyHash256 requiredTenantId;
 	protected ICFLibKeyHash256 requiredTopDomainId;
 	protected String requiredName;
 	protected String optionalDescription;
-	protected String optionalEmbeddedText;
-	protected String optionalFullText;
 
-	public CFIntProtBuffLicense() {
-		requiredId = CFLibDbKeyHash256.fromHex( ICFIntPubLicense.ID_INIT_VALUE.toString() );
-		requiredTenantId = CFLibDbKeyHash256.fromHex( ICFIntPubLicense.TENANTID_INIT_VALUE.toString() );
-		requiredTopDomainId = CFLibDbKeyHash256.fromHex( ICFIntPubLicense.TOPDOMAINID_INIT_VALUE.toString() );
-		requiredName = ICFIntPubLicense.NAME_INIT_VALUE;
+	public CFIntProtBuffTopProject() {
+		requiredId = CFLibDbKeyHash256.fromHex( ICFIntPubTopProject.ID_INIT_VALUE.toString() );
+		requiredTenantId = CFLibDbKeyHash256.fromHex( ICFIntPubTopProject.TENANTID_INIT_VALUE.toString() );
+		requiredTopDomainId = CFLibDbKeyHash256.fromHex( ICFIntPubTopProject.TOPDOMAINID_INIT_VALUE.toString() );
+		requiredName = ICFIntPubTopProject.NAME_INIT_VALUE;
 		optionalDescription = null;
-		optionalEmbeddedText = null;
-		optionalFullText = null;
 	}
 
 	@Override
@@ -97,6 +99,118 @@ public class CFIntProtBuffLicense
 	}
 
 	@Override
+	public List<ICFIntSubProject> getOptionalComponentsSubProject() {
+		ICFIntSchema targetBackingCFInt = ICFIntSchema.getBackingCFInt();
+		if (targetBackingCFInt == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsSubProject", 0, "ICFIntSchema.getBackingCFInt()");
+		}
+		ICFIntSubProjectTable targetTable = targetBackingCFInt.getTableSubProject();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsSubProject", 0, "ICFIntSchema.getBackingCFInt().getTableSubProject()");
+		}
+		ICFIntSubProject[] targetArr = targetTable.readDerivedBy$declJustProtReadTableSuffix$(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization()$implCommaSetPassAttrArgColumn$);
+		if( targetArr != null ) {
+			List<ICFIntSubProject> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFIntSubProject> results = new ArrayList<>();
+			return( results );
+		}
+	}
+
+	@Override
+	public List<ICFIntSubProject> getOptionalComponentsSubProject() {
+		ICFIntSchema targetBackingCFInt = ICFIntSchema.getBackingCFInt();
+		if (targetBackingCFInt == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsSubProject", 0, "ICFIntSchema.getBackingCFInt()");
+		}
+		ICFIntSubProjectTable targetTable = targetBackingCFInt.getTableSubProject();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsSubProject", 0, "ICFIntSchema.getBackingCFInt().getTableSubProject()");
+		}
+		ICFIntSubProject[] targetArr = targetTable.readDerivedBy$declJustProtReadTableSuffix$(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization()$implCommaSetPassAttrArgColumn$);
+		if( targetArr != null ) {
+			List<ICFIntSubProject> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFIntSubProject> results = new ArrayList<>();
+			return( results );
+		}
+	}
+
+	@Override
+	public List<ICFIntSubProject> getOptionalComponentsSubProject() {
+		ICFIntSchema targetBackingCFInt = ICFIntSchema.getBackingCFInt();
+		if (targetBackingCFInt == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsSubProject", 0, "ICFIntSchema.getBackingCFInt()");
+		}
+		ICFIntSubProjectTable targetTable = targetBackingCFInt.getTableSubProject();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsSubProject", 0, "ICFIntSchema.getBackingCFInt().getTableSubProject()");
+		}
+		ICFIntPubSubProject[] targetArr = targetTable.readDerivedBy$declJustProtReadTableSuffix$(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization()$implCommaSetPassAttrArgColumn$);
+		if( targetArr != null ) {
+			List<ICFIntPubSubProject> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFIntPubSubProject> results = new ArrayList<>();
+			return( results );
+		}
+	}
+
+	@Override
+	public CFLibDbKeyHash256 getCreatedByUserId() {
+		return( createdByUserId );
+	}
+
+	@Override
+	public void setJustProtCreatedByUserId( CFLibDbKeyHash256 value ) {
+		createdByUserId = value;
+	}
+
+	@Override
+	public LocalDateTime getCreatedAt() {
+		return( createdAt );
+	}
+
+	@Override
+	public void setJustProtCreatedAt( LocalDateTime value ) {
+		createdAt = value;
+	}
+
+	@Override
+	public CFLibDbKeyHash256 getUpdatedByUserId() {
+		return( updatedByUserId );
+	}
+
+	@Override
+	public void setJustProtUpdatedByUserId( CFLibDbKeyHash256 value ) {
+		updatedByUserId = value;
+	}
+
+	@Override
+	public LocalDateTime getUpdatedAt() {
+		return( updatedAt );
+	}
+
+	@Override
+	public void setJustProtUpdatedAt( LocalDateTime value ) {
+		updatedAt = value;
+	}
+
+	@Override
 	public int getRequiredRevision() {
 		return( requiredRevision );
 	}
@@ -108,7 +222,7 @@ public class CFIntProtBuffLicense
 
 	@Override
 	public int getClassCode() {
-		return( ICFIntLicense.CLASS_CODE );
+		return( ICFIntTopProject.CLASS_CODE );
 	}
 
 	@Override
@@ -147,84 +261,96 @@ public class CFIntProtBuffLicense
 	}
 
 	@Override
-	public ICFIntTopDomain getRequiredContainerTopDomain() {
+	public ICFIntTopDomain getRequiredContainerParentSDom() {
 		ICFIntSchema targetBackingCFInt = ICFIntSchema.getBackingCFInt();
 		if (targetBackingCFInt == null) {
-			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerTopDomain", 0, "ICFIntSchema.getBackingCFInt()");
+			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerParentSDom", 0, "ICFIntSchema.getBackingCFInt()");
 		}
 		ICFIntTopDomainTable targetTable = targetBackingCFInt.getTableTopDomain();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerTopDomain", 0, "ICFIntSchema.getBackingCFInt().getTableTopDomain()");
+			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerParentSDom", 0, "ICFIntSchema.getBackingCFInt().getTableTopDomain()");
 		}
 		ICFIntTopDomain targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization()$implCommaSetPassAttrArgColumn$);
 		return(targetRec);
 	}
 
 	@Override
-	public ICFIntTopDomain getRequiredContainerTopDomain() {
+	public ICFIntTopDomain getRequiredContainerParentSDom() {
 		ICFIntSchema targetBackingCFInt = ICFIntSchema.getBackingCFInt();
 		if (targetBackingCFInt == null) {
-			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerTopDomain", 0, "ICFIntSchema.getBackingCFInt()");
+			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerParentSDom", 0, "ICFIntSchema.getBackingCFInt()");
 		}
 		ICFIntTopDomainTable targetTable = targetBackingCFInt.getTableTopDomain();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerTopDomain", 0, "ICFIntSchema.getBackingCFInt().getTableTopDomain()");
+			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerParentSDom", 0, "ICFIntSchema.getBackingCFInt().getTableTopDomain()");
 		}
 		ICFIntTopDomain targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization()$implCommaSetPassAttrArgColumn$);
 		return(targetRec);
 	}
 
 	@Override
-	public ICFIntTopDomain getRequiredContainerTopDomain() {
+	public ICFIntTopDomain getRequiredContainerParentSDom() {
 		ICFIntSchema targetBackingCFInt = ICFIntSchema.getBackingCFInt();
 		if (targetBackingCFInt == null) {
-			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerTopDomain", 0, "ICFIntSchema.getBackingCFInt()");
+			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerParentSDom", 0, "ICFIntSchema.getBackingCFInt()");
 		}
 		ICFIntTopDomainTable targetTable = targetBackingCFInt.getTableTopDomain();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerTopDomain", 0, "ICFIntSchema.getBackingCFInt().getTableTopDomain()");
+			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerParentSDom", 0, "ICFIntSchema.getBackingCFInt().getTableTopDomain()");
 		}
 		ICFIntPubTopDomain targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization()$implCommaSetPassAttrArgColumn$);
 		return(targetRec);
 	}
 
 	@Override
-	public void setJustProtRequiredContainerTopDomain($declSetArgColumn$) {
+	public void setJustProtRequiredContainerParentSDom($declSetArgColumn$) {
 		ICFIntSchema targetBackingCFInt = ICFIntSchema.getBackingCFInt();
 		if (targetBackingCFInt == null) {
-			throw new CFLibNullArgumentException(getClass(), "setJustProtRequiredContainerTopDomain-args", 0, "ICFIntSchema.getBackingCFInt()");
+			throw new CFLibNullArgumentException(getClass(), "setJustProtRequiredContainerParentSDom-args", 0, "ICFIntSchema.getBackingCFInt()");
 		}
 		ICFIntProtTopDomainTable targetTable = targetBackingCFInt.getTableTopDomain();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setJustProtRequiredContainerTopDomain", 0, "ICFIntSchema.getBackingCFInt()");
+			throw new CFLibNullArgumentException(getClass(), "setJustProtRequiredContainerParentSDom", 0, "ICFIntSchema.getBackingCFInt()");
 		}
 		ICFIntProtTopDomain found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argTopDomainId);
 		if (found == null) {
-			throw new CFLibNullArgumentException(getClass(), "setJustProtRequiredContainerTopDomain-args", 0, "found");
+			throw new CFLibNullArgumentException(getClass(), "setJustProtRequiredContainerParentSDom-args", 0, "found");
 		}
 		else if ((found instanceof ICFIntProtTopDomain) || (found instanceof ICFIntPubTopDomain)) {$implSchemaProtBuffTableSetAttrArgColumn$
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setJustProtRequiredContainerTopDomain-args", "found", found, "ICFIntProtTopDomainICFIntPubTopDomain");
+			throw new CFLibUnsupportedClassException(getClass(), "setJustProtRequiredContainerParentSDom-args", "found", found, "ICFIntProtTopDomainICFIntPubTopDomain");
 		}
 	}
 
 	@Override
-	public void setJustProtRequiredContainerTopDomain(ICFIntTopDomain argObj) {
+	public void setJustProtRequiredContainerParentSDom(ICFIntTopDomain argObj) {
 		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setJustProtContainerTopDomain", 1, "argObj");
+			throw new CFLibNullArgumentException(getClass(), "setJustProtContainerParentSDom", 1, "argObj");
 		}
 		else {
 			setJustProtRequiredTopDomainId(argObj.getRequiredId());
 		}
 	}
-$implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$implJustProtColumnSetter$
+$implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$implJustProtColumnSetter$
 	@Override
 	public boolean equals( Object obj ) {
 		if( obj == null ) {
 			return( false );
 		}
-		else if( obj instanceof ICFIntProtLicense rhs ) {
+		else if( obj instanceof ICFIntProtTopProject rhs ) {
+			if( ! getCreatedByUserId().equals( rhs.getCreatedByUserId() ) ) {
+				return( false );
+			}
+			if( ! getCreatedAt().equals( rhs.getCreatedAt() ) ) {
+				return( false );
+			}
+			if( ! getUpdatedByUserId().equals( rhs.getUpdatedByUserId() ) ) {
+				return( false );
+			}
+			if( ! getUpdatedAt().equals( rhs.getUpdatedAt() ) ) {
+				return( false );
+			}
 			if( getRequiredId() != null ) {
 				if( rhs.getRequiredId() != null ) {
 					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {
@@ -300,39 +426,9 @@ $implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$i
 					return( false );
 				}
 			}
-			if( getOptionalEmbeddedText() != null ) {
-				if( rhs.getOptionalEmbeddedText() != null ) {
-					if( ! getOptionalEmbeddedText().equals( rhs.getOptionalEmbeddedText() ) ) {
-						return( false );
-					}
-				}
-				else {
-					return( false );
-				}
-			}
-			else {
-				if( rhs.getOptionalEmbeddedText() != null ) {
-					return( false );
-				}
-			}
-			if( getOptionalFullText() != null ) {
-				if( rhs.getOptionalFullText() != null ) {
-					if( ! getOptionalFullText().equals( rhs.getOptionalFullText() ) ) {
-						return( false );
-					}
-				}
-				else {
-					return( false );
-				}
-			}
-			else {
-				if( rhs.getOptionalFullText() != null ) {
-					return( false );
-				}
-			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntProtLicenseH rhs ) {
+		else if( obj instanceof ICFIntProtTopProjectH rhs ) {
 			if( getRequiredId() != null ) {
 				if( rhs.getRequiredId() != null ) {
 					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {
@@ -408,40 +504,10 @@ $implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$i
 					return( false );
 				}
 			}
-			if( getOptionalEmbeddedText() != null ) {
-				if( rhs.getOptionalEmbeddedText() != null ) {
-					if( ! getOptionalEmbeddedText().equals( rhs.getOptionalEmbeddedText() ) ) {
-						return( false );
-					}
-				}
-				else {
-					return( false );
-				}
-			}
-			else {
-				if( rhs.getOptionalEmbeddedText() != null ) {
-					return( false );
-				}
-			}
-			if( getOptionalFullText() != null ) {
-				if( rhs.getOptionalFullText() != null ) {
-					if( ! getOptionalFullText().equals( rhs.getOptionalFullText() ) ) {
-						return( false );
-					}
-				}
-				else {
-					return( false );
-				}
-			}
-			else {
-				if( rhs.getOptionalFullText() != null ) {
-					return( false );
-				}
-			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntLicenseHPKey ) {
-			ICFIntProtLicenseHPKey rhs = (ICFIntLicenseHPKey)obj;
+		else if( obj instanceof ICFIntTopProjectHPKey ) {
+			ICFIntProtTopProjectHPKey rhs = (ICFIntTopProjectHPKey)obj;
 			if( getRequiredId() != null ) {
 				if( rhs.getRequiredId() != null ) {
 					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {
@@ -459,7 +525,7 @@ $implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$i
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntProtLicenseByLicnTenantIdxKey rhs ) {
+		else if( obj instanceof ICFIntProtTopProjectByTenantIdxKey rhs ) {
 			if( getRequiredTenantId() != null ) {
 				if( rhs.getRequiredTenantId() != null ) {
 					if( ! getRequiredTenantId().equals( rhs.getRequiredTenantId() ) ) {
@@ -477,7 +543,7 @@ $implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$i
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntProtLicenseByDomainIdxKey rhs ) {
+		else if( obj instanceof ICFIntProtTopProjectByTopDomainIdxKey rhs ) {
 			if( getRequiredTopDomainId() != null ) {
 				if( rhs.getRequiredTopDomainId() != null ) {
 					if( ! getRequiredTopDomainId().equals( rhs.getRequiredTopDomainId() ) ) {
@@ -495,7 +561,7 @@ $implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$i
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntProtLicenseByUNameIdxKey rhs ) {
+		else if( obj instanceof ICFIntProtTopProjectByNameIdxKey rhs ) {
 			if( getRequiredTopDomainId() != null ) {
 				if( rhs.getRequiredTopDomainId() != null ) {
 					if( ! getRequiredTopDomainId().equals( rhs.getRequiredTopDomainId() ) ) {
@@ -528,7 +594,19 @@ $implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$i
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntProtLicense rhs ) {
+		else if( obj instanceof ICFIntProtTopProject rhs ) {
+			if( ! getCreatedByUserId().equals( rhs.getCreatedByUserId() ) ) {
+				return( false );
+			}
+			if( ! getCreatedAt().equals( rhs.getCreatedAt() ) ) {
+				return( false );
+			}
+			if( ! getUpdatedByUserId().equals( rhs.getUpdatedByUserId() ) ) {
+				return( false );
+			}
+			if( ! getUpdatedAt().equals( rhs.getUpdatedAt() ) ) {
+				return( false );
+			}
 			if( getRequiredId() != null ) {
 				if( rhs.getRequiredId() != null ) {
 					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {
@@ -604,39 +682,9 @@ $implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$i
 					return( false );
 				}
 			}
-			if( getOptionalEmbeddedText() != null ) {
-				if( rhs.getOptionalEmbeddedText() != null ) {
-					if( ! getOptionalEmbeddedText().equals( rhs.getOptionalEmbeddedText() ) ) {
-						return( false );
-					}
-				}
-				else {
-					return( false );
-				}
-			}
-			else {
-				if( rhs.getOptionalEmbeddedText() != null ) {
-					return( false );
-				}
-			}
-			if( getOptionalFullText() != null ) {
-				if( rhs.getOptionalFullText() != null ) {
-					if( ! getOptionalFullText().equals( rhs.getOptionalFullText() ) ) {
-						return( false );
-					}
-				}
-				else {
-					return( false );
-				}
-			}
-			else {
-				if( rhs.getOptionalFullText() != null ) {
-					return( false );
-				}
-			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntProtLicenseH rhs ) {
+		else if( obj instanceof ICFIntProtTopProjectH rhs ) {
 			if( getRequiredId() != null ) {
 				if( rhs.getRequiredId() != null ) {
 					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {
@@ -712,39 +760,9 @@ $implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$i
 					return( false );
 				}
 			}
-			if( getOptionalEmbeddedText() != null ) {
-				if( rhs.getOptionalEmbeddedText() != null ) {
-					if( ! getOptionalEmbeddedText().equals( rhs.getOptionalEmbeddedText() ) ) {
-						return( false );
-					}
-				}
-				else {
-					return( false );
-				}
-			}
-			else {
-				if( rhs.getOptionalEmbeddedText() != null ) {
-					return( false );
-				}
-			}
-			if( getOptionalFullText() != null ) {
-				if( rhs.getOptionalFullText() != null ) {
-					if( ! getOptionalFullText().equals( rhs.getOptionalFullText() ) ) {
-						return( false );
-					}
-				}
-				else {
-					return( false );
-				}
-			}
-			else {
-				if( rhs.getOptionalFullText() != null ) {
-					return( false );
-				}
-			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntProtLicenseHPKey rhs ) {
+		else if( obj instanceof ICFIntProtTopProjectHPKey rhs ) {
 			if( getRequiredId() != null ) {
 				if( rhs.getRequiredId() != null ) {
 					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {
@@ -762,7 +780,7 @@ $implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$i
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntProtLicenseByLicnTenantIdxKey rhs ) {
+		else if( obj instanceof ICFIntProtTopProjectByTenantIdxKey rhs ) {
 			if( getRequiredTenantId() != null ) {
 				if( rhs.getRequiredTenantId() != null ) {
 					if( ! getRequiredTenantId().equals( rhs.getRequiredTenantId() ) ) {
@@ -780,7 +798,7 @@ $implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$i
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntProtLicenseByDomainIdxKey rhs ) {
+		else if( obj instanceof ICFIntProtTopProjectByTopDomainIdxKey rhs ) {
 			if( getRequiredTopDomainId() != null ) {
 				if( rhs.getRequiredTopDomainId() != null ) {
 					if( ! getRequiredTopDomainId().equals( rhs.getRequiredTopDomainId() ) ) {
@@ -798,7 +816,7 @@ $implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$i
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntProtLicenseByUNameIdxKey rhs ) {
+		else if( obj instanceof ICFIntProtTopProjectByNameIdxKey rhs ) {
 			if( getRequiredTopDomainId() != null ) {
 				if( rhs.getRequiredTopDomainId() != null ) {
 					if( ! getRequiredTopDomainId().equals( rhs.getRequiredTopDomainId() ) ) {
@@ -831,7 +849,19 @@ $implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$i
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntPubLicense rhs ) {
+		else if( obj instanceof ICFIntPubTopProject rhs ) {
+			if( ! getCreatedByUserId().equals( rhs.getCreatedByUserId() ) ) {
+				return( false );
+			}
+			if( ! getCreatedAt().equals( rhs.getCreatedAt() ) ) {
+				return( false );
+			}
+			if( ! getUpdatedByUserId().equals( rhs.getUpdatedByUserId() ) ) {
+				return( false );
+			}
+			if( ! getUpdatedAt().equals( rhs.getUpdatedAt() ) ) {
+				return( false );
+			}
 			if( getRequiredId() != null ) {
 				if( rhs.getRequiredId() != null ) {
 					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {
@@ -907,39 +937,9 @@ $implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$i
 					return( false );
 				}
 			}
-			if( getOptionalEmbeddedText() != null ) {
-				if( rhs.getOptionalEmbeddedText() != null ) {
-					if( ! getOptionalEmbeddedText().equals( rhs.getOptionalEmbeddedText() ) ) {
-						return( false );
-					}
-				}
-				else {
-					return( false );
-				}
-			}
-			else {
-				if( rhs.getOptionalEmbeddedText() != null ) {
-					return( false );
-				}
-			}
-			if( getOptionalFullText() != null ) {
-				if( rhs.getOptionalFullText() != null ) {
-					if( ! getOptionalFullText().equals( rhs.getOptionalFullText() ) ) {
-						return( false );
-					}
-				}
-				else {
-					return( false );
-				}
-			}
-			else {
-				if( rhs.getOptionalFullText() != null ) {
-					return( false );
-				}
-			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntPubLicenseH rhs ) {
+		else if( obj instanceof ICFIntPubTopProjectH rhs ) {
 			if( getRequiredId() != null ) {
 				if( rhs.getRequiredId() != null ) {
 					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {
@@ -1015,39 +1015,9 @@ $implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$i
 					return( false );
 				}
 			}
-			if( getOptionalEmbeddedText() != null ) {
-				if( rhs.getOptionalEmbeddedText() != null ) {
-					if( ! getOptionalEmbeddedText().equals( rhs.getOptionalEmbeddedText() ) ) {
-						return( false );
-					}
-				}
-				else {
-					return( false );
-				}
-			}
-			else {
-				if( rhs.getOptionalEmbeddedText() != null ) {
-					return( false );
-				}
-			}
-			if( getOptionalFullText() != null ) {
-				if( rhs.getOptionalFullText() != null ) {
-					if( ! getOptionalFullText().equals( rhs.getOptionalFullText() ) ) {
-						return( false );
-					}
-				}
-				else {
-					return( false );
-				}
-			}
-			else {
-				if( rhs.getOptionalFullText() != null ) {
-					return( false );
-				}
-			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntPubLicenseHPKey rhs ) {
+		else if( obj instanceof ICFIntPubTopProjectHPKey rhs ) {
 			if( getRequiredId() != null ) {
 				if( rhs.getRequiredId() != null ) {
 					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {
@@ -1065,7 +1035,7 @@ $implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$i
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntProtLicenseByLicnTenantIdxKey rhs ) {
+		else if( obj instanceof ICFIntProtTopProjectByTenantIdxKey rhs ) {
 			if( getRequiredTenantId() != null ) {
 				if( rhs.getRequiredTenantId() != null ) {
 					if( ! getRequiredTenantId().equals( rhs.getRequiredTenantId() ) ) {
@@ -1083,7 +1053,7 @@ $implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$i
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntProtLicenseByDomainIdxKey rhs ) {
+		else if( obj instanceof ICFIntProtTopProjectByTopDomainIdxKey rhs ) {
 			if( getRequiredTopDomainId() != null ) {
 				if( rhs.getRequiredTopDomainId() != null ) {
 					if( ! getRequiredTopDomainId().equals( rhs.getRequiredTopDomainId() ) ) {
@@ -1101,7 +1071,7 @@ $implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$i
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFIntProtLicenseByUNameIdxKey rhs ) {
+		else if( obj instanceof ICFIntProtTopProjectByNameIdxKey rhs ) {
 			if( getRequiredTopDomainId() != null ) {
 				if( rhs.getRequiredTopDomainId() != null ) {
 					if( ! getRequiredTopDomainId().equals( rhs.getRequiredTopDomainId() ) ) {
@@ -1143,6 +1113,10 @@ $implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$i
 	@Override
 	public int hashCode() {
 		int hashCode = 0;
+		hashCode = hashCode + getCreatedByUserId().hashCode();
+		hashCode = hashCode + getCreatedAt().hashCode();
+		hashCode = hashCode + getUpdatedByUserId().hashCode();
+		hashCode = hashCode + getUpdatedAt().hashCode();
 		hashCode = hashCode + getRequiredId().hashCode();
 		hashCode = hashCode + getRequiredTenantId().hashCode();
 		hashCode = hashCode + getRequiredTopDomainId().hashCode();
@@ -1151,12 +1125,6 @@ $implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$i
 		}
 		if( getOptionalDescription() != null ) {
 			hashCode = hashCode + getOptionalDescription().hashCode();
-		}
-		if( getOptionalEmbeddedText() != null ) {
-			hashCode = hashCode + getOptionalEmbeddedText().hashCode();
-		}
-		if( getOptionalFullText() != null ) {
-			hashCode = hashCode + getOptionalFullText().hashCode();
 		}
 		return( hashCode & 0x7fffffff );
 	}
@@ -1167,8 +1135,29 @@ $implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$i
 		if( obj == null ) {
 			return( -1 );
 		}
-		else if( obj instanceof ICFIntProtLicense rhs ) {
+		else if( obj instanceof ICFIntProtTopProject rhs ) {
 			cmp = 0;
+			{
+				cmp = getCreatedByUserId().compareTo( rhs.getCreatedByUserId() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+
+				cmp = getCreatedAt().compareTo( rhs.getCreatedAt() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+
+				cmp = getUpdatedByUserId().compareTo( rhs.getUpdatedByUserId() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+
+				cmp = getUpdatedAt().compareTo( rhs.getUpdatedAt() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+			}
 			if (getRequiredId() != null) {
 				if (rhs.getRequiredId() != null) {
 					cmp = getRequiredId().compareTo( rhs.getRequiredId() );
@@ -1238,44 +1227,12 @@ $implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$i
 			}
 			else {
 				if( rhs.getOptionalDescription() != null ) {
-					return( -1 );
-				}
-			}
-			if( getOptionalEmbeddedText() != null ) {
-				if( rhs.getOptionalEmbeddedText() != null ) {
-					cmp = getOptionalEmbeddedText().compareTo( rhs.getOptionalEmbeddedText() );
-					if( cmp != 0 ) {
-						return( cmp );
-					}
-				}
-				else {
-					return( 1 );
-				}
-			}
-			else {
-				if( rhs.getOptionalEmbeddedText() != null ) {
-					return( -1 );
-				}
-			}
-			if( getOptionalFullText() != null ) {
-				if( rhs.getOptionalFullText() != null ) {
-					cmp = getOptionalFullText().compareTo( rhs.getOptionalFullText() );
-					if( cmp != 0 ) {
-						return( cmp );
-					}
-				}
-				else {
-					return( 1 );
-				}
-			}
-			else {
-				if( rhs.getOptionalFullText() != null ) {
 					return( -1 );
 				}
 			}
 			return( 0 );
  		}
-		else if( obj instanceof ICFIntProtLicenseHPKey rhs ) {$implJustProtHPKeyCompareToRequiredRevision$
+		else if( obj instanceof ICFIntProtTopProjectHPKey rhs ) {$implJustProtHPKeyCompareToRequiredRevision$
 			if (getRequiredId() != null) {
 				if (rhs.getRequiredId() != null) {
 					cmp = getRequiredId().compareTo( rhs.getRequiredId() );
@@ -1292,7 +1249,7 @@ $implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$i
 			}
 			return( 0 );
 		}
-		else if( obj instanceof ICFIntProtLicenseH rhs ) {
+		else if( obj instanceof ICFIntProtTopProjectH rhs ) {
 			cmp = 0;
 			if (getRequiredId() != null) {
 				if (rhs.getRequiredId() != null) {
@@ -1366,41 +1323,9 @@ $implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$i
 					return( -1 );
 				}
 			}
-			if( getOptionalEmbeddedText() != null ) {
-				if( rhs.getOptionalEmbeddedText() != null ) {
-					cmp = getOptionalEmbeddedText().compareTo( rhs.getOptionalEmbeddedText() );
-					if( cmp != 0 ) {
-						return( cmp );
-					}
-				}
-				else {
-					return( 1 );
-				}
-			}
-			else {
-				if( rhs.getOptionalEmbeddedText() != null ) {
-					return( -1 );
-				}
-			}
-			if( getOptionalFullText() != null ) {
-				if( rhs.getOptionalFullText() != null ) {
-					cmp = getOptionalFullText().compareTo( rhs.getOptionalFullText() );
-					if( cmp != 0 ) {
-						return( cmp );
-					}
-				}
-				else {
-					return( 1 );
-				}
-			}
-			else {
-				if( rhs.getOptionalFullText() != null ) {
-					return( -1 );
-				}
-			}
 			return( 0 );
 		}
-		else if( obj instanceof ICFIntLicenseByLicnTenantIdxKey rhs ) {
+		else if( obj instanceof ICFIntTopProjectByTenantIdxKey rhs ) {
 			if (getRequiredTenantId() != null) {
 				if (rhs.getRequiredTenantId() != null) {
 					cmp = getRequiredTenantId().compareTo( rhs.getRequiredTenantId() );
@@ -1416,7 +1341,7 @@ $implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$i
 				return( -1 );
 			}			return( 0 );
 		}
-		else if( obj instanceof ICFIntLicenseByDomainIdxKey rhs ) {
+		else if( obj instanceof ICFIntTopProjectByTopDomainIdxKey rhs ) {
 			if (getRequiredTopDomainId() != null) {
 				if (rhs.getRequiredTopDomainId() != null) {
 					cmp = getRequiredTopDomainId().compareTo( rhs.getRequiredTopDomainId() );
@@ -1432,7 +1357,7 @@ $implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$i
 				return( -1 );
 			}			return( 0 );
 		}
-		else if( obj instanceof ICFIntLicenseByUNameIdxKey rhs ) {
+		else if( obj instanceof ICFIntTopProjectByNameIdxKey rhs ) {
 			if (getRequiredTopDomainId() != null) {
 				if (rhs.getRequiredTopDomainId() != null) {
 					cmp = getRequiredTopDomainId().compareTo( rhs.getRequiredTopDomainId() );
@@ -1462,7 +1387,121 @@ $implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$i
 				return( -1 );
 			}			return( 0 );
 		}
-		else if( obj instanceof ICFIntPubLicense rhs ) {
+		else if( obj instanceof ICFIntPubTopProject rhs ) {
+			cmp = 0;
+			{
+				cmp = getCreatedByUserId().compareTo( rhs.getCreatedByUserId() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+
+				cmp = getCreatedAt().compareTo( rhs.getCreatedAt() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+
+				cmp = getUpdatedByUserId().compareTo( rhs.getUpdatedByUserId() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+
+				cmp = getUpdatedAt().compareTo( rhs.getUpdatedAt() );
+				if( cmp != 0 ) {
+					return( cmp );
+				}
+			}
+			if (getRequiredId() != null) {
+				if (rhs.getRequiredId() != null) {
+					cmp = getRequiredId().compareTo( rhs.getRequiredId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredId() != null) {
+				return( -1 );
+			}
+			if (getRequiredTenantId() != null) {
+				if (rhs.getRequiredTenantId() != null) {
+					cmp = getRequiredTenantId().compareTo( rhs.getRequiredTenantId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredTenantId() != null) {
+				return( -1 );
+			}
+			if (getRequiredTopDomainId() != null) {
+				if (rhs.getRequiredTopDomainId() != null) {
+					cmp = getRequiredTopDomainId().compareTo( rhs.getRequiredTopDomainId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredTopDomainId() != null) {
+				return( -1 );
+			}
+			if (getRequiredName() != null) {
+				if (rhs.getRequiredName() != null) {
+					cmp = getRequiredName().compareTo( rhs.getRequiredName() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredName() != null) {
+				return( -1 );
+			}
+			if( getOptionalDescription() != null ) {
+				if( rhs.getOptionalDescription() != null ) {
+					cmp = getOptionalDescription().compareTo( rhs.getOptionalDescription() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else {
+				if( rhs.getOptionalDescription() != null ) {
+					return( -1 );
+				}
+			}
+			return( 0 );
+		}
+		else if( obj instanceof ICFIntPubTopProjectHPKey rhs ) {$implJustProtHPKeyCompareToRequiredRevision$
+			if (getRequiredId() != null) {
+				if (rhs.getRequiredId() != null) {
+					cmp = getRequiredId().compareTo( rhs.getRequiredId() );
+					if( cmp != 0 ) {
+						return( cmp );
+					}
+				}
+				else {
+					return( 1 );
+				}
+			}
+			else if (rhs.getRequiredId() != null) {
+				return( -1 );
+			}
+			return( 0 );
+		}
+		else if( obj instanceof ICFIntPubTopProjectH rhs ) {
 			cmp = 0;
 			if (getRequiredId() != null) {
 				if (rhs.getRequiredId() != null) {
@@ -1536,166 +1575,9 @@ $implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$i
 					return( -1 );
 				}
 			}
-			if( getOptionalEmbeddedText() != null ) {
-				if( rhs.getOptionalEmbeddedText() != null ) {
-					cmp = getOptionalEmbeddedText().compareTo( rhs.getOptionalEmbeddedText() );
-					if( cmp != 0 ) {
-						return( cmp );
-					}
-				}
-				else {
-					return( 1 );
-				}
-			}
-			else {
-				if( rhs.getOptionalEmbeddedText() != null ) {
-					return( -1 );
-				}
-			}
-			if( getOptionalFullText() != null ) {
-				if( rhs.getOptionalFullText() != null ) {
-					cmp = getOptionalFullText().compareTo( rhs.getOptionalFullText() );
-					if( cmp != 0 ) {
-						return( cmp );
-					}
-				}
-				else {
-					return( 1 );
-				}
-			}
-			else {
-				if( rhs.getOptionalFullText() != null ) {
-					return( -1 );
-				}
-			}
 			return( 0 );
 		}
-		else if( obj instanceof ICFIntPubLicenseHPKey rhs ) {$implJustProtHPKeyCompareToRequiredRevision$
-			if (getRequiredId() != null) {
-				if (rhs.getRequiredId() != null) {
-					cmp = getRequiredId().compareTo( rhs.getRequiredId() );
-					if( cmp != 0 ) {
-						return( cmp );
-					}
-				}
-				else {
-					return( 1 );
-				}
-			}
-			else if (rhs.getRequiredId() != null) {
-				return( -1 );
-			}
-			return( 0 );
-		}
-		else if( obj instanceof ICFIntPubLicenseH rhs ) {
-			cmp = 0;
-			if (getRequiredId() != null) {
-				if (rhs.getRequiredId() != null) {
-					cmp = getRequiredId().compareTo( rhs.getRequiredId() );
-					if( cmp != 0 ) {
-						return( cmp );
-					}
-				}
-				else {
-					return( 1 );
-				}
-			}
-			else if (rhs.getRequiredId() != null) {
-				return( -1 );
-			}
-			if (getRequiredTenantId() != null) {
-				if (rhs.getRequiredTenantId() != null) {
-					cmp = getRequiredTenantId().compareTo( rhs.getRequiredTenantId() );
-					if( cmp != 0 ) {
-						return( cmp );
-					}
-				}
-				else {
-					return( 1 );
-				}
-			}
-			else if (rhs.getRequiredTenantId() != null) {
-				return( -1 );
-			}
-			if (getRequiredTopDomainId() != null) {
-				if (rhs.getRequiredTopDomainId() != null) {
-					cmp = getRequiredTopDomainId().compareTo( rhs.getRequiredTopDomainId() );
-					if( cmp != 0 ) {
-						return( cmp );
-					}
-				}
-				else {
-					return( 1 );
-				}
-			}
-			else if (rhs.getRequiredTopDomainId() != null) {
-				return( -1 );
-			}
-			if (getRequiredName() != null) {
-				if (rhs.getRequiredName() != null) {
-					cmp = getRequiredName().compareTo( rhs.getRequiredName() );
-					if( cmp != 0 ) {
-						return( cmp );
-					}
-				}
-				else {
-					return( 1 );
-				}
-			}
-			else if (rhs.getRequiredName() != null) {
-				return( -1 );
-			}
-			if( getOptionalDescription() != null ) {
-				if( rhs.getOptionalDescription() != null ) {
-					cmp = getOptionalDescription().compareTo( rhs.getOptionalDescription() );
-					if( cmp != 0 ) {
-						return( cmp );
-					}
-				}
-				else {
-					return( 1 );
-				}
-			}
-			else {
-				if( rhs.getOptionalDescription() != null ) {
-					return( -1 );
-				}
-			}
-			if( getOptionalEmbeddedText() != null ) {
-				if( rhs.getOptionalEmbeddedText() != null ) {
-					cmp = getOptionalEmbeddedText().compareTo( rhs.getOptionalEmbeddedText() );
-					if( cmp != 0 ) {
-						return( cmp );
-					}
-				}
-				else {
-					return( 1 );
-				}
-			}
-			else {
-				if( rhs.getOptionalEmbeddedText() != null ) {
-					return( -1 );
-				}
-			}
-			if( getOptionalFullText() != null ) {
-				if( rhs.getOptionalFullText() != null ) {
-					cmp = getOptionalFullText().compareTo( rhs.getOptionalFullText() );
-					if( cmp != 0 ) {
-						return( cmp );
-					}
-				}
-				else {
-					return( 1 );
-				}
-			}
-			else {
-				if( rhs.getOptionalFullText() != null ) {
-					return( -1 );
-				}
-			}
-			return( 0 );
-		}
-		else if( obj instanceof ICFIntPubLicenseByLicnTenantIdxKey rhs ) {
+		else if( obj instanceof ICFIntPubTopProjectByTenantIdxKey rhs ) {
 			if (getRequiredTenantId() != null) {
 				if (rhs.getRequiredTenantId() != null) {
 					cmp = getRequiredTenantId().compareTo( rhs.getRequiredTenantId() );
@@ -1711,7 +1593,7 @@ $implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$i
 				return( -1 );
 			}			return( 0 );
 		}
-		else if( obj instanceof ICFIntPubLicenseByDomainIdxKey rhs ) {
+		else if( obj instanceof ICFIntPubTopProjectByTopDomainIdxKey rhs ) {
 			if (getRequiredTopDomainId() != null) {
 				if (rhs.getRequiredTopDomainId() != null) {
 					cmp = getRequiredTopDomainId().compareTo( rhs.getRequiredTopDomainId() );
@@ -1727,7 +1609,7 @@ $implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$i
 				return( -1 );
 			}			return( 0 );
 		}
-		else if( obj instanceof ICFIntPubLicenseByUNameIdxKey rhs ) {
+		else if( obj instanceof ICFIntPubTopProjectByNameIdxKey rhs ) {
 			if (getRequiredTopDomainId() != null) {
 				if (rhs.getRequiredTopDomainId() != null) {
 					cmp = getRequiredTopDomainId().compareTo( rhs.getRequiredTopDomainId() );
@@ -1767,114 +1649,114 @@ $implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$i
 	}
 
 	@Override
-	public void setJustProt( ICFIntLicense src ) {
-		setJustProtLicense( src );
+	public void setJustProt( ICFIntTopProject src ) {
+		setJustProtTopProject( src );
 	}
 
 	@Override
-	public void setJustProtLicense( ICFIntLicense src ) {
+	public void setJustProtTopProject( ICFIntTopProject src ) {
 		setJustProtRequiredId(src.getRequiredId());
 		setJustProtRequiredRevision( src.getRequiredRevision() );
+		setJustProtCreatedByUserId( src.getCreatedByUserId() );
+		setJustProtCreatedAt( src.getCreatedAt() );
+		setJustProtUpdatedByUserId( src.getUpdatedByUserId() );
+		setJustProtUpdatedAt( src.getUpdatedAt() );
 		setJustProtRequiredOwnerTenant(src.getRequiredOwnerTenant());
-		setJustProtRequiredContainerTopDomain(src.getRequiredContainerTopDomain());
+		setJustProtRequiredContainerParentSDom(src.getRequiredContainerParentSDom());
 		setJustProtRequiredTenantId(src.getRequiredTenantId());
 		setJustProtRequiredTopDomainId(src.getRequiredTopDomainId());
 		setJustProtRequiredName(src.getRequiredName());
 		setJustProtOptionalDescription(src.getOptionalDescription());
-		setJustProtOptionalEmbeddedText(src.getOptionalEmbeddedText());
-		setJustProtOptionalFullText(src.getOptionalFullText());
 	}
 
 	@Override
-	public void setJustProt( ICFIntLicenseH src ) {
-		setJustProtLicense( src );
+	public void setJustProt( ICFIntTopProjectH src ) {
+		setJustProtTopProject( src );
 	}
 
 	@Override
-	public void setJustProtLicense( ICFIntLicenseH src ) {
+	public void setJustProtTopProject( ICFIntTopProjectH src ) {
 		setJustProtRequiredId(src.getRequiredId());
 		setJustProtRequiredOwnerTenant(src.getRequiredOwnerTenant());
-		setJustProtRequiredContainerTopDomain(src.getRequiredContainerTopDomain());
+		setJustProtRequiredContainerParentSDom(src.getRequiredContainerParentSDom());
 		setJustProtRequiredTenantId(src.getRequiredTenantId());
 		setJustProtRequiredTopDomainId(src.getRequiredTopDomainId());
 		setJustProtRequiredName(src.getRequiredName());
 		setJustProtOptionalDescription(src.getOptionalDescription());
-		setJustProtOptionalEmbeddedText(src.getOptionalEmbeddedText());
-		setJustProtOptionalFullText(src.getOptionalFullText());
 	}
 
 	@Override
-	public void setJustProt( ICFIntProtLicense src ) {
-		setJustProtLicense( src );
+	public void setJustProt( ICFIntProtTopProject src ) {
+		setJustProtTopProject( src );
 	}
 
 	@Override
-	public void setJustProtLicense( ICFIntProtLicense src ) {
-		setJustProtRequiredId(src.getRequiredId());
-		setJustProtRequiredRevision( src.getRequiredRevision() );
-		setJustProtRequiredOwnerTenant(src.getRequiredOwnerTenant());
-		setJustProtRequiredContainerTopDomain(src.getRequiredContainerTopDomain());
-		setJustProtRequiredTenantId(src.getRequiredTenantId());
-		setJustProtRequiredTopDomainId(src.getRequiredTopDomainId());
-		setJustProtRequiredName(src.getRequiredName());
-		setJustProtOptionalDescription(src.getOptionalDescription());
-		setJustProtOptionalEmbeddedText(src.getOptionalEmbeddedText());
-		setJustProtOptionalFullText(src.getOptionalFullText());
-	}
-
-	@Override
-	public void setJustProt( ICFIntProtLicenseH src ) {
-		setJustProtLicense( src );
-	}
-
-	@Override
-	public void setJustProtLicense( ICFIntProtLicenseH src ) {
-		setJustProtRequiredId(src.getRequiredId());
-		setJustProtRequiredOwnerTenant(src.getRequiredOwnerTenant());
-		setJustProtRequiredContainerTopDomain(src.getRequiredContainerTopDomain());
-		setJustProtRequiredTenantId(src.getRequiredTenantId());
-		setJustProtRequiredTopDomainId(src.getRequiredTopDomainId());
-		setJustProtRequiredName(src.getRequiredName());
-		setJustProtOptionalDescription(src.getOptionalDescription());
-		setJustProtOptionalEmbeddedText(src.getOptionalEmbeddedText());
-		setJustProtOptionalFullText(src.getOptionalFullText());
-	}
-
-	@Override
-	public void setJustProt( ICFIntPubLicense src ) {
-		setJustProtLicense( src );
-	}
-
-	@Override
-	public void setJustProtLicense( ICFIntPubLicense src ) {
+	public void setJustProtTopProject( ICFIntProtTopProject src ) {
 		setJustProtRequiredId(src.getRequiredId());
 		setJustProtRequiredRevision( src.getRequiredRevision() );
+		setJustProtCreatedByUserId( src.getCreatedByUserId() );
+		setJustProtCreatedAt( src.getCreatedAt() );
+		setJustProtUpdatedByUserId( src.getUpdatedByUserId() );
+		setJustProtUpdatedAt( src.getUpdatedAt() );
 		setJustProtRequiredOwnerTenant(src.getRequiredOwnerTenant());
-		setJustProtRequiredContainerTopDomain(src.getRequiredContainerTopDomain());
+		setJustProtRequiredContainerParentSDom(src.getRequiredContainerParentSDom());
 		setJustProtRequiredTenantId(src.getRequiredTenantId());
 		setJustProtRequiredTopDomainId(src.getRequiredTopDomainId());
 		setJustProtRequiredName(src.getRequiredName());
 		setJustProtOptionalDescription(src.getOptionalDescription());
-		setJustProtOptionalEmbeddedText(src.getOptionalEmbeddedText());
-		setJustProtOptionalFullText(src.getOptionalFullText());
 	}
 
 	@Override
-	public void setJustProt( ICFIntPubLicenseH src ) {
-		setJustProtLicense( src );
+	public void setJustProt( ICFIntProtTopProjectH src ) {
+		setJustProtTopProject( src );
 	}
 
 	@Override
-	public void setJustProtLicense( ICFIntPubLicenseH src ) {
+	public void setJustProtTopProject( ICFIntProtTopProjectH src ) {
 		setJustProtRequiredId(src.getRequiredId());
 		setJustProtRequiredOwnerTenant(src.getRequiredOwnerTenant());
-		setJustProtRequiredContainerTopDomain(src.getRequiredContainerTopDomain());
+		setJustProtRequiredContainerParentSDom(src.getRequiredContainerParentSDom());
 		setJustProtRequiredTenantId(src.getRequiredTenantId());
 		setJustProtRequiredTopDomainId(src.getRequiredTopDomainId());
 		setJustProtRequiredName(src.getRequiredName());
 		setJustProtOptionalDescription(src.getOptionalDescription());
-		setJustProtOptionalEmbeddedText(src.getOptionalEmbeddedText());
-		setJustProtOptionalFullText(src.getOptionalFullText());
+	}
+
+	@Override
+	public void setJustProt( ICFIntPubTopProject src ) {
+		setJustProtTopProject( src );
+	}
+
+	@Override
+	public void setJustProtTopProject( ICFIntPubTopProject src ) {
+		setJustProtRequiredId(src.getRequiredId());
+		setJustProtRequiredRevision( src.getRequiredRevision() );
+		setJustProtCreatedByUserId( src.getCreatedByUserId() );
+		setJustProtCreatedAt( src.getCreatedAt() );
+		setJustProtUpdatedByUserId( src.getUpdatedByUserId() );
+		setJustProtUpdatedAt( src.getUpdatedAt() );
+		setJustProtRequiredOwnerTenant(src.getRequiredOwnerTenant());
+		setJustProtRequiredContainerParentSDom(src.getRequiredContainerParentSDom());
+		setJustProtRequiredTenantId(src.getRequiredTenantId());
+		setJustProtRequiredTopDomainId(src.getRequiredTopDomainId());
+		setJustProtRequiredName(src.getRequiredName());
+		setJustProtOptionalDescription(src.getOptionalDescription());
+	}
+
+	@Override
+	public void setJustProt( ICFIntPubTopProjectH src ) {
+		setJustProtTopProject( src );
+	}
+
+	@Override
+	public void setJustProtTopProject( ICFIntPubTopProjectH src ) {
+		setJustProtRequiredId(src.getRequiredId());
+		setJustProtRequiredOwnerTenant(src.getRequiredOwnerTenant());
+		setJustProtRequiredContainerParentSDom(src.getRequiredContainerParentSDom());
+		setJustProtRequiredTenantId(src.getRequiredTenantId());
+		setJustProtRequiredTopDomainId(src.getRequiredTopDomainId());
+		setJustProtRequiredName(src.getRequiredName());
+		setJustProtOptionalDescription(src.getOptionalDescription());
 	}
 
 	@Override
@@ -1886,15 +1768,13 @@ $implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$i
 			+ " RequiredTenantId=" + "\"" + getRequiredTenantId().toString() + "\""
 			+ " RequiredTopDomainId=" + "\"" + getRequiredTopDomainId().toString() + "\""
 			+ " RequiredName=" + "\"" + StringEscapeUtils.escapeXml11( getRequiredName() ) + "\""
-			+ " OptionalDescription=" + ( ( getOptionalDescription() == null ) ? "null" : "\"" + StringEscapeUtils.escapeXml11( getOptionalDescription() ) + "\"" )
-			+ " OptionalEmbeddedText=" + ( ( getOptionalEmbeddedText() == null ) ? "null" : "\"" + StringEscapeUtils.escapeXml11( getOptionalEmbeddedText() ) + "\"" )
-			+ " OptionalFullText=" + ( ( getOptionalFullText() == null ) ? "null" : "\"" + StringEscapeUtils.escapeXml11( getOptionalFullText() ) + "\"" );
+			+ " OptionalDescription=" + ( ( getOptionalDescription() == null ) ? "null" : "\"" + StringEscapeUtils.escapeXml11( getOptionalDescription() ) + "\"" );
 		return( ret );
 	}
 
 	@Override
 	public String toString() {
-		String ret = "<CFIntProtBuffLicense" + getXmlAttrFragment() + "/>";
+		String ret = "<CFIntProtBuffTopProject" + getXmlAttrFragment() + "/>";
 		return( ret );
 	}
 }
