@@ -256,7 +256,7 @@ public class CFIntBuffMajorVersion
 			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerTenant-args", 0, "found");
 		}
 		else if ((found instanceof ICFSecTenant) || (found instanceof ICFSecProtTenant) || (found instanceof ICFSecPubTenant)) {
-		setRequiredTenantId(argTenantId);
+		requiredTenantId = argTenantId;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setRequiredOwnerTenant-args", "found", found, "ICFSecTenantICFSecProtTenantICFSecPubTenant");
@@ -320,7 +320,7 @@ public class CFIntBuffMajorVersion
 			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerParentSPrj-args", 0, "found");
 		}
 		else if ((found instanceof ICFIntSubProject) || (found instanceof ICFIntProtSubProject) || (found instanceof ICFIntPubSubProject)) {
-		setRequiredSubProjectId(argSubProjectId);
+		requiredSubProjectId = argSubProjectId;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerParentSPrj-args", "found", found, "ICFIntSubProjectICFIntProtSubProjectICFIntPubSubProject");

@@ -48,9 +48,9 @@ import server.markhome.mcf.v3_1.cfint.cfintprot.*;
 import server.markhome.mcf.v3_1.cfint.cfintprotobj.*;
 
 public class CFIntProtBuffMimeType
-	implJustProtements ICFIntMimeType, Comparable<Object>, Serializable
+	implements ICFIntMimeType, Comparable<Object>, Serializable
 {
-	protected $implJustProtIJavaAtomType$ requiredMimeTypeId;
+	protected int requiredMimeTypeId;
 	protected int requiredRevision;
 	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFIntPubSecUser.S_INIT_CREATED_BY);
 	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFIntPubSecSession.S_SECSESSIONID_INIT_VALUE);
@@ -151,7 +151,47 @@ public class CFIntProtBuffMimeType
 	public int getClassCode() {
 		return( ICFIntMimeType.CLASS_CODE );
 	}
-$implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$implJustProtColumnSetter$
+
+	@Override
+	public String getRequiredName() {
+		return(requiredName);
+	}
+
+	public void setRequiredName( String value ) {
+		if( value == null ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredName",
+				1,
+				"value" );
+		}
+		else if( value.length() > 128 ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+				"setRequiredName",
+				1,
+				"value.length()",
+				value.length(),
+				128 );
+		}
+		requiredName = value;
+	}
+
+	@Override
+	public String getOptionalFileTypes() {
+		return(optionalFileTypes);
+	}
+
+	public void setOptionalFileTypes( String value ) {
+		if( value != null && value.length() > 128 ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+				"setOptionalFileTypes",
+				1,
+				"value.length()",
+				value.length(),
+				128 );
+		}
+		optionalFileTypes = value;
+	}
+
 	@Override
 	public boolean equals( Object obj ) {
 		if( obj == null ) {
@@ -572,7 +612,13 @@ $implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$i
 			}
 			return( 0 );
  		}
-		else if( obj instanceof ICFIntProtMimeTypeHPKey rhs ) {$implJustProtHPKeyCompareToRequiredRevision$
+		else if( obj instanceof ICFIntProtMimeTypeHPKey rhs ) {
+			if( getRequiredRevision() < rhs.getRequiredRevision() ) {
+				return( -1 );
+			}
+			else if( getRequiredRevision() > rhs.getRequiredRevision() ) {
+				return( 1 );
+			}
 			if( getRequiredMimeTypeId() < rhs.getRequiredMimeTypeId() ) {
 				return( -1 );
 			}
@@ -698,7 +744,13 @@ $implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$i
 			}
 			return( 0 );
 		}
-		else if( obj instanceof ICFIntPubMimeTypeHPKey rhs ) {$implJustProtHPKeyCompareToRequiredRevision$
+		else if( obj instanceof ICFIntPubMimeTypeHPKey rhs ) {
+			if( getRequiredRevision() < rhs.getRequiredRevision() ) {
+				return( -1 );
+			}
+			else if( getRequiredRevision() > rhs.getRequiredRevision() ) {
+				return( 1 );
+			}
 			if( getRequiredMimeTypeId() < rhs.getRequiredMimeTypeId() ) {
 				return( -1 );
 			}

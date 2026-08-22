@@ -328,7 +328,7 @@ public class CFIntBuffTopDomain
 			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerTenant-args", 0, "found");
 		}
 		else if ((found instanceof ICFSecTenant) || (found instanceof ICFSecProtTenant) || (found instanceof ICFSecPubTenant)) {
-		setRequiredTenantId(argTenantId);
+		requiredTenantId = argTenantId;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setRequiredOwnerTenant-args", "found", found, "ICFSecTenantICFSecProtTenantICFSecPubTenant");
@@ -392,7 +392,7 @@ public class CFIntBuffTopDomain
 			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerParentTld-args", 0, "found");
 		}
 		else if ((found instanceof ICFIntTld) || (found instanceof ICFIntProtTld) || (found instanceof ICFIntPubTld)) {
-		setRequiredTldId(argTldId);
+		requiredTldId = argTldId;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerParentTld-args", "found", found, "ICFIntTldICFIntProtTldICFIntPubTld");

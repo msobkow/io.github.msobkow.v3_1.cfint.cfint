@@ -184,7 +184,7 @@ public class CFIntBuffMinorVersion
 			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerTenant-args", 0, "found");
 		}
 		else if ((found instanceof ICFSecTenant) || (found instanceof ICFSecProtTenant) || (found instanceof ICFSecPubTenant)) {
-		setRequiredTenantId(argTenantId);
+		requiredTenantId = argTenantId;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setRequiredOwnerTenant-args", "found", found, "ICFSecTenantICFSecProtTenantICFSecPubTenant");
@@ -248,7 +248,7 @@ public class CFIntBuffMinorVersion
 			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerParentMajVer-args", 0, "found");
 		}
 		else if ((found instanceof ICFIntMajorVersion) || (found instanceof ICFIntProtMajorVersion) || (found instanceof ICFIntPubMajorVersion)) {
-		setRequiredMajorVersionId(argMajorVersionId);
+		requiredMajorVersionId = argMajorVersionId;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerParentMajVer-args", "found", found, "ICFIntMajorVersionICFIntProtMajorVersionICFIntPubMajorVersion");

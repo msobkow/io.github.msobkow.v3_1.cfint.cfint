@@ -48,9 +48,9 @@ import server.markhome.mcf.v3_1.cfint.cfintprot.*;
 import server.markhome.mcf.v3_1.cfint.cfintprotobj.*;
 
 public class CFIntProtBuffURLProtocol
-	implJustProtements ICFIntURLProtocol, Comparable<Object>, Serializable
+	implements ICFIntURLProtocol, Comparable<Object>, Serializable
 {
-	protected $implJustProtIJavaAtomType$ requiredURLProtocolId;
+	protected int requiredURLProtocolId;
 	protected int requiredRevision;
 	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFIntPubSecUser.S_INIT_CREATED_BY);
 	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFIntPubSecSession.S_SECSESSIONID_INIT_VALUE);
@@ -153,7 +153,62 @@ public class CFIntProtBuffURLProtocol
 	public int getClassCode() {
 		return( ICFIntURLProtocol.CLASS_CODE );
 	}
-$implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$implJustProtColumnSetter$
+
+	@Override
+	public String getRequiredName() {
+		return(requiredName);
+	}
+
+	public void setRequiredName( String value ) {
+		if( value == null ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredName",
+				1,
+				"value" );
+		}
+		else if( value.length() > 16 ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+				"setRequiredName",
+				1,
+				"value.length()",
+				value.length(),
+				16 );
+		}
+		requiredName = value;
+	}
+
+	@Override
+	public String getRequiredDescription() {
+		return(requiredDescription);
+	}
+
+	public void setRequiredDescription( String value ) {
+		if( value == null ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredDescription",
+				1,
+				"value" );
+		}
+		else if( value.length() > 50 ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+				"setRequiredDescription",
+				1,
+				"value.length()",
+				value.length(),
+				50 );
+		}
+		requiredDescription = value;
+	}
+
+	@Override
+	public boolean getRequiredIsSecure() {
+		return(requiredIsSecure);
+	}
+
+	public void setRequiredIsSecure( boolean value ) {
+		requiredIsSecure = value;
+	}
+
 	@Override
 	public boolean equals( Object obj ) {
 		if( obj == null ) {
@@ -624,7 +679,13 @@ $implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$i
 			}
 			return( 0 );
  		}
-		else if( obj instanceof ICFIntProtURLProtocolHPKey rhs ) {$implJustProtHPKeyCompareToRequiredRevision$
+		else if( obj instanceof ICFIntProtURLProtocolHPKey rhs ) {
+			if( getRequiredRevision() < rhs.getRequiredRevision() ) {
+				return( -1 );
+			}
+			else if( getRequiredRevision() > rhs.getRequiredRevision() ) {
+				return( 1 );
+			}
 			if( getRequiredURLProtocolId() < rhs.getRequiredURLProtocolId() ) {
 				return( -1 );
 			}
@@ -778,7 +839,13 @@ $implJustProtColumnGetter$$implJustProtColumnSetter$$implJustProtColumnGetter$$i
 			}
 			return( 0 );
 		}
-		else if( obj instanceof ICFIntPubURLProtocolHPKey rhs ) {$implJustProtHPKeyCompareToRequiredRevision$
+		else if( obj instanceof ICFIntPubURLProtocolHPKey rhs ) {
+			if( getRequiredRevision() < rhs.getRequiredRevision() ) {
+				return( -1 );
+			}
+			else if( getRequiredRevision() > rhs.getRequiredRevision() ) {
+				return( 1 );
+			}
 			if( getRequiredURLProtocolId() < rhs.getRequiredURLProtocolId() ) {
 				return( -1 );
 			}
