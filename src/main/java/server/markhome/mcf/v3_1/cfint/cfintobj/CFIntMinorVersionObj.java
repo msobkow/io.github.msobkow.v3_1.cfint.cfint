@@ -52,7 +52,7 @@ public class CFIntMinorVersionObj
 	protected boolean isNew;
 	protected ICFIntMinorVersionEditObj edit;
 	protected ICFIntSchemaObj schema;
-	protected ICFLibKeyHash256 pKey;
+	protected $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pKey;
 	protected ICFIntMinorVersion rec;
 	protected ICFSecTenantObj requiredOwnerTenant;
 	protected ICFIntMajorVersionObj requiredContainerParentMajVer;
@@ -285,12 +285,12 @@ public class CFIntMinorVersionObj
 	}
 
 	@Override
-	public ICFLibKeyHash256 getPKey() {
+	public $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ getPKey() {
 		return( pKey );
 	}
 
 	@Override
-	public void setPKey( ICFLibKeyHash256 value ) {
+	public void setPKey( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ value ) {
 		if( pKey != value ) {
        		pKey = value;
 			copyPKeyToRec();
@@ -367,7 +367,7 @@ public class CFIntMinorVersionObj
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredId() {
+	public $implIJavaAtomType$ getRequiredId() {
 		return( getPKey() );
 	}
 
@@ -404,22 +404,22 @@ public class CFIntMinorVersionObj
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredTenantId() {
+	public $implIJavaAtomType$ getRequiredTenantId() {
 		return( getMinorVersionRec().getRequiredTenantId() );
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredMajorVersionId() {
+	public $implIJavaAtomType$ getRequiredMajorVersionId() {
 		return( getMinorVersionRec().getRequiredMajorVersionId() );
 	}
 
 	@Override
-	public String getRequiredName() {
+	public $implIJavaAtomType$ getRequiredName() {
 		return( getMinorVersionRec().getRequiredName() );
 	}
 
 	@Override
-	public String getOptionalDescription() {
+	public $implIJavaAtomType$ getOptionalDescription() {
 		return( getMinorVersionRec().getOptionalDescription() );
 	}
 

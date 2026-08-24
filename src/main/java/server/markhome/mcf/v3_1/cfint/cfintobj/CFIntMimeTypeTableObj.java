@@ -50,8 +50,8 @@ public class CFIntMimeTypeTableObj
 	protected ICFIntSchemaObj schema;
 	protected static int runtimeClassCode = ICFIntMimeType.CLASS_CODE;
 	protected static final int backingClassCode = ICFIntMimeType.CLASS_CODE;
-	private Map<Integer, ICFIntMimeTypeObj> members;
-	private Map<Integer, ICFIntMimeTypeObj> allMimeType;
+	private Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFIntMimeTypeObj> members;
+	private Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFIntMimeTypeObj> allMimeType;
 	private Map< ICFIntMimeTypeByUNameIdxKey,
 		ICFIntMimeTypeObj > indexByUNameIdx;
 	public static String TABLE_NAME = "MimeType";
@@ -59,14 +59,14 @@ public class CFIntMimeTypeTableObj
 
 	public CFIntMimeTypeTableObj() {
 		schema = null;
-		members = new HashMap<Integer, ICFIntMimeTypeObj>();
+		members = new HashMap<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFIntMimeTypeObj>();
 		allMimeType = null;
 		indexByUNameIdx = null;
 	}
 
 	public CFIntMimeTypeTableObj( ICFIntSchemaObj argSchema ) {
 		schema = (ICFIntSchemaObj)argSchema;
-		members = new HashMap<Integer, ICFIntMimeTypeObj>();
+		members = new HashMap<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFIntMimeTypeObj>();
 		allMimeType = null;
 		indexByUNameIdx = null;
 	}
@@ -189,7 +189,7 @@ public class CFIntMimeTypeTableObj
 	@Override
 	public ICFIntMimeTypeObj realiseMimeType( ICFIntMimeTypeObj Obj ) {
 		ICFIntMimeTypeObj obj = Obj;
-		Integer pkey = obj.getPKey();
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey = obj.getPKey();
 		ICFIntMimeTypeObj keepObj = null;
 		if( members.containsKey( pkey ) && ( null != members.get( pkey ) ) ) {
 			ICFIntMimeTypeObj existingObj = members.get( pkey );
@@ -258,12 +258,12 @@ public class CFIntMimeTypeTableObj
 	}
 
 	@Override
-	public ICFIntMimeTypeObj readMimeType( Integer pkey ) {
+	public ICFIntMimeTypeObj readMimeType( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey ) {
 		return( readMimeType( pkey, false ) );
 	}
 
 	@Override
-	public ICFIntMimeTypeObj readMimeType( Integer pkey, boolean forceRead ) {
+	public ICFIntMimeTypeObj readMimeType( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey, boolean forceRead ) {
 		ICFIntMimeTypeObj obj = null;
 		if( ( ! forceRead ) && members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -282,7 +282,7 @@ public class CFIntMimeTypeTableObj
 	}
 
 	@Override
-	public ICFIntMimeTypeObj readCachedMimeType( Integer pkey ) {
+	public ICFIntMimeTypeObj readCachedMimeType( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey ) {
 		ICFIntMimeTypeObj obj = null;
 		if( members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -298,7 +298,7 @@ public class CFIntMimeTypeTableObj
 		if( obj == null ) {
 			return;
 		}
-		Integer pkey = obj.getPKey();
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey = obj.getPKey();
 		ICFIntMimeTypeObj existing = readCachedMimeType( pkey );
 		if( existing == null ) {
 			return;
@@ -316,7 +316,7 @@ public class CFIntMimeTypeTableObj
 
 	}
 	@Override
-	public void deepDisposeMimeType( Integer pkey ) {
+	public void deepDisposeMimeType( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey ) {
 		ICFIntMimeTypeObj obj = readCachedMimeType( pkey );
 		if( obj != null ) {
 			obj.forget();
@@ -324,7 +324,7 @@ public class CFIntMimeTypeTableObj
 	}
 
 	@Override
-	public ICFIntMimeTypeObj lockMimeType( Integer pkey ) {
+	public ICFIntMimeTypeObj lockMimeType( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey ) {
 		ICFIntMimeTypeObj locked = null;
 		ICFIntMimeType lockRec = schema.getCFIntBackingStore().getTableMimeType().lockDerived( null, pkey );
 		if( lockRec != null ) {
@@ -348,7 +348,7 @@ public class CFIntMimeTypeTableObj
 	public List<ICFIntMimeTypeObj> readAllMimeType( boolean forceRead ) {
 		final String S_ProcName = "readAllMimeType";
 		if( ( allMimeType == null ) || forceRead ) {
-			Map<Integer, ICFIntMimeTypeObj> map = new HashMap<Integer,ICFIntMimeTypeObj>();
+			Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFIntMimeTypeObj> map = new HashMap<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$,ICFIntMimeTypeObj>();
 			allMimeType = map;
 			ICFIntMimeType[] recList = schema.getCFIntBackingStore().getTableMimeType().readAllDerived( null );
 			ICFIntMimeType rec;
@@ -404,8 +404,8 @@ public class CFIntMimeTypeTableObj
 					return( 1 );
 				}
 				else {
-					Integer lhsPKey = lhs.getPKey();
-					Integer rhsPKey = rhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ lhsPKey = lhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -462,8 +462,8 @@ public class CFIntMimeTypeTableObj
 					return( 1 );
 				}
 				else {
-					Integer lhsPKey = lhs.getPKey();
-					Integer rhsPKey = rhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ lhsPKey = lhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -474,28 +474,28 @@ public class CFIntMimeTypeTableObj
 	}
 
 	@Override
-	public ICFIntMimeTypeObj readMimeTypeByIdIdx( int MimeTypeId )
+	public ICFIntMimeTypeObj readMimeTypeByIdIdx( $implIJavaAtomType$ MimeTypeId )
 	{
 		return( readMimeTypeByIdIdx( MimeTypeId,
 			false ) );
 	}
 
 	@Override
-	public ICFIntMimeTypeObj readMimeTypeByIdIdx( int MimeTypeId, boolean forceRead )
+	public ICFIntMimeTypeObj readMimeTypeByIdIdx( $implIJavaAtomType$ MimeTypeId, boolean forceRead )
 	{
 		ICFIntMimeTypeObj obj = readMimeType( MimeTypeId, forceRead );
 		return( obj );
 	}
 
 	@Override
-	public ICFIntMimeTypeObj readMimeTypeByUNameIdx( String Name )
+	public ICFIntMimeTypeObj readMimeTypeByUNameIdx( $implIJavaAtomType$ Name )
 	{
 		return( readMimeTypeByUNameIdx( Name,
 			false ) );
 	}
 
 	@Override
-	public ICFIntMimeTypeObj readMimeTypeByUNameIdx( String Name, boolean forceRead )
+	public ICFIntMimeTypeObj readMimeTypeByUNameIdx( $implIJavaAtomType$ Name, boolean forceRead )
 	{
 		if( indexByUNameIdx == null ) {
 			indexByUNameIdx = new HashMap< ICFIntMimeTypeByUNameIdxKey,
@@ -521,7 +521,7 @@ public class CFIntMimeTypeTableObj
 	}
 
 	@Override
-	public ICFIntMimeTypeObj readCachedMimeTypeByIdIdx( int MimeTypeId )
+	public ICFIntMimeTypeObj readCachedMimeTypeByIdIdx( $implIJavaAtomType$ MimeTypeId )
 	{
 		ICFIntMimeTypeObj obj = null;
 		obj = readCachedMimeType( MimeTypeId );
@@ -529,7 +529,7 @@ public class CFIntMimeTypeTableObj
 	}
 
 	@Override
-	public ICFIntMimeTypeObj readCachedMimeTypeByUNameIdx( String Name )
+	public ICFIntMimeTypeObj readCachedMimeTypeByUNameIdx( $implIJavaAtomType$ Name )
 	{
 		ICFIntMimeTypeObj obj = null;
 		ICFIntMimeTypeByUNameIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryMimeType().newByUNameIdxKey();
@@ -565,7 +565,7 @@ public class CFIntMimeTypeTableObj
 	}
 
 	@Override
-	public void deepDisposeMimeTypeByIdIdx( int MimeTypeId )
+	public void deepDisposeMimeTypeByIdIdx( $implIJavaAtomType$ MimeTypeId )
 	{
 		ICFIntMimeTypeObj obj = readCachedMimeTypeByIdIdx( MimeTypeId );
 		if( obj != null ) {
@@ -574,7 +574,7 @@ public class CFIntMimeTypeTableObj
 	}
 
 	@Override
-	public void deepDisposeMimeTypeByUNameIdx( String Name )
+	public void deepDisposeMimeTypeByUNameIdx( $implIJavaAtomType$ Name )
 	{
 		ICFIntMimeTypeObj obj = readCachedMimeTypeByUNameIdx( Name );
 		if( obj != null ) {
@@ -601,7 +601,7 @@ public class CFIntMimeTypeTableObj
 	}
 
 	@Override
-	public void deleteMimeTypeByIdIdx( int MimeTypeId )
+	public void deleteMimeTypeByIdIdx( $implIJavaAtomType$ MimeTypeId )
 	{
 		ICFIntMimeTypeObj obj = readMimeType(MimeTypeId);
 		if( obj != null ) {
@@ -631,7 +631,7 @@ public class CFIntMimeTypeTableObj
 	}
 
 	@Override
-	public void deleteMimeTypeByUNameIdx( String Name )
+	public void deleteMimeTypeByUNameIdx( $implIJavaAtomType$ Name )
 	{
 		if( indexByUNameIdx == null ) {
 			indexByUNameIdx = new HashMap< ICFIntMimeTypeByUNameIdxKey,

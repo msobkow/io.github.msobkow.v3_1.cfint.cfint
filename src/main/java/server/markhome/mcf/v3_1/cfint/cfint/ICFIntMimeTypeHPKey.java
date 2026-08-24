@@ -63,8 +63,8 @@ public interface ICFIntMimeTypeHPKey
 	public CFLibDbKeyHash256 getAuditSessionId();
 	public void setAuditSessionId( CFLibDbKeyHash256 value );
 
-	public int getRequiredMimeTypeId();
-	public void setRequiredMimeTypeId( int value );
+	public $implIJavaAtomType$ getRequiredMimeTypeId();
+	public void setRequiredMimeTypeId( $implIJavaAtomType$ value );
 	@Override
 	public boolean equals( Object obj );
 

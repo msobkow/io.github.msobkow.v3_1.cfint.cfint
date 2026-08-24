@@ -314,15 +314,15 @@ public class CFIntSecClusGrpMembTableObj
 	}
 
 	@Override
-	public ICFSecSecClusGrpMembObj readSecClusGrpMemb( ICFLibKeyHash256 SecClusGrpId,
-		String LoginId ) {
+	public ICFSecSecClusGrpMembObj readSecClusGrpMemb( $implIJavaAtomType$ SecClusGrpId,
+		$implIJavaAtomType$ LoginId ) {
 		return( readSecClusGrpMemb( SecClusGrpId,
 			LoginId, false ) );
 	}
 
 	@Override
-	public ICFSecSecClusGrpMembObj readSecClusGrpMemb( ICFLibKeyHash256 SecClusGrpId,
-		String LoginId, boolean forceRead ) {
+	public ICFSecSecClusGrpMembObj readSecClusGrpMemb( $implIJavaAtomType$ SecClusGrpId,
+		$implIJavaAtomType$ LoginId, boolean forceRead ) {
 		ICFSecSecClusGrpMembObj obj = null;
 		ICFSecSecClusGrpMemb readRec = schema.getCFSecBackingStore().getTableSecClusGrpMemb().readDerivedByIdIdx( null,
 			SecClusGrpId,
@@ -552,8 +552,8 @@ public class CFIntSecClusGrpMembTableObj
 	 *		may include an empty set.
 	 */
 	@Override
-	public List<ICFSecSecClusGrpMembObj> pageAllSecClusGrpMemb(ICFLibKeyHash256 priorSecClusGrpId,
-		String priorLoginId )
+	public List<ICFSecSecClusGrpMembObj> pageAllSecClusGrpMemb($implIJavaOptAtomType$ priorSecClusGrpId,
+		$implIJavaOptAtomType$ priorLoginId )
 	{
 		final String S_ProcName = "pageAllSecClusGrpMemb";
 		Map<ICFSecSecClusGrpMembPKey, ICFSecSecClusGrpMembObj> map = new HashMap<ICFSecSecClusGrpMembPKey,ICFSecSecClusGrpMembObj>();
@@ -576,8 +576,8 @@ public class CFIntSecClusGrpMembTableObj
 	}
 
 	@Override
-	public ICFSecSecClusGrpMembObj readSecClusGrpMembByIdIdx( ICFLibKeyHash256 SecClusGrpId,
-		String LoginId )
+	public ICFSecSecClusGrpMembObj readSecClusGrpMembByIdIdx( $implIJavaAtomType$ SecClusGrpId,
+		$implIJavaAtomType$ LoginId )
 	{
 		return( readSecClusGrpMembByIdIdx( SecClusGrpId,
 			LoginId,
@@ -585,8 +585,8 @@ public class CFIntSecClusGrpMembTableObj
 	}
 
 	@Override
-	public ICFSecSecClusGrpMembObj readSecClusGrpMembByIdIdx( ICFLibKeyHash256 SecClusGrpId,
-		String LoginId, boolean forceRead )
+	public ICFSecSecClusGrpMembObj readSecClusGrpMembByIdIdx( $implIJavaAtomType$ SecClusGrpId,
+		$implIJavaAtomType$ LoginId, boolean forceRead )
 	{
 		ICFSecSecClusGrpMembPKey pkey = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecClusGrpMemb().newPKey();
 		pkey.setRequiredSecClusGrpId( SecClusGrpId );
@@ -596,14 +596,14 @@ public class CFIntSecClusGrpMembTableObj
 	}
 
 	@Override
-	public List<ICFSecSecClusGrpMembObj> readSecClusGrpMembByClusGrpIdx( ICFLibKeyHash256 SecClusGrpId )
+	public List<ICFSecSecClusGrpMembObj> readSecClusGrpMembByClusGrpIdx( $implIJavaAtomType$ SecClusGrpId )
 	{
 		return( readSecClusGrpMembByClusGrpIdx( SecClusGrpId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFSecSecClusGrpMembObj> readSecClusGrpMembByClusGrpIdx( ICFLibKeyHash256 SecClusGrpId,
+	public List<ICFSecSecClusGrpMembObj> readSecClusGrpMembByClusGrpIdx( $implIJavaAtomType$ SecClusGrpId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readSecClusGrpMembByClusGrpIdx";
@@ -689,14 +689,14 @@ public class CFIntSecClusGrpMembTableObj
 	}
 
 	@Override
-	public List<ICFSecSecClusGrpMembObj> readSecClusGrpMembByLoginIdx( String LoginId )
+	public List<ICFSecSecClusGrpMembObj> readSecClusGrpMembByLoginIdx( $implIJavaAtomType$ LoginId )
 	{
 		return( readSecClusGrpMembByLoginIdx( LoginId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFSecSecClusGrpMembObj> readSecClusGrpMembByLoginIdx( String LoginId,
+	public List<ICFSecSecClusGrpMembObj> readSecClusGrpMembByLoginIdx( $implIJavaAtomType$ LoginId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readSecClusGrpMembByLoginIdx";
@@ -782,8 +782,8 @@ public class CFIntSecClusGrpMembTableObj
 	}
 
 	@Override
-	public ICFSecSecClusGrpMembObj readCachedSecClusGrpMembByIdIdx( ICFLibKeyHash256 SecClusGrpId,
-		String LoginId )
+	public ICFSecSecClusGrpMembObj readCachedSecClusGrpMembByIdIdx( $implIJavaAtomType$ SecClusGrpId,
+		$implIJavaAtomType$ LoginId )
 	{
 		ICFSecSecClusGrpMembObj obj = null;
 		ICFSecSecClusGrpMembPKey pkey = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecClusGrpMemb().newPKey();
@@ -796,7 +796,7 @@ public class CFIntSecClusGrpMembTableObj
 	}
 
 	@Override
-	public List<ICFSecSecClusGrpMembObj> readCachedSecClusGrpMembByClusGrpIdx( ICFLibKeyHash256 SecClusGrpId )
+	public List<ICFSecSecClusGrpMembObj> readCachedSecClusGrpMembByClusGrpIdx( $implIJavaAtomType$ SecClusGrpId )
 	{
 		final String S_ProcName = "readCachedSecClusGrpMembByClusGrpIdx";
 		ICFSecSecClusGrpMembByClusGrpIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecClusGrpMemb().newByClusGrpIdxKey();
@@ -873,7 +873,7 @@ public class CFIntSecClusGrpMembTableObj
 	}
 
 	@Override
-	public List<ICFSecSecClusGrpMembObj> readCachedSecClusGrpMembByLoginIdx( String LoginId )
+	public List<ICFSecSecClusGrpMembObj> readCachedSecClusGrpMembByLoginIdx( $implIJavaAtomType$ LoginId )
 	{
 		final String S_ProcName = "readCachedSecClusGrpMembByLoginIdx";
 		ICFSecSecClusGrpMembByLoginIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecClusGrpMemb().newByLoginIdxKey();
@@ -950,8 +950,8 @@ public class CFIntSecClusGrpMembTableObj
 	}
 
 	@Override
-	public void deepDisposeSecClusGrpMembByIdIdx( ICFLibKeyHash256 SecClusGrpId,
-		String LoginId )
+	public void deepDisposeSecClusGrpMembByIdIdx( $implIJavaAtomType$ SecClusGrpId,
+		$implIJavaAtomType$ LoginId )
 	{
 		ICFSecSecClusGrpMembObj obj = readCachedSecClusGrpMembByIdIdx( SecClusGrpId,
 				LoginId );
@@ -961,7 +961,7 @@ public class CFIntSecClusGrpMembTableObj
 	}
 
 	@Override
-	public void deepDisposeSecClusGrpMembByClusGrpIdx( ICFLibKeyHash256 SecClusGrpId )
+	public void deepDisposeSecClusGrpMembByClusGrpIdx( $implIJavaAtomType$ SecClusGrpId )
 	{
 		final String S_ProcName = "deepDisposeSecClusGrpMembByClusGrpIdx";
 		ICFSecSecClusGrpMembObj obj;
@@ -978,7 +978,7 @@ public class CFIntSecClusGrpMembTableObj
 	}
 
 	@Override
-	public void deepDisposeSecClusGrpMembByLoginIdx( String LoginId )
+	public void deepDisposeSecClusGrpMembByLoginIdx( $implIJavaAtomType$ LoginId )
 	{
 		final String S_ProcName = "deepDisposeSecClusGrpMembByLoginIdx";
 		ICFSecSecClusGrpMembObj obj;
@@ -1004,9 +1004,9 @@ public class CFIntSecClusGrpMembTableObj
 	 *		as identified by the key attributes, which may be an empty set.
 	 */
 	@Override
-	public List<ICFSecSecClusGrpMembObj> pageSecClusGrpMembByClusGrpIdx( ICFLibKeyHash256 SecClusGrpId,
-		ICFLibKeyHash256 priorSecClusGrpId,
-		String priorLoginId )
+	public List<ICFSecSecClusGrpMembObj> pageSecClusGrpMembByClusGrpIdx( $implIJavaAtomType$ SecClusGrpId,
+		$implIJavaOptAtomType$ priorSecClusGrpId,
+		$implIJavaOptAtomType$ priorLoginId )
 	{
 		final String S_ProcName = "pageSecClusGrpMembByClusGrpIdx";
 		ICFSecSecClusGrpMembByClusGrpIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecClusGrpMemb().newByClusGrpIdxKey();
@@ -1039,9 +1039,9 @@ public class CFIntSecClusGrpMembTableObj
 	 *		as identified by the key attributes, which may be an empty set.
 	 */
 	@Override
-	public List<ICFSecSecClusGrpMembObj> pageSecClusGrpMembByLoginIdx( String LoginId,
-		ICFLibKeyHash256 priorSecClusGrpId,
-		String priorLoginId )
+	public List<ICFSecSecClusGrpMembObj> pageSecClusGrpMembByLoginIdx( $implIJavaAtomType$ LoginId,
+		$implIJavaOptAtomType$ priorSecClusGrpId,
+		$implIJavaOptAtomType$ priorLoginId )
 	{
 		final String S_ProcName = "pageSecClusGrpMembByLoginIdx";
 		ICFSecSecClusGrpMembByLoginIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecClusGrpMemb().newByLoginIdxKey();
@@ -1083,8 +1083,8 @@ public class CFIntSecClusGrpMembTableObj
 	}
 
 	@Override
-	public void deleteSecClusGrpMembByIdIdx( ICFLibKeyHash256 SecClusGrpId,
-		String LoginId )
+	public void deleteSecClusGrpMembByIdIdx( $implIJavaAtomType$ SecClusGrpId,
+		$implIJavaAtomType$ LoginId )
 	{
 		ICFSecSecClusGrpMembObj obj = readSecClusGrpMemb(SecClusGrpId,
 				LoginId);
@@ -1116,7 +1116,7 @@ public class CFIntSecClusGrpMembTableObj
 	}
 
 	@Override
-	public void deleteSecClusGrpMembByClusGrpIdx( ICFLibKeyHash256 SecClusGrpId )
+	public void deleteSecClusGrpMembByClusGrpIdx( $implIJavaAtomType$ SecClusGrpId )
 	{
 		ICFSecSecClusGrpMembByClusGrpIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecClusGrpMemb().newByClusGrpIdxKey();
 		key.setRequiredSecClusGrpId( SecClusGrpId );
@@ -1150,7 +1150,7 @@ public class CFIntSecClusGrpMembTableObj
 	}
 
 	@Override
-	public void deleteSecClusGrpMembByLoginIdx( String LoginId )
+	public void deleteSecClusGrpMembByLoginIdx( $implIJavaAtomType$ LoginId )
 	{
 		ICFSecSecClusGrpMembByLoginIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecClusGrpMemb().newByLoginIdxKey();
 		key.setRequiredLoginId( LoginId );

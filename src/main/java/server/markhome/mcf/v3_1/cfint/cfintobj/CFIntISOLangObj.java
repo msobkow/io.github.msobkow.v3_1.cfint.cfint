@@ -49,7 +49,7 @@ public class CFIntISOLangObj
 	protected boolean isNew;
 	protected ICFSecISOLangEditObj edit;
 	protected ICFSecSchemaObj schema;
-	protected Short pKey;
+	protected $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pKey;
 	protected ICFSecISOLang rec;
 	protected List<ICFSecISOCtryLangObj> optionalChildrenCtry;
 
@@ -271,12 +271,12 @@ public class CFIntISOLangObj
 	}
 
 	@Override
-	public Short getPKey() {
+	public $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ getPKey() {
 		return( pKey );
 	}
 
 	@Override
-	public void setPKey( Short value ) {
+	public void setPKey( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ value ) {
 		if( pKey != value ) {
        		pKey = value;
 			copyPKeyToRec();
@@ -353,7 +353,7 @@ public class CFIntISOLangObj
 	}
 
 	@Override
-	public short getRequiredISOLangId() {
+	public $implIJavaAtomType$ getRequiredISOLangId() {
 		return( getPKey() );
 	}
 
@@ -374,17 +374,17 @@ public class CFIntISOLangObj
 	}
 
 	@Override
-	public String getRequiredISO6392Code() {
+	public $implIJavaAtomType$ getRequiredISO6392Code() {
 		return( getISOLangRec().getRequiredISO6392Code() );
 	}
 
 	@Override
-	public String getOptionalISO6391Code() {
+	public $implIJavaAtomType$ getOptionalISO6391Code() {
 		return( getISOLangRec().getOptionalISO6391Code() );
 	}
 
 	@Override
-	public String getRequiredEnglishName() {
+	public $implIJavaAtomType$ getRequiredEnglishName() {
 		return( getISOLangRec().getRequiredEnglishName() );
 	}
 

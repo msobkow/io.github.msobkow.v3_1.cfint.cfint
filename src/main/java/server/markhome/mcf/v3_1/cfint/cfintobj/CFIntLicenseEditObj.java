@@ -323,12 +323,12 @@ public class CFIntLicenseEditObj
 	}
 
 	@Override
-	public ICFLibKeyHash256 getPKey() {
+	public $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ getPKey() {
 		return( orig.getPKey() );
 	}
 
 	@Override
-	public void setPKey( ICFLibKeyHash256 value ) {
+	public void setPKey( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ value ) {
 		orig.setPKey( value );
 		copyPKeyToRec();
 	}
@@ -344,70 +344,70 @@ public class CFIntLicenseEditObj
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredId() {
+	public $implIJavaAtomType$ getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredId(ICFLibKeyHash256 value) {
+	public void setRequiredId($implIJavaAtomType$ value) {
 		if (getPKey() != value) {
 			setPKey(value);
 		}
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredTenantId() {
+	public $implIJavaAtomType$ getRequiredTenantId() {
 		return( getLicenseRec().getRequiredTenantId() );
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredTopDomainId() {
+	public $implIJavaAtomType$ getRequiredTopDomainId() {
 		return( getLicenseRec().getRequiredTopDomainId() );
 	}
 
 	@Override
-	public String getRequiredName() {
+	public $implIJavaAtomType$ getRequiredName() {
 		return( getLicenseRec().getRequiredName() );
 	}
 
 	@Override
-	public void setRequiredName( String value ) {
+	public void setRequiredName( $implIJavaAtomType$ value ) {
 		if( getLicenseRec().getRequiredName() != value ) {
 			getLicenseRec().setRequiredName( value );
 		}
 	}
 
 	@Override
-	public String getOptionalDescription() {
+	public $implIJavaAtomType$ getOptionalDescription() {
 		return( getLicenseRec().getOptionalDescription() );
 	}
 
 	@Override
-	public void setOptionalDescription( String value ) {
+	public void setOptionalDescription( $implIJavaAtomType$ value ) {
 		if( getLicenseRec().getOptionalDescription() != value ) {
 			getLicenseRec().setOptionalDescription( value );
 		}
 	}
 
 	@Override
-	public String getOptionalEmbeddedText() {
+	public $implIJavaAtomType$ getOptionalEmbeddedText() {
 		return( getLicenseRec().getOptionalEmbeddedText() );
 	}
 
 	@Override
-	public void setOptionalEmbeddedText( String value ) {
+	public void setOptionalEmbeddedText( $implIJavaAtomType$ value ) {
 		if( getLicenseRec().getOptionalEmbeddedText() != value ) {
 			getLicenseRec().setOptionalEmbeddedText( value );
 		}
 	}
 
 	@Override
-	public String getOptionalFullText() {
+	public $implIJavaAtomType$ getOptionalFullText() {
 		return( getLicenseRec().getOptionalFullText() );
 	}
 
 	@Override
-	public void setOptionalFullText( String value ) {
+	public void setOptionalFullText( $implIJavaAtomType$ value ) {
 		if( getLicenseRec().getOptionalFullText() != value ) {
 			getLicenseRec().setOptionalFullText( value );
 		}

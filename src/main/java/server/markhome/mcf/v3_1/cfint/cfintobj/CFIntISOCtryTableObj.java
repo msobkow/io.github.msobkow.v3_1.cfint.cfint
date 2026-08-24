@@ -45,8 +45,8 @@ public class CFIntISOCtryTableObj
 	implements ICFIntISOCtryTableObj
 {
 	protected ICFIntSchemaObj schema;
-	private Map<Short, ICFSecISOCtryObj> members;
-	private Map<Short, ICFSecISOCtryObj> allISOCtry;
+	private Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecISOCtryObj> members;
+	private Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecISOCtryObj> allISOCtry;
 	private Map< ICFSecISOCtryByISOCodeIdxKey,
 		ICFSecISOCtryObj > indexByISOCodeIdx;
 	private Map< ICFSecISOCtryByNameIdxKey,
@@ -56,7 +56,7 @@ public class CFIntISOCtryTableObj
 
 	public CFIntISOCtryTableObj() {
 		schema = null;
-		members = new HashMap<Short, ICFSecISOCtryObj>();
+		members = new HashMap<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecISOCtryObj>();
 		allISOCtry = null;
 		indexByISOCodeIdx = null;
 		indexByNameIdx = null;
@@ -64,7 +64,7 @@ public class CFIntISOCtryTableObj
 
 	public CFIntISOCtryTableObj( ICFSecSchemaObj argSchema ) {
 		schema = (ICFIntSchemaObj)argSchema;
-		members = new HashMap<Short, ICFSecISOCtryObj>();
+		members = new HashMap<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecISOCtryObj>();
 		allISOCtry = null;
 		indexByISOCodeIdx = null;
 		indexByNameIdx = null;
@@ -175,7 +175,7 @@ public class CFIntISOCtryTableObj
 	@Override
 	public ICFSecISOCtryObj realiseISOCtry( ICFSecISOCtryObj Obj ) {
 		ICFSecISOCtryObj obj = Obj;
-		Short pkey = obj.getPKey();
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey = obj.getPKey();
 		ICFSecISOCtryObj keepObj = null;
 		if( members.containsKey( pkey ) && ( null != members.get( pkey ) ) ) {
 			ICFSecISOCtryObj existingObj = members.get( pkey );
@@ -265,12 +265,12 @@ public class CFIntISOCtryTableObj
 	}
 
 	@Override
-	public ICFSecISOCtryObj readISOCtry( Short pkey ) {
+	public ICFSecISOCtryObj readISOCtry( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey ) {
 		return( readISOCtry( pkey, false ) );
 	}
 
 	@Override
-	public ICFSecISOCtryObj readISOCtry( Short pkey, boolean forceRead ) {
+	public ICFSecISOCtryObj readISOCtry( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey, boolean forceRead ) {
 		ICFSecISOCtryObj obj = null;
 		if( ( ! forceRead ) && members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -289,7 +289,7 @@ public class CFIntISOCtryTableObj
 	}
 
 	@Override
-	public ICFSecISOCtryObj readCachedISOCtry( Short pkey ) {
+	public ICFSecISOCtryObj readCachedISOCtry( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey ) {
 		ICFSecISOCtryObj obj = null;
 		if( members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -305,7 +305,7 @@ public class CFIntISOCtryTableObj
 		if( obj == null ) {
 			return;
 		}
-		Short pkey = obj.getPKey();
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey = obj.getPKey();
 		ICFSecISOCtryObj existing = readCachedISOCtry( pkey );
 		if( existing == null ) {
 			return;
@@ -332,7 +332,7 @@ public class CFIntISOCtryTableObj
 
 	}
 	@Override
-	public void deepDisposeISOCtry( Short pkey ) {
+	public void deepDisposeISOCtry( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey ) {
 		ICFSecISOCtryObj obj = readCachedISOCtry( pkey );
 		if( obj != null ) {
 			obj.forget();
@@ -340,7 +340,7 @@ public class CFIntISOCtryTableObj
 	}
 
 	@Override
-	public ICFSecISOCtryObj lockISOCtry( Short pkey ) {
+	public ICFSecISOCtryObj lockISOCtry( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey ) {
 		ICFSecISOCtryObj locked = null;
 		ICFSecISOCtry lockRec = schema.getCFSecBackingStore().getTableISOCtry().lockDerived( null, pkey );
 		if( lockRec != null ) {
@@ -364,7 +364,7 @@ public class CFIntISOCtryTableObj
 	public List<ICFSecISOCtryObj> readAllISOCtry( boolean forceRead ) {
 		final String S_ProcName = "readAllISOCtry";
 		if( ( allISOCtry == null ) || forceRead ) {
-			Map<Short, ICFSecISOCtryObj> map = new HashMap<Short,ICFSecISOCtryObj>();
+			Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecISOCtryObj> map = new HashMap<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$,ICFSecISOCtryObj>();
 			allISOCtry = map;
 			ICFSecISOCtry[] recList = schema.getCFSecBackingStore().getTableISOCtry().readAllDerived( null );
 			ICFSecISOCtry rec;
@@ -420,8 +420,8 @@ public class CFIntISOCtryTableObj
 					return( 1 );
 				}
 				else {
-					Short lhsPKey = lhs.getPKey();
-					Short rhsPKey = rhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ lhsPKey = lhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -478,8 +478,8 @@ public class CFIntISOCtryTableObj
 					return( 1 );
 				}
 				else {
-					Short lhsPKey = lhs.getPKey();
-					Short rhsPKey = rhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ lhsPKey = lhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -490,28 +490,28 @@ public class CFIntISOCtryTableObj
 	}
 
 	@Override
-	public ICFSecISOCtryObj readISOCtryByIdIdx( short ISOCtryId )
+	public ICFSecISOCtryObj readISOCtryByIdIdx( $implIJavaAtomType$ ISOCtryId )
 	{
 		return( readISOCtryByIdIdx( ISOCtryId,
 			false ) );
 	}
 
 	@Override
-	public ICFSecISOCtryObj readISOCtryByIdIdx( short ISOCtryId, boolean forceRead )
+	public ICFSecISOCtryObj readISOCtryByIdIdx( $implIJavaAtomType$ ISOCtryId, boolean forceRead )
 	{
 		ICFSecISOCtryObj obj = readISOCtry( ISOCtryId, forceRead );
 		return( obj );
 	}
 
 	@Override
-	public ICFSecISOCtryObj readISOCtryByISOCodeIdx( String ISOCode )
+	public ICFSecISOCtryObj readISOCtryByISOCodeIdx( $implIJavaAtomType$ ISOCode )
 	{
 		return( readISOCtryByISOCodeIdx( ISOCode,
 			false ) );
 	}
 
 	@Override
-	public ICFSecISOCtryObj readISOCtryByISOCodeIdx( String ISOCode, boolean forceRead )
+	public ICFSecISOCtryObj readISOCtryByISOCodeIdx( $implIJavaAtomType$ ISOCode, boolean forceRead )
 	{
 		if( indexByISOCodeIdx == null ) {
 			indexByISOCodeIdx = new HashMap< ICFSecISOCtryByISOCodeIdxKey,
@@ -537,14 +537,14 @@ public class CFIntISOCtryTableObj
 	}
 
 	@Override
-	public ICFSecISOCtryObj readISOCtryByNameIdx( String Name )
+	public ICFSecISOCtryObj readISOCtryByNameIdx( $implIJavaAtomType$ Name )
 	{
 		return( readISOCtryByNameIdx( Name,
 			false ) );
 	}
 
 	@Override
-	public ICFSecISOCtryObj readISOCtryByNameIdx( String Name, boolean forceRead )
+	public ICFSecISOCtryObj readISOCtryByNameIdx( $implIJavaAtomType$ Name, boolean forceRead )
 	{
 		if( indexByNameIdx == null ) {
 			indexByNameIdx = new HashMap< ICFSecISOCtryByNameIdxKey,
@@ -570,7 +570,7 @@ public class CFIntISOCtryTableObj
 	}
 
 	@Override
-	public ICFSecISOCtryObj readCachedISOCtryByIdIdx( short ISOCtryId )
+	public ICFSecISOCtryObj readCachedISOCtryByIdIdx( $implIJavaAtomType$ ISOCtryId )
 	{
 		ICFSecISOCtryObj obj = null;
 		obj = readCachedISOCtry( ISOCtryId );
@@ -578,7 +578,7 @@ public class CFIntISOCtryTableObj
 	}
 
 	@Override
-	public ICFSecISOCtryObj readCachedISOCtryByISOCodeIdx( String ISOCode )
+	public ICFSecISOCtryObj readCachedISOCtryByISOCodeIdx( $implIJavaAtomType$ ISOCode )
 	{
 		ICFSecISOCtryObj obj = null;
 		ICFSecISOCtryByISOCodeIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOCtry().newByISOCodeIdxKey();
@@ -614,7 +614,7 @@ public class CFIntISOCtryTableObj
 	}
 
 	@Override
-	public ICFSecISOCtryObj readCachedISOCtryByNameIdx( String Name )
+	public ICFSecISOCtryObj readCachedISOCtryByNameIdx( $implIJavaAtomType$ Name )
 	{
 		ICFSecISOCtryObj obj = null;
 		ICFSecISOCtryByNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOCtry().newByNameIdxKey();
@@ -650,7 +650,7 @@ public class CFIntISOCtryTableObj
 	}
 
 	@Override
-	public void deepDisposeISOCtryByIdIdx( short ISOCtryId )
+	public void deepDisposeISOCtryByIdIdx( $implIJavaAtomType$ ISOCtryId )
 	{
 		ICFSecISOCtryObj obj = readCachedISOCtryByIdIdx( ISOCtryId );
 		if( obj != null ) {
@@ -659,7 +659,7 @@ public class CFIntISOCtryTableObj
 	}
 
 	@Override
-	public void deepDisposeISOCtryByISOCodeIdx( String ISOCode )
+	public void deepDisposeISOCtryByISOCodeIdx( $implIJavaAtomType$ ISOCode )
 	{
 		ICFSecISOCtryObj obj = readCachedISOCtryByISOCodeIdx( ISOCode );
 		if( obj != null ) {
@@ -668,7 +668,7 @@ public class CFIntISOCtryTableObj
 	}
 
 	@Override
-	public void deepDisposeISOCtryByNameIdx( String Name )
+	public void deepDisposeISOCtryByNameIdx( $implIJavaAtomType$ Name )
 	{
 		ICFSecISOCtryObj obj = readCachedISOCtryByNameIdx( Name );
 		if( obj != null ) {
@@ -695,7 +695,7 @@ public class CFIntISOCtryTableObj
 	}
 
 	@Override
-	public void deleteISOCtryByIdIdx( short ISOCtryId )
+	public void deleteISOCtryByIdIdx( $implIJavaAtomType$ ISOCtryId )
 	{
 		ICFSecISOCtryObj obj = readISOCtry(ISOCtryId);
 		if( obj != null ) {
@@ -725,7 +725,7 @@ public class CFIntISOCtryTableObj
 	}
 
 	@Override
-	public void deleteISOCtryByISOCodeIdx( String ISOCode )
+	public void deleteISOCtryByISOCodeIdx( $implIJavaAtomType$ ISOCode )
 	{
 		if( indexByISOCodeIdx == null ) {
 			indexByISOCodeIdx = new HashMap< ICFSecISOCtryByISOCodeIdxKey,
@@ -748,7 +748,7 @@ public class CFIntISOCtryTableObj
 	}
 
 	@Override
-	public void deleteISOCtryByNameIdx( String Name )
+	public void deleteISOCtryByNameIdx( $implIJavaAtomType$ Name )
 	{
 		if( indexByNameIdx == null ) {
 			indexByNameIdx = new HashMap< ICFSecISOCtryByNameIdxKey,

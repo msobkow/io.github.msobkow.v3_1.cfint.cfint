@@ -52,7 +52,7 @@ import server.markhome.mcf.v3_1.cfint.cfintobj.*;
 public class CFIntBuffMinorVersion
 	implements ICFIntMinorVersion, Comparable<Object>, Serializable
 {
-	protected ICFLibKeyHash256 requiredId;
+	protected $implIJavaAtomType$ requiredId;
 	protected int requiredRevision;
 	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFIntPubSecUser.S_INIT_CREATED_BY);
 	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFIntPubSecSession.S_SECSESSIONID_INIT_VALUE);
@@ -60,10 +60,10 @@ public class CFIntBuffMinorVersion
 	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFIntPubSecUser.S_INIT_UPDATED_BY);
 	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFIntPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
-	protected ICFLibKeyHash256 requiredTenantId;
-	protected ICFLibKeyHash256 requiredMajorVersionId;
-	protected String requiredName;
-	protected String optionalDescription;
+	protected $implIJavaAtomType$ requiredTenantId;
+	protected $implIJavaAtomType$ requiredMajorVersionId;
+	protected $implIJavaAtomType$ requiredName;
+	protected $implIJavaAtomType$ optionalDescription;
 
 	public CFIntBuffMinorVersion() {
 		requiredId = CFLibDbKeyHash256.fromHex( ICFIntPubMinorVersion.ID_INIT_VALUE.toString() );
@@ -74,23 +74,23 @@ public class CFIntBuffMinorVersion
 	}
 
 	@Override
-	public ICFLibKeyHash256 getPKey() {
+	public $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ getPKey() {
 		return (requiredId);
 	}
 
 	@Override
-	public void setPKey(ICFLibKeyHash256 requiredId) {
+	public void setPKey($iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ requiredId) {
 		if(requiredId != null) {
 			this.requiredId = requiredId;
 		}
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredId() {
+	public $implIJavaAtomType$ getRequiredId() {
 		return(requiredId);
 	}
 
-	public void setRequiredId( ICFLibKeyHash256 value ) {
+	public void setRequiredId( $implIJavaAtomType$ value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredId",
@@ -170,7 +170,7 @@ public class CFIntBuffMinorVersion
 	}
 
 	@Override
-	public void setRequiredOwnerTenant(ICFLibKeyHash256 argTenantId) {
+	public void setRequiredOwnerTenant($implIJavaAtomType$ argTenantId) {
 		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
 		if (targetBackingCFSec == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerTenant-args", 0, "ICFSecSchema.getBackingCFSec()");
@@ -234,7 +234,7 @@ public class CFIntBuffMinorVersion
 	}
 
 	@Override
-	public void setRequiredContainerParentMajVer(ICFLibKeyHash256 argMajorVersionId) {
+	public void setRequiredContainerParentMajVer($implIJavaAtomType$ argMajorVersionId) {
 		ICFIntSchema targetBackingCFInt = ICFIntSchema.getBackingCFInt();
 		if (targetBackingCFInt == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerParentMajVer-args", 0, "ICFIntSchema.getBackingCFInt()");
@@ -266,11 +266,11 @@ public class CFIntBuffMinorVersion
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredTenantId() {
+	public $implIJavaAtomType$ getRequiredTenantId() {
 		return(requiredTenantId);
 	}
 
-	public void setRequiredTenantId( ICFLibKeyHash256 value ) {
+	public void setRequiredTenantId( $implIJavaAtomType$ value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredTenantId",
@@ -281,11 +281,11 @@ public class CFIntBuffMinorVersion
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredMajorVersionId() {
+	public $implIJavaAtomType$ getRequiredMajorVersionId() {
 		return(requiredMajorVersionId);
 	}
 
-	public void setRequiredMajorVersionId( ICFLibKeyHash256 value ) {
+	public void setRequiredMajorVersionId( $implIJavaAtomType$ value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredMajorVersionId",
@@ -296,11 +296,11 @@ public class CFIntBuffMinorVersion
 	}
 
 	@Override
-	public String getRequiredName() {
+	public $implIJavaAtomType$ getRequiredName() {
 		return(requiredName);
 	}
 
-	public void setRequiredName( String value ) {
+	public void setRequiredName( $implIJavaAtomType$ value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredName",
@@ -319,11 +319,11 @@ public class CFIntBuffMinorVersion
 	}
 
 	@Override
-	public String getOptionalDescription() {
+	public $implIJavaAtomType$ getOptionalDescription() {
 		return(optionalDescription);
 	}
 
-	public void setOptionalDescription( String value ) {
+	public void setOptionalDescription( $implIJavaAtomType$ value ) {
 		if( value != null && value.length() > 1024 ) {
 			throw new CFLibArgumentOverflowException( getClass(),
 				"setOptionalDescription",

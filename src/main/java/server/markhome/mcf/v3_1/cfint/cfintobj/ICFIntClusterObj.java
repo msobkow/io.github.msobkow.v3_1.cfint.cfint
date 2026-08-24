@@ -255,25 +255,25 @@ public interface ICFIntClusterObj
 	List<ICFSecSysClusterObj> getOptionalComponentsSysCluster( boolean forceRead );
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute Id.
+	 *	Get the required $implIJavaAtomType$ attribute Id.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute Id.
+	 *	@return	The required $implIJavaAtomType$ attribute Id.
 	 */
-	ICFLibKeyHash256 getRequiredId();
+	$implIJavaAtomType$ getRequiredId();
 
 	/**
-	 *	Get the required String attribute FullDomName.
+	 *	Get the required $implIJavaAtomType$ attribute FullDomName.
 	 *
-	 *	@return	The required String attribute FullDomName.
+	 *	@return	The required $implIJavaAtomType$ attribute FullDomName.
 	 */
-	String getRequiredFullDomName();
+	$implIJavaAtomType$ getRequiredFullDomName();
 
 	/**
-	 *	Get the required String attribute Description.
+	 *	Get the required $implIJavaAtomType$ attribute Description.
 	 *
-	 *	@return	The required String attribute Description.
+	 *	@return	The required $implIJavaAtomType$ attribute Description.
 	 */
-	String getRequiredDescription();
+	$implIJavaAtomType$ getRequiredDescription();
 
 	/**
 	 *	Internal use only.

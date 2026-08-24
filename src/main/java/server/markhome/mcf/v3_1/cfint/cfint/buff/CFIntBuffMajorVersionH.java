@@ -59,10 +59,10 @@ public class CFIntBuffMajorVersionH
 	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFIntPubSecUser.S_INIT_UPDATED_BY);
 	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFIntPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
-	protected ICFLibKeyHash256 requiredTenantId;
-	protected ICFLibKeyHash256 requiredSubProjectId;
-	protected String requiredName;
-	protected String optionalDescription;
+	protected $implIJavaAtomType$ requiredTenantId;
+	protected $implIJavaAtomType$ requiredSubProjectId;
+	protected $implIJavaAtomType$ requiredName;
+	protected $implIJavaAtomType$ optionalDescription;
 
     public CFIntBuffMajorVersionH() {
             // The primary key member attributes are initialized on construction
@@ -198,11 +198,11 @@ public class CFIntBuffMajorVersionH
     }
 
 	@Override
-	public ICFLibKeyHash256 getRequiredId() {
+	public $implIJavaAtomType$ getRequiredId() {
 		return(getPKey().getRequiredId());
 	}
 
-	public void setRequiredId( ICFLibKeyHash256 value ) {
+	public void setRequiredId( $implIJavaAtomType$ value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredId",
@@ -213,11 +213,11 @@ public class CFIntBuffMajorVersionH
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredTenantId() {
+	public $implIJavaAtomType$ getRequiredTenantId() {
 		return(requiredTenantId);
 	}
 
-	public void setRequiredTenantId( ICFLibKeyHash256 value ) {
+	public void setRequiredTenantId( $implIJavaAtomType$ value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredTenantId",
@@ -228,11 +228,11 @@ public class CFIntBuffMajorVersionH
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredSubProjectId() {
+	public $implIJavaAtomType$ getRequiredSubProjectId() {
 		return(requiredSubProjectId);
 	}
 
-	public void setRequiredSubProjectId( ICFLibKeyHash256 value ) {
+	public void setRequiredSubProjectId( $implIJavaAtomType$ value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredSubProjectId",
@@ -243,11 +243,11 @@ public class CFIntBuffMajorVersionH
 	}
 
 	@Override
-	public String getRequiredName() {
+	public $implIJavaAtomType$ getRequiredName() {
 		return(requiredName);
 	}
 
-	public void setRequiredName( String value ) {
+	public void setRequiredName( $implIJavaAtomType$ value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredName",
@@ -266,11 +266,11 @@ public class CFIntBuffMajorVersionH
 	}
 
 	@Override
-	public String getOptionalDescription() {
+	public $implIJavaAtomType$ getOptionalDescription() {
 		return(optionalDescription);
 	}
 
-	public void setOptionalDescription( String value ) {
+	public void setOptionalDescription( $implIJavaAtomType$ value ) {
 		if( value != null && value.length() > 1024 ) {
 			throw new CFLibArgumentOverflowException( getClass(),
 				"setOptionalDescription",

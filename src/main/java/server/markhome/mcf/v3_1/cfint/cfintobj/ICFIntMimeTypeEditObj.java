@@ -111,46 +111,46 @@ public interface ICFIntMimeTypeEditObj
 	void setUpdatedAt( LocalDateTime value );
 
 	/**
-	 *	Get the required int attribute MimeTypeId.
+	 *	Get the required $implIJavaAtomType$ attribute MimeTypeId.
 	 *
-	 *	@return	The required int attribute MimeTypeId.
+	 *	@return	The required $implIJavaAtomType$ attribute MimeTypeId.
 	 */
-	int getRequiredMimeTypeId();
+	$implIJavaAtomType$ getRequiredMimeTypeId();
 
 	/**
-	 *	Set the required int attribute MimeTypeId.
+	 *	Set the required $implIJavaAtomType$ attribute MimeTypeId.
 	 *
-	 *	@param value The required int attribute MimeTypeId value to be applied.
+	 *	@param value The required $implIJavaAtomType$ attribute MimeTypeId value to be applied.
 	 */
-	void setRequiredMimeTypeId(int value);
+	void setRequiredMimeTypeId($implIJavaAtomType$ value);
 
 	/**
-	 *	Get the required String attribute Name.
+	 *	Get the required $implIJavaAtomType$ attribute Name.
 	 *
-	 *	@return	The required String attribute Name.
+	 *	@return	The required $implIJavaAtomType$ attribute Name.
 	 */
-	String getRequiredName();
+	$implIJavaAtomType$ getRequiredName();
 
 	/**
-	 *	Set the required String attribute Name.
+	 *	Set the required $implIJavaAtomType$ attribute Name.
 	 *
-	 *	@param value The required String attribute Name value to be applied.
+	 *	@param value The required $implIJavaAtomType$ attribute Name value to be applied.
 	 */
-	void setRequiredName(String value);
+	void setRequiredName($implIJavaAtomType$ value);
 
 	/**
-	 *	Get the optional String attribute FileTypes.
+	 *	Get the optional $implIJavaAtomType$ attribute FileTypes.
 	 *
-	 *	@return	The optional String attribute FileTypes.
+	 *	@return	The optional $implIJavaAtomType$ attribute FileTypes.
 	 */
-	String getOptionalFileTypes();
+	$implIJavaAtomType$ getOptionalFileTypes();
 
 	/**
-	 *	Set the optional String attribute FileTypes.
+	 *	Set the optional $implIJavaAtomType$ attribute FileTypes.
 	 *
-	 *	@param value The optional String attribute FileTypes value to be applied.
+	 *	@param value The optional $implIJavaAtomType$ attribute FileTypes value to be applied.
 	 */
-	void setOptionalFileTypes(String value);
+	void setOptionalFileTypes($implIJavaAtomType$ value);
 
 	public void copyRecToOrig();
 	public void copyOrigToRec();

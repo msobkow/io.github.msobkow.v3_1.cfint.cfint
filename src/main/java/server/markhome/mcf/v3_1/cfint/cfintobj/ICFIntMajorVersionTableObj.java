@@ -101,7 +101,7 @@ public interface ICFIntMajorVersionTableObj
 	 *	@return	The MajorVersion-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFIntMajorVersionObj readMajorVersion( ICFLibKeyHash256 pkey );
+	ICFIntMajorVersionObj readMajorVersion( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	/**
 	 *	Read a MajorVersion-derived instance by it's primary key.
@@ -111,19 +111,19 @@ public interface ICFIntMajorVersionTableObj
 	 *	@return	The MajorVersion-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFIntMajorVersionObj readMajorVersion( ICFLibKeyHash256 pkey,
+	ICFIntMajorVersionObj readMajorVersion( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey,
 		boolean forceRead );
 
-	ICFIntMajorVersionObj readCachedMajorVersion( ICFLibKeyHash256 pkey );
+	ICFIntMajorVersionObj readCachedMajorVersion( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	public void reallyDeepDisposeMajorVersion( ICFIntMajorVersionObj obj );
 
-	void deepDisposeMajorVersion( ICFLibKeyHash256 pkey );
+	void deepDisposeMajorVersion( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	/**
 	 *	Internal use only.
 	 */
-	ICFIntMajorVersionObj lockMajorVersion( ICFLibKeyHash256 pkey );
+	ICFIntMajorVersionObj lockMajorVersion( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	/**
 	 *	Return a sorted list of all the MajorVersion-derived instances in the database.
@@ -151,7 +151,7 @@ public interface ICFIntMajorVersionTableObj
 	 *	@return	CFIntMajorVersionObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFIntMajorVersionObj readMajorVersionByIdIdx( ICFLibKeyHash256 Id );
+	ICFIntMajorVersionObj readMajorVersionByIdIdx( $implIJavaAtomType$ Id );
 
 	/**
 	 *	Get the CFIntMajorVersionObj instance for the primary key attributes.
@@ -161,7 +161,7 @@ public interface ICFIntMajorVersionTableObj
 	 *	@return	CFIntMajorVersionObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFIntMajorVersionObj readMajorVersionByIdIdx( ICFLibKeyHash256 Id,
+	ICFIntMajorVersionObj readMajorVersionByIdIdx( $implIJavaAtomType$ Id,
 		boolean forceRead );
 
 	/**
@@ -172,7 +172,7 @@ public interface ICFIntMajorVersionTableObj
 	 *	@return	List of CFIntMajorVersionObj cached instances sorted by their primary keys for the duplicate TenantIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFIntMajorVersionObj> readMajorVersionByTenantIdx( ICFLibKeyHash256 TenantId );
+	List<ICFIntMajorVersionObj> readMajorVersionByTenantIdx( $implIJavaAtomType$ TenantId );
 
 	/**
 	 *	Get the map of CFIntMajorVersionObj instances sorted by their primary keys for the duplicate TenantIdx key.
@@ -182,7 +182,7 @@ public interface ICFIntMajorVersionTableObj
 	 *	@return	List of CFIntMajorVersionObj cached instances sorted by their primary keys for the duplicate TenantIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFIntMajorVersionObj> readMajorVersionByTenantIdx( ICFLibKeyHash256 TenantId,
+	List<ICFIntMajorVersionObj> readMajorVersionByTenantIdx( $implIJavaAtomType$ TenantId,
 		boolean forceRead );
 
 	/**
@@ -193,7 +193,7 @@ public interface ICFIntMajorVersionTableObj
 	 *	@return	List of CFIntMajorVersionObj cached instances sorted by their primary keys for the duplicate SubProjectIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFIntMajorVersionObj> readMajorVersionBySubProjectIdx( ICFLibKeyHash256 SubProjectId );
+	List<ICFIntMajorVersionObj> readMajorVersionBySubProjectIdx( $implIJavaAtomType$ SubProjectId );
 
 	/**
 	 *	Get the map of CFIntMajorVersionObj instances sorted by their primary keys for the duplicate SubProjectIdx key.
@@ -203,7 +203,7 @@ public interface ICFIntMajorVersionTableObj
 	 *	@return	List of CFIntMajorVersionObj cached instances sorted by their primary keys for the duplicate SubProjectIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFIntMajorVersionObj> readMajorVersionBySubProjectIdx( ICFLibKeyHash256 SubProjectId,
+	List<ICFIntMajorVersionObj> readMajorVersionBySubProjectIdx( $implIJavaAtomType$ SubProjectId,
 		boolean forceRead );
 
 	/**
@@ -216,8 +216,8 @@ public interface ICFIntMajorVersionTableObj
 	 *	@return	CFIntMajorVersionObj cached instance for the unique NameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFIntMajorVersionObj readMajorVersionByNameIdx(ICFLibKeyHash256 SubProjectId,
-		String Name );
+	ICFIntMajorVersionObj readMajorVersionByNameIdx($implIJavaAtomType$ SubProjectId,
+		$implIJavaAtomType$ Name );
 
 	/**
 	 *	Get the CFIntMajorVersionObj instance for the unique NameIdx key.
@@ -229,27 +229,27 @@ public interface ICFIntMajorVersionTableObj
 	 *	@return	CFIntMajorVersionObj refreshed instance for the unique NameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFIntMajorVersionObj readMajorVersionByNameIdx(ICFLibKeyHash256 SubProjectId,
-		String Name,
+	ICFIntMajorVersionObj readMajorVersionByNameIdx($implIJavaAtomType$ SubProjectId,
+		$implIJavaAtomType$ Name,
 		boolean forceRead );
 
-	ICFIntMajorVersionObj readCachedMajorVersionByIdIdx( ICFLibKeyHash256 Id );
+	ICFIntMajorVersionObj readCachedMajorVersionByIdIdx( $implIJavaAtomType$ Id );
 
-	List<ICFIntMajorVersionObj> readCachedMajorVersionByTenantIdx( ICFLibKeyHash256 TenantId );
+	List<ICFIntMajorVersionObj> readCachedMajorVersionByTenantIdx( $implIJavaAtomType$ TenantId );
 
-	List<ICFIntMajorVersionObj> readCachedMajorVersionBySubProjectIdx( ICFLibKeyHash256 SubProjectId );
+	List<ICFIntMajorVersionObj> readCachedMajorVersionBySubProjectIdx( $implIJavaAtomType$ SubProjectId );
 
-	ICFIntMajorVersionObj readCachedMajorVersionByNameIdx( ICFLibKeyHash256 SubProjectId,
-		String Name );
+	ICFIntMajorVersionObj readCachedMajorVersionByNameIdx( $implIJavaAtomType$ SubProjectId,
+		$implIJavaAtomType$ Name );
 
-	void deepDisposeMajorVersionByIdIdx( ICFLibKeyHash256 Id );
+	void deepDisposeMajorVersionByIdIdx( $implIJavaAtomType$ Id );
 
-	void deepDisposeMajorVersionByTenantIdx( ICFLibKeyHash256 TenantId );
+	void deepDisposeMajorVersionByTenantIdx( $implIJavaAtomType$ TenantId );
 
-	void deepDisposeMajorVersionBySubProjectIdx( ICFLibKeyHash256 SubProjectId );
+	void deepDisposeMajorVersionBySubProjectIdx( $implIJavaAtomType$ SubProjectId );
 
-	void deepDisposeMajorVersionByNameIdx( ICFLibKeyHash256 SubProjectId,
-		String Name );
+	void deepDisposeMajorVersionByNameIdx( $implIJavaAtomType$ SubProjectId,
+		$implIJavaAtomType$ Name );
 
 	/**
 	 *	Internal use only.
@@ -266,21 +266,21 @@ public interface ICFIntMajorVersionTableObj
 	 *
 	 *	@param	Id	The MajorVersion key attribute of the instance generating the id.
 	 */
-	void deleteMajorVersionByIdIdx( ICFLibKeyHash256 Id );
+	void deleteMajorVersionByIdIdx( $implIJavaAtomType$ Id );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	TenantId	The MajorVersion key attribute of the instance generating the id.
 	 */
-	void deleteMajorVersionByTenantIdx( ICFLibKeyHash256 TenantId );
+	void deleteMajorVersionByTenantIdx( $implIJavaAtomType$ TenantId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	SubProjectId	The MajorVersion key attribute of the instance generating the id.
 	 */
-	void deleteMajorVersionBySubProjectIdx( ICFLibKeyHash256 SubProjectId );
+	void deleteMajorVersionBySubProjectIdx( $implIJavaAtomType$ SubProjectId );
 
 	/**
 	 *	Internal use only.
@@ -289,6 +289,6 @@ public interface ICFIntMajorVersionTableObj
 	 *
 	 *	@param	Name	The MajorVersion key attribute of the instance generating the id.
 	 */
-	void deleteMajorVersionByNameIdx(ICFLibKeyHash256 SubProjectId,
-		String Name );
+	void deleteMajorVersionByNameIdx($implIJavaAtomType$ SubProjectId,
+		$implIJavaAtomType$ Name );
 }

@@ -314,15 +314,15 @@ public class CFIntISOCtryCcyTableObj
 	}
 
 	@Override
-	public ICFSecISOCtryCcyObj readISOCtryCcy( short ISOCtryId,
-		short ISOCcyId ) {
+	public ICFSecISOCtryCcyObj readISOCtryCcy( $implIJavaAtomType$ ISOCtryId,
+		$implIJavaAtomType$ ISOCcyId ) {
 		return( readISOCtryCcy( ISOCtryId,
 			ISOCcyId, false ) );
 	}
 
 	@Override
-	public ICFSecISOCtryCcyObj readISOCtryCcy( short ISOCtryId,
-		short ISOCcyId, boolean forceRead ) {
+	public ICFSecISOCtryCcyObj readISOCtryCcy( $implIJavaAtomType$ ISOCtryId,
+		$implIJavaAtomType$ ISOCcyId, boolean forceRead ) {
 		ICFSecISOCtryCcyObj obj = null;
 		ICFSecISOCtryCcy readRec = schema.getCFSecBackingStore().getTableISOCtryCcy().readDerivedByIdIdx( null,
 			ISOCtryId,
@@ -546,8 +546,8 @@ public class CFIntISOCtryCcyTableObj
 	}
 
 	@Override
-	public ICFSecISOCtryCcyObj readISOCtryCcyByIdIdx( short ISOCtryId,
-		short ISOCcyId )
+	public ICFSecISOCtryCcyObj readISOCtryCcyByIdIdx( $implIJavaAtomType$ ISOCtryId,
+		$implIJavaAtomType$ ISOCcyId )
 	{
 		return( readISOCtryCcyByIdIdx( ISOCtryId,
 			ISOCcyId,
@@ -555,8 +555,8 @@ public class CFIntISOCtryCcyTableObj
 	}
 
 	@Override
-	public ICFSecISOCtryCcyObj readISOCtryCcyByIdIdx( short ISOCtryId,
-		short ISOCcyId, boolean forceRead )
+	public ICFSecISOCtryCcyObj readISOCtryCcyByIdIdx( $implIJavaAtomType$ ISOCtryId,
+		$implIJavaAtomType$ ISOCcyId, boolean forceRead )
 	{
 		ICFSecISOCtryCcyPKey pkey = schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOCtryCcy().newPKey();
 		pkey.setRequiredISOCtryId( ISOCtryId );
@@ -566,14 +566,14 @@ public class CFIntISOCtryCcyTableObj
 	}
 
 	@Override
-	public List<ICFSecISOCtryCcyObj> readISOCtryCcyByCtryIdx( short ISOCtryId )
+	public List<ICFSecISOCtryCcyObj> readISOCtryCcyByCtryIdx( $implIJavaAtomType$ ISOCtryId )
 	{
 		return( readISOCtryCcyByCtryIdx( ISOCtryId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFSecISOCtryCcyObj> readISOCtryCcyByCtryIdx( short ISOCtryId,
+	public List<ICFSecISOCtryCcyObj> readISOCtryCcyByCtryIdx( $implIJavaAtomType$ ISOCtryId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readISOCtryCcyByCtryIdx";
@@ -659,14 +659,14 @@ public class CFIntISOCtryCcyTableObj
 	}
 
 	@Override
-	public List<ICFSecISOCtryCcyObj> readISOCtryCcyByCcyIdx( short ISOCcyId )
+	public List<ICFSecISOCtryCcyObj> readISOCtryCcyByCcyIdx( $implIJavaAtomType$ ISOCcyId )
 	{
 		return( readISOCtryCcyByCcyIdx( ISOCcyId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFSecISOCtryCcyObj> readISOCtryCcyByCcyIdx( short ISOCcyId,
+	public List<ICFSecISOCtryCcyObj> readISOCtryCcyByCcyIdx( $implIJavaAtomType$ ISOCcyId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readISOCtryCcyByCcyIdx";
@@ -752,8 +752,8 @@ public class CFIntISOCtryCcyTableObj
 	}
 
 	@Override
-	public ICFSecISOCtryCcyObj readCachedISOCtryCcyByIdIdx( short ISOCtryId,
-		short ISOCcyId )
+	public ICFSecISOCtryCcyObj readCachedISOCtryCcyByIdIdx( $implIJavaAtomType$ ISOCtryId,
+		$implIJavaAtomType$ ISOCcyId )
 	{
 		ICFSecISOCtryCcyObj obj = null;
 		ICFSecISOCtryCcyPKey pkey = schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOCtryCcy().newPKey();
@@ -766,7 +766,7 @@ public class CFIntISOCtryCcyTableObj
 	}
 
 	@Override
-	public List<ICFSecISOCtryCcyObj> readCachedISOCtryCcyByCtryIdx( short ISOCtryId )
+	public List<ICFSecISOCtryCcyObj> readCachedISOCtryCcyByCtryIdx( $implIJavaAtomType$ ISOCtryId )
 	{
 		final String S_ProcName = "readCachedISOCtryCcyByCtryIdx";
 		ICFSecISOCtryCcyByCtryIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOCtryCcy().newByCtryIdxKey();
@@ -843,7 +843,7 @@ public class CFIntISOCtryCcyTableObj
 	}
 
 	@Override
-	public List<ICFSecISOCtryCcyObj> readCachedISOCtryCcyByCcyIdx( short ISOCcyId )
+	public List<ICFSecISOCtryCcyObj> readCachedISOCtryCcyByCcyIdx( $implIJavaAtomType$ ISOCcyId )
 	{
 		final String S_ProcName = "readCachedISOCtryCcyByCcyIdx";
 		ICFSecISOCtryCcyByCcyIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOCtryCcy().newByCcyIdxKey();
@@ -920,8 +920,8 @@ public class CFIntISOCtryCcyTableObj
 	}
 
 	@Override
-	public void deepDisposeISOCtryCcyByIdIdx( short ISOCtryId,
-		short ISOCcyId )
+	public void deepDisposeISOCtryCcyByIdIdx( $implIJavaAtomType$ ISOCtryId,
+		$implIJavaAtomType$ ISOCcyId )
 	{
 		ICFSecISOCtryCcyObj obj = readCachedISOCtryCcyByIdIdx( ISOCtryId,
 				ISOCcyId );
@@ -931,7 +931,7 @@ public class CFIntISOCtryCcyTableObj
 	}
 
 	@Override
-	public void deepDisposeISOCtryCcyByCtryIdx( short ISOCtryId )
+	public void deepDisposeISOCtryCcyByCtryIdx( $implIJavaAtomType$ ISOCtryId )
 	{
 		final String S_ProcName = "deepDisposeISOCtryCcyByCtryIdx";
 		ICFSecISOCtryCcyObj obj;
@@ -948,7 +948,7 @@ public class CFIntISOCtryCcyTableObj
 	}
 
 	@Override
-	public void deepDisposeISOCtryCcyByCcyIdx( short ISOCcyId )
+	public void deepDisposeISOCtryCcyByCcyIdx( $implIJavaAtomType$ ISOCcyId )
 	{
 		final String S_ProcName = "deepDisposeISOCtryCcyByCcyIdx";
 		ICFSecISOCtryCcyObj obj;
@@ -983,8 +983,8 @@ public class CFIntISOCtryCcyTableObj
 	}
 
 	@Override
-	public void deleteISOCtryCcyByIdIdx( short ISOCtryId,
-		short ISOCcyId )
+	public void deleteISOCtryCcyByIdIdx( $implIJavaAtomType$ ISOCtryId,
+		$implIJavaAtomType$ ISOCcyId )
 	{
 		ICFSecISOCtryCcyObj obj = readISOCtryCcy(ISOCtryId,
 				ISOCcyId);
@@ -1016,7 +1016,7 @@ public class CFIntISOCtryCcyTableObj
 	}
 
 	@Override
-	public void deleteISOCtryCcyByCtryIdx( short ISOCtryId )
+	public void deleteISOCtryCcyByCtryIdx( $implIJavaAtomType$ ISOCtryId )
 	{
 		ICFSecISOCtryCcyByCtryIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOCtryCcy().newByCtryIdxKey();
 		key.setRequiredISOCtryId( ISOCtryId );
@@ -1050,7 +1050,7 @@ public class CFIntISOCtryCcyTableObj
 	}
 
 	@Override
-	public void deleteISOCtryCcyByCcyIdx( short ISOCcyId )
+	public void deleteISOCtryCcyByCcyIdx( $implIJavaAtomType$ ISOCcyId )
 	{
 		ICFSecISOCtryCcyByCcyIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOCtryCcy().newByCcyIdxKey();
 		key.setRequiredISOCcyId( ISOCcyId );

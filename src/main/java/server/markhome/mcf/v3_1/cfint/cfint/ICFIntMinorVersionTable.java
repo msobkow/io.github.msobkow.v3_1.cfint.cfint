@@ -88,7 +88,7 @@ public interface ICFIntMinorVersionTable
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	void deleteMinorVersionByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ argKey );
 	/**
 	 *	Delete the MinorVersion instances identified by the key TenantIdx.
 	 *
@@ -97,7 +97,7 @@ public interface ICFIntMinorVersionTable
 	 *	@param	TenantId	The MinorVersion key attribute of the instance generating the id.
 	 */
 	void deleteMinorVersionByTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTenantId );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argTenantId );
 
 	/**
 	 *	Delete the MinorVersion instances identified by the key TenantIdx.
@@ -116,7 +116,7 @@ public interface ICFIntMinorVersionTable
 	 *	@param	MajorVersionId	The MinorVersion key attribute of the instance generating the id.
 	 */
 	void deleteMinorVersionByMajorVerIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argMajorVersionId );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argMajorVersionId );
 
 	/**
 	 *	Delete the MinorVersion instances identified by the key MajorVerIdx.
@@ -137,8 +137,8 @@ public interface ICFIntMinorVersionTable
 	 *	@param	Name	The MinorVersion key attribute of the instance generating the id.
 	 */
 	void deleteMinorVersionByNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argMajorVersionId,
-		String argName );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argMajorVersionId,
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argName );
 
 	/**
 	 *	Delete the MinorVersion instances identified by the key NameIdx.
@@ -162,7 +162,7 @@ public interface ICFIntMinorVersionTable
 	 *		no such existing key value.
 	 */
 	ICFIntMinorVersion readDerived( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Lock the derived MinorVersion record instance by primary key.
@@ -175,7 +175,7 @@ public interface ICFIntMinorVersionTable
 	 *		no such existing key value.
 	 */
 	ICFIntMinorVersion lockDerived( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Read all MinorVersion instances.
@@ -197,7 +197,7 @@ public interface ICFIntMinorVersionTable
 	 *		no such existing key value.
 	 */
 	ICFIntMinorVersion readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		$implIJavaAtomType$ Id );
 
 	/**
 	 *	Read an array of the derived MinorVersion record instances identified by the duplicate key TenantIdx.
@@ -209,7 +209,7 @@ public interface ICFIntMinorVersionTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFIntMinorVersion[] readDerivedByTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TenantId );
+		$implIJavaAtomType$ TenantId );
 
 	/**
 	 *	Read an array of the derived MinorVersion record instances identified by the duplicate key MajorVerIdx.
@@ -221,7 +221,7 @@ public interface ICFIntMinorVersionTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFIntMinorVersion[] readDerivedByMajorVerIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 MajorVersionId );
+		$implIJavaAtomType$ MajorVersionId );
 
 	/**
 	 *	Read the derived MinorVersion record instance identified by the unique key NameIdx.
@@ -236,8 +236,8 @@ public interface ICFIntMinorVersionTable
 	 *		no such existing key value.
 	 */
 	ICFIntMinorVersion readDerivedByNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 MajorVersionId,
-		String Name );
+		$implIJavaAtomType$ MajorVersionId,
+		$implIJavaAtomType$ Name );
 
 	/**
 	 *	Read the specific MinorVersion record instance identified by the primary key.
@@ -252,7 +252,7 @@ public interface ICFIntMinorVersionTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFIntMinorVersion readRec( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Lock the specific MinorVersion record instance identified by the primary key.
@@ -267,7 +267,7 @@ public interface ICFIntMinorVersionTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFIntMinorVersion lockRec( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Read all the specific MinorVersion record instances.
@@ -291,7 +291,7 @@ public interface ICFIntMinorVersionTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFIntMinorVersion readRecByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		$implIJavaAtomType$ Id );
 
 	/**
 	 *	Read an array of the specific MinorVersion record instances identified by the duplicate key TenantIdx.
@@ -305,7 +305,7 @@ public interface ICFIntMinorVersionTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFIntMinorVersion[] readRecByTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TenantId );
+		$implIJavaAtomType$ TenantId );
 
 	/**
 	 *	Read an array of the specific MinorVersion record instances identified by the duplicate key MajorVerIdx.
@@ -319,7 +319,7 @@ public interface ICFIntMinorVersionTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFIntMinorVersion[] readRecByMajorVerIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 MajorVersionId );
+		$implIJavaAtomType$ MajorVersionId );
 
 	/**
 	 *	Read the specific MinorVersion record instance identified by the unique key NameIdx.
@@ -336,6 +336,6 @@ public interface ICFIntMinorVersionTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFIntMinorVersion readRecByNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 MajorVersionId,
-		String Name );
+		$implIJavaAtomType$ MajorVersionId,
+		$implIJavaAtomType$ Name );
 }

@@ -49,7 +49,7 @@ public class CFIntSecClusGrpObj
 	protected boolean isNew;
 	protected ICFSecSecClusGrpEditObj edit;
 	protected ICFSecSchemaObj schema;
-	protected ICFLibKeyHash256 pKey;
+	protected $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pKey;
 	protected ICFSecSecClusGrp rec;
 	protected ICFSecClusterObj requiredOwnerCluster;
 	protected ICFSecSecSysGrpObj requiredContainerSysGrp;
@@ -280,12 +280,12 @@ public class CFIntSecClusGrpObj
 	}
 
 	@Override
-	public ICFLibKeyHash256 getPKey() {
+	public $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ getPKey() {
 		return( pKey );
 	}
 
 	@Override
-	public void setPKey( ICFLibKeyHash256 value ) {
+	public void setPKey( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ value ) {
 		if( pKey != value ) {
        		pKey = value;
 			copyPKeyToRec();
@@ -362,7 +362,7 @@ public class CFIntSecClusGrpObj
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredSecClusGrpId() {
+	public $implIJavaAtomType$ getRequiredSecClusGrpId() {
 		return( getPKey() );
 	}
 
@@ -415,12 +415,12 @@ public class CFIntSecClusGrpObj
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredClusterId() {
+	public $implIJavaAtomType$ getRequiredClusterId() {
 		return( getSecClusGrpRec().getRequiredClusterId() );
 	}
 
 	@Override
-	public String getRequiredName() {
+	public $implIJavaAtomType$ getRequiredName() {
 		return( getSecClusGrpRec().getRequiredName() );
 	}
 

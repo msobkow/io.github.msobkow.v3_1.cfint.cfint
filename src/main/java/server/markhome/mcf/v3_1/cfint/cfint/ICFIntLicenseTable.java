@@ -88,7 +88,7 @@ public interface ICFIntLicenseTable
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	void deleteLicenseByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ argKey );
 	/**
 	 *	Delete the License instances identified by the key LicnTenantIdx.
 	 *
@@ -97,7 +97,7 @@ public interface ICFIntLicenseTable
 	 *	@param	TenantId	The License key attribute of the instance generating the id.
 	 */
 	void deleteLicenseByLicnTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTenantId );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argTenantId );
 
 	/**
 	 *	Delete the License instances identified by the key LicnTenantIdx.
@@ -116,7 +116,7 @@ public interface ICFIntLicenseTable
 	 *	@param	TopDomainId	The License key attribute of the instance generating the id.
 	 */
 	void deleteLicenseByDomainIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTopDomainId );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argTopDomainId );
 
 	/**
 	 *	Delete the License instances identified by the key DomainIdx.
@@ -137,8 +137,8 @@ public interface ICFIntLicenseTable
 	 *	@param	Name	The License key attribute of the instance generating the id.
 	 */
 	void deleteLicenseByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTopDomainId,
-		String argName );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argTopDomainId,
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argName );
 
 	/**
 	 *	Delete the License instances identified by the key UNameIdx.
@@ -162,7 +162,7 @@ public interface ICFIntLicenseTable
 	 *		no such existing key value.
 	 */
 	ICFIntLicense readDerived( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Lock the derived License record instance by primary key.
@@ -175,7 +175,7 @@ public interface ICFIntLicenseTable
 	 *		no such existing key value.
 	 */
 	ICFIntLicense lockDerived( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Read all License instances.
@@ -197,7 +197,7 @@ public interface ICFIntLicenseTable
 	 *		no such existing key value.
 	 */
 	ICFIntLicense readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		$implIJavaAtomType$ Id );
 
 	/**
 	 *	Read an array of the derived License record instances identified by the duplicate key LicnTenantIdx.
@@ -209,7 +209,7 @@ public interface ICFIntLicenseTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFIntLicense[] readDerivedByLicnTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TenantId );
+		$implIJavaAtomType$ TenantId );
 
 	/**
 	 *	Read an array of the derived License record instances identified by the duplicate key DomainIdx.
@@ -221,7 +221,7 @@ public interface ICFIntLicenseTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFIntLicense[] readDerivedByDomainIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TopDomainId );
+		$implIJavaAtomType$ TopDomainId );
 
 	/**
 	 *	Read the derived License record instance identified by the unique key UNameIdx.
@@ -236,8 +236,8 @@ public interface ICFIntLicenseTable
 	 *		no such existing key value.
 	 */
 	ICFIntLicense readDerivedByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TopDomainId,
-		String Name );
+		$implIJavaAtomType$ TopDomainId,
+		$implIJavaAtomType$ Name );
 
 	/**
 	 *	Read the specific License record instance identified by the primary key.
@@ -252,7 +252,7 @@ public interface ICFIntLicenseTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFIntLicense readRec( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Lock the specific License record instance identified by the primary key.
@@ -267,7 +267,7 @@ public interface ICFIntLicenseTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFIntLicense lockRec( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Read all the specific License record instances.
@@ -291,7 +291,7 @@ public interface ICFIntLicenseTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFIntLicense readRecByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		$implIJavaAtomType$ Id );
 
 	/**
 	 *	Read an array of the specific License record instances identified by the duplicate key LicnTenantIdx.
@@ -305,7 +305,7 @@ public interface ICFIntLicenseTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFIntLicense[] readRecByLicnTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TenantId );
+		$implIJavaAtomType$ TenantId );
 
 	/**
 	 *	Read an array of the specific License record instances identified by the duplicate key DomainIdx.
@@ -319,7 +319,7 @@ public interface ICFIntLicenseTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFIntLicense[] readRecByDomainIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TopDomainId );
+		$implIJavaAtomType$ TopDomainId );
 
 	/**
 	 *	Read the specific License record instance identified by the unique key UNameIdx.
@@ -336,6 +336,6 @@ public interface ICFIntLicenseTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFIntLicense readRecByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TopDomainId,
-		String Name );
+		$implIJavaAtomType$ TopDomainId,
+		$implIJavaAtomType$ Name );
 }

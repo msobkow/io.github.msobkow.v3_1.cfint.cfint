@@ -325,25 +325,25 @@ public interface ICFIntSecSysGrpObj
 	List<ICFSecSecSysRoleEnablesObj> getOptionalChildrenRoleByEnableName( boolean forceRead );
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute SecSysGrpId.
+	 *	Get the required $implIJavaAtomType$ attribute SecSysGrpId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute SecSysGrpId.
+	 *	@return	The required $implIJavaAtomType$ attribute SecSysGrpId.
 	 */
-	ICFLibKeyHash256 getRequiredSecSysGrpId();
+	$implIJavaAtomType$ getRequiredSecSysGrpId();
 
 	/**
-	 *	Get the required String attribute Name.
+	 *	Get the required $implIJavaAtomType$ attribute Name.
 	 *
-	 *	@return	The required String attribute Name.
+	 *	@return	The required $implIJavaAtomType$ attribute Name.
 	 */
-	String getRequiredName();
+	$implIJavaAtomType$ getRequiredName();
 
 	/**
-	 *	Get the required ICFSecPubSchema.SecLevelEnum attribute SecLevel.
+	 *	Get the required $implIJavaAtomType$ attribute SecLevel.
 	 *
-	 *	@return	The required ICFSecPubSchema.SecLevelEnum attribute SecLevel.
+	 *	@return	The required $implIJavaAtomType$ attribute SecLevel.
 	 */
-	ICFSecPubSchema.SecLevelEnum getRequiredSecLevel();
+	$implIJavaAtomType$ getRequiredSecLevel();
 
 	/**
 	 *	Internal use only.

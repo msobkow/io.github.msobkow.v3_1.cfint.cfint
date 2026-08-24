@@ -101,7 +101,7 @@ public interface ICFIntMimeTypeTableObj
 	 *	@return	The MimeType-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFIntMimeTypeObj readMimeType( Integer pkey );
+	ICFIntMimeTypeObj readMimeType( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	/**
 	 *	Read a MimeType-derived instance by it's primary key.
@@ -111,19 +111,19 @@ public interface ICFIntMimeTypeTableObj
 	 *	@return	The MimeType-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFIntMimeTypeObj readMimeType( Integer pkey,
+	ICFIntMimeTypeObj readMimeType( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey,
 		boolean forceRead );
 
-	ICFIntMimeTypeObj readCachedMimeType( Integer pkey );
+	ICFIntMimeTypeObj readCachedMimeType( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	public void reallyDeepDisposeMimeType( ICFIntMimeTypeObj obj );
 
-	void deepDisposeMimeType( Integer pkey );
+	void deepDisposeMimeType( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	/**
 	 *	Internal use only.
 	 */
-	ICFIntMimeTypeObj lockMimeType( Integer pkey );
+	ICFIntMimeTypeObj lockMimeType( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	/**
 	 *	Return a sorted list of all the MimeType-derived instances in the database.
@@ -151,7 +151,7 @@ public interface ICFIntMimeTypeTableObj
 	 *	@return	CFIntMimeTypeObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFIntMimeTypeObj readMimeTypeByIdIdx( int MimeTypeId );
+	ICFIntMimeTypeObj readMimeTypeByIdIdx( $implIJavaAtomType$ MimeTypeId );
 
 	/**
 	 *	Get the CFIntMimeTypeObj instance for the primary key attributes.
@@ -161,7 +161,7 @@ public interface ICFIntMimeTypeTableObj
 	 *	@return	CFIntMimeTypeObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFIntMimeTypeObj readMimeTypeByIdIdx( int MimeTypeId,
+	ICFIntMimeTypeObj readMimeTypeByIdIdx( $implIJavaAtomType$ MimeTypeId,
 		boolean forceRead );
 
 	/**
@@ -172,7 +172,7 @@ public interface ICFIntMimeTypeTableObj
 	 *	@return	CFIntMimeTypeObj cached instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFIntMimeTypeObj readMimeTypeByUNameIdx(String Name );
+	ICFIntMimeTypeObj readMimeTypeByUNameIdx($implIJavaAtomType$ Name );
 
 	/**
 	 *	Get the CFIntMimeTypeObj instance for the unique UNameIdx key.
@@ -182,16 +182,16 @@ public interface ICFIntMimeTypeTableObj
 	 *	@return	CFIntMimeTypeObj refreshed instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFIntMimeTypeObj readMimeTypeByUNameIdx(String Name,
+	ICFIntMimeTypeObj readMimeTypeByUNameIdx($implIJavaAtomType$ Name,
 		boolean forceRead );
 
-	ICFIntMimeTypeObj readCachedMimeTypeByIdIdx( int MimeTypeId );
+	ICFIntMimeTypeObj readCachedMimeTypeByIdIdx( $implIJavaAtomType$ MimeTypeId );
 
-	ICFIntMimeTypeObj readCachedMimeTypeByUNameIdx( String Name );
+	ICFIntMimeTypeObj readCachedMimeTypeByUNameIdx( $implIJavaAtomType$ Name );
 
-	void deepDisposeMimeTypeByIdIdx( int MimeTypeId );
+	void deepDisposeMimeTypeByIdIdx( $implIJavaAtomType$ MimeTypeId );
 
-	void deepDisposeMimeTypeByUNameIdx( String Name );
+	void deepDisposeMimeTypeByUNameIdx( $implIJavaAtomType$ Name );
 
 	/**
 	 *	Internal use only.
@@ -208,12 +208,12 @@ public interface ICFIntMimeTypeTableObj
 	 *
 	 *	@param	MimeTypeId	The MimeType key attribute of the instance generating the id.
 	 */
-	void deleteMimeTypeByIdIdx( int MimeTypeId );
+	void deleteMimeTypeByIdIdx( $implIJavaAtomType$ MimeTypeId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	Name	The MimeType key attribute of the instance generating the id.
 	 */
-	void deleteMimeTypeByUNameIdx(String Name );
+	void deleteMimeTypeByUNameIdx($implIJavaAtomType$ Name );
 }

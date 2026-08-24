@@ -52,7 +52,7 @@ import server.markhome.mcf.v3_1.cfint.cfintobj.*;
 public class CFIntBuffMimeType
 	implements ICFIntMimeType, Comparable<Object>, Serializable
 {
-	protected int requiredMimeTypeId;
+	protected $implIJavaAtomType$ requiredMimeTypeId;
 	protected int requiredRevision;
 	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFIntPubSecUser.S_INIT_CREATED_BY);
 	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFIntPubSecSession.S_SECSESSIONID_INIT_VALUE);
@@ -60,8 +60,8 @@ public class CFIntBuffMimeType
 	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFIntPubSecUser.S_INIT_UPDATED_BY);
 	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFIntPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
-	protected String requiredName;
-	protected String optionalFileTypes;
+	protected $implIJavaAtomType$ requiredName;
+	protected $implIJavaAtomType$ optionalFileTypes;
 
 	public CFIntBuffMimeType() {
 		requiredMimeTypeId = ICFIntPubMimeType.MIMETYPEID_INIT_VALUE;
@@ -70,24 +70,24 @@ public class CFIntBuffMimeType
 	}
 
 	@Override
-	public Integer getPKey() {
+	public $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ getPKey() {
 		return (requiredMimeTypeId);
 	}
 
 	@Override
-	public void setPKey(Integer requiredMimeTypeId) {
+	public void setPKey($iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ requiredMimeTypeId) {
 		if(requiredMimeTypeId != null) {
 			this.requiredMimeTypeId = requiredMimeTypeId;
 		}
 	}
 
 	@Override
-	public int getRequiredMimeTypeId() {
+	public $implIJavaAtomType$ getRequiredMimeTypeId() {
 		return(requiredMimeTypeId);
 	}
 
 	@Override
-	public void setRequiredMimeTypeId( int value ) {
+	public void setRequiredMimeTypeId( $implIJavaAtomType$ value ) {
 		if( value < ICFIntPubMimeType.MIMETYPEID_MIN_VALUE ) {
 			throw new CFLibArgumentUnderflowException( getClass(),
 				"setRequiredMimeTypeId",
@@ -155,11 +155,11 @@ public class CFIntBuffMimeType
 	}
 
 	@Override
-	public String getRequiredName() {
+	public $implIJavaAtomType$ getRequiredName() {
 		return(requiredName);
 	}
 
-	public void setRequiredName( String value ) {
+	public void setRequiredName( $implIJavaAtomType$ value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredName",
@@ -178,11 +178,11 @@ public class CFIntBuffMimeType
 	}
 
 	@Override
-	public String getOptionalFileTypes() {
+	public $implIJavaAtomType$ getOptionalFileTypes() {
 		return(optionalFileTypes);
 	}
 
-	public void setOptionalFileTypes( String value ) {
+	public void setOptionalFileTypes( $implIJavaAtomType$ value ) {
 		if( value != null && value.length() > 128 ) {
 			throw new CFLibArgumentOverflowException( getClass(),
 				"setOptionalFileTypes",

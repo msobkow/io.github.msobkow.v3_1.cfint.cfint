@@ -241,25 +241,25 @@ public interface ICFIntSecClusGrpObj
 	List<ICFSecSecClusGrpMembObj> getOptionalChildrenMembByGrp( boolean forceRead );
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute SecClusGrpId.
+	 *	Get the required $implIJavaAtomType$ attribute SecClusGrpId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute SecClusGrpId.
+	 *	@return	The required $implIJavaAtomType$ attribute SecClusGrpId.
 	 */
-	ICFLibKeyHash256 getRequiredSecClusGrpId();
+	$implIJavaAtomType$ getRequiredSecClusGrpId();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute ClusterId.
+	 *	Get the required $implIJavaAtomType$ attribute ClusterId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute ClusterId.
+	 *	@return	The required $implIJavaAtomType$ attribute ClusterId.
 	 */
-	ICFLibKeyHash256 getRequiredClusterId();
+	$implIJavaAtomType$ getRequiredClusterId();
 
 	/**
-	 *	Get the required String attribute Name.
+	 *	Get the required $implIJavaAtomType$ attribute Name.
 	 *
-	 *	@return	The required String attribute Name.
+	 *	@return	The required $implIJavaAtomType$ attribute Name.
 	 */
-	String getRequiredName();
+	$implIJavaAtomType$ getRequiredName();
 
 	/**
 	 *	Internal use only.

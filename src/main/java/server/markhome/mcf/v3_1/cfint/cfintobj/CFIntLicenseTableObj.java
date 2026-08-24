@@ -50,12 +50,12 @@ public class CFIntLicenseTableObj
 	protected ICFIntSchemaObj schema;
 	protected static int runtimeClassCode = ICFIntLicense.CLASS_CODE;
 	protected static final int backingClassCode = ICFIntLicense.CLASS_CODE;
-	private Map<ICFLibKeyHash256, ICFIntLicenseObj> members;
-	private Map<ICFLibKeyHash256, ICFIntLicenseObj> allLicense;
+	private Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFIntLicenseObj> members;
+	private Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFIntLicenseObj> allLicense;
 	private Map< ICFIntLicenseByLicnTenantIdxKey,
-		Map<ICFLibKeyHash256, ICFIntLicenseObj > > indexByLicnTenantIdx;
+		Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFIntLicenseObj > > indexByLicnTenantIdx;
 	private Map< ICFIntLicenseByDomainIdxKey,
-		Map<ICFLibKeyHash256, ICFIntLicenseObj > > indexByDomainIdx;
+		Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFIntLicenseObj > > indexByDomainIdx;
 	private Map< ICFIntLicenseByUNameIdxKey,
 		ICFIntLicenseObj > indexByUNameIdx;
 	public static String TABLE_NAME = "License";
@@ -63,7 +63,7 @@ public class CFIntLicenseTableObj
 
 	public CFIntLicenseTableObj() {
 		schema = null;
-		members = new HashMap<ICFLibKeyHash256, ICFIntLicenseObj>();
+		members = new HashMap<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFIntLicenseObj>();
 		allLicense = null;
 		indexByLicnTenantIdx = null;
 		indexByDomainIdx = null;
@@ -72,7 +72,7 @@ public class CFIntLicenseTableObj
 
 	public CFIntLicenseTableObj( ICFIntSchemaObj argSchema ) {
 		schema = (ICFIntSchemaObj)argSchema;
-		members = new HashMap<ICFLibKeyHash256, ICFIntLicenseObj>();
+		members = new HashMap<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFIntLicenseObj>();
 		allLicense = null;
 		indexByLicnTenantIdx = null;
 		indexByDomainIdx = null;
@@ -199,7 +199,7 @@ public class CFIntLicenseTableObj
 	@Override
 	public ICFIntLicenseObj realiseLicense( ICFIntLicenseObj Obj ) {
 		ICFIntLicenseObj obj = Obj;
-		ICFLibKeyHash256 pkey = obj.getPKey();
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey = obj.getPKey();
 		ICFIntLicenseObj keepObj = null;
 		if( members.containsKey( pkey ) && ( null != members.get( pkey ) ) ) {
 			ICFIntLicenseObj existingObj = members.get( pkey );
@@ -216,7 +216,7 @@ public class CFIntLicenseTableObj
 				ICFIntLicenseByLicnTenantIdxKey keyLicnTenantIdx =
 					schema.getCFIntBackingStore().getCFIntFactory().getFactoryLicense().newByLicnTenantIdxKey();
 				keyLicnTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
-				Map<ICFLibKeyHash256, ICFIntLicenseObj > mapLicnTenantIdx = indexByLicnTenantIdx.get( keyLicnTenantIdx );
+				Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFIntLicenseObj > mapLicnTenantIdx = indexByLicnTenantIdx.get( keyLicnTenantIdx );
 				if( mapLicnTenantIdx != null ) {
 					mapLicnTenantIdx.remove( keepObj.getPKey() );
 					if( mapLicnTenantIdx.size() <= 0 ) {
@@ -229,7 +229,7 @@ public class CFIntLicenseTableObj
 				ICFIntLicenseByDomainIdxKey keyDomainIdx =
 					schema.getCFIntBackingStore().getCFIntFactory().getFactoryLicense().newByDomainIdxKey();
 				keyDomainIdx.setRequiredTopDomainId( keepObj.getRequiredTopDomainId() );
-				Map<ICFLibKeyHash256, ICFIntLicenseObj > mapDomainIdx = indexByDomainIdx.get( keyDomainIdx );
+				Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFIntLicenseObj > mapDomainIdx = indexByDomainIdx.get( keyDomainIdx );
 				if( mapDomainIdx != null ) {
 					mapDomainIdx.remove( keepObj.getPKey() );
 					if( mapDomainIdx.size() <= 0 ) {
@@ -253,7 +253,7 @@ public class CFIntLicenseTableObj
 				ICFIntLicenseByLicnTenantIdxKey keyLicnTenantIdx =
 					schema.getCFIntBackingStore().getCFIntFactory().getFactoryLicense().newByLicnTenantIdxKey();
 				keyLicnTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
-				Map<ICFLibKeyHash256, ICFIntLicenseObj > mapLicnTenantIdx = indexByLicnTenantIdx.get( keyLicnTenantIdx );
+				Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFIntLicenseObj > mapLicnTenantIdx = indexByLicnTenantIdx.get( keyLicnTenantIdx );
 				if( mapLicnTenantIdx != null ) {
 					mapLicnTenantIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -263,7 +263,7 @@ public class CFIntLicenseTableObj
 				ICFIntLicenseByDomainIdxKey keyDomainIdx =
 					schema.getCFIntBackingStore().getCFIntFactory().getFactoryLicense().newByDomainIdxKey();
 				keyDomainIdx.setRequiredTopDomainId( keepObj.getRequiredTopDomainId() );
-				Map<ICFLibKeyHash256, ICFIntLicenseObj > mapDomainIdx = indexByDomainIdx.get( keyDomainIdx );
+				Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFIntLicenseObj > mapDomainIdx = indexByDomainIdx.get( keyDomainIdx );
 				if( mapDomainIdx != null ) {
 					mapDomainIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -295,7 +295,7 @@ public class CFIntLicenseTableObj
 				ICFIntLicenseByLicnTenantIdxKey keyLicnTenantIdx =
 					schema.getCFIntBackingStore().getCFIntFactory().getFactoryLicense().newByLicnTenantIdxKey();
 				keyLicnTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
-				Map<ICFLibKeyHash256, ICFIntLicenseObj > mapLicnTenantIdx = indexByLicnTenantIdx.get( keyLicnTenantIdx );
+				Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFIntLicenseObj > mapLicnTenantIdx = indexByLicnTenantIdx.get( keyLicnTenantIdx );
 				if( mapLicnTenantIdx != null ) {
 					mapLicnTenantIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -305,7 +305,7 @@ public class CFIntLicenseTableObj
 				ICFIntLicenseByDomainIdxKey keyDomainIdx =
 					schema.getCFIntBackingStore().getCFIntFactory().getFactoryLicense().newByDomainIdxKey();
 				keyDomainIdx.setRequiredTopDomainId( keepObj.getRequiredTopDomainId() );
-				Map<ICFLibKeyHash256, ICFIntLicenseObj > mapDomainIdx = indexByDomainIdx.get( keyDomainIdx );
+				Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFIntLicenseObj > mapDomainIdx = indexByDomainIdx.get( keyDomainIdx );
 				if( mapDomainIdx != null ) {
 					mapDomainIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -337,12 +337,12 @@ public class CFIntLicenseTableObj
 	}
 
 	@Override
-	public ICFIntLicenseObj readLicense( ICFLibKeyHash256 pkey ) {
+	public ICFIntLicenseObj readLicense( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey ) {
 		return( readLicense( pkey, false ) );
 	}
 
 	@Override
-	public ICFIntLicenseObj readLicense( ICFLibKeyHash256 pkey, boolean forceRead ) {
+	public ICFIntLicenseObj readLicense( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey, boolean forceRead ) {
 		ICFIntLicenseObj obj = null;
 		if( ( ! forceRead ) && members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -361,7 +361,7 @@ public class CFIntLicenseTableObj
 	}
 
 	@Override
-	public ICFIntLicenseObj readCachedLicense( ICFLibKeyHash256 pkey ) {
+	public ICFIntLicenseObj readCachedLicense( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey ) {
 		ICFIntLicenseObj obj = null;
 		if( members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -377,7 +377,7 @@ public class CFIntLicenseTableObj
 		if( obj == null ) {
 			return;
 		}
-		ICFLibKeyHash256 pkey = obj.getPKey();
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey = obj.getPKey();
 		ICFIntLicenseObj existing = readCachedLicense( pkey );
 		if( existing == null ) {
 			return;
@@ -420,7 +420,7 @@ public class CFIntLicenseTableObj
 
 	}
 	@Override
-	public void deepDisposeLicense( ICFLibKeyHash256 pkey ) {
+	public void deepDisposeLicense( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey ) {
 		ICFIntLicenseObj obj = readCachedLicense( pkey );
 		if( obj != null ) {
 			obj.forget();
@@ -428,7 +428,7 @@ public class CFIntLicenseTableObj
 	}
 
 	@Override
-	public ICFIntLicenseObj lockLicense( ICFLibKeyHash256 pkey ) {
+	public ICFIntLicenseObj lockLicense( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey ) {
 		ICFIntLicenseObj locked = null;
 		ICFIntLicense lockRec = schema.getCFIntBackingStore().getTableLicense().lockDerived( null, pkey );
 		if( lockRec != null ) {
@@ -452,7 +452,7 @@ public class CFIntLicenseTableObj
 	public List<ICFIntLicenseObj> readAllLicense( boolean forceRead ) {
 		final String S_ProcName = "readAllLicense";
 		if( ( allLicense == null ) || forceRead ) {
-			Map<ICFLibKeyHash256, ICFIntLicenseObj> map = new HashMap<ICFLibKeyHash256,ICFIntLicenseObj>();
+			Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFIntLicenseObj> map = new HashMap<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$,ICFIntLicenseObj>();
 			allLicense = map;
 			ICFIntLicense[] recList = schema.getCFIntBackingStore().getTableLicense().readAllDerived( null );
 			ICFIntLicense rec;
@@ -508,8 +508,8 @@ public class CFIntLicenseTableObj
 					return( 1 );
 				}
 				else {
-					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
-					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ lhsPKey = lhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -566,8 +566,8 @@ public class CFIntLicenseTableObj
 					return( 1 );
 				}
 				else {
-					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
-					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ lhsPKey = lhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -578,43 +578,43 @@ public class CFIntLicenseTableObj
 	}
 
 	@Override
-	public ICFIntLicenseObj readLicenseByIdIdx( ICFLibKeyHash256 Id )
+	public ICFIntLicenseObj readLicenseByIdIdx( $implIJavaAtomType$ Id )
 	{
 		return( readLicenseByIdIdx( Id,
 			false ) );
 	}
 
 	@Override
-	public ICFIntLicenseObj readLicenseByIdIdx( ICFLibKeyHash256 Id, boolean forceRead )
+	public ICFIntLicenseObj readLicenseByIdIdx( $implIJavaAtomType$ Id, boolean forceRead )
 	{
 		ICFIntLicenseObj obj = readLicense( Id, forceRead );
 		return( obj );
 	}
 
 	@Override
-	public List<ICFIntLicenseObj> readLicenseByLicnTenantIdx( ICFLibKeyHash256 TenantId )
+	public List<ICFIntLicenseObj> readLicenseByLicnTenantIdx( $implIJavaAtomType$ TenantId )
 	{
 		return( readLicenseByLicnTenantIdx( TenantId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFIntLicenseObj> readLicenseByLicnTenantIdx( ICFLibKeyHash256 TenantId,
+	public List<ICFIntLicenseObj> readLicenseByLicnTenantIdx( $implIJavaAtomType$ TenantId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readLicenseByLicnTenantIdx";
 		ICFIntLicenseByLicnTenantIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryLicense().newByLicnTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
-		Map<ICFLibKeyHash256, ICFIntLicenseObj> dict;
+		Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFIntLicenseObj> dict;
 		if( indexByLicnTenantIdx == null ) {
 			indexByLicnTenantIdx = new HashMap< ICFIntLicenseByLicnTenantIdxKey,
-				Map< ICFLibKeyHash256, ICFIntLicenseObj > >();
+				Map< $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFIntLicenseObj > >();
 		}
 		if( ( ! forceRead ) && indexByLicnTenantIdx.containsKey( key ) ) {
 			dict = indexByLicnTenantIdx.get( key );
 		}
 		else {
-			dict = new HashMap<ICFLibKeyHash256, ICFIntLicenseObj>();
+			dict = new HashMap<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFIntLicenseObj>();
 			ICFIntLicenseObj obj;
 			ICFIntLicense[] recList = schema.getCFIntBackingStore().getTableLicense().readDerivedByLicnTenantIdx( null,
 				TenantId );
@@ -672,8 +672,8 @@ public class CFIntLicenseTableObj
 					return( 1 );
 				}
 				else {
-					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
-					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ lhsPKey = lhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -685,29 +685,29 @@ public class CFIntLicenseTableObj
 	}
 
 	@Override
-	public List<ICFIntLicenseObj> readLicenseByDomainIdx( ICFLibKeyHash256 TopDomainId )
+	public List<ICFIntLicenseObj> readLicenseByDomainIdx( $implIJavaAtomType$ TopDomainId )
 	{
 		return( readLicenseByDomainIdx( TopDomainId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFIntLicenseObj> readLicenseByDomainIdx( ICFLibKeyHash256 TopDomainId,
+	public List<ICFIntLicenseObj> readLicenseByDomainIdx( $implIJavaAtomType$ TopDomainId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readLicenseByDomainIdx";
 		ICFIntLicenseByDomainIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryLicense().newByDomainIdxKey();
 		key.setRequiredTopDomainId( TopDomainId );
-		Map<ICFLibKeyHash256, ICFIntLicenseObj> dict;
+		Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFIntLicenseObj> dict;
 		if( indexByDomainIdx == null ) {
 			indexByDomainIdx = new HashMap< ICFIntLicenseByDomainIdxKey,
-				Map< ICFLibKeyHash256, ICFIntLicenseObj > >();
+				Map< $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFIntLicenseObj > >();
 		}
 		if( ( ! forceRead ) && indexByDomainIdx.containsKey( key ) ) {
 			dict = indexByDomainIdx.get( key );
 		}
 		else {
-			dict = new HashMap<ICFLibKeyHash256, ICFIntLicenseObj>();
+			dict = new HashMap<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFIntLicenseObj>();
 			ICFIntLicenseObj obj;
 			ICFIntLicense[] recList = schema.getCFIntBackingStore().getTableLicense().readDerivedByDomainIdx( null,
 				TopDomainId );
@@ -765,8 +765,8 @@ public class CFIntLicenseTableObj
 					return( 1 );
 				}
 				else {
-					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
-					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ lhsPKey = lhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -778,8 +778,8 @@ public class CFIntLicenseTableObj
 	}
 
 	@Override
-	public ICFIntLicenseObj readLicenseByUNameIdx( ICFLibKeyHash256 TopDomainId,
-		String Name )
+	public ICFIntLicenseObj readLicenseByUNameIdx( $implIJavaAtomType$ TopDomainId,
+		$implIJavaAtomType$ Name )
 	{
 		return( readLicenseByUNameIdx( TopDomainId,
 			Name,
@@ -787,8 +787,8 @@ public class CFIntLicenseTableObj
 	}
 
 	@Override
-	public ICFIntLicenseObj readLicenseByUNameIdx( ICFLibKeyHash256 TopDomainId,
-		String Name, boolean forceRead )
+	public ICFIntLicenseObj readLicenseByUNameIdx( $implIJavaAtomType$ TopDomainId,
+		$implIJavaAtomType$ Name, boolean forceRead )
 	{
 		if( indexByUNameIdx == null ) {
 			indexByUNameIdx = new HashMap< ICFIntLicenseByUNameIdxKey,
@@ -816,7 +816,7 @@ public class CFIntLicenseTableObj
 	}
 
 	@Override
-	public ICFIntLicenseObj readCachedLicenseByIdIdx( ICFLibKeyHash256 Id )
+	public ICFIntLicenseObj readCachedLicenseByIdIdx( $implIJavaAtomType$ Id )
 	{
 		ICFIntLicenseObj obj = null;
 		obj = readCachedLicense( Id );
@@ -824,14 +824,14 @@ public class CFIntLicenseTableObj
 	}
 
 	@Override
-	public List<ICFIntLicenseObj> readCachedLicenseByLicnTenantIdx( ICFLibKeyHash256 TenantId )
+	public List<ICFIntLicenseObj> readCachedLicenseByLicnTenantIdx( $implIJavaAtomType$ TenantId )
 	{
 		final String S_ProcName = "readCachedLicenseByLicnTenantIdx";
 		ICFIntLicenseByLicnTenantIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryLicense().newByLicnTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
 		ArrayList<ICFIntLicenseObj> arrayList = new ArrayList<ICFIntLicenseObj>();
 		if( indexByLicnTenantIdx != null ) {
-			Map<ICFLibKeyHash256, ICFIntLicenseObj> dict;
+			Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFIntLicenseObj> dict;
 			if( indexByLicnTenantIdx.containsKey( key ) ) {
 				dict = indexByLicnTenantIdx.get( key );
 				int len = dict.size();
@@ -889,8 +889,8 @@ public class CFIntLicenseTableObj
 					return( 1 );
 				}
 				else {
-					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
-					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ lhsPKey = lhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -901,14 +901,14 @@ public class CFIntLicenseTableObj
 	}
 
 	@Override
-	public List<ICFIntLicenseObj> readCachedLicenseByDomainIdx( ICFLibKeyHash256 TopDomainId )
+	public List<ICFIntLicenseObj> readCachedLicenseByDomainIdx( $implIJavaAtomType$ TopDomainId )
 	{
 		final String S_ProcName = "readCachedLicenseByDomainIdx";
 		ICFIntLicenseByDomainIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryLicense().newByDomainIdxKey();
 		key.setRequiredTopDomainId( TopDomainId );
 		ArrayList<ICFIntLicenseObj> arrayList = new ArrayList<ICFIntLicenseObj>();
 		if( indexByDomainIdx != null ) {
-			Map<ICFLibKeyHash256, ICFIntLicenseObj> dict;
+			Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFIntLicenseObj> dict;
 			if( indexByDomainIdx.containsKey( key ) ) {
 				dict = indexByDomainIdx.get( key );
 				int len = dict.size();
@@ -966,8 +966,8 @@ public class CFIntLicenseTableObj
 					return( 1 );
 				}
 				else {
-					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
-					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ lhsPKey = lhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -978,8 +978,8 @@ public class CFIntLicenseTableObj
 	}
 
 	@Override
-	public ICFIntLicenseObj readCachedLicenseByUNameIdx( ICFLibKeyHash256 TopDomainId,
-		String Name )
+	public ICFIntLicenseObj readCachedLicenseByUNameIdx( $implIJavaAtomType$ TopDomainId,
+		$implIJavaAtomType$ Name )
 	{
 		ICFIntLicenseObj obj = null;
 		ICFIntLicenseByUNameIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryLicense().newByUNameIdxKey();
@@ -1016,7 +1016,7 @@ public class CFIntLicenseTableObj
 	}
 
 	@Override
-	public void deepDisposeLicenseByIdIdx( ICFLibKeyHash256 Id )
+	public void deepDisposeLicenseByIdIdx( $implIJavaAtomType$ Id )
 	{
 		ICFIntLicenseObj obj = readCachedLicenseByIdIdx( Id );
 		if( obj != null ) {
@@ -1025,7 +1025,7 @@ public class CFIntLicenseTableObj
 	}
 
 	@Override
-	public void deepDisposeLicenseByLicnTenantIdx( ICFLibKeyHash256 TenantId )
+	public void deepDisposeLicenseByLicnTenantIdx( $implIJavaAtomType$ TenantId )
 	{
 		final String S_ProcName = "deepDisposeLicenseByLicnTenantIdx";
 		ICFIntLicenseObj obj;
@@ -1042,7 +1042,7 @@ public class CFIntLicenseTableObj
 	}
 
 	@Override
-	public void deepDisposeLicenseByDomainIdx( ICFLibKeyHash256 TopDomainId )
+	public void deepDisposeLicenseByDomainIdx( $implIJavaAtomType$ TopDomainId )
 	{
 		final String S_ProcName = "deepDisposeLicenseByDomainIdx";
 		ICFIntLicenseObj obj;
@@ -1059,8 +1059,8 @@ public class CFIntLicenseTableObj
 	}
 
 	@Override
-	public void deepDisposeLicenseByUNameIdx( ICFLibKeyHash256 TopDomainId,
-		String Name )
+	public void deepDisposeLicenseByUNameIdx( $implIJavaAtomType$ TopDomainId,
+		$implIJavaAtomType$ Name )
 	{
 		ICFIntLicenseObj obj = readCachedLicenseByUNameIdx( TopDomainId,
 				Name );
@@ -1088,7 +1088,7 @@ public class CFIntLicenseTableObj
 	}
 
 	@Override
-	public void deleteLicenseByIdIdx( ICFLibKeyHash256 Id )
+	public void deleteLicenseByIdIdx( $implIJavaAtomType$ Id )
 	{
 		ICFIntLicenseObj obj = readLicense(Id);
 		if( obj != null ) {
@@ -1118,16 +1118,16 @@ public class CFIntLicenseTableObj
 	}
 
 	@Override
-	public void deleteLicenseByLicnTenantIdx( ICFLibKeyHash256 TenantId )
+	public void deleteLicenseByLicnTenantIdx( $implIJavaAtomType$ TenantId )
 	{
 		ICFIntLicenseByLicnTenantIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryLicense().newByLicnTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
 		if( indexByLicnTenantIdx == null ) {
 			indexByLicnTenantIdx = new HashMap< ICFIntLicenseByLicnTenantIdxKey,
-				Map< ICFLibKeyHash256, ICFIntLicenseObj > >();
+				Map< $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFIntLicenseObj > >();
 		}
 		if( indexByLicnTenantIdx.containsKey( key ) ) {
-			Map<ICFLibKeyHash256, ICFIntLicenseObj> dict = indexByLicnTenantIdx.get( key );
+			Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFIntLicenseObj> dict = indexByLicnTenantIdx.get( key );
 			schema.getCFIntBackingStore().getTableLicense().deleteLicenseByLicnTenantIdx( null,
 				TenantId );
 			Iterator<ICFIntLicenseObj> iter = dict.values().iterator();
@@ -1152,16 +1152,16 @@ public class CFIntLicenseTableObj
 	}
 
 	@Override
-	public void deleteLicenseByDomainIdx( ICFLibKeyHash256 TopDomainId )
+	public void deleteLicenseByDomainIdx( $implIJavaAtomType$ TopDomainId )
 	{
 		ICFIntLicenseByDomainIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryLicense().newByDomainIdxKey();
 		key.setRequiredTopDomainId( TopDomainId );
 		if( indexByDomainIdx == null ) {
 			indexByDomainIdx = new HashMap< ICFIntLicenseByDomainIdxKey,
-				Map< ICFLibKeyHash256, ICFIntLicenseObj > >();
+				Map< $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFIntLicenseObj > >();
 		}
 		if( indexByDomainIdx.containsKey( key ) ) {
-			Map<ICFLibKeyHash256, ICFIntLicenseObj> dict = indexByDomainIdx.get( key );
+			Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFIntLicenseObj> dict = indexByDomainIdx.get( key );
 			schema.getCFIntBackingStore().getTableLicense().deleteLicenseByDomainIdx( null,
 				TopDomainId );
 			Iterator<ICFIntLicenseObj> iter = dict.values().iterator();
@@ -1186,8 +1186,8 @@ public class CFIntLicenseTableObj
 	}
 
 	@Override
-	public void deleteLicenseByUNameIdx( ICFLibKeyHash256 TopDomainId,
-		String Name )
+	public void deleteLicenseByUNameIdx( $implIJavaAtomType$ TopDomainId,
+		$implIJavaAtomType$ Name )
 	{
 		if( indexByUNameIdx == null ) {
 			indexByUNameIdx = new HashMap< ICFIntLicenseByUNameIdxKey,

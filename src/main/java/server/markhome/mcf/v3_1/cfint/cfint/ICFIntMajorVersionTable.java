@@ -88,7 +88,7 @@ public interface ICFIntMajorVersionTable
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	void deleteMajorVersionByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ argKey );
 	/**
 	 *	Delete the MajorVersion instances identified by the key TenantIdx.
 	 *
@@ -97,7 +97,7 @@ public interface ICFIntMajorVersionTable
 	 *	@param	TenantId	The MajorVersion key attribute of the instance generating the id.
 	 */
 	void deleteMajorVersionByTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTenantId );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argTenantId );
 
 	/**
 	 *	Delete the MajorVersion instances identified by the key TenantIdx.
@@ -116,7 +116,7 @@ public interface ICFIntMajorVersionTable
 	 *	@param	SubProjectId	The MajorVersion key attribute of the instance generating the id.
 	 */
 	void deleteMajorVersionBySubProjectIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argSubProjectId );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argSubProjectId );
 
 	/**
 	 *	Delete the MajorVersion instances identified by the key SubProjectIdx.
@@ -137,8 +137,8 @@ public interface ICFIntMajorVersionTable
 	 *	@param	Name	The MajorVersion key attribute of the instance generating the id.
 	 */
 	void deleteMajorVersionByNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argSubProjectId,
-		String argName );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argSubProjectId,
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argName );
 
 	/**
 	 *	Delete the MajorVersion instances identified by the key NameIdx.
@@ -162,7 +162,7 @@ public interface ICFIntMajorVersionTable
 	 *		no such existing key value.
 	 */
 	ICFIntMajorVersion readDerived( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Lock the derived MajorVersion record instance by primary key.
@@ -175,7 +175,7 @@ public interface ICFIntMajorVersionTable
 	 *		no such existing key value.
 	 */
 	ICFIntMajorVersion lockDerived( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Read all MajorVersion instances.
@@ -197,7 +197,7 @@ public interface ICFIntMajorVersionTable
 	 *		no such existing key value.
 	 */
 	ICFIntMajorVersion readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		$implIJavaAtomType$ Id );
 
 	/**
 	 *	Read an array of the derived MajorVersion record instances identified by the duplicate key TenantIdx.
@@ -209,7 +209,7 @@ public interface ICFIntMajorVersionTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFIntMajorVersion[] readDerivedByTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TenantId );
+		$implIJavaAtomType$ TenantId );
 
 	/**
 	 *	Read an array of the derived MajorVersion record instances identified by the duplicate key SubProjectIdx.
@@ -221,7 +221,7 @@ public interface ICFIntMajorVersionTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFIntMajorVersion[] readDerivedBySubProjectIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SubProjectId );
+		$implIJavaAtomType$ SubProjectId );
 
 	/**
 	 *	Read the derived MajorVersion record instance identified by the unique key NameIdx.
@@ -236,8 +236,8 @@ public interface ICFIntMajorVersionTable
 	 *		no such existing key value.
 	 */
 	ICFIntMajorVersion readDerivedByNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SubProjectId,
-		String Name );
+		$implIJavaAtomType$ SubProjectId,
+		$implIJavaAtomType$ Name );
 
 	/**
 	 *	Read the specific MajorVersion record instance identified by the primary key.
@@ -252,7 +252,7 @@ public interface ICFIntMajorVersionTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFIntMajorVersion readRec( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Lock the specific MajorVersion record instance identified by the primary key.
@@ -267,7 +267,7 @@ public interface ICFIntMajorVersionTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFIntMajorVersion lockRec( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Read all the specific MajorVersion record instances.
@@ -291,7 +291,7 @@ public interface ICFIntMajorVersionTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFIntMajorVersion readRecByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		$implIJavaAtomType$ Id );
 
 	/**
 	 *	Read an array of the specific MajorVersion record instances identified by the duplicate key TenantIdx.
@@ -305,7 +305,7 @@ public interface ICFIntMajorVersionTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFIntMajorVersion[] readRecByTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TenantId );
+		$implIJavaAtomType$ TenantId );
 
 	/**
 	 *	Read an array of the specific MajorVersion record instances identified by the duplicate key SubProjectIdx.
@@ -319,7 +319,7 @@ public interface ICFIntMajorVersionTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFIntMajorVersion[] readRecBySubProjectIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SubProjectId );
+		$implIJavaAtomType$ SubProjectId );
 
 	/**
 	 *	Read the specific MajorVersion record instance identified by the unique key NameIdx.
@@ -336,6 +336,6 @@ public interface ICFIntMajorVersionTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFIntMajorVersion readRecByNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SubProjectId,
-		String Name );
+		$implIJavaAtomType$ SubProjectId,
+		$implIJavaAtomType$ Name );
 }

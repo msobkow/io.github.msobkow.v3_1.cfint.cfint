@@ -227,25 +227,25 @@ public interface ICFIntISOCtryObj
 	List<ICFSecISOCtryLangObj> getOptionalComponentsLang( boolean forceRead );
 
 	/**
-	 *	Get the required short attribute ISOCtryId.
+	 *	Get the required $implIJavaAtomType$ attribute ISOCtryId.
 	 *
-	 *	@return	The required short attribute ISOCtryId.
+	 *	@return	The required $implIJavaAtomType$ attribute ISOCtryId.
 	 */
-	short getRequiredISOCtryId();
+	$implIJavaAtomType$ getRequiredISOCtryId();
 
 	/**
-	 *	Get the required String attribute ISOCode.
+	 *	Get the required $implIJavaAtomType$ attribute ISOCode.
 	 *
-	 *	@return	The required String attribute ISOCode.
+	 *	@return	The required $implIJavaAtomType$ attribute ISOCode.
 	 */
-	String getRequiredISOCode();
+	$implIJavaAtomType$ getRequiredISOCode();
 
 	/**
-	 *	Get the required String attribute Name.
+	 *	Get the required $implIJavaAtomType$ attribute Name.
 	 *
-	 *	@return	The required String attribute Name.
+	 *	@return	The required $implIJavaAtomType$ attribute Name.
 	 */
-	String getRequiredName();
+	$implIJavaAtomType$ getRequiredName();
 
 	/**
 	 *	Internal use only.

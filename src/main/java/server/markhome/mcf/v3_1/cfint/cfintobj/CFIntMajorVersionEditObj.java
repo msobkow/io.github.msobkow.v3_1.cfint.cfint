@@ -202,7 +202,7 @@ public class CFIntMajorVersionEditObj
 				if (nextName == null) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 				}
-				String natNextName = nextName;
+				$implIJavaAtomType$ natNextName = nextName;
 				subObj = ((ICFIntSchemaObj)getSchema()).getMinorVersionTableObj().readMinorVersionByNameIdx( getRequiredId(),
 				natNextName, false );
 			}
@@ -393,12 +393,12 @@ public class CFIntMajorVersionEditObj
 	}
 
 	@Override
-	public ICFLibKeyHash256 getPKey() {
+	public $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ getPKey() {
 		return( orig.getPKey() );
 	}
 
 	@Override
-	public void setPKey( ICFLibKeyHash256 value ) {
+	public void setPKey( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ value ) {
 		orig.setPKey( value );
 		copyPKeyToRec();
 	}
@@ -414,12 +414,12 @@ public class CFIntMajorVersionEditObj
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredId() {
+	public $implIJavaAtomType$ getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredId(ICFLibKeyHash256 value) {
+	public void setRequiredId($implIJavaAtomType$ value) {
 		if (getPKey() != value) {
 			setPKey(value);
 			requiredOwnerTenant = null;
@@ -429,34 +429,34 @@ public class CFIntMajorVersionEditObj
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredTenantId() {
+	public $implIJavaAtomType$ getRequiredTenantId() {
 		return( getMajorVersionRec().getRequiredTenantId() );
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredSubProjectId() {
+	public $implIJavaAtomType$ getRequiredSubProjectId() {
 		return( getMajorVersionRec().getRequiredSubProjectId() );
 	}
 
 	@Override
-	public String getRequiredName() {
+	public $implIJavaAtomType$ getRequiredName() {
 		return( getMajorVersionRec().getRequiredName() );
 	}
 
 	@Override
-	public void setRequiredName( String value ) {
+	public void setRequiredName( $implIJavaAtomType$ value ) {
 		if( getMajorVersionRec().getRequiredName() != value ) {
 			getMajorVersionRec().setRequiredName( value );
 		}
 	}
 
 	@Override
-	public String getOptionalDescription() {
+	public $implIJavaAtomType$ getOptionalDescription() {
 		return( getMajorVersionRec().getOptionalDescription() );
 	}
 
 	@Override
-	public void setOptionalDescription( String value ) {
+	public void setOptionalDescription( $implIJavaAtomType$ value ) {
 		if( getMajorVersionRec().getOptionalDescription() != value ) {
 			getMajorVersionRec().setOptionalDescription( value );
 		}

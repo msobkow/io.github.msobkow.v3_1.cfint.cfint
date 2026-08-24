@@ -76,22 +76,22 @@ public interface ICFIntMinorVersion
 
 	public void setUpdatedAt( LocalDateTime value );
 
-	public ICFLibKeyHash256 getPKey();
-	public void setPKey(ICFLibKeyHash256 requiredId);
-	public ICFLibKeyHash256 getRequiredId();
-	public void setRequiredId( ICFLibKeyHash256 value );
+	public $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ getPKey();
+	public void setPKey($iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ requiredId);
+	public $implIJavaAtomType$ getRequiredId();
+	public void setRequiredId( $implIJavaAtomType$ value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
 	public ICFSecTenant getRequiredOwnerTenant();
 
-	public void setRequiredOwnerTenant(ICFLibKeyHash256 argTenantId);
+	public void setRequiredOwnerTenant($implIJavaAtomType$ argTenantId);
 
 	public void setRequiredOwnerTenant(ICFSecPubTenant argObj);
 
 	public ICFIntMajorVersion getRequiredContainerParentMajVer();
 
-	public void setRequiredContainerParentMajVer(ICFLibKeyHash256 argMajorVersionId);
+	public void setRequiredContainerParentMajVer($implIJavaAtomType$ argMajorVersionId);
 
 	public void setRequiredContainerParentMajVer(ICFIntMajorVersion argObj);
 
@@ -99,14 +99,14 @@ public interface ICFIntMinorVersion
 
 	public void setRequiredContainerParentMajVer(ICFIntPubMajorVersion argObj);
 
-	public ICFLibKeyHash256 getRequiredTenantId();
-	public void setRequiredTenantId( ICFLibKeyHash256 value );
-	public ICFLibKeyHash256 getRequiredMajorVersionId();
-	public void setRequiredMajorVersionId( ICFLibKeyHash256 value );
-	public String getRequiredName();
-	public void setRequiredName( String value );
-	public String getOptionalDescription();
-	public void setOptionalDescription( String value );
+	public $implIJavaAtomType$ getRequiredTenantId();
+	public void setRequiredTenantId( $implIJavaAtomType$ value );
+	public $implIJavaAtomType$ getRequiredMajorVersionId();
+	public void setRequiredMajorVersionId( $implIJavaAtomType$ value );
+	public $implIJavaAtomType$ getRequiredName();
+	public void setRequiredName( $implIJavaAtomType$ value );
+	public $implIJavaAtomType$ getOptionalDescription();
+	public void setOptionalDescription( $implIJavaAtomType$ value );
 	public boolean equals( Object obj );
 
 	public int hashCode();

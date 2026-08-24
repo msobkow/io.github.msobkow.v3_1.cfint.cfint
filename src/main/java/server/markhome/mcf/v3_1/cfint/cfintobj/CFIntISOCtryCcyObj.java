@@ -368,12 +368,12 @@ public class CFIntISOCtryCcyObj
 	}
 
 	@Override
-	public short getRequiredISOCtryId() {
+	public $implIJavaAtomType$ getRequiredISOCtryId() {
 		return( getPKey().getRequiredISOCtryId() );
 	}
 
 	@Override
-	public short getRequiredISOCcyId() {
+	public $implIJavaAtomType$ getRequiredISOCcyId() {
 		return( getPKey().getRequiredISOCcyId() );
 	}
 

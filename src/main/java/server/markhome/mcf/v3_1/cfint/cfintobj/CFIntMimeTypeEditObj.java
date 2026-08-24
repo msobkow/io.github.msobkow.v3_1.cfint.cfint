@@ -369,12 +369,12 @@ public class CFIntMimeTypeEditObj
 	}
 
 	@Override
-	public Integer getPKey() {
+	public $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ getPKey() {
 		return( orig.getPKey() );
 	}
 
 	@Override
-	public void setPKey( Integer value ) {
+	public void setPKey( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ value ) {
 		orig.setPKey( value );
 		copyPKeyToRec();
 	}
@@ -390,36 +390,36 @@ public class CFIntMimeTypeEditObj
 	}
 
 	@Override
-	public int getRequiredMimeTypeId() {
+	public $implIJavaAtomType$ getRequiredMimeTypeId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredMimeTypeId(int value) {
+	public void setRequiredMimeTypeId($implIJavaAtomType$ value) {
 		if (getPKey() != value) {
 			setPKey(value);
 		}
 	}
 
 	@Override
-	public String getRequiredName() {
+	public $implIJavaAtomType$ getRequiredName() {
 		return( getMimeTypeRec().getRequiredName() );
 	}
 
 	@Override
-	public void setRequiredName( String value ) {
+	public void setRequiredName( $implIJavaAtomType$ value ) {
 		if( getMimeTypeRec().getRequiredName() != value ) {
 			getMimeTypeRec().setRequiredName( value );
 		}
 	}
 
 	@Override
-	public String getOptionalFileTypes() {
+	public $implIJavaAtomType$ getOptionalFileTypes() {
 		return( getMimeTypeRec().getOptionalFileTypes() );
 	}
 
 	@Override
-	public void setOptionalFileTypes( String value ) {
+	public void setOptionalFileTypes( $implIJavaAtomType$ value ) {
 		if( getMimeTypeRec().getOptionalFileTypes() != value ) {
 			getMimeTypeRec().setOptionalFileTypes( value );
 		}

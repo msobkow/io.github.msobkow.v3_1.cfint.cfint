@@ -59,8 +59,8 @@ public class CFIntBuffMimeTypeH
 	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFIntPubSecUser.S_INIT_UPDATED_BY);
 	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFIntPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
-	protected String requiredName;
-	protected String optionalFileTypes;
+	protected $implIJavaAtomType$ requiredName;
+	protected $implIJavaAtomType$ optionalFileTypes;
 
     public CFIntBuffMimeTypeH() {
             // The primary key member attributes are initialized on construction
@@ -194,12 +194,12 @@ public class CFIntBuffMimeTypeH
     }
 
 	@Override
-	public int getRequiredMimeTypeId() {
+	public $implIJavaAtomType$ getRequiredMimeTypeId() {
 		return(getPKey().getRequiredMimeTypeId());
 	}
 
 	@Override
-	public void setRequiredMimeTypeId( int value ) {
+	public void setRequiredMimeTypeId( $implIJavaAtomType$ value ) {
 		if( value < ICFIntPubMimeType.MIMETYPEID_MIN_VALUE ) {
 			throw new CFLibArgumentUnderflowException( getClass(),
 				"setRequiredMimeTypeId",
@@ -212,11 +212,11 @@ public class CFIntBuffMimeTypeH
 	}
 
 	@Override
-	public String getRequiredName() {
+	public $implIJavaAtomType$ getRequiredName() {
 		return(requiredName);
 	}
 
-	public void setRequiredName( String value ) {
+	public void setRequiredName( $implIJavaAtomType$ value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredName",
@@ -235,11 +235,11 @@ public class CFIntBuffMimeTypeH
 	}
 
 	@Override
-	public String getOptionalFileTypes() {
+	public $implIJavaAtomType$ getOptionalFileTypes() {
 		return(optionalFileTypes);
 	}
 
-	public void setOptionalFileTypes( String value ) {
+	public void setOptionalFileTypes( $implIJavaAtomType$ value ) {
 		if( value != null && value.length() > 128 ) {
 			throw new CFLibArgumentOverflowException( getClass(),
 				"setOptionalFileTypes",

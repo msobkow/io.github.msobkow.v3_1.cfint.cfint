@@ -45,20 +45,20 @@ public class CFIntISOTZoneTableObj
 	implements ICFIntISOTZoneTableObj
 {
 	protected ICFIntSchemaObj schema;
-	private Map<Short, ICFSecISOTZoneObj> members;
-	private Map<Short, ICFSecISOTZoneObj> allISOTZone;
+	private Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecISOTZoneObj> members;
+	private Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecISOTZoneObj> allISOTZone;
 	private Map< ICFSecISOTZoneByOffsetIdxKey,
-		Map<Short, ICFSecISOTZoneObj > > indexByOffsetIdx;
+		Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecISOTZoneObj > > indexByOffsetIdx;
 	private Map< ICFSecISOTZoneByUTZNameIdxKey,
 		ICFSecISOTZoneObj > indexByUTZNameIdx;
 	private Map< ICFSecISOTZoneByIso8601IdxKey,
-		Map<Short, ICFSecISOTZoneObj > > indexByIso8601Idx;
+		Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecISOTZoneObj > > indexByIso8601Idx;
 	public static String TABLE_NAME = "ISOTZone";
 	public static String TABLE_DBNAME = "isotz";
 
 	public CFIntISOTZoneTableObj() {
 		schema = null;
-		members = new HashMap<Short, ICFSecISOTZoneObj>();
+		members = new HashMap<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecISOTZoneObj>();
 		allISOTZone = null;
 		indexByOffsetIdx = null;
 		indexByUTZNameIdx = null;
@@ -67,7 +67,7 @@ public class CFIntISOTZoneTableObj
 
 	public CFIntISOTZoneTableObj( ICFSecSchemaObj argSchema ) {
 		schema = (ICFIntSchemaObj)argSchema;
-		members = new HashMap<Short, ICFSecISOTZoneObj>();
+		members = new HashMap<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecISOTZoneObj>();
 		allISOTZone = null;
 		indexByOffsetIdx = null;
 		indexByUTZNameIdx = null;
@@ -180,7 +180,7 @@ public class CFIntISOTZoneTableObj
 	@Override
 	public ICFSecISOTZoneObj realiseISOTZone( ICFSecISOTZoneObj Obj ) {
 		ICFSecISOTZoneObj obj = Obj;
-		Short pkey = obj.getPKey();
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey = obj.getPKey();
 		ICFSecISOTZoneObj keepObj = null;
 		if( members.containsKey( pkey ) && ( null != members.get( pkey ) ) ) {
 			ICFSecISOTZoneObj existingObj = members.get( pkey );
@@ -198,7 +198,7 @@ public class CFIntISOTZoneTableObj
 					schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOTZone().newByOffsetIdxKey();
 				keyOffsetIdx.setRequiredTZHourOffset( keepObj.getRequiredTZHourOffset() );
 				keyOffsetIdx.setRequiredTZMinOffset( keepObj.getRequiredTZMinOffset() );
-				Map<Short, ICFSecISOTZoneObj > mapOffsetIdx = indexByOffsetIdx.get( keyOffsetIdx );
+				Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecISOTZoneObj > mapOffsetIdx = indexByOffsetIdx.get( keyOffsetIdx );
 				if( mapOffsetIdx != null ) {
 					mapOffsetIdx.remove( keepObj.getPKey() );
 					if( mapOffsetIdx.size() <= 0 ) {
@@ -218,7 +218,7 @@ public class CFIntISOTZoneTableObj
 				ICFSecISOTZoneByIso8601IdxKey keyIso8601Idx =
 					schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOTZone().newByIso8601IdxKey();
 				keyIso8601Idx.setRequiredIso8601( keepObj.getRequiredIso8601() );
-				Map<Short, ICFSecISOTZoneObj > mapIso8601Idx = indexByIso8601Idx.get( keyIso8601Idx );
+				Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecISOTZoneObj > mapIso8601Idx = indexByIso8601Idx.get( keyIso8601Idx );
 				if( mapIso8601Idx != null ) {
 					mapIso8601Idx.remove( keepObj.getPKey() );
 					if( mapIso8601Idx.size() <= 0 ) {
@@ -235,7 +235,7 @@ public class CFIntISOTZoneTableObj
 					schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOTZone().newByOffsetIdxKey();
 				keyOffsetIdx.setRequiredTZHourOffset( keepObj.getRequiredTZHourOffset() );
 				keyOffsetIdx.setRequiredTZMinOffset( keepObj.getRequiredTZMinOffset() );
-				Map<Short, ICFSecISOTZoneObj > mapOffsetIdx = indexByOffsetIdx.get( keyOffsetIdx );
+				Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecISOTZoneObj > mapOffsetIdx = indexByOffsetIdx.get( keyOffsetIdx );
 				if( mapOffsetIdx != null ) {
 					mapOffsetIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -252,7 +252,7 @@ public class CFIntISOTZoneTableObj
 				ICFSecISOTZoneByIso8601IdxKey keyIso8601Idx =
 					schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOTZone().newByIso8601IdxKey();
 				keyIso8601Idx.setRequiredIso8601( keepObj.getRequiredIso8601() );
-				Map<Short, ICFSecISOTZoneObj > mapIso8601Idx = indexByIso8601Idx.get( keyIso8601Idx );
+				Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecISOTZoneObj > mapIso8601Idx = indexByIso8601Idx.get( keyIso8601Idx );
 				if( mapIso8601Idx != null ) {
 					mapIso8601Idx.put( keepObj.getPKey(), keepObj );
 				}
@@ -277,7 +277,7 @@ public class CFIntISOTZoneTableObj
 					schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOTZone().newByOffsetIdxKey();
 				keyOffsetIdx.setRequiredTZHourOffset( keepObj.getRequiredTZHourOffset() );
 				keyOffsetIdx.setRequiredTZMinOffset( keepObj.getRequiredTZMinOffset() );
-				Map<Short, ICFSecISOTZoneObj > mapOffsetIdx = indexByOffsetIdx.get( keyOffsetIdx );
+				Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecISOTZoneObj > mapOffsetIdx = indexByOffsetIdx.get( keyOffsetIdx );
 				if( mapOffsetIdx != null ) {
 					mapOffsetIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -294,7 +294,7 @@ public class CFIntISOTZoneTableObj
 				ICFSecISOTZoneByIso8601IdxKey keyIso8601Idx =
 					schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOTZone().newByIso8601IdxKey();
 				keyIso8601Idx.setRequiredIso8601( keepObj.getRequiredIso8601() );
-				Map<Short, ICFSecISOTZoneObj > mapIso8601Idx = indexByIso8601Idx.get( keyIso8601Idx );
+				Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecISOTZoneObj > mapIso8601Idx = indexByIso8601Idx.get( keyIso8601Idx );
 				if( mapIso8601Idx != null ) {
 					mapIso8601Idx.put( keepObj.getPKey(), keepObj );
 				}
@@ -318,12 +318,12 @@ public class CFIntISOTZoneTableObj
 	}
 
 	@Override
-	public ICFSecISOTZoneObj readISOTZone( Short pkey ) {
+	public ICFSecISOTZoneObj readISOTZone( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey ) {
 		return( readISOTZone( pkey, false ) );
 	}
 
 	@Override
-	public ICFSecISOTZoneObj readISOTZone( Short pkey, boolean forceRead ) {
+	public ICFSecISOTZoneObj readISOTZone( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey, boolean forceRead ) {
 		ICFSecISOTZoneObj obj = null;
 		if( ( ! forceRead ) && members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -342,7 +342,7 @@ public class CFIntISOTZoneTableObj
 	}
 
 	@Override
-	public ICFSecISOTZoneObj readCachedISOTZone( Short pkey ) {
+	public ICFSecISOTZoneObj readCachedISOTZone( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey ) {
 		ICFSecISOTZoneObj obj = null;
 		if( members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -358,7 +358,7 @@ public class CFIntISOTZoneTableObj
 		if( obj == null ) {
 			return;
 		}
-		Short pkey = obj.getPKey();
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey = obj.getPKey();
 		ICFSecISOTZoneObj existing = readCachedISOTZone( pkey );
 		if( existing == null ) {
 			return;
@@ -401,7 +401,7 @@ public class CFIntISOTZoneTableObj
 
 	}
 	@Override
-	public void deepDisposeISOTZone( Short pkey ) {
+	public void deepDisposeISOTZone( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey ) {
 		ICFSecISOTZoneObj obj = readCachedISOTZone( pkey );
 		if( obj != null ) {
 			obj.forget();
@@ -409,7 +409,7 @@ public class CFIntISOTZoneTableObj
 	}
 
 	@Override
-	public ICFSecISOTZoneObj lockISOTZone( Short pkey ) {
+	public ICFSecISOTZoneObj lockISOTZone( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey ) {
 		ICFSecISOTZoneObj locked = null;
 		ICFSecISOTZone lockRec = schema.getCFSecBackingStore().getTableISOTZone().lockDerived( null, pkey );
 		if( lockRec != null ) {
@@ -433,7 +433,7 @@ public class CFIntISOTZoneTableObj
 	public List<ICFSecISOTZoneObj> readAllISOTZone( boolean forceRead ) {
 		final String S_ProcName = "readAllISOTZone";
 		if( ( allISOTZone == null ) || forceRead ) {
-			Map<Short, ICFSecISOTZoneObj> map = new HashMap<Short,ICFSecISOTZoneObj>();
+			Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecISOTZoneObj> map = new HashMap<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$,ICFSecISOTZoneObj>();
 			allISOTZone = map;
 			ICFSecISOTZone[] recList = schema.getCFSecBackingStore().getTableISOTZone().readAllDerived( null );
 			ICFSecISOTZone rec;
@@ -489,8 +489,8 @@ public class CFIntISOTZoneTableObj
 					return( 1 );
 				}
 				else {
-					Short lhsPKey = lhs.getPKey();
-					Short rhsPKey = rhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ lhsPKey = lhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -547,8 +547,8 @@ public class CFIntISOTZoneTableObj
 					return( 1 );
 				}
 				else {
-					Short lhsPKey = lhs.getPKey();
-					Short rhsPKey = rhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ lhsPKey = lhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -559,22 +559,22 @@ public class CFIntISOTZoneTableObj
 	}
 
 	@Override
-	public ICFSecISOTZoneObj readISOTZoneByIdIdx( short ISOTZoneId )
+	public ICFSecISOTZoneObj readISOTZoneByIdIdx( $implIJavaAtomType$ ISOTZoneId )
 	{
 		return( readISOTZoneByIdIdx( ISOTZoneId,
 			false ) );
 	}
 
 	@Override
-	public ICFSecISOTZoneObj readISOTZoneByIdIdx( short ISOTZoneId, boolean forceRead )
+	public ICFSecISOTZoneObj readISOTZoneByIdIdx( $implIJavaAtomType$ ISOTZoneId, boolean forceRead )
 	{
 		ICFSecISOTZoneObj obj = readISOTZone( ISOTZoneId, forceRead );
 		return( obj );
 	}
 
 	@Override
-	public List<ICFSecISOTZoneObj> readISOTZoneByOffsetIdx( short TZHourOffset,
-		short TZMinOffset )
+	public List<ICFSecISOTZoneObj> readISOTZoneByOffsetIdx( $implIJavaAtomType$ TZHourOffset,
+		$implIJavaAtomType$ TZMinOffset )
 	{
 		return( readISOTZoneByOffsetIdx( TZHourOffset,
 			TZMinOffset,
@@ -582,24 +582,24 @@ public class CFIntISOTZoneTableObj
 	}
 
 	@Override
-	public List<ICFSecISOTZoneObj> readISOTZoneByOffsetIdx( short TZHourOffset,
-		short TZMinOffset,
+	public List<ICFSecISOTZoneObj> readISOTZoneByOffsetIdx( $implIJavaAtomType$ TZHourOffset,
+		$implIJavaAtomType$ TZMinOffset,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readISOTZoneByOffsetIdx";
 		ICFSecISOTZoneByOffsetIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOTZone().newByOffsetIdxKey();
 		key.setRequiredTZHourOffset( TZHourOffset );
 		key.setRequiredTZMinOffset( TZMinOffset );
-		Map<Short, ICFSecISOTZoneObj> dict;
+		Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecISOTZoneObj> dict;
 		if( indexByOffsetIdx == null ) {
 			indexByOffsetIdx = new HashMap< ICFSecISOTZoneByOffsetIdxKey,
-				Map< Short, ICFSecISOTZoneObj > >();
+				Map< $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecISOTZoneObj > >();
 		}
 		if( ( ! forceRead ) && indexByOffsetIdx.containsKey( key ) ) {
 			dict = indexByOffsetIdx.get( key );
 		}
 		else {
-			dict = new HashMap<Short, ICFSecISOTZoneObj>();
+			dict = new HashMap<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecISOTZoneObj>();
 			ICFSecISOTZoneObj obj;
 			ICFSecISOTZone[] recList = schema.getCFSecBackingStore().getTableISOTZone().readDerivedByOffsetIdx( null,
 				TZHourOffset,
@@ -658,8 +658,8 @@ public class CFIntISOTZoneTableObj
 					return( 1 );
 				}
 				else {
-					Short lhsPKey = lhs.getPKey();
-					Short rhsPKey = rhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ lhsPKey = lhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -671,14 +671,14 @@ public class CFIntISOTZoneTableObj
 	}
 
 	@Override
-	public ICFSecISOTZoneObj readISOTZoneByUTZNameIdx( String TZName )
+	public ICFSecISOTZoneObj readISOTZoneByUTZNameIdx( $implIJavaAtomType$ TZName )
 	{
 		return( readISOTZoneByUTZNameIdx( TZName,
 			false ) );
 	}
 
 	@Override
-	public ICFSecISOTZoneObj readISOTZoneByUTZNameIdx( String TZName, boolean forceRead )
+	public ICFSecISOTZoneObj readISOTZoneByUTZNameIdx( $implIJavaAtomType$ TZName, boolean forceRead )
 	{
 		if( indexByUTZNameIdx == null ) {
 			indexByUTZNameIdx = new HashMap< ICFSecISOTZoneByUTZNameIdxKey,
@@ -704,29 +704,29 @@ public class CFIntISOTZoneTableObj
 	}
 
 	@Override
-	public List<ICFSecISOTZoneObj> readISOTZoneByIso8601Idx( String Iso8601 )
+	public List<ICFSecISOTZoneObj> readISOTZoneByIso8601Idx( $implIJavaAtomType$ Iso8601 )
 	{
 		return( readISOTZoneByIso8601Idx( Iso8601,
 			false ) );
 	}
 
 	@Override
-	public List<ICFSecISOTZoneObj> readISOTZoneByIso8601Idx( String Iso8601,
+	public List<ICFSecISOTZoneObj> readISOTZoneByIso8601Idx( $implIJavaAtomType$ Iso8601,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readISOTZoneByIso8601Idx";
 		ICFSecISOTZoneByIso8601IdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOTZone().newByIso8601IdxKey();
 		key.setRequiredIso8601( Iso8601 );
-		Map<Short, ICFSecISOTZoneObj> dict;
+		Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecISOTZoneObj> dict;
 		if( indexByIso8601Idx == null ) {
 			indexByIso8601Idx = new HashMap< ICFSecISOTZoneByIso8601IdxKey,
-				Map< Short, ICFSecISOTZoneObj > >();
+				Map< $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecISOTZoneObj > >();
 		}
 		if( ( ! forceRead ) && indexByIso8601Idx.containsKey( key ) ) {
 			dict = indexByIso8601Idx.get( key );
 		}
 		else {
-			dict = new HashMap<Short, ICFSecISOTZoneObj>();
+			dict = new HashMap<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecISOTZoneObj>();
 			ICFSecISOTZoneObj obj;
 			ICFSecISOTZone[] recList = schema.getCFSecBackingStore().getTableISOTZone().readDerivedByIso8601Idx( null,
 				Iso8601 );
@@ -784,8 +784,8 @@ public class CFIntISOTZoneTableObj
 					return( 1 );
 				}
 				else {
-					Short lhsPKey = lhs.getPKey();
-					Short rhsPKey = rhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ lhsPKey = lhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -797,7 +797,7 @@ public class CFIntISOTZoneTableObj
 	}
 
 	@Override
-	public ICFSecISOTZoneObj readCachedISOTZoneByIdIdx( short ISOTZoneId )
+	public ICFSecISOTZoneObj readCachedISOTZoneByIdIdx( $implIJavaAtomType$ ISOTZoneId )
 	{
 		ICFSecISOTZoneObj obj = null;
 		obj = readCachedISOTZone( ISOTZoneId );
@@ -805,8 +805,8 @@ public class CFIntISOTZoneTableObj
 	}
 
 	@Override
-	public List<ICFSecISOTZoneObj> readCachedISOTZoneByOffsetIdx( short TZHourOffset,
-		short TZMinOffset )
+	public List<ICFSecISOTZoneObj> readCachedISOTZoneByOffsetIdx( $implIJavaAtomType$ TZHourOffset,
+		$implIJavaAtomType$ TZMinOffset )
 	{
 		final String S_ProcName = "readCachedISOTZoneByOffsetIdx";
 		ICFSecISOTZoneByOffsetIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOTZone().newByOffsetIdxKey();
@@ -814,7 +814,7 @@ public class CFIntISOTZoneTableObj
 		key.setRequiredTZMinOffset( TZMinOffset );
 		ArrayList<ICFSecISOTZoneObj> arrayList = new ArrayList<ICFSecISOTZoneObj>();
 		if( indexByOffsetIdx != null ) {
-			Map<Short, ICFSecISOTZoneObj> dict;
+			Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecISOTZoneObj> dict;
 			if( indexByOffsetIdx.containsKey( key ) ) {
 				dict = indexByOffsetIdx.get( key );
 				int len = dict.size();
@@ -872,8 +872,8 @@ public class CFIntISOTZoneTableObj
 					return( 1 );
 				}
 				else {
-					Short lhsPKey = lhs.getPKey();
-					Short rhsPKey = rhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ lhsPKey = lhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -884,7 +884,7 @@ public class CFIntISOTZoneTableObj
 	}
 
 	@Override
-	public ICFSecISOTZoneObj readCachedISOTZoneByUTZNameIdx( String TZName )
+	public ICFSecISOTZoneObj readCachedISOTZoneByUTZNameIdx( $implIJavaAtomType$ TZName )
 	{
 		ICFSecISOTZoneObj obj = null;
 		ICFSecISOTZoneByUTZNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOTZone().newByUTZNameIdxKey();
@@ -920,14 +920,14 @@ public class CFIntISOTZoneTableObj
 	}
 
 	@Override
-	public List<ICFSecISOTZoneObj> readCachedISOTZoneByIso8601Idx( String Iso8601 )
+	public List<ICFSecISOTZoneObj> readCachedISOTZoneByIso8601Idx( $implIJavaAtomType$ Iso8601 )
 	{
 		final String S_ProcName = "readCachedISOTZoneByIso8601Idx";
 		ICFSecISOTZoneByIso8601IdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOTZone().newByIso8601IdxKey();
 		key.setRequiredIso8601( Iso8601 );
 		ArrayList<ICFSecISOTZoneObj> arrayList = new ArrayList<ICFSecISOTZoneObj>();
 		if( indexByIso8601Idx != null ) {
-			Map<Short, ICFSecISOTZoneObj> dict;
+			Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecISOTZoneObj> dict;
 			if( indexByIso8601Idx.containsKey( key ) ) {
 				dict = indexByIso8601Idx.get( key );
 				int len = dict.size();
@@ -985,8 +985,8 @@ public class CFIntISOTZoneTableObj
 					return( 1 );
 				}
 				else {
-					Short lhsPKey = lhs.getPKey();
-					Short rhsPKey = rhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ lhsPKey = lhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -997,7 +997,7 @@ public class CFIntISOTZoneTableObj
 	}
 
 	@Override
-	public void deepDisposeISOTZoneByIdIdx( short ISOTZoneId )
+	public void deepDisposeISOTZoneByIdIdx( $implIJavaAtomType$ ISOTZoneId )
 	{
 		ICFSecISOTZoneObj obj = readCachedISOTZoneByIdIdx( ISOTZoneId );
 		if( obj != null ) {
@@ -1006,8 +1006,8 @@ public class CFIntISOTZoneTableObj
 	}
 
 	@Override
-	public void deepDisposeISOTZoneByOffsetIdx( short TZHourOffset,
-		short TZMinOffset )
+	public void deepDisposeISOTZoneByOffsetIdx( $implIJavaAtomType$ TZHourOffset,
+		$implIJavaAtomType$ TZMinOffset )
 	{
 		final String S_ProcName = "deepDisposeISOTZoneByOffsetIdx";
 		ICFSecISOTZoneObj obj;
@@ -1025,7 +1025,7 @@ public class CFIntISOTZoneTableObj
 	}
 
 	@Override
-	public void deepDisposeISOTZoneByUTZNameIdx( String TZName )
+	public void deepDisposeISOTZoneByUTZNameIdx( $implIJavaAtomType$ TZName )
 	{
 		ICFSecISOTZoneObj obj = readCachedISOTZoneByUTZNameIdx( TZName );
 		if( obj != null ) {
@@ -1034,7 +1034,7 @@ public class CFIntISOTZoneTableObj
 	}
 
 	@Override
-	public void deepDisposeISOTZoneByIso8601Idx( String Iso8601 )
+	public void deepDisposeISOTZoneByIso8601Idx( $implIJavaAtomType$ Iso8601 )
 	{
 		final String S_ProcName = "deepDisposeISOTZoneByIso8601Idx";
 		ICFSecISOTZoneObj obj;
@@ -1069,7 +1069,7 @@ public class CFIntISOTZoneTableObj
 	}
 
 	@Override
-	public void deleteISOTZoneByIdIdx( short ISOTZoneId )
+	public void deleteISOTZoneByIdIdx( $implIJavaAtomType$ ISOTZoneId )
 	{
 		ICFSecISOTZoneObj obj = readISOTZone(ISOTZoneId);
 		if( obj != null ) {
@@ -1099,18 +1099,18 @@ public class CFIntISOTZoneTableObj
 	}
 
 	@Override
-	public void deleteISOTZoneByOffsetIdx( short TZHourOffset,
-		short TZMinOffset )
+	public void deleteISOTZoneByOffsetIdx( $implIJavaAtomType$ TZHourOffset,
+		$implIJavaAtomType$ TZMinOffset )
 	{
 		ICFSecISOTZoneByOffsetIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOTZone().newByOffsetIdxKey();
 		key.setRequiredTZHourOffset( TZHourOffset );
 		key.setRequiredTZMinOffset( TZMinOffset );
 		if( indexByOffsetIdx == null ) {
 			indexByOffsetIdx = new HashMap< ICFSecISOTZoneByOffsetIdxKey,
-				Map< Short, ICFSecISOTZoneObj > >();
+				Map< $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecISOTZoneObj > >();
 		}
 		if( indexByOffsetIdx.containsKey( key ) ) {
-			Map<Short, ICFSecISOTZoneObj> dict = indexByOffsetIdx.get( key );
+			Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecISOTZoneObj> dict = indexByOffsetIdx.get( key );
 			schema.getCFSecBackingStore().getTableISOTZone().deleteISOTZoneByOffsetIdx( null,
 				TZHourOffset,
 				TZMinOffset );
@@ -1138,7 +1138,7 @@ public class CFIntISOTZoneTableObj
 	}
 
 	@Override
-	public void deleteISOTZoneByUTZNameIdx( String TZName )
+	public void deleteISOTZoneByUTZNameIdx( $implIJavaAtomType$ TZName )
 	{
 		if( indexByUTZNameIdx == null ) {
 			indexByUTZNameIdx = new HashMap< ICFSecISOTZoneByUTZNameIdxKey,
@@ -1161,16 +1161,16 @@ public class CFIntISOTZoneTableObj
 	}
 
 	@Override
-	public void deleteISOTZoneByIso8601Idx( String Iso8601 )
+	public void deleteISOTZoneByIso8601Idx( $implIJavaAtomType$ Iso8601 )
 	{
 		ICFSecISOTZoneByIso8601IdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOTZone().newByIso8601IdxKey();
 		key.setRequiredIso8601( Iso8601 );
 		if( indexByIso8601Idx == null ) {
 			indexByIso8601Idx = new HashMap< ICFSecISOTZoneByIso8601IdxKey,
-				Map< Short, ICFSecISOTZoneObj > >();
+				Map< $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecISOTZoneObj > >();
 		}
 		if( indexByIso8601Idx.containsKey( key ) ) {
-			Map<Short, ICFSecISOTZoneObj> dict = indexByIso8601Idx.get( key );
+			Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFSecISOTZoneObj> dict = indexByIso8601Idx.get( key );
 			schema.getCFSecBackingStore().getTableISOTZone().deleteISOTZoneByIso8601Idx( null,
 				Iso8601 );
 			Iterator<ICFSecISOTZoneObj> iter = dict.values().iterator();

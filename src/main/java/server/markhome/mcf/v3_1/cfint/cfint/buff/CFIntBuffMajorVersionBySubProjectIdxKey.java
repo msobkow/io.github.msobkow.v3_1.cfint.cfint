@@ -52,17 +52,17 @@ import server.markhome.mcf.v3_1.cfint.cfintobj.*;
 public class CFIntBuffMajorVersionBySubProjectIdxKey
 	implements ICFIntMajorVersionBySubProjectIdxKey, Comparable<Object>, Serializable
 {
-	protected ICFLibKeyHash256 requiredSubProjectId;
+	protected $iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ requiredSubProjectId;
 	public CFIntBuffMajorVersionBySubProjectIdxKey() {
 		requiredSubProjectId = CFLibDbKeyHash256.fromHex( ICFIntPubMajorVersion.SUBPROJECTID_INIT_VALUE.toString() );
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredSubProjectId() {
+	public $implIJavaAtomType$ getRequiredSubProjectId() {
 		return(requiredSubProjectId);
 	}
 
-	public void setRequiredSubProjectId( ICFLibKeyHash256 value ) {
+	public void setRequiredSubProjectId( $implIJavaAtomType$ value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredSubProjectId",

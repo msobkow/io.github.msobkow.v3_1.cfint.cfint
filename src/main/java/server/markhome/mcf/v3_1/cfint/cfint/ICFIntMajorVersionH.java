@@ -71,17 +71,17 @@ public interface ICFIntMajorVersionH
 	public CFLibDbKeyHash256 getAuditSessionId();
 	public void setAuditSessionId(CFLibDbKeyHash256 auditSessionId);
 
-	public ICFLibKeyHash256 getRequiredId();
-	public void setRequiredId( ICFLibKeyHash256 requiredId );
+	public $iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ getRequiredId();
+	public void setRequiredId( $iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ requiredId );
 
-	public ICFLibKeyHash256 getRequiredTenantId();
-	public void setRequiredTenantId( ICFLibKeyHash256 value );
-	public ICFLibKeyHash256 getRequiredSubProjectId();
-	public void setRequiredSubProjectId( ICFLibKeyHash256 value );
-	public String getRequiredName();
-	public void setRequiredName( String value );
-	public String getOptionalDescription();
-	public void setOptionalDescription( String value );
+	public $implIJavaAtomType$ getRequiredTenantId();
+	public void setRequiredTenantId( $implIJavaAtomType$ value );
+	public $implIJavaAtomType$ getRequiredSubProjectId();
+	public void setRequiredSubProjectId( $implIJavaAtomType$ value );
+	public $implIJavaAtomType$ getRequiredName();
+	public void setRequiredName( $implIJavaAtomType$ value );
+	public $implIJavaAtomType$ getOptionalDescription();
+	public void setOptionalDescription( $implIJavaAtomType$ value );
 	@Override
 	public boolean equals( Object obj );
 

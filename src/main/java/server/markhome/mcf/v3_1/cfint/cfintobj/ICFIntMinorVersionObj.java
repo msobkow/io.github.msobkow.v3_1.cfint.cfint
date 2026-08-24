@@ -187,18 +187,18 @@ public interface ICFIntMinorVersionObj
 	/**
 	 *	Get the primary key of this instance.
 	 *
-	 *	@return	ICFLibKeyHash256 primary key for this instance.
+	 *	@return	$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ primary key for this instance.
 	 */
-	ICFLibKeyHash256 getPKey();
+	$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ getPKey();
 
 	/**
 	 *	Set the primary key of this instance.
 	 *	<p>
 	 *	This method should only be invoked by implementation internals.
 	 *
-	 *	@param ICFLibKeyHash256 primary key value for this instance.
+	 *	@param $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ primary key value for this instance.
 	 */
-	void setPKey( ICFLibKeyHash256 value );
+	void setPKey( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ value );
 
 	/**
 	 *	Is this a new instance?
@@ -246,39 +246,39 @@ public interface ICFIntMinorVersionObj
 	ICFIntMajorVersionObj getRequiredContainerParentMajVer( boolean forceRead );
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute Id.
+	 *	Get the required $implIJavaAtomType$ attribute Id.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute Id.
+	 *	@return	The required $implIJavaAtomType$ attribute Id.
 	 */
-	ICFLibKeyHash256 getRequiredId();
+	$implIJavaAtomType$ getRequiredId();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute TenantId.
+	 *	Get the required $implIJavaAtomType$ attribute TenantId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute TenantId.
+	 *	@return	The required $implIJavaAtomType$ attribute TenantId.
 	 */
-	ICFLibKeyHash256 getRequiredTenantId();
+	$implIJavaAtomType$ getRequiredTenantId();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute MajorVersionId.
+	 *	Get the required $implIJavaAtomType$ attribute MajorVersionId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute MajorVersionId.
+	 *	@return	The required $implIJavaAtomType$ attribute MajorVersionId.
 	 */
-	ICFLibKeyHash256 getRequiredMajorVersionId();
+	$implIJavaAtomType$ getRequiredMajorVersionId();
 
 	/**
-	 *	Get the required String attribute Name.
+	 *	Get the required $implIJavaAtomType$ attribute Name.
 	 *
-	 *	@return	The required String attribute Name.
+	 *	@return	The required $implIJavaAtomType$ attribute Name.
 	 */
-	String getRequiredName();
+	$implIJavaAtomType$ getRequiredName();
 
 	/**
-	 *	Get the optional String attribute Description.
+	 *	Get the optional $implIJavaAtomType$ attribute Description.
 	 *
-	 *	@return	The optional String attribute Description.
+	 *	@return	The optional $implIJavaAtomType$ attribute Description.
 	 */
-	String getOptionalDescription();
+	$implIJavaAtomType$ getOptionalDescription();
 
 	/**
 	 *	Internal use only.

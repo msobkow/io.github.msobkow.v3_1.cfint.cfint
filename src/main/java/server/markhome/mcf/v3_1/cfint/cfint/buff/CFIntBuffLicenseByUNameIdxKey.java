@@ -52,19 +52,19 @@ import server.markhome.mcf.v3_1.cfint.cfintobj.*;
 public class CFIntBuffLicenseByUNameIdxKey
 	implements ICFIntLicenseByUNameIdxKey, Comparable<Object>, Serializable
 {
-	protected ICFLibKeyHash256 requiredTopDomainId;
-	protected String requiredName;
+	protected $iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ requiredTopDomainId;
+	protected $iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ requiredName;
 	public CFIntBuffLicenseByUNameIdxKey() {
 		requiredTopDomainId = CFLibDbKeyHash256.fromHex( ICFIntPubLicense.TOPDOMAINID_INIT_VALUE.toString() );
 		requiredName = ICFIntPubLicense.NAME_INIT_VALUE;
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredTopDomainId() {
+	public $implIJavaAtomType$ getRequiredTopDomainId() {
 		return(requiredTopDomainId);
 	}
 
-	public void setRequiredTopDomainId( ICFLibKeyHash256 value ) {
+	public void setRequiredTopDomainId( $implIJavaAtomType$ value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredTopDomainId",
@@ -75,11 +75,11 @@ public class CFIntBuffLicenseByUNameIdxKey
 	}
 
 	@Override
-	public String getRequiredName() {
+	public $implIJavaAtomType$ getRequiredName() {
 		return(requiredName);
 	}
 
-	public void setRequiredName( String value ) {
+	public void setRequiredName( $implIJavaAtomType$ value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredName",

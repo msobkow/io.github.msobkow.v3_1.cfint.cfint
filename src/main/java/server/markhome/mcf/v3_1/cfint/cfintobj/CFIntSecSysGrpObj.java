@@ -49,7 +49,7 @@ public class CFIntSecSysGrpObj
 	protected boolean isNew;
 	protected ICFSecSecSysGrpEditObj edit;
 	protected ICFSecSchemaObj schema;
-	protected ICFLibKeyHash256 pKey;
+	protected $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pKey;
 	protected ICFSecSecSysGrp rec;
 	protected List<ICFSecSecSysGrpIncObj> optionalComponentsIncByGrp;
 	protected List<ICFSecSecSysGrpMembObj> optionalChildrenMembByGrp;
@@ -154,7 +154,7 @@ public class CFIntSecSysGrpObj
 				if (nextName == null) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredInclName");
 				}
-				String natNextName = nextName;
+				$implIJavaAtomType$ natNextName = nextName;
 				subObj = ((ICFIntSchemaObj)getSchema()).getSecSysGrpIncTableObj().readSecSysGrpIncByIdIdx( getRequiredSecSysGrpId(),
 				natNextName, false );
 			}
@@ -167,7 +167,7 @@ public class CFIntSecSysGrpObj
 				if (nextName == null) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 				}
-				String natNextName = nextName;
+				$implIJavaAtomType$ natNextName = nextName;
 				subObj = ((ICFIntSchemaObj)getSchema()).getSecClusGrpTableObj().readSecClusGrpByUNameIdx( getRequiredSecSysGrpId(),
 				natNextName, false );
 			}
@@ -180,7 +180,7 @@ public class CFIntSecSysGrpObj
 				if (nextName == null) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 				}
-				String natNextName = nextName;
+				$implIJavaAtomType$ natNextName = nextName;
 				subObj = ((ICFIntSchemaObj)getSchema()).getSecTentGrpTableObj().readSecTentGrpByUNameIdx( getRequiredSecSysGrpId(),
 				natNextName, false );
 			}
@@ -193,7 +193,7 @@ public class CFIntSecSysGrpObj
 				if (nextName == null) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 				}
-				String natNextName = nextName;
+				$implIJavaAtomType$ natNextName = nextName;
 				subObj = ((ICFIntSchemaObj)getSchema()).getSecSysRoleTableObj().readSecSysRoleByUNameIdx( natNextName, false );
 			}
 			catch (Throwable th) {
@@ -205,7 +205,7 @@ public class CFIntSecSysGrpObj
 				if (nextName == null) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 				}
-				String natNextName = nextName;
+				$implIJavaAtomType$ natNextName = nextName;
 				subObj = ((ICFIntSchemaObj)getSchema()).getSecClusRoleTableObj().readSecClusRoleByUNameIdx( getRequiredSecSysGrpId(),
 				natNextName, false );
 			}
@@ -218,7 +218,7 @@ public class CFIntSecSysGrpObj
 				if (nextName == null) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 				}
-				String natNextName = nextName;
+				$implIJavaAtomType$ natNextName = nextName;
 				subObj = ((ICFIntSchemaObj)getSchema()).getSecTentRoleTableObj().readSecTentRoleByUNameIdx( getRequiredSecSysGrpId(),
 				natNextName, false );
 			}
@@ -356,12 +356,12 @@ public class CFIntSecSysGrpObj
 	}
 
 	@Override
-	public ICFLibKeyHash256 getPKey() {
+	public $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ getPKey() {
 		return( pKey );
 	}
 
 	@Override
-	public void setPKey( ICFLibKeyHash256 value ) {
+	public void setPKey( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ value ) {
 		if( pKey != value ) {
        		pKey = value;
 			copyPKeyToRec();
@@ -438,7 +438,7 @@ public class CFIntSecSysGrpObj
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredSecSysGrpId() {
+	public $implIJavaAtomType$ getRequiredSecSysGrpId() {
 		return( getPKey() );
 	}
 
@@ -587,12 +587,12 @@ public class CFIntSecSysGrpObj
 	}
 
 	@Override
-	public String getRequiredName() {
+	public $implIJavaAtomType$ getRequiredName() {
 		return( getSecSysGrpRec().getRequiredName() );
 	}
 
 	@Override
-	public ICFSecPubSchema.SecLevelEnum getRequiredSecLevel() {
+	public $implIJavaAtomType$ getRequiredSecLevel() {
 		return( getSecSysGrpRec().getRequiredSecLevel() );
 	}
 

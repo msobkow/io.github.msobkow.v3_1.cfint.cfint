@@ -160,60 +160,60 @@ public interface ICFIntMajorVersionEditObj
 	List<ICFIntMinorVersionObj> getOptionalComponentsMinorVer();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute Id.
+	 *	Get the required $implIJavaAtomType$ attribute Id.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute Id.
+	 *	@return	The required $implIJavaAtomType$ attribute Id.
 	 */
-	ICFLibKeyHash256 getRequiredId();
+	$implIJavaAtomType$ getRequiredId();
 
 	/**
-	 *	Set the required ICFLibKeyHash256 attribute Id.
+	 *	Set the required $implIJavaAtomType$ attribute Id.
 	 *
-	 *	@param value The required ICFLibKeyHash256 attribute Id value to be applied.
+	 *	@param value The required $implIJavaAtomType$ attribute Id value to be applied.
 	 */
-	void setRequiredId(ICFLibKeyHash256 value);
+	void setRequiredId($implIJavaAtomType$ value);
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute TenantId.
+	 *	Get the required $implIJavaAtomType$ attribute TenantId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute TenantId.
+	 *	@return	The required $implIJavaAtomType$ attribute TenantId.
 	 */
-	ICFLibKeyHash256 getRequiredTenantId();
+	$implIJavaAtomType$ getRequiredTenantId();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute SubProjectId.
+	 *	Get the required $implIJavaAtomType$ attribute SubProjectId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute SubProjectId.
+	 *	@return	The required $implIJavaAtomType$ attribute SubProjectId.
 	 */
-	ICFLibKeyHash256 getRequiredSubProjectId();
+	$implIJavaAtomType$ getRequiredSubProjectId();
 
 	/**
-	 *	Get the required String attribute Name.
+	 *	Get the required $implIJavaAtomType$ attribute Name.
 	 *
-	 *	@return	The required String attribute Name.
+	 *	@return	The required $implIJavaAtomType$ attribute Name.
 	 */
-	String getRequiredName();
+	$implIJavaAtomType$ getRequiredName();
 
 	/**
-	 *	Set the required String attribute Name.
+	 *	Set the required $implIJavaAtomType$ attribute Name.
 	 *
-	 *	@param value The required String attribute Name value to be applied.
+	 *	@param value The required $implIJavaAtomType$ attribute Name value to be applied.
 	 */
-	void setRequiredName(String value);
+	void setRequiredName($implIJavaAtomType$ value);
 
 	/**
-	 *	Get the optional String attribute Description.
+	 *	Get the optional $implIJavaAtomType$ attribute Description.
 	 *
-	 *	@return	The optional String attribute Description.
+	 *	@return	The optional $implIJavaAtomType$ attribute Description.
 	 */
-	String getOptionalDescription();
+	$implIJavaAtomType$ getOptionalDescription();
 
 	/**
-	 *	Set the optional String attribute Description.
+	 *	Set the optional $implIJavaAtomType$ attribute Description.
 	 *
-	 *	@param value The optional String attribute Description value to be applied.
+	 *	@param value The optional $implIJavaAtomType$ attribute Description value to be applied.
 	 */
-	void setOptionalDescription(String value);
+	void setOptionalDescription($implIJavaAtomType$ value);
 
 	public void copyRecToOrig();
 	public void copyOrigToRec();

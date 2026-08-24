@@ -50,12 +50,12 @@ public class CFIntMinorVersionTableObj
 	protected ICFIntSchemaObj schema;
 	protected static int runtimeClassCode = ICFIntMinorVersion.CLASS_CODE;
 	protected static final int backingClassCode = ICFIntMinorVersion.CLASS_CODE;
-	private Map<ICFLibKeyHash256, ICFIntMinorVersionObj> members;
-	private Map<ICFLibKeyHash256, ICFIntMinorVersionObj> allMinorVersion;
+	private Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFIntMinorVersionObj> members;
+	private Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFIntMinorVersionObj> allMinorVersion;
 	private Map< ICFIntMinorVersionByTenantIdxKey,
-		Map<ICFLibKeyHash256, ICFIntMinorVersionObj > > indexByTenantIdx;
+		Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFIntMinorVersionObj > > indexByTenantIdx;
 	private Map< ICFIntMinorVersionByMajorVerIdxKey,
-		Map<ICFLibKeyHash256, ICFIntMinorVersionObj > > indexByMajorVerIdx;
+		Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFIntMinorVersionObj > > indexByMajorVerIdx;
 	private Map< ICFIntMinorVersionByNameIdxKey,
 		ICFIntMinorVersionObj > indexByNameIdx;
 	public static String TABLE_NAME = "MinorVersion";
@@ -63,7 +63,7 @@ public class CFIntMinorVersionTableObj
 
 	public CFIntMinorVersionTableObj() {
 		schema = null;
-		members = new HashMap<ICFLibKeyHash256, ICFIntMinorVersionObj>();
+		members = new HashMap<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFIntMinorVersionObj>();
 		allMinorVersion = null;
 		indexByTenantIdx = null;
 		indexByMajorVerIdx = null;
@@ -72,7 +72,7 @@ public class CFIntMinorVersionTableObj
 
 	public CFIntMinorVersionTableObj( ICFIntSchemaObj argSchema ) {
 		schema = (ICFIntSchemaObj)argSchema;
-		members = new HashMap<ICFLibKeyHash256, ICFIntMinorVersionObj>();
+		members = new HashMap<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFIntMinorVersionObj>();
 		allMinorVersion = null;
 		indexByTenantIdx = null;
 		indexByMajorVerIdx = null;
@@ -199,7 +199,7 @@ public class CFIntMinorVersionTableObj
 	@Override
 	public ICFIntMinorVersionObj realiseMinorVersion( ICFIntMinorVersionObj Obj ) {
 		ICFIntMinorVersionObj obj = Obj;
-		ICFLibKeyHash256 pkey = obj.getPKey();
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey = obj.getPKey();
 		ICFIntMinorVersionObj keepObj = null;
 		if( members.containsKey( pkey ) && ( null != members.get( pkey ) ) ) {
 			ICFIntMinorVersionObj existingObj = members.get( pkey );
@@ -216,7 +216,7 @@ public class CFIntMinorVersionTableObj
 				ICFIntMinorVersionByTenantIdxKey keyTenantIdx =
 					schema.getCFIntBackingStore().getCFIntFactory().getFactoryMinorVersion().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
-				Map<ICFLibKeyHash256, ICFIntMinorVersionObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
+				Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFIntMinorVersionObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
 					mapTenantIdx.remove( keepObj.getPKey() );
 					if( mapTenantIdx.size() <= 0 ) {
@@ -229,7 +229,7 @@ public class CFIntMinorVersionTableObj
 				ICFIntMinorVersionByMajorVerIdxKey keyMajorVerIdx =
 					schema.getCFIntBackingStore().getCFIntFactory().getFactoryMinorVersion().newByMajorVerIdxKey();
 				keyMajorVerIdx.setRequiredMajorVersionId( keepObj.getRequiredMajorVersionId() );
-				Map<ICFLibKeyHash256, ICFIntMinorVersionObj > mapMajorVerIdx = indexByMajorVerIdx.get( keyMajorVerIdx );
+				Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFIntMinorVersionObj > mapMajorVerIdx = indexByMajorVerIdx.get( keyMajorVerIdx );
 				if( mapMajorVerIdx != null ) {
 					mapMajorVerIdx.remove( keepObj.getPKey() );
 					if( mapMajorVerIdx.size() <= 0 ) {
@@ -253,7 +253,7 @@ public class CFIntMinorVersionTableObj
 				ICFIntMinorVersionByTenantIdxKey keyTenantIdx =
 					schema.getCFIntBackingStore().getCFIntFactory().getFactoryMinorVersion().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
-				Map<ICFLibKeyHash256, ICFIntMinorVersionObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
+				Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFIntMinorVersionObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
 					mapTenantIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -263,7 +263,7 @@ public class CFIntMinorVersionTableObj
 				ICFIntMinorVersionByMajorVerIdxKey keyMajorVerIdx =
 					schema.getCFIntBackingStore().getCFIntFactory().getFactoryMinorVersion().newByMajorVerIdxKey();
 				keyMajorVerIdx.setRequiredMajorVersionId( keepObj.getRequiredMajorVersionId() );
-				Map<ICFLibKeyHash256, ICFIntMinorVersionObj > mapMajorVerIdx = indexByMajorVerIdx.get( keyMajorVerIdx );
+				Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFIntMinorVersionObj > mapMajorVerIdx = indexByMajorVerIdx.get( keyMajorVerIdx );
 				if( mapMajorVerIdx != null ) {
 					mapMajorVerIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -295,7 +295,7 @@ public class CFIntMinorVersionTableObj
 				ICFIntMinorVersionByTenantIdxKey keyTenantIdx =
 					schema.getCFIntBackingStore().getCFIntFactory().getFactoryMinorVersion().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
-				Map<ICFLibKeyHash256, ICFIntMinorVersionObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
+				Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFIntMinorVersionObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
 					mapTenantIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -305,7 +305,7 @@ public class CFIntMinorVersionTableObj
 				ICFIntMinorVersionByMajorVerIdxKey keyMajorVerIdx =
 					schema.getCFIntBackingStore().getCFIntFactory().getFactoryMinorVersion().newByMajorVerIdxKey();
 				keyMajorVerIdx.setRequiredMajorVersionId( keepObj.getRequiredMajorVersionId() );
-				Map<ICFLibKeyHash256, ICFIntMinorVersionObj > mapMajorVerIdx = indexByMajorVerIdx.get( keyMajorVerIdx );
+				Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFIntMinorVersionObj > mapMajorVerIdx = indexByMajorVerIdx.get( keyMajorVerIdx );
 				if( mapMajorVerIdx != null ) {
 					mapMajorVerIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -337,12 +337,12 @@ public class CFIntMinorVersionTableObj
 	}
 
 	@Override
-	public ICFIntMinorVersionObj readMinorVersion( ICFLibKeyHash256 pkey ) {
+	public ICFIntMinorVersionObj readMinorVersion( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey ) {
 		return( readMinorVersion( pkey, false ) );
 	}
 
 	@Override
-	public ICFIntMinorVersionObj readMinorVersion( ICFLibKeyHash256 pkey, boolean forceRead ) {
+	public ICFIntMinorVersionObj readMinorVersion( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey, boolean forceRead ) {
 		ICFIntMinorVersionObj obj = null;
 		if( ( ! forceRead ) && members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -361,7 +361,7 @@ public class CFIntMinorVersionTableObj
 	}
 
 	@Override
-	public ICFIntMinorVersionObj readCachedMinorVersion( ICFLibKeyHash256 pkey ) {
+	public ICFIntMinorVersionObj readCachedMinorVersion( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey ) {
 		ICFIntMinorVersionObj obj = null;
 		if( members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -377,7 +377,7 @@ public class CFIntMinorVersionTableObj
 		if( obj == null ) {
 			return;
 		}
-		ICFLibKeyHash256 pkey = obj.getPKey();
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey = obj.getPKey();
 		ICFIntMinorVersionObj existing = readCachedMinorVersion( pkey );
 		if( existing == null ) {
 			return;
@@ -420,7 +420,7 @@ public class CFIntMinorVersionTableObj
 
 	}
 	@Override
-	public void deepDisposeMinorVersion( ICFLibKeyHash256 pkey ) {
+	public void deepDisposeMinorVersion( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey ) {
 		ICFIntMinorVersionObj obj = readCachedMinorVersion( pkey );
 		if( obj != null ) {
 			obj.forget();
@@ -428,7 +428,7 @@ public class CFIntMinorVersionTableObj
 	}
 
 	@Override
-	public ICFIntMinorVersionObj lockMinorVersion( ICFLibKeyHash256 pkey ) {
+	public ICFIntMinorVersionObj lockMinorVersion( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey ) {
 		ICFIntMinorVersionObj locked = null;
 		ICFIntMinorVersion lockRec = schema.getCFIntBackingStore().getTableMinorVersion().lockDerived( null, pkey );
 		if( lockRec != null ) {
@@ -452,7 +452,7 @@ public class CFIntMinorVersionTableObj
 	public List<ICFIntMinorVersionObj> readAllMinorVersion( boolean forceRead ) {
 		final String S_ProcName = "readAllMinorVersion";
 		if( ( allMinorVersion == null ) || forceRead ) {
-			Map<ICFLibKeyHash256, ICFIntMinorVersionObj> map = new HashMap<ICFLibKeyHash256,ICFIntMinorVersionObj>();
+			Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFIntMinorVersionObj> map = new HashMap<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$,ICFIntMinorVersionObj>();
 			allMinorVersion = map;
 			ICFIntMinorVersion[] recList = schema.getCFIntBackingStore().getTableMinorVersion().readAllDerived( null );
 			ICFIntMinorVersion rec;
@@ -508,8 +508,8 @@ public class CFIntMinorVersionTableObj
 					return( 1 );
 				}
 				else {
-					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
-					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ lhsPKey = lhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -566,8 +566,8 @@ public class CFIntMinorVersionTableObj
 					return( 1 );
 				}
 				else {
-					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
-					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ lhsPKey = lhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -578,43 +578,43 @@ public class CFIntMinorVersionTableObj
 	}
 
 	@Override
-	public ICFIntMinorVersionObj readMinorVersionByIdIdx( ICFLibKeyHash256 Id )
+	public ICFIntMinorVersionObj readMinorVersionByIdIdx( $implIJavaAtomType$ Id )
 	{
 		return( readMinorVersionByIdIdx( Id,
 			false ) );
 	}
 
 	@Override
-	public ICFIntMinorVersionObj readMinorVersionByIdIdx( ICFLibKeyHash256 Id, boolean forceRead )
+	public ICFIntMinorVersionObj readMinorVersionByIdIdx( $implIJavaAtomType$ Id, boolean forceRead )
 	{
 		ICFIntMinorVersionObj obj = readMinorVersion( Id, forceRead );
 		return( obj );
 	}
 
 	@Override
-	public List<ICFIntMinorVersionObj> readMinorVersionByTenantIdx( ICFLibKeyHash256 TenantId )
+	public List<ICFIntMinorVersionObj> readMinorVersionByTenantIdx( $implIJavaAtomType$ TenantId )
 	{
 		return( readMinorVersionByTenantIdx( TenantId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFIntMinorVersionObj> readMinorVersionByTenantIdx( ICFLibKeyHash256 TenantId,
+	public List<ICFIntMinorVersionObj> readMinorVersionByTenantIdx( $implIJavaAtomType$ TenantId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readMinorVersionByTenantIdx";
 		ICFIntMinorVersionByTenantIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryMinorVersion().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
-		Map<ICFLibKeyHash256, ICFIntMinorVersionObj> dict;
+		Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFIntMinorVersionObj> dict;
 		if( indexByTenantIdx == null ) {
 			indexByTenantIdx = new HashMap< ICFIntMinorVersionByTenantIdxKey,
-				Map< ICFLibKeyHash256, ICFIntMinorVersionObj > >();
+				Map< $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFIntMinorVersionObj > >();
 		}
 		if( ( ! forceRead ) && indexByTenantIdx.containsKey( key ) ) {
 			dict = indexByTenantIdx.get( key );
 		}
 		else {
-			dict = new HashMap<ICFLibKeyHash256, ICFIntMinorVersionObj>();
+			dict = new HashMap<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFIntMinorVersionObj>();
 			ICFIntMinorVersionObj obj;
 			ICFIntMinorVersion[] recList = schema.getCFIntBackingStore().getTableMinorVersion().readDerivedByTenantIdx( null,
 				TenantId );
@@ -672,8 +672,8 @@ public class CFIntMinorVersionTableObj
 					return( 1 );
 				}
 				else {
-					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
-					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ lhsPKey = lhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -685,29 +685,29 @@ public class CFIntMinorVersionTableObj
 	}
 
 	@Override
-	public List<ICFIntMinorVersionObj> readMinorVersionByMajorVerIdx( ICFLibKeyHash256 MajorVersionId )
+	public List<ICFIntMinorVersionObj> readMinorVersionByMajorVerIdx( $implIJavaAtomType$ MajorVersionId )
 	{
 		return( readMinorVersionByMajorVerIdx( MajorVersionId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFIntMinorVersionObj> readMinorVersionByMajorVerIdx( ICFLibKeyHash256 MajorVersionId,
+	public List<ICFIntMinorVersionObj> readMinorVersionByMajorVerIdx( $implIJavaAtomType$ MajorVersionId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readMinorVersionByMajorVerIdx";
 		ICFIntMinorVersionByMajorVerIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryMinorVersion().newByMajorVerIdxKey();
 		key.setRequiredMajorVersionId( MajorVersionId );
-		Map<ICFLibKeyHash256, ICFIntMinorVersionObj> dict;
+		Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFIntMinorVersionObj> dict;
 		if( indexByMajorVerIdx == null ) {
 			indexByMajorVerIdx = new HashMap< ICFIntMinorVersionByMajorVerIdxKey,
-				Map< ICFLibKeyHash256, ICFIntMinorVersionObj > >();
+				Map< $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFIntMinorVersionObj > >();
 		}
 		if( ( ! forceRead ) && indexByMajorVerIdx.containsKey( key ) ) {
 			dict = indexByMajorVerIdx.get( key );
 		}
 		else {
-			dict = new HashMap<ICFLibKeyHash256, ICFIntMinorVersionObj>();
+			dict = new HashMap<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFIntMinorVersionObj>();
 			ICFIntMinorVersionObj obj;
 			ICFIntMinorVersion[] recList = schema.getCFIntBackingStore().getTableMinorVersion().readDerivedByMajorVerIdx( null,
 				MajorVersionId );
@@ -765,8 +765,8 @@ public class CFIntMinorVersionTableObj
 					return( 1 );
 				}
 				else {
-					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
-					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ lhsPKey = lhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -778,8 +778,8 @@ public class CFIntMinorVersionTableObj
 	}
 
 	@Override
-	public ICFIntMinorVersionObj readMinorVersionByNameIdx( ICFLibKeyHash256 MajorVersionId,
-		String Name )
+	public ICFIntMinorVersionObj readMinorVersionByNameIdx( $implIJavaAtomType$ MajorVersionId,
+		$implIJavaAtomType$ Name )
 	{
 		return( readMinorVersionByNameIdx( MajorVersionId,
 			Name,
@@ -787,8 +787,8 @@ public class CFIntMinorVersionTableObj
 	}
 
 	@Override
-	public ICFIntMinorVersionObj readMinorVersionByNameIdx( ICFLibKeyHash256 MajorVersionId,
-		String Name, boolean forceRead )
+	public ICFIntMinorVersionObj readMinorVersionByNameIdx( $implIJavaAtomType$ MajorVersionId,
+		$implIJavaAtomType$ Name, boolean forceRead )
 	{
 		if( indexByNameIdx == null ) {
 			indexByNameIdx = new HashMap< ICFIntMinorVersionByNameIdxKey,
@@ -816,7 +816,7 @@ public class CFIntMinorVersionTableObj
 	}
 
 	@Override
-	public ICFIntMinorVersionObj readCachedMinorVersionByIdIdx( ICFLibKeyHash256 Id )
+	public ICFIntMinorVersionObj readCachedMinorVersionByIdIdx( $implIJavaAtomType$ Id )
 	{
 		ICFIntMinorVersionObj obj = null;
 		obj = readCachedMinorVersion( Id );
@@ -824,14 +824,14 @@ public class CFIntMinorVersionTableObj
 	}
 
 	@Override
-	public List<ICFIntMinorVersionObj> readCachedMinorVersionByTenantIdx( ICFLibKeyHash256 TenantId )
+	public List<ICFIntMinorVersionObj> readCachedMinorVersionByTenantIdx( $implIJavaAtomType$ TenantId )
 	{
 		final String S_ProcName = "readCachedMinorVersionByTenantIdx";
 		ICFIntMinorVersionByTenantIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryMinorVersion().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
 		ArrayList<ICFIntMinorVersionObj> arrayList = new ArrayList<ICFIntMinorVersionObj>();
 		if( indexByTenantIdx != null ) {
-			Map<ICFLibKeyHash256, ICFIntMinorVersionObj> dict;
+			Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFIntMinorVersionObj> dict;
 			if( indexByTenantIdx.containsKey( key ) ) {
 				dict = indexByTenantIdx.get( key );
 				int len = dict.size();
@@ -889,8 +889,8 @@ public class CFIntMinorVersionTableObj
 					return( 1 );
 				}
 				else {
-					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
-					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ lhsPKey = lhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -901,14 +901,14 @@ public class CFIntMinorVersionTableObj
 	}
 
 	@Override
-	public List<ICFIntMinorVersionObj> readCachedMinorVersionByMajorVerIdx( ICFLibKeyHash256 MajorVersionId )
+	public List<ICFIntMinorVersionObj> readCachedMinorVersionByMajorVerIdx( $implIJavaAtomType$ MajorVersionId )
 	{
 		final String S_ProcName = "readCachedMinorVersionByMajorVerIdx";
 		ICFIntMinorVersionByMajorVerIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryMinorVersion().newByMajorVerIdxKey();
 		key.setRequiredMajorVersionId( MajorVersionId );
 		ArrayList<ICFIntMinorVersionObj> arrayList = new ArrayList<ICFIntMinorVersionObj>();
 		if( indexByMajorVerIdx != null ) {
-			Map<ICFLibKeyHash256, ICFIntMinorVersionObj> dict;
+			Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFIntMinorVersionObj> dict;
 			if( indexByMajorVerIdx.containsKey( key ) ) {
 				dict = indexByMajorVerIdx.get( key );
 				int len = dict.size();
@@ -966,8 +966,8 @@ public class CFIntMinorVersionTableObj
 					return( 1 );
 				}
 				else {
-					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
-					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ lhsPKey = lhs.getPKey();
+					$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -978,8 +978,8 @@ public class CFIntMinorVersionTableObj
 	}
 
 	@Override
-	public ICFIntMinorVersionObj readCachedMinorVersionByNameIdx( ICFLibKeyHash256 MajorVersionId,
-		String Name )
+	public ICFIntMinorVersionObj readCachedMinorVersionByNameIdx( $implIJavaAtomType$ MajorVersionId,
+		$implIJavaAtomType$ Name )
 	{
 		ICFIntMinorVersionObj obj = null;
 		ICFIntMinorVersionByNameIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryMinorVersion().newByNameIdxKey();
@@ -1016,7 +1016,7 @@ public class CFIntMinorVersionTableObj
 	}
 
 	@Override
-	public void deepDisposeMinorVersionByIdIdx( ICFLibKeyHash256 Id )
+	public void deepDisposeMinorVersionByIdIdx( $implIJavaAtomType$ Id )
 	{
 		ICFIntMinorVersionObj obj = readCachedMinorVersionByIdIdx( Id );
 		if( obj != null ) {
@@ -1025,7 +1025,7 @@ public class CFIntMinorVersionTableObj
 	}
 
 	@Override
-	public void deepDisposeMinorVersionByTenantIdx( ICFLibKeyHash256 TenantId )
+	public void deepDisposeMinorVersionByTenantIdx( $implIJavaAtomType$ TenantId )
 	{
 		final String S_ProcName = "deepDisposeMinorVersionByTenantIdx";
 		ICFIntMinorVersionObj obj;
@@ -1042,7 +1042,7 @@ public class CFIntMinorVersionTableObj
 	}
 
 	@Override
-	public void deepDisposeMinorVersionByMajorVerIdx( ICFLibKeyHash256 MajorVersionId )
+	public void deepDisposeMinorVersionByMajorVerIdx( $implIJavaAtomType$ MajorVersionId )
 	{
 		final String S_ProcName = "deepDisposeMinorVersionByMajorVerIdx";
 		ICFIntMinorVersionObj obj;
@@ -1059,8 +1059,8 @@ public class CFIntMinorVersionTableObj
 	}
 
 	@Override
-	public void deepDisposeMinorVersionByNameIdx( ICFLibKeyHash256 MajorVersionId,
-		String Name )
+	public void deepDisposeMinorVersionByNameIdx( $implIJavaAtomType$ MajorVersionId,
+		$implIJavaAtomType$ Name )
 	{
 		ICFIntMinorVersionObj obj = readCachedMinorVersionByNameIdx( MajorVersionId,
 				Name );
@@ -1088,7 +1088,7 @@ public class CFIntMinorVersionTableObj
 	}
 
 	@Override
-	public void deleteMinorVersionByIdIdx( ICFLibKeyHash256 Id )
+	public void deleteMinorVersionByIdIdx( $implIJavaAtomType$ Id )
 	{
 		ICFIntMinorVersionObj obj = readMinorVersion(Id);
 		if( obj != null ) {
@@ -1118,16 +1118,16 @@ public class CFIntMinorVersionTableObj
 	}
 
 	@Override
-	public void deleteMinorVersionByTenantIdx( ICFLibKeyHash256 TenantId )
+	public void deleteMinorVersionByTenantIdx( $implIJavaAtomType$ TenantId )
 	{
 		ICFIntMinorVersionByTenantIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryMinorVersion().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
 		if( indexByTenantIdx == null ) {
 			indexByTenantIdx = new HashMap< ICFIntMinorVersionByTenantIdxKey,
-				Map< ICFLibKeyHash256, ICFIntMinorVersionObj > >();
+				Map< $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFIntMinorVersionObj > >();
 		}
 		if( indexByTenantIdx.containsKey( key ) ) {
-			Map<ICFLibKeyHash256, ICFIntMinorVersionObj> dict = indexByTenantIdx.get( key );
+			Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFIntMinorVersionObj> dict = indexByTenantIdx.get( key );
 			schema.getCFIntBackingStore().getTableMinorVersion().deleteMinorVersionByTenantIdx( null,
 				TenantId );
 			Iterator<ICFIntMinorVersionObj> iter = dict.values().iterator();
@@ -1152,16 +1152,16 @@ public class CFIntMinorVersionTableObj
 	}
 
 	@Override
-	public void deleteMinorVersionByMajorVerIdx( ICFLibKeyHash256 MajorVersionId )
+	public void deleteMinorVersionByMajorVerIdx( $implIJavaAtomType$ MajorVersionId )
 	{
 		ICFIntMinorVersionByMajorVerIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryMinorVersion().newByMajorVerIdxKey();
 		key.setRequiredMajorVersionId( MajorVersionId );
 		if( indexByMajorVerIdx == null ) {
 			indexByMajorVerIdx = new HashMap< ICFIntMinorVersionByMajorVerIdxKey,
-				Map< ICFLibKeyHash256, ICFIntMinorVersionObj > >();
+				Map< $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFIntMinorVersionObj > >();
 		}
 		if( indexByMajorVerIdx.containsKey( key ) ) {
-			Map<ICFLibKeyHash256, ICFIntMinorVersionObj> dict = indexByMajorVerIdx.get( key );
+			Map<$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$, ICFIntMinorVersionObj> dict = indexByMajorVerIdx.get( key );
 			schema.getCFIntBackingStore().getTableMinorVersion().deleteMinorVersionByMajorVerIdx( null,
 				MajorVersionId );
 			Iterator<ICFIntMinorVersionObj> iter = dict.values().iterator();
@@ -1186,8 +1186,8 @@ public class CFIntMinorVersionTableObj
 	}
 
 	@Override
-	public void deleteMinorVersionByNameIdx( ICFLibKeyHash256 MajorVersionId,
-		String Name )
+	public void deleteMinorVersionByNameIdx( $implIJavaAtomType$ MajorVersionId,
+		$implIJavaAtomType$ Name )
 	{
 		if( indexByNameIdx == null ) {
 			indexByNameIdx = new HashMap< ICFIntMinorVersionByNameIdxKey,

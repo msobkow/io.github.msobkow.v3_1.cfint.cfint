@@ -58,22 +58,22 @@ public interface ICFIntLicense
 
 	public int getClassCode();
 
-	public ICFLibKeyHash256 getPKey();
-	public void setPKey(ICFLibKeyHash256 requiredId);
-	public ICFLibKeyHash256 getRequiredId();
-	public void setRequiredId( ICFLibKeyHash256 value );
+	public $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ getPKey();
+	public void setPKey($iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ requiredId);
+	public $implIJavaAtomType$ getRequiredId();
+	public void setRequiredId( $implIJavaAtomType$ value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
 	public ICFSecTenant getRequiredOwnerTenant();
 
-	public void setRequiredOwnerTenant(ICFLibKeyHash256 argTenantId);
+	public void setRequiredOwnerTenant($implIJavaAtomType$ argTenantId);
 
 	public void setRequiredOwnerTenant(ICFSecPubTenant argObj);
 
 	public ICFIntTopDomain getRequiredContainerTopDomain();
 
-	public void setRequiredContainerTopDomain(ICFLibKeyHash256 argTopDomainId);
+	public void setRequiredContainerTopDomain($implIJavaAtomType$ argTopDomainId);
 
 	public void setRequiredContainerTopDomain(ICFIntTopDomain argObj);
 
@@ -81,18 +81,18 @@ public interface ICFIntLicense
 
 	public void setRequiredContainerTopDomain(ICFIntPubTopDomain argObj);
 
-	public ICFLibKeyHash256 getRequiredTenantId();
-	public void setRequiredTenantId( ICFLibKeyHash256 value );
-	public ICFLibKeyHash256 getRequiredTopDomainId();
-	public void setRequiredTopDomainId( ICFLibKeyHash256 value );
-	public String getRequiredName();
-	public void setRequiredName( String value );
-	public String getOptionalDescription();
-	public void setOptionalDescription( String value );
-	public String getOptionalEmbeddedText();
-	public void setOptionalEmbeddedText( String value );
-	public String getOptionalFullText();
-	public void setOptionalFullText( String value );
+	public $implIJavaAtomType$ getRequiredTenantId();
+	public void setRequiredTenantId( $implIJavaAtomType$ value );
+	public $implIJavaAtomType$ getRequiredTopDomainId();
+	public void setRequiredTopDomainId( $implIJavaAtomType$ value );
+	public $implIJavaAtomType$ getRequiredName();
+	public void setRequiredName( $implIJavaAtomType$ value );
+	public $implIJavaAtomType$ getOptionalDescription();
+	public void setOptionalDescription( $implIJavaAtomType$ value );
+	public $implIJavaAtomType$ getOptionalEmbeddedText();
+	public void setOptionalEmbeddedText( $implIJavaAtomType$ value );
+	public $implIJavaAtomType$ getOptionalFullText();
+	public void setOptionalFullText( $implIJavaAtomType$ value );
 	public boolean equals( Object obj );
 
 	public int hashCode();

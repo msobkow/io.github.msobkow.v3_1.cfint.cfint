@@ -52,7 +52,7 @@ public class CFIntMimeTypeObj
 	protected boolean isNew;
 	protected ICFIntMimeTypeEditObj edit;
 	protected ICFIntSchemaObj schema;
-	protected Integer pKey;
+	protected $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pKey;
 	protected ICFIntMimeType rec;
 
 	public CFIntMimeTypeObj() {
@@ -273,12 +273,12 @@ public class CFIntMimeTypeObj
 	}
 
 	@Override
-	public Integer getPKey() {
+	public $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ getPKey() {
 		return( pKey );
 	}
 
 	@Override
-	public void setPKey( Integer value ) {
+	public void setPKey( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ value ) {
 		if( pKey != value ) {
        		pKey = value;
 			copyPKeyToRec();
@@ -355,17 +355,17 @@ public class CFIntMimeTypeObj
 	}
 
 	@Override
-	public int getRequiredMimeTypeId() {
+	public $implIJavaAtomType$ getRequiredMimeTypeId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public String getRequiredName() {
+	public $implIJavaAtomType$ getRequiredName() {
 		return( getMimeTypeRec().getRequiredName() );
 	}
 
 	@Override
-	public String getOptionalFileTypes() {
+	public $implIJavaAtomType$ getOptionalFileTypes() {
 		return( getMimeTypeRec().getOptionalFileTypes() );
 	}
 

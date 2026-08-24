@@ -72,17 +72,17 @@ public interface ICFIntMimeType
 
 	public void setUpdatedAt( LocalDateTime value );
 
-	public Integer getPKey();
-	public void setPKey(Integer requiredMimeTypeId);
-	public int getRequiredMimeTypeId();
-	public void setRequiredMimeTypeId( int value );
+	public $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ getPKey();
+	public void setPKey($iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ requiredMimeTypeId);
+	public $implIJavaAtomType$ getRequiredMimeTypeId();
+	public void setRequiredMimeTypeId( $implIJavaAtomType$ value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
-	public String getRequiredName();
-	public void setRequiredName( String value );
-	public String getOptionalFileTypes();
-	public void setOptionalFileTypes( String value );
+	public $implIJavaAtomType$ getRequiredName();
+	public void setRequiredName( $implIJavaAtomType$ value );
+	public $implIJavaAtomType$ getOptionalFileTypes();
+	public void setOptionalFileTypes( $implIJavaAtomType$ value );
 	public boolean equals( Object obj );
 
 	public int hashCode();

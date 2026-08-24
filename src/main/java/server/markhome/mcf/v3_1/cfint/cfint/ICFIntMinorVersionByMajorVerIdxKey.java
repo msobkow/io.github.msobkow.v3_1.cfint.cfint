@@ -47,8 +47,8 @@ import server.markhome.mcf.v3_1.cfint.cfintprotobj.*;
  */
 public interface ICFIntMinorVersionByMajorVerIdxKey
 {
-	public ICFLibKeyHash256 getRequiredMajorVersionId();
-	public void setRequiredMajorVersionId( ICFLibKeyHash256 value );
+	public $implIJavaAtomType$ getRequiredMajorVersionId();
+	public void setRequiredMajorVersionId( $implIJavaAtomType$ value );
 	@Override
 	public boolean equals( Object obj );
 

@@ -101,7 +101,7 @@ public interface ICFIntLicenseTableObj
 	 *	@return	The License-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFIntLicenseObj readLicense( ICFLibKeyHash256 pkey );
+	ICFIntLicenseObj readLicense( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	/**
 	 *	Read a License-derived instance by it's primary key.
@@ -111,19 +111,19 @@ public interface ICFIntLicenseTableObj
 	 *	@return	The License-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFIntLicenseObj readLicense( ICFLibKeyHash256 pkey,
+	ICFIntLicenseObj readLicense( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey,
 		boolean forceRead );
 
-	ICFIntLicenseObj readCachedLicense( ICFLibKeyHash256 pkey );
+	ICFIntLicenseObj readCachedLicense( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	public void reallyDeepDisposeLicense( ICFIntLicenseObj obj );
 
-	void deepDisposeLicense( ICFLibKeyHash256 pkey );
+	void deepDisposeLicense( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	/**
 	 *	Internal use only.
 	 */
-	ICFIntLicenseObj lockLicense( ICFLibKeyHash256 pkey );
+	ICFIntLicenseObj lockLicense( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pkey );
 
 	/**
 	 *	Return a sorted list of all the License-derived instances in the database.
@@ -151,7 +151,7 @@ public interface ICFIntLicenseTableObj
 	 *	@return	CFIntLicenseObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFIntLicenseObj readLicenseByIdIdx( ICFLibKeyHash256 Id );
+	ICFIntLicenseObj readLicenseByIdIdx( $implIJavaAtomType$ Id );
 
 	/**
 	 *	Get the CFIntLicenseObj instance for the primary key attributes.
@@ -161,7 +161,7 @@ public interface ICFIntLicenseTableObj
 	 *	@return	CFIntLicenseObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFIntLicenseObj readLicenseByIdIdx( ICFLibKeyHash256 Id,
+	ICFIntLicenseObj readLicenseByIdIdx( $implIJavaAtomType$ Id,
 		boolean forceRead );
 
 	/**
@@ -172,7 +172,7 @@ public interface ICFIntLicenseTableObj
 	 *	@return	List of CFIntLicenseObj cached instances sorted by their primary keys for the duplicate LicnTenantIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFIntLicenseObj> readLicenseByLicnTenantIdx( ICFLibKeyHash256 TenantId );
+	List<ICFIntLicenseObj> readLicenseByLicnTenantIdx( $implIJavaAtomType$ TenantId );
 
 	/**
 	 *	Get the map of CFIntLicenseObj instances sorted by their primary keys for the duplicate LicnTenantIdx key.
@@ -182,7 +182,7 @@ public interface ICFIntLicenseTableObj
 	 *	@return	List of CFIntLicenseObj cached instances sorted by their primary keys for the duplicate LicnTenantIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFIntLicenseObj> readLicenseByLicnTenantIdx( ICFLibKeyHash256 TenantId,
+	List<ICFIntLicenseObj> readLicenseByLicnTenantIdx( $implIJavaAtomType$ TenantId,
 		boolean forceRead );
 
 	/**
@@ -193,7 +193,7 @@ public interface ICFIntLicenseTableObj
 	 *	@return	List of CFIntLicenseObj cached instances sorted by their primary keys for the duplicate DomainIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFIntLicenseObj> readLicenseByDomainIdx( ICFLibKeyHash256 TopDomainId );
+	List<ICFIntLicenseObj> readLicenseByDomainIdx( $implIJavaAtomType$ TopDomainId );
 
 	/**
 	 *	Get the map of CFIntLicenseObj instances sorted by their primary keys for the duplicate DomainIdx key.
@@ -203,7 +203,7 @@ public interface ICFIntLicenseTableObj
 	 *	@return	List of CFIntLicenseObj cached instances sorted by their primary keys for the duplicate DomainIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFIntLicenseObj> readLicenseByDomainIdx( ICFLibKeyHash256 TopDomainId,
+	List<ICFIntLicenseObj> readLicenseByDomainIdx( $implIJavaAtomType$ TopDomainId,
 		boolean forceRead );
 
 	/**
@@ -216,8 +216,8 @@ public interface ICFIntLicenseTableObj
 	 *	@return	CFIntLicenseObj cached instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFIntLicenseObj readLicenseByUNameIdx(ICFLibKeyHash256 TopDomainId,
-		String Name );
+	ICFIntLicenseObj readLicenseByUNameIdx($implIJavaAtomType$ TopDomainId,
+		$implIJavaAtomType$ Name );
 
 	/**
 	 *	Get the CFIntLicenseObj instance for the unique UNameIdx key.
@@ -229,27 +229,27 @@ public interface ICFIntLicenseTableObj
 	 *	@return	CFIntLicenseObj refreshed instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFIntLicenseObj readLicenseByUNameIdx(ICFLibKeyHash256 TopDomainId,
-		String Name,
+	ICFIntLicenseObj readLicenseByUNameIdx($implIJavaAtomType$ TopDomainId,
+		$implIJavaAtomType$ Name,
 		boolean forceRead );
 
-	ICFIntLicenseObj readCachedLicenseByIdIdx( ICFLibKeyHash256 Id );
+	ICFIntLicenseObj readCachedLicenseByIdIdx( $implIJavaAtomType$ Id );
 
-	List<ICFIntLicenseObj> readCachedLicenseByLicnTenantIdx( ICFLibKeyHash256 TenantId );
+	List<ICFIntLicenseObj> readCachedLicenseByLicnTenantIdx( $implIJavaAtomType$ TenantId );
 
-	List<ICFIntLicenseObj> readCachedLicenseByDomainIdx( ICFLibKeyHash256 TopDomainId );
+	List<ICFIntLicenseObj> readCachedLicenseByDomainIdx( $implIJavaAtomType$ TopDomainId );
 
-	ICFIntLicenseObj readCachedLicenseByUNameIdx( ICFLibKeyHash256 TopDomainId,
-		String Name );
+	ICFIntLicenseObj readCachedLicenseByUNameIdx( $implIJavaAtomType$ TopDomainId,
+		$implIJavaAtomType$ Name );
 
-	void deepDisposeLicenseByIdIdx( ICFLibKeyHash256 Id );
+	void deepDisposeLicenseByIdIdx( $implIJavaAtomType$ Id );
 
-	void deepDisposeLicenseByLicnTenantIdx( ICFLibKeyHash256 TenantId );
+	void deepDisposeLicenseByLicnTenantIdx( $implIJavaAtomType$ TenantId );
 
-	void deepDisposeLicenseByDomainIdx( ICFLibKeyHash256 TopDomainId );
+	void deepDisposeLicenseByDomainIdx( $implIJavaAtomType$ TopDomainId );
 
-	void deepDisposeLicenseByUNameIdx( ICFLibKeyHash256 TopDomainId,
-		String Name );
+	void deepDisposeLicenseByUNameIdx( $implIJavaAtomType$ TopDomainId,
+		$implIJavaAtomType$ Name );
 
 	/**
 	 *	Internal use only.
@@ -266,21 +266,21 @@ public interface ICFIntLicenseTableObj
 	 *
 	 *	@param	Id	The License key attribute of the instance generating the id.
 	 */
-	void deleteLicenseByIdIdx( ICFLibKeyHash256 Id );
+	void deleteLicenseByIdIdx( $implIJavaAtomType$ Id );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	TenantId	The License key attribute of the instance generating the id.
 	 */
-	void deleteLicenseByLicnTenantIdx( ICFLibKeyHash256 TenantId );
+	void deleteLicenseByLicnTenantIdx( $implIJavaAtomType$ TenantId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	TopDomainId	The License key attribute of the instance generating the id.
 	 */
-	void deleteLicenseByDomainIdx( ICFLibKeyHash256 TopDomainId );
+	void deleteLicenseByDomainIdx( $implIJavaAtomType$ TopDomainId );
 
 	/**
 	 *	Internal use only.
@@ -289,6 +289,6 @@ public interface ICFIntLicenseTableObj
 	 *
 	 *	@param	Name	The License key attribute of the instance generating the id.
 	 */
-	void deleteLicenseByUNameIdx(ICFLibKeyHash256 TopDomainId,
-		String Name );
+	void deleteLicenseByUNameIdx($implIJavaAtomType$ TopDomainId,
+		$implIJavaAtomType$ Name );
 }

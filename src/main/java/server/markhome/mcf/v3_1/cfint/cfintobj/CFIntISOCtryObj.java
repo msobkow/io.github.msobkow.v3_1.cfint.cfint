@@ -49,7 +49,7 @@ public class CFIntISOCtryObj
 	protected boolean isNew;
 	protected ICFSecISOCtryEditObj edit;
 	protected ICFSecSchemaObj schema;
-	protected Short pKey;
+	protected $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pKey;
 	protected ICFSecISOCtry rec;
 	protected List<ICFSecISOCtryCcyObj> optionalComponentsCcy;
 	protected List<ICFSecISOCtryLangObj> optionalComponentsLang;
@@ -272,12 +272,12 @@ public class CFIntISOCtryObj
 	}
 
 	@Override
-	public Short getPKey() {
+	public $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ getPKey() {
 		return( pKey );
 	}
 
 	@Override
-	public void setPKey( Short value ) {
+	public void setPKey( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ value ) {
 		if( pKey != value ) {
        		pKey = value;
 			copyPKeyToRec();
@@ -354,7 +354,7 @@ public class CFIntISOCtryObj
 	}
 
 	@Override
-	public short getRequiredISOCtryId() {
+	public $implIJavaAtomType$ getRequiredISOCtryId() {
 		return( getPKey() );
 	}
 
@@ -391,12 +391,12 @@ public class CFIntISOCtryObj
 	}
 
 	@Override
-	public String getRequiredISOCode() {
+	public $implIJavaAtomType$ getRequiredISOCode() {
 		return( getISOCtryRec().getRequiredISOCode() );
 	}
 
 	@Override
-	public String getRequiredName() {
+	public $implIJavaAtomType$ getRequiredName() {
 		return( getISOCtryRec().getRequiredName() );
 	}
 

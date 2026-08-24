@@ -88,7 +88,7 @@ public interface ICFIntMimeTypeTable
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	void deleteMimeTypeByIdIdx( ICFSecAuthorization Authorization,
-		Integer argKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ argKey );
 	/**
 	 *	Delete the MimeType instances identified by the key UNameIdx.
 	 *
@@ -97,7 +97,7 @@ public interface ICFIntMimeTypeTable
 	 *	@param	Name	The MimeType key attribute of the instance generating the id.
 	 */
 	void deleteMimeTypeByUNameIdx( ICFSecAuthorization Authorization,
-		String argName );
+		$iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ argName );
 
 	/**
 	 *	Delete the MimeType instances identified by the key UNameIdx.
@@ -121,7 +121,7 @@ public interface ICFIntMimeTypeTable
 	 *		no such existing key value.
 	 */
 	ICFIntMimeType readDerived( ICFSecAuthorization Authorization,
-		Integer PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Lock the derived MimeType record instance by primary key.
@@ -134,7 +134,7 @@ public interface ICFIntMimeTypeTable
 	 *		no such existing key value.
 	 */
 	ICFIntMimeType lockDerived( ICFSecAuthorization Authorization,
-		Integer PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Read all MimeType instances.
@@ -156,7 +156,7 @@ public interface ICFIntMimeTypeTable
 	 *		no such existing key value.
 	 */
 	ICFIntMimeType readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		int MimeTypeId );
+		$implIJavaAtomType$ MimeTypeId );
 
 	/**
 	 *	Read the derived MimeType record instance identified by the unique key UNameIdx.
@@ -169,7 +169,7 @@ public interface ICFIntMimeTypeTable
 	 *		no such existing key value.
 	 */
 	ICFIntMimeType readDerivedByUNameIdx( ICFSecAuthorization Authorization,
-		String Name );
+		$implIJavaAtomType$ Name );
 
 	/**
 	 *	Read the specific MimeType record instance identified by the primary key.
@@ -184,7 +184,7 @@ public interface ICFIntMimeTypeTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFIntMimeType readRec( ICFSecAuthorization Authorization,
-		Integer PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Lock the specific MimeType record instance identified by the primary key.
@@ -199,7 +199,7 @@ public interface ICFIntMimeTypeTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFIntMimeType lockRec( ICFSecAuthorization Authorization,
-		Integer PKey );
+		$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ PKey );
 
 	/**
 	 *	Read all the specific MimeType record instances.
@@ -223,7 +223,7 @@ public interface ICFIntMimeTypeTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFIntMimeType readRecByIdIdx( ICFSecAuthorization Authorization,
-		int MimeTypeId );
+		$implIJavaAtomType$ MimeTypeId );
 
 	/**
 	 *	Read the specific MimeType record instance identified by the unique key UNameIdx.
@@ -238,5 +238,5 @@ public interface ICFIntMimeTypeTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFIntMimeType readRecByUNameIdx( ICFSecAuthorization Authorization,
-		String Name );
+		$implIJavaAtomType$ Name );
 }

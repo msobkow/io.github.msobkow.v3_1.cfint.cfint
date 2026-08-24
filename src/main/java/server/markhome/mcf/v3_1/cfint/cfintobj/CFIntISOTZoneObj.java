@@ -49,7 +49,7 @@ public class CFIntISOTZoneObj
 	protected boolean isNew;
 	protected ICFSecISOTZoneEditObj edit;
 	protected ICFSecSchemaObj schema;
-	protected Short pKey;
+	protected $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pKey;
 	protected ICFSecISOTZone rec;
 
 	public CFIntISOTZoneObj() {
@@ -270,12 +270,12 @@ public class CFIntISOTZoneObj
 	}
 
 	@Override
-	public Short getPKey() {
+	public $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ getPKey() {
 		return( pKey );
 	}
 
 	@Override
-	public void setPKey( Short value ) {
+	public void setPKey( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ value ) {
 		if( pKey != value ) {
        		pKey = value;
 			copyPKeyToRec();
@@ -352,37 +352,37 @@ public class CFIntISOTZoneObj
 	}
 
 	@Override
-	public short getRequiredISOTZoneId() {
+	public $implIJavaAtomType$ getRequiredISOTZoneId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public String getRequiredIso8601() {
+	public $implIJavaAtomType$ getRequiredIso8601() {
 		return( getISOTZoneRec().getRequiredIso8601() );
 	}
 
 	@Override
-	public String getRequiredTZName() {
+	public $implIJavaAtomType$ getRequiredTZName() {
 		return( getISOTZoneRec().getRequiredTZName() );
 	}
 
 	@Override
-	public short getRequiredTZHourOffset() {
+	public $implIJavaAtomType$ getRequiredTZHourOffset() {
 		return( getISOTZoneRec().getRequiredTZHourOffset() );
 	}
 
 	@Override
-	public short getRequiredTZMinOffset() {
+	public $implIJavaAtomType$ getRequiredTZMinOffset() {
 		return( getISOTZoneRec().getRequiredTZMinOffset() );
 	}
 
 	@Override
-	public String getRequiredDescription() {
+	public $implIJavaAtomType$ getRequiredDescription() {
 		return( getISOTZoneRec().getRequiredDescription() );
 	}
 
 	@Override
-	public boolean getRequiredVisible() {
+	public $implIJavaAtomType$ getRequiredVisible() {
 		return( getISOTZoneRec().getRequiredVisible() );
 	}
 

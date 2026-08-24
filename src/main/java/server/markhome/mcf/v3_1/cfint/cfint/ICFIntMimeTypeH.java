@@ -71,13 +71,13 @@ public interface ICFIntMimeTypeH
 	public CFLibDbKeyHash256 getAuditSessionId();
 	public void setAuditSessionId(CFLibDbKeyHash256 auditSessionId);
 
-	public int getRequiredMimeTypeId();
-	public void setRequiredMimeTypeId( int requiredMimeTypeId );
+	public $iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ getRequiredMimeTypeId();
+	public void setRequiredMimeTypeId( $iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ requiredMimeTypeId );
 
-	public String getRequiredName();
-	public void setRequiredName( String value );
-	public String getOptionalFileTypes();
-	public void setOptionalFileTypes( String value );
+	public $implIJavaAtomType$ getRequiredName();
+	public void setRequiredName( $implIJavaAtomType$ value );
+	public $implIJavaAtomType$ getOptionalFileTypes();
+	public void setOptionalFileTypes( $implIJavaAtomType$ value );
 	@Override
 	public boolean equals( Object obj );
 

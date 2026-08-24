@@ -241,25 +241,25 @@ public interface ICFIntSecClusRoleObj
 	List<ICFSecSecClusRoleMembObj> getOptionalChildrenMembByGrp( boolean forceRead );
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute SecClusRoleId.
+	 *	Get the required $implIJavaAtomType$ attribute SecClusRoleId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute SecClusRoleId.
+	 *	@return	The required $implIJavaAtomType$ attribute SecClusRoleId.
 	 */
-	ICFLibKeyHash256 getRequiredSecClusRoleId();
+	$implIJavaAtomType$ getRequiredSecClusRoleId();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute ClusterId.
+	 *	Get the required $implIJavaAtomType$ attribute ClusterId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute ClusterId.
+	 *	@return	The required $implIJavaAtomType$ attribute ClusterId.
 	 */
-	ICFLibKeyHash256 getRequiredClusterId();
+	$implIJavaAtomType$ getRequiredClusterId();
 
 	/**
-	 *	Get the required String attribute Name.
+	 *	Get the required $implIJavaAtomType$ attribute Name.
 	 *
-	 *	@return	The required String attribute Name.
+	 *	@return	The required $implIJavaAtomType$ attribute Name.
 	 */
-	String getRequiredName();
+	$implIJavaAtomType$ getRequiredName();
 
 	/**
 	 *	Internal use only.

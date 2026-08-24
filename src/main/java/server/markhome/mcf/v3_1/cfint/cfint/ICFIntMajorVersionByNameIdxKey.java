@@ -47,10 +47,10 @@ import server.markhome.mcf.v3_1.cfint.cfintprotobj.*;
  */
 public interface ICFIntMajorVersionByNameIdxKey
 {
-	public ICFLibKeyHash256 getRequiredSubProjectId();
-	public void setRequiredSubProjectId( ICFLibKeyHash256 value );
-	public String getRequiredName();
-	public void setRequiredName( String value );
+	public $implIJavaAtomType$ getRequiredSubProjectId();
+	public void setRequiredSubProjectId( $implIJavaAtomType$ value );
+	public $implIJavaAtomType$ getRequiredName();
+	public void setRequiredName( $implIJavaAtomType$ value );
 	@Override
 	public boolean equals( Object obj );
 

@@ -197,7 +197,7 @@ public class CFIntClusterEditObj
 				if (nextName == null) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredTenantName");
 				}
-				String natNextName = nextName;
+				$implIJavaAtomType$ natNextName = nextName;
 				subObj = ((ICFIntSchemaObj)getSchema()).getTenantTableObj().readTenantByUNameIdx( getRequiredId(),
 				natNextName, false );
 			}
@@ -383,12 +383,12 @@ public class CFIntClusterEditObj
 	}
 
 	@Override
-	public ICFLibKeyHash256 getPKey() {
+	public $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ getPKey() {
 		return( orig.getPKey() );
 	}
 
 	@Override
-	public void setPKey( ICFLibKeyHash256 value ) {
+	public void setPKey( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ value ) {
 		orig.setPKey( value );
 		copyPKeyToRec();
 	}
@@ -404,12 +404,12 @@ public class CFIntClusterEditObj
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredId() {
+	public $implIJavaAtomType$ getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredId(ICFLibKeyHash256 value) {
+	public void setRequiredId($implIJavaAtomType$ value) {
 		if (getPKey() != value) {
 			setPKey(value);
 			optionalComponentsTenant = null;
@@ -420,24 +420,24 @@ public class CFIntClusterEditObj
 	}
 
 	@Override
-	public String getRequiredFullDomName() {
+	public $implIJavaAtomType$ getRequiredFullDomName() {
 		return( getClusterRec().getRequiredFullDomName() );
 	}
 
 	@Override
-	public void setRequiredFullDomName( String value ) {
+	public void setRequiredFullDomName( $implIJavaAtomType$ value ) {
 		if( getClusterRec().getRequiredFullDomName() != value ) {
 			getClusterRec().setRequiredFullDomName( value );
 		}
 	}
 
 	@Override
-	public String getRequiredDescription() {
+	public $implIJavaAtomType$ getRequiredDescription() {
 		return( getClusterRec().getRequiredDescription() );
 	}
 
 	@Override
-	public void setRequiredDescription( String value ) {
+	public void setRequiredDescription( $implIJavaAtomType$ value ) {
 		if( getClusterRec().getRequiredDescription() != value ) {
 			getClusterRec().setRequiredDescription( value );
 		}

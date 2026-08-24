@@ -394,12 +394,12 @@ public class CFIntSecClusRoleMembEditObj
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredSecClusRoleId() {
+	public $implIJavaAtomType$ getRequiredSecClusRoleId() {
 		return( getPKey().getRequiredSecClusRoleId() );
 	}
 
 	@Override
-	public String getRequiredLoginId() {
+	public $implIJavaAtomType$ getRequiredLoginId() {
 		return( getPKey().getRequiredLoginId() );
 	}
 

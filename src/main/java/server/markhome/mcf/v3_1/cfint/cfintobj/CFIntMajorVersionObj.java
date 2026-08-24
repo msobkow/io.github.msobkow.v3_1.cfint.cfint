@@ -52,7 +52,7 @@ public class CFIntMajorVersionObj
 	protected boolean isNew;
 	protected ICFIntMajorVersionEditObj edit;
 	protected ICFIntSchemaObj schema;
-	protected ICFLibKeyHash256 pKey;
+	protected $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pKey;
 	protected ICFIntMajorVersion rec;
 	protected ICFSecTenantObj requiredOwnerTenant;
 	protected ICFIntSubProjectObj requiredContainerParentSPrj;
@@ -156,7 +156,7 @@ public class CFIntMajorVersionObj
 				if (nextName == null) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 				}
-				String natNextName = nextName;
+				$implIJavaAtomType$ natNextName = nextName;
 				subObj = ((ICFIntSchemaObj)getSchema()).getMinorVersionTableObj().readMinorVersionByNameIdx( getRequiredId(),
 				natNextName, false );
 			}
@@ -299,12 +299,12 @@ public class CFIntMajorVersionObj
 	}
 
 	@Override
-	public ICFLibKeyHash256 getPKey() {
+	public $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ getPKey() {
 		return( pKey );
 	}
 
 	@Override
-	public void setPKey( ICFLibKeyHash256 value ) {
+	public void setPKey( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ value ) {
 		if( pKey != value ) {
        		pKey = value;
 			copyPKeyToRec();
@@ -381,7 +381,7 @@ public class CFIntMajorVersionObj
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredId() {
+	public $implIJavaAtomType$ getRequiredId() {
 		return( getPKey() );
 	}
 
@@ -434,22 +434,22 @@ public class CFIntMajorVersionObj
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredTenantId() {
+	public $implIJavaAtomType$ getRequiredTenantId() {
 		return( getMajorVersionRec().getRequiredTenantId() );
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredSubProjectId() {
+	public $implIJavaAtomType$ getRequiredSubProjectId() {
 		return( getMajorVersionRec().getRequiredSubProjectId() );
 	}
 
 	@Override
-	public String getRequiredName() {
+	public $implIJavaAtomType$ getRequiredName() {
 		return( getMajorVersionRec().getRequiredName() );
 	}
 
 	@Override
-	public String getOptionalDescription() {
+	public $implIJavaAtomType$ getOptionalDescription() {
 		return( getMajorVersionRec().getOptionalDescription() );
 	}
 

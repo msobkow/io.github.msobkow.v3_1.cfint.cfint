@@ -187,18 +187,18 @@ public interface ICFIntMimeTypeObj
 	/**
 	 *	Get the primary key of this instance.
 	 *
-	 *	@return	Integer primary key for this instance.
+	 *	@return	$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ primary key for this instance.
 	 */
-	Integer getPKey();
+	$iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ getPKey();
 
 	/**
 	 *	Set the primary key of this instance.
 	 *	<p>
 	 *	This method should only be invoked by implementation internals.
 	 *
-	 *	@param Integer primary key value for this instance.
+	 *	@param $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ primary key value for this instance.
 	 */
-	void setPKey( Integer value );
+	void setPKey( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ value );
 
 	/**
 	 *	Is this a new instance?
@@ -218,25 +218,25 @@ public interface ICFIntMimeTypeObj
 	void setIsNew( boolean value );
 
 	/**
-	 *	Get the required int attribute MimeTypeId.
+	 *	Get the required $implIJavaAtomType$ attribute MimeTypeId.
 	 *
-	 *	@return	The required int attribute MimeTypeId.
+	 *	@return	The required $implIJavaAtomType$ attribute MimeTypeId.
 	 */
-	int getRequiredMimeTypeId();
+	$implIJavaAtomType$ getRequiredMimeTypeId();
 
 	/**
-	 *	Get the required String attribute Name.
+	 *	Get the required $implIJavaAtomType$ attribute Name.
 	 *
-	 *	@return	The required String attribute Name.
+	 *	@return	The required $implIJavaAtomType$ attribute Name.
 	 */
-	String getRequiredName();
+	$implIJavaAtomType$ getRequiredName();
 
 	/**
-	 *	Get the optional String attribute FileTypes.
+	 *	Get the optional $implIJavaAtomType$ attribute FileTypes.
 	 *
-	 *	@return	The optional String attribute FileTypes.
+	 *	@return	The optional $implIJavaAtomType$ attribute FileTypes.
 	 */
-	String getOptionalFileTypes();
+	$implIJavaAtomType$ getOptionalFileTypes();
 
 	/**
 	 *	Internal use only.

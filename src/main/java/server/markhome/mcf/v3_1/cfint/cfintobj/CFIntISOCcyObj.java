@@ -49,7 +49,7 @@ public class CFIntISOCcyObj
 	protected boolean isNew;
 	protected ICFSecISOCcyEditObj edit;
 	protected ICFSecSchemaObj schema;
-	protected Short pKey;
+	protected $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ pKey;
 	protected ICFSecISOCcy rec;
 	protected List<ICFSecISOCtryCcyObj> optionalChildrenCtry;
 
@@ -271,12 +271,12 @@ public class CFIntISOCcyObj
 	}
 
 	@Override
-	public Short getPKey() {
+	public $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ getPKey() {
 		return( pKey );
 	}
 
 	@Override
-	public void setPKey( Short value ) {
+	public void setPKey( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ value ) {
 		if( pKey != value ) {
        		pKey = value;
 			copyPKeyToRec();
@@ -353,7 +353,7 @@ public class CFIntISOCcyObj
 	}
 
 	@Override
-	public short getRequiredISOCcyId() {
+	public $implIJavaAtomType$ getRequiredISOCcyId() {
 		return( getPKey() );
 	}
 
@@ -374,22 +374,22 @@ public class CFIntISOCcyObj
 	}
 
 	@Override
-	public String getRequiredISOCode() {
+	public $implIJavaAtomType$ getRequiredISOCode() {
 		return( getISOCcyRec().getRequiredISOCode() );
 	}
 
 	@Override
-	public String getRequiredName() {
+	public $implIJavaAtomType$ getRequiredName() {
 		return( getISOCcyRec().getRequiredName() );
 	}
 
 	@Override
-	public String getOptionalUnitSymbol() {
+	public $implIJavaAtomType$ getOptionalUnitSymbol() {
 		return( getISOCcyRec().getOptionalUnitSymbol() );
 	}
 
 	@Override
-	public short getRequiredPrecis() {
+	public $implIJavaAtomType$ getRequiredPrecis() {
 		return( getISOCcyRec().getRequiredPrecis() );
 	}
 

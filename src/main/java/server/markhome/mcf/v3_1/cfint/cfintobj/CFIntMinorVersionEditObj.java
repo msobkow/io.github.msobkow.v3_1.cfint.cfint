@@ -379,12 +379,12 @@ public class CFIntMinorVersionEditObj
 	}
 
 	@Override
-	public ICFLibKeyHash256 getPKey() {
+	public $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ getPKey() {
 		return( orig.getPKey() );
 	}
 
 	@Override
-	public void setPKey( ICFLibKeyHash256 value ) {
+	public void setPKey( $iterate Columns ( lone implIJavaOptAtomType first implIJavaOptAtomType each implCommaIJavaOptAtomType empty empty )$ value ) {
 		orig.setPKey( value );
 		copyPKeyToRec();
 	}
@@ -400,46 +400,46 @@ public class CFIntMinorVersionEditObj
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredId() {
+	public $implIJavaAtomType$ getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredId(ICFLibKeyHash256 value) {
+	public void setRequiredId($implIJavaAtomType$ value) {
 		if (getPKey() != value) {
 			setPKey(value);
 		}
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredTenantId() {
+	public $implIJavaAtomType$ getRequiredTenantId() {
 		return( getMinorVersionRec().getRequiredTenantId() );
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredMajorVersionId() {
+	public $implIJavaAtomType$ getRequiredMajorVersionId() {
 		return( getMinorVersionRec().getRequiredMajorVersionId() );
 	}
 
 	@Override
-	public String getRequiredName() {
+	public $implIJavaAtomType$ getRequiredName() {
 		return( getMinorVersionRec().getRequiredName() );
 	}
 
 	@Override
-	public void setRequiredName( String value ) {
+	public void setRequiredName( $implIJavaAtomType$ value ) {
 		if( getMinorVersionRec().getRequiredName() != value ) {
 			getMinorVersionRec().setRequiredName( value );
 		}
 	}
 
 	@Override
-	public String getOptionalDescription() {
+	public $implIJavaAtomType$ getOptionalDescription() {
 		return( getMinorVersionRec().getOptionalDescription() );
 	}
 
 	@Override
-	public void setOptionalDescription( String value ) {
+	public void setOptionalDescription( $implIJavaAtomType$ value ) {
 		if( getMinorVersionRec().getOptionalDescription() != value ) {
 			getMinorVersionRec().setOptionalDescription( value );
 		}
