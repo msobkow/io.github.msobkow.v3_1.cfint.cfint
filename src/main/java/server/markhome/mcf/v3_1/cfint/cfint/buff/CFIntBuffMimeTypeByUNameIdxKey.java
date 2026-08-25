@@ -52,17 +52,17 @@ import server.markhome.mcf.v3_1.cfint.cfintobj.*;
 public class CFIntBuffMimeTypeByUNameIdxKey
 	implements ICFIntMimeTypeByUNameIdxKey, Comparable<Object>, Serializable
 {
-	protected $iterate Columns ( lone implIJavaAtomType first implIJavaAtomType each implCommaIJavaAtomType empty empty )$ requiredName;
+	protected String requiredName;
 	public CFIntBuffMimeTypeByUNameIdxKey() {
 		requiredName = ICFIntPubMimeType.NAME_INIT_VALUE;
 	}
 
 	@Override
-	public $implIJavaAtomType$ getRequiredName() {
+	public String getRequiredName() {
 		return(requiredName);
 	}
 
-	public void setRequiredName( $implIJavaAtomType$ value ) {
+	public void setRequiredName( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredName",

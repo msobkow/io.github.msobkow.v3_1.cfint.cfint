@@ -47,8 +47,8 @@ import server.markhome.mcf.v3_1.cfint.cfintprotobj.*;
  */
 public interface ICFIntMimeTypeByUNameIdxKey
 {
-	public $implIJavaAtomType$ getRequiredName();
-	public void setRequiredName( $implIJavaAtomType$ value );
+	public String getRequiredName();
+	public void setRequiredName( String value );
 	@Override
 	public boolean equals( Object obj );
 
