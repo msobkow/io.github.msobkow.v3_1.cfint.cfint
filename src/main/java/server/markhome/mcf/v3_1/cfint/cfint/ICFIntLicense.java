@@ -58,41 +58,41 @@ public interface ICFIntLicense
 
 	public int getClassCode();
 
-	public $implIJavaOptAtomType$ getPKey();
-	public void setPKey($implIJavaOptAtomType$ requiredId);
-	public $implIJavaAtomType$ getRequiredId();
-	public void setRequiredId( $implIJavaAtomType$ value );
+	public $implCommaIJavaOptAtomType$ getPKey();
+	public void setPKey($implCommaIJavaOptAtomType$ requiredId);
+	public ICFLibKeyHash256 getRequiredId();
+	public void setRequiredId( ICFLibKeyHash256 value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
-	public ICFSecTenant get$OptionalOrRequired$OwnerTenant();
+	public ICFSecTenant getRequiredOwnerTenant();
 
-	public void set$OptionalOrRequired$OwnerTenant($implIJavaAtomType$ argTenantId);
+	public void setRequiredOwnerTenant(ICFLibKeyHash256 argTenantId);
 
-	public void set$OptionalOrRequired$OwnerTenant(ICFSecPubTenant argObj);
+	public void setRequiredOwnerTenant(ICFSecPubTenant argObj);
 
-	public ICFIntTopDomain get$OptionalOrRequired$ContainerTopDomain();
+	public ICFIntTopDomain getRequiredContainerTopDomain();
 
-	public void set$OptionalOrRequired$ContainerTopDomain($implIJavaAtomType$ argTopDomainId);
+	public void setRequiredContainerTopDomain(ICFLibKeyHash256 argTopDomainId);
 
-	public void set$OptionalOrRequired$ContainerTopDomain(ICFIntTopDomain argObj);
+	public void setRequiredContainerTopDomain(ICFIntTopDomain argObj);
 
-	public void set$OptionalOrRequired$ContainerTopDomain(ICFIntProtTopDomain argObj);
+	public void setRequiredContainerTopDomain(ICFIntProtTopDomain argObj);
 
-	public void set$OptionalOrRequired$ContainerTopDomain(ICFIntPubTopDomain argObj);
+	public void setRequiredContainerTopDomain(ICFIntPubTopDomain argObj);
 
-	public $implIJavaAtomType$ getRequiredTenantId();
-	public void setRequiredTenantId( $implIJavaAtomType$ value );
-	public $implIJavaAtomType$ getRequiredTopDomainId();
-	public void setRequiredTopDomainId( $implIJavaAtomType$ value );
-	public $implIJavaAtomType$ getRequiredName();
-	public void setRequiredName( $implIJavaAtomType$ value );
-	public $implIJavaAtomType$ getOptionalDescription();
-	public void setOptionalDescription( $implIJavaAtomType$ value );
-	public $implIJavaAtomType$ getOptionalEmbeddedText();
-	public void setOptionalEmbeddedText( $implIJavaAtomType$ value );
-	public $implIJavaAtomType$ getOptionalFullText();
-	public void setOptionalFullText( $implIJavaAtomType$ value );
+	public ICFLibKeyHash256 getRequiredTenantId();
+	public void setRequiredTenantId( ICFLibKeyHash256 value );
+	public ICFLibKeyHash256 getRequiredTopDomainId();
+	public void setRequiredTopDomainId( ICFLibKeyHash256 value );
+	public String getRequiredName();
+	public void setRequiredName( String value );
+	public String getOptionalDescription();
+	public void setOptionalDescription( String value );
+	public String getOptionalEmbeddedText();
+	public void setOptionalEmbeddedText( String value );
+	public String getOptionalFullText();
+	public void setOptionalFullText( String value );
 	public boolean equals( Object obj );
 
 	public int hashCode();

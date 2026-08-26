@@ -47,10 +47,10 @@ import server.markhome.mcf.v3_1.cfint.cfintprotobj.*;
  */
 public interface ICFIntLicenseByUNameIdxKey
 {
-	public $implIJavaAtomType$ getRequiredTopDomainId();
-	public void setRequiredTopDomainId( $implIJavaAtomType$ value );
-	public $implIJavaAtomType$ getRequiredName();
-	public void setRequiredName( $implIJavaAtomType$ value );
+	public ICFLibKeyHash256 getRequiredTopDomainId();
+	public void setRequiredTopDomainId( ICFLibKeyHash256 value );
+	public String getRequiredName();
+	public void setRequiredName( String value );
 	@Override
 	public boolean equals( Object obj );
 

@@ -62,21 +62,21 @@ public interface ICFIntLicenseH
 	public CFLibDbKeyHash256 getAuditSessionId();
 	public void setAuditSessionId(CFLibDbKeyHash256 auditSessionId);
 
-	public $implIJavaAtomType$ getRequiredId();
-	public void setRequiredId( $implIJavaAtomType$ requiredId );
+	public ICFLibKeyHash256 getRequiredId();
+	public void setRequiredId( ICFLibKeyHash256 requiredId );
 
-	public $implIJavaAtomType$ getRequiredTenantId();
-	public void setRequiredTenantId( $implIJavaAtomType$ value );
-	public $implIJavaAtomType$ getRequiredTopDomainId();
-	public void setRequiredTopDomainId( $implIJavaAtomType$ value );
-	public $implIJavaAtomType$ getRequiredName();
-	public void setRequiredName( $implIJavaAtomType$ value );
-	public $implIJavaAtomType$ getOptionalDescription();
-	public void setOptionalDescription( $implIJavaAtomType$ value );
-	public $implIJavaAtomType$ getOptionalEmbeddedText();
-	public void setOptionalEmbeddedText( $implIJavaAtomType$ value );
-	public $implIJavaAtomType$ getOptionalFullText();
-	public void setOptionalFullText( $implIJavaAtomType$ value );
+	public ICFLibKeyHash256 getRequiredTenantId();
+	public void setRequiredTenantId( ICFLibKeyHash256 value );
+	public ICFLibKeyHash256 getRequiredTopDomainId();
+	public void setRequiredTopDomainId( ICFLibKeyHash256 value );
+	public String getRequiredName();
+	public void setRequiredName( String value );
+	public String getOptionalDescription();
+	public void setOptionalDescription( String value );
+	public String getOptionalEmbeddedText();
+	public void setOptionalEmbeddedText( String value );
+	public String getOptionalFullText();
+	public void setOptionalFullText( String value );
 	@Override
 	public boolean equals( Object obj );
 
