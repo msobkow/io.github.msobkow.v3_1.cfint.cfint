@@ -830,7 +830,7 @@ public class CFIntBuffMajorVersionH
     }
 
     public String getXmlAttrFragment() {
-        String ret = pkey.getXmlAttrFragment() 
+        String ret = pkey.getXmlAttrFragment()
 			+ " RequiredRevision=\"" + Integer.toString( getRequiredRevision() ) + "\""
 			+ " RequiredTenantId=" + "\"" + getRequiredTenantId().toString() + "\""
 			+ " RequiredSubProjectId=" + "\"" + getRequiredSubProjectId().toString() + "\""
